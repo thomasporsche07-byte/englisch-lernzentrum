@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Adverbien der Art und Weise – Hellweg-Realschule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<style>
+:root{--hr-blue:#b85c20;--hr-red:#C62828;--hr-green:#2e7d32;--hr-gray:#455A64;--ok:#2e7d32;--warn:#ef6c00;--bad:#b71c1c;}
+html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:#fef9f2;color:#2c1a0e;line-height:1.55;font-size:18px}
+.container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
+header{text-align:center;padding:20px 10px 10px}
+header img{height:70px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
+header h1{margin:10px 0 0;font-size:clamp(26px,5vw,38px);color:var(--hr-blue);letter-spacing:.2px}
+header p.sub{margin:6px 0 0;color:#7a5c3a}
+.rules-combined{margin-top:14px;background:linear-gradient(145deg,#fdf2e3 0%,#fef5e4 40%,#f5f0ff 100%);border-radius:20px;box-shadow:0 8px 28px rgba(180,90,30,.12);padding:22px 20px 18px;border:1.5px solid #e8c99a}
+.rc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rc-card{border-radius:14px;padding:0;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.rc-card.c-green,.rc-card.c-red,.rc-card.c-blue,.rc-card.c-indigo,.rc-card.c-amber,.rc-card.c-teal{background:linear-gradient(135deg,#f1f5fb,#f7f9fd);border:1.5px solid #d1dae8}
+.rc-card-topbar{height:6px;width:100%;flex-shrink:0}
+.rc-card.c-green .rc-card-topbar{background:linear-gradient(90deg,#43a047,#66bb6a)}
+.rc-card.c-red .rc-card-topbar{background:linear-gradient(90deg,#e53935,#ec407a)}
+.rc-card.c-blue .rc-card-topbar{background:linear-gradient(90deg,#b85c20,#d4922e)}
+.rc-card.c-indigo .rc-card-topbar{background:linear-gradient(90deg,#3949ab,#7e57c2)}
+.rc-card.c-amber .rc-card-topbar{background:linear-gradient(90deg,#f9a825,#ffca28)}
+.rc-card.c-teal .rc-card-topbar{background:linear-gradient(90deg,#00897b,#26a69a)}
+.rc-card-body{padding:12px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+.rc-card-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;display:flex;align-items:center;gap:5px}
+.rc-card-num{position:absolute;top:6px;right:10px;font-size:52px;font-weight:900;line-height:1;opacity:.07;pointer-events:none;user-select:none}
+.rc-card.c-green .rc-card-label{color:#1b5e20}
+.rc-card.c-red .rc-card-label{color:#880e4f}
+.rc-card.c-blue .rc-card-label{color:#8b4518}
+.rc-card.c-indigo .rc-card-label{color:#1a237e}
+.rc-card.c-amber .rc-card-label{color:#e65100}
+.rc-card.c-teal .rc-card-label{color:#00695c}
+.rc-formula{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.fc{display:inline-flex;align-items:center;justify-content:center;border-radius:7px;padding:3px 7px;font-size:11px;font-weight:800;white-space:nowrap}
+.fc-adj{background:#fde8c0;border:2px solid #d97520;color:#7a3010}
+.fc-adv{background:#dcfce7;border:2px solid #16a34a;color:#14532d}
+.fc-suffix{background:#fee2e2;border:2px solid #ef4444;color:#7f1d1d}
+.fc-noun{background:#ecfeff;border:2px solid #0891b2;color:#164e63}
+.fc-verb{background:#fef9c3;border:2px solid #ca8a04;color:#713f12}
+.fc-punct{background:transparent;border:none;font-size:16px;font-weight:900;color:#7a5c3a;padding:0 2px}
+.fc-plus{font-size:11px;color:#90a4ae;font-weight:700;padding:0}
+.rc-rule{font-size:13px;color:#374151;line-height:1.55;padding:5px 10px;border-radius:9px;background:rgba(255,255,255,.7)}
+.rc-card.c-green .rc-rule{border:1px solid #a5d6a7;border-left-width:3px;border-right-width:3px}
+.rc-card.c-red .rc-rule{border:1px solid #ef4444;border-left-width:3px;border-right-width:3px}
+.rc-card.c-blue .rc-rule{border:1px solid #d97520;border-left-width:3px;border-right-width:3px}
+.rc-card.c-indigo .rc-rule{border:1px solid #6366f1;border-left-width:3px;border-right-width:3px}
+.rc-card.c-amber .rc-rule{border:1px solid #ca8a04;border-left-width:3px;border-right-width:3px}
+.rc-card.c-teal .rc-rule{border:1px solid #0891b2;border-left-width:3px;border-right-width:3px}
+.rc-examples-new{font-size:12.5px;color:#4b5563;line-height:1.75;padding:7px 10px;border-radius:8px;background:rgba(0,0,0,.04)}
+.rc-examples-new b{color:#140c04}
+.hl-adj{color:#7a3010;font-weight:800;background:#fde8c0;border-radius:4px;padding:0 3px}
+.hl-adv{color:#14532d;font-weight:800;background:#dcfce7;border-radius:4px;padding:0 3px}
+.hl-suffix{color:#7f1d1d;font-weight:800;background:#fee2e2;border-radius:4px;padding:0 3px}
+.hl-noun{color:#164e63;font-weight:800;background:#ecfeff;border-radius:4px;padding:0 3px}
+.hl-verb{color:#713f12;font-weight:800;background:#fef9c3;border-radius:4px;padding:0 3px}
+details.accordion{background:#fff;border-radius:16px;border:1px solid #e8d5b8;box-shadow:0 6px 20px rgba(0,0,0,.06);margin:16px 0;overflow:hidden}
+details.accordion summary{list-style:none;cursor:pointer;padding:14px 18px;outline:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:#140c04;border-left:5px solid transparent;transition:background .2s}
+details.accordion summary::-webkit-details-marker{display:none}
+.acc-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;flex-shrink:0}
+#acc-bild .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-bild summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+#acc-special .acc-num{background:#fbbf77;color:#8b4518}
+#acc-special summary{border-left-color:#b85c20;background:linear-gradient(90deg,rgba(184,92,32,.14),rgba(184,92,32,.03))}
+#acc-aus .acc-num{background:#c4b5fd;color:#5b21b6}
+#acc-aus summary{border-left-color:#7c3aed;background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(124,58,237,.03))}
+#acc-vs .acc-num{background:#80cbc4;color:#00695c}
+#acc-vs summary{border-left-color:#00897b;background:linear-gradient(90deg,rgba(0,137,123,.14),rgba(0,137,123,.03))}
+#acc-mix .acc-num{background:#ffe082;color:#e65100}
+#acc-mix summary{border-left-color:#d97706;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
+details.accordion[open] summary{border-bottom:1px solid #e8d5b8}
+details.accordion summary:hover{filter:brightness(.97)}
+.content{padding:18px 20px}
+.note{background:linear-gradient(135deg,#fef5e4,#fef8f0);border:1px solid #f5c070;border-left:4px solid #b85c20;padding:11px 14px;border-radius:10px;margin:6px 0 16px;color:#3d2010;font-size:14px;line-height:1.6}
+.level-switch{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.level-switch button{border:2px solid #e8c99a;border-radius:999px;padding:8px 20px;font-weight:700;cursor:pointer;background:#fef5e4;color:#1e40af;transition:.2s all;font-size:14px;letter-spacing:.2px;outline:none}
+.level-switch button:hover{background:#fde8c0;border-color:#d4922e;transform:translateY(-1px);box-shadow:0 4px 10px rgba(184,92,32,.15)}
+.level-switch button.active{background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;border-color:transparent;box-shadow:0 3px 10px rgba(184,92,32,.4);transform:translateY(-1px)}
+.task{border:1px solid #e8d5b8;border-top:3px solid #b8905a;background:#fff;border-radius:14px;padding:16px 18px;margin:12px 0;scroll-margin-top:80px;line-height:1.6;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s}
+#acc-bild .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(170,200,160,.10),rgba(170,200,160,.04))}
+#acc-special .task{border-top-color:#b85c20;background:linear-gradient(135deg,rgba(184,92,32,.08),rgba(184,92,32,.02))}
+#acc-aus .task{border-top-color:#7c3aed;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(124,58,237,.02))}
+#acc-vs .task{border-top-color:#00897b;background:linear-gradient(135deg,rgba(0,137,123,.08),rgba(0,137,123,.02))}
+#acc-mix .task{border-top-color:#d97706;background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(251,191,36,.02))}
+.task:hover{box-shadow:0 4px 16px rgba(0,0,0,.09)}
+.task.task--solved{border:2px solid #2e7d32;box-shadow:0 0 0 3px rgba(46,125,50,.15)}
+.task.task--solved .task-solved-label{display:block}
+.task-solved-label{display:none;font-size:12px;font-weight:700;color:#2e7d32;margin-bottom:4px}
+.task-type-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.task-type-badge.badge-mc{background:#e0f2fe;color:#b85c20;border:1px solid #f5c070}
+.task-type-badge.badge-ordne{background:#fef9c3;color:#854d0e;border:1px solid #fde047}
+.task-type-badge.badge-frei{background:#f3e8ff;color:#7c3aed;border:1px solid #c4b5fd}
+.task.task--wrong{border-color:#f87171;border-top-color:#b91c1c;background:#fff5f5!important}
+.task.task--wrong .prompt{color:#b91c1c}
+.task .prompt{margin:0 0 12px;font-weight:600;color:#140c04;line-height:1.6;font-size:15.5px}
+.task input[type="text"]{width:100%;padding:11px 16px;border:2px solid #e8d0aa;border-radius:999px;font-size:16px;outline:none;transition:.2s all;box-sizing:border-box;background:#fef8f0;color:#140c04}
+.task input[type="text"]:focus{border-color:#b85c20;background:#fff;box-shadow:0 0 0 4px rgba(184,92,32,.10)}
+.task input[type="text"]:disabled{background:#f5ece0;color:#9a7050}
+.task .controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.btn{border:none;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;background:#e8d0aa;color:#3d2510;font-size:14px;transition:.15s all;letter-spacing:.1px}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn:active{transform:translateY(0)}
+.btn.primary{background:linear-gradient(135deg,#C62828,#e53935);color:#fff;box-shadow:0 2px 6px rgba(198,40,40,.3)}
+.btn.blue{background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;box-shadow:0 2px 6px rgba(184,92,32,.3)}
+.btn.green{background:linear-gradient(135deg,#2e7d32,#43a047);color:#fff;box-shadow:0 2px 6px rgba(46,125,50,.3)}
+.btn.gray{background:linear-gradient(135deg,#455A64,#9a7050);color:#fff;box-shadow:0 2px 6px rgba(69,90,100,.2)}
+.btn.ghost{background:#f5ece0;color:#7a5c3a;border:1px solid #e8d0aa}
+.btn.purple{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;box-shadow:0 2px 6px rgba(124,58,237,.3)}
+.btn.teal{background:linear-gradient(135deg,#00897b,#26a69a);color:#fff;box-shadow:0 2px 6px rgba(0,137,123,.3)}
+.btn.amber{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;box-shadow:0 2px 6px rgba(217,119,6,.3)}
+.feedback{margin-top:8px;font-size:14px;font-weight:700;padding:4px 0;letter-spacing:.1px}
+.solution{margin-top:8px;font-size:14px;background:linear-gradient(135deg,#f0f9ff,#fef8f0);border:1px solid #bae6fd;padding:10px 14px;border-radius:10px;display:none;line-height:1.65}
+.hint-box{margin-top:8px;font-size:14px;background:#fffbeb;border:1px dashed #f59e0b;color:#92400e;padding:10px 14px;border-radius:10px;display:none;line-height:1.55}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.mc-options{display:flex;flex-direction:column;gap:8px;margin:4px 0 8px}
+.mc-opt{display:flex;align-items:center;gap:10px;background:#fef8f0;border:2px solid #e8d0aa;border-radius:12px;padding:10px 14px;cursor:pointer;font-size:15px;font-weight:500;transition:.15s all;color:#2c1a0e;-webkit-tap-highlight-color:transparent;text-align:left;width:100%;font-family:inherit}
+.mc-opt:hover{background:#fef3e4;border-color:#93c5fd}
+.mc-opt:active{transform:scale(.98)}
+.mc-opt.mc-selected{border-color:#b85c20;background:#fde8c0;font-weight:700}
+.mc-opt.mc-correct{border-color:#2e7d32;background:#dcfce7;color:#14532d}
+.mc-opt.mc-wrong{border-color:#dc2626;background:#fef2f2;color:#991b1b;text-decoration:line-through;opacity:.7}
+.mc-opt.mc-disabled{pointer-events:none;cursor:default}
+.mc-letter{width:28px;height:28px;border-radius:50%;background:#e8d0aa;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;color:#7a5c3a}
+.mc-opt.mc-selected .mc-letter{background:#b85c20;color:#fff}
+.mc-opt.mc-correct .mc-letter{background:#2e7d32;color:#fff}
+.mc-opt.mc-wrong .mc-letter{background:#dc2626;color:#fff}
+.word-tiles-wrap{margin:4px 0 8px}
+.word-tiles-label{font-size:11px;font-weight:700;color:#b8905a;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.word-tiles{display:flex;flex-wrap:wrap;gap:8px;min-height:42px;padding:8px;border-radius:12px;background:#fef8f0;border:2px dashed #c8b8a0;transition:.2s all}
+.word-tiles.wt-source{background:#f5ece0;border-color:#b8905a}
+.word-tiles.wt-target{background:#fef3e4;border-color:#d97520;border-style:solid;min-height:46px}
+.word-tiles.wt-target:empty::before{content:"Tippe die Wörter in der richtigen Reihenfolge an ↑";color:#b8905a;font-size:13px;font-style:italic;padding:6px}
+.word-tile{display:inline-flex;align-items:center;padding:8px 14px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s all;-webkit-tap-highlight-color:transparent;user-select:none;border:2px solid #c8b8a0;background:#fff;color:#2c1a0e;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:inherit}
+.word-tile:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,.12);border-color:#d4922e}
+.word-tile:active{transform:scale(.95)}
+.word-tile.wt-placed{background:#fde8c0;border-color:#d97520;color:#7a3010}
+.word-tile.wt-used{opacity:.3;pointer-events:none;transform:scale(.9)}
+.word-tile.wt-correct{background:#dcfce7;border-color:#22c55e;color:#14532d;pointer-events:none}
+.word-tile.wt-wrong{background:#fef2f2;border-color:#ef4444;color:#991b1b;animation:wt-shake .4s}
+@keyframes wt-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+.section-actions{display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin:12px 0 10px}
+.progress{position:relative;width:260px;height:16px;background:#e8d0aa;border-radius:999px;overflow:hidden;border:none;box-shadow:inset 0 1px 3px rgba(0,0,0,.1)}
+.progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:#b85c20;transition:width .3s ease;border-radius:999px}
+.progress.green .progress-fill{background:linear-gradient(90deg,#2e7d32,#43a047)}
+.progress.blue .progress-fill{background:linear-gradient(90deg,#b85c20,#d4922e)}
+.progress.purple .progress-fill{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.progress.teal .progress-fill{background:linear-gradient(90deg,#00897b,#26a69a)}
+.progress.amber .progress-fill{background:linear-gradient(90deg,#d97706,#f59e0b)}
+.progress.mixed .progress-fill{background:linear-gradient(90deg,#C62828 0%,#b85c20 100%)}
+.progress-text{font-size:13.5px;color:#7a5c3a;font-weight:600}
+.quiz-divider{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding:0 4px}
+.quiz-divider::before,.quiz-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(106,53,176,.35),transparent)}
+.quiz-divider span{font-size:13px;font-weight:800;color:#6a35b0;white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+@keyframes celebrate-pop{0%{transform:scale(0.5);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.celebrate-banner{animation:celebrate-pop .4s ease-out;background:linear-gradient(135deg,#1b5e20,#2e7d32);border:2px solid #66bb6a;border-radius:14px;padding:14px 18px;margin:10px 0 6px;font-size:16px;font-weight:800;color:#fff;text-align:center;box-shadow:0 4px 16px rgba(46,125,50,.4)}
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
+.confirm-box{background:#fff;border-radius:18px;padding:24px 22px;max-width:320px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center}
+.confirm-box p{margin:0 0 18px;font-size:16px;font-weight:600;color:#140c04;line-height:1.5}
+.confirm-btns{display:flex;gap:10px;justify-content:center}
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:#b85c20;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:.2s background,.2s transform}
+.dark-toggle:hover{transform:translateY(-1px);background:#8b4518}
+.reset-all-btn{position:fixed;top:14px;left:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px;cursor:pointer;background:#fff;color:#b83a22;border:1.5px solid #b83a22;box-shadow:0 2px 10px rgba(0,0,0,.12);transition:.2s}
+.reset-all-btn:hover{background:#b83a22;color:#fff;transform:translateY(-1px)}
+body.dark-mode{background:#140c04;color:#e8d0aa}
+body.dark-mode .rules-combined{background:linear-gradient(145deg,#0f1e38 0%,#111a30 50%,#2a1408 100%);border-color:#2a3a5e}
+body.dark-mode .rc-card.c-green,body.dark-mode .rc-card.c-red,body.dark-mode .rc-card.c-blue,body.dark-mode .rc-card.c-indigo,body.dark-mode .rc-card.c-amber,body.dark-mode .rc-card.c-teal{background:linear-gradient(135deg,#1e1408,#1e2840);border-color:#3d2510}
+body.dark-mode .rc-rule{background:rgba(255,255,255,.05);color:#c8b8a0}
+body.dark-mode .rc-examples-new{background:rgba(255,255,255,.06);color:#b8905a}
+body.dark-mode .rc-examples-new b{color:#e8d0aa}
+body.dark-mode details.accordion{background:#1e1408;border-color:#3d2510}
+body.dark-mode details.accordion summary{color:#e8d0aa}
+body.dark-mode .content,body.dark-mode .note{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .task{background:#1e1408;border-color:#3d2510}
+body.dark-mode .task .prompt{color:#e8d0aa}
+body.dark-mode .task input[type="text"]{background:#140c04;color:#e8d0aa;border-color:#3d2510}
+body.dark-mode .btn.ghost{background:#1e1408;color:#b8905a;border:1px solid #3d2510}
+body.dark-mode .progress{background:#1e1408;border-color:#3d2510}
+body.dark-mode .progress-text{color:#b8905a}
+body.dark-mode .solution{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .hint-box{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.45);color:#fcd34d}
+body.dark-mode .mc-opt{background:#1e1408;border-color:#3d2510;color:#e8d0aa}
+body.dark-mode .word-tiles.wt-source{background:#140c04;border-color:#3d2510}
+body.dark-mode .word-tiles.wt-target{background:#1e1408;border-color:#d97520}
+body.dark-mode .word-tile{background:#1e1408;border-color:#7a5c3a;color:#e8d0aa}
+body.dark-mode .dark-toggle{background:#3d2510;color:#e8d0aa}
+body.dark-mode .reset-all-btn{background:#1e1408;color:#fca5a5;border-color:#7f1d1d}
+body.dark-mode .confirm-box{background:#1e1408}
+body.dark-mode .confirm-box p{color:#e8d0aa}
+@media(max-width:600px){.dark-toggle,.reset-all-btn{position:static;display:inline-block;margin:4px;box-shadow:0 1px 6px rgba(0,0,0,.15)}.level-switch button,.btn{padding:7px 13px;font-size:13px}.progress{width:160px}}
+@media(max-width:600px){.rc-grid{grid-template-columns:1fr}}
+@media print{body>*:not(.print-frame){display:none!important}.task{border:1pt solid #ccc!important;background:#fff!important;border-radius:0!important;box-shadow:none!important;page-break-inside:avoid;margin:5pt 0;padding:8pt 10pt}.task .prompt{color:#000!important;font-weight:600}.task .controls,.task .solution,.task .feedback,.level-switch,.section-actions,.progress-wrap,.note{display:none!important}}
+
+/* ===== WWM-QUIZ ===== */
+#wwm-quiz summary{background:radial-gradient(130% 200% at 50% -30%,#1a4db5 0%,#001a38 55%,#000d1f 100%);color:#ffcc00;border-bottom:2px solid rgba(255,204,0,.4);font-size:19px;font-weight:900;letter-spacing:.5px;text-shadow:0 0 20px rgba(255,204,0,.5),0 2px 8px rgba(0,0,0,.8)}
+#wwm-quiz .content{background:#020c22;background-image:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(30,70,180,.55) 0%, transparent 70%),radial-gradient(ellipse 60% 40% at 50% 50%, rgba(10,30,100,.4) 0%, transparent 80%),repeating-conic-gradient(from 270deg at 50% -30%, rgba(255,204,0,.03) 0deg 10deg, transparent 10deg 20deg);border:2px solid rgba(255,204,0,.55);box-shadow:0 0 0 1px rgba(255,204,0,.15), 0 20px 60px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,204,0,.1)}
+#wwm-quiz .progress-wrap{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#020c22 60%,transparent);margin:-18px -20px 0;padding:14px 20px 10px;border-bottom:1px solid rgba(255,204,0,.25);backdrop-filter:blur(6px)}
+#wwm-quiz .progress{background:rgba(255,255,255,.10);border:2px solid rgba(255,204,0,.7);height:20px;box-shadow:0 0 14px rgba(255,204,0,.25)}
+#wwm-quiz .progress-fill{background:linear-gradient(90deg,#b8860b,#ffcc00,#fff176);box-shadow:0 0 18px rgba(255,204,0,.8)}
+#wwm-quiz .progress-text{color:#fff;font-weight:900;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.wwm-layout{display:flex;gap:16px;align-items:flex-start;margin-top:16px}
+.wwm-stage{flex:1;min-width:0}
+.wwm-ladder{width:130px;flex-shrink:0;display:flex;flex-direction:column;gap:3px}
+.wwm-ladder-row{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);border:1px solid transparent;transition:.2s all;cursor:default}
+.wwm-ladder-row .wwm-qnum{width:18px;text-align:right;flex-shrink:0;font-size:10px;opacity:.6}
+.wwm-ladder-row .wwm-amount{flex:1;text-align:right;letter-spacing:.2px}
+.wwm-ladder-row.milestone{color:rgba(255,204,0,.6);border-color:rgba(255,204,0,.2);background:rgba(255,204,0,.05)}
+.wwm-ladder-row.done{color:rgba(100,220,120,.55)}
+.wwm-ladder-row.current{background:linear-gradient(90deg,rgba(255,204,0,.18),rgba(255,204,0,.08));border-color:rgba(255,204,0,.7);color:#ffcc00;box-shadow:0 0 10px rgba(255,204,0,.25);font-size:12.5px}
+.wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(255,204,0,.6)}
+.wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(255,204,0,.28),rgba(255,204,0,.12))}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+.wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(255,204,0,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#ffcc00;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(255,204,0,.2)}
+#wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
+#wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(255,204,0,.75);color:#ffcc00;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(255,204,0,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(255,204,0,.4);cursor:pointer;transition:.2s all;font-family:inherit}
+#wwm-quiz .wwm-lifelines .chip:hover:not(.chip-used){background:radial-gradient(circle at 40% 35%,#2a4faa,#0d2060);box-shadow:0 0 22px rgba(255,204,0,.45),inset 0 1px 0 rgba(255,255,255,.15);transform:translateY(-2px) scale(1.05)}
+#wwm-quiz .task,#wwm-quiz .wwm-stage{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;margin:0}
+#wwm-quiz .task:hover,#wwm-quiz .wwm-stage:hover{box-shadow:none}
+#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{background:linear-gradient(180deg,#0f2d72 0%,#091e50 100%);color:#fff;border:2px solid #ffcc00;border-radius:16px;padding:18px 22px;text-align:center;font-weight:800;font-size:19px;box-shadow:0 0 0 4px rgba(255,204,0,.12),0 6px 28px rgba(0,0,0,.5);line-height:1.6;margin-bottom:14px;position:relative;overflow:hidden}
+#wwm-quiz .task .prompt::before,#wwm-quiz .wwm-stage .prompt::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,204,0,.07),transparent 70%);pointer-events:none}
+#wwm-quiz .section-actions .btn{background:linear-gradient(135deg,#0c2a66,#163a8a);color:#ffecb3;border:1px solid rgba(255,204,0,.4);box-shadow:0 3px 10px rgba(0,0,0,.4)}
+#wwm-quiz .section-actions .btn:hover{background:linear-gradient(135deg,#163a8a,#1e4db5)}
+#wwm-quiz .feedback{color:#ffecb3;font-size:15px;margin-top:10px}
+#wwm-quiz .feedback.ok{color:#00e676;text-shadow:0 0 10px rgba(0,230,118,.5)}
+#wwm-quiz .feedback.bad{color:#ff6b6b;text-shadow:0 0 10px rgba(255,80,80,.4)}
+#wwm-quiz .feedback.warn{color:#ffcc00}
+#wwm-quiz .controls .btn:focus{outline:2px solid rgba(255,255,255,.9);outline-offset:3px}
+#wwm-quiz .controls .btn.green:focus{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.2),0 3px 12px rgba(0,0,0,.4)}
+.quiz-tip-box{margin-top:12px;padding:12px 16px;background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.45);border-left:3px solid #ffcc00;border-radius:10px;color:#ffe082;font-size:14px;line-height:1.6}
+.quiz-explanation-box{margin-top:12px;padding:12px 16px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);border-left:3px solid #00e676;border-radius:10px;color:#b9f6ca;font-size:14px;line-height:1.6}
+.quiz-streak{text-align:center;font-size:22px;font-weight:900;color:#ffcc00;letter-spacing:.5px;min-height:32px;margin-bottom:10px;text-shadow:0 0 16px rgba(255,204,0,.7)}
+#wwm-quiz .result-card{background:linear-gradient(160deg,#1a4faa 0%,#0d3080 50%,#071d55 100%);border:3px solid #ffcc00;box-shadow:0 0 60px rgba(255,204,0,.35),0 20px 60px rgba(0,0,0,.7);color:#fff;border-radius:22px;overflow:hidden}
+#wwm-quiz .score{color:#ffcc00}
+#wwm-quiz{overflow:visible!important}
+@keyframes quizFadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question-enter{animation:quizFadeIn .45s cubic-bezier(.22,1,.36,1) forwards}
+#wwm-quiz .wwm-lifelines .chip-used{opacity:.35;cursor:not-allowed;border-color:rgba(255,204,0,.25);color:rgba(255,204,0,.4);text-decoration:line-through;box-shadow:none}
+.wwm-joker-options{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wwm-option-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(10,30,90,.9),rgba(5,18,60,.9));border:2px solid rgba(255,204,0,.5);border-radius:999px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:10px 18px;text-align:left;transition:.2s all;box-shadow:0 2px 12px rgba(0,0,0,.4);font-family:inherit}
+.wwm-option-btn:hover{background:linear-gradient(90deg,rgba(30,70,180,.9),rgba(15,45,130,.9));border-color:#ffcc00;box-shadow:0 0 16px rgba(255,204,0,.3);transform:scale(1.01)}
+.wwm-opt-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,204,0,.15);border:2px solid rgba(255,204,0,.6);color:#ffcc00;font-size:13px;font-weight:900;flex-shrink:0}
+.wwm-phone-bubble{margin-top:14px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(5,20,60,.95),rgba(3,12,40,.95));border:2px solid rgba(100,180,255,.4);border-radius:16px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.wwm-phone-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(100,180,255,.5))}
+.wwm-phone-text{font-size:14px;color:#c5deff;line-height:1.7}
+.wwm-phone-text b{color:#fbbf77}
+.wwm-phone-text em{display:inline-block;margin-top:6px;font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(100,180,255,.3);border-radius:8px;padding:4px 10px;color:#fff;font-weight:700;font-size:15px}
+.wwm-audience-box{margin-top:14px;background:linear-gradient(180deg,rgba(5,18,55,.95),rgba(3,10,36,.95));border:2px solid rgba(255,204,0,.35);border-radius:16px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.wwm-audience-title{text-align:center;font-size:13px;font-weight:800;color:#ffcc00;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 8px rgba(255,204,0,.4)}
+.wwm-audience-bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:110px}
+.wwm-audience-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:160px;height:100%}
+.wwm-audience-pct{font-size:13px;font-weight:900;color:#ffcc00;min-height:18px}
+.wwm-audience-bar{width:100%;min-height:4px;border-radius:6px 6px 0 0;cursor:pointer;transition:filter .2s}
+.wwm-audience-bar:hover{filter:brightness(1.2)}
+.wwm-audience-label{font-size:11px;color:rgba(255,255,255,.65);text-align:center;line-height:1.3;max-width:100%;word-break:break-word;margin-top:4px}
+</style>
+</head>
+<body>
+<div id="confirm-modal" style="display:none" class="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Fortschritt zurücksetzen?</p>
+    <div class="confirm-btns">
+      <button class="btn primary" id="confirm-ok">Ja, zurücksetzen</button>
+      <button class="btn ghost" id="confirm-cancel">Abbrechen</button>
+    </div>
+  </div>
+</div>
+<button class="reset-all-btn" id="reset-all-btn">🗑️ Zurücksetzen</button>
+<button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+
+<header>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/>
+  </a>
+  <h1>Adverbien der Art und Weise</h1>
+  <p class="sub">Adverbs of manner – Klasse 6 · Adjektiv + ly</p>
+</header>
+
+<div class="container">
+
+  <section class="rules-combined">
+    <div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Regeln auf einen Blick</span></div>
+    <div class="rc-grid">
+
+      <div class="rc-card c-green">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">1</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">✅ Grundregel</div>
+          <div class="rc-formula">
+            <span class="fc fc-adj">Adjektiv</span><span class="fc-plus">+</span>
+            <span class="fc fc-suffix">ly</span><span class="fc-plus">=</span>
+            <span class="fc fc-adv">Adverb</span>
+          </div>
+          <div class="rc-rule">Die meisten Adverbien bildet man durch Anfügen von <b>-ly</b> an das Adjektiv.<br>Adverbien beschreiben, <b>wie</b> etwas geschieht.</div>
+          <div class="rc-examples-new">
+            <span class="hl-adj">slow</span> → <span class="hl-adv">slow<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">clear</span> → <span class="hl-adv">clear<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">quick</span> → <span class="hl-adv">quick<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">careful</span> → <span class="hl-adv">careful<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">nervous</span> → <span class="hl-adv">nervous<span class="hl-suffix">ly</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-red">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">2</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">⚠️ Schreibänderungen</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-adj">…y</span><span class="fc-plus">→</span>
+            <span class="fc fc-adv">…ily</span><br>
+            <span class="fc fc-adj">full</span><span class="fc-plus">→</span>
+            <span class="fc fc-adv">fully</span>
+          </div>
+          <div class="rc-rule">Endet das Adjektiv auf <b>-y</b>, wird daraus <b>-ily</b>.<br>Bei <b>full</b> wird ein <b>l</b> weggelassen: full + ly → <b>fully</b>.</div>
+          <div class="rc-examples-new">
+            <span class="hl-adj">happy</span> → <span class="hl-adv">happ<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">angry</span> → <span class="hl-adv">angr<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">easy</span> → <span class="hl-adv">eas<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">lucky</span> → <span class="hl-adv">luck<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">full</span> → <span class="hl-adv">ful<span class="hl-suffix">ly</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-indigo">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">3</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">🚨 Ausnahmen</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-adj">good</span><span class="fc-plus">→</span>
+            <span class="fc fc-adv">well</span><br>
+            <span class="fc fc-adj">hard</span><span class="fc-plus">→</span>
+            <span class="fc fc-adv">hard</span><br>
+            <span class="fc fc-adj">fast</span><span class="fc-plus">→</span>
+            <span class="fc fc-adv">fast</span>
+          </div>
+          <div class="rc-rule">Diese musst du <b>auswendig lernen</b>:<br><b>good → well</b> (NICHT goodly!)<br><b>hard, fast, late, early</b>: Adjektiv = Adverb</div>
+          <div class="rc-examples-new">
+            She sings <span class="hl-adv">well</span>. <i>(NICHT: she sings goodly)</i><br>
+            He works <span class="hl-adv">hard</span>. <i>(NICHT: hardly = kaum!)</i><br>
+            The bus drives <span class="hl-adv">fast</span>.
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-amber">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">4</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">🔍 Adjektiv vs. Adverb</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-adj">Adjektiv</span><span class="fc-plus">+</span>
+            <span class="fc fc-noun">Nomen</span><br>
+            <span class="fc fc-verb">Verb</span><span class="fc-plus">+</span>
+            <span class="fc fc-adv">Adverb</span>
+          </div>
+          <div class="rc-rule"><b>Adjektiv</b> beschreibt eine Person/Sache → steht <b>vor dem Nomen</b><br><b>Adverb</b> beschreibt das Verb → steht meist <b>nach dem Verb</b></div>
+          <div class="rc-examples-new">
+            She is a <span class="hl-adj">careful</span> <span class="hl-noun">driver</span>.<br>
+            She <span class="hl-verb">drives</span> <span class="hl-adv">carefully</span>.<br>
+            <br>
+            He is a <span class="hl-adj">slow</span> <span class="hl-noun">runner</span>.<br>
+            He <span class="hl-verb">runs</span> <span class="hl-adv">slowly</span>.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="quiz-divider"><span>✏️ Übungen</span></div>
+
+  <details class="accordion" id="acc-bild" open>
+    <summary><span class="acc-num">1</span>✅ Bildung – Adjektiv + ly</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Adverben erkennen + ordnen &nbsp;|&nbsp; <b>Stufe 2:</b> Adverben bilden (Lückentext)<br><b>Stufe 3:</b> Adjektiv-Sätze in Adverb-Sätze umformen</div>
+      <div class="level-switch" id="bild-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Umformen</button></div>
+      <div class="progress-wrap" id="bild-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn green" id="bild-check-all">Alle prüfen</button><button class="btn gray" id="bild-reset">Zurücksetzen</button><button class="btn ghost" id="bild-reroll">🎲 Neu würfeln</button></div>
+      <div id="bild-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-special">
+    <summary><span class="acc-num">2</span>⚠️ Schreibänderungen – -y → -ily, full → fully</summary>
+    <div class="content">
+      <div class="note">Endet das Adjektiv auf <b>-y</b>, wird daraus <b>-ily</b> (happy → happily). Bei <b>full</b> fällt ein <b>l</b> weg (full → fully).</div>
+      <div class="progress-wrap" id="special-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn blue" id="special-check-all">Alle prüfen</button><button class="btn gray" id="special-reset">Zurücksetzen</button><button class="btn ghost" id="special-reroll">🎲 Neu würfeln</button></div>
+      <div id="special-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-aus">
+    <summary><span class="acc-num">3</span>🚨 Ausnahmen – good · hard · fast</summary>
+    <div class="content">
+      <div class="note">Auswendig lernen: <b>good → well</b>, <b>hard / fast / late / early</b> (Adjektiv = Adverb). ⚠️ <i>hardly</i> bedeutet „kaum“ – nicht verwechseln!</div>
+      <div class="progress-wrap" id="aus-progress"><div class="progress purple" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn purple" id="aus-check-all">Alle prüfen</button><button class="btn gray" id="aus-reset">Zurücksetzen</button><button class="btn ghost" id="aus-reroll">🎲 Neu würfeln</button></div>
+      <div id="aus-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-vs">
+    <summary><span class="acc-num">4</span>🔍 Adjektiv vs. Adverb</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Adjektiv oder Adverb erkennen &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentext<br><b>Stufe 3:</b> Fehlerkorrektur</div>
+      <div class="level-switch" id="vs-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Fehler</button></div>
+      <div class="progress-wrap" id="vs-progress"><div class="progress teal" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn teal" id="vs-check-all">Alle prüfen</button><button class="btn gray" id="vs-reset">Zurücksetzen</button><button class="btn ghost" id="vs-reroll">🎲 Neu würfeln</button></div>
+      <div id="vs-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-mix">
+    <summary><span class="acc-num">5</span>🧩 Gemischte Aufgaben + Fehlerkorrektur</summary>
+    <div class="content">
+      <div class="note">Alles zusammen: Bildung, Schreibänderungen, Ausnahmen, Adjektiv vs. Adverb. Achte auf typische Fehler!</div>
+      <div class="progress-wrap" id="mix-progress"><div class="progress amber" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn amber" id="mix-check-all">Alle prüfen</button><button class="btn gray" id="mix-reset">Zurücksetzen</button><button class="btn ghost" id="mix-reroll">🎲 Neu würfeln</button></div>
+      <div id="mix-tasks"></div>
+    </div>
+  </details>
+
+  <div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+  <details class="accordion" id="wwm-quiz">
+    <summary>🏆 Quiz</summary>
+    <div class="content">
+      <div class="progress-wrap" id="quiz-progress"><div class="progress mixed" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+      <div id="quiz-tasks"></div>
+      <div id="quiz-result" class="result-card" style="display:none"></div>
+    </div>
+  </details>
+
+  <footer style="text-align:center;color:#b8905a;font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid rgba(184,144,90,.25)">
+    <div>Version 25.04.2026, 20:15</div>
+    <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const k='aom_dark_v1';
+  try{if(localStorage.getItem(k)==='1')document.body.classList.add('dark-mode');}catch(e){}
+  const btn=document.getElementById('dark-toggle');
+  function refresh(){btn.textContent=document.body.classList.contains('dark-mode')?'☀️ Hell':'🌙 Dark Mode';}
+  refresh();
+  btn.addEventListener('click',()=>{document.body.classList.toggle('dark-mode');try{localStorage.setItem(k,document.body.classList.contains('dark-mode')?'1':'0');}catch(e){}refresh();});
+})();
+function checkCelebration(c){const i=c.querySelectorAll('.task input');if(!i.length)return;if(!Array.from(i).every(x=>x._correct))return;if(c.querySelector('.celebrate-banner'))return;const b=document.createElement('div');b.className='celebrate-banner';b.innerHTML='🎉 Perfekt! Alle Aufgaben richtig – super gemacht!';c.prepend(b);setTimeout(()=>b.scrollIntoView({behavior:'smooth',block:'nearest'}),80);}
+function customConfirm(msg,onOk){const m=document.getElementById('confirm-modal');document.getElementById('confirm-msg').textContent=msg;m.style.display='flex';const ok=document.getElementById('confirm-ok'),c=document.getElementById('confirm-cancel');function close(){m.style.display='none';ok.onclick=null;c.onclick=null;}ok.onclick=()=>{close();onOk();};c.onclick=close;}
+function normalizeAnswer(text){if(!text)return"";let s=(""+text).toLowerCase();s=s.replace(/['´‘’‚‛′‵ʹʻʼʾʿ＇``´]/g,"'");s=s.replace(/don't/g,"do not").replace(/doesn't/g,"does not").replace(/isn't/g,"is not").replace(/aren't/g,"are not").replace(/can't/g,"can not").replace(/won't/g,"will not");s=s.replace(/\bdoesnt\b/g,"does not").replace(/\bdont\b/g,"do not");s=s.replace(/[.,!?:;"]+/g," ").replace(/\s+/g," ").trim();s=s.normalize("NFD").replace(/[̀-ͯ]/g,"");return s;}
+const _STORE={};
+function saveProgress(k,v){try{_STORE[k]=v;}catch(e){}return true;}
+function loadProgress(k,d=null){return _STORE[k]!==undefined?_STORE[k]:d;}
+function taskHash(t){const a=Array.isArray(t.answer)?t.answer[0]:t.answer;return normalizeAnswer(a||t.prompt||"").replace(/\s+/g,'_').substring(0,30);}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickRandom(pool,n,k){if(k){const s=loadProgress('pick_'+k);if(s&&Array.isArray(s)&&s.length===Math.min(n,pool.length)&&s.every(i=>i>=0&&i<pool.length))return s.map(i=>pool[i]);}const idx=Array.from({length:pool.length},(_,i)=>i);for(let i=idx.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]];}const p=idx.slice(0,Math.min(n,pool.length));if(k)saveProgress('pick_'+k,p);return p.map(i=>pool[i]);}
+function initProgressBar(root,total){const fill=root.querySelector('.progress-fill');const text=root.parentElement.querySelector('.progress-text');function update(c,d){d=d!==undefined?d:c;const fp=total?Math.round((d/total)*100):0;const rp=total?Math.round((c/total)*100):0;fill.style.width=fp+'%';text.textContent=d===c?`Fortschritt: ${c}/${total} richtig (${rp}%)`:`Fortschritt: ${c}/${total} richtig · ${d} bearbeitet`;root.setAttribute('aria-valuenow',String(fp));}function setTotal(n){total=n;update(0,0);}function resetAnimated(){fill.style.width='0%';text.textContent=`Fortschritt: 0/${total} richtig (0%)`;}update(0,0);return{update,setTotal,resetAnimated};}
+function buildPartialHint(a){if(!a)return'';const w=(''+a).trim().replace(/[.!?]+$/,'').split(/\s+/).filter(Boolean);if(w.length<3)return w[0]||'';const n=Math.max(2,Math.ceil(w.length*0.4));return w.slice(0,n).join(' ');}
+function diffHint(u,c){const uN=normalizeAnswer(u),cN=normalizeAnswer(c);if(!uN||!cN||uN===cN)return null;const uW=uN.split(/\s+/).filter(Boolean),cW=cN.split(/\s+/).filter(Boolean);let i=0;const max=Math.max(uW.length,cW.length);while(i<max&&uW[i]===cW[i])i++;if(i>=max)return null;const u2=uW[i]||'',c2=cW[i]||'';if(!u2&&c2)return `💡 An Stelle ${i+1} fehlt das Wort <b>${c2}</b>.`;if(u2&&!c2)return `💡 Das Wort <b>${u2}</b> gehört nicht in den Satz.`;const p={'good':'well','well':'good','goodly':'well','hardly':'hard','quick':'quickly','slow':'slowly','careful':'carefully'};if(p[u2]===c2)return `💡 Hier brauchst du <b>${c2}</b>, nicht <i>${u2}</i>.`;return `💡 Ab dem Wort <b>${u2||'…'}</b> stimmt etwas nicht.`;}
+function analyzeError(u,ans){const ansList=Array.isArray(ans)?ans:[ans];const c=(ansList[0]||'').toLowerCase();const ul=u.toLowerCase().trim();
+  if(/\bwell\b/.test(c)&&/\bgoodly\b/.test(ul))return "💡 <b>good → well</b>, nicht <i>goodly</i>! Das ist eine Ausnahme.";
+  if(/\bwell\b/.test(c)&&/\bgood\b/.test(ul))return "💡 Hier brauchst du das Adverb <b>well</b>, nicht das Adjektiv <i>good</i>.";
+  if(/\bhard\b/.test(c)&&/\bhardly\b/.test(ul))return "💡 <b>hard</b> ist Adjektiv UND Adverb. <i>hardly</i> bedeutet „kaum“!";
+  if(/ily\b/.test(c)&&/yly\b/.test(ul))return "💡 Bei Adjektiven auf <b>-y</b>: <b>-y → -ily</b> (z.B. happy → happily, nicht happyly).";
+  if(/lly\b/.test(c)&&/full\s/.test(ul+' '))return "💡 <b>full + ly = fully</b> (ein l fällt weg).";
+  let best=ansList[0],bd=Infinity;for(const a of ansList){const an=normalizeAnswer(a),un=normalizeAnswer(u);const aw=an.split(/\s+/),uw=un.split(/\s+/);let d=Math.abs(aw.length-uw.length);const m=Math.min(aw.length,uw.length);for(let i=0;i<m;i++)if(aw[i]!==uw[i])d++;if(d<bd){bd=d;best=a;}}return diffHint(u,best);
+}
+function shufflePromptSlashList(html){if(!html||typeof html!=='string')return html;return html.replace(/<i>([^<]+?)<\/i>/g,(m,inner)=>{if(!inner.includes(' / '))return m;const ct=inner.replace(/[.!?]+\s*$/,'').trim();const p=ct.split(' / ').map(s=>s.trim()).filter(Boolean);if(p.length<2)return m;const o=p.join(' / ');let s,a=0;do{s=p.slice();for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]];}a++;}while(s.join(' / ')===o&&a<20);return '<i>'+s.join(' / ')+'</i>';});}
+
+function renderTasks(container,tasks,sectionKey,options={}){
+  const{enableSolution=false,onStatusChange=null,currentLevel=1}=options;
+  const progressKey=`${sectionKey}_L${currentLevel}`;
+  const answersKey=`${sectionKey}_L${currentLevel}_ans`;
+  const solvedTasks=loadProgress(progressKey,[]);
+  const savedAnswers=loadProgress(answersKey,{});
+  container.innerHTML="";
+  tasks.forEach((t,idx)=>{
+    const tHash=taskHash(t);
+    const isSolved=solvedTasks.includes(tHash);
+    const savedAns=savedAnswers[tHash]||'';
+    const wrap=document.createElement("div");wrap.className="task";
+    if(isSolved)wrap.classList.add('task--solved');
+    const nb=document.createElement("div");
+    nb.style.cssText="font-size:12px;font-weight:700;color:#b8905a;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;";
+    nb.textContent=`Aufgabe ${idx+1} / ${tasks.length}`;
+    const badge=document.createElement("span");badge.className="task-type-badge";
+    if(t.type==='mc'){badge.classList.add('badge-mc');badge.textContent='Multiple Choice';}
+    else if(Array.isArray(t.words)){badge.classList.add('badge-ordne');badge.textContent='Wörter ordnen';}
+    else{badge.classList.add('badge-frei');badge.textContent='Freitext';}
+    nb.appendChild(badge);
+    wrap.appendChild(nb);
+    const solvedLabel=document.createElement("div");solvedLabel.className="task-solved-label";
+    if(isSolved&&savedAns)solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${savedAns}</i>`;
+    else if(isSolved)solvedLabel.textContent="✓ Bereits gelöst";
+    wrap.appendChild(solvedLabel);
+
+    if(t.type==='mc'){
+      const prompt=document.createElement("p");prompt.className="prompt";prompt.innerHTML=t.prompt;
+      wrap.appendChild(prompt);
+      const mcBox=document.createElement("div");mcBox.className="mc-options";
+      const letters=['A','B','C','D'];
+      const input=document.createElement("input");input.type="hidden";input.id=`${sectionKey}-input-${idx}`;
+      if(isSolved){input._correct=true;input._done=true;}
+      wrap.appendChild(input);
+      const feedback=document.createElement("div");feedback.className="feedback";
+      let answered=isSolved;
+      const optBtns=[];
+      const optIndices=[...Array(t.options.length).keys()];
+      for(let i=optIndices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[optIndices[i],optIndices[j]]=[optIndices[j],optIndices[i]];}
+      const shuffledOpts=optIndices.map(i=>t.options[i]);
+      const correctIdx=optIndices.indexOf(t.correct);
+      shuffledOpts.forEach((opt,oi)=>{
+        const btn=document.createElement("button");btn.className="mc-opt";btn.type="button";
+        if(isSolved){btn.classList.add('mc-disabled');if(oi===correctIdx)btn.classList.add('mc-correct');}
+        btn.innerHTML=`<span class="mc-letter">${letters[oi]||oi+1}</span><span>${opt}</span>`;
+        btn.addEventListener('click',()=>{
+          if(answered)return;
+          answered=true;
+          optBtns.forEach(b=>b.classList.add('mc-disabled'));
+          if(oi===correctIdx){
+            btn.classList.add('mc-correct');
+            feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+            input._correct=true;input._done=true;input.value=opt;
+            if(!isSolved){const upd=[...solvedTasks,tHash];saveProgress(progressKey,upd);savedAnswers[tHash]=opt;saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${opt}</i>`;}
+          }else{
+            btn.classList.add('mc-wrong');
+            optBtns[correctIdx].classList.add('mc-correct');
+            feedback.textContent="✗ Leider falsch.";feedback.className="feedback bad";
+            input._correct=false;input._done=true;input.value=opt;
+          }
+          if(typeof onStatusChange==='function')onStatusChange();
+        });
+        optBtns.push(btn);
+        mcBox.appendChild(btn);
+      });
+      wrap.appendChild(mcBox);
+      wrap.appendChild(feedback);
+      input._check=()=>{if(!answered){feedback.textContent="Bitte wähle eine Antwort.";feedback.className="feedback warn";return false;}return input._correct;};
+      input._reset=()=>{answered=false;input._correct=false;input._done=false;input.value="";feedback.textContent="";feedback.className="feedback";optBtns.forEach(b=>{b.classList.remove('mc-correct','mc-wrong','mc-selected','mc-disabled');});solvedLabel.textContent='';wrap.classList.remove('task--solved');if(typeof onStatusChange==='function')onStatusChange();};
+      container.appendChild(wrap);
+      return;
+    }
+
+    if(Array.isArray(t.words)){
+      const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+      const correct=(answers[0]||'').replace(/[.?!]$/,'').trim();
+      const punct=answers[0]&&answers[0].slice(-1).match(/[.?!]/)?answers[0].slice(-1):'';
+      let mixed=shuffle([...t.words]);
+      let tries=0;
+      while(mixed.join(' ').toLowerCase()===correct.toLowerCase()&&tries<10){mixed=shuffle([...t.words]);tries++;}
+      if(mixed.join(' ').toLowerCase()===correct.toLowerCase()&&mixed.length>=2){[mixed[0],mixed[1]]=[mixed[1],mixed[0]];}
+      const prompt=document.createElement("p");prompt.className="prompt";prompt.textContent=(t.label||'Ordne')+': Tippe die Wörter in der richtigen Reihenfolge an.';
+      wrap.appendChild(prompt);
+      const input=document.createElement("input");input.type="hidden";input.id=`${sectionKey}-input-${idx}`;
+      if(isSolved){input._correct=true;input._done=true;}
+      wrap.appendChild(input);
+      const sl=document.createElement("div");sl.className="word-tiles-label";sl.textContent="Verfügbare Wörter:";
+      const source=document.createElement("div");source.className="word-tiles wt-source";
+      const tl=document.createElement("div");tl.className="word-tiles-label";tl.style.marginTop="10px";tl.textContent="Dein Satz:";
+      const target=document.createElement("div");target.className="word-tiles wt-target";
+      const feedback=document.createElement("div");feedback.className="feedback";
+      const ctrls=document.createElement("div");ctrls.className="controls";
+      const cb=document.createElement("button");cb.className="btn primary";cb.textContent="Prüfen";cb.type="button";
+      const xb=document.createElement("button");xb.className="btn ghost";xb.textContent="Zurücksetzen";xb.type="button";
+      const hb=document.createElement("button");hb.className="btn ghost";hb.textContent="💡 Tipp zeigen";hb.style.display='none';hb.type="button";
+      const sb=document.createElement("button");sb.className="btn ghost";sb.textContent="Lösung";sb.style.display='none';sb.type="button";
+      const hbox=document.createElement("div");hbox.className="hint-box";
+      const sbox=document.createElement("div");sbox.className="solution";
+      ctrls.appendChild(cb);ctrls.appendChild(xb);
+      if(enableSolution){ctrls.appendChild(hb);ctrls.appendChild(sb);}
+      const placed=[];const srcTiles=[];const tgtTiles=[];
+      let locked=false,fc=0,hs=false;
+      mixed.forEach((word,wi)=>{
+        const tile=document.createElement("button");tile.className="word-tile";tile.type="button";tile.textContent=word;tile.dataset.idx=wi;
+        tile.addEventListener('click',()=>{
+          if(locked)return;
+          tile.classList.add('wt-used');
+          placed.push({word,srcIdx:wi});
+          const pt=document.createElement("button");pt.className="word-tile wt-placed";pt.type="button";pt.textContent=word;
+          pt.addEventListener('click',()=>{
+            if(locked)return;
+            const pi=placed.findIndex(p=>p.srcIdx===wi);
+            if(pi>-1)placed.splice(pi,1);
+            tile.classList.remove('wt-used');
+            pt.remove();
+            updateTgt();
+          });
+          target.appendChild(pt);
+          updateTgt();
+        });
+        source.appendChild(tile);
+        srcTiles.push(tile);
+      });
+      function updateTgt(){tgtTiles.length=0;target.querySelectorAll('.word-tile').forEach(tt=>tgtTiles.push(tt));}
+      const notify=()=>{if(typeof onStatusChange==='function')onStatusChange();};
+      function chk(){
+        if(locked)return input._correct;
+        if(placed.length===0){feedback.textContent="Bitte ordne die Wörter.";feedback.className="feedback warn";return false;}
+        const us=placed.map(p=>p.word).join(' ');
+        const un=normalizeAnswer(us);
+        const okSet=answers.map(normalizeAnswer);
+        if(okSet.some(a=>a===un)){
+          feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+          input._correct=true;input._done=true;locked=true;
+          tgtTiles.forEach(tt=>{tt.classList.remove('wt-placed');tt.classList.add('wt-correct');});
+          if(!isSolved){const upd=[...solvedTasks,tHash];saveProgress(progressKey,upd);savedAnswers[tHash]=us+punct;saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${us}${punct}</i>`;}
+          notify();return true;
+        }else{
+          fc++;
+          const h=analyzeError(us,answers);
+          if(h&&fc<=2){feedback.innerHTML=`✗ Das passt noch nicht. ${h}`;feedback.className="feedback bad";}
+          else{feedback.textContent="✗ Das passt noch nicht. Versuche es erneut.";feedback.className="feedback bad";}
+          tgtTiles.forEach(tt=>{tt.classList.add('wt-wrong');setTimeout(()=>tt.classList.remove('wt-wrong'),500);});
+          if(enableSolution){if(fc>=2&&!hs)hb.style.display="inline-flex";if(fc>=3||(hs&&fc>=2))sb.style.display="inline-flex";}
+          input._correct=false;notify();return false;
+        }
+      }
+      cb.addEventListener('click',()=>chk());
+      xb.addEventListener('click',()=>{if(locked)return;placed.length=0;target.innerHTML='';tgtTiles.length=0;srcTiles.forEach(tt=>tt.classList.remove('wt-used'));feedback.textContent='';feedback.className='feedback';});
+      hb.addEventListener('click',()=>{hs=true;hb.style.display='none';const p=buildPartialHint(answers[0]||'');hbox.innerHTML=p?`💡 <b>Tipp:</b> Fang so an: <i>${p} …</i>`:`💡 <b>Tipp:</b> Schau dir die Regel im Akkordeon-Kopf an.`;hbox.style.display='block';});
+      sb.addEventListener('click',()=>{input._done=true;notify();sbox.style.display='block';locked=true;sbox.innerHTML=`<b>Lösung:</b> ${answers[0]||''}`;});
+      wrap.appendChild(sl);wrap.appendChild(source);
+      wrap.appendChild(tl);wrap.appendChild(target);
+      wrap.appendChild(ctrls);wrap.appendChild(feedback);wrap.appendChild(hbox);wrap.appendChild(sbox);
+      container.appendChild(wrap);
+      input._check=chk;
+      input._reset=()=>{locked=false;placed.length=0;target.innerHTML='';tgtTiles.length=0;srcTiles.forEach(tt=>tt.classList.remove('wt-used'));input._correct=false;input._done=false;fc=0;hs=false;feedback.textContent='';feedback.className='feedback';hb.style.display='none';hbox.style.display='none';hbox.textContent='';sb.style.display='none';sbox.style.display='none';sbox.textContent='';solvedLabel.textContent='';wrap.classList.remove('task--solved');notify();};
+      return;
+    }
+
+    let promptHTML=t.prompt||"";
+    promptHTML=shufflePromptSlashList(promptHTML);
+    const prompt=document.createElement("p");prompt.className="prompt";prompt.innerHTML=promptHTML;
+    const input=document.createElement("input");input.type="text";input.id=`${sectionKey}-input-${idx}`;
+    input.setAttribute("aria-label","Antwort eingeben");
+    input.placeholder=t.placeholder||"Antwort eingeben …";
+    if(isSolved){input._correct=true;input._done=true;input.value=savedAns;}
+    const ctrls=document.createElement("div");ctrls.className="controls";
+    const cb=document.createElement("button");cb.className="btn primary";cb.textContent="Prüfen";cb.type="button";
+    const hb=document.createElement("button");hb.className="btn ghost";hb.textContent="💡 Tipp zeigen";hb.style.display='none';hb.type="button";
+    const sb=document.createElement("button");sb.className="btn ghost";sb.textContent="Lösung anzeigen";sb.style.display='none';sb.type="button";
+    const feedback=document.createElement("div");feedback.className="feedback";
+    const hbox=document.createElement("div");hbox.className="hint-box";
+    const sbox=document.createElement("div");sbox.className="solution";
+    ctrls.appendChild(cb);
+    if(enableSolution){ctrls.appendChild(hb);ctrls.appendChild(sb);}
+    wrap.appendChild(prompt);wrap.appendChild(input);wrap.appendChild(ctrls);wrap.appendChild(feedback);wrap.appendChild(hbox);wrap.appendChild(sbox);
+    container.appendChild(wrap);
+    const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+    const notify=()=>{if(typeof onStatusChange==='function')onStatusChange();};
+    let fc=0,hs=false;
+    function chk(batch){
+      const u=normalizeAnswer(input.value);
+      const okSet=answers.map(normalizeAnswer);
+      if(!u){feedback.textContent="Bitte gib eine Lösung ein.";feedback.className="feedback warn";input._correct=false;notify();return false;}
+      if(okSet.some(a=>a===u)){
+        feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+        input._correct=true;input._done=true;fc=0;
+        if(!isSolved){const upd=[...solvedTasks,tHash];saveProgress(progressKey,upd);savedAnswers[tHash]=input.value.trim();saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${input.value.trim()}</i>`;}
+        notify();
+        if(!batch){const all=Array.from(container.querySelectorAll("input[type='text']"));const next=all[all.indexOf(input)+1];if(next)setTimeout(()=>{next.focus();next.scrollIntoView({behavior:'smooth',block:'nearest'});},150);}
+        return true;
+      }
+      fc++;
+      const h=analyzeError(input.value,answers);
+      if(h&&fc<=2){feedback.innerHTML=`✗ Das passt noch nicht. ${h}`;feedback.className="feedback bad";}
+      else{feedback.textContent="✗ Das passt noch nicht. Versuche es erneut.";feedback.className="feedback bad";}
+      if(enableSolution){if(fc>=2&&!hs)hb.style.display="inline-flex";if(fc>=3||(hs&&fc>=2))sb.style.display="inline-flex";}
+      input._correct=false;notify();return false;
+    }
+    cb.addEventListener("click",()=>chk(false));
+    input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();chk(false);}});
+    hb.addEventListener("click",()=>{hs=true;hb.style.display='none';const p=buildPartialHint(answers[0]||'');hbox.innerHTML=p?`💡 <b>Tipp:</b> Fang so an: <i>${p} …</i>`:`💡 <b>Tipp:</b> Schau dir die Regel im Akkordeon-Kopf an.`;hbox.style.display='block';input.focus();});
+    sb.addEventListener("click",()=>{input._done=true;notify();sbox.style.display="block";let h=`<b>Lösung:</b> ${answers[0]||''}`;if(t.explanation)h+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">${t.explanation}</div>`;sbox.innerHTML=h;});
+    input._check=chk;
+    input._reset=()=>{input.value="";input._correct=false;input._done=false;fc=0;hs=false;notify();feedback.textContent="";feedback.className="feedback";hb.style.display='none';hbox.style.display='none';hbox.textContent='';sb.style.display='none';sbox.style.display="none";sbox.textContent="";solvedLabel.textContent='';wrap.classList.remove('task--solved');};
+  });
+}
+
+function setupSection(sk,lvBtns,cont,pools,checkAll,reset,enableSol,total){
+  total=total||15;
+  const root=document.querySelector(`#${sk}-progress .progress`);
+  const ctrl=initProgressBar(root,total);
+  let cur=1;const cache={};
+  function upd(){const i=cont.querySelectorAll(".task input");let c=0,d=0;i.forEach(x=>{if(x._correct)c++;if(x._done)d++;});ctrl.update(c,d);if(c===i.length&&i.length>0)checkCelebration(cont);}
+  const render=lvl=>{cur=lvl;lvBtns.querySelectorAll('button').forEach(b=>{const a=+b.dataset.level===lvl;b.classList.toggle('active',a);b.setAttribute('aria-pressed',a?'true':'false');});cont.querySelectorAll('.result-banner,.error-list,.celebrate-banner').forEach(b=>b.remove());if(!cache[lvl]){const k=`${sk}_L${lvl}`;const d=document.createElement('div');renderTasks(d,pickRandom(pools[lvl],total,k),sk,{enableSolution:enableSol,onStatusChange:upd,currentLevel:lvl});cache[lvl]=d;}Object.values(cache).forEach(d=>{if(d.parentNode===cont)cont.removeChild(d);});cont.appendChild(cache[lvl]);ctrl.setTotal(cache[lvl].querySelectorAll(".task input").length);upd();const has=cache[lvl].querySelector('input[type="text"]')!==null;checkAll.style.display=has?'':'none';};
+  lvBtns.addEventListener('click',e=>{const b=e.target.closest('button[data-level]');if(!b)return;render(+b.dataset.level);});
+  checkAll.addEventListener('click',()=>{const i=cont.querySelectorAll(".task input");let ok=0,t=0;i.forEach(x=>{if(typeof x._check==='function'){t++;if(x._check(true))ok++;}});upd();if(t>0){cont.querySelectorAll('.result-banner').forEach(b=>b.remove());i.forEach(x=>{const w=x.closest('.task');if(!w)return;if(x._correct)w.classList.remove('task--wrong');else if(x.value&&x.value.trim())w.classList.add('task--wrong');});const pct=Math.round(ok/t*100);const b=document.createElement('div');b.className='result-banner';const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';const em=pct===100?'🏆':pct>=60?'👍':'💪';b.style.cssText=`margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid ${col};background:${col}18;font-size:15px;font-weight:700;color:${col};display:flex;align-items:center;gap:10px;`;b.innerHTML=`<span style="font-size:22px">${em}</span><span>Ergebnis: <b>${ok} / ${t}</b> richtig (${pct}%)</span>`;cont.prepend(b);setTimeout(()=>b.scrollIntoView({behavior:'smooth',block:'nearest'}),80);}});
+  reset.addEventListener('click',()=>{customConfirm('Fortschritt zurücksetzen?',()=>{cont.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());cont.querySelectorAll('.task--wrong').forEach(t=>t.classList.remove('task--wrong'));cont.querySelectorAll(".task input").forEach(x=>{if(typeof x._reset==='function')x._reset();});[1,2,3].forEach(l=>{saveProgress(sk+'_L'+l,[]);saveProgress(sk+'_L'+l+'_ans',{});});upd();});});
+  const rb=document.getElementById(`${sk}-reroll`);
+  if(rb)rb.addEventListener('click',()=>{ctrl.resetAnimated();const o=cache[cur];if(o&&o.parentNode===cont)cont.removeChild(o);delete cache[cur];const k=`${sk}_L${cur}`;saveProgress('pick_'+k,null);saveProgress(k,[]);saveProgress(k+'_ans',{});render(cur);setTimeout(()=>{cont.querySelectorAll('.celebrate-banner').forEach(b=>b.remove());cont.querySelectorAll('.task input').forEach(x=>{x._correct=false;x._done=false;});upd();},10);});
+  render(1);
+}
+
+function setupSimpleSection(sk,cont,pool,checkAll,reset,total){
+  total=total||15;
+  const root=document.querySelector('#'+sk+'-progress .progress');
+  const ctrl=initProgressBar(root,total);
+  let cache=null;
+  function upd(){const i=cont.querySelectorAll('.task input');let c=0,d=0;i.forEach(x=>{if(x._correct)c++;if(x._done)d++;});ctrl.update(c,d);if(c===i.length&&i.length>0)checkCelebration(cont);}
+  function render(){cont.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());const k=sk+'_L1';const d=document.createElement('div');renderTasks(d,pickRandom(pool,total,k),sk,{enableSolution:true,onStatusChange:upd,currentLevel:1});cache=d;if(cont.firstChild)cont.innerHTML='';cont.prepend(d);ctrl.setTotal(d.querySelectorAll('.task input').length);upd();const has=d.querySelector('input[type="text"]')!==null;checkAll.style.display=has?'':'none';}
+  checkAll.addEventListener('click',()=>{const i=cont.querySelectorAll('.task input');let ok=0,t=0;i.forEach(x=>{if(typeof x._check==='function'){t++;if(x._check(true))ok++;}});upd();if(t>0){cont.querySelectorAll('.result-banner').forEach(b=>b.remove());i.forEach(x=>{const w=x.closest('.task');if(!w)return;if(x._correct)w.classList.remove('task--wrong');else if(x.value&&x.value.trim())w.classList.add('task--wrong');});const pct=Math.round(ok/t*100);const b=document.createElement('div');b.className='result-banner';const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';const em=pct===100?'🏆':pct>=60?'👍':'💪';b.style.cssText='margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid '+col+';background:'+col+'18;font-size:15px;font-weight:700;color:'+col+';display:flex;align-items:center;gap:10px;';b.innerHTML='<span style="font-size:22px">'+em+'</span><span>Ergebnis: <b>'+ok+' / '+t+'</b> richtig ('+pct+'%)</span>';cont.prepend(b);setTimeout(()=>b.scrollIntoView({behavior:'smooth',block:'nearest'}),80);}});
+  reset.addEventListener('click',()=>{customConfirm('Fortschritt zurücksetzen?',()=>{cont.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());cont.querySelectorAll('.task--wrong').forEach(t=>t.classList.remove('task--wrong'));cont.querySelectorAll('.task input').forEach(x=>{if(typeof x._reset==='function')x._reset();});saveProgress(sk+'_L1',[]);saveProgress(sk+'_L1_ans',{});saveProgress('pick_'+sk+'_L1',null);upd();});});
+  const rb=document.getElementById(sk+'-reroll');
+  if(rb)rb.addEventListener('click',()=>{ctrl.resetAnimated();if(cache&&cache.parentNode===cont)cont.removeChild(cache);cache=null;const k=sk+'_L1';saveProgress('pick_'+k,null);saveProgress(k,[]);saveProgress(k+'_ans',{});render();});
+  render();
+}
+
+// ===== AUFGABEN-POOLS =====
+
+// ---- BILD L1: Bildung erkennen (MC + Ordne) ----
+const bildL1=[
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>slow</b>?",options:["slowy","slowly","slower","slow"],correct:1,answer:"slowly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>quick</b>?",options:["quick","quicker","quickly","quickness"],correct:2,answer:"quickly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>clear</b>?",options:["clearer","clearly","cleary","clean"],correct:1,answer:"clearly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>nervous</b>?",options:["nervously","nervous","nerously","nervouser"],correct:0,answer:"nervously"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>sad</b>?",options:["sad","sadder","sady","sadly"],correct:3,answer:"sadly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>careful</b>?",options:["careful","carefuly","carefuly","carefully"],correct:3,answer:"carefully"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>loud</b>?",options:["lout","loudly","loudly","louder"],correct:1,answer:"loudly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>polite</b>?",options:["politly","polite","politely","politness"],correct:2,answer:"politely"},
+  {type:"mc",prompt:"Wie bildet man die meisten Adverbien?",options:["Adjektiv + er","Adjektiv + ly","Adjektiv + ed","Adjektiv + s"],correct:1,answer:"Adjektiv + ly"},
+  {type:"mc",prompt:"Welches Wort ist ein <b>Adverb</b>?",options:["slow","slower","slowly","slowness"],correct:2,answer:"slowly"},
+  {type:"mc",prompt:"Welches Wort ist ein <b>Adverb</b>?",options:["careful","carefully","carefulness","more careful"],correct:1,answer:"carefully"},
+  {type:"mc",prompt:"Was beschreiben Adverbien der Art und Weise?",options:["wann etwas geschieht","wo etwas geschieht","wie etwas geschieht","wer etwas macht"],correct:2,answer:"wie etwas geschieht"},
+  {type:"mc",prompt:"<i>She speaks very ___.</i> – Was passt?",options:["clear","clearly","clearer","cleary"],correct:1,answer:"clearly"},
+  {type:"mc",prompt:"<i>He runs ___.</i> – Was passt?",options:["quick","quicker","quickly","quickest"],correct:2,answer:"quickly"},
+  {words:["She","speaks","slowly","and","clearly","."],answer:["She speaks slowly and clearly."],label:"Aussagesatz"},
+  {words:["The","children","play","quietly","."],answer:["The children play quietly."],label:"Aussagesatz"},
+  {words:["My","brother","sings","loudly","."],answer:["My brother sings loudly."],label:"Aussagesatz"},
+  {words:["The","cat","walks","carefully","."],answer:["The cat walks carefully."],label:"Aussagesatz"},
+  {words:["Please","drive","slowly","!"],answer:["Please drive slowly!"],label:"Bitte"},
+  {words:["He","answers","politely","."],answer:["He answers politely."],label:"Aussagesatz"},
+];
+
+// ---- BILD L2: Adverben bilden (Lückentext) ----
+const bildL2=[
+  {prompt:"Bilde das Adverb von <b>slow</b>:",answer:["slowly"],placeholder:"slowly",explanation:"💡 slow + ly → <b>slowly</b>."},
+  {prompt:"Bilde das Adverb von <b>quick</b>:",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick + ly → <b>quickly</b>."},
+  {prompt:"Bilde das Adverb von <b>clear</b>:",answer:["clearly"],placeholder:"clearly",explanation:"💡 clear + ly → <b>clearly</b>."},
+  {prompt:"Bilde das Adverb von <b>careful</b>:",answer:["carefully"],placeholder:"carefully",explanation:"💡 careful + ly → <b>carefully</b>."},
+  {prompt:"Bilde das Adverb von <b>nervous</b>:",answer:["nervously"],placeholder:"nervously",explanation:"💡 nervous + ly → <b>nervously</b>."},
+  {prompt:"Bilde das Adverb von <b>loud</b>:",answer:["loudly"],placeholder:"loudly",explanation:"💡 loud + ly → <b>loudly</b>."},
+  {prompt:"Bilde das Adverb von <b>polite</b>:",answer:["politely"],placeholder:"politely",explanation:"💡 polite + ly → <b>politely</b>."},
+  {prompt:"Bilde das Adverb von <b>quiet</b>:",answer:["quietly"],placeholder:"quietly",explanation:"💡 quiet + ly → <b>quietly</b>."},
+  {prompt:"Bilde das Adverb von <b>safe</b>:",answer:["safely"],placeholder:"safely",explanation:"💡 safe + ly → <b>safely</b>."},
+  {prompt:"Bilde das Adverb von <b>kind</b>:",answer:["kindly"],placeholder:"kindly",explanation:"💡 kind + ly → <b>kindly</b>."},
+  {prompt:"Ergänze: <i>Please speak ___ (slow).</i>",answer:["slowly"],placeholder:"slowly",explanation:"💡 slow + ly → <b>slowly</b>."},
+  {prompt:"Ergänze: <i>The dog barks ___ (loud).</i>",answer:["loudly"],placeholder:"loudly",explanation:"💡 loud + ly → <b>loudly</b>."},
+  {prompt:"Ergänze: <i>She smiles ___ (nice).</i>",answer:["nicely"],placeholder:"nicely",explanation:"💡 nice + ly → <b>nicely</b>."},
+  {prompt:"Ergänze: <i>He works ___ (quick).</i>",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick + ly → <b>quickly</b>."},
+  {prompt:"Ergänze: <i>They listen ___ (careful).</i>",answer:["carefully"],placeholder:"carefully",explanation:"💡 careful + ly → <b>carefully</b>."},
+];
+
+// ---- BILD L3: Umformen (Adjektiv-Satz → Adverb-Satz) ----
+const bildL3=[
+  {prompt:"Forme um: <i>He is a slow runner.</i> → He runs ___.",answer:["slowly"],placeholder:"slowly",explanation:"💡 slow → slowly. Vor dem Verb das Adjektiv, nach dem Verb das Adverb."},
+  {prompt:"Forme um: <i>She is a careful driver.</i> → She drives ___.",answer:["carefully"],placeholder:"carefully",explanation:"💡 careful → carefully."},
+  {prompt:"Forme um: <i>Tom is a quick reader.</i> → Tom reads ___.",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick → quickly."},
+  {prompt:"Forme um: <i>She is a nervous speaker.</i> → She speaks ___.",answer:["nervously"],placeholder:"nervously",explanation:"💡 nervous → nervously."},
+  {prompt:"Forme um: <i>He is a polite child.</i> → He answers ___.",answer:["politely"],placeholder:"politely",explanation:"💡 polite → politely."},
+  {prompt:"Forme um: <i>Anna is a clear speaker.</i> → Anna speaks ___.",answer:["clearly"],placeholder:"clearly",explanation:"💡 clear → clearly."},
+  {prompt:"Forme um: <i>The children are quiet.</i> → The children play ___.",answer:["quietly"],placeholder:"quietly",explanation:"💡 quiet → quietly."},
+  {prompt:"Forme um: <i>He is a loud singer.</i> → He sings ___.",answer:["loudly"],placeholder:"loudly",explanation:"💡 loud → loudly."},
+  {prompt:"Bilde einen Satz mit dem Adverb: <i>(she / sing / beautiful)</i>",answer:["She sings beautifully."],placeholder:"She sings beautifully.",explanation:"💡 beautiful → beautifully."},
+  {prompt:"Bilde einen Satz mit dem Adverb: <i>(he / drive / safe)</i>",answer:["He drives safely."],placeholder:"He drives safely.",explanation:"💡 safe → safely."},
+  {prompt:"Korrigiere: <i>He runs quick.</i>",answer:["He runs quickly."],placeholder:"He runs quickly.",explanation:"💡 Nach einem Verb braucht es ein <b>Adverb</b>: quick → <b>quickly</b>."},
+  {prompt:"Korrigiere: <i>She speaks slow.</i>",answer:["She speaks slowly."],placeholder:"She speaks slowly.",explanation:"💡 Nach einem Verb braucht es ein <b>Adverb</b>: slow → <b>slowly</b>."},
+  {prompt:"Korrigiere: <i>The cat moves quiet.</i>",answer:["The cat moves quietly."],placeholder:"The cat moves quietly.",explanation:"💡 quiet → <b>quietly</b> (Adverb nach moves)."},
+  {prompt:"Korrigiere: <i>He plays the piano nice.</i>",answer:["He plays the piano nicely."],placeholder:"He plays the piano nicely.",explanation:"💡 nice → <b>nicely</b> (wie spielt er?)."},
+  {prompt:"Korrigiere: <i>I can read this clear.</i>",answer:["I can read this clearly."],placeholder:"I can read this clearly.",explanation:"💡 clear → <b>clearly</b>."},
+];
+
+// ---- SPECIAL POOL: Schreibänderungen (-y → -ily, full → fully) ----
+const specialPool=[
+  {type:"mc",prompt:"Adverb von <b>happy</b>?",options:["happyly","happily","happly","happyfully"],correct:1,answer:"happily"},
+  {type:"mc",prompt:"Adverb von <b>angry</b>?",options:["angrly","angryly","angrily","angerly"],correct:2,answer:"angrily"},
+  {type:"mc",prompt:"Adverb von <b>easy</b>?",options:["easyly","easily","easly","easely"],correct:1,answer:"easily"},
+  {type:"mc",prompt:"Adverb von <b>lucky</b>?",options:["luckly","luckyly","luckily","lucklily"],correct:2,answer:"luckily"},
+  {type:"mc",prompt:"Adverb von <b>busy</b>?",options:["busly","busyly","busily","busiley"],correct:2,answer:"busily"},
+  {type:"mc",prompt:"Adverb von <b>full</b>?",options:["fullly","fuly","fully","fulles"],correct:2,answer:"fully"},
+  {type:"mc",prompt:"Wie wird <b>angry</b> zum Adverb?",options:["angry + ly","y → ily","y bleibt + ly","y wird zu er"],correct:1,answer:"y → ily"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She smiled happyly.","She smiled happly.","She smiled happily.","She smiled happyfully."],correct:2,answer:"She smiled happily."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["The bottle is full.","I trust him fullly.","I trust him fully.","I trust him fuly."],correct:2,answer:"I trust him fully."},
+  {prompt:"Bilde das Adverb von <b>happy</b>:",answer:["happily"],placeholder:"happily",explanation:"💡 happy → -y wird zu -ily → <b>happily</b>."},
+  {prompt:"Bilde das Adverb von <b>angry</b>:",answer:["angrily"],placeholder:"angrily",explanation:"💡 angry → <b>angrily</b> (-y → -ily)."},
+  {prompt:"Bilde das Adverb von <b>easy</b>:",answer:["easily"],placeholder:"easily",explanation:"💡 easy → <b>easily</b>."},
+  {prompt:"Bilde das Adverb von <b>noisy</b>:",answer:["noisily"],placeholder:"noisily",explanation:"💡 noisy → <b>noisily</b> (-y → -ily)."},
+  {prompt:"Bilde das Adverb von <b>lazy</b>:",answer:["lazily"],placeholder:"lazily",explanation:"💡 lazy → <b>lazily</b>."},
+  {prompt:"Bilde das Adverb von <b>full</b>:",answer:["fully"],placeholder:"fully",explanation:"💡 full + ly → <b>fully</b> (ein l fällt weg)."},
+  {prompt:"Korrigiere: <i>The baby smiled happyly.</i>",answer:["The baby smiled happily."],placeholder:"happily",explanation:"💡 -y → -ily: happy → <b>happily</b>."},
+  {prompt:"Korrigiere: <i>He looked at me angryly.</i>",answer:["He looked at me angrily."],placeholder:"angrily",explanation:"💡 angry → <b>angrily</b>."},
+  {prompt:"Korrigiere: <i>She passed the test easyly.</i>",answer:["She passed the test easily."],placeholder:"easily",explanation:"💡 easy → <b>easily</b>."},
+];
+
+// ---- AUS POOL: Ausnahmen (good→well, hard, fast) ----
+const ausPool=[
+  {type:"mc",prompt:"Adverb von <b>good</b>?",options:["goodly","gooderly","wellly","well"],correct:3,answer:"well"},
+  {type:"mc",prompt:"Adverb von <b>hard</b>?",options:["hardly","hard","hardily","hardier"],correct:1,answer:"hard"},
+  {type:"mc",prompt:"Adverb von <b>fast</b>?",options:["fastly","faster","fast","fastily"],correct:2,answer:"fast"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She sings goodly.","She sings well.","She sings gooder.","She sings goody."],correct:1,answer:"She sings well."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["He works hardly.","He works hardily.","He works hard.","He works harder."],correct:2,answer:"He works hard."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["The car drives fastly.","The car drives fast.","The car drives faster.","The car drives fastily."],correct:1,answer:"The car drives fast."},
+  {type:"mc",prompt:"Was bedeutet <b>hardly</b>?",options:["sehr stark","kaum","mit harter Arbeit","ständig"],correct:1,answer:"kaum"},
+  {type:"mc",prompt:"<i>Scout sings very ___.</i> – Was passt?",options:["good","goodly","well","gooder"],correct:2,answer:"well"},
+  {prompt:"Bilde das Adverb von <b>good</b>:",answer:["well"],placeholder:"well",explanation:"💡 Ausnahme! good → <b>well</b> (NICHT goodly)."},
+  {prompt:"Bilde das Adverb von <b>hard</b>:",answer:["hard"],placeholder:"hard",explanation:"💡 hard ist Adjektiv UND Adverb. <i>hardly</i> bedeutet „kaum“!"},
+  {prompt:"Bilde das Adverb von <b>fast</b>:",answer:["fast"],placeholder:"fast",explanation:"💡 fast ist Adjektiv UND Adverb (kein -ly!)."},
+  {prompt:"Ergänze: <i>She did her job ___ (good).</i>",answer:["well"],placeholder:"well",explanation:"💡 good → <b>well</b> (Ausnahme!)."},
+  {prompt:"Ergänze: <i>He worked ___ (hard) all day.</i>",answer:["hard"],placeholder:"hard",explanation:"💡 hard ist Adjektiv = Adverb."},
+  {prompt:"Ergänze: <i>The children run ___ (fast).</i>",answer:["fast"],placeholder:"fast",explanation:"💡 fast ist Adjektiv = Adverb (kein -ly!)."},
+  {prompt:"Korrigiere: <i>She speaks English goodly.</i>",answer:["She speaks English well."],placeholder:"well",explanation:"💡 good → <b>well</b>, NICHT goodly."},
+  {prompt:"Korrigiere: <i>He runs very fastly.</i>",answer:["He runs very fast."],placeholder:"fast",explanation:"💡 fast bleibt fast (kein -ly)."},
+  {prompt:"Korrigiere: <i>I studied hardly for the test.</i>",answer:["I studied hard for the test."],placeholder:"hard",explanation:"💡 <b>hard</b> = mit Anstrengung. <i>hardly</i> = kaum!"},
+];
+
+// ---- VS L1: Adjektiv vs. Adverb erkennen ----
+const vsL1=[
+  {type:"mc",prompt:"<i>She is a careful driver.</i> – <b>careful</b> ist …",options:["Adjektiv","Adverb","Verb","Nomen"],correct:0,answer:"Adjektiv"},
+  {type:"mc",prompt:"<i>She drives carefully.</i> – <b>carefully</b> ist …",options:["Adjektiv","Adverb","Verb","Nomen"],correct:1,answer:"Adverb"},
+  {type:"mc",prompt:"Adjektive stehen meist …",options:["nach dem Verb","vor dem Nomen","am Satzanfang","am Satzende"],correct:1,answer:"vor dem Nomen"},
+  {type:"mc",prompt:"Adverben stehen meist …",options:["vor dem Nomen","nach dem Verb","am Satzanfang","vor dem Subjekt"],correct:1,answer:"nach dem Verb"},
+  {type:"mc",prompt:"<i>He is a slow runner.</i> – Welches Wort wäre als Adverb richtig?",options:["slow","slower","slowly","slowness"],correct:2,answer:"slowly"},
+  {type:"mc",prompt:"<i>The dog is loud.</i> – Welche Form wäre als Adverb in einem anderen Satz nötig?",options:["loudly","louder","loud","loudness"],correct:0,answer:"loudly"},
+  {type:"mc",prompt:"<i>She is a happy child.</i> – <b>happy</b> beschreibt …",options:["wie sie etwas tut","das Kind","das Verb","das Subjekt"],correct:1,answer:"das Kind"},
+  {type:"mc",prompt:"<i>She smiles happily.</i> – <b>happily</b> beschreibt …",options:["das Kind","das Verb (smiles)","das Nomen","Zeit"],correct:1,answer:"das Verb (smiles)"},
+  {type:"mc",prompt:"In welchem Satz steht ein Adverb?",options:["The cake is delicious.","She sings beautifully.","He is a good student.","They are quiet kids."],correct:1,answer:"She sings beautifully."},
+  {type:"mc",prompt:"In welchem Satz steht ein Adjektiv?",options:["She speaks clearly.","He runs fast.","Tom is a clever boy.","They work hard."],correct:2,answer:"Tom is a clever boy."},
+  {type:"mc",prompt:"<i>The music is loud.</i> – Was beschreibt <b>loud</b>?",options:["das Verb","die Musik (Nomen)","die Zeit","den Ort"],correct:1,answer:"die Musik (Nomen)"},
+  {type:"mc",prompt:"<i>The music plays loudly.</i> – Was beschreibt <b>loudly</b>?",options:["die Musik","wie das Verb 'plays' geschieht","den Ort","den Sänger"],correct:1,answer:"wie das Verb 'plays' geschieht"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She drives careful.","She drives carefully.","She drive carefully.","She a carefully driver."],correct:1,answer:"She drives carefully."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["He is a slowly runner.","He is a slow runner.","He runs slow.","He is slow run."],correct:1,answer:"He is a slow runner."},
+];
+
+// ---- VS L2: Lückentext (Adj oder Adv?) ----
+const vsL2=[
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (careful) driver.</i>",answer:["careful"],placeholder:"careful / carefully",explanation:"💡 Vor einem Nomen → Adjektiv: <b>careful</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She drives ___ (careful).</i>",answer:["carefully"],placeholder:"careful / carefully",explanation:"💡 Nach einem Verb → Adverb: <b>carefully</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He is a ___ (slow) runner.</i>",answer:["slow"],placeholder:"slow / slowly",explanation:"💡 Vor dem Nomen → Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>He runs ___ (slow).</i>",answer:["slowly"],placeholder:"slow / slowly",explanation:"💡 Nach dem Verb → Adverb."},
+  {prompt:"Setze die richtige Form ein: <i>The dog is ___ (loud).</i>",answer:["loud"],placeholder:"loud / loudly",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>loud</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The dog barks ___ (loud).</i>",answer:["loudly"],placeholder:"loud / loudly",explanation:"💡 Nach einem Verb (außer be) → Adverb: <b>loudly</b>."},
+  {prompt:"Setze die richtige Form ein: <i>This is an ___ (easy) test.</i>",answer:["easy"],placeholder:"easy / easily",explanation:"💡 Vor dem Nomen → Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>I solved the test ___ (easy).</i>",answer:["easily"],placeholder:"easy / easily",explanation:"💡 Nach dem Verb → Adverb: <b>easily</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (good) singer.</i>",answer:["good"],placeholder:"good / well",explanation:"💡 Vor dem Nomen → Adjektiv: <b>good</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She sings ___ (good).</i>",answer:["well"],placeholder:"good / well",explanation:"💡 Nach dem Verb → Adverb: <b>well</b> (Ausnahme!)."},
+  {prompt:"Setze die richtige Form ein: <i>He is a ___ (hard) worker.</i>",answer:["hard"],placeholder:"hard",explanation:"💡 Vor dem Nomen → Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>He works ___ (hard).</i>",answer:["hard"],placeholder:"hard",explanation:"💡 hard ist Adverb = Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>The baby smiles ___ (happy).</i>",answer:["happily"],placeholder:"happy / happily",explanation:"💡 Nach dem Verb → Adverb: <b>happily</b> (-y → -ily)."},
+  {prompt:"Setze die richtige Form ein: <i>The baby is ___ (happy).</i>",answer:["happy"],placeholder:"happy / happily",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>happy</b>."},
+  {prompt:"Setze die richtige Form ein: <i>Please be ___ (quiet)!</i>",answer:["quiet"],placeholder:"quiet / quietly",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>quiet</b>."},
+];
+
+// ---- VS L3: Fehlerkorrektur ----
+const vsL3=[
+  {prompt:"Korrigiere: <i>She drives careful.</i>",answer:["She drives carefully."],placeholder:"carefully",explanation:"💡 Nach einem Verb braucht es ein Adverb: <b>carefully</b>."},
+  {prompt:"Korrigiere: <i>He is a slowly runner.</i>",answer:["He is a slow runner."],placeholder:"slow",explanation:"💡 Vor einem Nomen braucht es ein Adjektiv: <b>slow</b>."},
+  {prompt:"Korrigiere: <i>She speaks English very good.</i>",answer:["She speaks English very well."],placeholder:"well",explanation:"💡 Adverb von good ist <b>well</b>."},
+  {prompt:"Korrigiere: <i>He answers polite.</i>",answer:["He answers politely."],placeholder:"politely",explanation:"💡 Nach dem Verb → Adverb: <b>politely</b>."},
+  {prompt:"Korrigiere: <i>The music is loudly.</i>",answer:["The music is loud."],placeholder:"loud",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>loud</b>."},
+  {prompt:"Korrigiere: <i>She is a happily child.</i>",answer:["She is a happy child."],placeholder:"happy",explanation:"💡 Vor dem Nomen → Adjektiv: <b>happy</b>."},
+  {prompt:"Korrigiere: <i>The cat moves quiet through the garden.</i>",answer:["The cat moves quietly through the garden."],placeholder:"quietly",explanation:"💡 Nach dem Verb → Adverb: <b>quietly</b>."},
+  {prompt:"Korrigiere: <i>He runs fastly.</i>",answer:["He runs fast."],placeholder:"fast",explanation:"💡 fast bleibt fast (kein -ly!)."},
+  {prompt:"Korrigiere: <i>Please listen careful!</i>",answer:["Please listen carefully!"],placeholder:"carefully",explanation:"💡 Nach einem Verb → Adverb: <b>carefully</b>."},
+  {prompt:"Korrigiere: <i>She works very hardly.</i>",answer:["She works very hard."],placeholder:"hard",explanation:"💡 hard bleibt hard (Adv = Adj). <i>hardly</i> = kaum!"},
+  {prompt:"Korrigiere: <i>He sings beautiful.</i>",answer:["He sings beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>She is a good singer and sings good.</i>",answer:["She is a good singer and sings well."],placeholder:"good … well",explanation:"💡 vor Nomen <b>good</b>, nach Verb <b>well</b>."},
+];
+
+// ---- MIX POOL: Gemischt + Fehlerkorrektur ----
+const mixPool=[
+  {type:"mc",prompt:"<i>Please drive ___.</i>",options:["careful","carefuly","carefuly","carefully"],correct:3,answer:"carefully"},
+  {type:"mc",prompt:"<i>She sings very ___.</i>",options:["good","goodly","well","gooder"],correct:2,answer:"well"},
+  {type:"mc",prompt:"<i>The baby smiled ___.</i>",options:["happyly","happly","happily","happy"],correct:2,answer:"happily"},
+  {type:"mc",prompt:"<i>The bus drives ___.</i>",options:["fastly","fast","faster","fastily"],correct:1,answer:"fast"},
+  {type:"mc",prompt:"<i>He works ___ every day.</i>",options:["hardly","hard","hardier","hardily"],correct:1,answer:"hard"},
+  {type:"mc",prompt:"<i>I trust him ___.</i>",options:["fullly","fuly","fully","fulles"],correct:2,answer:"fully"},
+  {prompt:"Bilde das Adverb von <b>quick</b>:",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick + ly → quickly."},
+  {prompt:"Bilde das Adverb von <b>good</b>:",answer:["well"],placeholder:"well",explanation:"💡 Ausnahme: good → <b>well</b>."},
+  {prompt:"Bilde das Adverb von <b>angry</b>:",answer:["angrily"],placeholder:"angrily",explanation:"💡 angry → angrily (-y → -ily)."},
+  {prompt:"Bilde das Adverb von <b>fast</b>:",answer:["fast"],placeholder:"fast",explanation:"💡 fast bleibt fast (kein -ly)."},
+  {prompt:"Korrigiere: <i>She speaks slow.</i>",answer:["She speaks slowly."],placeholder:"slowly",explanation:"💡 Nach Verb → Adverb: <b>slowly</b>."},
+  {prompt:"Korrigiere: <i>He works hardly.</i>",answer:["He works hard."],placeholder:"hard",explanation:"💡 hardly = kaum. Hier: <b>hard</b> = mit Anstrengung."},
+  {prompt:"Korrigiere: <i>She sings goodly.</i>",answer:["She sings well."],placeholder:"well",explanation:"💡 Adverb von good ist <b>well</b>."},
+  {prompt:"Korrigiere: <i>He is a slowly runner.</i>",answer:["He is a slow runner."],placeholder:"slow",explanation:"💡 Vor Nomen → Adjektiv: <b>slow</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The children play ___ (quiet).</i>",answer:["quietly"],placeholder:"quietly",explanation:"💡 Nach Verb → Adverb."},
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (careful) driver.</i>",answer:["careful"],placeholder:"careful",explanation:"💡 Vor Nomen → Adjektiv."},
+  {prompt:"Übersetze: <i>Bitte sprich langsam und deutlich.</i>",answer:["Please speak slowly and clearly."],placeholder:"Please speak slowly and clearly.",explanation:"💡 slow → slowly, clear → clearly."},
+  {prompt:"Übersetze: <i>Sie singt schön.</i>",answer:["She sings beautifully."],placeholder:"She sings beautifully.",explanation:"💡 beautiful → beautifully."},
+];
+
+setupSection('bild',document.getElementById('bild-levels'),document.getElementById('bild-tasks'),{1:bildL1,2:bildL2,3:bildL3},document.getElementById('bild-check-all'),document.getElementById('bild-reset'),true,15);
+setupSimpleSection('special',document.getElementById('special-tasks'),specialPool,document.getElementById('special-check-all'),document.getElementById('special-reset'),12);
+setupSimpleSection('aus',document.getElementById('aus-tasks'),ausPool,document.getElementById('aus-check-all'),document.getElementById('aus-reset'),12);
+setupSection('vs',document.getElementById('vs-levels'),document.getElementById('vs-tasks'),{1:vsL1,2:vsL2,3:vsL3},document.getElementById('vs-check-all'),document.getElementById('vs-reset'),true,15);
+setupSimpleSection('mix',document.getElementById('mix-tasks'),mixPool,document.getElementById('mix-check-all'),document.getElementById('mix-reset'),15);
+
+document.getElementById('reset-all-btn').addEventListener('click',()=>{
+  customConfirm('Gesamten Fortschritt zurücksetzen?',()=>{
+    ['bild','special','aus','vs','mix'].forEach(k=>{
+      const r=document.getElementById(k+'-reset');
+      if(!r)return;
+      const orig=window.customConfirm;window.customConfirm=function(m,cb){cb();};
+      r.click();
+      window.customConfirm=orig;
+    });
+  });
+});
+
+// ===== QUIZ-POOL (Wer wird Millionär) =====
+const quizPool=[
+{prompt:"Wie heißt das Adverb von <b>slow</b>?",options:["slow","slowy","slower","slowly"],correct:3,tip:"Adjektiv + ly = Adverb.",explanation:"✅ <b>slowly</b> – slow + ly.",d:1},
+{prompt:"Wie heißt das Adverb von <b>quick</b>?",options:["quicker","quickly","quick","quickest"],correct:1,tip:"Adjektiv + ly.",explanation:"✅ <b>quickly</b> – quick + ly.",d:1},
+{prompt:"Wie bildet man die meisten Adverbien?",options:["Adjektiv + er","Adjektiv + ed","Adjektiv + s","Adjektiv + ly"],correct:3,tip:"Die Standardregel: einfach <b>-ly</b> anhängen.",explanation:"✅ <b>Adjektiv + ly</b> ist die Grundregel.",d:1},
+{prompt:"Was beschreiben Adverbien der Art und Weise?",options:["wann","wo","wer","wie etwas geschieht"],correct:3,tip:"Adverbien der Art und Weise antworten auf die Frage „wie?“.",explanation:"✅ <b>wie etwas geschieht</b> – z.B. quickly = wie schnell.",d:1},
+{prompt:"Welche Form ist richtig?<br><i>The baby smiled ___.</i>",options:["happyly","happily","happly","happy"],correct:1,tip:"Bei -y → -ily.",explanation:"✅ <b>happily</b> – happy → happily.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>She sings very ___.</i>",options:["good","gooder","goodly","well"],correct:3,tip:"good ist eine <b>Ausnahme</b>!",explanation:"✅ <b>well</b> – good → well (NICHT goodly).",d:2},
+{prompt:"Welche Form ist richtig?<br><i>The bus drives ___.</i>",options:["fastly","faster","fast","fastily"],correct:2,tip:"<b>fast</b> bleibt fast (Adjektiv = Adverb, kein -ly).",explanation:"✅ <b>fast</b> – kein -ly!",d:2},
+{prompt:"Welche Form ist richtig?<br><i>He looked at me ___.</i>",options:["angerly","angryly","angry","angrily"],correct:3,tip:"Bei -y → -ily.",explanation:"✅ <b>angrily</b> – angry → angrily.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>She is a ___ driver.</i>",options:["careful","carefully","carefuly","carefulness"],correct:0,tip:"Vor einem Nomen → <b>Adjektiv</b>.",explanation:"✅ <b>careful</b> – Adjektiv vor Nomen.",d:2},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She drives careful.","She drives carefully.","She drive carefully.","She a carefully driver."],correct:1,tip:"Nach einem Verb → <b>Adverb</b>.",explanation:"✅ <b>She drives carefully</b> – Adverb nach Verb.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["He works hardly.","He works hardily.","He works hard.","He works harden."],correct:2,tip:"<b>hard</b> ist Adverb. <i>hardly</i> bedeutet „kaum“!",explanation:"✅ <b>He works hard</b> – mit Anstrengung.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She is a slowly runner.","She is a slow runner.","She is slow runner.","She runs slow."],correct:1,tip:"Vor dem Nomen Adjektiv, nach dem Verb Adverb.",explanation:"✅ <b>She is a slow runner</b> – Adjektiv vor Nomen.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["I trust him fullly.","I trust him fuly.","I trust him fully.","I trust him fullily."],correct:2,tip:"full + ly → fully (ein l fällt weg).",explanation:"✅ <b>fully</b> – Sonderfall: full + ly = fully.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["The dog is loudly.","The dog is loud.","The dog barks loud.","The dog is loudfully."],correct:1,tip:"Nach <b>be</b> steht das Adjektiv (loud), nicht das Adverb.",explanation:"✅ <b>The dog is loud</b> – Adjektiv nach be.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She sings goodly.","She is a singer good.","She sings well.","She sing well."],correct:2,tip:"Adverb von good = well (Ausnahme).",explanation:"✅ <b>She sings well</b> – Ausnahme: good → well.",d:3},
+];
+
+// ===== QUIZ (Wer wird Millionär) =====
+(function initQuiz(){
+  function pickByDifficulty(pool,total){
+    function sh(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    const d1=sh(pool.filter(q=>q.d===1));
+    const d2=sh(pool.filter(q=>q.d===2));
+    const d3=sh(pool.filter(q=>q.d===3));
+    const n1=Math.min(4,d1.length);
+    const n3=Math.min(6,d3.length);
+    const n2=Math.min(total-n1-n3,d2.length);
+    return [...d1.slice(0,n1),...d2.slice(0,n2),...d3.slice(0,n3)];
+  }
+  let tasks=pickByDifficulty(quizPool,15);
+  const total=tasks.length;
+  const wrap=document.getElementById('quiz-tasks');
+  const progressRoot=document.querySelector('#quiz-progress .progress');
+  const progressCtrl=initProgressBar(progressRoot,total);
+  const resultBox=document.getElementById('quiz-result');
+  let current=0,correct=0,wrongCount=0,wrongTasks=[],streak=0,earnedLevel=0,securedFloor=0;
+  let timerStart=null,timerInterval=null,elapsedSeconds=0;
+  const timerEl=document.createElement('div');
+  timerEl.style.cssText='font-size:13px;font-weight:700;color:#ffcc00;text-align:center;margin:4px 0 8px;letter-spacing:1px;display:none;';
+  timerEl.textContent='⏱ 0:00';
+  progressRoot.parentElement.insertAdjacentElement('afterend',timerEl);
+  function startTimer(){if(timerInterval)return;timerStart=Date.now()-elapsedSeconds*1000;timerInterval=setInterval(()=>{elapsedSeconds=Math.floor((Date.now()-timerStart)/1000);const m=Math.floor(elapsedSeconds/60);const s=String(elapsedSeconds%60).padStart(2,'0');timerEl.textContent=`⏱ ${m}:${s}`;},1000);timerEl.style.display='block';}
+  function stopTimer(){clearInterval(timerInterval);timerInterval=null;}
+  function resetTimer(){stopTimer();elapsedSeconds=0;timerStart=null;timerEl.textContent='⏱ 0:00';timerEl.style.display='none';}
+  function formatTime(sec){return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;}
+  function updateProgress(){progressCtrl.update(correct,correct+wrongCount);}
+  const wwmAmounts=['100','200','300','500','1.000','2.000','4.000','8.000','16.000','32.000','64.000','125.000','250.000','500.000','1.000.000'];
+  const wwmMilestones=[4,9,14];
+  function buildLadder(qIdx,earnedLvl){
+    const ladder=document.createElement('div');ladder.className='wwm-ladder';
+    for(let i=total-1;i>=0;i--){
+      const row=document.createElement('div');row.className='wwm-ladder-row';
+      if(wwmMilestones.includes(i))row.classList.add('milestone');
+      if(i<earnedLvl)row.classList.add('done');
+      if(i===earnedLvl)row.classList.add('current');
+      const qnum=document.createElement('span');qnum.className='wwm-qnum';qnum.textContent=i+1;
+      const amt=document.createElement('span');amt.className='wwm-amount';
+      amt.textContent=(i===earnedLvl?'▶ ':'')+wwmAmounts[i];
+      row.appendChild(qnum);row.appendChild(amt);
+      ladder.appendChild(row);
+    }
+    return ladder;
+  }
+  const jokerUsed={fifty:false,phone:false,audience:false};
+  let currentBtns=[];
+  function applyJoker(key,task,correctIdx,btns,stage){
+    stage.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(el=>el.remove());
+    const letters=['A','B','C','D'];
+    if(key==='fifty'){
+      const wrongIdxs=[0,1,2,3].filter(i=>i!==correctIdx);
+      for(let i=wrongIdxs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[wrongIdxs[i],wrongIdxs[j]]=[wrongIdxs[j],wrongIdxs[i]];}
+      wrongIdxs.slice(0,2).forEach(i=>{btns[i].style.opacity='0.15';btns[i].style.pointerEvents='none';btns[i].disabled=true;});
+    }else if(key==='phone'){
+      const isWrong=Math.random()<0.30;
+      let answerIdx,confidence;
+      if(isWrong){const wi=[0,1,2,3].filter(i=>i!==correctIdx);answerIdx=wi[Math.floor(Math.random()*wi.length)];confidence='Ich bin nicht ganz sicher, aber ich glaube …';}
+      else{answerIdx=correctIdx;confidence='Da bin ich mir ziemlich sicher:';}
+      const box=document.createElement('div');box.className='wwm-phone-bubble';
+      box.innerHTML=`<span class="wwm-phone-icon">📞</span><div class="wwm-phone-text"><b>Dein Freund sagt:</b><br>${confidence}<br><em style="display:block;margin-top:6px;">${letters[answerIdx]}: ${task.options[answerIdx]}</em></div>`;
+      stage.appendChild(box);
+    }else if(key==='audience'){
+      const isWrong=Math.random()<0.30;
+      const pcts=[0,0,0,0];
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const winner=wi[Math.floor(Math.random()*wi.length)];
+        pcts[winner]=Math.floor(Math.random()*15)+45;
+        pcts[correctIdx]=Math.floor(Math.random()*15)+10;
+        const rest=[0,1,2,3].filter(i=>i!==winner&&i!==correctIdx);
+        const r=100-pcts[winner]-pcts[correctIdx];
+        pcts[rest[0]]=Math.floor(r*0.55);
+        pcts[rest[1]]=r-pcts[rest[0]];
+      }else{
+        pcts[correctIdx]=Math.floor(Math.random()*25)+50;
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const r=100-pcts[correctIdx];
+        pcts[wi[0]]=Math.floor(r*0.45);
+        pcts[wi[1]]=Math.floor(r*0.30);
+        pcts[wi[2]]=r-pcts[wi[0]]-pcts[wi[1]];
+      }
+      const barColors=['#d4922e','#e53935','#43a047','#f9a825'];
+      const barsHTML=pcts.map((p,i)=>`<div class="wwm-audience-col" style="cursor:pointer" data-idx="${i}"><div class="wwm-audience-pct">${p}%</div><div class="wwm-audience-bar" style="height:${Math.max(p,4)}%;background:${barColors[i]};border-radius:4px 4px 0 0;"></div><div class="wwm-audience-label">${letters[i]}</div></div>`).join('');
+      const box=document.createElement('div');box.className='wwm-audience-box';
+      box.innerHTML=`<div class="wwm-audience-title">📊 Publikumsjoker</div><div class="wwm-audience-bars" style="align-items:flex-end;height:110px;">${barsHTML}</div>`;
+      stage.appendChild(box);
+      box.querySelectorAll('[data-idx]').forEach(col=>{col.addEventListener('click',()=>{const idx=parseInt(col.dataset.idx);if(btns[idx]&&!btns[idx].disabled)btns[idx].click();});});
+    }
+  }
+  function renderQuestion(){
+    if(current>=total){showFinal();return;}
+    startTimer();
+    wrap.innerHTML='';
+    const t=tasks[current];
+    const opts=t.options;
+    const correctIdx=t.correct;
+    currentBtns=[];
+    const fw=document.createElement('div');fw.className='quiz-question-enter';
+    const streakEl=document.createElement('div');streakEl.className='quiz-streak';
+    if(streak>=3)streakEl.textContent=`🔥 ${streak}er-Serie!`;
+    fw.appendChild(streakEl);
+    const lifelines=document.createElement('div');lifelines.className='wwm-lifelines';
+    const layout=document.createElement('div');layout.className='wwm-layout';
+    const stage=document.createElement('div');stage.className='wwm-stage';
+    [{key:'audience',label:'👥 Publikum'},{key:'phone',label:'📞 Joker'},{key:'fifty',label:'50:50'}].forEach(j=>{
+      const used=jokerUsed[j.key];
+      const chip=document.createElement('button');chip.className='chip'+(used?' chip-used':'');
+      chip.textContent=j.label;chip.disabled=used;chip.type='button';
+      chip.addEventListener('click',()=>{
+        if(jokerUsed[j.key])return;
+        jokerUsed[j.key]=true;chip.classList.add('chip-used');chip.disabled=true;
+        applyJoker(j.key,t,correctIdx,currentBtns,stage);
+      });
+      lifelines.appendChild(chip);
+    });
+    fw.appendChild(lifelines);
+    const prompt=document.createElement('div');prompt.className='prompt';prompt.innerHTML=t.prompt;
+    stage.appendChild(prompt);
+    const optWrap=document.createElement('div');optWrap.className='wwm-joker-options';
+    const letters=['A','B','C','D'];
+    let answered=false;
+    opts.forEach((optText,i)=>{
+      const btn=document.createElement('button');btn.className='wwm-option-btn';btn.type='button';
+      btn.innerHTML=`<span class="wwm-opt-letter">${letters[i]}</span>${optText}`;
+      btn.addEventListener('click',()=>{
+        if(answered)return;
+        answered=true;
+        currentBtns.forEach(b=>b.disabled=true);
+        currentBtns.forEach((b,bi)=>{
+          const letter=b.querySelector('.wwm-opt-letter');
+          if(bi===correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#1b5e20,#2e7d32);border-color:#4caf50;';if(letter)letter.style.cssText='background:rgba(76,175,80,.3);border-color:#4caf50;color:#b9f6ca;';}
+          else if(bi===i&&i!==correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#7f0000,#b71c1c);border-color:#ef5350;';if(letter)letter.style.cssText='background:rgba(239,83,80,.3);border-color:#ef5350;color:#ffcdd2;';}
+        });
+        const isCorrect=i===correctIdx;
+        if(isCorrect){
+          fb.textContent='✓ Richtig!';fb.className='feedback ok';
+          correct++;streak++;earnedLevel++;
+          if(wwmMilestones.includes(earnedLevel-1))securedFloor=earnedLevel-1;
+          if(t.explanation){eb.innerHTML=t.explanation;eb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn green';nb.dataset.next='1';nb.textContent='Weiter →';nb.type='button';
+          nb.addEventListener('click',()=>{updateProgress();current++;renderQuestion();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }else{
+          fb.innerHTML=`✗ Falsch! Richtige Antwort: <b>${letters[correctIdx]}: ${opts[correctIdx]}</b>`;fb.className='feedback bad';
+          wrongTasks.push({...t,_questionNumber:current+1,_userInput:`${letters[i]}: ${opts[i]}`});
+          wrongCount++;streak=0;
+          const floor=wwmMilestones.filter(m=>m<=earnedLevel).pop();earnedLevel=floor!==undefined?floor:0;
+          if(t.explanation){eb.innerHTML=t.explanation.replace('✅','💡');eb.style.display='block';}
+          if(t.tip){tb.innerHTML=`💡 <b>Tipp:</b> ${t.tip}`;tb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn gray';nb.dataset.next='1';nb.textContent='Ergebnis ansehen →';nb.type='button';
+          nb.addEventListener('click',()=>{updateProgress();showFinal();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }
+      });
+      optWrap.appendChild(btn);
+      currentBtns.push(btn);
+    });
+    stage.appendChild(optWrap);
+    const fb=document.createElement('div');fb.className='feedback';stage.appendChild(fb);
+    const tb=document.createElement('div');tb.className='quiz-tip-box';tb.style.display='none';stage.appendChild(tb);
+    const eb=document.createElement('div');eb.className='quiz-explanation-box';eb.style.display='none';stage.appendChild(eb);
+    const ctrl=document.createElement('div');ctrl.className='controls';ctrl.style.cssText='margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,204,0,.15);';stage.appendChild(ctrl);
+    layout.appendChild(stage);layout.appendChild(buildLadder(current,earnedLevel));
+    fw.appendChild(layout);wrap.appendChild(fw);
+  }
+  function showFinal(){
+    stopTimer();wrap.innerHTML='';
+    const pct=Math.round((correct/total)*100);const ts=formatTime(elapsedSeconds);
+    const prize=earnedLevel>0?wwmAmounts[earnedLevel-1]+' €':'0 €';
+    let emoji='',headline='',msg='';
+    if(pct===100){emoji='🏆';headline='EINE MILLION! 🎉';msg='PERFEKT! Alle 15 Fragen richtig – Adverbien sitzen wie auswendig gelernt!';}
+    else if(pct>=90){emoji='🤩';headline='Fast perfekt – Respekt!';msg='Wow, kaum ein Fehler! Adjektiv vs. Adverb hast du voll im Griff.';}
+    else if(pct>=80){emoji='🌟';headline='Richtig stark, weiter so!';msg='Starke Leistung! Die Bildung mit -ly und die Ausnahmen sitzen.';}
+    else if(pct>=70){emoji='😎';headline='Solide – du weißt, was du tust!';msg='Mehr als zwei Drittel richtig – das ist kein Glück, das ist Können!';}
+    else if(pct>=60){emoji='🙌';headline='Auf dem richtigen Weg!';msg='Über die Hälfte richtig – noch etwas an good/well und hard üben, dann sitzt es!';}
+    else if(pct>=50){emoji='💡';headline='Halbzeit – Luft nach oben!';msg='Die Hälfte sitzt schon! Schau dir nochmal die Ausnahmen und Schreibänderungen an.';}
+    else if(pct>=30){emoji='🐣';headline='Der Anfang ist gemacht!';msg='Noch ist nicht alles verloren – du weißt jetzt, wo du ansetzen musst.';}
+    else{emoji='😅';headline='Ups – aber kein Problem!';msg='Schau nochmal in die Regelkarten oben, dann klappts garantiert besser.';}
+    let errorHTML='';
+    if(wrongTasks.length>0){
+      errorHTML=`<div style="margin-top:22px;text-align:left;"><div style="font-size:16px;font-weight:900;color:#ffcc00;margin-bottom:10px;text-align:center;">📋 Deine Fehler – schau sie dir nochmal an:</div><div style="display:flex;flex-direction:column;gap:8px;">${wrongTasks.map(wt=>`<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,110,110,.45);border-radius:10px;padding:10px 14px;"><div style="font-size:12px;color:#ffb3b3;font-weight:700;margin-bottom:3px;">Frage ${wt._questionNumber}</div><div style="font-size:14px;color:#e8d0aa;margin-bottom:4px;">${wt.prompt}</div><div style="font-size:14px;color:#ff6b6b;font-style:italic;margin-bottom:4px;">✗ ${wt._userInput||'–'}</div><div style="font-size:14px;color:#7fffb3;font-weight:700;">✓ ${['A','B','C','D'][wt.correct]}: ${wt.options[wt.correct]}</div>${wt.explanation?`<div style="font-size:13px;color:#c7d2fe;margin-top:5px;">${wt.explanation}</div>`:''}</div>`).join('')}</div></div>`;
+    }
+    resultBox.innerHTML=`<div style="position:relative;overflow:hidden;"><div style="height:8px;background:repeating-linear-gradient(90deg,#ffcc00 0 14%,#d4922e 14% 28%,#e53935 28% 42%,#43a047 42% 56%,#ffcc00 56% 70%,#ab47bc 70% 84%,#d4922e 84% 100%);"></div><div style="padding:28px 20px 24px;text-align:center;"><div style="font-size:72px;line-height:1;margin-bottom:10px;filter:drop-shadow(0 4px 12px rgba(255,204,0,.6));">${emoji}</div><div style="font-size:clamp(26px,6vw,38px);font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-bottom:6px;">${headline}</div><div style="display:inline-block;background:rgba(255,204,0,.15);border:2px solid #ffcc00;border-radius:16px;padding:14px 32px;margin:12px 0 18px;"><div style="font-size:clamp(36px,8vw,52px);font-weight:900;color:#fff;line-height:1;">${correct} <span style="font-size:.55em;color:#ffcc00;">/ ${total}</span></div><div style="font-size:16px;font-weight:700;color:#ffcc00;letter-spacing:1px;margin-top:2px;">${pct} % RICHTIG</div><div style="font-size:13px;color:rgba(255,204,0,.8);margin-top:6px;">⏱ Zeit: ${ts}</div><div style="font-size:18px;font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-top:8px;">🏅 Gewonnen: ${prize}</div></div><div style="font-size:clamp(14px,3vw,17px);color:#fff;max-width:500px;margin:0 auto;line-height:1.7;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;border:1px solid rgba(255,255,255,.2);">${msg}</div>${errorHTML}</div><div style="height:8px;background:repeating-linear-gradient(90deg,#43a047 0 14%,#ffcc00 14% 28%,#ab47bc 28% 42%,#e53935 42% 56%,#d4922e 56% 70%,#ffcc00 70% 84%,#43a047 84% 100%);"></div></div>`;
+    resultBox.style.display='block';setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  }
+  document.getElementById('quiz-reset').addEventListener('click',()=>{
+    tasks=pickByDifficulty(quizPool,15);current=0;correct=0;wrongCount=0;wrongTasks=[];streak=0;earnedLevel=0;securedFloor=0;
+    jokerUsed.fifty=false;jokerUsed.phone=false;jokerUsed.audience=false;
+    updateProgress();resetTimer();
+    progressRoot.querySelector('.progress-fill').style.width='0%';
+    document.querySelector('#quiz-progress .progress-text').textContent=`Fortschritt: 0/${total} richtig (0%)`;
+    resultBox.style.display='none';resultBox.innerHTML='';
+    renderQuestion();
+  });
+  updateProgress();
+  let quizRendered=false;
+  const qa=document.getElementById('wwm-quiz');
+  if(qa)qa.addEventListener('toggle',()=>{
+    if(!qa.open){stopTimer();}
+    else{if(!quizRendered){quizRendered=true;renderQuestion();}else if(current<total&&timerStart!==null){startTimer();}}
+  });
+})();
+</script>
+</body>
+</html>

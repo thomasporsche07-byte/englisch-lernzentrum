@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>some / any · little / few – Hellweg-Realschule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<style>
+:root{--hr-blue:#b85c20;--hr-red:#C62828;--hr-green:#2e7d32;--hr-gray:#455A64;--ok:#2e7d32;--warn:#ef6c00;--bad:#b71c1c;}
+html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:#fef9f2;color:#2c1a0e;line-height:1.55;font-size:18px}
+.container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
+header{text-align:center;padding:20px 10px 10px}
+header img{height:70px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
+header h1{margin:10px 0 0;font-size:clamp(26px,5vw,38px);color:var(--hr-blue);letter-spacing:.2px}
+header p.sub{margin:6px 0 0;color:#7a5c3a}
+.rules-combined{margin-top:14px;background:linear-gradient(145deg,#fdf2e3 0%,#fef5e4 40%,#f5f0ff 100%);border-radius:20px;box-shadow:0 8px 28px rgba(180,90,30,.12);padding:22px 20px 18px;border:1.5px solid #e8c99a}
+.rc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rc-card{border-radius:14px;padding:0;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.rc-card.c-green,.rc-card.c-red,.rc-card.c-blue,.rc-card.c-indigo,.rc-card.c-amber,.rc-card.c-teal{background:linear-gradient(135deg,#f1f5fb,#f7f9fd);border:1.5px solid #d1dae8}
+.rc-card-topbar{height:6px;width:100%;flex-shrink:0}
+.rc-card.c-green .rc-card-topbar{background:linear-gradient(90deg,#43a047,#66bb6a)}
+.rc-card.c-red .rc-card-topbar{background:linear-gradient(90deg,#e53935,#ec407a)}
+.rc-card.c-blue .rc-card-topbar{background:linear-gradient(90deg,#b85c20,#d4922e)}
+.rc-card.c-indigo .rc-card-topbar{background:linear-gradient(90deg,#3949ab,#7e57c2)}
+.rc-card.c-amber .rc-card-topbar{background:linear-gradient(90deg,#f9a825,#ffca28)}
+.rc-card.c-teal .rc-card-topbar{background:linear-gradient(90deg,#00897b,#26a69a)}
+.rc-card-body{padding:12px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+.rc-card-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;display:flex;align-items:center;gap:5px}
+.rc-card-num{position:absolute;top:6px;right:10px;font-size:52px;font-weight:900;line-height:1;opacity:.07;pointer-events:none;user-select:none}
+.rc-card.c-green .rc-card-label{color:#1b5e20}
+.rc-card.c-red .rc-card-label{color:#880e4f}
+.rc-card.c-blue .rc-card-label{color:#8b4518}
+.rc-card.c-indigo .rc-card-label{color:#1a237e}
+.rc-card.c-amber .rc-card-label{color:#e65100}
+.rc-card.c-teal .rc-card-label{color:#00695c}
+.rc-formula{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.fc{display:inline-flex;align-items:center;justify-content:center;border-radius:7px;padding:3px 7px;font-size:11px;font-weight:800;white-space:nowrap}
+.fc-subj{background:#fde8c0;border:2px solid #d97520;color:#7a3010}
+.fc-some{background:#dcfce7;border:2px solid #16a34a;color:#14532d}
+.fc-any{background:#fee2e2;border:2px solid #ef4444;color:#7f1d1d}
+.fc-noun{background:#ecfeff;border:2px solid #0891b2;color:#164e63}
+.fc-aux{background:#fef9c3;border:2px solid #ca8a04;color:#713f12}
+.fc-punct{background:transparent;border:none;font-size:16px;font-weight:900;color:#7a5c3a;padding:0 2px}
+.fc-plus{font-size:11px;color:#90a4ae;font-weight:700;padding:0}
+.rc-rule{font-size:13px;color:#374151;line-height:1.55;padding:5px 10px;border-radius:9px;background:rgba(255,255,255,.7)}
+.rc-card.c-green .rc-rule{border:1px solid #a5d6a7;border-left-width:3px;border-right-width:3px}
+.rc-card.c-red .rc-rule{border:1px solid #ef4444;border-left-width:3px;border-right-width:3px}
+.rc-card.c-blue .rc-rule{border:1px solid #d97520;border-left-width:3px;border-right-width:3px}
+.rc-card.c-indigo .rc-rule{border:1px solid #6366f1;border-left-width:3px;border-right-width:3px}
+.rc-card.c-amber .rc-rule{border:1px solid #ca8a04;border-left-width:3px;border-right-width:3px}
+.rc-card.c-teal .rc-rule{border:1px solid #0891b2;border-left-width:3px;border-right-width:3px}
+.rc-examples-new{font-size:12.5px;color:#4b5563;line-height:1.75;padding:7px 10px;border-radius:8px;background:rgba(0,0,0,.04)}
+.rc-examples-new b{color:#140c04}
+.hl-some{color:#14532d;font-weight:800;background:#dcfce7;border-radius:4px;padding:0 3px}
+.hl-any{color:#7f1d1d;font-weight:800;background:#fee2e2;border-radius:4px;padding:0 3px}
+.hl-noun{color:#164e63;font-weight:800;background:#ecfeff;border-radius:4px;padding:0 3px}
+.hl-aux{color:#713f12;font-weight:800;background:#fef9c3;border-radius:4px;padding:0 3px}
+details.accordion{background:#fff;border-radius:16px;border:1px solid #e8d5b8;box-shadow:0 6px 20px rgba(0,0,0,.06);margin:16px 0;overflow:hidden}
+details.accordion summary{list-style:none;cursor:pointer;padding:14px 18px;outline:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:#140c04;border-left:5px solid transparent;transition:background .2s}
+details.accordion summary::-webkit-details-marker{display:none}
+.acc-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;flex-shrink:0}
+#acc-pos .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-pos summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+#acc-bitten .acc-num{background:#fbbf77;color:#8b4518}
+#acc-bitten summary{border-left-color:#b85c20;background:linear-gradient(90deg,rgba(184,92,32,.14),rgba(184,92,32,.03))}
+#acc-comp .acc-num{background:#c4b5fd;color:#5b21b6}
+#acc-comp summary{border-left-color:#7c3aed;background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(124,58,237,.03))}
+#acc-fewlit .acc-num{background:#80cbc4;color:#00695c}
+#acc-fewlit summary{border-left-color:#00897b;background:linear-gradient(90deg,rgba(0,137,123,.14),rgba(0,137,123,.03))}
+#acc-mix .acc-num{background:#ffe082;color:#e65100}
+#acc-mix summary{border-left-color:#d97706;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
+details.accordion[open] summary{border-bottom:1px solid #e8d5b8}
+details.accordion summary:hover{filter:brightness(.97)}
+.content{padding:18px 20px}
+.note{background:linear-gradient(135deg,#fef5e4,#fef8f0);border:1px solid #f5c070;border-left:4px solid #b85c20;padding:11px 14px;border-radius:10px;margin:6px 0 16px;color:#3d2010;font-size:14px;line-height:1.6}
+.level-switch{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.level-switch button{border:2px solid #e8c99a;border-radius:999px;padding:8px 20px;font-weight:700;cursor:pointer;background:#fef5e4;color:#1e40af;transition:.2s all;font-size:14px;letter-spacing:.2px;outline:none}
+.level-switch button:hover{background:#fde8c0;border-color:#d4922e;transform:translateY(-1px);box-shadow:0 4px 10px rgba(184,92,32,.15)}
+.level-switch button.active{background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;border-color:transparent;box-shadow:0 3px 10px rgba(184,92,32,.4);transform:translateY(-1px)}
+.task{border:1px solid #e8d5b8;border-top:3px solid #b8905a;background:#fff;border-radius:14px;padding:16px 18px;margin:12px 0;scroll-margin-top:80px;line-height:1.6;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s}
+#acc-pos .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(170,200,160,.10),rgba(170,200,160,.04))}
+#acc-bitten .task{border-top-color:#b85c20;background:linear-gradient(135deg,rgba(184,92,32,.08),rgba(184,92,32,.02))}
+#acc-comp .task{border-top-color:#7c3aed;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(124,58,237,.02))}
+#acc-fewlit .task{border-top-color:#00897b;background:linear-gradient(135deg,rgba(0,137,123,.08),rgba(0,137,123,.02))}
+#acc-mix .task{border-top-color:#d97706;background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(251,191,36,.02))}
+.task:hover{box-shadow:0 4px 16px rgba(0,0,0,.09)}
+.task.task--solved{border:2px solid #2e7d32;box-shadow:0 0 0 3px rgba(46,125,50,.15)}
+.task.task--solved .task-solved-label{display:block}
+.task-solved-label{display:none;font-size:12px;font-weight:700;color:#2e7d32;margin-bottom:4px}
+.task-type-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.task-type-badge.badge-mc{background:#e0f2fe;color:#b85c20;border:1px solid #f5c070}
+.task-type-badge.badge-ordne{background:#fef9c3;color:#854d0e;border:1px solid #fde047}
+.task-type-badge.badge-frei{background:#f3e8ff;color:#7c3aed;border:1px solid #c4b5fd}
+.task.task--wrong{border-color:#f87171;border-top-color:#b91c1c;background:#fff5f5!important}
+.task.task--wrong .prompt{color:#b91c1c}
+.task .prompt{margin:0 0 12px;font-weight:600;color:#140c04;line-height:1.6;font-size:15.5px}
+.task input[type="text"]{width:100%;padding:11px 16px;border:2px solid #e8d0aa;border-radius:999px;font-size:16px;outline:none;transition:.2s all;box-sizing:border-box;background:#fef8f0;color:#140c04}
+.task input[type="text"]:focus{border-color:#b85c20;background:#fff;box-shadow:0 0 0 4px rgba(184,92,32,.10)}
+.task input[type="text"]:disabled{background:#f5ece0;color:#9a7050}
+.task .controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.btn{border:none;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;background:#e8d0aa;color:#3d2510;font-size:14px;transition:.15s all;letter-spacing:.1px}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn:active{transform:translateY(0)}
+.btn.primary{background:linear-gradient(135deg,#C62828,#e53935);color:#fff;box-shadow:0 2px 6px rgba(198,40,40,.3)}
+.btn.blue{background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;box-shadow:0 2px 6px rgba(184,92,32,.3)}
+.btn.green{background:linear-gradient(135deg,#2e7d32,#43a047);color:#fff;box-shadow:0 2px 6px rgba(46,125,50,.3)}
+.btn.gray{background:linear-gradient(135deg,#455A64,#9a7050);color:#fff;box-shadow:0 2px 6px rgba(69,90,100,.2)}
+.btn.ghost{background:#f5ece0;color:#7a5c3a;border:1px solid #e8d0aa}
+.btn.purple{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;box-shadow:0 2px 6px rgba(124,58,237,.3)}
+.btn.teal{background:linear-gradient(135deg,#00897b,#26a69a);color:#fff;box-shadow:0 2px 6px rgba(0,137,123,.3)}
+.btn.amber{background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;box-shadow:0 2px 6px rgba(217,119,6,.3)}
+.feedback{margin-top:8px;font-size:14px;font-weight:700;padding:4px 0;letter-spacing:.1px}
+.solution{margin-top:8px;font-size:14px;background:linear-gradient(135deg,#f0f9ff,#fef8f0);border:1px solid #bae6fd;padding:10px 14px;border-radius:10px;display:none;line-height:1.65}
+.hint-box{margin-top:8px;font-size:14px;background:#fffbeb;border:1px dashed #f59e0b;color:#92400e;padding:10px 14px;border-radius:10px;display:none;line-height:1.55}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.mc-options{display:flex;flex-direction:column;gap:8px;margin:4px 0 8px}
+.mc-opt{display:flex;align-items:center;gap:10px;background:#fef8f0;border:2px solid #e8d0aa;border-radius:12px;padding:10px 14px;cursor:pointer;font-size:15px;font-weight:500;transition:.15s all;color:#2c1a0e;-webkit-tap-highlight-color:transparent;text-align:left;width:100%;font-family:inherit}
+.mc-opt:hover{background:#fef3e4;border-color:#93c5fd}
+.mc-opt:active{transform:scale(.98)}
+.mc-opt.mc-selected{border-color:#b85c20;background:#fde8c0;font-weight:700}
+.mc-opt.mc-correct{border-color:#2e7d32;background:#dcfce7;color:#14532d}
+.mc-opt.mc-wrong{border-color:#dc2626;background:#fef2f2;color:#991b1b;text-decoration:line-through;opacity:.7}
+.mc-opt.mc-disabled{pointer-events:none;cursor:default}
+.mc-letter{width:28px;height:28px;border-radius:50%;background:#e8d0aa;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;color:#7a5c3a}
+.mc-opt.mc-selected .mc-letter{background:#b85c20;color:#fff}
+.mc-opt.mc-correct .mc-letter{background:#2e7d32;color:#fff}
+.mc-opt.mc-wrong .mc-letter{background:#dc2626;color:#fff}
+.word-tiles-wrap{margin:4px 0 8px}
+.word-tiles-label{font-size:11px;font-weight:700;color:#b8905a;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.word-tiles{display:flex;flex-wrap:wrap;gap:8px;min-height:42px;padding:8px;border-radius:12px;background:#fef8f0;border:2px dashed #c8b8a0;transition:.2s all}
+.word-tiles.wt-source{background:#f5ece0;border-color:#b8905a}
+.word-tiles.wt-target{background:#fef3e4;border-color:#d97520;border-style:solid;min-height:46px}
+.word-tiles.wt-target:empty::before{content:"Tippe die Wörter in der richtigen Reihenfolge an ↑";color:#b8905a;font-size:13px;font-style:italic;padding:6px}
+.word-tile{display:inline-flex;align-items:center;padding:8px 14px;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s all;-webkit-tap-highlight-color:transparent;user-select:none;border:2px solid #c8b8a0;background:#fff;color:#2c1a0e;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:inherit}
+.word-tile:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,.12);border-color:#d4922e}
+.word-tile:active{transform:scale(.95)}
+.word-tile.wt-placed{background:#fde8c0;border-color:#d97520;color:#7a3010}
+.word-tile.wt-used{opacity:.3;pointer-events:none;transform:scale(.9)}
+.word-tile.wt-correct{background:#dcfce7;border-color:#22c55e;color:#14532d;pointer-events:none}
+.word-tile.wt-wrong{background:#fef2f2;border-color:#ef4444;color:#991b1b;animation:wt-shake .4s}
+@keyframes wt-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+.section-actions{display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin:12px 0 10px}
+.progress{position:relative;width:260px;height:16px;background:#e8d0aa;border-radius:999px;overflow:hidden;border:none;box-shadow:inset 0 1px 3px rgba(0,0,0,.1)}
+.progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:#b85c20;transition:width .3s ease;border-radius:999px}
+.progress.green .progress-fill{background:linear-gradient(90deg,#2e7d32,#43a047)}
+.progress.blue .progress-fill{background:linear-gradient(90deg,#b85c20,#d4922e)}
+.progress.purple .progress-fill{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.progress.teal .progress-fill{background:linear-gradient(90deg,#00897b,#26a69a)}
+.progress.amber .progress-fill{background:linear-gradient(90deg,#d97706,#f59e0b)}
+.progress.mixed .progress-fill{background:linear-gradient(90deg,#C62828 0%,#b85c20 100%)}
+.progress-text{font-size:13.5px;color:#7a5c3a;font-weight:600}
+.quiz-divider{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding:0 4px}
+.quiz-divider::before,.quiz-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(106,53,176,.35),transparent)}
+.quiz-divider span{font-size:13px;font-weight:800;color:#6a35b0;white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+@keyframes celebrate-pop{0%{transform:scale(0.5);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.celebrate-banner{animation:celebrate-pop .4s ease-out;background:linear-gradient(135deg,#1b5e20,#2e7d32);border:2px solid #66bb6a;border-radius:14px;padding:14px 18px;margin:10px 0 6px;font-size:16px;font-weight:800;color:#fff;text-align:center;box-shadow:0 4px 16px rgba(46,125,50,.4)}
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
+.confirm-box{background:#fff;border-radius:18px;padding:24px 22px;max-width:320px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center}
+.confirm-box p{margin:0 0 18px;font-size:16px;font-weight:600;color:#140c04;line-height:1.5}
+.confirm-btns{display:flex;gap:10px;justify-content:center}
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:#b85c20;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:.2s background,.2s transform}
+.dark-toggle:hover{transform:translateY(-1px);background:#8b4518}
+.reset-all-btn{position:fixed;bottom:14px;left:16px;z-index:99;border:none;border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:#fff;color:#b91c1c;box-shadow:0 3px 12px rgba(0,0,0,.15);transition:.2s;-webkit-tap-highlight-color:transparent}
+.reset-all-btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,0,0,.2)}
+body.dark-mode .reset-all-btn{background:#3d2510;color:#fca5a5}
+.tts-toggle{position:fixed;bottom:46px;left:16px;z-index:99;border:none;border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:#fff;color:#b85c20;box-shadow:0 3px 12px rgba(0,0,0,.15);transition:.2s}
+.tts-toggle:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,0,0,.2)}
+.tts-toggle.tts-on{background:#b85c20;color:#fff;box-shadow:0 3px 16px rgba(184,92,32,.4)}
+body.dark-mode .tts-toggle{background:#3d2510;color:#e8d0aa}
+body.dark-mode .tts-toggle.tts-on{background:#d97520;color:#fff}
+.tts-btn{display:inline-flex;border:none;background:none;cursor:pointer;font-size:16px;padding:2px 4px;border-radius:6px;transition:.15s all;vertical-align:middle;-webkit-tap-highlight-color:transparent;line-height:1;flex-shrink:0}
+.tts-btn:hover{background:rgba(124,58,237,.12);transform:scale(1.15)}
+.tts-btn:active{transform:scale(.95)}
+.tts-btn.tts-playing{animation:tts-pulse .8s ease-in-out infinite}
+@keyframes tts-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.prompt .tts-btn{margin-left:4px}
+.tts-flag-btn{font-size:18px!important;padding:1px 3px!important;line-height:1!important}
+body.dark-mode{background:#140c04;color:#e8d0aa}
+body.dark-mode .rules-combined{background:linear-gradient(145deg,#0f1e38 0%,#111a30 50%,#2a1408 100%);border-color:#2a3a5e}
+body.dark-mode .rc-card.c-green,body.dark-mode .rc-card.c-red,body.dark-mode .rc-card.c-blue,body.dark-mode .rc-card.c-indigo,body.dark-mode .rc-card.c-amber,body.dark-mode .rc-card.c-teal{background:linear-gradient(135deg,#1e1408,#1e2840);border-color:#3d2510}
+body.dark-mode .rc-rule{background:rgba(255,255,255,.05);color:#c8b8a0}
+body.dark-mode .rc-examples-new{background:rgba(255,255,255,.06);color:#b8905a}
+body.dark-mode .rc-examples-new b{color:#e8d0aa}
+body.dark-mode details.accordion{background:#1e1408;border-color:#3d2510}
+body.dark-mode details.accordion summary{color:#e8d0aa}
+body.dark-mode .content,body.dark-mode .note{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .task{background:#1e1408;border-color:#3d2510}
+body.dark-mode .task .prompt{color:#e8d0aa}
+body.dark-mode .task input[type="text"]{background:#140c04;color:#e8d0aa;border-color:#3d2510}
+body.dark-mode .btn.ghost{background:#1e1408;color:#b8905a;border:1px solid #3d2510}
+body.dark-mode .progress{background:#1e1408;border-color:#3d2510}
+body.dark-mode .progress-text{color:#b8905a}
+body.dark-mode .solution{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .hint-box{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.45);color:#fcd34d}
+body.dark-mode .mc-opt{background:#1e1408;border-color:#3d2510;color:#e8d0aa}
+body.dark-mode .word-tiles.wt-source{background:#140c04;border-color:#3d2510}
+body.dark-mode .word-tiles.wt-target{background:#1e1408;border-color:#d97520}
+body.dark-mode .word-tile{background:#1e1408;border-color:#7a5c3a;color:#e8d0aa}
+body.dark-mode .dark-toggle{background:#3d2510;color:#e8d0aa}
+
+body.dark-mode .confirm-box{background:#1e1408}
+body.dark-mode .confirm-box p{color:#e8d0aa}
+@media(max-width:600px){.dark-toggle{position:static;display:inline-block;margin:4px;box-shadow:0 1px 6px rgba(0,0,0,.15)}.tts-toggle{bottom:46px;left:16px;padding:6px 11px;font-size:11px}.level-switch button,.btn{padding:7px 13px;font-size:13px}.progress{width:160px}}
+@media(max-width:900px){.rc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.rc-grid{grid-template-columns:1fr}}
+@media print{body>*:not(.print-frame){display:none!important}.task{border:1pt solid #ccc!important;background:#fff!important;border-radius:0!important;box-shadow:none!important;page-break-inside:avoid;margin:5pt 0;padding:8pt 10pt}.task .prompt{color:#000!important;font-weight:600}.task .controls,.task .solution,.task .feedback,.level-switch,.section-actions,.progress-wrap,.note{display:none!important}}
+
+/* ===== WWM-QUIZ ===== */
+#wwm-quiz summary{background:radial-gradient(130% 200% at 50% -30%,#1a4db5 0%,#001a38 55%,#000d1f 100%);color:#ffcc00;border-bottom:2px solid rgba(255,204,0,.4);font-size:19px;font-weight:900;letter-spacing:.5px;text-shadow:0 0 20px rgba(255,204,0,.5),0 2px 8px rgba(0,0,0,.8)}
+#wwm-quiz .content{background:#020c22;background-image:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(30,70,180,.55) 0%, transparent 70%),radial-gradient(ellipse 60% 40% at 50% 50%, rgba(10,30,100,.4) 0%, transparent 80%),repeating-conic-gradient(from 270deg at 50% -30%, rgba(255,204,0,.03) 0deg 10deg, transparent 10deg 20deg);border:2px solid rgba(255,204,0,.55);box-shadow:0 0 0 1px rgba(255,204,0,.15), 0 20px 60px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,204,0,.1)}
+#wwm-quiz .progress-wrap{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#020c22 60%,transparent);margin:-18px -20px 0;padding:14px 20px 10px;border-bottom:1px solid rgba(255,204,0,.25);backdrop-filter:blur(6px)}
+#wwm-quiz .progress{background:rgba(255,255,255,.10);border:2px solid rgba(255,204,0,.7);height:20px;box-shadow:0 0 14px rgba(255,204,0,.25)}
+#wwm-quiz .progress-fill{background:linear-gradient(90deg,#b8860b,#ffcc00,#fff176);box-shadow:0 0 18px rgba(255,204,0,.8)}
+#wwm-quiz .progress-text{color:#fff;font-weight:900;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.wwm-layout{display:flex;gap:16px;align-items:flex-start;margin-top:16px}
+.wwm-stage{flex:1;min-width:0}
+.wwm-ladder{width:130px;flex-shrink:0;display:flex;flex-direction:column;gap:3px}
+.wwm-ladder-row{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);border:1px solid transparent;transition:.2s all;cursor:default}
+.wwm-ladder-row .wwm-qnum{width:18px;text-align:right;flex-shrink:0;font-size:10px;opacity:.6}
+.wwm-ladder-row .wwm-amount{flex:1;text-align:right;letter-spacing:.2px}
+.wwm-ladder-row.milestone{color:rgba(255,204,0,.6);border-color:rgba(255,204,0,.2);background:rgba(255,204,0,.05)}
+.wwm-ladder-row.done{color:rgba(100,220,120,.55)}
+.wwm-ladder-row.current{background:linear-gradient(90deg,rgba(255,204,0,.18),rgba(255,204,0,.08));border-color:rgba(255,204,0,.7);color:#ffcc00;box-shadow:0 0 10px rgba(255,204,0,.25);font-size:12.5px}
+.wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(255,204,0,.6)}
+.wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(255,204,0,.28),rgba(255,204,0,.12))}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+.wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(255,204,0,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#ffcc00;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(255,204,0,.2)}
+#wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
+#wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(255,204,0,.75);color:#ffcc00;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(255,204,0,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(255,204,0,.4);cursor:pointer;transition:.2s all;font-family:inherit}
+#wwm-quiz .wwm-lifelines .chip:hover:not(.chip-used){background:radial-gradient(circle at 40% 35%,#2a4faa,#0d2060);box-shadow:0 0 22px rgba(255,204,0,.45),inset 0 1px 0 rgba(255,255,255,.15);transform:translateY(-2px) scale(1.05)}
+#wwm-quiz .task,#wwm-quiz .wwm-stage{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;margin:0}
+#wwm-quiz .task:hover,#wwm-quiz .wwm-stage:hover{box-shadow:none}
+#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{background:linear-gradient(180deg,#0f2d72 0%,#091e50 100%);color:#fff;border:2px solid #ffcc00;border-radius:16px;padding:18px 22px;text-align:center;font-weight:800;font-size:19px;box-shadow:0 0 0 4px rgba(255,204,0,.12),0 6px 28px rgba(0,0,0,.5);line-height:1.6;margin-bottom:14px;position:relative;overflow:hidden}
+#wwm-quiz .task .prompt::before,#wwm-quiz .wwm-stage .prompt::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,204,0,.07),transparent 70%);pointer-events:none}
+#wwm-quiz .section-actions .btn{background:linear-gradient(135deg,#0c2a66,#163a8a);color:#ffecb3;border:1px solid rgba(255,204,0,.4);box-shadow:0 3px 10px rgba(0,0,0,.4)}
+#wwm-quiz .section-actions .btn:hover{background:linear-gradient(135deg,#163a8a,#1e4db5)}
+#wwm-quiz .feedback{color:#ffecb3;font-size:15px;margin-top:10px}
+#wwm-quiz .feedback.ok{color:#00e676;text-shadow:0 0 10px rgba(0,230,118,.5)}
+#wwm-quiz .feedback.bad{color:#ff6b6b;text-shadow:0 0 10px rgba(255,80,80,.4)}
+#wwm-quiz .feedback.warn{color:#ffcc00}
+#wwm-quiz .controls .btn:focus{outline:2px solid rgba(255,255,255,.9);outline-offset:3px}
+#wwm-quiz .controls .btn.green:focus{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.2),0 3px 12px rgba(0,0,0,.4)}
+.quiz-tip-box{margin-top:12px;padding:12px 16px;background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.45);border-left:3px solid #ffcc00;border-radius:10px;color:#ffe082;font-size:14px;line-height:1.6}
+.quiz-explanation-box{margin-top:12px;padding:12px 16px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);border-left:3px solid #00e676;border-radius:10px;color:#b9f6ca;font-size:14px;line-height:1.6}
+.quiz-streak{text-align:center;font-size:22px;font-weight:900;color:#ffcc00;letter-spacing:.5px;min-height:32px;margin-bottom:10px;text-shadow:0 0 16px rgba(255,204,0,.7)}
+#wwm-quiz .result-card{background:linear-gradient(160deg,#1a4faa 0%,#0d3080 50%,#071d55 100%);border:3px solid #ffcc00;box-shadow:0 0 60px rgba(255,204,0,.35),0 20px 60px rgba(0,0,0,.7);color:#fff;border-radius:22px;overflow:hidden}
+#wwm-quiz .score{color:#ffcc00}
+#wwm-quiz{overflow:visible!important}
+@keyframes quizFadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question-enter{animation:quizFadeIn .45s cubic-bezier(.22,1,.36,1) forwards}
+#wwm-quiz .wwm-lifelines .chip-used{opacity:.35;cursor:not-allowed;border-color:rgba(255,204,0,.25);color:rgba(255,204,0,.4);text-decoration:line-through;box-shadow:none}
+.wwm-joker-options{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wwm-option-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(10,30,90,.9),rgba(5,18,60,.9));border:2px solid rgba(255,204,0,.5);border-radius:999px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:10px 18px;text-align:left;transition:.2s all;box-shadow:0 2px 12px rgba(0,0,0,.4);font-family:inherit}
+.wwm-option-btn:hover{background:linear-gradient(90deg,rgba(30,70,180,.9),rgba(15,45,130,.9));border-color:#ffcc00;box-shadow:0 0 16px rgba(255,204,0,.3);transform:scale(1.01)}
+.wwm-opt-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,204,0,.15);border:2px solid rgba(255,204,0,.6);color:#ffcc00;font-size:13px;font-weight:900;flex-shrink:0}
+.wwm-phone-bubble{margin-top:14px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(5,20,60,.95),rgba(3,12,40,.95));border:2px solid rgba(100,180,255,.4);border-radius:16px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.wwm-phone-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(100,180,255,.5))}
+.wwm-phone-text{font-size:14px;color:#c5deff;line-height:1.7}
+.wwm-phone-text b{color:#fbbf77}
+.wwm-phone-text em{display:inline-block;margin-top:6px;font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(100,180,255,.3);border-radius:8px;padding:4px 10px;color:#fff;font-weight:700;font-size:15px}
+.wwm-audience-box{margin-top:14px;background:linear-gradient(180deg,rgba(5,18,55,.95),rgba(3,10,36,.95));border:2px solid rgba(255,204,0,.35);border-radius:16px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.wwm-audience-title{text-align:center;font-size:13px;font-weight:800;color:#ffcc00;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 8px rgba(255,204,0,.4)}
+.wwm-audience-bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:110px}
+.wwm-audience-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:160px;height:100%}
+.wwm-audience-pct{font-size:13px;font-weight:900;color:#ffcc00;min-height:18px}
+.wwm-audience-bar{width:100%;min-height:4px;border-radius:6px 6px 0 0;cursor:pointer;transition:filter .2s}
+.wwm-audience-bar:hover{filter:brightness(1.2)}
+.wwm-audience-label{font-size:11px;color:rgba(255,255,255,.65);text-align:center;line-height:1.3;max-width:100%;word-break:break-word;margin-top:4px}
+</style>
+</head>
+<body>
+<div id="confirm-modal" style="display:none" class="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Fortschritt zurücksetzen?</p>
+    <div class="confirm-btns">
+      <button class="btn primary" id="confirm-ok">Ja, zurücksetzen</button>
+      <button class="btn ghost" id="confirm-cancel">Abbrechen</button>
+    </div>
+  </div>
+</div>
+<button class="tts-toggle" id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" id="reset-all-btn">🗑️ Zurücksetzen</button>
+<button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+
+<header>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/>
+  </a>
+  <h1>some / any · little / few</h1>
+  <p class="sub">Mengenangaben im Englischen – Klasse 6</p>
+</header>
+
+<div class="container">
+
+  <section class="rules-combined">
+    <div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Regeln auf einen Blick</span></div>
+    <div class="rc-grid">
+
+      <div class="rc-card c-green">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">1</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">✅ some – Aussagesatz</div>
+          <div class="rc-formula">
+            <span class="fc fc-subj">Subjekt</span><span class="fc-plus">+</span>
+            <span class="fc fc-aux">have / has got</span><span class="fc-plus">+</span>
+            <span class="fc fc-some">some</span><span class="fc-plus">+</span>
+            <span class="fc fc-noun">Nomen</span>
+          </div>
+          <div class="rc-rule"><b>some</b> = einige / etwas<br>steht in <b>positiven Sätzen</b><br>countable + uncountable</div>
+          <div class="rc-examples-new">
+            I have got <span class="hl-some">some</span> <span class="hl-noun">apples</span>.<br>
+            She needs <span class="hl-some">some</span> <span class="hl-noun">milk</span>.<br>
+            There are <span class="hl-some">some</span> <span class="hl-noun">books</span> on the desk.
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-red">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">2</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">❌❓ any – Verneinung & Frage</div>
+          <div class="rc-formula">
+            <span class="fc fc-subj">Subjekt</span><span class="fc-plus">+</span>
+            <span class="fc fc-aux">don't / doesn't / haven't</span><span class="fc-plus">+</span>
+            <span class="fc fc-any">any</span><span class="fc-plus">+</span>
+            <span class="fc fc-noun">Nomen</span>
+          </div>
+          <div class="rc-rule"><b>any</b> in <b>Verneinung</b> + <b>Fragen</b><br>NIE: <s>I haven't some …</s><br>countable + uncountable</div>
+          <div class="rc-examples-new">
+            I haven't got <span class="hl-any">any</span> <span class="hl-noun">apples</span>.<br>
+            Have you got <span class="hl-any">any</span> <span class="hl-noun">pets</span>?<br>
+            There isn't <span class="hl-any">any</span> <span class="hl-noun">milk</span>.
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-blue">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">3</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">☕ Ausnahme: some bei Bitte/Angebot</div>
+          <div class="rc-formula">
+            <span class="fc fc-aux">Would you like / Can I have</span><span class="fc-plus">+</span>
+            <span class="fc fc-some">some</span><span class="fc-plus">+</span>
+            <span class="fc fc-noun">Nomen</span>
+            <span class="fc-punct">?</span>
+          </div>
+          <div class="rc-rule">In <b>Angeboten</b> und <b>höflichen Bitten</b> steht <b>some</b> – auch in Fragen!<br><i>Would you like …? · Can I have …?</i></div>
+          <div class="rc-examples-new">
+            <b>Would you like</b> <span class="hl-some">some</span> <span class="hl-noun">tea</span>?<br>
+            <b>Can I have</b> <span class="hl-some">some</span> <span class="hl-noun">water</span>, please?
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-indigo">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">4</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">👤 somebody / anybody</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-some">somebody</span>
+            <span class="fc fc-some">something</span>
+            <span class="fc fc-some">somewhere</span>
+            <span class="fc fc-any">anybody</span>
+            <span class="fc fc-any">anything</span>
+            <span class="fc fc-any">anywhere</span>
+          </div>
+          <div class="rc-rule">Gleiche Regel wie some/any:<br><b>some-</b> in positiven Sätzen<br><b>any-</b> in Verneinung + Frage<br>⚠️ Verb steht im <b>Singular</b>: somebody <b>is</b> (nicht are!)</div>
+          <div class="rc-examples-new">
+            <span class="hl-some">Somebody</span> <b>is</b> at the door.<br>
+            I can't see <span class="hl-any">anybody</span> here.<br>
+            Did you eat <span class="hl-any">anything</span>?
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-amber">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">5</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">🔢 a few / few – countable</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-some">a few</span>
+            <span class="fc-plus">=</span>
+            <span class="fc fc-noun">einige (positiv)</span><br>
+            <span class="fc fc-any">few</span>
+            <span class="fc-plus">=</span>
+            <span class="fc fc-noun">nur wenige (negativ)</span>
+          </div>
+          <div class="rc-rule">Nur bei <b>zählbaren</b> Nomen (apples, friends, books)<br><b>a few</b> = einige (es ist genug)<br><b>few</b> = nur wenige (zu wenig)</div>
+          <div class="rc-examples-new">
+            She has <span class="hl-some">a few</span> <span class="hl-noun">friends</span>. (= einige – sie ist nicht allein)<br>
+            He has <span class="hl-any">few</span> <span class="hl-noun">friends</span>. (= zu wenige – er ist einsam)
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-teal">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">6</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">💧 a little / little – uncountable</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-some">a little</span>
+            <span class="fc-plus">=</span>
+            <span class="fc fc-noun">etwas (positiv)</span><br>
+            <span class="fc fc-any">little</span>
+            <span class="fc-plus">=</span>
+            <span class="fc fc-noun">nur wenig (negativ)</span>
+          </div>
+          <div class="rc-rule">Nur bei <b>nicht-zählbaren</b> Nomen (water, milk, time, money)<br><b>a little</b> = etwas (es reicht)<br><b>little</b> = nur wenig (zu wenig)</div>
+          <div class="rc-examples-new">
+            There is <span class="hl-some">a little</span> <span class="hl-noun">milk</span> left.<br>
+            We have <span class="hl-any">little</span> <span class="hl-noun">time</span> – hurry up!
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="quiz-divider"><span>✏️ Übungen</span></div>
+
+  <details class="accordion" id="acc-pos" open>
+    <summary><span class="acc-num">1</span>✅ some / any – Aussage · Verneinung · Frage</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Erkennen (MC + Wörter ordnen) &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentexte<br><b>Stufe 3:</b> Umformen + Fehlerkorrektur</div>
+      <div class="level-switch" id="pos-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Umformen</button></div>
+      <div class="progress-wrap" id="pos-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn green" id="pos-check-all">Alle prüfen</button><button class="btn gray" id="pos-reset">Zurücksetzen</button><button class="btn ghost" id="pos-reroll">🎲 Neu würfeln</button></div>
+      <div id="pos-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-bitten">
+    <summary><span class="acc-num">2</span>☕ Bitten & Angebote – some auch in Fragen</summary>
+    <div class="content">
+      <div class="note">In <b>höflichen Bitten</b> (<i>Can I have …?</i>) und <b>Angeboten</b> (<i>Would you like …?</i>) steht <b>some</b> – auch wenn der Satz eine Frage ist!</div>
+      <div class="progress-wrap" id="bitten-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn blue" id="bitten-check-all">Alle prüfen</button><button class="btn gray" id="bitten-reset">Zurücksetzen</button><button class="btn ghost" id="bitten-reroll">🎲 Neu würfeln</button></div>
+      <div id="bitten-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-comp">
+    <summary><span class="acc-num">3</span>👤 somebody · anybody · something · anything</summary>
+    <div class="content">
+      <div class="note">Zusammensetzungen folgen der gleichen Regel wie some/any. ⚠️ <b>Singular</b>: <i>somebody is</i> (NICHT <s>somebody are</s>).</div>
+      <div class="progress-wrap" id="comp-progress"><div class="progress purple" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn purple" id="comp-check-all">Alle prüfen</button><button class="btn gray" id="comp-reset">Zurücksetzen</button><button class="btn ghost" id="comp-reroll">🎲 Neu würfeln</button></div>
+      <div id="comp-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-fewlit">
+    <summary><span class="acc-num">4</span>🔢 a few / few · a little / little</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> countable vs. uncountable erkennen &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentexte<br><b>Stufe 3:</b> Bedeutungsnuance + Übersetzungen</div>
+      <div class="level-switch" id="fewlit-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Bedeutung</button></div>
+      <div class="progress-wrap" id="fewlit-progress"><div class="progress teal" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn teal" id="fewlit-check-all">Alle prüfen</button><button class="btn gray" id="fewlit-reset">Zurücksetzen</button><button class="btn ghost" id="fewlit-reroll">🎲 Neu würfeln</button></div>
+      <div id="fewlit-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-mix">
+    <summary><span class="acc-num">5</span>🧩 Gemischte Aufgaben + Fehlerkorrektur</summary>
+    <div class="content">
+      <div class="note">Alles zusammen: some/any, somebody/anybody, a few/a little. Achte auf typische Fehler – z.B. <i>much</i> vs. <i>many</i>.</div>
+      <div class="progress-wrap" id="mix-progress"><div class="progress amber" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn amber" id="mix-check-all">Alle prüfen</button><button class="btn gray" id="mix-reset">Zurücksetzen</button><button class="btn ghost" id="mix-reroll">🎲 Neu würfeln</button></div>
+      <div id="mix-tasks"></div>
+    </div>
+  </details>
+
+  <div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+  <details class="accordion" id="wwm-quiz">
+    <summary>🏆 Quiz</summary>
+    <div class="content">
+      <div class="progress-wrap" id="quiz-progress"><div class="progress mixed" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+      <div id="quiz-tasks"></div>
+      <div id="quiz-result" class="result-card" style="display:none"></div>
+    </div>
+  </details>
+
+  <footer style="text-align:center;color:#b8905a;font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid rgba(184,144,90,.25)">
+    <div>Version 25.04.2026, 11:30</div>
+    <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+  </footer>
+</div>
+
+<script>
+// ===== DARK MODE =====
+(function(){
+  const k='samllf_dark_v1';
+  try{if(localStorage.getItem(k)==='1')document.body.classList.add('dark-mode');}catch(e){}
+  const btn=document.getElementById('dark-toggle');
+  function refresh(){btn.textContent=document.body.classList.contains('dark-mode')?'☀️ Hell':'🌙 Dark Mode';}
+  refresh();
+  btn.addEventListener('click',()=>{document.body.classList.toggle('dark-mode');try{localStorage.setItem(k,document.body.classList.contains('dark-mode')?'1':'0');}catch(e){}refresh();});
+})();
+
+// ===== HELPERS =====
+function checkCelebration(container){
+  const inputs=container.querySelectorAll('.task input');
+  if(!inputs.length)return;
+  const allCorrect=Array.from(inputs).every(i=>i._correct);
+  if(!allCorrect)return;
+  if(container.querySelector('.celebrate-banner'))return;
+  const banner=document.createElement('div');
+  banner.className='celebrate-banner';
+  banner.innerHTML='🎉 Perfekt! Alle Aufgaben richtig – super gemacht!';
+  container.prepend(banner);
+  setTimeout(()=>banner.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+}
+function customConfirm(msg,onOk){
+  const modal=document.getElementById('confirm-modal');
+  const msgEl=document.getElementById('confirm-msg');
+  const okBtn=document.getElementById('confirm-ok');
+  const cancelBtn=document.getElementById('confirm-cancel');
+  msgEl.textContent=msg;
+  modal.style.display='flex';
+  function close(){modal.style.display='none';okBtn.onclick=null;cancelBtn.onclick=null;}
+  okBtn.onclick=()=>{close();onOk();};
+  cancelBtn.onclick=()=>close();
+}
+function normalizeAnswer(text){
+  if(!text)return"";
+  let s=(""+text).toLowerCase();
+  s=s.replace(/['´‘’‚‛′‵ʹʻʼʾʿ＇``´]/g,"'");
+  s=s.replace(/don't/g,"do not");
+  s=s.replace(/doesn't/g,"does not");
+  s=s.replace(/isn't/g,"is not");
+  s=s.replace(/aren't/g,"are not");
+  s=s.replace(/haven't/g,"have not");
+  s=s.replace(/hasn't/g,"has not");
+  s=s.replace(/can't/g,"can not");
+  s=s.replace(/\bdoesnt\b/g,"does not");
+  s=s.replace(/\bdont\b/g,"do not");
+  s=s.replace(/\bisnt\b/g,"is not");
+  s=s.replace(/\barent\b/g,"are not");
+  s=s.replace(/\bhavent\b/g,"have not");
+  s=s.replace(/\bhasnt\b/g,"has not");
+  s=s.replace(/\bcant\b/g,"can not");
+  s=s.replace(/[.,!?:;"]+/g," ").replace(/\s+/g," ").trim();
+  s=s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+  return s;
+}
+const _STORE={};
+function saveProgress(key,val){try{_STORE[key]=val;}catch(e){}return true;}
+function loadProgress(key,def=null){return _STORE[key]!==undefined?_STORE[key]:def;}
+function taskHash(task){
+  const ans=Array.isArray(task.answer)?task.answer[0]:task.answer;
+  return normalizeAnswer(ans||task.prompt||"").replace(/\s+/g,'_').substring(0,30);
+}
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+function pickRandom(pool,n,storageKey){
+  if(storageKey){
+    const saved=loadProgress('pick_'+storageKey);
+    if(saved&&Array.isArray(saved)&&saved.length===Math.min(n,pool.length)&&saved.every(i=>i>=0&&i<pool.length)){
+      return saved.map(i=>pool[i]);
+    }
+  }
+  const indices=Array.from({length:pool.length},(_,i)=>i);
+  for(let i=indices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[indices[i],indices[j]]=[indices[j],indices[i]];}
+  const picked=indices.slice(0,Math.min(n,pool.length));
+  if(storageKey)saveProgress('pick_'+storageKey,picked);
+  return picked.map(i=>pool[i]);
+}
+function initProgressBar(progressRoot,total){
+  const fill=progressRoot.querySelector('.progress-fill');
+  const text=progressRoot.parentElement.querySelector('.progress-text');
+  function update(correct,done){
+    done=done!==undefined?done:correct;
+    const fp=total?Math.round((done/total)*100):0;
+    const rp=total?Math.round((correct/total)*100):0;
+    fill.style.width=fp+'%';
+    if(done===correct){text.textContent=`Fortschritt: ${correct}/${total} richtig (${rp}%)`;}
+    else{text.textContent=`Fortschritt: ${correct}/${total} richtig · ${done} bearbeitet`;}
+    progressRoot.setAttribute('aria-valuenow',String(fp));
+  }
+  function setTotal(n){total=n;update(0,0);}
+  function resetAnimated(){fill.style.width='0%';text.textContent=`Fortschritt: 0/${total} richtig (0%)`;}
+  update(0,0);
+  return{update,setTotal,resetAnimated};
+}
+function buildPartialHint(answer){
+  if(!answer)return'';
+  const words=(''+answer).trim().replace(/[.!?]+$/,'').split(/\s+/).filter(Boolean);
+  if(words.length<3)return words[0]||'';
+  const n=Math.max(2,Math.ceil(words.length*0.4));
+  return words.slice(0,n).join(' ');
+}
+function diffHint(userInput,correctAnswer){
+  const uN=normalizeAnswer(userInput),cN=normalizeAnswer(correctAnswer);
+  if(!uN||!cN||uN===cN)return null;
+  const uW=uN.split(/\s+/).filter(Boolean),cW=cN.split(/\s+/).filter(Boolean);
+  let i=0;const max=Math.max(uW.length,cW.length);
+  while(i<max&&uW[i]===cW[i])i++;
+  if(i>=max)return null;
+  const uWord=uW[i]||'',cWord=cW[i]||'';
+  if(!uWord&&cWord)return `💡 An Stelle ${i+1} fehlt das Wort <b>${cWord}</b>.`;
+  if(uWord&&!cWord)return `💡 Das Wort <b>${uWord}</b> gehört nicht in den Satz.`;
+  const pairs={'some':'any','any':'some','many':'much','much':'many','few':'little','little':'few','is':'are','are':'is','have':'has','has':'have'};
+  if(pairs[uWord]===cWord)return `💡 Hier brauchst du <b>${cWord}</b>, nicht <i>${uWord}</i>.`;
+  return `💡 Ab dem Wort <b>${uWord||'…'}</b> stimmt etwas nicht.`;
+}
+function analyzeError(userInput,correctAnswers){
+  const u=userInput.toLowerCase().trim();
+  const ansList=Array.isArray(correctAnswers)?correctAnswers:[correctAnswers];
+  const c=(ansList[0]||'').toLowerCase();
+  if(/\bany\b/.test(c)&&/\bsome\b/.test(u)&&!/\bany\b/.test(u))
+    return "💡 In Verneinungen und Fragen steht <b>any</b>, nicht <i>some</i>.";
+  if(/\bsome\b/.test(c)&&/\bany\b/.test(u)&&!/\bsome\b/.test(u)&&/(would|can|could)/i.test(c))
+    return "💡 Bei <b>Bitten/Angeboten</b> (Would you like…? / Can I have…?) steht <b>some</b>.";
+  if(/\bmuch\b/.test(c)&&/\bmany\b/.test(u))
+    return "💡 Bei <b>uncountable nouns</b> (milk, time, money) brauchst du <b>much</b>, nicht <i>many</i>.";
+  if(/\bmany\b/.test(c)&&/\bmuch\b/.test(u))
+    return "💡 Bei <b>countable nouns</b> (apples, friends) brauchst du <b>many</b>, nicht <i>much</i>.";
+  if(/\bsomebody\b/.test(c)&&/\banybody\b/.test(u))
+    return "💡 Im positiven Aussagesatz: <b>somebody</b>.";
+  if(/\banybody\b/.test(c)&&/\bsomebody\b/.test(u))
+    return "💡 In Verneinung/Frage: <b>anybody</b>.";
+  let best=ansList[0],bestDiff=Infinity;
+  for(const a of ansList){
+    const an=normalizeAnswer(a),un=normalizeAnswer(userInput);
+    const aw=an.split(/\s+/),uw=un.split(/\s+/);
+    let d=Math.abs(aw.length-uw.length);
+    const m=Math.min(aw.length,uw.length);
+    for(let i=0;i<m;i++)if(aw[i]!==uw[i])d++;
+    if(d<bestDiff){bestDiff=d;best=a;}
+  }
+  return diffHint(userInput,best);
+}
+function shufflePromptSlashList(html){
+  if(!html||typeof html!=='string')return html;
+  return html.replace(/<i>([^<]+?)<\/i>/g,(m,inner)=>{
+    if(!inner.includes(' / ')||/___|[()]/.test(inner))return m;
+    const content=inner.replace(/[.!?]+\s*$/,'').trim();
+    const parts=content.split(' / ').map(p=>p.trim()).filter(Boolean);
+    if(parts.length<2)return m;
+    const original=parts.join(' / ');
+    let shuffled,attempts=0;
+    do{
+      shuffled=parts.slice();
+      for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
+      attempts++;
+    }while(shuffled.join(' / ')===original&&attempts<20);
+    return '<i>'+shuffled.join(' / ')+'</i>';
+  });
+}
+
+function renderTasks(container,tasks,sectionKey,options={}){
+  const{enableSolution=false,onStatusChange=null,currentLevel=1}=options;
+  const progressKey=`${sectionKey}_L${currentLevel}`;
+  const answersKey=`${sectionKey}_L${currentLevel}_ans`;
+  const solvedTasks=loadProgress(progressKey,[]);
+  const savedAnswers=loadProgress(answersKey,{});
+  container.innerHTML="";
+  tasks.forEach((t,idx)=>{
+    const tHash=taskHash(t);
+    const isSolved=solvedTasks.includes(tHash);
+    const savedAns=savedAnswers[tHash]||'';
+    const wrap=document.createElement("div");wrap.className="task";
+    if(isSolved)wrap.classList.add('task--solved');
+    const nb=document.createElement("div");
+    nb.style.cssText="font-size:12px;font-weight:700;color:#b8905a;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;";
+    nb.textContent=`Aufgabe ${idx+1} / ${tasks.length}`;
+    const badge=document.createElement("span");badge.className="task-type-badge";
+    if(t.type==='mc'){badge.classList.add('badge-mc');badge.textContent='Multiple Choice';}
+    else if(Array.isArray(t.words)){badge.classList.add('badge-ordne');badge.textContent='Wörter ordnen';}
+    else{badge.classList.add('badge-frei');badge.textContent='Freitext';}
+    nb.appendChild(badge);
+    wrap.appendChild(nb);
+    const solvedLabel=document.createElement("div");solvedLabel.className="task-solved-label";
+    if(isSolved&&savedAns)solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${savedAns}</i>`;
+    else if(isSolved)solvedLabel.textContent="✓ Bereits gelöst";
+    wrap.appendChild(solvedLabel);
+
+    if(t.type==='mc'){
+      const prompt=document.createElement("p");prompt.className="prompt";prompt.innerHTML=t.prompt;
+      wrap.appendChild(prompt);
+      const mcBox=document.createElement("div");mcBox.className="mc-options";
+      const letters=['A','B','C','D'];
+      const input=document.createElement("input");input.type="hidden";input.id=`${sectionKey}-input-${idx}`;
+      if(isSolved){input._correct=true;input._done=true;}
+      wrap.appendChild(input);
+      const feedback=document.createElement("div");feedback.className="feedback";
+      let answered=isSolved;
+      const optBtns=[];
+      const optIndices=[...Array(t.options.length).keys()];
+      for(let i=optIndices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[optIndices[i],optIndices[j]]=[optIndices[j],optIndices[i]];}
+      const shuffledOpts=optIndices.map(i=>t.options[i]);
+      const correctIdx=optIndices.indexOf(t.correct);
+      shuffledOpts.forEach((opt,oi)=>{
+        const btn=document.createElement("button");btn.className="mc-opt";btn.type="button";
+        if(isSolved){btn.classList.add('mc-disabled');if(oi===correctIdx)btn.classList.add('mc-correct');}
+        btn.innerHTML=`<span class="mc-letter">${letters[oi]||oi+1}</span><span>${opt}</span>`;
+        btn.addEventListener('click',()=>{
+          if(answered)return;
+          answered=true;
+          optBtns.forEach(b=>b.classList.add('mc-disabled'));
+          if(oi===correctIdx){
+            btn.classList.add('mc-correct');
+            feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+            input._correct=true;input._done=true;input.value=opt;
+            if(!isSolved){const updated=[...solvedTasks,tHash];saveProgress(progressKey,updated);savedAnswers[tHash]=opt;saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${opt}</i>`;}
+          }else{
+            btn.classList.add('mc-wrong');
+            optBtns[correctIdx].classList.add('mc-correct');
+            feedback.textContent="✗ Leider falsch.";feedback.className="feedback bad";
+            input._correct=false;input._done=true;input.value=opt;
+          }
+          if(typeof onStatusChange==='function')onStatusChange();
+        });
+        optBtns.push(btn);
+        mcBox.appendChild(btn);
+      });
+      wrap.appendChild(mcBox);
+      wrap.appendChild(feedback);
+      input._check=()=>{if(!answered){feedback.textContent="Bitte wähle eine Antwort.";feedback.className="feedback warn";return false;}return input._correct;};
+      input._reset=()=>{answered=false;input._correct=false;input._done=false;input.value="";feedback.textContent="";feedback.className="feedback";optBtns.forEach(b=>{b.classList.remove('mc-correct','mc-wrong','mc-selected','mc-disabled');});solvedLabel.textContent='';wrap.classList.remove('task--solved');if(typeof onStatusChange==='function')onStatusChange();};
+      container.appendChild(wrap);
+      return;
+    }
+
+    if(Array.isArray(t.words)){
+      const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+      const correct=(answers[0]||'').replace(/[.?!]$/,'').trim();
+      const punct=answers[0]&&answers[0].slice(-1).match(/[.?!]/)?answers[0].slice(-1):'';
+      let mixed=shuffle([...t.words]);
+      let tries=0;
+      while(mixed.join(' ').toLowerCase()===correct.toLowerCase()&&tries<10){mixed=shuffle([...t.words]);tries++;}
+      if(mixed.join(' ').toLowerCase()===correct.toLowerCase()&&mixed.length>=2){[mixed[0],mixed[1]]=[mixed[1],mixed[0]];}
+      const prompt=document.createElement("p");prompt.className="prompt";prompt.textContent=(t.label||'Ordne')+': Tippe die Wörter in der richtigen Reihenfolge an.';
+      wrap.appendChild(prompt);
+      const input=document.createElement("input");input.type="hidden";input.id=`${sectionKey}-input-${idx}`;
+      if(isSolved){input._correct=true;input._done=true;}
+      wrap.appendChild(input);
+      const sourceLabel=document.createElement("div");sourceLabel.className="word-tiles-label";sourceLabel.textContent="Verfügbare Wörter:";
+      const source=document.createElement("div");source.className="word-tiles wt-source";
+      const targetLabel=document.createElement("div");targetLabel.className="word-tiles-label";targetLabel.style.marginTop="10px";targetLabel.textContent="Dein Satz:";
+      const target=document.createElement("div");target.className="word-tiles wt-target";
+      const feedback=document.createElement("div");feedback.className="feedback";
+      const controls=document.createElement("div");controls.className="controls";
+      const checkBtn=document.createElement("button");checkBtn.className="btn primary";checkBtn.textContent="Prüfen";checkBtn.type="button";
+      const clearBtn=document.createElement("button");clearBtn.className="btn ghost";clearBtn.textContent="Zurücksetzen";clearBtn.type="button";
+      const hintBtn=document.createElement("button");hintBtn.className="btn ghost";hintBtn.textContent="💡 Tipp zeigen";hintBtn.style.display='none';hintBtn.type="button";
+      const solBtn=document.createElement("button");solBtn.className="btn ghost";solBtn.textContent="Lösung";solBtn.style.display='none';solBtn.type="button";
+      const hintBox=document.createElement("div");hintBox.className="hint-box";
+      const solBox=document.createElement("div");solBox.className="solution";
+      controls.appendChild(checkBtn);controls.appendChild(clearBtn);
+      if(enableSolution){controls.appendChild(hintBtn);controls.appendChild(solBtn);}
+      const placed=[];const srcTiles=[];const tgtTiles=[];
+      let locked=false,failCount=0,hintShown=false;
+      mixed.forEach((word,wi)=>{
+        const tile=document.createElement("button");tile.className="word-tile";tile.type="button";tile.textContent=word;tile.dataset.idx=wi;
+        tile.addEventListener('click',()=>{
+          if(locked)return;
+          tile.classList.add('wt-used');
+          placed.push({word,srcIdx:wi});
+          const pt=document.createElement("button");pt.className="word-tile wt-placed";pt.type="button";pt.textContent=word;
+          pt.addEventListener('click',()=>{
+            if(locked)return;
+            const pi=placed.findIndex(p=>p.srcIdx===wi);
+            if(pi>-1)placed.splice(pi,1);
+            tile.classList.remove('wt-used');
+            pt.remove();
+            updateTgtTiles();
+          });
+          target.appendChild(pt);
+          updateTgtTiles();
+        });
+        source.appendChild(tile);
+        srcTiles.push(tile);
+      });
+      function updateTgtTiles(){tgtTiles.length=0;target.querySelectorAll('.word-tile').forEach(tt=>tgtTiles.push(tt));}
+      const notify=()=>{if(typeof onStatusChange==='function')onStatusChange();};
+      function checkTiles(){
+        if(locked)return input._correct;
+        if(placed.length===0){feedback.textContent="Bitte ordne die Wörter.";feedback.className="feedback warn";return false;}
+        const userSentence=placed.map(p=>p.word).join(' ');
+        const userNorm=normalizeAnswer(userSentence);
+        const okSet=answers.map(normalizeAnswer);
+        if(okSet.some(a=>a===userNorm)){
+          feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+          input._correct=true;input._done=true;locked=true;
+          tgtTiles.forEach(tt=>{tt.classList.remove('wt-placed');tt.classList.add('wt-correct');});
+          if(!isSolved){const updated=[...solvedTasks,tHash];saveProgress(progressKey,updated);savedAnswers[tHash]=userSentence+punct;saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${userSentence}${punct}</i>`;}
+          notify();return true;
+        }else{
+          failCount++;
+          const hint=analyzeError(userSentence,answers);
+          if(hint&&failCount<=2){feedback.innerHTML=`✗ Das passt noch nicht. ${hint}`;feedback.className="feedback bad";}
+          else{feedback.textContent="✗ Das passt noch nicht. Versuche es erneut.";feedback.className="feedback bad";}
+          tgtTiles.forEach(tt=>{tt.classList.add('wt-wrong');setTimeout(()=>tt.classList.remove('wt-wrong'),500);});
+          if(enableSolution){
+            if(failCount>=2&&!hintShown)hintBtn.style.display="inline-flex";
+            if(failCount>=3||(hintShown&&failCount>=2))solBtn.style.display="inline-flex";
+          }
+          input._correct=false;notify();return false;
+        }
+      }
+      checkBtn.addEventListener('click',()=>checkTiles());
+      clearBtn.addEventListener('click',()=>{
+        if(locked)return;
+        placed.length=0;target.innerHTML='';tgtTiles.length=0;
+        srcTiles.forEach(tt=>tt.classList.remove('wt-used'));
+        feedback.textContent='';feedback.className='feedback';
+      });
+      hintBtn.addEventListener('click',()=>{
+        hintShown=true;hintBtn.style.display='none';
+        const partial=buildPartialHint(answers[0]||'');
+        hintBox.innerHTML=partial?`💡 <b>Tipp:</b> Fang so an: <i>${partial} …</i>`:`💡 <b>Tipp:</b> Schau dir die Regel im Akkordeon-Kopf an.`;
+        hintBox.style.display='block';
+      });
+      solBtn.addEventListener('click',()=>{
+        input._done=true;notify();solBox.style.display='block';locked=true;
+        solBox.innerHTML=`<b>Lösung:</b> ${answers[0]||''}`;
+      });
+      wrap.appendChild(sourceLabel);wrap.appendChild(source);
+      wrap.appendChild(targetLabel);wrap.appendChild(target);
+      wrap.appendChild(controls);wrap.appendChild(feedback);wrap.appendChild(hintBox);wrap.appendChild(solBox);
+      container.appendChild(wrap);
+      input._check=checkTiles;
+      input._reset=()=>{locked=false;placed.length=0;target.innerHTML='';tgtTiles.length=0;srcTiles.forEach(tt=>tt.classList.remove('wt-used'));input._correct=false;input._done=false;failCount=0;hintShown=false;feedback.textContent='';feedback.className='feedback';hintBtn.style.display='none';hintBox.style.display='none';hintBox.textContent='';solBtn.style.display='none';solBox.style.display='none';solBox.textContent='';solvedLabel.textContent='';wrap.classList.remove('task--solved');notify();};
+      return;
+    }
+
+    let promptHTML=t.prompt||"";
+    promptHTML=shufflePromptSlashList(promptHTML);
+    const prompt=document.createElement("p");prompt.className="prompt";prompt.innerHTML=promptHTML;
+    const input=document.createElement("input");input.type="text";input.id=`${sectionKey}-input-${idx}`;
+    input.setAttribute("aria-label","Antwort eingeben");
+    input.placeholder=t.placeholder||"Antwort eingeben …";
+    if(isSolved){input._correct=true;input._done=true;input.value=savedAns;}
+    const controls=document.createElement("div");controls.className="controls";
+    const checkBtn=document.createElement("button");checkBtn.className="btn primary";checkBtn.textContent="Prüfen";checkBtn.type="button";
+    const hintBtn=document.createElement("button");hintBtn.className="btn ghost";hintBtn.textContent="💡 Tipp zeigen";hintBtn.style.display='none';hintBtn.type="button";
+    const solBtn=document.createElement("button");solBtn.className="btn ghost";solBtn.textContent="Lösung anzeigen";solBtn.style.display='none';solBtn.type="button";
+    const feedback=document.createElement("div");feedback.className="feedback";
+    const hintBox=document.createElement("div");hintBox.className="hint-box";
+    const solBox=document.createElement("div");solBox.className="solution";
+    controls.appendChild(checkBtn);
+    if(enableSolution){controls.appendChild(hintBtn);controls.appendChild(solBtn);}
+    wrap.appendChild(prompt);wrap.appendChild(input);wrap.appendChild(controls);wrap.appendChild(feedback);wrap.appendChild(hintBox);wrap.appendChild(solBox);
+    container.appendChild(wrap);
+    const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+    const notify=()=>{if(typeof onStatusChange==='function')onStatusChange();};
+    let failCount=0,hintShown=false;
+    function checkOne(batchMode){
+      const user=normalizeAnswer(input.value);
+      const okSet=answers.map(normalizeAnswer);
+      if(!user){feedback.textContent="Bitte gib eine Lösung ein.";feedback.className="feedback warn";input._correct=false;notify();return false;}
+      if(okSet.some(a=>a===user)){
+        feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+        input._correct=true;input._done=true;failCount=0;
+        if(!isSolved){const updated=[...solvedTasks,tHash];saveProgress(progressKey,updated);savedAnswers[tHash]=input.value.trim();saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${input.value.trim()}</i>`;}
+        notify();
+        if(!batchMode){const all=Array.from(container.querySelectorAll("input[type='text']"));const next=all[all.indexOf(input)+1];if(next)setTimeout(()=>{next.focus();next.scrollIntoView({behavior:'smooth',block:'nearest'});},150);}
+        return true;
+      }
+      failCount++;
+      const hint=analyzeError(input.value,answers);
+      if(hint&&failCount<=2){feedback.innerHTML=`✗ Das passt noch nicht. ${hint}`;feedback.className="feedback bad";}
+      else{feedback.textContent="✗ Das passt noch nicht. Versuche es erneut.";feedback.className="feedback bad";}
+      if(enableSolution){
+        if(failCount>=2&&!hintShown)hintBtn.style.display="inline-flex";
+        if(failCount>=3||(hintShown&&failCount>=2))solBtn.style.display="inline-flex";
+      }
+      input._correct=false;notify();return false;
+    }
+    checkBtn.addEventListener("click",()=>checkOne(false));
+    input.addEventListener("keydown",(e)=>{if(e.key==="Enter"){e.preventDefault();checkOne(false);}});
+    hintBtn.addEventListener("click",()=>{
+      hintShown=true;hintBtn.style.display='none';
+      const partial=buildPartialHint(answers[0]||'');
+      hintBox.innerHTML=partial?`💡 <b>Tipp:</b> Fang so an: <i>${partial} …</i>`:`💡 <b>Tipp:</b> Schau dir die Regel im Akkordeon-Kopf an.`;
+      hintBox.style.display='block';
+      input.focus();
+    });
+    solBtn.addEventListener("click",()=>{
+      input._done=true;notify();solBox.style.display="block";
+      let html=`<b>Lösung:</b> ${answers[0]||''}`;
+      if(t.explanation)html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">${t.explanation}</div>`;
+      solBox.innerHTML=html;
+    });
+    input._check=checkOne;
+    input._reset=()=>{input.value="";input._correct=false;input._done=false;failCount=0;hintShown=false;notify();feedback.textContent="";feedback.className="feedback";hintBtn.style.display='none';hintBox.style.display='none';hintBox.textContent='';solBtn.style.display='none';solBox.style.display="none";solBox.textContent="";solvedLabel.textContent='';wrap.classList.remove('task--solved');};
+  });
+}
+
+function setupSection(sectionKey,levelButtons,container,pools,checkAllBtn,resetBtn,enableSolution,total){
+  total=total||15;
+  const progressRoot=document.querySelector(`#${sectionKey}-progress .progress`);
+  const progressCtrl=initProgressBar(progressRoot,total);
+  let currentLevel=1;const levelCache={};
+  function updateProgress(){
+    const inputs=container.querySelectorAll(".task input");let correct=0,done=0;
+    inputs.forEach(inp=>{if(inp._correct)correct++;if(inp._done)done++;});
+    progressCtrl.update(correct,done);
+    if(correct===inputs.length&&inputs.length>0)checkCelebration(container);
+  }
+  const renderLevel=(lvl)=>{
+    currentLevel=lvl;
+    levelButtons.querySelectorAll('button').forEach(b=>{const isActive=+b.dataset.level===lvl;b.classList.toggle('active',isActive);b.setAttribute('aria-pressed',isActive?'true':'false');});
+    container.querySelectorAll('.result-banner,.error-list,.celebrate-banner').forEach(b=>b.remove());
+    if(!levelCache[lvl]){const pickKey=`${sectionKey}_L${lvl}`;const div=document.createElement('div');renderTasks(div,pickRandom(pools[lvl],total,pickKey),sectionKey,{enableSolution,onStatusChange:updateProgress,currentLevel:lvl});levelCache[lvl]=div;}
+    Object.values(levelCache).forEach(div=>{if(div.parentNode===container)container.removeChild(div);});
+    container.appendChild(levelCache[lvl]);
+    progressCtrl.setTotal(levelCache[lvl].querySelectorAll(".task input").length);
+    updateProgress();
+    const hasFreitext=levelCache[lvl].querySelector('input[type="text"]')!==null;
+    checkAllBtn.style.display=hasFreitext?'':'none';
+  };
+  levelButtons.addEventListener('click',(e)=>{const b=e.target.closest('button[data-level]');if(!b)return;renderLevel(+b.dataset.level);});
+  checkAllBtn.addEventListener('click',()=>{
+    const inputs=container.querySelectorAll(".task input");let ok=0,tot=0;
+    inputs.forEach(inp=>{if(typeof inp._check==='function'){tot++;if(inp._check(true))ok++;}});
+    updateProgress();
+    if(tot>0){
+      container.querySelectorAll('.result-banner').forEach(b=>b.remove());
+      inputs.forEach(inp=>{const wr=inp.closest('.task');if(!wr)return;if(inp._correct)wr.classList.remove('task--wrong');else if(inp.value&&inp.value.trim())wr.classList.add('task--wrong');});
+      const pct=Math.round(ok/tot*100);const banner=document.createElement('div');banner.className='result-banner';
+      const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';const em=pct===100?'🏆':pct>=60?'👍':'💪';
+      banner.style.cssText=`margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid ${col};background:${col}18;font-size:15px;font-weight:700;color:${col};display:flex;align-items:center;gap:10px;`;
+      banner.innerHTML=`<span style="font-size:22px">${em}</span><span>Ergebnis: <b>${ok} / ${tot}</b> richtig (${pct}%)</span>`;
+      container.prepend(banner);
+      setTimeout(()=>banner.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+    }
+  });
+  resetBtn.addEventListener('click',()=>{customConfirm('Fortschritt zurücksetzen?',()=>{container.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());container.querySelectorAll('.task--wrong').forEach(t=>t.classList.remove('task--wrong'));container.querySelectorAll(".task input").forEach(inp=>{if(typeof inp._reset==='function')inp._reset();});[1,2,3].forEach(l=>{saveProgress(sectionKey+'_L'+l,[]);saveProgress(sectionKey+'_L'+l+'_ans',{});});updateProgress();});});
+  const rerollBtn=document.getElementById(`${sectionKey}-reroll`);
+  if(rerollBtn)rerollBtn.addEventListener('click',()=>{
+    progressCtrl.resetAnimated();
+    const old=levelCache[currentLevel];
+    if(old&&old.parentNode===container)container.removeChild(old);
+    delete levelCache[currentLevel];
+    const pKey=`${sectionKey}_L${currentLevel}`;
+    saveProgress('pick_'+pKey,null);saveProgress(pKey,[]);saveProgress(pKey+'_ans',{});
+    renderLevel(currentLevel);
+    setTimeout(()=>{container.querySelectorAll('.celebrate-banner').forEach(b=>b.remove());container.querySelectorAll('.task input').forEach(inp=>{inp._correct=false;inp._done=false;});updateProgress();},10);
+  });
+  renderLevel(1);
+}
+
+function setupSimpleSection(sectionKey,container,pool,checkAllBtn,resetBtn,total){
+  total=total||12;
+  const progressRoot=document.querySelector('#'+sectionKey+'-progress .progress');
+  const progressCtrl=initProgressBar(progressRoot,total);
+  let cache=null;
+  function updateProgress(){
+    const inputs=container.querySelectorAll('.task input');let correct=0,done=0;
+    inputs.forEach(inp=>{if(inp._correct)correct++;if(inp._done)done++;});
+    progressCtrl.update(correct,done);
+    if(correct===inputs.length&&inputs.length>0)checkCelebration(container);
+  }
+  function render(){
+    container.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());
+    const pickKey=sectionKey+'_L1';
+    const div=document.createElement('div');
+    renderTasks(div,pickRandom(pool,total,pickKey),sectionKey,{enableSolution:true,onStatusChange:updateProgress,currentLevel:1});
+    cache=div;if(container.firstChild)container.innerHTML='';
+    container.prepend(div);progressCtrl.setTotal(div.querySelectorAll('.task input').length);
+    updateProgress();
+    const hasFreitext=div.querySelector('input[type="text"]')!==null;
+    checkAllBtn.style.display=hasFreitext?'':'none';
+  }
+  checkAllBtn.addEventListener('click',()=>{
+    const inputs=container.querySelectorAll('.task input');let ok=0,tot=0;
+    inputs.forEach(inp=>{if(typeof inp._check==='function'){tot++;if(inp._check(true))ok++;}});
+    updateProgress();
+    if(tot>0){
+      container.querySelectorAll('.result-banner').forEach(b=>b.remove());
+      inputs.forEach(inp=>{const wr=inp.closest('.task');if(!wr)return;if(inp._correct)wr.classList.remove('task--wrong');else if(inp.value&&inp.value.trim())wr.classList.add('task--wrong');});
+      const pct=Math.round(ok/tot*100);const banner=document.createElement('div');banner.className='result-banner';
+      const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';const em=pct===100?'🏆':pct>=60?'👍':'💪';
+      banner.style.cssText='margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid '+col+';background:'+col+'18;font-size:15px;font-weight:700;color:'+col+';display:flex;align-items:center;gap:10px;';
+      banner.innerHTML='<span style="font-size:22px">'+em+'</span><span>Ergebnis: <b>'+ok+' / '+tot+'</b> richtig ('+pct+'%)</span>';
+      container.prepend(banner);
+      setTimeout(()=>banner.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+    }
+  });
+  resetBtn.addEventListener('click',()=>{customConfirm('Fortschritt zurücksetzen?',()=>{container.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());container.querySelectorAll('.task--wrong').forEach(t=>t.classList.remove('task--wrong'));container.querySelectorAll('.task input').forEach(inp=>{if(typeof inp._reset==='function')inp._reset();});saveProgress(sectionKey+'_L1',[]);saveProgress(sectionKey+'_L1_ans',{});saveProgress('pick_'+sectionKey+'_L1',null);updateProgress();});});
+  const rerollBtn=document.getElementById(sectionKey+'-reroll');
+  if(rerollBtn)rerollBtn.addEventListener('click',()=>{progressCtrl.resetAnimated();if(cache&&cache.parentNode===container)container.removeChild(cache);cache=null;const pKey=sectionKey+'_L1';saveProgress('pick_'+pKey,null);saveProgress(pKey,[]);saveProgress(pKey+'_ans',{});render();});
+  render();
+}
+
+// ===== AUFGABEN-POOLS =====
+const posL1=[
+  {type:"mc",prompt:"<i>I have got ___ apples in my bag.</i> – Was passt?",options:["some","any","much"],correct:0,answer:"some"},
+  {type:"mc",prompt:"<i>Have you got ___ pets at home?</i> – Was passt?",options:["some","any","a"],correct:1,answer:"any"},
+  {type:"mc",prompt:"<i>There aren't ___ books on the table.</i> – Was passt?",options:["some","any","much"],correct:1,answer:"any"},
+  {type:"mc",prompt:"<i>She has got ___ nice friends at school.</i> – Was passt?",options:["any","some","a"],correct:1,answer:"some"},
+  {type:"mc",prompt:"<i>I haven't got ___ time today.</i> – Was passt?",options:["some","any","many"],correct:1,answer:"any"},
+  {type:"mc",prompt:"<i>Is there ___ juice in the fridge?</i> – Was passt?",options:["any","some","a"],correct:0,answer:"any"},
+  {type:"mc",prompt:"Wann benutzt du <b>some</b>?",options:["in Verneinungen","in positiven Aussagesätzen","nie in Fragen"],correct:1,answer:"in positiven Aussagesätzen"},
+  {type:"mc",prompt:"Wann benutzt du <b>any</b>?",options:["in positiven Sätzen","in Verneinungen und Fragen","immer am Satzanfang"],correct:1,answer:"in Verneinungen und Fragen"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["I have any apples.","I have some apples.","I haven't got some apples."],correct:1,answer:"I have some apples."},
+  {type:"mc",prompt:"Welcher Satz ist <b>falsch</b>?",options:["She doesn't have any milk.","Have you got any pets?","I haven't got some money."],correct:2,answer:"I haven't got some money."},
+  {type:"mc",prompt:"<i>We need ___ sugar for the cake.</i> – Was passt?",options:["any","some","a"],correct:1,answer:"some"},
+  {type:"mc",prompt:"<i>He doesn't speak ___ German.</i> – Was passt?",options:["any","some","a"],correct:0,answer:"any"},
+  {words:["I","have","got","some","friends","."],answer:["I have got some friends."],label:"Aussagesatz"},
+  {words:["Are","there","any","apples","?"],answer:["Are there any apples?"],label:"Frage"},
+  {words:["She","doesn't","have","any","money","."],answer:["She doesn't have any money."],label:"Verneinung"},
+  {words:["We","need","some","milk","."],answer:["We need some milk."],label:"Aussagesatz"},
+  {words:["Have","you","got","any","pets","?"],answer:["Have you got any pets?"],label:"Frage"},
+  {words:["There","aren't","any","books","here","."],answer:["There aren't any books here."],label:"Verneinung"},
+  {words:["I","can","see","some","children","."],answer:["I can see some children."],label:"Aussagesatz"},
+  {words:["He","hasn't","got","any","brothers","."],answer:["He hasn't got any brothers."],label:"Verneinung"},
+];
+
+const posL2=[
+  {prompt:"Ergänze: <i>I have ___ books in my room.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Ergänze: <i>Are there ___ apples in the basket?</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Ergänze: <i>There isn't ___ milk in the fridge.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Ergänze: <i>She has got ___ great ideas.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Ergänze: <i>Have you got ___ brothers or sisters?</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Ergänze: <i>I can see ___ children in the park.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Ergänze: <i>We don't need ___ sugar today.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Ergänze: <i>There are ___ apples on the table.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Ergänze: <i>Is there ___ juice left?</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Ergänze: <i>He doesn't speak ___ Spanish.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Ergänze: <i>They have got ___ new books.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Ergänze: <i>I haven't got ___ pets at home.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Ergänze: <i>Do you have ___ questions?</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Ergänze: <i>My mum is making ___ sandwiches for lunch.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Ergänze: <i>There aren't ___ tomatoes in the salad.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Ergänze: <i>I want ___ chocolate, please.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b>."},
+  {prompt:"Ergänze: <i>Can you give me ___ water?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b> (Ausnahme!)."},
+  {prompt:"Ergänze: <i>She didn't buy ___ bread today.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+];
+
+const posL3=[
+  {prompt:"Verneine den Satz: <i>I have got some apples.</i>",answer:["I haven't got any apples.","I have not got any apples.","I don't have any apples.","I do not have any apples."],explanation:"💡 In Verneinungen: <b>some → any</b>."},
+  {prompt:"Bilde eine Frage: <i>She has got some friends.</i>",answer:["Has she got any friends?","Does she have any friends?"],explanation:"💡 In Fragen: <b>some → any</b>."},
+  {prompt:"Korrigiere den Fehler: <i>I haven't got some money.</i>",answer:["I haven't got any money.","I have not got any money."],explanation:"💡 In Verneinungen: <b>any</b>, nicht <i>some</i>."},
+  {prompt:"Korrigiere den Fehler: <i>Have you got some pets?</i>",answer:["Have you got any pets?"],explanation:"💡 In normalen Fragen: <b>any</b>. (some nur bei Bitte/Angebot!)"},
+  {prompt:"Korrigiere den Fehler: <i>There aren't some apples on the table.</i>",answer:["There aren't any apples on the table.","There are not any apples on the table."],explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Verneine den Satz: <i>There are some books on the desk.</i>",answer:["There aren't any books on the desk.","There are not any books on the desk."],explanation:"💡 some → any in der Verneinung."},
+  {prompt:"Bilde eine Frage: <i>We need some sugar.</i>",answer:["Do we need any sugar?"],explanation:"💡 In Fragen: <b>any</b>."},
+  {prompt:"Verneine den Satz: <i>She has got some homework.</i>",answer:["She hasn't got any homework.","She has not got any homework.","She doesn't have any homework.","She does not have any homework."],explanation:"💡 some → any in der Verneinung."},
+  {prompt:"Korrigiere: <i>I have any sisters.</i>",answer:["I have some sisters.","I have got some sisters."],explanation:"💡 Im positiven Satz: <b>some</b>, nicht <i>any</i>."},
+  {prompt:"Korrigiere: <i>He doesn't eat some vegetables.</i>",answer:["He doesn't eat any vegetables.","He does not eat any vegetables."],explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Bilde eine Frage: <i>You have got some new clothes.</i>",answer:["Have you got any new clothes?","Do you have any new clothes?"],explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Verneine: <i>I have got some friends in London.</i>",answer:["I haven't got any friends in London.","I have not got any friends in London.","I don't have any friends in London.","I do not have any friends in London."],explanation:"💡 some → any."},
+  {prompt:"Korrigiere: <i>Is there some milk in the fridge?</i>",answer:["Is there any milk in the fridge?"],explanation:"💡 Normale Frage → <b>any</b>."},
+  {prompt:"Bilde eine Frage: <i>There are some apples in the kitchen.</i>",answer:["Are there any apples in the kitchen?"],explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Korrigiere: <i>We don't need any milk, thanks.</i> – Welcher dieser Sätze ist <b>auch</b> richtig?",answer:["We don't need any milk, thanks."],explanation:"💡 Dieser Satz ist bereits korrekt."},
+];
+
+const bittenPool=[
+  {type:"mc",prompt:"Welches Wort fehlt im Angebot? <i>Would you like ___ tea?</i>",options:["any","some","a"],correct:1,answer:"some"},
+  {type:"mc",prompt:"Höfliche Bitte: <i>Can I have ___ water, please?</i>",options:["any","some","much"],correct:1,answer:"some"},
+  {type:"mc",prompt:"<i>Could you give me ___ help?</i>",options:["any","some","a"],correct:1,answer:"some"},
+  {type:"mc",prompt:"Warum benutzt man <b>some</b> auch in Fragen wie <i>Would you like some tea?</i>?",options:["weil 'tea' uncountable ist","bei Bitten und Angeboten","immer in W-Fragen"],correct:1,answer:"bei Bitten und Angeboten"},
+  {type:"mc",prompt:"<i>Have you got ___ apples?</i> (normale Frage)",options:["some","any","a"],correct:1,answer:"any"},
+  {type:"mc",prompt:"<i>Would you like ___ chocolate?</i> (Angebot)",options:["any","some","much"],correct:1,answer:"some"},
+  {prompt:"Ergänze: <i>Would you like ___ chocolate?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Angebot → <b>some</b>."},
+  {prompt:"Ergänze: <i>Could I have ___ help, please?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b>."},
+  {prompt:"Ergänze: <i>Do you want ___ apples?</i> (Angebot)",answer:["some"],placeholder:"some / any",explanation:"💡 Angebot → <b>some</b>."},
+  {prompt:"Ergänze: <i>Can I have ___ juice, please?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b>."},
+  {prompt:"Ergänze: <i>Would you like ___ ice cream?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Angebot → <b>some</b>."},
+  {prompt:"Ergänze: <i>Could you bring me ___ bread, please?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b>."},
+  {prompt:"Ergänze: <i>Have you got ___ brothers?</i> (normale Frage)",answer:["any"],placeholder:"some / any",explanation:"💡 Normale Frage → <b>any</b>."},
+  {prompt:"Ergänze: <i>Would you like ___ milk in your tea?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Angebot → <b>some</b>."},
+  {prompt:"Ergänze: <i>Can I borrow ___ money, please?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b>."},
+];
+
+const compPool=[
+  {type:"mc",prompt:"<i>There is ___ at the door.</i>",options:["anybody","somebody","nobody"],correct:1,answer:"somebody"},
+  {type:"mc",prompt:"<i>I can't see ___ here.</i>",options:["somebody","anybody","everybody"],correct:1,answer:"anybody"},
+  {type:"mc",prompt:"<i>Did you eat ___ for lunch?</i>",options:["something","anything","nothing"],correct:1,answer:"anything"},
+  {type:"mc",prompt:"<i>I want to drink ___.</i>",options:["something","anything","nothing"],correct:0,answer:"something"},
+  {type:"mc",prompt:"<i>Is there ___ in the kitchen?</i> (eine Person)",options:["somebody","anybody","everybody"],correct:1,answer:"anybody"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["Somebody are at the door.","Somebody is at the door.","Somebody am at the door."],correct:1,answer:"Somebody is at the door."},
+  {type:"mc",prompt:"<i>Let's go ___ nice for the weekend.</i>",options:["anywhere","somewhere","nowhere"],correct:1,answer:"somewhere"},
+  {type:"mc",prompt:"<i>He didn't say ___.</i>",options:["something","anything","everything"],correct:1,answer:"anything"},
+  {prompt:"Ergänze: <i>Look! ___ is waiting outside.</i>",answer:["Somebody","Someone"],placeholder:"Somebody / Anybody",explanation:"💡 Positiver Satz → <b>Somebody / Someone</b>. Verb steht im Singular: <b>is</b>!"},
+  {prompt:"Ergänze: <i>I can't find ___ to help me.</i>",answer:["anybody","anyone"],placeholder:"somebody / anybody",explanation:"💡 Verneinung → <b>anybody / anyone</b>."},
+  {prompt:"Ergänze: <i>Would you like ___ to drink?</i>",answer:["something"],placeholder:"something / anything",explanation:"💡 Angebot → <b>something</b>."},
+  {prompt:"Ergänze: <i>I have ___ to tell you.</i>",answer:["something"],placeholder:"something / anything",explanation:"💡 Positiver Aussagesatz → <b>something</b>."},
+  {prompt:"Ergänze: <i>Did you go ___ on the weekend?</i>",answer:["anywhere"],placeholder:"somewhere / anywhere",explanation:"💡 Frage → <b>anywhere</b>."},
+  {prompt:"Korrigiere: <i>Somebody are knocking at the door.</i>",answer:["Somebody is knocking at the door."],explanation:"💡 <b>somebody</b> ist Singular → <b>is</b>, nicht <i>are</i>!"},
+  {prompt:"Korrigiere: <i>I don't see somebody in the garden.</i>",answer:["I don't see anybody in the garden.","I do not see anybody in the garden."],explanation:"💡 Verneinung → <b>anybody</b>."},
+];
+
+const fewlitL1=[
+  {type:"mc",prompt:"Welches Wort ist <b>countable</b> (zählbar)?",options:["water","milk","apples"],correct:2,answer:"apples"},
+  {type:"mc",prompt:"Welches Wort ist <b>uncountable</b> (nicht zählbar)?",options:["friends","milk","cats"],correct:1,answer:"milk"},
+  {type:"mc",prompt:"<i>I have ___ friends.</i>",options:["a few","a little","much"],correct:0,answer:"a few"},
+  {type:"mc",prompt:"<i>There is ___ milk left.</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {type:"mc",prompt:"<i>He has ___ time today.</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {type:"mc",prompt:"<i>She has ___ books at home.</i>",options:["a few","a little","much"],correct:0,answer:"a few"},
+  {type:"mc",prompt:"<i>We have ___ money.</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {type:"mc",prompt:"<i>Can I have ___ water?</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {type:"mc",prompt:"Wann benutzt du <b>a few</b>?",options:["bei nicht-zählbaren Nomen","bei zählbaren Nomen","immer in Fragen"],correct:1,answer:"bei zählbaren Nomen"},
+  {type:"mc",prompt:"Wann benutzt du <b>a little</b>?",options:["bei nicht-zählbaren Nomen","bei zählbaren Nomen","nur in Verneinungen"],correct:0,answer:"bei nicht-zählbaren Nomen"},
+  {type:"mc",prompt:"<i>There are ___ apples in the basket.</i>",options:["a little","a few","much"],correct:1,answer:"a few"},
+  {type:"mc",prompt:"<i>I have ___ sugar in my tea.</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {type:"mc",prompt:"<i>She has ___ ideas for the project.</i>",options:["a few","a little","much"],correct:0,answer:"a few"},
+  {type:"mc",prompt:"<i>There is ___ juice in the bottle.</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {type:"mc",prompt:"<i>He speaks ___ English words.</i> (zählbar: words)",options:["a little","a few","much"],correct:1,answer:"a few"},
+];
+
+const fewlitL2=[
+  {prompt:"Ergänze: <i>I have ___ apples in my bag.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 apples = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>There is ___ milk in the bottle.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 milk = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>He has ___ friends at school.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 friends = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>We need ___ sugar for the cake.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 sugar = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>She speaks ___ English.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 English (Sprache) = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>There are ___ books on the table.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 books = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>I have ___ money in my pocket.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 money = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>He drinks ___ coffee in the morning.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 coffee = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>I know ___ words in French.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 words = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>There is ___ bread left in the kitchen.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 bread = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>She has ___ cats and one dog.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 cats = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>Add ___ salt to the soup.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 salt = uncountable → <b>a little</b>."},
+  {prompt:"Ergänze: <i>We have ___ oranges in the kitchen.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 oranges = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>There are ___ eggs in the fridge.</i>",answer:["a few"],placeholder:"a few / a little",explanation:"💡 eggs = countable → <b>a few</b>."},
+  {prompt:"Ergänze: <i>I drink ___ water every day.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 water = uncountable → <b>a little</b>."},
+];
+
+const fewlitL3=[
+  {prompt:"Setze <b>a few</b> oder <b>few</b> ein: <i>He has only ___ friends. He is sad.</i>",answer:["few"],placeholder:"a few / few",explanation:"💡 negative Bedeutung (zu wenige) → <b>few</b>."},
+  {prompt:"Setze <b>a few</b> oder <b>few</b> ein: <i>She has ___ friends. She is happy.</i>",answer:["a few"],placeholder:"a few / few",explanation:"💡 positive Bedeutung (einige) → <b>a few</b>."},
+  {prompt:"Setze <b>a little</b> oder <b>little</b> ein: <i>I have ___ time. Let's start now!</i>",answer:["a little"],placeholder:"a little / little",explanation:"💡 positiv (es reicht) → <b>a little</b>."},
+  {prompt:"Setze <b>a little</b> oder <b>little</b> ein: <i>We have ___ time. Hurry up!</i>",answer:["little"],placeholder:"a little / little",explanation:"💡 negativ (zu wenig) → <b>little</b>."},
+  {prompt:"Übersetze: <i>Er hat ein paar Freunde.</i>",answer:["He has a few friends.","He has got a few friends."],explanation:"💡 ein paar (positiv, einige) → <b>a few</b>."},
+  {prompt:"Übersetze: <i>Er hat nur wenige Freunde.</i>",answer:["He has few friends.","He has got few friends.","He has only few friends.","He has only a few friends."],explanation:"💡 nur wenige (negativ) → <b>few</b>."},
+  {prompt:"Übersetze: <i>Es gibt etwas Milch im Kühlschrank.</i>",answer:["There is a little milk in the fridge."],explanation:"💡 etwas (positiv) → <b>a little</b>."},
+  {prompt:"Übersetze: <i>Wir haben wenig Geld.</i>",answer:["We have little money.","We have got little money."],explanation:"💡 wenig (negativ) → <b>little</b>."},
+  {prompt:"Korrigiere: <i>I have much friends.</i>",answer:["I have many friends.","I have got many friends.","I have a few friends.","I have got a few friends.","I have some friends.","I have got some friends."],explanation:"💡 friends = countable → <b>many / a few / some</b> (nicht <i>much</i>)."},
+  {prompt:"Korrigiere: <i>She has many money.</i>",answer:["She has a lot of money.","She has lots of money.","She has much money.","She has got a lot of money."],explanation:"💡 money = uncountable → <b>a lot of / much</b> (nicht <i>many</i>)."},
+  {prompt:"Setze <b>a few</b> oder <b>few</b> ein: <i>Don't worry – we have ___ minutes left.</i>",answer:["a few"],placeholder:"a few / few",explanation:"💡 positiv (genug Zeit) → <b>a few</b>."},
+  {prompt:"Setze <b>a little</b> oder <b>little</b> ein: <i>Could you give me ___ help, please?</i>",answer:["a little"],placeholder:"a little / little",explanation:"💡 höfliche Bitte (positiv) → <b>a little</b>."},
+  {prompt:"Setze <b>a few</b> oder <b>few</b> ein: <i>Sadly, ___ people came to the party.</i>",answer:["few"],placeholder:"a few / few",explanation:"💡 negativ (enttäuschend wenige) → <b>few</b>."},
+  {prompt:"Setze <b>a little</b> oder <b>little</b> ein: <i>Add ___ salt – just for the taste.</i>",answer:["a little"],placeholder:"a little / little",explanation:"💡 positiv (etwas) → <b>a little</b>."},
+  {prompt:"Übersetze: <i>Sie spricht etwas Englisch.</i>",answer:["She speaks a little English."],explanation:"💡 etwas (positiv) → <b>a little</b>."},
+];
+
+const mixPool=[
+  {prompt:"Korrigiere: <i>I have any pets.</i>",answer:["I have some pets.","I have got some pets.","I don't have any pets.","I do not have any pets."],explanation:"💡 Im positiven Satz: <b>some</b>. (Oder Verneinung mit <b>don't … any</b>.)"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["There aren't some books.","There aren't any books.","There isn't no books."],correct:1,answer:"There aren't any books."},
+  {prompt:"Ergänze: <i>Are there ___ children in the garden?</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Frage → <b>any</b>."},
+  {prompt:"Korrigiere: <i>She has many milk.</i>",answer:["She has much milk.","She has a lot of milk.","She has lots of milk.","She has got much milk.","She has got a lot of milk."],explanation:"💡 milk = uncountable → <b>much / a lot of</b>."},
+  {prompt:"Korrigiere: <i>Somebody are at the door.</i>",answer:["Somebody is at the door.","Someone is at the door."],explanation:"💡 somebody = Singular → <b>is</b>."},
+  {prompt:"Ergänze: <i>Would you like ___ tea?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Angebot → <b>some</b>."},
+  {prompt:"Ergänze: <i>I haven't got ___ time today.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {type:"mc",prompt:"<i>He has ___ friends. He is lonely.</i>",options:["a few","few","a little"],correct:1,answer:"few"},
+  {type:"mc",prompt:"<i>There is ___ juice in the bottle.</i>",options:["a few","a little","many"],correct:1,answer:"a little"},
+  {prompt:"Korrigiere: <i>I don't see somebody in the garden.</i>",answer:["I don't see anybody in the garden.","I do not see anybody in the garden.","I don't see anyone in the garden.","I do not see anyone in the garden."],explanation:"💡 Verneinung → <b>anybody / anyone</b>."},
+  {prompt:"Ergänze: <i>Can I have ___ water, please?</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Höfliche Bitte → <b>some</b>."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["I have got any apples.","I haven't got any apples.","I haven't got some apples."],correct:1,answer:"I haven't got any apples."},
+  {prompt:"Ergänze: <i>There are ___ books on the desk.</i>",answer:["some"],placeholder:"some / any",explanation:"💡 Positiver Aussagesatz → <b>some</b>."},
+  {prompt:"Korrigiere: <i>I have a little friends.</i>",answer:["I have a few friends.","I have got a few friends."],explanation:"💡 friends = countable → <b>a few</b>, nicht <i>a little</i>."},
+  {prompt:"Korrigiere: <i>She has a few money.</i>",answer:["She has a little money.","She has got a little money."],explanation:"💡 money = uncountable → <b>a little</b>, nicht <i>a few</i>."},
+  {type:"mc",prompt:"<i>Did you see ___ in the park?</i>",options:["somebody","anybody","everybody"],correct:1,answer:"anybody"},
+  {prompt:"Ergänze: <i>We don't have ___ bread left.</i>",answer:["any"],placeholder:"some / any",explanation:"💡 Verneinung → <b>any</b>."},
+  {prompt:"Ergänze: <i>She speaks ___ English.</i>",answer:["a little"],placeholder:"a few / a little",explanation:"💡 English (Sprache) = uncountable → <b>a little</b>."},
+];
+
+setupSection('pos',document.getElementById('pos-levels'),document.getElementById('pos-tasks'),{1:posL1,2:posL2,3:posL3},document.getElementById('pos-check-all'),document.getElementById('pos-reset'),true,15);
+setupSimpleSection('bitten',document.getElementById('bitten-tasks'),bittenPool,document.getElementById('bitten-check-all'),document.getElementById('bitten-reset'),12);
+setupSimpleSection('comp',document.getElementById('comp-tasks'),compPool,document.getElementById('comp-check-all'),document.getElementById('comp-reset'),12);
+setupSection('fewlit',document.getElementById('fewlit-levels'),document.getElementById('fewlit-tasks'),{1:fewlitL1,2:fewlitL2,3:fewlitL3},document.getElementById('fewlit-check-all'),document.getElementById('fewlit-reset'),true,15);
+setupSimpleSection('mix',document.getElementById('mix-tasks'),mixPool,document.getElementById('mix-check-all'),document.getElementById('mix-reset'),15);
+
+document.getElementById('reset-all-btn').addEventListener('click',()=>{
+  customConfirm('Gesamten Fortschritt zurücksetzen?',()=>{
+    ['pos','bitten','comp','fewlit','mix'].forEach(k=>{
+      const r=document.getElementById(k+'-reset');
+      if(!r)return;
+      const orig=window.customConfirm;window.customConfirm=function(m,cb){cb();};
+      r.click();
+      window.customConfirm=orig;
+    });
+  });
+});
+
+// ===== QUIZ-POOL (Wer wird Millionär) =====
+const quizPool=[
+{prompt:"Welche Form ist richtig?<br><i>I have got ___ apples in my bag.</i>",options:["any","no","some","much"],correct:2,tip:"Im positiven Aussagesatz steht <b>some</b>.",explanation:"✅ <b>I have got some apples</b> – positiver Satz → some.",d:1},
+{prompt:"Welche Form ist richtig?<br><i>I haven't got ___ time today.</i>",options:["some","any","few","no"],correct:1,tip:"In Verneinungen steht <b>any</b>.",explanation:"✅ <b>I haven't got any time</b> – Verneinung → any.",d:1},
+{prompt:"Welche Form ist richtig?<br><i>Have you got ___ pets at home?</i>",options:["some","a","any","no"],correct:2,tip:"In normalen Fragen steht <b>any</b>.",explanation:"✅ <b>Have you got any pets?</b> – normale Frage → any.",d:1},
+{prompt:"Welches Wort ist <b>uncountable</b> (nicht zählbar)?",options:["apples","books","milk","friends"],correct:2,tip:"Flüssigkeiten und Massen sind <b>uncountable</b>.",explanation:"✅ <b>milk</b> kann nicht gezählt werden (kein „two milks“).",d:1},
+{prompt:"Welche Form ist richtig?<br><i>Would you like ___ tea?</i>",options:["any","some","a","no"],correct:1,tip:"Bei <b>Angeboten</b> steht <b>some</b> – auch in Fragen!",explanation:"✅ <b>Would you like some tea?</b> – Angebot → some (Ausnahme).",d:2},
+{prompt:"Welche Form ist richtig?<br><i>I can't see ___ in the garden.</i>",options:["somebody","nobody","everybody","anybody"],correct:3,tip:"Verneinung → <b>anybody</b>.",explanation:"✅ <b>can't see anybody</b> – Verneinung → anybody.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>There ___ at the door – can you open it?</i>",options:["is somebody","are somebody","is anybody","are anybody"],correct:0,tip:"<b>somebody</b> ist Singular → <b>is</b>.",explanation:"✅ <b>There is somebody</b> – somebody = Singular!",d:2},
+{prompt:"Welche Form ist richtig?<br><i>I have ___ friends in my new class.</i>",options:["a little","much","any","a few"],correct:3,tip:"friends = countable → <b>a few</b>.",explanation:"✅ <b>a few friends</b> – friends sind zählbar.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>There is ___ milk in the fridge. Don't worry.</i>",options:["a few","many","any","a little"],correct:3,tip:"milk = uncountable → <b>a little</b>.",explanation:"✅ <b>a little milk</b> – milk ist nicht zählbar.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>He has only ___ friends. He often feels lonely.</i>",options:["a few","a little","few","little"],correct:2,tip:"negative Bedeutung (zu wenig) → <b>few</b> ohne <i>a</i>.",explanation:"✅ <b>few friends</b> – ohne „a“ = zu wenige (negativ).",d:3},
+{prompt:"Welche Form ist richtig?<br><i>We have ___ time left. Hurry up!</i>",options:["a little","little","a few","few"],correct:1,tip:"negative Bedeutung (zu wenig) bei uncountable → <b>little</b>.",explanation:"✅ <b>little time</b> – ohne „a“ = zu wenig (negativ).",d:3},
+{prompt:"Welcher Satz ist grammatisch <b>richtig</b>?",options:["She has many money.","She has much friends.","She has few money.","She has many friends."],correct:3,tip:"friends = countable → <b>many</b>; money = uncountable → <b>much/a lot of</b>.",explanation:"✅ <b>many friends</b> – friends sind zählbar.",d:3},
+{prompt:"Welcher Satz ist grammatisch <b>richtig</b>?",options:["Somebody are knocking.","I don't see somebody outside.","There aren't somebody here.","Did you see anybody at the park?"],correct:3,tip:"Frage → <b>anybody</b>; Verneinung → <b>anybody</b>; somebody = Singular → is.",explanation:"✅ <b>Did you see anybody?</b> – normale Frage → anybody.",d:3},
+{prompt:"Welcher Satz ist grammatisch <b>richtig</b>?",options:["Have you got some pets?","Would you like any chocolate?","There aren't some apples left.","Could you give me some help, please?"],correct:3,tip:"Bitte/Angebot → <b>some</b>; normale Frage → any; Verneinung → any.",explanation:"✅ <b>Could you give me some help</b> – höfliche Bitte → some.",d:3},
+{prompt:"Welcher Satz ist grammatisch <b>richtig</b>?",options:["She has a few money but a little friends.","She has a few money but few friends.","She has many money but a little friends.","She has a little money but a few friends."],correct:3,tip:"money = uncountable → a little; friends = countable → a few.",explanation:"✅ <b>a little money + a few friends</b> – uncountable vs. countable!",d:3},
+];
+
+// ===== QUIZ (Wer wird Millionär) =====
+(function initQuiz(){
+  function pickByDifficulty(pool,total){
+    function sh(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    const d1=sh(pool.filter(q=>q.d===1));
+    const d2=sh(pool.filter(q=>q.d===2));
+    const d3=sh(pool.filter(q=>q.d===3));
+    const n1=Math.min(4,d1.length);
+    const n3=Math.min(6,d3.length);
+    const n2=Math.min(total-n1-n3,d2.length);
+    return [...d1.slice(0,n1),...d2.slice(0,n2),...d3.slice(0,n3)];
+  }
+  let tasks=pickByDifficulty(quizPool,15);
+  const total=tasks.length;
+  const wrap=document.getElementById('quiz-tasks');
+  const progressRoot=document.querySelector('#quiz-progress .progress');
+  const progressCtrl=initProgressBar(progressRoot,total);
+  const resultBox=document.getElementById('quiz-result');
+  let current=0,correct=0,wrongCount=0,wrongTasks=[],streak=0,earnedLevel=0,securedFloor=0;
+  let timerStart=null,timerInterval=null,elapsedSeconds=0;
+  const timerEl=document.createElement('div');
+  timerEl.style.cssText='font-size:13px;font-weight:700;color:#ffcc00;text-align:center;margin:4px 0 8px;letter-spacing:1px;display:none;';
+  timerEl.textContent='⏱ 0:00';
+  progressRoot.parentElement.insertAdjacentElement('afterend',timerEl);
+  function startTimer(){if(timerInterval)return;timerStart=Date.now()-elapsedSeconds*1000;timerInterval=setInterval(()=>{elapsedSeconds=Math.floor((Date.now()-timerStart)/1000);const m=Math.floor(elapsedSeconds/60);const s=String(elapsedSeconds%60).padStart(2,'0');timerEl.textContent=`⏱ ${m}:${s}`;},1000);timerEl.style.display='block';}
+  function stopTimer(){clearInterval(timerInterval);timerInterval=null;}
+  function resetTimer(){stopTimer();elapsedSeconds=0;timerStart=null;timerEl.textContent='⏱ 0:00';timerEl.style.display='none';}
+  function formatTime(sec){return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;}
+  function updateProgress(){progressCtrl.update(correct,correct+wrongCount);}
+  const wwmAmounts=['100','200','300','500','1.000','2.000','4.000','8.000','16.000','32.000','64.000','125.000','250.000','500.000','1.000.000'];
+  const wwmMilestones=[4,9,14];
+  function buildLadder(questionIdx,earnedLvl){
+    const ladder=document.createElement('div');ladder.className='wwm-ladder';
+    for(let i=total-1;i>=0;i--){
+      const row=document.createElement('div');row.className='wwm-ladder-row';
+      if(wwmMilestones.includes(i))row.classList.add('milestone');
+      if(i<earnedLvl)row.classList.add('done');
+      if(i===earnedLvl)row.classList.add('current');
+      const qnum=document.createElement('span');qnum.className='wwm-qnum';qnum.textContent=i+1;
+      const amt=document.createElement('span');amt.className='wwm-amount';
+      amt.textContent=(i===earnedLvl?'▶ ':'')+wwmAmounts[i];
+      row.appendChild(qnum);row.appendChild(amt);
+      ladder.appendChild(row);
+    }
+    return ladder;
+  }
+  const jokerUsed={fifty:false,phone:false,audience:false};
+  let currentBtns=[];
+
+  function applyJoker(key,task,correctIdx,btns,stage){
+    stage.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(el=>el.remove());
+    const letters=['A','B','C','D'];
+    if(key==='fifty'){
+      const wrongIdxs=[0,1,2,3].filter(i=>i!==correctIdx);
+      for(let i=wrongIdxs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[wrongIdxs[i],wrongIdxs[j]]=[wrongIdxs[j],wrongIdxs[i]];}
+      wrongIdxs.slice(0,2).forEach(i=>{
+        btns[i].style.opacity='0.15';
+        btns[i].style.pointerEvents='none';
+        btns[i].disabled=true;
+      });
+    }else if(key==='phone'){
+      const isWrong=Math.random()<0.30;
+      let answerIdx,confidence;
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        answerIdx=wi[Math.floor(Math.random()*wi.length)];
+        confidence='Ich bin nicht ganz sicher, aber ich glaube …';
+      }else{
+        answerIdx=correctIdx;
+        confidence='Da bin ich mir ziemlich sicher:';
+      }
+      const box=document.createElement('div');box.className='wwm-phone-bubble';
+      box.innerHTML=`<span class="wwm-phone-icon">📞</span><div class="wwm-phone-text"><b>Dein Freund sagt:</b><br>${confidence}<br><em style="display:block;margin-top:6px;">${letters[answerIdx]}: ${task.options[answerIdx]}</em></div>`;
+      stage.appendChild(box);
+    }else if(key==='audience'){
+      const isWrong=Math.random()<0.30;
+      const pcts=[0,0,0,0];
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const winner=wi[Math.floor(Math.random()*wi.length)];
+        pcts[winner]=Math.floor(Math.random()*15)+45;
+        pcts[correctIdx]=Math.floor(Math.random()*15)+10;
+        const rest=[0,1,2,3].filter(i=>i!==winner&&i!==correctIdx);
+        const r=100-pcts[winner]-pcts[correctIdx];
+        pcts[rest[0]]=Math.floor(r*0.55);
+        pcts[rest[1]]=r-pcts[rest[0]];
+      }else{
+        pcts[correctIdx]=Math.floor(Math.random()*25)+50;
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const r=100-pcts[correctIdx];
+        pcts[wi[0]]=Math.floor(r*0.45);
+        pcts[wi[1]]=Math.floor(r*0.30);
+        pcts[wi[2]]=r-pcts[wi[0]]-pcts[wi[1]];
+      }
+      const barColors=['#d4922e','#e53935','#43a047','#f9a825'];
+      const barsHTML=pcts.map((p,i)=>`<div class="wwm-audience-col" style="cursor:pointer" data-idx="${i}"><div class="wwm-audience-pct">${p}%</div><div class="wwm-audience-bar" style="height:${Math.max(p,4)}%;background:${barColors[i]};border-radius:4px 4px 0 0;"></div><div class="wwm-audience-label">${letters[i]}</div></div>`).join('');
+      const box=document.createElement('div');box.className='wwm-audience-box';
+      box.innerHTML=`<div class="wwm-audience-title">📊 Publikumsjoker</div><div class="wwm-audience-bars" style="align-items:flex-end;height:110px;">${barsHTML}</div>`;
+      stage.appendChild(box);
+      box.querySelectorAll('[data-idx]').forEach(col=>{
+        col.addEventListener('click',()=>{
+          const idx=parseInt(col.dataset.idx);
+          if(btns[idx]&&!btns[idx].disabled)btns[idx].click();
+        });
+      });
+    }
+  }
+
+  function renderQuestion(){
+    if(current>=total){showFinal();return;}
+    startTimer();
+    wrap.innerHTML='';
+    const t=tasks[current];
+    const opts=t.options;
+    const correctIdx=t.correct;
+    currentBtns=[];
+    const fw=document.createElement('div');fw.className='quiz-question-enter';
+    const streakEl=document.createElement('div');streakEl.className='quiz-streak';
+    if(streak>=3)streakEl.textContent=`🔥 ${streak}er-Serie!`;
+    fw.appendChild(streakEl);
+    const lifelines=document.createElement('div');lifelines.className='wwm-lifelines';
+    const layout=document.createElement('div');layout.className='wwm-layout';
+    const stage=document.createElement('div');stage.className='wwm-stage';
+    [{key:'audience',label:'👥 Publikum'},{key:'phone',label:'📞 Joker'},{key:'fifty',label:'50:50'}].forEach(j=>{
+      const used=jokerUsed[j.key];
+      const chip=document.createElement('button');chip.className='chip'+(used?' chip-used':'');
+      chip.textContent=j.label;chip.disabled=used;chip.type='button';
+      chip.addEventListener('click',()=>{
+        if(jokerUsed[j.key])return;
+        jokerUsed[j.key]=true;chip.classList.add('chip-used');chip.disabled=true;
+        applyJoker(j.key,t,correctIdx,currentBtns,stage);
+      });
+      lifelines.appendChild(chip);
+    });
+    fw.appendChild(lifelines);
+    const prompt=document.createElement('div');prompt.className='prompt';prompt.innerHTML=t.prompt;
+    stage.appendChild(prompt);
+    const optWrap=document.createElement('div');optWrap.className='wwm-joker-options';
+    const letters=['A','B','C','D'];
+    let answered=false;
+    opts.forEach((optText,i)=>{
+      const btn=document.createElement('button');btn.className='wwm-option-btn';btn.type='button';
+      btn.innerHTML=`<span class="wwm-opt-letter">${letters[i]}</span>${optText}`;
+      btn.addEventListener('click',()=>{
+        if(answered)return;
+        answered=true;
+        currentBtns.forEach(b=>b.disabled=true);
+        currentBtns.forEach((b,bi)=>{
+          const letter=b.querySelector('.wwm-opt-letter');
+          if(bi===correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#1b5e20,#2e7d32);border-color:#4caf50;';if(letter)letter.style.cssText='background:rgba(76,175,80,.3);border-color:#4caf50;color:#b9f6ca;';}
+          else if(bi===i&&i!==correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#7f0000,#b71c1c);border-color:#ef5350;';if(letter)letter.style.cssText='background:rgba(239,83,80,.3);border-color:#ef5350;color:#ffcdd2;';}
+        });
+        const isCorrect=i===correctIdx;
+        if(isCorrect){
+          fb.textContent='✓ Richtig!';fb.className='feedback ok';
+          correct++;streak++;earnedLevel++;
+          if(wwmMilestones.includes(earnedLevel-1))securedFloor=earnedLevel-1;
+          if(t.explanation){eb.innerHTML=t.explanation;eb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn green';nb.dataset.next='1';nb.textContent='Weiter →';nb.type='button';
+          nb.addEventListener('click',()=>{updateProgress();current++;renderQuestion();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }else{
+          fb.innerHTML=`✗ Falsch! Richtige Antwort: <b>${letters[correctIdx]}: ${opts[correctIdx]}</b>`;fb.className='feedback bad';
+          wrongTasks.push({...t,_questionNumber:current+1,_userInput:`${letters[i]}: ${opts[i]}`});
+          wrongCount++;streak=0;
+          const floor=wwmMilestones.filter(m=>m<=earnedLevel).pop();earnedLevel=floor!==undefined?floor:0;
+          if(t.explanation){eb.innerHTML=t.explanation.replace('✅','💡');eb.style.display='block';}
+          if(t.tip){tb.innerHTML=`💡 <b>Tipp:</b> ${t.tip}`;tb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn gray';nb.dataset.next='1';nb.textContent='Ergebnis ansehen →';nb.type='button';
+          nb.addEventListener('click',()=>{updateProgress();showFinal();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }
+      });
+      optWrap.appendChild(btn);
+      currentBtns.push(btn);
+    });
+    stage.appendChild(optWrap);
+    const fb=document.createElement('div');fb.className='feedback';stage.appendChild(fb);
+    const tb=document.createElement('div');tb.className='quiz-tip-box';tb.style.display='none';stage.appendChild(tb);
+    const eb=document.createElement('div');eb.className='quiz-explanation-box';eb.style.display='none';stage.appendChild(eb);
+    const ctrl=document.createElement('div');ctrl.className='controls';ctrl.style.cssText='margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,204,0,.15);';stage.appendChild(ctrl);
+    layout.appendChild(stage);layout.appendChild(buildLadder(current,earnedLevel));
+    fw.appendChild(layout);wrap.appendChild(fw);
+  }
+
+  function showFinal(){
+    stopTimer();wrap.innerHTML='';
+    const pct=Math.round((correct/total)*100);const ts=formatTime(elapsedSeconds);
+    const prize=earnedLevel>0?wwmAmounts[earnedLevel-1]+' €':'0 €';
+    let emoji='',headline='',msg='';
+    if(pct===100){emoji='🏆';headline='EINE MILLION! 🎉';msg='PERFEKT! Alle 15 Fragen richtig – some, any, little und few sitzen wie auswendig gelernt!';}
+    else if(pct>=90){emoji='🤩';headline='Fast perfekt – Respekt!';msg='Wow, kaum ein Fehler! some/any und a few/a little sind bei dir richtig drin.';}
+    else if(pct>=80){emoji='🌟';headline='Richtig stark, weiter so!';msg='Starke Leistung! Den Unterschied countable / uncountable hast du voll im Griff.';}
+    else if(pct>=70){emoji='😎';headline='Solide – du weißt, was du tust!';msg='Mehr als zwei Drittel richtig – das ist kein Glück, das ist Können!';}
+    else if(pct>=60){emoji='🙌';headline='Auf dem richtigen Weg!';msg='Über die Hälfte richtig – noch etwas üben (vor allem few/little ohne „a“) und du nagelst es!';}
+    else if(pct>=50){emoji='💡';headline='Halbzeit – Luft nach oben!';msg='Die Hälfte sitzt schon! Schau dir die Regeln zu some/any und a few/a little nochmal an.';}
+    else if(pct>=30){emoji='🐣';headline='Der Anfang ist gemacht!';msg='Noch ist nicht alles verloren – du weißt jetzt, wo du ansetzen musst.';}
+    else{emoji='😅';headline='Ups – aber kein Problem!';msg='Schau nochmal in die Regelkarten oben, dann klappts garantiert besser.';}
+    let errorHTML='';
+    if(wrongTasks.length>0){
+      errorHTML=`<div style="margin-top:22px;text-align:left;"><div style="font-size:16px;font-weight:900;color:#ffcc00;margin-bottom:10px;text-align:center;">📋 Deine Fehler – schau sie dir nochmal an:</div><div style="display:flex;flex-direction:column;gap:8px;">${wrongTasks.map(wt=>`<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,110,110,.45);border-radius:10px;padding:10px 14px;"><div style="font-size:12px;color:#ffb3b3;font-weight:700;margin-bottom:3px;">Frage ${wt._questionNumber}</div><div style="font-size:14px;color:#e8d0aa;margin-bottom:4px;">${wt.prompt}</div><div style="font-size:14px;color:#ff6b6b;font-style:italic;margin-bottom:4px;">✗ ${wt._userInput||'–'}</div><div style="font-size:14px;color:#7fffb3;font-weight:700;">✓ ${['A','B','C','D'][wt.correct]}: ${wt.options[wt.correct]}</div>${wt.explanation?`<div style="font-size:13px;color:#c7d2fe;margin-top:5px;">${wt.explanation}</div>`:''}</div>`).join('')}</div></div>`;
+    }
+    resultBox.innerHTML=`<div style="position:relative;overflow:hidden;"><div style="height:8px;background:repeating-linear-gradient(90deg,#ffcc00 0 14%,#d4922e 14% 28%,#e53935 28% 42%,#43a047 42% 56%,#ffcc00 56% 70%,#ab47bc 70% 84%,#d4922e 84% 100%);"></div><div style="padding:28px 20px 24px;text-align:center;"><div style="font-size:72px;line-height:1;margin-bottom:10px;filter:drop-shadow(0 4px 12px rgba(255,204,0,.6));">${emoji}</div><div style="font-size:clamp(26px,6vw,38px);font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-bottom:6px;">${headline}</div><div style="display:inline-block;background:rgba(255,204,0,.15);border:2px solid #ffcc00;border-radius:16px;padding:14px 32px;margin:12px 0 18px;"><div style="font-size:clamp(36px,8vw,52px);font-weight:900;color:#fff;line-height:1;">${correct} <span style="font-size:.55em;color:#ffcc00;">/ ${total}</span></div><div style="font-size:16px;font-weight:700;color:#ffcc00;letter-spacing:1px;margin-top:2px;">${pct} % RICHTIG</div><div style="font-size:13px;color:rgba(255,204,0,.8);margin-top:6px;">⏱ Zeit: ${ts}</div><div style="font-size:18px;font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-top:8px;">🏅 Gewonnen: ${prize}</div></div><div style="font-size:clamp(14px,3vw,17px);color:#fff;max-width:500px;margin:0 auto;line-height:1.7;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;border:1px solid rgba(255,255,255,.2);">${msg}</div>${errorHTML}</div><div style="height:8px;background:repeating-linear-gradient(90deg,#43a047 0 14%,#ffcc00 14% 28%,#ab47bc 28% 42%,#e53935 42% 56%,#d4922e 56% 70%,#ffcc00 70% 84%,#43a047 84% 100%);"></div></div>`;
+    resultBox.style.display='block';setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  }
+
+  document.getElementById('quiz-reset').addEventListener('click',()=>{
+    tasks=pickByDifficulty(quizPool,15);current=0;correct=0;wrongCount=0;wrongTasks=[];streak=0;earnedLevel=0;securedFloor=0;
+    jokerUsed.fifty=false;jokerUsed.phone=false;jokerUsed.audience=false;
+    updateProgress();resetTimer();
+    progressRoot.querySelector('.progress-fill').style.width='0%';
+    document.querySelector('#quiz-progress .progress-text').textContent=`Fortschritt: 0/${total} richtig (0%)`;
+    resultBox.style.display='none';resultBox.innerHTML='';
+    renderQuestion();
+  });
+  updateProgress();
+  let quizRendered=false;
+  const qa=document.getElementById('wwm-quiz');
+  if(qa)qa.addEventListener('toggle',()=>{
+    if(!qa.open){stopTimer();}
+    else{if(!quizRendered){quizRendered=true;renderQuestion();}else if(current<total&&timerStart!==null){startTimer();}}
+  });
+})();
+
+// ===== TTS / VORLESEN (LRS-Unterstützung) =====
+var TTS={
+  enabled:false,
+  synth:(function(){try{return window.speechSynthesis||null;}catch(e){return null;}})(),
+  speaking:false,
+  toggle(){
+    this.enabled=!this.enabled;
+    document.body.classList.toggle('tts-enabled',this.enabled);
+    const btn=document.getElementById('tts-toggle');
+    if(btn){btn.textContent=this.enabled?'🔊 Vorlesen ✓':'🔊 Vorlesen';btn.classList.toggle('tts-on',this.enabled);}
+    if(this.enabled){this.injectAll();}
+    else{
+      if(this.synth)this.synth.cancel();
+      document.querySelectorAll('.tts-btn').forEach(b=>b.remove());
+      document.querySelectorAll('.task').forEach(t=>delete t.dataset.ttsReady);
+      document.querySelectorAll('.solution').forEach(s=>delete s.dataset.ttsReady);
+      document.querySelectorAll('.task-solved-label').forEach(l=>delete l.dataset.ttsReady);
+    }
+  },
+  speak(text,lang){
+    if(!this.synth||!text)return;
+    this.synth.cancel();
+    const clean=text.replace(/<[^>]*>/g,' ').replace(/[→←·•📌✅❌❓🔵🕐⚠️💡✓✗]/g,' ').replace(/\s+/g,' ').trim();
+    if(!clean)return;
+    const utt=new SpeechSynthesisUtterance(clean);
+    utt.lang=lang||'en-GB';
+    utt.rate=lang==='de-DE'?0.95:0.85;
+    utt.pitch=1;
+    utt.onstart=()=>{this.speaking=true;};
+    utt.onend=()=>{this.speaking=false;document.querySelectorAll('.tts-btn.tts-playing').forEach(b=>b.classList.remove('tts-playing'));};
+    utt.onerror=()=>{this.speaking=false;};
+    this.synth.speak(utt);
+  },
+  createBtn(text,lang,style){
+    const btn=document.createElement('button');
+    btn.className='tts-btn';btn.type='button';
+    btn.setAttribute('aria-label','Vorlesen');
+    btn.textContent=lang==='de-DE'?'🇩🇪':'🇬🇧';
+    if(style)btn.style.cssText=style;
+    btn.addEventListener('click',(e)=>{
+      e.preventDefault();e.stopPropagation();
+      if(this.speaking){this.synth.cancel();this.speaking=false;btn.classList.remove('tts-playing');return;}
+      document.querySelectorAll('.tts-btn.tts-playing').forEach(b=>b.classList.remove('tts-playing'));
+      btn.classList.add('tts-playing');
+      this.speak(typeof text==='function'?text():text,lang);
+    });
+    return btn;
+  },
+  injectAll(){
+    if(!this.enabled)return;
+    document.querySelectorAll('.task').forEach(task=>{
+      if(task.closest('#wwm-quiz'))return;
+      if(task.dataset.ttsReady)return;
+      task.dataset.ttsReady='1';
+      const prompt=task.querySelector('.prompt');
+      if(prompt){
+        const pText=prompt.textContent||'';
+        const hasDe=/Ordne|Bilde|Verneine|Setze|Frage nach|Welch|Wann|Was ist|Korrigiere|Übersetze|Forme/i.test(pText);
+        const srcTiles=task.querySelector('.wt-source');
+        if(srcTiles){
+          const ttsWrap=document.createElement('span');
+          ttsWrap.style.cssText='display:inline-flex;align-items:center;gap:5px;white-space:nowrap;vertical-align:middle;margin-left:6px;';
+          const makeFlag=function(flag,getTextFn,lang){
+            const b=document.createElement('button');
+            b.type='button';b.className='tts-btn tts-flag-btn';
+            b.textContent=flag;
+            b.style.cssText='font-size:18px;padding:1px 3px;line-height:1;';
+            b.setAttribute('aria-label','Vorlesen');
+            b.addEventListener('click',function(e){
+              e.preventDefault();e.stopPropagation();
+              const txt=typeof getTextFn==='function'?getTextFn():getTextFn;
+              if(TTS.speaking){TTS.synth.cancel();TTS.speaking=false;return;}
+              TTS.speak(txt,lang);
+            });
+            return b;
+          };
+          const deBtn=makeFlag('🇩🇪',pText,'de-DE');
+          ttsWrap.appendChild(deBtn);
+          const wordsText=Array.from(srcTiles.querySelectorAll('.word-tile')).map(t=>t.textContent).join(', ');
+          if(wordsText){
+            const enBtn=makeFlag('🇬🇧',()=>Array.from(task.querySelectorAll('.wt-source .word-tile')).map(t=>t.textContent).join(', '),'en-GB');
+            ttsWrap.appendChild(enBtn);
+          }
+          prompt.appendChild(ttsWrap);
+        }else{
+          const btn=this.createBtn(pText,hasDe?'de-DE':'en-GB');
+          prompt.appendChild(btn);
+        }
+      }
+    });
+    document.querySelectorAll('.solution').forEach(sol=>{
+      if(sol.style.display==='none'||!sol.textContent.trim())return;
+      if(sol.dataset.ttsReady)return;
+      sol.dataset.ttsReady='1';
+      const solText=sol.textContent.replace(/^Lösung:\s*/,'');
+      const btn=this.createBtn(solText,'en-GB','font-size:14px;margin-left:6px;');
+      sol.prepend(btn);
+    });
+    document.querySelectorAll('.task--solved .task-solved-label').forEach(label=>{
+      if(label.dataset.ttsReady)return;
+      const iEl=label.querySelector('i');
+      if(!iEl)return;
+      const txt=iEl.textContent.trim();
+      if(!txt)return;
+      label.dataset.ttsReady='1';
+      const btn=this.createBtn(txt,'en-GB','font-size:14px;margin-left:6px;vertical-align:middle;');
+      label.appendChild(btn);
+    });
+  },
+  init(){
+    const btn=document.getElementById('tts-toggle');
+    if(!this.synth){if(btn)btn.style.display='none';return;}
+    if(btn)btn.addEventListener('click',()=>this.toggle());
+    document.querySelectorAll('details.accordion').forEach(d=>{
+      d.addEventListener('toggle',()=>{if(d.open)setTimeout(()=>this.injectAll(),100);});
+    });
+  }
+};
+try{TTS.init();}catch(e){console.error('TTS init:',e);}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* ===================================================
+   shared/tutor.css
+   KI-Tutor-Akkordeon (Welcome-Karte, Quick-Chips,
+   Chat-Verlauf, Eingabezeile).
+   1:1 aus 08_passive.html übernommen.
+   =================================================== */
+
+#acc-ki .acc-num{background:linear-gradient(135deg,#b85c20,#d97520);color:#fff}
+#acc-ki summary{border-left-color:#b85c20;background:linear-gradient(90deg,rgba(184,92,32,.12),rgba(184,92,32,.03))}
+body.dark-mode #acc-ki summary{background:linear-gradient(90deg,rgba(184,92,32,.08),rgba(184,92,32,.01))}
+
+.ki-wrap{padding:4px 0 8px}
+
+.ki-welcome{background:linear-gradient(135deg,#fdf5e4,#f5ede0);border:1px solid #e8c99a;border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:14px;line-height:1.6;color:#2c1a0e}
+body.dark-mode .ki-welcome{background:linear-gradient(135deg,#2a1808,#1e1005);border-color:#6d28d9;color:#f0e0d0}
+.ki-welcome strong{color:#6d28d9}
+body.dark-mode .ki-welcome strong{color:#c4b5fd}
+
+.ki-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ki-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:#fde8c0;color:#b85c20;border:1px solid #f5c070}
+body.dark-mode .ki-badge{background:#3d2510;color:#fbbf77;border-color:#b85c20}
+
+.ki-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.ki-chip{padding:7px 13px;border:1.5px solid #e8c99a;border-radius:999px;font-size:13px;cursor:pointer;background:#fef5e4;color:#92400e;transition:.15s all;font-family:inherit;font-weight:600;-webkit-tap-highlight-color:transparent}
+.ki-chip:hover{background:#fde8c0;border-color:#d97520}
+.ki-chip:active{transform:scale(.96)}
+body.dark-mode .ki-chip{background:#2a1808;border-color:#b85c20;color:#fbbf77}
+body.dark-mode .ki-chip:hover{background:#3d2510}
+
+.ki-messages{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;min-height:40px}
+.ki-msg{display:flex;gap:9px;animation:fadeUp .22s ease}
+.ki-msg.user{flex-direction:row-reverse}
+.ki-avatar{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;background:#ede9fe;border:1px solid #d8b4fe}
+.ki-msg.user .ki-avatar{background:#b85c20;color:#fff;font-size:11px;font-weight:900}
+.ki-bubble{max-width:82%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.55;background:#fef8f0;border:1px solid #e5e7eb;color:#2c1a0e}
+.ki-msg.user .ki-bubble{background:#b85c20;color:#fff;border-color:transparent;border-bottom-right-radius:3px}
+.ki-msg.ai .ki-bubble{border-bottom-left-radius:3px}
+body.dark-mode .ki-bubble{background:#1e1408;border-color:#3d2510;color:#f0e0d0}
+
+.ki-typing{display:flex;gap:4px;padding:3px 0}
+.ki-typing span{width:6px;height:6px;border-radius:50%;background:#b8905a;animation:bounce 1.2s infinite}
+.ki-typing span:nth-child(2){animation-delay:.2s}
+.ki-typing span:nth-child(3){animation-delay:.4s}
+
+.ki-input-row{display:flex;gap:8px;align-items:center}
+.ki-input{flex:1;padding:10px 16px;border:2px solid #e8c99a;border-radius:999px;font-size:15px;outline:none;background:#fef5e4;color:#2c1a0e;font-family:inherit;transition:.2s border}
+.ki-input:focus{border-color:#b85c20;background:#fffbf5}
+body.dark-mode .ki-input{background:#2a1808;border-color:#6d28d9;color:#f0e0d0}
+body.dark-mode .ki-input:focus{border-color:#d97520;background:#3d2510}
+
+.ki-send{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#b85c20,#d97520);color:#fff;border:none;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.15s all;-webkit-tap-highlight-color:transparent}
+.ki-send:hover{transform:scale(1.08)}
+.ki-send:active{transform:scale(.93)}
+.ki-send:disabled{background:#c4b5fd;cursor:default}
+
+.ki-err{font-size:13px;color:#b83a22;margin-top:6px;padding:8px 12px;background:#fef2f2;border-radius:8px;border:1px solid #fca5a5}
+body.dark-mode .ki-err{background:#450a0a;border-color:#b91c1c;color:#fca5a5}
+
+.ki-clear{width:38px;height:38px;border-radius:50%;background:#fde8c0;color:#b85c20;border:1.5px solid #e8c99a;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.15s all;-webkit-tap-highlight-color:transparent}
+.ki-clear:hover{background:#fbd8a0;transform:scale(1.05)}
+.ki-clear:active{transform:scale(.92)}
+.ki-clear:disabled{opacity:.4;cursor:default}
+body.dark-mode .ki-clear{background:#3d2510;color:#fbbf77;border-color:#b85c20}
+body.dark-mode .ki-clear:hover{background:#5a3010}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>to be (am/is/are) – Hellweg-Realschule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+
+<!-- ===== SHARED-MODULES ===== -->
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="../shared/quiz.css">
+<link rel="stylesheet" href="../shared/tutor.css">
+
+<!-- ===== TOPIC-SPEZIFISCHES CSS (per-Akkordeon-Farben) ===== -->
+<style>
+#acc-aus .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-kf  .acc-num{background:#ffe082;color:#e65100}
+#acc-vern .acc-num{background:#ffcdd2;color:#880e4f}
+#acc-frag .acc-num{background:#fbbf77;color:#8b4518}
+#acc-aus  summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+#acc-kf   summary{border-left-color:#d97706;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
+#acc-vern summary{border-left-color:#C62828;background:linear-gradient(90deg,rgba(198,40,40,.10),rgba(198,40,40,.02))}
+#acc-frag summary{border-left-color:#b85c20;background:linear-gradient(90deg,rgba(138,176,200,.18),rgba(138,176,200,.04))}
+body.dark-mode #acc-aus  summary{background:linear-gradient(90deg,rgba(170,200,160,.10),rgba(170,200,160,.02))}
+body.dark-mode #acc-kf   summary{background:linear-gradient(90deg,rgba(251,191,36,.08),rgba(251,191,36,.01))}
+body.dark-mode #acc-vern summary{background:linear-gradient(90deg,rgba(198,40,40,.07),rgba(198,40,40,.01))}
+body.dark-mode #acc-frag summary{background:linear-gradient(90deg,rgba(138,176,200,.10),rgba(138,176,200,.02))}
+#acc-aus  .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(170,200,160,.12),rgba(170,200,160,.05))}
+#acc-kf   .task{border-top-color:#d97706;background:linear-gradient(135deg,rgba(251,191,36,.12),rgba(251,191,36,.05))}
+#acc-vern .task{border-top-color:#C62828;background:linear-gradient(135deg,rgba(198,40,40,.08),rgba(198,40,40,.02))}
+#acc-frag .task{border-top-color:#b85c20;background:linear-gradient(135deg,rgba(138,176,200,.12),rgba(138,176,200,.05))}
+body.dark-mode #acc-aus  .task{background:linear-gradient(135deg,rgba(170,200,160,.08),rgba(170,200,160,.02));border-top-color:#66bb6a}
+body.dark-mode #acc-vern .task{background:linear-gradient(135deg,rgba(198,40,40,.06),rgba(198,40,40,.01));border-top-color:#ef5350}
+body.dark-mode #acc-frag .task{background:linear-gradient(135deg,rgba(138,176,200,.08),rgba(138,176,200,.02));border-top-color:#64b5f6}
+</style>
+</head>
+<body>
+
+<!-- ===== Confirm-Modal (für customConfirm) ===== -->
+<div id="confirm-modal" style="display:none" class="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Fortschritt zurücksetzen?</p>
+    <div class="confirm-btns">
+      <button class="btn primary" id="confirm-ok">Ja, zurücksetzen</button>
+      <button class="btn ghost"   id="confirm-cancel">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DREI BILDSCHIRM-ECKEN-BUTTONS ===== -->
+<button class="dark-toggle"  id="dark-toggle">🌙 Dark Mode</button>
+<button class="tts-toggle"   id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" id="reset-all-btn">🗑️ Zurücksetzen</button>
+
+<div class="container">
+
+<header>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/>
+  </a>
+  <h1>to be (am / is / are)</h1>
+  <p class="sub">Klasse 5 – Unit 1</p>
+</header>
+
+<section class="rules-combined">
+<h2>Regelkarten</h2>
+<div class="rc-grid">
+
+<div class="rc-card c-amber">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">Was bedeutet „to be"?</div>
+<div class="rc-card-num">1</div>
+<div class="rc-rule"><b>„To be"</b> bedeutet <b>sein</b> oder <b>sich befinden</b>. Es drückt aus, wie oder wer oder wo etwas oder jemand ist.</div>
+<div class="rc-examples-new">
+<b>Beispiele:</b><br>
+<b><span class="hl-subj">I</span></b> am Tom. – Ich heiße Tom.<br>
+<b><span class="hl-subj">She</span></b> is happy. – Sie ist glücklich.<br>
+<b><span class="hl-subj">They</span></b> are in the classroom. – Sie sind im Klassenzimmer.
+</div>
+</div>
+</div>
+
+<div class="rc-card c-green">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">✅ Aussagesatz</div>
+<div class="rc-card-num">2</div>
+<div class="rc-rule">Alle 8 Pronomen einzeln mit ihrer Form von „to be":</div>
+<div class="rc-examples-new">
+<b>Pronomen + Form:</b>
+<div class="rc-formula"><span class="fc fc-subj">I</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">am</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">you</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">are</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">he</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">is</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">she</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">is</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">it</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">is</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">we</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">are</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">you</span> <span class="fc-short">(Plural)</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">are</span></span></div>
+<div class="rc-formula"><span class="fc fc-subj">they</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">are</span></span></div>
+</div>
+<div class="rc-examples-new" style="margin-top:8px">
+<b>Beispielsätze:</b><br>
+<span class="hl-subj">I</span> <span class="hl-verb">am</span> ten years old.<br>
+<span class="hl-subj">He</span> <span class="hl-verb">is</span> from England.<br>
+<span class="hl-subj">We</span> <span class="hl-verb">are</span> in the classroom.
+</div>
+</div>
+</div>
+
+<div class="rc-card c-teal">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">Kurzformen (Contractions)</div>
+<div class="rc-card-num">3</div>
+<div class="rc-rule">Wir können die Pronomen + to be zusammenziehen:</div>
+<div class="rc-examples-new">
+<b>I am</b> → I'm<br>
+<b>you are</b> → you're<br>
+<b>he is</b> → he's<br>
+<b>she is</b> → she's<br>
+<b>it is</b> → it's<br>
+<b>we are</b> → we're<br>
+<b>you are</b> (Plural) → you're<br>
+<b>they are</b> → they're
+</div>
+<div class="rc-examples-new" style="margin-top:8px">
+<b>Beispiel:</b> <span class="hl-verb">I'm</span> happy. (Statt „I am happy")
+</div>
+</div>
+</div>
+
+<div class="rc-card c-red">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">❌ Verneinung</div>
+<div class="rc-card-num">4</div>
+<div class="rc-rule">Für „nicht sein" benutzen wir <b>am not / are not / is not</b>:</div>
+<div class="rc-examples-new">
+<b>I am not</b> (I'm not)<br>
+<b>you are not</b> (you're not / you aren't)<br>
+<b>he is not</b> (he's not / he isn't)<br>
+<b>she is not</b> (she's not / she isn't)<br>
+<b>it is not</b> (it's not / it isn't)<br>
+<b>we are not</b> (we're not / we aren't)<br>
+<b>you are not</b> (Plural) (you're not / you aren't)<br>
+<b>they are not</b> (they're not / they aren't)
+</div>
+<div class="rc-examples-new" style="margin-top:8px">
+<b>Beispiele:</b><br>
+<span class="hl-neg">I'm not</span> sad. – Ich bin nicht traurig.<br>
+<span class="hl-neg">She isn't</span> from Germany. – Sie ist nicht aus Deutschland.
+</div>
+</div>
+</div>
+
+<div class="rc-card c-blue">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">❓ Ja/Nein-Frage</div>
+<div class="rc-card-num">5</div>
+<div class="rc-rule">Die Form von „to be" kommt nach vorne:</div>
+<div class="rc-examples-new">
+<b>Am</b> I happy? – Bin ich glücklich?<br>
+<b>Are</b> you from England? – Bist du aus England?<br>
+<b>Is</b> he ten? – Ist er zehn Jahre alt?<br>
+<b>Is</b> she your sister? – Ist sie deine Schwester?<br>
+<b>Is</b> it a cat? – Ist es eine Katze?<br>
+<b>Are</b> we in the classroom? – Sind wir im Klassenzimmer?<br>
+<b>Are</b> you (Plural) from Germany? – Seid ihr aus Deutschland?<br>
+<b>Are</b> they your friends? – Sind sie deine Freunde?
+</div>
+</div>
+</div>
+
+<div class="rc-card c-indigo">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">Kurzantworten</div>
+<div class="rc-card-num">6</div>
+<div class="rc-rule">Bei Fragen antworte immer mit dem passenden Pronomen und der Form von „to be":</div>
+<div class="rc-examples-new">
+<b>Q:</b> Are you happy?<br>
+<b>A:</b> Yes, I am. / No, I'm not.<br><br>
+<b>Q:</b> Is he from England?<br>
+<b>A:</b> Yes, he is. / No, he isn't.<br><br>
+<b>Q:</b> Are they in school?<br>
+<b>A:</b> Yes, they are. / No, they aren't.
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<details class="accordion" id="acc-aus">
+<summary><span class="acc-num">1</span> Aussagesatz</summary>
+<div class="content">
+<div class="level-switch" id="aus-levels">
+<button class="level-btn active" data-level="1">Level 1: Erkennen</button>
+<button class="level-btn" data-level="2">Level 2: Anwenden</button>
+<button class="level-btn" data-level="3">Level 3: Transfer</button>
+</div>
+<div class="progress-wrap">
+<div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions">
+<button class="btn gray" id="aus-check-all">Alle prüfen</button>
+<button class="btn gray" id="aus-reset">Zurücksetzen</button>
+</div>
+<div id="aus-tasks"></div>
+</div>
+</details>
+
+<details class="accordion" id="acc-kf">
+<summary><span class="acc-num">2</span> Kurzformen</summary>
+<div class="content">
+<div class="level-switch" id="kf-levels">
+<button class="level-btn active" data-level="1">Level 1: Erkennen</button>
+<button class="level-btn" data-level="2">Level 2: Anwenden</button>
+<button class="level-btn" data-level="3">Level 3: Transfer</button>
+</div>
+<div class="progress-wrap">
+<div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions">
+<button class="btn gray" id="kf-check-all">Alle prüfen</button>
+<button class="btn gray" id="kf-reset">Zurücksetzen</button>
+</div>
+<div id="kf-tasks"></div>
+</div>
+</details>
+
+<details class="accordion" id="acc-vern">
+<summary><span class="acc-num">3</span> Verneinung</summary>
+<div class="content">
+<div class="level-switch" id="vern-levels">
+<button class="level-btn active" data-level="1">Level 1: Erkennen</button>
+<button class="level-btn" data-level="2">Level 2: Anwenden</button>
+<button class="level-btn" data-level="3">Level 3: Transfer</button>
+</div>
+<div class="progress-wrap">
+<div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions">
+<button class="btn gray" id="vern-check-all">Alle prüfen</button>
+<button class="btn gray" id="vern-reset">Zurücksetzen</button>
+</div>
+<div id="vern-tasks"></div>
+</div>
+</details>
+
+<details class="accordion" id="acc-frag">
+<summary><span class="acc-num">4</span> Frage &amp; Kurzantwort</summary>
+<div class="content">
+<div class="level-switch" id="frag-levels">
+<button class="level-btn active" data-level="1">Level 1: Erkennen</button>
+<button class="level-btn" data-level="2">Level 2: Anwenden</button>
+<button class="level-btn" data-level="3">Level 3: Transfer</button>
+</div>
+<div class="progress-wrap">
+<div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions">
+<button class="btn gray" id="frag-check-all">Alle prüfen</button>
+<button class="btn gray" id="frag-reset">Zurücksetzen</button>
+</div>
+<div id="frag-tasks"></div>
+</div>
+</details>
+
+<!-- ===== Tutor-Mount-Point: tutor.js injiziert hier den KI-Tutor ===== -->
+<div id="tutor-mount"></div>
+
+<div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+<details class="accordion" id="wwm-quiz">
+<summary>🏆 Quiz</summary>
+<div class="content">
+<div class="progress-wrap" id="quiz-progress">
+<div class="progress mixed" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+<div id="quiz-tasks"></div>
+<div id="quiz-result" class="result-card" style="display:none"></div>
+</div>
+</details>
+
+</div>
+
+<footer style="text-align:center;color:#b8905a;font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid rgba(184,144,90,.25)">
+<div>Version 26.04.2026, 19:25</div>
+<div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+</footer>
+
+<!-- ===== SHARED-SCRIPTS (Reihenfolge wichtig!) ===== -->
+<script src="../shared/scorecards.js"></script>
+<script src="../shared/quiz.js"></script>
+
+<!-- ===== TOPIC-SPEZIFISCHE DATEN + INIT ===== -->
+<script>
+/* === KI-TUTOR-CONFIG === */
+window.TUTOR_CONFIG = {
+  topic: "to be (am/is/are)",
+  grade: 5,
+  unit: 1,
+  rules: [
+    "I → am",
+    "he/she/it → is",
+    "you/we/they → are",
+    "Verneinung mit not",
+    "Frage: Form von to be vorne"
+  ],
+  welcomeMessage:
+    "<strong>👋 Hallo! Ich bin dein KI-Tutor.</strong><br>" +
+    "Ich helfe dir, „to be“ (am/is/are) besser zu verstehen. " +
+    "Stell mir Fragen, bitte um Beispiele oder schick mir einen Satz zum Prüfen. " +
+    "Ich gebe dir Tipps – aber keine fertigen Lösungen!",
+  quickChips: [
+    "Wann nehme ich am, is oder are?",
+    "Prüfe diesen Satz: She are happy.",
+    "Wie verneine ich „I am cool“?",
+    "Wie stelle ich eine Frage mit „to be“?"
+  ],
+  typicalErrors: [
+    "„I are“ oder „I is“ statt „I am“",
+    "„She are“ statt „She is“",
+    "„They is“ statt „They are“",
+    "„I amn't“ als Verneinung (falsch!)",
+    "Frage ohne Inversion: „You are happy?“ statt „Are you happy?“"
+  ]
+};
+
+
+/* === POOL-DATEN === */
+
+// AUSSAGESATZ
+const ausL1=[
+  {type:"mc",prompt:"Welche Form ist richtig? <i>I ___ happy.</i>",options:["am","is","are","be"],correct:0,answer:"am"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>He ___ from Germany.</i>",options:["are","am","is","be"],correct:2,answer:"is"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>She ___ in the classroom.</i>",options:["am","are","is","be"],correct:2,answer:"is"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>We ___ friends.</i>",options:["am","is","are","be"],correct:2,answer:"are"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>They ___ ten years old.</i>",options:["is","am","are","be"],correct:2,answer:"are"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>You ___ cool.</i>",options:["is","am","are","be"],correct:2,answer:"are"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>It ___ a dog.</i>",options:["are","am","is","be"],correct:2,answer:"is"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>My sister ___ a student.</i>",options:["are","am","is","be"],correct:2,answer:"is"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>My friends ___ from England.</i>",options:["is","am","are","be"],correct:2,answer:"are"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>The teacher ___ very nice.</i>",options:["are","am","is","be"],correct:2,answer:"is"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>You and I ___ in class.</i>",options:["is","am","are","be"],correct:2,answer:"are"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>Tom ___ eleven.</i>",options:["are","am","is","be"],correct:2,answer:"is"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>The cats ___ big.</i>",options:["is","am","are","be"],correct:2,answer:"are"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>I ___ your friend.</i>",options:["is","are","am","be"],correct:2,answer:"am"},
+  {type:"mc",prompt:"Welche Form ist richtig? <i>She ___ very smart.</i>",options:["are","am","is","be"],correct:2,answer:"is"},
+];
+
+const ausL2=[
+  {prompt:"Setze die richtige Form ein: I ___ Tom.",answer:["am"],explanation:"I → am"},
+  {prompt:"Setze die richtige Form ein: You ___ in the classroom.",answer:["are"],explanation:"You → are"},
+  {prompt:"Setze die richtige Form ein: He ___ from England.",answer:["is"],explanation:"He → is"},
+  {prompt:"Setze die richtige Form ein: She ___ happy.",answer:["is"],explanation:"She → is"},
+  {prompt:"Setze die richtige Form ein: It ___ a cat.",answer:["is"],explanation:"It → is"},
+  {prompt:"Setze die richtige Form ein: We ___ friends.",answer:["are"],explanation:"We → are"},
+  {prompt:"Setze die richtige Form ein: They ___ ten years old.",answer:["are"],explanation:"They → are"},
+  {prompt:"Setze die richtige Form ein: My brother ___ cool.",answer:["is"],explanation:"My brother (he) → is"},
+  {prompt:"Setze die richtige Form ein: The dogs ___ brown.",answer:["are"],explanation:"The dogs (they) → are"},
+  {prompt:"Setze die richtige Form ein: Sarah and Mike ___ in school.",answer:["are"],explanation:"Sarah and Mike (they) → are"},
+  {prompt:"Setze die richtige Form ein: The teacher ___ nice.",answer:["is"],explanation:"The teacher (he/she) → is"},
+  {prompt:"Setze die richtige Form ein: I ___ eleven years old.",answer:["am"],explanation:"I → am"},
+  {prompt:"Setze die richtige Form ein: You ___ my best friend.",answer:["are"],explanation:"You → are"},
+  {prompt:"Setze die richtige Form ein: He ___ very smart.",answer:["is"],explanation:"He → is"},
+  {prompt:"Setze die richtige Form ein: The cat ___ white.",answer:["is"],explanation:"The cat (it) → is"},
+];
+
+const ausL3=[
+  {prompt:"Bilde einen Satz: I / happy / am. (Wörter sortieren)",words:["I","am","happy"],answer:["I","am","happy"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: from / He / Germany / is.",words:["He","is","from","Germany"],answer:["He","is","from","Germany"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: are / They / cool.",words:["They","are","cool"],answer:["They","are","cool"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: in / We / classroom / the / are.",words:["We","are","in","the","classroom"],answer:["We","are","in","the","classroom"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: teacher / The / nice / is.",words:["The","teacher","is","nice"],answer:["The","teacher","is","nice"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: my / is / This / dog.",words:["This","is","my","dog"],answer:["This","is","my","dog"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: friends / are / best / You / my.",words:["You","are","my","best","friends"],answer:["You","are","my","best","friends"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: the / in / are / They / school.",words:["They","are","in","the","school"],answer:["They","are","in","the","school"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: old / am / I / eleven / years.",words:["I","am","eleven","years","old"],answer:["I","am","eleven","years","old"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: very / smart / He / is.",words:["He","is","very","smart"],answer:["He","is","very","smart"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: sister / my / is / teacher / She / a.",words:["She","is","my","sister","a","teacher"],answer:["She","is","my","sister","a","teacher"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: brown / is / It / cat / a.",words:["It","is","a","brown","cat"],answer:["It","is","a","brown","cat"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: are / England / from / They.",words:["They","are","from","England"],answer:["They","are","from","England"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: am / in / I / class.",words:["I","am","in","class"],answer:["I","am","in","class"],label:"Wörter in Reihenfolge"},
+  {prompt:"Bilde einen Satz: friends / are / good / We.",words:["We","are","good","friends"],answer:["We","are","good","friends"],label:"Wörter in Reihenfolge"},
+];
+
+// KURZFORMEN
+const kfL1=[
+  {type:"mc",prompt:"Was ist die Kurzform von „I am“?",options:["I'm","Iam","I'am","Im"],correct:0,answer:"I'm"},
+  {type:"mc",prompt:"Was ist die Kurzform von „you are“?",options:["you're","youre","yo're","yua're"],correct:0,answer:"you're"},
+  {type:"mc",prompt:"Was ist die Kurzform von „he is“?",options:["he's","hes","h's","heis"],correct:0,answer:"he's"},
+  {type:"mc",prompt:"Was ist die Kurzform von „she is“?",options:["she's","shes","sh's","sheis"],correct:0,answer:"she's"},
+  {type:"mc",prompt:"Was ist die Kurzform von „it is“?",options:["it's","its","itt's","itis"],correct:0,answer:"it's"},
+  {type:"mc",prompt:"Was ist die Kurzform von „we are“?",options:["we're","were","w're","weare"],correct:0,answer:"we're"},
+  {type:"mc",prompt:"Was ist die Kurzform von „they are“?",options:["they're","theyre","th're","theyare"],correct:0,answer:"they're"},
+  {type:"mc",prompt:"Ist „I'm“ die Kurzform von „I am“?",options:["Ja","Nein"],correct:0,answer:"Ja"},
+  {type:"mc",prompt:"Ist „he's“ die Kurzform von „he are“?",options:["Ja","Nein"],correct:1,answer:"Nein"},
+  {type:"mc",prompt:"Welche Kurzform gehört zu „we are“?",options:["we're","wa're","wer","w'are"],correct:0,answer:"we're"},
+  {type:"mc",prompt:"Welche Kurzform gehört zu „she is“?",options:["she's","shis","si's","she'is"],correct:0,answer:"she's"},
+  {type:"mc",prompt:"Ist „you're“ die Kurzform von „you are“?",options:["Ja","Nein"],correct:0,answer:"Ja"},
+  {type:"mc",prompt:"Welche Kurzform gehört zu „it is“?",options:["it's","itis","i's","itt's"],correct:0,answer:"it's"},
+  {type:"mc",prompt:"Ist „they're“ die Kurzform von „they is“?",options:["Ja","Nein"],correct:1,answer:"Nein"},
+  {type:"mc",prompt:"Welche Kurzform gehört zu „I am“?",options:["I'm","Im","I'am","Iam"],correct:0,answer:"I'm"},
+];
+
+const kfL2=[
+  {prompt:"Schreibe die Kurzform: I am happy.",answer:["I'm happy"],explanation:"I am → I'm"},
+  {prompt:"Schreibe die Kurzform: You are cool.",answer:["You're cool"],explanation:"You are → You're"},
+  {prompt:"Schreibe die Kurzform: He is from Germany.",answer:["He's from Germany"],explanation:"He is → He's"},
+  {prompt:"Schreibe die Kurzform: She is my sister.",answer:["She's my sister"],explanation:"She is → She's"},
+  {prompt:"Schreibe die Kurzform: It is a cat.",answer:["It's a cat"],explanation:"It is → It's"},
+  {prompt:"Schreibe die Kurzform: We are friends.",answer:["We're friends"],explanation:"We are → We're"},
+  {prompt:"Schreibe die Kurzform: They are in class.",answer:["They're in class"],explanation:"They are → They're"},
+  {prompt:"Schreibe ohne Kurzform: I'm ten.",answer:["I am ten"],explanation:"I'm → I am"},
+  {prompt:"Schreibe ohne Kurzform: You're smart.",answer:["You are smart"],explanation:"You're → You are"},
+  {prompt:"Schreibe ohne Kurzform: He's from England.",answer:["He is from England"],explanation:"He's → He is"},
+  {prompt:"Schreibe ohne Kurzform: She's happy.",answer:["She is happy"],explanation:"She's → She is"},
+  {prompt:"Schreibe ohne Kurzform: It's brown.",answer:["It is brown"],explanation:"It's → It is"},
+  {prompt:"Schreibe ohne Kurzform: We're cool.",answer:["We are cool"],explanation:"We're → We are"},
+  {prompt:"Schreibe ohne Kurzform: They're big.",answer:["They are big"],explanation:"They're → They are"},
+  {prompt:"Schreibe die Kurzform: I am very nice.",answer:["I'm very nice"],explanation:"I am → I'm"},
+];
+
+const kfL3=[
+  {prompt:"Ergänze mit Kurzform oder Langform: ___ eleven years old. (I am)",answer:["I'm","I am"],explanation:"Beide sind richtig: I'm oder I am"},
+  {prompt:"Ergänze mit Kurzform: ___ from Germany. (she is)",answer:["She's"],explanation:"She is → She's"},
+  {prompt:"Ergänze mit Kurzform: ___ in the classroom. (they are)",answer:["They're"],explanation:"They are → They're"},
+  {prompt:"Ergänze mit Langform: ___ very smart. (he is)",answer:["He is"],explanation:"Formal: he is (oder he's)"},
+  {prompt:"Ergänze mit Kurzform: ___ cool. (you are)",answer:["You're"],explanation:"You are → You're"},
+  {prompt:"Schreib den Satz mit Kurzform: I am happy and you are cool.",answer:["I'm happy and you're cool"],explanation:"I am → I'm, you are → you're"},
+  {prompt:"Schreib den Satz ohne Kurzform: He's from England and she's from Germany.",answer:["He is from England and she is from Germany"],explanation:"He's → He is, she's → she is"},
+  {prompt:"Ergänze: It ___ a dog. (is – Kurzform)",answer:["It's"],explanation:"It is → It's"},
+  {prompt:"Ergänze: We ___ friends. (are – Kurzform)",answer:["We're"],explanation:"We are → We're"},
+  {prompt:"Ergänze: They ___ in school. (are – Kurzform)",answer:["They're"],explanation:"They are → They're"},
+  {prompt:"Schreib als Kurzform: I am ten. You are eleven. We are friends.",answer:["I'm ten. You're eleven. We're friends."],explanation:"Alle drei Kurzformen"},
+  {prompt:"Schreib als Langform: I'm happy. He's cool. They're from England.",answer:["I am happy. He is cool. They are from England."],explanation:"Alle drei Langformen"},
+  {prompt:"Welche Form ist natürlicher? <i>I'm happy</i> oder <i>I am happy</i>?",answer:["I'm happy","both are fine"],explanation:"I'm ist in der Umgangssprache natürlicher"},
+  {prompt:"Ergänze: The teacher ___ very nice. (is – Kurzform)",answer:["She's","He's","is"],explanation:"The teacher is → Kurzform: She's/He's oder Langform: is"},
+  {prompt:"Ergänze: My brother and I ___ in class. (are – Kurzform)",answer:["We're"],explanation:"We are → We're"},
+];
+
+// VERNEINUNG
+const vernL1=[
+  {type:"mc",prompt:"Wie verneint man „I am“?",options:["I'm not","I not am","I amn't","I'not"],correct:0,answer:"I'm not"},
+  {type:"mc",prompt:"Wie verneint man „you are“?",options:["you're not","you not are","you aren't","both A and C"],correct:3,answer:"you're not / you aren't"},
+  {type:"mc",prompt:"Wie verneint man „he is“?",options:["he's not","he not is","he isn't","both A and C"],correct:3,answer:"he's not / he isn't"},
+  {type:"mc",prompt:"Wie verneint man „she is“?",options:["she's not","she not is","she isn't","both A and C"],correct:3,answer:"she's not / she isn't"},
+  {type:"mc",prompt:"Wie verneint man „it is“?",options:["it's not","it not is","it isn't","both A and C"],correct:3,answer:"it's not / it isn't"},
+  {type:"mc",prompt:"Wie verneint man „we are“?",options:["we're not","we not are","we aren't","both A and C"],correct:3,answer:"we're not / we aren't"},
+  {type:"mc",prompt:"Wie verneint man „they are“?",options:["they're not","they not are","they aren't","both A and C"],correct:3,answer:"they're not / they aren't"},
+  {type:"mc",prompt:"Welche Verneinung ist richtig? <i>I ___ happy.</i>",options:["I'm not","I not am","I amn't","I'm am not"],correct:0,answer:"I'm not"},
+  {type:"mc",prompt:"Welche Verneinung ist richtig? <i>He ___ from Germany.</i>",options:["He isn't","He not is","He's not","both A and C"],correct:3,answer:"He isn't / He's not"},
+  {type:"mc",prompt:"Welche Verneinung ist richtig? <i>They ___ in class.</i>",options:["They aren't","They not are","They're not","both A and C"],correct:3,answer:"They aren't / They're not"},
+  {type:"mc",prompt:"Ist „I amn't“ richtig?",options:["Ja","Nein"],correct:1,answer:"Nein"},
+  {type:"mc",prompt:"Ist „he's not“ richtig?",options:["Ja","Nein"],correct:0,answer:"Ja"},
+  {type:"mc",prompt:"Ist „you're not“ richtig?",options:["Ja","Nein"],correct:0,answer:"Ja"},
+  {type:"mc",prompt:"Ist „she not is“ richtig?",options:["Ja","Nein"],correct:1,answer:"Nein"},
+  {type:"mc",prompt:"Ist „it isn't“ richtig?",options:["Ja","Nein"],correct:0,answer:"Ja"},
+];
+
+const vernL2=[
+  {prompt:"Verneinen: I am happy.",answer:["I'm not happy","I am not happy"],explanation:"I am not / I'm not"},
+  {prompt:"Verneinen: You are cool.",answer:["You're not cool","You aren't cool","You are not cool"],explanation:"You are not / You're not / You aren't"},
+  {prompt:"Verneinen: He is from Germany.",answer:["He's not from Germany","He isn't from Germany","He is not from Germany"],explanation:"He is not / He's not / He isn't"},
+  {prompt:"Verneinen: She is my sister.",answer:["She's not my sister","She isn't my sister","She is not my sister"],explanation:"She is not / She's not / She isn't"},
+  {prompt:"Verneinen: It is a dog.",answer:["It's not a dog","It isn't a dog","It is not a dog"],explanation:"It is not / It's not / It isn't"},
+  {prompt:"Verneinen: We are friends.",answer:["We're not friends","We aren't friends","We are not friends"],explanation:"We are not / We're not / We aren't"},
+  {prompt:"Verneinen: They are in school.",answer:["They're not in school","They aren't in school","They are not in school"],explanation:"They are not / They're not / They aren't"},
+  {prompt:"Schreib die positive Form: I'm not happy.",answer:["I am happy","I'm happy"],explanation:"Verneinung aufheben"},
+  {prompt:"Schreib die positive Form: He isn't cool.",answer:["He is cool","He's cool"],explanation:"Verneinung aufheben"},
+  {prompt:"Schreib die positive Form: She's not from England.",answer:["She is from England","She's from England"],explanation:"Verneinung aufheben"},
+  {prompt:"Schreib die positive Form: We aren't friends.",answer:["We are friends","We're friends"],explanation:"Verneinung aufheben"},
+  {prompt:"Schreib die positive Form: They're not in class.",answer:["They are in class","They're in class"],explanation:"Verneinung aufheben"},
+  {prompt:"Verneinen: I am ten.",answer:["I'm not ten","I am not ten"],explanation:"I am not / I'm not"},
+  {prompt:"Verneinen: You are smart.",answer:["You're not smart","You aren't smart","You are not smart"],explanation:"You are not / You're not / You aren't"},
+  {prompt:"Verneinen: It is brown.",answer:["It's not brown","It isn't brown","It is not brown"],explanation:"It is not / It's not / It isn't"},
+];
+
+const vernL3=[
+  {prompt:"Welcher Satz ist richtig? A: I'm not happy. B: I amn't happy.",answer:["A"],explanation:"A ist richtig: I'm not / I am not"},
+  {prompt:"Welcher Satz ist richtig? A: He's not from Germany. B: He from is not Germany.",answer:["A"],explanation:"A ist richtig: He's not oder He is not"},
+  {prompt:"Umformen: Positive Form → Negation: They are cool.",answer:["They're not cool","They aren't cool","They are not cool"],explanation:"Alle Formen sind richtig"},
+  {prompt:"Umformen: Negation → Positive Form: She isn't my friend.",answer:["She is my friend","She's my friend"],explanation:"Verneinung aufheben"},
+  {prompt:"Finde den Fehler: <i>It's not a cat – it are a dog.</i>",answer:["it are","it is"],explanation:"<i>it are</i> ist falsch → <i>it is</i>"},
+  {prompt:"Schreib den ganzen Satz mit Verneinung: I am very happy.",answer:["I'm not very happy","I am not very happy"],explanation:"Verneinung mit sehr"},
+  {prompt:"Schreib den ganzen Satz mit Verneinung: You are from England.",answer:["You're not from England","You aren't from England","You are not from England"],explanation:"Alle Formen richtig"},
+  {prompt:"Welcher Satz ist korrekter – A oder B? A: I'm not in class. B: I not am in class.",answer:["A"],explanation:"A ist grammatisch richtig"},
+  {prompt:"Ergänze mit Verneinung: I ___ a teacher.",answer:["am not","'m not"],explanation:"I am not oder I'm not"},
+  {prompt:"Ergänze mit Verneinung: She ___ from Germany.",answer:["is not","'s not","isn't"],explanation:"She is not, She's not oder She isn't"},
+  {prompt:"Umformen: He is from England. → He ___ from Germany.",answer:["is not","'s not","isn't"],explanation:"Er ist NICHT aus Deutschland"},
+  {prompt:"Welcher Satz ist natürlicher? A: I am not happy. B: I'm not happy.",answer:["B"],explanation:"B ist natürlicher (Umgangssprache)"},
+  {prompt:"Verneinen Sie den Satz: My dog is brown.",answer:["My dog is not brown","My dog isn't brown","My dog's not brown"],explanation:"Alle Formen sind richtig"},
+  {prompt:"Schreib den Satz NICHT mit Kurzform: They're not in class.",answer:["They are not in class"],explanation:"Langform ohne Kurzform"},
+  {prompt:"Welcher Satz ist richtig? A: We're not friends. B: We not are friends.",answer:["A"],explanation:"A ist richtig"},
+];
+
+// FRAGE & KURZANTWORT
+const fragL1=[
+  {type:"mc",prompt:"Wie stellst du die Frage? <i>___ you happy?</i>",options:["Are","Do","You are","Is"],correct:0,answer:"Are"},
+  {type:"mc",prompt:"Wie stellst du die Frage? <i>___ he from England?</i>",options:["Is","Are","Does","He is"],correct:0,answer:"Is"},
+  {type:"mc",prompt:"Wie antwortest du auf: <i>Are you happy?</i> – Ja",options:["Yes, I am.","Yes, you are.","Yes, I are.","Yes, am."],correct:0,answer:"Yes, I am."},
+  {type:"mc",prompt:"Wie antwortest du auf: <i>Is he cool?</i> – Ja",options:["Yes, he is.","Yes, I am.","Yes, he are.","Yes, is."],correct:0,answer:"Yes, he is."},
+  {type:"mc",prompt:"Wie antwortest du auf: <i>Are they in class?</i> – Nein",options:["No, they aren't.","No, they are.","No, they'm not.","No, they not."],correct:0,answer:"No, they aren't."},
+  {type:"mc",prompt:"Wie antwortest du auf: <i>Is she happy?</i> – Nein",options:["No, she isn't.","No, she are not.","No, she's.","No, is not."],correct:0,answer:"No, she isn't."},
+  {type:"mc",prompt:"Stelle die Frage: I am happy. → <i>___ I happy?</i>",options:["Am","Are","Is","Do"],correct:0,answer:"Am"},
+  {type:"mc",prompt:"Welche Kurzantwort ist richtig auf <i>Are you from Germany?</i> – Ja",options:["Yes, I am.","Yes, you are.","Yes, I are.","Yes, are."],correct:0,answer:"Yes, I am."},
+  {type:"mc",prompt:"Stelle die Frage: You are cool. → <i>___ you cool?</i>",options:["Are","Am","Is","Do"],correct:0,answer:"Are"},
+  {type:"mc",prompt:"Stelle die Frage: It is a dog. → <i>___ it a dog?</i>",options:["Is","Are","Am","Do"],correct:0,answer:"Is"},
+  {type:"mc",prompt:"Welche Frage ist richtig?",options:["Are you happy?","You are happy?","Happy are you?","Is you happy?"],correct:0,answer:"Are you happy?"},
+  {type:"mc",prompt:"Welche Antwort ist richtig auf <i>Is he from England?</i>",options:["Yes, he is.","Yes, I am.","Yes, you are.","Yes, is."],correct:0,answer:"Yes, he is."},
+  {type:"mc",prompt:"Welche Frage ist richtig?",options:["Is she happy?","She is happy?","Happy is she?","Are she happy?"],correct:0,answer:"Is she happy?"},
+  {type:"mc",prompt:"Welche Antwort ist richtig auf <i>Are they cool?</i> – Nein",options:["No, they aren't.","No, they am not.","No, we aren't.","No, are not."],correct:0,answer:"No, they aren't."},
+  {type:"mc",prompt:"Stelle die Frage: We are friends. → <i>___ we friends?</i>",options:["Are","Am","Is","Do"],correct:0,answer:"Are"},
+];
+
+const fragL2=[
+  {prompt:"Stelle die Frage und antworte kurz (Ja): Am I happy?",answer:["Am I happy? Yes, you are.","Am I happy? Yes, I am."],explanation:"Frage: Am I...? Antwort: Yes, I am."},
+  {prompt:"Stelle die Frage und antworte kurz (Ja): Is he from England?",answer:["Is he from England? Yes, he is."],explanation:"Frage: Is he...? Antwort: Yes, he is."},
+  {prompt:"Stelle die Frage und antworte kurz (Nein): Are you in class?",answer:["Are you in class? No, I'm not.","Are you in class? No, I am not."],explanation:"Frage: Are you...? Antwort: No, I'm not."},
+  {prompt:"Stelle die Frage und antworte kurz (Ja): Is she cool?",answer:["Is she cool? Yes, she is."],explanation:"Frage: Is she...? Antwort: Yes, she is."},
+  {prompt:"Stelle die Frage und antworte kurz (Nein): Are they happy?",answer:["Are they happy? No, they aren't.","Are they happy? No, they're not."],explanation:"Frage: Are they...? Antwort: No, they aren't."},
+  {prompt:"Umwandle in Frage: You are happy.",answer:["Are you happy?"],explanation:"You → Are you...?"},
+  {prompt:"Umwandle in Frage: He is from Germany.",answer:["Is he from Germany?"],explanation:"He → Is he...?"},
+  {prompt:"Umwandle in Frage: They are in school.",answer:["Are they in school?"],explanation:"They → Are they...?"},
+  {prompt:"Umwandle in Frage: I am cool.",answer:["Am I cool?"],explanation:"I → Am I...?"},
+  {prompt:"Umwandle in Frage: She is my friend.",answer:["Is she your friend?","Is she my friend?"],explanation:"She → Is she...?"},
+  {prompt:"Antworte auf die Frage: Are you from England? (Nein)",answer:["No, I'm not.","No, I am not."],explanation:"Kurzantwort: No, I'm not."},
+  {prompt:"Antworte auf die Frage: Is he happy? (Ja)",answer:["Yes, he is."],explanation:"Kurzantwort: Yes, he is."},
+  {prompt:"Antworte auf die Frage: Are they cool? (Ja)",answer:["Yes, they are."],explanation:"Kurzantwort: Yes, they are."},
+  {prompt:"Antworte auf die Frage: Is it a cat? (Nein)",answer:["No, it isn't.","No, it's not."],explanation:"Kurzantwort: No, it isn't."},
+  {prompt:"Antworte auf die Frage: Are we in class? (Ja)",answer:["Yes, we are."],explanation:"Kurzantwort: Yes, we are."},
+];
+
+const fragL3=[
+  {prompt:"Welcher Dialog ist richtig? A: <i>Are you happy? Yes, I are.</i> B: <i>Are you happy? Yes, I am.</i>",answer:["B"],explanation:"B ist richtig: Yes, I am."},
+  {prompt:"Schreibe den Dialog mit Kurzform: Am I cool? Yes, you are.",answer:["Am I cool? Yes, you're."],explanation:"you are → you're"},
+  {prompt:"Wandle um: I am happy. (Frage)",answer:["Am I happy?"],explanation:"I → Am I...?"},
+  {prompt:"Wandle um: Frage in Aussage: Are you from Germany? Ja.",answer:["Yes, I am from Germany.","I am from Germany."],explanation:"Antwort oder Aussage"},
+  {prompt:"Welche Kurzantwort ist falsch? A: <i>Yes, I am.</i> B: <i>Yes, you are.</i> auf <i>Are you cool?</i>",answer:["B"],explanation:"Auf <i>Are you cool?</i> antworte ich: Yes, I am."},
+  {prompt:"Stelle eine Frage und antworte kurz: She / happy / Ja",answer:["Is she happy? Yes, she is."],explanation:"Frage: Is she happy? Antwort: Yes, she is."},
+  {prompt:"Stelle eine Frage und antworte kurz: They / in school / Nein",answer:["Are they in school? No, they aren't.","Are they in school? No, they're not."],explanation:"Frage: Are they...? Antwort: No, they aren't."},
+  {prompt:"Finde den Fehler und korrigiere: <i>Are you happy? Yes, I are.</i>",answer:["Yes, I am."],explanation:"<i>I are</i> ist falsch → <i>I am</i>"},
+  {prompt:"Finde den Fehler und korrigiere: <i>Is he cool? No, he is.</i>",answer:["No, he isn't.","No, he's not."],explanation:"<i>No, he is.</i> ist falsch → <i>No, he isn't.</i>"},
+  {prompt:"Antworte auf die Frage mit vollständigem Satz (Ja): Is Tom in the classroom?",answer:["Yes, Tom is in the classroom.","Yes, he is in the classroom."],explanation:"Vollständige Antwort"},
+  {prompt:"Antworte auf die Frage mit Kurzform (Nein): Are you from England?",answer:["No, I'm not."],explanation:"Kurzform: I'm not"},
+  {prompt:"Welcher Dialog ist natürlicher? A: <i>Are you happy? Yes, I am.</i> B: <i>Are you happy? Yes, you are.</i>",answer:["A"],explanation:"A ist natürlicher: Yes, I am."},
+  {prompt:"Stelle die Frage für diese Antwort: <i>Yes, they are very cool.</i>",answer:["Are they cool?","Are they very cool?"],explanation:"Rückwärts: Antwort → Frage"},
+  {prompt:"Ergänze die Kurzantwort: <i>Is she from Germany? No, ___.</i>",answer:["she isn't","she's not"],explanation:"No, she isn't / she's not."},
+  {prompt:"Welcher Satz ist grammatisch richtig? A: <i>Am I happy? Yes, I am.</i> B: <i>Am I happy? Yes, am.</i>",answer:["A"],explanation:"A ist richtig: Yes, I am."},
+];
+
+// === QUIZ-POOL (15 Fragen, d=1:4 / d=2:5 / d=3:6) ===
+const quizPool=[
+  // d=1 (4 Fragen – Grundregel-Erkennung)
+  {prompt:"Welche Form ist richtig? <i>I ___ happy.</i>",options:["am","is","are","be"],correct:0,tip:"I → <b>am</b>",explanation:"✅ <b>am</b> – I nimmt immer „am“.",d:1},
+  {prompt:"Welche Form ist richtig? <i>He ___ from Germany.</i>",options:["are","am","is","be"],correct:2,tip:"He → <b>is</b>",explanation:"✅ <b>is</b> – He nimmt immer „is“.",d:1},
+  {prompt:"Welche Form ist richtig? <i>They ___ in the classroom.</i>",options:["is","am","are","be"],correct:2,tip:"They → <b>are</b>",explanation:"✅ <b>are</b> – They nimmt immer „are“.",d:1},
+  {prompt:"Welche Kurzform ist richtig? <i>I ___ happy.</i> (Kurzform)",options:["I'm","I is","I are","Iam"],correct:0,tip:"I am → <b>I'm</b>",explanation:"✅ <b>I'm</b> – Kurzform von „I am“.",d:1},
+  // d=2 (5 Fragen – Kontextverständnis)
+  {prompt:"Welche Verneinung ist richtig? <i>I ___ happy.</i>",options:["I not am","I amn't","I'm not","I'm am not"],correct:2,tip:"I am + not → <b>I'm not</b> oder <b>I am not</b>",explanation:"✅ <b>I'm not</b> – Die richtige Negation.",d:2},
+  {prompt:"Welche Frage ist richtig? <i>___ cool?</i>",options:["You are","Do you","Are you","Is you"],correct:2,tip:"You → <b>Are you</b>",explanation:"✅ <b>Are you cool?</b> – Form kommt nach vorne.",d:2},
+  {prompt:"Welche Kurzantwort ist richtig? <i>Is he from England? ___</i>",options:["Yes, he are.","Yes, he is.","Yes, I am.","Yes, is."],correct:1,tip:"He → <b>he is</b>",explanation:"✅ <b>Yes, he is.</b> – Passendes Pronomen + to be.",d:2},
+  {prompt:"Welcher Satz ist richtig?",options:["She are happy.","She is happy.","She am happy.","She be happy."],correct:1,tip:"She → <b>is</b>",explanation:"✅ <b>She is happy.</b>",d:2},
+  {prompt:"Welche Form ist richtig? <i>You ___ my friends.</i>",options:["am","is","are","be"],correct:2,tip:"You → <b>are</b>",explanation:"✅ <b>You are my friends.</b> – You nimmt immer „are“.",d:2},
+  // d=3 (6 Fragen – Transfer/Edge Cases)
+  {prompt:"Welche Kurzantwort passt? <i>Are you from Italy? ___</i>",options:["Yes, I'm.","Yes, I am.","Yes, you are.","No, I'm not am."],correct:1,tip:"Volle Kurzantwort mit Pronomen + to be.",explanation:"✅ <b>Yes, I am.</b> – Pronomen muss passen.",d:3},
+  {prompt:"Welcher Satz ist FALSCH?",options:["She's not happy.","She isn't happy.","She's isn't happy.","She is not happy."],correct:2,tip:"Nicht „is“ + „isn't“ zusammen – nur eine Negation!",explanation:"❌ <b>She's isn't happy.</b> – doppelte Negation. ✅ Richtig: „She's not happy.“ oder „She isn't happy.“",d:3},
+  {prompt:"Welche Umformung ist richtig? Positiv: <i>I am tired.</i> → Negativ: <i>___</i>",options:["I not am tired.","I amn't tired.","I'm not tired.","I not tired."],correct:2,tip:"I am + not → „I'm not“ ODER „I am not“",explanation:"✅ <b>I'm not tired.</b> (oder „I am not tired.“)",d:3},
+  {prompt:"Welches Pronomen + to be passt? <i>___ very clever.</i>",options:["I is","She are","We is","They are"],correct:3,tip:"They = Mehrzahl → „are“",explanation:"✅ <b>They are very clever.</b> – Mehrzahl nimmt immer „are“.",d:3},
+  {prompt:"Welcher Satz ist RICHTIG? (Verneinung korrekt)",options:["We're not happy.","We're aren't happy.","We not are happy.","We are not aren't."],correct:0,tip:"We are + not → „We're not“ ODER „We are not“ (nicht doppelt)",explanation:"✅ <b>We're not happy.</b> – Nur EINmal negiert.",d:3},
+  {prompt:"Welche Frage mit Kurzantwort ist komplett richtig?",options:["Is she student? – Yes, she is.","Are they happy? – No, he is not.","Are you tired? – Yes, I are.","Is he here? – Yes, she is."],correct:0,tip:"Pronomen in Frage und Antwort müssen passen",explanation:"✅ <b>Is she a student? – Yes, she is.</b> – Frage-Pronomen (she) = Antwort-Pronomen (she).",d:3}
+];
+
+/* === HELPER: localStorage (datei-spezifisch via tobe_-Präfix) === */
+function tbSave(key,val){try{localStorage.setItem('tobe_'+key,JSON.stringify(val));}catch(e){}}
+function tbLoad(key,def){try{const v=localStorage.getItem('tobe_'+key);return v?JSON.parse(v):def;}catch(e){return def;}}
+
+/* === RENDER-AUFGABE === */
+function renderTask(task,idx,secKey){
+  const shuf = HRShared.shuffle;
+  let html='<div class="task" id="task-'+secKey+'-'+idx+'">';
+  if(task.type==='mc'){
+    html+='<span class="task-type-badge badge-mc">Multiple Choice</span>';
+    html+='<div class="prompt">'+task.prompt+'</div>';
+    html+='<div class="mc-options">';
+    task.options.forEach((opt,i)=>{
+      const isCorrect=i===task.correct;
+      html+='<div class="mc-opt" data-opt="'+i+'" data-correct="'+isCorrect+'" data-answer="'+task.answer+'"><span class="mc-letter">'+String.fromCharCode(65+i)+'</span><span>'+opt+'</span></div>';
+    });
+    html+='</div>';
+  }else if(task.words){
+    html+='<span class="task-type-badge badge-ordne">Wörter Ordnen</span>';
+    html+='<div class="prompt">'+task.prompt+'</div>';
+    html+='<div class="word-tiles-wrap">';
+    html+='<div class="word-tiles-label">'+task.label+'</div>';
+    html+='<div class="word-tiles wt-source" id="src-'+secKey+'-'+idx+'">';
+    const shuffled=shuf(task.words);
+    shuffled.forEach(w=>{html+='<span class="word-tile" data-word="'+w+'">'+w+'</span>';});
+    html+='</div>';
+    html+='<div class="word-tiles wt-target" id="target-'+secKey+'-'+idx+'"></div>';
+    html+='</div>';
+  }else{
+    html+='<span class="task-type-badge badge-frei">Freitext</span>';
+    html+='<div class="prompt">'+task.prompt+'</div>';
+    html+='<input type="text" class="task-input" placeholder="Antwort eingeben..." data-answer="'+JSON.stringify(task.answer).replace(/"/g,'&quot;')+'" />';
+    if(task.explanation){html+='<div class="solution">'+task.explanation+'</div>';}
+  }
+  html+='<div class="controls" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">';
+  html+='<button class="btn blue task-check">Prüfen</button>';
+  html+='<button class="btn ghost task-show">Lösung zeigen</button>';
+  html+='</div>';
+  html+='<div class="feedback"></div>';
+  html+='</div>';
+  return html;
+}
+
+/* === SETUP-SECTION (Multi-Level mit Pools L1/L2/L3) === */
+function setupSection(secKey,lvlSwitch,tasksDiv,pools,checkAllBtn,resetBtn,isMultiLevel){
+  let currentLevel=1;
+  let taskStates=tbLoad(secKey+'_states',{}) || {};
+
+  function renderTasks(){
+    tasksDiv.innerHTML='';
+    HRShared.clearBanners(tasksDiv);
+    const pool=pools[currentLevel]||[];
+    pool.forEach((task,idx)=>{
+      const taskId=currentLevel+'-'+idx;
+      tasksDiv.insertAdjacentHTML('beforeend',renderTask(task,idx,secKey));
+      const taskEl=tasksDiv.querySelector('#task-'+secKey+'-'+idx);
+      if(taskStates[taskId]==='solved')taskEl.classList.add('task--solved');
+
+      const checkBtn=taskEl.querySelector('.task-check');
+      const showBtn=taskEl.querySelector('.task-show');
+      const feedback=taskEl.querySelector('.feedback');
+      const input=taskEl.querySelector('.task-input');
+
+      if(task.type==='mc'){
+        const opts=taskEl.querySelectorAll('.mc-opt');
+        opts.forEach(o=>{
+          o.addEventListener('click',()=>{
+            if(taskEl.classList.contains('task--solved'))return;
+            opts.forEach(x=>x.classList.remove('mc-selected','mc-correct','mc-wrong'));
+            o.classList.add('mc-selected');
+          });
+        });
+        if(checkBtn)checkBtn.addEventListener('click',()=>{
+          if(taskEl.classList.contains('task--solved'))return;
+          const sel=taskEl.querySelector('.mc-opt.mc-selected');
+          if(!sel){feedback.textContent='Bitte wähle eine Antwort.';feedback.className='feedback warn';return;}
+          const correct=sel.dataset.correct==='true';
+          opts.forEach(x=>x.classList.add('mc-disabled'));
+          if(correct){
+            sel.classList.add('mc-correct');
+            feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+            taskEl.classList.add('task--solved');
+            taskStates[taskId]='solved';tbSave(secKey+'_states',taskStates);
+          }else{
+            sel.classList.add('mc-wrong');
+            const corrOpt=Array.from(opts).find(x=>x.dataset.correct==='true');
+            if(corrOpt)corrOpt.classList.add('mc-correct');
+            feedback.innerHTML='✗ Falsch! Richtig: <b>'+(corrOpt?corrOpt.textContent:'')+'</b>';
+            feedback.className='feedback bad';
+          }
+          updateProgress();
+          setTimeout(()=>HRShared.checkCelebration(tasksDiv,'🎉 Perfekt! Du hast alles gelöst!'),300);
+        });
+      }else if(task.words){
+        const src=taskEl.querySelector('#src-'+secKey+'-'+idx);
+        const target=taskEl.querySelector('#target-'+secKey+'-'+idx);
+        src.querySelectorAll('.word-tile').forEach(tile=>{
+          tile.addEventListener('click',()=>{
+            if(tile.classList.contains('wt-used')||tile.classList.contains('wt-correct'))return;
+            if(taskEl.classList.contains('task--solved'))return;
+            const cloned=tile.cloneNode(true);
+            target.appendChild(cloned);
+            tile.classList.add('wt-used');
+            cloned.addEventListener('click',()=>{
+              if(taskEl.classList.contains('task--solved'))return;
+              tile.classList.remove('wt-used');
+              cloned.remove();
+            });
+          });
+        });
+        if(checkBtn)checkBtn.addEventListener('click',()=>{
+          if(taskEl.classList.contains('task--solved'))return;
+          const ordered=Array.from(target.querySelectorAll('.word-tile')).map(t=>t.textContent.trim());
+          const isCorrect=ordered.join(',')===task.answer.join(',');
+          if(isCorrect){
+            feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+            taskEl.classList.add('task--solved');
+            taskStates[taskId]='solved';tbSave(secKey+'_states',taskStates);
+            Array.from(target.querySelectorAll('.word-tile')).forEach(t=>t.classList.add('wt-correct'));
+          }else{
+            feedback.innerHTML='✗ Falsch! Richtig: <b>'+task.answer.join(' ')+'</b>';
+            feedback.className='feedback bad';
+          }
+          updateProgress();
+          setTimeout(()=>HRShared.checkCelebration(tasksDiv,'🎉 Perfekt! Du hast alles gelöst!'),300);
+        });
+      }else{
+        if(checkBtn)checkBtn.addEventListener('click',()=>{
+          if(taskEl.classList.contains('task--solved'))return;
+          const val=(input.value||'').trim().toLowerCase();
+          const correctList=task.answer.map(a=>a.toLowerCase());
+          const isCorrect=correctList.includes(val);
+          if(isCorrect){
+            feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+            input.disabled=true;
+            taskEl.classList.add('task--solved');
+            taskStates[taskId]='solved';tbSave(secKey+'_states',taskStates);
+          }else{
+            feedback.innerHTML='✗ Falsch! Lösung: <b>'+task.answer.join(' / ')+'</b>';
+            feedback.className='feedback bad';
+            taskEl.classList.add('task--wrong');
+          }
+          updateProgress();
+          setTimeout(()=>HRShared.checkCelebration(tasksDiv,'🎉 Perfekt! Du hast alles gelöst!'),300);
+        });
+        if(showBtn)showBtn.addEventListener('click',()=>{
+          const sol=taskEl.querySelector('.solution');
+          if(sol)sol.style.display='block';
+        });
+      }
+    });
+  }
+
+  function updateProgress(){
+    const all=tasksDiv.querySelectorAll('.task');
+    const solved=tasksDiv.querySelectorAll('.task.task--solved').length;
+    const pct=all.length>0?Math.round(solved/all.length*100):0;
+    const wrap=lvlSwitch?lvlSwitch.parentNode:tasksDiv.parentNode;
+    const prog=wrap.querySelector('.progress-fill');
+    const txt =wrap.querySelector('.progress-text');
+    if(prog)prog.style.width=pct+'%';
+    if(txt)txt.textContent='Fortschritt: '+solved+'/'+all.length+' richtig ('+pct+'%)';
+  }
+
+  if(isMultiLevel&&lvlSwitch){
+    lvlSwitch.querySelectorAll('.level-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        lvlSwitch.querySelectorAll('.level-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLevel=+btn.dataset.level;
+        renderTasks();
+        updateProgress();
+      });
+    });
+  }
+
+  if(checkAllBtn)checkAllBtn.addEventListener('click',()=>{
+    tasksDiv.querySelectorAll('.task-check').forEach(btn=>btn.click());
+    const all=tasksDiv.querySelectorAll('.task').length;
+    const solved=tasksDiv.querySelectorAll('.task.task--solved').length;
+    const wrongItems=[];
+    tasksDiv.querySelectorAll('.task.task--wrong').forEach(t=>{
+      const p=t.querySelector('.prompt');
+      wrongItems.push({prompt:p?p.textContent:''});
+    });
+    HRShared.showResultBanner(tasksDiv,solved,all,{wrongItems:wrongItems});
+  });
+
+  if(resetBtn)resetBtn.addEventListener('click',()=>{
+    HRShared.customConfirm('Diese Sektion zurücksetzen?',()=>{
+      taskStates={};tbSave(secKey+'_states',{});
+      renderTasks();updateProgress();
+    });
+  });
+
+  renderTasks();
+  updateProgress();
+}
+
+/* === SECTION-INIT === */
+setupSection('aus', document.getElementById('aus-levels'), document.getElementById('aus-tasks'),
+  {1:ausL1,2:ausL2,3:ausL3},
+  document.getElementById('aus-check-all'), document.getElementById('aus-reset'), true);
+setupSection('kf',  document.getElementById('kf-levels'),  document.getElementById('kf-tasks'),
+  {1:kfL1,2:kfL2,3:kfL3},
+  document.getElementById('kf-check-all'),  document.getElementById('kf-reset'),  true);
+setupSection('vern',document.getElementById('vern-levels'),document.getElementById('vern-tasks'),
+  {1:vernL1,2:vernL2,3:vernL3},
+  document.getElementById('vern-check-all'),document.getElementById('vern-reset'),true);
+setupSection('frag',document.getElementById('frag-levels'),document.getElementById('frag-tasks'),
+  {1:fragL1,2:fragL2,3:fragL3},
+  document.getElementById('frag-check-all'),document.getElementById('frag-reset'),true);
+
+/* === DARK-MODE / TTS / RESET-ALL === */
+HRShared.initDarkMode('dark-toggle','tobe_dark_v1');
+HRShared.initTTS('tts-toggle');
+HRShared.initResetAllButton('reset-all-btn',
+  ['aus-reset','kf-reset','vern-reset','frag-reset','quiz-reset'],
+  ['tobe_aus_states','tobe_kf_states','tobe_vern_states','tobe_frag_states','tobe_openAcc']
+);
+
+/* === QUIZ-INIT === */
+HRQuiz.init(quizPool, {
+  finalMessages: function(pct){
+    if(pct===100) return {msg:'EINE MILLION! 🎉 PERFEKT! am, is und are sitzen perfekt!', emoji:'🏆'};
+    if(pct>=90)   return {msg:'Fast perfekt – to be sitzt schon sehr gut!', emoji:'🥇'};
+    if(pct>=80)   return {msg:'Richtig stark – die Formen am/is/are sind klar!', emoji:'🥈'};
+    if(pct>=60)   return {msg:'Gut gemacht – noch etwas üben, dann sitzt es!', emoji:'👍'};
+    if(pct>=40)   return {msg:'Weiter üben – besonders die Pronomen + Form!', emoji:'💪'};
+    return {msg:'Nochmal von vorne – schau dir die Regelkarten an!', emoji:'📚'};
+  },
+  phoneFallback: 'Denk an: I → am, He/She/It → is, You/We/They → are.'
+});
+
+/* === AKKORDEON-PERSISTENZ === */
+(function(){
+  const ACC_IDS=['acc-aus','acc-kf','acc-vern','acc-frag','wwm-quiz','acc-ki'];
+  const savedOpen=tbLoad('openAcc',null);
+  ACC_IDS.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    el.removeAttribute('open');
+    el.addEventListener('toggle',()=>{
+      if(el.open) tbSave('openAcc',id);
+    });
+  });
+  setTimeout(()=>{
+    if(savedOpen){
+      const el=document.getElementById(savedOpen);
+      if(el){el.setAttribute('open','');el.open=true;}
+    }
+  },50);
+})();
+</script>
+
+<!-- Tutor zuletzt – konsumiert window.TUTOR_CONFIG, das oben gesetzt wurde -->
+<script src="../shared/tutor.js"></script>
+
+</body>
+</html>

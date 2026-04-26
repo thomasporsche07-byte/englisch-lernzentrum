@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Possessivbegleiter – Hellweg-Realschule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="../shared/quiz.css">
+<link rel="stylesheet" href="../shared/tutor.css">
+
+<style>
+/* Topic-spezifisches CSS – nur Akkordeon-Farben + Task-Hintergründe pro Section-ID */
+#acc-aus .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-vern .acc-num{background:#ffcdd2;color:#880e4f}
+#acc-frag .acc-num{background:#fbbf77;color:#8b4518}
+#acc-aus summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+#acc-vern summary{border-left-color:#C62828;background:linear-gradient(90deg,rgba(198,40,40,.10),rgba(198,40,40,.02))}
+#acc-frag summary{border-left-color:#b85c20;background:linear-gradient(90deg,rgba(138,176,200,.18),rgba(138,176,200,.04))}
+#acc-aus .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(170,200,160,.12),rgba(170,200,160,.05))}
+#acc-vern .task{border-top-color:#C62828;background:linear-gradient(135deg,rgba(198,40,40,.08),rgba(198,40,40,.02))}
+#acc-frag .task{border-top-color:#b85c20;background:linear-gradient(135deg,rgba(138,176,200,.12),rgba(138,176,200,.05))}
+body.dark-mode #acc-aus .task{background:linear-gradient(135deg,rgba(170,200,160,.08),rgba(170,200,160,.02));border-top-color:#66bb6a}
+body.dark-mode #acc-vern .task{background:linear-gradient(135deg,rgba(198,40,40,.06),rgba(198,40,40,.01));border-top-color:#ef5350}
+body.dark-mode #acc-frag .task{background:linear-gradient(135deg,rgba(138,176,200,.08),rgba(138,176,200,.02));border-top-color:#64b5f6}
+#acc-ing .acc-num{background:#ffe082;color:#e65100}
+#acc-signal .acc-num{background:#80cbc4;color:#00695c}
+#acc-short .acc-num{background:#c4b5fd;color:#5b21b6}
+#acc-short summary{border-left-color:#7c3aed;background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(124,58,237,.03))}
+body.dark-mode #acc-short summary{background:linear-gradient(90deg,rgba(124,58,237,.08),rgba(124,58,237,.01))}
+#acc-ing summary{border-left-color:#d97706;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
+#acc-signal summary{border-left-color:#00897b;background:linear-gradient(90deg,rgba(0,137,123,.14),rgba(0,137,123,.03))}
+body.dark-mode #acc-ing summary{background:linear-gradient(90deg,rgba(251,191,36,.08),rgba(251,191,36,.01))}
+body.dark-mode #acc-signal summary{background:linear-gradient(90deg,rgba(0,137,123,.08),rgba(0,137,123,.01))}
+</style>
+<style>
+#wwm-quiz summary{background:radial-gradient(130% 200% at 50% -30%,#1a4db5 0%,#001a38 55%,#000d1f 100%);color:#ffcc00;border-bottom:2px solid rgba(255,204,0,.4);font-size:19px;font-weight:900;letter-spacing:.5px;text-shadow:0 0 20px rgba(255,204,0,.5),0 2px 8px rgba(0,0,0,.8)}
+#wwm-quiz .content{background:#020c22;background-image:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(30,70,180,.55) 0%, transparent 70%),radial-gradient(ellipse 60% 40% at 50% 50%, rgba(10,30,100,.4) 0%, transparent 80%),repeating-conic-gradient(from 270deg at 50% -30%, rgba(255,204,0,.03) 0deg 10deg, transparent 10deg 20deg);border:2px solid rgba(255,204,0,.55);box-shadow:0 0 0 1px rgba(255,204,0,.15), 0 20px 60px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,204,0,.1)}
+#wwm-quiz .progress-wrap{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#020c22 60%,transparent);margin:-18px -20px 0;padding:14px 20px 10px;border-bottom:1px solid rgba(255,204,0,.25);backdrop-filter:blur(6px)}
+#wwm-quiz .progress{background:rgba(255,255,255,.10);border:2px solid rgba(255,204,0,.7);height:20px;box-shadow:0 0 14px rgba(255,204,0,.25)}
+#wwm-quiz .progress-fill{background:linear-gradient(90deg,#b8860b,#ffcc00,#fff176);box-shadow:0 0 18px rgba(255,204,0,.8)}
+#wwm-quiz .progress-text{color:#fff;font-weight:900;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.wwm-layout{display:flex;gap:16px;align-items:flex-start;margin-top:16px}
+.wwm-stage{flex:1;min-width:0}
+.wwm-ladder{width:130px;flex-shrink:0;display:flex;flex-direction:column;gap:3px}
+.wwm-ladder-row{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);border:1px solid transparent;transition:.2s all;cursor:default}
+.wwm-ladder-row .wwm-qnum{width:18px;text-align:right;flex-shrink:0;font-size:10px;opacity:.6}
+.wwm-ladder-row .wwm-amount{flex:1;text-align:right;letter-spacing:.2px}
+.wwm-ladder-row.milestone{color:rgba(255,204,0,.6);border-color:rgba(255,204,0,.2);background:rgba(255,204,0,.05)}
+.wwm-ladder-row.done{color:rgba(100,220,120,.55)}
+.wwm-ladder-row.current{background:linear-gradient(90deg,rgba(255,204,0,.18),rgba(255,204,0,.08));border-color:rgba(255,204,0,.7);color:#ffcc00;box-shadow:0 0 10px rgba(255,204,0,.25);font-size:12.5px}
+.wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(255,204,0,.6)}
+.wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(255,204,0,.28),rgba(255,204,0,.12))}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+.wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(255,204,0,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#ffcc00;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(255,204,0,.2)}
+#wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
+#wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(255,204,0,.75);color:#ffcc00;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(255,204,0,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(255,204,0,.4);cursor:pointer;transition:.2s all}
+#wwm-quiz .wwm-lifelines .chip:hover:not(.chip-used){background:radial-gradient(circle at 40% 35%,#2a4faa,#0d2060);box-shadow:0 0 22px rgba(255,204,0,.45),inset 0 1px 0 rgba(255,255,255,.15);transform:translateY(-2px) scale(1.05)}
+#wwm-quiz .task,#wwm-quiz .wwm-stage{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;margin:0}
+#wwm-quiz .task:hover,#wwm-quiz .wwm-stage:hover{box-shadow:none}
+#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{background:linear-gradient(180deg,#0f2d72 0%,#091e50 100%);color:#fff;border:2px solid #ffcc00;border-radius:16px;padding:18px 22px;text-align:center;font-weight:800;font-size:19px;box-shadow:0 0 0 4px rgba(255,204,0,.12),0 6px 28px rgba(0,0,0,.5);line-height:1.6;margin-bottom:14px;position:relative;overflow:hidden}
+#wwm-quiz .task .prompt::before,#wwm-quiz .wwm-stage .prompt::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,204,0,.07),transparent 70%);pointer-events:none}
+#wwm-quiz .task textarea,#wwm-quiz .task input[type="text"],#wwm-quiz .wwm-stage textarea,#wwm-quiz .wwm-stage input[type="text"]{background:linear-gradient(180deg,#051228,#020c1e);color:#e6f2ff;border:2px solid rgba(80,120,220,.5);border-radius:12px;font-size:17px;padding:12px 18px;transition:.2s all;box-shadow:inset 0 2px 8px rgba(0,0,0,.4)}
+#wwm-quiz .task textarea:focus,#wwm-quiz .task input[type="text"]:focus,#wwm-quiz .wwm-stage textarea:focus,#wwm-quiz .wwm-stage input[type="text"]:focus{border-color:#ffcc00;box-shadow:inset 0 2px 8px rgba(0,0,0,.4),0 0 0 3px rgba(255,204,0,.2),0 0 20px rgba(255,204,0,.1)}
+#wwm-quiz .task .controls .btn.primary,#wwm-quiz .wwm-stage .controls .btn.primary{background:linear-gradient(135deg,#0f3080,#1a4db5);color:#ffecb3;border:1px solid rgba(255,204,0,.5);box-shadow:0 3px 14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1)}
+#wwm-quiz .task .controls .btn.green,#wwm-quiz .wwm-stage .controls .btn.green{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#b9f6ca;border:1px solid rgba(0,230,118,.45);box-shadow:0 3px 12px rgba(0,0,0,.4)}
+#wwm-quiz .task .controls .btn.gray,#wwm-quiz .wwm-stage .controls .btn.gray{background:linear-gradient(135deg,#1e2a38,#2d3d50);color:#90a4ae;border:1px solid rgba(255,255,255,.15)}
+#wwm-quiz .section-actions .btn{background:linear-gradient(135deg,#0c2a66,#163a8a);color:#ffecb3;border:1px solid rgba(255,204,0,.4);box-shadow:0 3px 10px rgba(0,0,0,.4)}
+#wwm-quiz .section-actions .btn:hover{background:linear-gradient(135deg,#163a8a,#1e4db5)}
+#wwm-quiz .feedback{color:#ffecb3;font-size:15px;margin-top:10px}
+#wwm-quiz .feedback.ok{color:#00e676;text-shadow:0 0 10px rgba(0,230,118,.5)}
+#wwm-quiz .feedback.bad{color:#ff6b6b;text-shadow:0 0 10px rgba(255,80,80,.4)}
+#wwm-quiz .feedback.warn{color:#ffcc00}
+#wwm-quiz .controls .btn:focus{outline:2px solid rgba(255,255,255,.9);outline-offset:3px;}
+#wwm-quiz .controls .btn.green:focus{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.2),0 3px 12px rgba(0,0,0,.4);}
+.quiz-tip-box{margin-top:12px;padding:12px 16px;background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.45);border-left:3px solid #ffcc00;border-radius:10px;color:#ffe082;font-size:14px;line-height:1.6}
+.quiz-explanation-box{margin-top:12px;padding:12px 16px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);border-left:3px solid #00e676;border-radius:10px;color:#b9f6ca;font-size:14px;line-height:1.6}
+.quiz-streak{text-align:center;font-size:22px;font-weight:900;color:#ffcc00;letter-spacing:.5px;min-height:32px;margin-bottom:10px;text-shadow:0 0 16px rgba(255,204,0,.7)}
+#wwm-quiz .result-card{background:linear-gradient(160deg,#1a4faa 0%,#0d3080 50%,#071d55 100%);border:3px solid #ffcc00;box-shadow:0 0 60px rgba(255,204,0,.35),0 20px 60px rgba(0,0,0,.7);color:#fff;border-radius:22px;overflow:hidden}
+#wwm-quiz .score{color:#ffcc00}
+#wwm-quiz{overflow:visible!important}
+@keyframes quizFadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question-enter{animation:quizFadeIn .45s cubic-bezier(.22,1,.36,1) forwards}
+#wwm-quiz .wwm-lifelines .chip-used{opacity:.35;cursor:not-allowed;border-color:rgba(255,204,0,.25);color:rgba(255,204,0,.4);text-decoration:line-through;box-shadow:none}
+.wwm-joker-options{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wwm-option-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(10,30,90,.9),rgba(5,18,60,.9));border:2px solid rgba(255,204,0,.5);border-radius:999px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:10px 18px;text-align:left;transition:.2s all;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.wwm-option-btn:hover{background:linear-gradient(90deg,rgba(30,70,180,.9),rgba(15,45,130,.9));border-color:#ffcc00;box-shadow:0 0 16px rgba(255,204,0,.3);transform:scale(1.01)}
+.wwm-opt-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,204,0,.15);border:2px solid rgba(255,204,0,.6);color:#ffcc00;font-size:13px;font-weight:900;flex-shrink:0}
+.wwm-phone-bubble{margin-top:14px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(5,20,60,.95),rgba(3,12,40,.95));border:2px solid rgba(100,180,255,.4);border-radius:16px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.wwm-phone-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(100,180,255,.5))}
+.wwm-phone-text{font-size:14px;color:#c5deff;line-height:1.7}
+.wwm-phone-text b{color:#fbbf77}
+.wwm-phone-text em{display:inline-block;margin-top:6px;font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(100,180,255,.3);border-radius:8px;padding:4px 10px;color:#fff;font-weight:700;font-size:15px}
+.wwm-audience-box{margin-top:14px;background:linear-gradient(180deg,rgba(5,18,55,.95),rgba(3,10,36,.95));border:2px solid rgba(255,204,0,.35);border-radius:16px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.wwm-audience-title{text-align:center;font-size:13px;font-weight:800;color:#ffcc00;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 8px rgba(255,204,0,.4)}
+.wwm-audience-bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:110px}
+.wwm-audience-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:160px;height:100%}
+.wwm-audience-pct{font-size:13px;font-weight:900;color:#ffcc00;min-height:18px}
+.wwm-audience-bar{width:100%;min-height:4px;border-radius:6px 6px 0 0;cursor:pointer;transition:filter .2s}
+.wwm-audience-bar:hover{filter:brightness(1.2)}
+.wwm-audience-label{font-size:11px;color:rgba(255,255,255,.65);text-align:center;line-height:1.3;max-width:100%;word-break:break-word;margin-top:4px}
+body.dark-mode #acc-aus summary{background:linear-gradient(90deg,rgba(170,200,160,.10),rgba(170,200,160,.02))}
+body.dark-mode #acc-videos summary{background:linear-gradient(90deg,rgba(249,168,37,.08),rgba(249,168,37,.01))}
+body.dark-mode #acc-vern summary{background:linear-gradient(90deg,rgba(198,40,40,.07),rgba(198,40,40,.01))}
+body.dark-mode #acc-frag summary{background:linear-gradient(90deg,rgba(138,176,200,.10),rgba(138,176,200,.02))}
+body.dark-mode .content{background:#1e1408}
+body.dark-mode .note{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .task{background:#1e1408;border-color:#3d2510}
+body.dark-mode .task .prompt{color:#e8d0aa}
+body.dark-mode .task input[type="text"],body.dark-mode .task textarea{background:#140c04;color:#e8d0aa;border-color:#3d2510}
+body.dark-mode .btn.ghost{background:#1e1408;color:#b8905a;border:1px solid #3d2510}
+body.dark-mode .progress{background:#1e1408;border-color:#3d2510}
+body.dark-mode .progress-text{color:#b8905a}
+body.dark-mode .solution{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .hint-box{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.45);color:#fcd34d}
+body.dark-mode .result-card{background:#1e1408;border-color:#3d2510}
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:#b85c20;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:.2s background,.2s transform}
+.dark-toggle:hover{transform:translateY(-1px);background:#8b4518}
+body.dark-mode .dark-toggle{background:#3d2510;color:#e8d0aa}
+
+/* ===== RULES MODAL ===== */
+#rules-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.7);padding:20px;align-items:center;justify-content:center}
+#rules-modal.show{display:flex}
+#rules-modal-box{position:absolute;background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.3);max-width:900px;width:calc(100% - 40px);max-height:calc(100% - 40px);display:flex;flex-direction:column;overflow:hidden}
+body.dark-mode #rules-modal-box{background:#1e1408;border:1px solid #3d2510}
+#rules-modal-header{cursor:move;background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-radius:20px 20px 0 0}
+body.dark-mode #rules-modal-header{background:linear-gradient(135deg,#d97520,#e8a060)}
+#rules-modal-header h3{margin:0;font-size:18px;font-weight:800}
+#rules-modal-close{background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:50%;width:32px;height:32px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+#rules-modal-close:hover{background:rgba(255,255,255,.3);transform:scale(1.1)}
+#rules-modal-body{padding:20px;overflow-y:auto;flex:1}
+#rules-modal-body .rc-card{margin-bottom:12px}
+
+@media(max-width:600px){.dark-toggle{position:static;display:block;margin:0 auto 8px;box-shadow:0 1px 6px rgba(0,0,0,.15)}}
+@media(max-width:768px){
+  #rules-fab{bottom:16px;right:16px;width:50px;height:50px;font-size:20px}
+  .tts-toggle{bottom:46px;left:16px;padding:6px 11px;font-size:11px}
+  #rules-modal{padding:10px}
+  #rules-modal-box{max-width:calc(100% - 20px)}
+  #rules-modal-header{padding:12px 16px}
+  #rules-modal-body{padding:14px}
+}
+@media print{body>*:not(.print-frame){display:none!important}.print-frame{display:block!important}.print-frame .print-header{display:flex!important;align-items:center;gap:14pt;border-bottom:2pt solid #b85c20;padding-bottom:8pt;margin-bottom:14pt}.print-frame .print-header img{height:48pt}.print-frame .print-header h2{margin:0;font-size:16pt;color:#b85c20;font-weight:900}.print-frame .print-header p{margin:2pt 0 0;font-size:10pt;color:#7a5c3a}.task{border:1pt solid #ccc!important;background:#fff!important;border-radius:0!important;box-shadow:none!important;page-break-inside:avoid;margin:5pt 0;padding:8pt 10pt}.task .prompt{color:#000!important;font-weight:600}.task input[type="text"]{border:none!important;border-bottom:1pt solid #999!important;border-radius:0!important;background:transparent!important;color:transparent!important;box-shadow:none!important;width:100%}.task .controls,.task .solution,.task .feedback,.task .result-banner,.level-switch,.section-actions,.progress-wrap,.note{display:none!important}.print-section-title{display:block!important;font-size:13pt;font-weight:900;color:#000;margin:10pt 0 4pt;border-left:4pt solid #b85c20;padding-left:8pt}}
+.print-frame{display:none}
+
+/* ===== ANIMATIONS (KI-Tutor) ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
+
+/* ===== KI-TUTOR ===== */
+.ki-wrap{padding:4px 0 8px}
+.ki-welcome{background:linear-gradient(135deg,#faf5ff,#f0fdf4);border:1px solid #d8b4fe;border-radius:12px;padding:14px 16px;margin-bottom:14px;font-size:14px;line-height:1.6;color:#1e293b}
+body.dark-mode .ki-welcome{background:linear-gradient(135deg,#2a1808,#1e1005);border-color:#6d28d9;color:#e8d0aa}
+.ki-welcome strong{color:#6d28d9}
+body.dark-mode .ki-welcome strong{color:#c4b5fd}
+.ki-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ki-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd}
+body.dark-mode .ki-badge{background:#3d2510;color:#c4b5fd;border-color:#6d28d9}
+.ki-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.ki-chip{padding:7px 13px;border:1.5px solid #d8b4fe;border-radius:999px;font-size:13px;cursor:pointer;background:#faf5ff;color:#5b21b6;transition:.15s all;font-family:inherit;font-weight:600;-webkit-tap-highlight-color:transparent}
+.ki-chip:hover{background:#ede9fe;border-color:#a855f7}
+.ki-chip:active{transform:scale(.96)}
+body.dark-mode .ki-chip{background:#2a1808;border-color:#6d28d9;color:#c4b5fd}
+body.dark-mode .ki-chip:hover{background:#3d2510}
+.ki-messages{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;min-height:40px}
+.ki-msg{display:flex;gap:9px;animation:fadeUp .22s ease}
+.ki-msg.user{flex-direction:row-reverse}
+.ki-avatar{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;background:#ede9fe;border:1px solid #d8b4fe}
+.ki-msg.user .ki-avatar{background:#7c3aed;color:#fff;font-size:11px;font-weight:900}
+.ki-bubble{max-width:82%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.55;background:#fef8f0;border:1px solid #e8d5b8;color:#1e293b}
+.ki-msg.user .ki-bubble{background:#7c3aed;color:#fff;border-color:transparent;border-bottom-right-radius:3px}
+.ki-msg.ai .ki-bubble{border-bottom-left-radius:3px}
+body.dark-mode .ki-bubble{background:#1e1408;border-color:#3d2510;color:#e8d0aa}
+.ki-typing{display:flex;gap:4px;padding:3px 0}
+.ki-typing span{width:6px;height:6px;border-radius:50%;background:#b8905a;animation:bounce 1.2s infinite}
+.ki-typing span:nth-child(2){animation-delay:.2s}
+.ki-typing span:nth-child(3){animation-delay:.4s}
+.ki-input-row{display:flex;gap:8px;align-items:center}
+.ki-input{flex:1;padding:10px 16px;border:2px solid #d8b4fe;border-radius:999px;font-size:15px;outline:none;background:#faf5ff;color:#1e293b;font-family:inherit;transition:.2s border}
+.ki-input:focus{border-color:#7c3aed;background:#fff}
+body.dark-mode .ki-input{background:#2a1808;border-color:#6d28d9;color:#e8d0aa}
+body.dark-mode .ki-input:focus{border-color:#a855f7;background:#2a1408}
+.ki-send{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;border:none;cursor:pointer;font-size:17px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.15s all;-webkit-tap-highlight-color:transparent}
+.ki-send:hover{transform:scale(1.08)}
+.ki-send:active{transform:scale(.93)}
+.ki-send:disabled{background:#c4b5fd;cursor:default}
+.ki-err{font-size:13px;color:#dc2626;margin-top:6px;padding:8px 12px;background:#fef2f2;border-radius:8px;border:1px solid #fca5a5}
+body.dark-mode .ki-err{background:#450a0a;border-color:#b91c1c;color:#fca5a5}
+.ki-clear{width:38px;height:38px;border-radius:50%;background:#ede9fe;color:#7c3aed;border:1.5px solid #d8b4fe;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:.15s all;-webkit-tap-highlight-color:transparent}
+.ki-clear:hover{background:#ddd6fe;transform:scale(1.05)}
+.ki-clear:active{transform:scale(.92)}
+.ki-clear:disabled{opacity:.4;cursor:default}
+body.dark-mode .ki-clear{background:#3d2510;color:#c4b5fd;border-color:#6d28d9}
+body.dark-mode .ki-clear:hover{background:#4c1d95}
+
+.quiz-divider{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding:0 4px}
+.quiz-divider::before,.quiz-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(106,53,176,.35),transparent)}
+.quiz-divider span{font-size:13px;font-weight:800;color:#6a35b0;white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+body.dark-mode .quiz-divider::before,body.dark-mode .quiz-divider::after{background:linear-gradient(90deg,transparent,rgba(167,139,250,.35),transparent)}
+body.dark-mode .quiz-divider span{color:#a78bfa}
+/* ===== TTS / VORLESEN ===== */
+.tts-toggle{position:fixed;bottom:46px;left:16px;z-index:99;border:none;border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:#fff;color:#b85c20;box-shadow:0 3px 12px rgba(0,0,0,.15);transition:.2s}
+.tts-toggle:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,0,0,.2)}
+.tts-toggle.tts-on{background:#b85c20;color:#fff;box-shadow:0 3px 16px rgba(21,101,192,.4)}
+body.dark-mode .tts-toggle{background:#3d2510;color:#e8d0aa}
+.reset-all-btn{position:fixed;bottom:14px;left:16px;z-index:99;border:none;border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:#fff;color:#b91c1c;box-shadow:0 3px 12px rgba(0,0,0,.15);transition:.2s;-webkit-tap-highlight-color:transparent}
+.reset-all-btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,0,0,.2)}
+body.dark-mode .reset-all-btn{background:#3d2510;color:#fca5a5}
+body.dark-mode .tts-toggle.tts-on{background:#d97520;color:#fff}
+.tts-btn{display:inline-flex;border:none;background:none;cursor:pointer;font-size:16px;padding:2px 4px;border-radius:6px;transition:.15s all;vertical-align:middle;-webkit-tap-highlight-color:transparent;line-height:1;flex-shrink:0}
+.tts-btn:hover{background:rgba(124,58,237,.12);transform:scale(1.15)}
+.tts-btn:active{transform:scale(.95)}
+.tts-btn.tts-playing{animation:tts-pulse .8s ease-in-out infinite}
+@keyframes tts-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.prompt .tts-btn{margin-left:4px}
+.tts-flag-btn{font-size:18px!important;padding:1px 3px!important;line-height:1!important;}
+/* Schwebender Regeln-Button */
+#rules-fab{position:fixed;bottom:20px;right:20px;z-index:98;display:none;background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;border:none;border-radius:50%;width:56px;height:56px;font-size:24px;cursor:pointer;box-shadow:0 4px 20px rgba(21,101,192,.3);transition:.2s}
+#rules-fab:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 6px 28px rgba(21,101,192,.5)}
+body.dark-mode #rules-fab{background:linear-gradient(135deg,#d97520,#e8a060)}
+/* Regelkarten-Modal (verschiebbar) */
+.rules-modal-overlay{position:fixed;inset:0;z-index:400;display:none;pointer-events:none;}
+.rules-modal-overlay.open{display:block;}
+.rules-modal-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:360px;max-width:calc(100vw - 32px);max-height:82vh;overflow-y:auto;background:#fef9f2;border-radius:18px;border:2.5px solid #b85c20;box-shadow:0 8px 32px rgba(184,92,32,.35),0 2px 8px rgba(0,0,0,.18);pointer-events:all;-webkit-overflow-scrolling:touch;}
+.rules-modal-header{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:11px 14px 10px;border-bottom:2px solid rgba(255,255,255,.25);background:linear-gradient(135deg,#b85c20,#d4922e);cursor:grab;user-select:none;-webkit-user-select:none;border-radius:15px 15px 0 0;touch-action:none;}
+.rules-modal-header:active{cursor:grabbing;}
+.rules-modal-header h3{margin:0;font-size:14px;font-weight:800;color:#fff;display:flex;align-items:center;gap:5px;flex:1;min-width:0;}
+.rules-modal-drag-hint{font-size:11px;color:rgba(255,255,255,.7);font-weight:600;white-space:nowrap;flex-shrink:0;}
+.rules-modal-close{border:none;background:rgba(255,255,255,.2);border-radius:999px;width:30px;height:30px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;transition:.15s all;-webkit-tap-highlight-color:transparent;}
+.rules-modal-close:hover{background:rgba(255,255,255,.35);transform:scale(1.1);}
+.rules-modal-body{padding:14px;}
+body.dark-mode .rules-modal-box{background:#1e1408;border-color:#d97520;box-shadow:0 8px 32px rgba(59,130,246,.3),0 2px 8px rgba(0,0,0,.4);}
+body.dark-mode .rules-modal-header{background:linear-gradient(135deg,#8b4518,#b85c20);border-color:rgba(255,255,255,.1);}
+body.dark-mode .rules-modal-drag-hint{color:rgba(255,255,255,.5);}
+body.dark-mode .rules-modal-close{background:rgba(255,255,255,.12);color:#e8d0aa;}
+body.dark-mode .rules-modal-close:hover{background:rgba(255,255,255,.22);}
+/* Celebration */
+@keyframes celebrate-pop{0%{transform:scale(0.5);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.celebrate-banner{animation:celebrate-pop .4s ease-out;background:linear-gradient(135deg,#1b5e20,#2e7d32);border:2px solid #66bb6a;border-radius:14px;padding:14px 18px;margin:10px 0 6px;font-size:16px;font-weight:800;color:#fff;text-align:center;box-shadow:0 4px 16px rgba(46,125,50,.4);}
+body.dark-mode .celebrate-banner{background:linear-gradient(135deg,#1e1005,#1b5e20);}
+#acc-videos .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:4px}
+.video-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);border:1px solid #e8d5b8;transition:.2s all;text-decoration:none;color:inherit;display:block;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.video-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.12);transform:translateY(-2px)}
+.video-card:active{transform:scale(.98)}
+.video-thumb-area{position:relative;width:100%;padding-bottom:56.25%;background:linear-gradient(135deg,#140c04 0%,#3d2010 50%,#0c2340 100%);overflow:hidden}
+.video-thumb-area .yt-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(255,0,0,.9);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.5);transition:.2s all;z-index:2}
+.video-thumb-area .yt-icon::after{content:"";width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:3px}
+.video-card:hover .yt-icon{background:rgba(255,0,0,1);transform:translate(-50%,-50%) scale(1.12)}
+.video-thumb-area .yt-title-overlay{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:13px;font-weight:700;letter-spacing:.3px}
+.video-info{padding:14px 18px}
+.video-info h4{margin:0 0 6px;font-size:15px;font-weight:800;color:#b85c20}
+.video-info p{margin:0;font-size:13px;color:#9a7050;line-height:1.5}
+body.dark-mode .video-card{background:#1e1408;border-color:#3d2510}
+body.dark-mode .video-info h4{color:#e8a060}
+body.dark-mode .video-info p{color:#b8905a}
+@media(max-width:700px){#acc-videos .video-grid{grid-template-columns:1fr}}
+/* Custom Confirm Modal */
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;}
+.confirm-box{background:#fff;border-radius:18px;padding:24px 22px;max-width:320px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center;}
+.confirm-box p{margin:0 0 18px;font-size:16px;font-weight:600;color:#140c04;line-height:1.5;}
+.confirm-btns{display:flex;gap:10px;justify-content:center;}
+body.dark-mode .confirm-box{background:#1e1408;}
+body.dark-mode .confirm-box p{color:#e8d0aa;}
+</style>
+</head>
+<body>
+<div id="confirm-modal" style="display:none" class="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Fortschritt zurücksetzen?</p>
+    <div class="confirm-btns">
+      <button class="btn primary" id="confirm-ok">Ja, zurücksetzen</button>
+      <button class="btn ghost" id="confirm-cancel">Abbrechen</button>
+    </div>
+  </div>
+</div>
+<div id="rules-modal" class="rules-modal-overlay" role="dialog" aria-modal="true">
+  <div class="rules-modal-box" id="rules-modal-box">
+    <div class="rules-modal-header" id="rules-modal-header">
+      <h3>⚡ Regeln auf einen Blick</h3>
+      <span class="rules-modal-drag-hint">↕ verschiebbar</span>
+      <button class="rules-modal-close" id="rules-modal-close" aria-label="Schließen">✕</button>
+    </div>
+    <div class="rules-modal-body" id="rules-modal-body"></div>
+  </div>
+</div>
+<button class="tts-toggle" id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" onclick="customConfirm('Gesamten Fortschritt zurücksetzen?',function(){try{localStorage.removeItem('pd_progress_v1');localStorage.removeItem('pd_openAcc');}catch(e){}var orig=window.customConfirm;window.customConfirm=function(m,cb){cb();};var ids=['aus-reset','ing-reset','vern-reset','frag-reset','short-reset','signal-reset'];ids.forEach(function(id){var b=document.getElementById(id);if(b)b.click();});var qr=document.getElementById('quiz-reset');if(qr)qr.click();window.customConfirm=orig;})">🗑️ Zurücksetzen</button>
+<button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+<button id="rules-fab" aria-label="Regeln anzeigen">📋</button>
+<!-- Rules Modal -->
+<div id="rules-modal">
+  <div id="rules-modal-box">
+    <div id="rules-modal-header">
+      <h3>Regeln</h3>
+      <button id="rules-modal-close" aria-label="Schließen">×</button>
+    </div>
+    <div id="rules-modal-body"></div>
+  </div>
+</div>
+<header>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/>
+  </a>
+  <h1>Possessivbegleiter</h1>
+  <p class="sub">Wem gehört etwas? · my · your · his · her · its · our · your · their</p>
+</header>
+
+<div class="container">
+  <section class="rules-combined">
+    <div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Regeln auf einen Blick</span></div>
+    <div class="rc-grid">
+
+      <!-- 1 ÜBERBLICK + TABELLE -->
+      <div class="rc-card c-green">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">1</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">✅ Wem gehört etwas?</div>
+          <div class="rc-formula">
+            <span class="fc fc-subj">Possessivbegleiter</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">Nomen</span></span>
+          </div>
+          <div class="rc-rule" style="font-size:12.5px;line-height:1.6">I → <span class="hl-do">my</span> (mein/e)<br>you → <span class="hl-do">your</span> (dein/e)<br>he → <span class="hl-do">his</span> (sein/e)<br>she → <span class="hl-do">her</span> (ihr/e)<br>it → <span class="hl-do">its</span> (sein/e/ihr/e)<br>we → <span class="hl-do">our</span> (unser/e)<br>you (Pl.) → <span class="hl-do">your</span> (euer/eure)<br>they → <span class="hl-do">their</span> (ihr/e)</div>
+          <div class="rc-examples-new">
+            <span class="hl-subj">I</span> have a dog. <span class="hl-do">My</span> dog is brown.<br>
+            <span class="hl-subj">She</span> has a bike. <span class="hl-do">Her</span> bike is new.<br>
+            <span class="hl-subj">They</span> have a class. <span class="hl-do">Their</span> class is fun.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 STELLUNG IM SATZ -->
+      <div class="rc-card c-blue">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">2</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">📐 Stellung im Satz</div>
+          <div class="rc-formula">
+            <span class="fc fc-do">my/your/…</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">Nomen</span></span>
+          </div>
+          <div class="rc-rule">Possessivbegleiter stehen <b>direkt vor dem Nomen</b>.<br><span style="font-size:12px;">⚠️ <b>Kein Artikel</b> davor! Nicht „<i>the my book</i>“!</span></div>
+          <div class="rc-examples-new">
+            ✅ This is <span class="hl-do">my</span> book.<br>
+            ❌ This is <s>the my book</s>.<br>
+            ✅ <span class="hl-do">Her</span> brother is nice. <span style="font-size:11px;color:#9a7050">(ohne „a/the“)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 its vs. it's -->
+      <div class="rc-card c-red">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">3</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">⚠️ its vs. it's</div>
+          <div class="rc-formula" style="gap:5px 4px;flex-wrap:wrap">
+            <span class="fc fc-do">its</span>
+            <span class="fc fc-neg">≠</span>
+            <span class="fc fc-do">it's</span>
+          </div>
+          <div class="rc-rule"><b>its</b> = sein/ihr (Possessivbegleiter, OHNE Apostroph)<br><b>it's</b> = it is (Kurzform, MIT Apostroph)<br><span style="font-size:12px;">💡 Trick: Kannst du „it is“ sagen? → <b>it's</b>. Sonst → <b>its</b>.</span></div>
+          <div class="rc-examples-new">
+            The cat plays with <span class="hl-do">its</span> ball. <span style="font-size:11px;color:#9a7050">(= dem Ball der Katze)</span><br>
+            <span class="hl-neg">It's</span> a nice day. <span style="font-size:11px;color:#9a7050">(= It is a nice day.)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 their vs. they're vs. there -->
+      <div class="rc-card c-indigo">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">4</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">⚠️ their / they're / there</div>
+          <div class="rc-formula" style="gap:5px 4px;flex-wrap:wrap">
+            <span class="fc fc-do">their</span>
+            <span class="fc fc-neg">≠</span>
+            <span class="fc fc-do">they're</span>
+            <span class="fc fc-neg">≠</span>
+            <span class="fc fc-do">there</span>
+          </div>
+          <div class="rc-rule"><b>their</b> = ihr/e (Possessivbegleiter)<br><b>they're</b> = they are (Kurzform)<br><b>there</b> = dort, da<br><span style="font-size:12px;">💡 Klingen gleich – sind aber verschieden!</span></div>
+          <div class="rc-examples-new">
+            <span class="hl-do">Their</span> teacher is funny. <span style="font-size:11px;color:#9a7050">(ihr Lehrer)</span><br>
+            <span class="hl-neg">They're</span> in the garden. <span style="font-size:11px;color:#9a7050">(= They are …)</span><br>
+            Look! Tom is over <span class="hl-sig">there</span>. <span style="font-size:11px;color:#9a7050">(dort)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <div class="quiz-divider"><span>✏️ Übungen</span></div>
+  <details class="accordion" id="acc-aus">
+    <summary><span class="acc-num">1</span>🔍 Welcher Possessivbegleiter passt?</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Multiple Choice + Wörter ordnen &nbsp;|&nbsp; <b>Stufe 2:</b> Lücken füllen<br><b>Stufe 3:</b> Sätze frei bilden</div>
+      <div class="level-switch" id="aus-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Einsetzen</button><button data-level="3">🔴 Sätze bilden</button></div>
+      <div class="progress-wrap" id="aus-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn green" id="aus-check-all">Alle prüfen</button><button class="btn gray" id="aus-reset">Zurücksetzen</button><button class="btn ghost" id="aus-reroll">🎲 Neu würfeln</button></div>
+      <div id="aus-tasks"></div>
+    </div>
+  </details>
+  <details class="accordion" id="acc-ing">
+    <summary><span class="acc-num">2</span>📐 Stellung im Satz (kein Artikel davor!)</summary>
+    <div class="content">
+      <div class="note">Possessivbegleiter stehen direkt <b>vor dem Nomen</b> – ohne <i>a/an/the</i>. Hier übst du die richtige Stellung.</div>
+      <div class="progress-wrap" id="ing-progress"><div class="progress" style="--bar-color:#f59e0b" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="background:linear-gradient(90deg,#d97706,#f59e0b)"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn" style="background:linear-gradient(135deg,#d97706,#f59e0b);color:#fff;" id="ing-check-all">Alle prüfen</button><button class="btn gray" id="ing-reset">Zurücksetzen</button><button class="btn ghost" id="ing-reroll">🎲 Neu würfeln</button></div>
+      <div id="ing-tasks"></div>
+    </div>
+  </details>
+  <details class="accordion" id="acc-vern">
+    <summary><span class="acc-num">3</span>⚠️ its vs. it's</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Multiple Choice – its oder it's? &nbsp;|&nbsp; <b>Stufe 2:</b> Lücken füllen<br><b>Stufe 3:</b> Fehler korrigieren</div>
+      <div class="level-switch" id="vern-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Einsetzen</button><button data-level="3">🔴 Fehler finden</button></div>
+      <div class="progress-wrap" id="vern-progress"><div class="progress red" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn primary" id="vern-check-all">Alle prüfen</button><button class="btn gray" id="vern-reset">Zurücksetzen</button><button class="btn ghost" id="vern-reroll">🎲 Neu würfeln</button></div>
+      <div id="vern-tasks"></div>
+    </div>
+  </details>
+  <details class="accordion" id="acc-frag">
+    <summary><span class="acc-num">4</span>⚠️ their / they're / there</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Erkennen – welches Wort passt? &nbsp;|&nbsp; <b>Stufe 2:</b> Lücken füllen<br><b>Stufe 3:</b> Fehler korrigieren</div>
+      <div class="level-switch" id="frag-levels"><button data-level="1" class="active">🟢 Erkennen</button><button data-level="2">🟡 Einsetzen</button><button data-level="3">🔴 Fehler finden</button></div>
+      <div class="progress-wrap" id="frag-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn blue" id="frag-check-all">Alle prüfen</button><button class="btn gray" id="frag-reset">Zurücksetzen</button><button class="btn ghost" id="frag-reroll">🎲 Neu würfeln</button></div>
+      <div id="frag-tasks"></div>
+    </div>
+  </details>
+  <details class="accordion" id="acc-short">
+    <summary><span class="acc-num">5</span>🔄 Übersetzung Deutsch → Englisch</summary>
+    <div class="content">
+      <div class="note">Übersetze die Wendungen ins Englische. Achte auf den richtigen Possessivbegleiter und kein „a/the“ davor!</div>
+      <div class="progress-wrap" id="short-progress"><div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;" id="short-check-all">Alle prüfen</button><button class="btn gray" id="short-reset">Zurücksetzen</button><button class="btn ghost" id="short-reroll">🎲 Neu würfeln</button></div>
+      <div id="short-tasks"></div>
+    </div>
+  </details>
+  <details class="accordion" id="acc-signal">
+    <summary><span class="acc-num">6</span>🔀 Mix – alle Possessivbegleiter</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Erkennen – welcher passt? &nbsp;|&nbsp; <b>Stufe 2:</b> Lücken in kleinen Texten<br><b>Stufe 3:</b> Komplette Übersetzung + Fehler</div>
+      <div class="level-switch" id="signal-levels">
+        <button data-level="1" class="active" aria-pressed="true">🟢 Erkennen</button>
+        <button data-level="2" aria-pressed="false">🟡 Mini-Texte</button>
+        <button data-level="3" aria-pressed="false">🔴 Mix</button>
+      </div>
+      <div class="progress-wrap" id="signal-progress"><div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="background:linear-gradient(90deg,#00897b,#26a69a)"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn" style="background:linear-gradient(135deg,#00897b,#26a69a);color:#fff;" id="signal-check-all">Alle prüfen</button><button class="btn gray" id="signal-reset">Zurücksetzen</button><button class="btn ghost" id="signal-reroll">🎲 Neu würfeln</button></div>
+      <div id="signal-tasks"></div>
+    </div>
+  </details>
+
+<!-- KI-Tutor mount-point – tutor.js injiziert hier sein Akkordeon -->
+<div id="tutor-mount"></div>
+
+  <div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+  <details class="accordion" id="wwm-quiz">
+    <summary>🏆 Quiz</summary>
+    <div class="content">
+      <div class="progress-wrap" id="quiz-progress"><div class="progress mixed" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+      <div id="quiz-tasks"></div>
+      <div id="quiz-result" class="result-card" style="display:none"></div>
+    </div>
+  </details>
+
+  <footer style="text-align:center;color:#b8905a;font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid rgba(184,144,90,.25)">
+    <div>Version 26.04.2026, 19:30</div>
+    <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+  </footer>
+</div>
+<script>
+
+/* === KI-TUTOR-CONFIG === */
+window.TUTOR_CONFIG = {
+  topic: "Possessive Determiners",
+  grade: 5,
+  unit: 4,
+  rules: [
+    "my, your, his, her, its, our, your, their",
+    "Possessivbegleiter stehen VOR dem Hauptwort",
+    "his (männlich), her (weiblich), its (Sache/Tier)",
+    "your: du UND ihr (gleiche Form)",
+    "Unterschied zu Possessivpronomen (mine, yours, his, hers …)"
+  ],
+  welcomeMessage:
+    "<strong>👋 Hallo! Ich bin dein KI-Tutor.</strong><br>" +
+    "Ich helfe dir mit den <b>Possessivbegleitern</b> (my/your/his/her …). " +
+    "Stell mir Fragen oder schick mir einen Satz zum Prüfen. Ich gebe Tipps – keine Lösungen!",
+  quickChips: [
+    "Was ist der Unterschied zwischen his und her?",
+    "Wann nehme ich its, wann it's?",
+    "Prüfe: This is her brother and her bag.",
+    "Wie sage ich „unser Buch\" auf Englisch?"
+  ],
+  typicalErrors: [
+    "his/her vertauscht (Tom and his sister – nicht her sister)",
+    "its statt it's (oder umgekehrt)",
+    "your für du UND ihr Plural – manche denken youer (falsch)",
+    "Possessivpronomen mit Possessivbegleiter verwechselt (mine vs. my)"
+  ]
+};
+
+// Globaler Error-Handler für Debugging
+window.onerror=function(msg,url,line,col,err){
+  console.error('JS Error:',msg,'Line:',line,'Col:',col,err);
+};
+function normalizeAnswer(text){
+  if(!text) return "";
+  let s=(""+text).toLowerCase();
+  // Alle Apostroph-Varianten vereinheitlichen
+  s=s.replace(/[\u0027\u00B4\u2018\u2019\u201A\u201B\u2032\u2035\u02B9\u02BB\u02BC\u02BE\u02BF\uFF07\u0060`´]/g,"'");
+  // Kontraktionen MIT Apostroph auflösen
+  s=s.replace(/won't/g,"will not");
+  s=s.replace(/don't/g,"do not");
+  s=s.replace(/doesn't/g,"does not");
+  s=s.replace(/isn't/g,"is not");
+  s=s.replace(/aren't/g,"are not");
+  s=s.replace(/can't/g,"can not");
+  // Kontraktionen OHNE Apostroph (häufige Schülerfehler)
+  s=s.replace(/\bdoesnt\b/g,"does not");
+  s=s.replace(/\bdont\b/g,"do not");
+  s=s.replace(/\bisnt\b/g,"is not");
+  s=s.replace(/\barent\b/g,"are not");
+  s=s.replace(/\bwont\b/g,"will not");
+  s=s.replace(/\bcant\b/g,"can not");
+  // Satzzeichen + Leerzeichen normalisieren
+  s=s.replace(/[.,!?:;"]+/g," ").replace(/\s+/g," ").trim();
+  s=s.normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  return s;
+}
+
+// ===== LOCALSTORAGE (mit Error-Handling) =====
+const LS_KEY = 'pd_progress_v1';
+// Migration: alte Versionen bereinigen
+try{['pd_progress_v0'].forEach(k=>{if(localStorage.getItem(k))localStorage.removeItem(k);});}catch(e){}
+// Hilfsfunktion: alle Keys mit Prefix löschen (für künftige Migrationen)
+function clearProgressVersion(oldKey){try{localStorage.removeItem(oldKey);}catch(e){}}
+const _STORE = {};
+function saveProgress(key, val){ try{_STORE[key]=val;}catch(e){} return true; }
+function loadProgress(key, def=null){ return _STORE[key]!==undefined?_STORE[key]:def; }
+function taskHash(task) {
+  // Eindeutiger Hash aus Aufgabe
+  const ans = Array.isArray(task.answer) ? task.answer[0] : task.answer;
+  return normalizeAnswer(ans).replace(/\s+/g,'_').substring(0,30);
+}
+
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+function pickRandom(pool,n,storageKey){
+  // Wenn storageKey vorhanden: gespeicherte Auswahl laden
+  if(storageKey){
+    const saved=loadProgress('pick_'+storageKey);
+    if(saved&&Array.isArray(saved)&&saved.length===Math.min(n,pool.length)&&saved.every(i=>i>=0&&i<pool.length)){
+      return saved.map(i=>pool[i]);
+    }
+  }
+  const indices=Array.from({length:pool.length},(_,i)=>i);
+  for(let i=indices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[indices[i],indices[j]]=[indices[j],indices[i]];}
+  const picked=indices.slice(0,Math.min(n,pool.length));
+  if(storageKey)saveProgress('pick_'+storageKey,picked);
+  return picked.map(i=>pool[i]);
+}
+function initProgressBar(progressRoot,total){
+  const fill=progressRoot.querySelector('.progress-fill');
+  const text=progressRoot.parentElement.querySelector('.progress-text');
+  function update(correct,done){
+    done=done!==undefined?done:correct;
+    const fp=total?Math.round((done/total)*100):0;
+    const rp=total?Math.round((correct/total)*100):0;
+    fill.style.width=fp+'%';
+    if(done===correct){text.textContent=`Fortschritt: ${correct}/${total} richtig (${rp}%)`;}
+    else{text.textContent=`Fortschritt: ${correct}/${total} richtig · ${done} bearbeitet`;}
+    progressRoot.setAttribute('aria-valuenow',String(fp));
+    if(done===0){fill.style.background='';}
+    else if(correct===total){fill.style.background='linear-gradient(90deg,#2e7d32,#43a047)';}
+    else if(rp>=60){fill.style.background='';}
+    else{fill.style.background='linear-gradient(90deg,#e65100,#ff8f00)';}
+  }
+  function setTotal(n){total=n;update(0,0);}
+  function resetAnimated(){
+    fill.style.transition='width .5s cubic-bezier(.4,0,.2,1)';
+    fill.style.width='0%';
+    fill.style.background='';
+    text.textContent=`Fortschritt: 0/${total} richtig (0%)`;
+    progressRoot.setAttribute('aria-valuenow','0');
+    setTimeout(()=>{fill.style.transition='width .3s ease';},520);
+  }
+  update(0,0);
+  return{update,setTotal,resetAnimated};
+}
+// ===== FEHLERANALYSE =====
+// Generische wortweise Diff-Analyse: findet das erste abweichende Wort und
+// klassifiziert den Fehler (Endung, Grundform, y→ies, has/have, fehlend/zuviel).
+// Themen-unabhängig — funktioniert für Simple Present, Will Future etc.
+function diffHint(userInput, correctAnswer){
+  const uN=normalizeAnswer(userInput);
+  const cN=normalizeAnswer(correctAnswer);
+  if(!uN||!cN||uN===cN)return null;
+  const uW=uN.split(/\s+/).filter(Boolean);
+  const cW=cN.split(/\s+/).filter(Boolean);
+  // Erstes abweichendes Wort finden
+  let i=0;const max=Math.max(uW.length,cW.length);
+  while(i<max&&uW[i]===cW[i])i++;
+  if(i>=max)return null;
+  const uWord=uW[i]||'';
+  const cWord=cW[i]||'';
+  // Fehlendes Wort
+  if(!uWord&&cWord){
+    // Häufig: Hilfsverb vergessen
+    if(/^(do|does|is|are|will|has|have|was|were)$/.test(cWord))
+      return `💡 Es fehlt das Hilfsverb <b>${cWord}</b>.`;
+    return `💡 An Stelle ${i+1} fehlt noch ein Wort.`;
+  }
+  // Zu viel Wort
+  if(uWord&&!cWord)return `💡 Das Wort <b>${uWord}</b> am Ende gehört nicht dazu.`;
+  // -s/-es fehlt (he/she/it)
+  if(cWord===uWord+'s'||cWord===uWord+'es')
+    return `💡 Das Verb braucht hier die Endung <b>-${cWord.slice(uWord.length)}</b>: <i>${uWord}</i> → <b>${cWord}</b>.`;
+  // -s/-es zu viel (nach do/does/don't/doesn't/will)
+  if(uWord===cWord+'s'||uWord===cWord+'es')
+    return `💡 Hier gehört die <b>Grundform</b>: <i>${uWord}</i> → <b>${cWord}</b>.`;
+  // y → ies (studys → studies)
+  if(cWord.endsWith('ies')&&uWord.endsWith('ys')&&cWord.slice(0,-3)===uWord.slice(0,-2))
+    return `💡 Verben auf <b>-y</b> werden zu <b>-ies</b>: <i>${uWord}</i> → <b>${cWord}</b>.`;
+  // has/have, do/does, is/are, was/were Paare
+  const pairs={'has':'have','have':'has','does':'do','do':'does','is':'are','are':'is','was':'were','were':'was'};
+  if(pairs[uWord]===cWord)
+    return `💡 Hier brauchst du <b>${cWord}</b>, nicht <i>${uWord}</i>.`;
+  // Ähnliches Wort (vermutlich Rechtschreibfehler)
+  if(uWord.length>=3&&cWord.length>=3&&uWord[0]===cWord[0]&&Math.abs(uWord.length-cWord.length)<=2)
+    return `💡 Das Wort <b>${uWord}</b> stimmt so nicht – richtig: <b>${cWord}</b>.`;
+  // Allgemein: erstes falsches Wort nennen
+  return `💡 Ab dem Wort <b>${uWord||'…'}</b> stimmt etwas nicht.`;
+}
+
+// Liefert einen Teil-Tipp (erste ~40% der Lösung) als gestaffelte Hilfe,
+// bevor die komplette Lösung gezeigt wird.
+function buildPartialHint(answer){
+  if(!answer)return '';
+  const words=(''+answer).trim().replace(/[.!?]+$/,'').split(/\s+/).filter(Boolean);
+  if(words.length<3)return words[0]||'';
+  const n=Math.max(2,Math.ceil(words.length*0.4));
+  return words.slice(0,n).join(' ');
+}
+
+function analyzeError(userInput, correctAnswers){
+  const u=userInput.toLowerCase().trim();
+  const ansList=Array.isArray(correctAnswers)?correctAnswers:[correctAnswers];
+  const c=(ansList[0]||'').toLowerCase().trim();
+  // Themen-spezifische Patterns (Possessivbegleiter)
+  // its vs. it's
+  if(/\bits\b/.test(c)&&/\bit'?s\b/.test(u)&&!/\bits\b/.test(u))
+    return "💡 <b>its</b> (Possessivbegleiter, ohne Apostroph) ≠ <b>it's</b> (= it is). Hier passt <b>its</b>.";
+  if(/\bit'?s\b/.test(c)&&/\bits\b/.test(u)&&!/\bit'?s\b/.test(u))
+    return "💡 <b>it's</b> (= it is, mit Apostroph) ≠ <b>its</b> (Possessivbegleiter). Hier passt <b>it's</b>.";
+  // their vs. they're vs. there
+  if(/\btheir\b/.test(c)&&/\b(they'?re|there)\b/.test(u)&&!/\btheir\b/.test(u))
+    return "💡 <b>their</b> = ihr/e (Possessivbegleiter). <b>they're</b> = they are. <b>there</b> = dort.";
+  if(/\bthey'?re\b/.test(c)&&/\b(their|there)\b/.test(u)&&!/\bthey'?re\b/.test(u))
+    return "💡 <b>they're</b> = they are (Kurzform). Nicht <i>their</i> oder <i>there</i>.";
+  if(/\bthere\b/.test(c)&&/\b(their|they'?re)\b/.test(u)&&!/\bthere\b/.test(u))
+    return "💡 <b>there</b> = dort/da. Nicht <i>their</i> oder <i>they're</i>.";
+  // Artikel vor Possessivbegleiter (the my book)
+  if(/\b(the|a|an)\s+(my|your|his|her|its|our|their)\b/.test(u))
+    return "💡 Vor einem Possessivbegleiter (my/your/his …) kommt <b>kein Artikel</b> – nicht <i>the my</i> / <i>a his</i> / …";
+  // Falsche Zuordnung Pronomen ↔ Possessivbegleiter
+  const pairs={'he':'his','she':'her','it':'its','we':'our','they':'their','i':'my','you':'your'};
+  // Wenn Lösung enthält "his" und User schrieb "her" o.ä.
+  for(const [pron,pd] of Object.entries(pairs)){
+    if(c.includes(' '+pd+' ')||c.startsWith(pd+' ')){
+      // Welche anderen PDs könnte der User stattdessen geschrieben haben?
+      const wrongPDs=['my','your','his','her','its','our','their'].filter(p=>p!==pd);
+      for(const wp of wrongPDs){
+        if((u.includes(' '+wp+' ')||u.startsWith(wp+' '))&&!u.includes(' '+pd+' ')&&!u.startsWith(pd+' ')){
+          return `💡 Hier passt <b>${pd}</b>, nicht <i>${wp}</i>.`;
+        }
+      }
+    }
+  }
+  // Wähle die Antwort aus ansList, die dem Input am nächsten ist, für Diff
+  let best=ansList[0],bestDiff=Infinity;
+  for(const a of ansList){
+    const an=normalizeAnswer(a),un=normalizeAnswer(userInput);
+    const aw=an.split(/\s+/),uw=un.split(/\s+/);
+    let d=Math.abs(aw.length-uw.length);
+    const m=Math.min(aw.length,uw.length);
+    for(let i=0;i<m;i++)if(aw[i]!==uw[i])d++;
+    if(d<bestDiff){bestDiff=d;best=a;}
+  }
+  // Generische Diff-Analyse (funktioniert für jede Grammatik)
+  return diffHint(userInput,best);
+}
+
+// ===== CUSTOM CONFIRM =====
+function customConfirm(msg, onOk){
+  const modal=document.getElementById('confirm-modal');
+  const msgEl=document.getElementById('confirm-msg');
+  const okBtn=document.getElementById('confirm-ok');
+  const cancelBtn=document.getElementById('confirm-cancel');
+  msgEl.textContent=msg;
+  modal.style.display='flex';
+  function close(){modal.style.display='none';okBtn.onclick=null;cancelBtn.onclick=null;}
+  okBtn.onclick=()=>{close();onOk();};
+  cancelBtn.onclick=()=>close();
+}
+
+// Mischt Wörter in <i>wort1 / wort2 / ...</i>-Prompts, damit die Reihenfolge
+// nicht bereits die Lösung vorgibt. Endsatzzeichen werden entfernt (SuS sollen
+// selbst interpunktieren). Wiederholt bis Reihenfolge von Original abweicht.
+function shufflePromptSlashList(html){
+  if(!html||typeof html!=='string')return html;
+  return html.replace(/<i>([^<]+?)<\/i>/g,(m,inner)=>{
+    if(!inner.includes(' / ')||/___|[()]/.test(inner))return m;
+    const content=inner.replace(/[.!?]+\s*$/,'').trim();
+    const parts=content.split(' / ').map(p=>p.trim()).filter(Boolean);
+    if(parts.length<2)return m;
+    const original=parts.join(' / ');
+    let shuffled,attempts=0;
+    do{
+      shuffled=parts.slice();
+      for(let i=shuffled.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];
+      }
+      attempts++;
+    }while(shuffled.join(' / ')===original&&attempts<20);
+    return '<i>'+shuffled.join(' / ')+'</i>';
+  });
+}
+
+function renderTasks(container,tasks,sectionKey,options={}){
+  const{enableSolution=false,onStatusChange=null,currentLevel=1}=options;
+  const progressKey = `${sectionKey}_L${currentLevel}`;
+  const answersKey = `${sectionKey}_L${currentLevel}_ans`;
+  const solvedTasks = loadProgress(progressKey, []);
+  const savedAnswers = loadProgress(answersKey, {});
+  
+  container.innerHTML="";
+  tasks.forEach((t,idx)=>{
+    const tHash = taskHash(t);
+    const isSolved = solvedTasks.includes(tHash);
+    const savedAns = savedAnswers[tHash]||'';
+    
+    const wrap=document.createElement("div");wrap.className="task";
+    if(isSolved) wrap.classList.add('task--solved');
+    
+    // Aufgaben-Nummer
+    const nb=document.createElement("div");nb.style.cssText="font-size:12px;font-weight:700;color:#b8905a;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;";
+    nb.textContent=`Aufgabe ${idx+1} / ${tasks.length}`;
+    
+    // Typ-Badge
+    const badge=document.createElement("span");badge.className="task-type-badge";
+    if(t.type==='mc'){badge.classList.add('badge-mc');badge.textContent='Multiple Choice';}
+    else if(Array.isArray(t.words)){badge.classList.add('badge-ordne');badge.textContent='Wörter ordnen';}
+    else{badge.classList.add('badge-frei');badge.textContent='Freitext';}
+    nb.appendChild(badge);
+    wrap.appendChild(nb);
+    
+    // Gelöst-Label
+    const solvedLabel=document.createElement("div");solvedLabel.className="task-solved-label";
+    if(isSolved&&savedAns){solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${savedAns}</i>`;}
+    else if(isSolved){solvedLabel.textContent="✓ Bereits gelöst";}
+    wrap.appendChild(solvedLabel);
+
+    // ========== MC-Aufgabe ==========
+    if(t.type==='mc'){
+      const prompt=document.createElement("p");prompt.className="prompt";prompt.innerHTML=t.prompt;
+      wrap.appendChild(prompt);
+      const mcBox=document.createElement("div");mcBox.className="mc-options";
+      const letters=['A','B','C','D'];
+      const input=document.createElement("input");input.type="hidden";input.id=`${sectionKey}-input-${idx}`;
+      if(isSolved){input._correct=true;input._done=true;}
+      wrap.appendChild(input);
+      const feedback=document.createElement("div");feedback.className="feedback";
+      let answered=isSolved;
+      const optBtns=[];
+      // Optionen mischen, damit die richtige Antwort nicht immer an der gleichen Stelle steht
+      const optIndices=[...Array(t.options.length).keys()];
+      for(let i=optIndices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[optIndices[i],optIndices[j]]=[optIndices[j],optIndices[i]];}
+      const shuffledOpts=optIndices.map(i=>t.options[i]);
+      const correctIdx=optIndices.indexOf(t.correct);
+      shuffledOpts.forEach((opt,oi)=>{
+        const btn=document.createElement("button");btn.className="mc-opt";btn.type="button";
+        if(isSolved){btn.classList.add('mc-disabled');if(oi===correctIdx)btn.classList.add('mc-correct');}
+        btn.innerHTML=`<span class="mc-letter">${letters[oi]||oi+1}</span><span>${opt}</span>`;
+        btn.addEventListener('click',()=>{
+          if(answered)return;
+          answered=true;
+          optBtns.forEach(b=>b.classList.add('mc-disabled'));
+          if(oi===correctIdx){
+            btn.classList.add('mc-correct');
+            feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+            input._correct=true;input._done=true;input.value=opt;
+            if(!isSolved){const updated=[...solvedTasks,tHash];saveProgress(progressKey,updated);savedAnswers[tHash]=opt;saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${opt}</i>`;}
+          }else{
+            btn.classList.add('mc-wrong');
+            optBtns[correctIdx].classList.add('mc-correct');
+            feedback.textContent="✗ Leider falsch.";feedback.className="feedback bad";
+            input._correct=false;input._done=true;input.value=opt;
+            if(t.explanation){const expl=document.createElement('div');expl.className='solution';expl.style.display='block';expl.innerHTML=t.explanation;wrap.appendChild(expl);}
+          }
+          if(typeof onStatusChange==='function')onStatusChange();
+        });
+        optBtns.push(btn);
+        mcBox.appendChild(btn);
+      });
+      wrap.appendChild(mcBox);
+      wrap.appendChild(feedback);
+      input._check=()=>{if(!answered){feedback.textContent="Bitte wähle eine Antwort.";feedback.className="feedback warn";return false;}return input._correct;};
+      input._reset=()=>{answered=false;input._correct=false;input._done=false;input.value="";feedback.textContent="";feedback.className="feedback";optBtns.forEach(b=>{b.classList.remove('mc-correct','mc-wrong','mc-selected','mc-disabled');});solvedLabel.textContent='';wrap.classList.remove('task--solved');wrap.querySelectorAll('.solution').forEach(e=>e.remove());if(typeof onStatusChange==='function')onStatusChange();};
+      container.appendChild(wrap);
+      return;
+    }
+
+    // ========== Wörter ordnen (Tap-to-Order Tiles) ==========
+    if(Array.isArray(t.words)){
+      const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+      const correct=(answers[0]||'').replace(/[.?!]$/,'').trim();
+      const punct=answers[0]&&answers[0].slice(-1).match(/[.?!]/)?answers[0].slice(-1):'.';
+      const allCorrectNorms=answers.map(a=>a.replace(/[.?!]$/,'').trim().toLowerCase());
+      function checkOrder(arr){return allCorrectNorms.includes(arr.join(' ').toLowerCase());}
+      let mixed=shuffle([...t.words]);
+      let tries=0;
+      while(checkOrder(mixed)&&tries<20){mixed=shuffle([...t.words]);tries++;}
+      // Fallback: garantiert eine andere Reihenfolge erzwingen
+      if(checkOrder(mixed)&&mixed.length>=2){
+        // Suche zwei benachbarte Positionen deren Tausch die Lösung bricht
+        let swapped=false;
+        for(let i=0;i<mixed.length-1&&!swapped;i++){
+          const test=[...mixed];[test[i],test[i+1]]=[test[i+1],test[i]];
+          if(!checkOrder(test)){mixed=test;swapped=true;}
+        }
+        // Letzter Ausweg: letztes Wort an den Anfang
+        if(!swapped){mixed=[mixed[mixed.length-1],...mixed.slice(0,mixed.length-1)];}
+      }
+
+      const prompt=document.createElement("p");prompt.className="prompt";prompt.textContent=(t.label||'Ordne')+': Tippe die Wörter in der richtigen Reihenfolge an.';
+      wrap.appendChild(prompt);
+
+      const input=document.createElement("input");input.type="hidden";input.id=`${sectionKey}-input-${idx}`;
+      if(isSolved){input._correct=true;input._done=true;}
+      wrap.appendChild(input);
+
+      const sourceLabel=document.createElement("div");sourceLabel.className="word-tiles-label";sourceLabel.textContent="Verfügbare Wörter:";
+      const source=document.createElement("div");source.className="word-tiles wt-source";
+      const targetLabel=document.createElement("div");targetLabel.className="word-tiles-label";targetLabel.style.marginTop="10px";targetLabel.textContent="Dein Satz:";
+      const target=document.createElement("div");target.className="word-tiles wt-target";
+      const feedback=document.createElement("div");feedback.className="feedback";
+      const controls=document.createElement("div");controls.className="controls";
+      const checkBtn=document.createElement("button");checkBtn.className="btn primary";checkBtn.textContent="Prüfen";
+      const clearBtn=document.createElement("button");clearBtn.className="btn ghost";clearBtn.textContent="Zurücksetzen";
+      const hintBtn=document.createElement("button");hintBtn.className="btn ghost";hintBtn.textContent="💡 Tipp zeigen";hintBtn.style.display='none';
+      const solBtn=document.createElement("button");solBtn.className="btn ghost";solBtn.textContent="Lösung";solBtn.style.display='none';
+      const hintBox=document.createElement("div");hintBox.className="hint-box";
+      const solBox=document.createElement("div");solBox.className="solution";
+      controls.appendChild(checkBtn);controls.appendChild(clearBtn);
+      if(enableSolution){controls.appendChild(hintBtn);controls.appendChild(solBtn);}
+
+      const placed=[];
+      const srcTiles=[];
+      const tgtTiles=[];
+      let locked=false;
+      let failCount=0,hintShown=false;
+
+      mixed.forEach((word,wi)=>{
+        const tile=document.createElement("button");tile.className="word-tile";tile.type="button";tile.textContent=word;tile.dataset.idx=wi;
+        tile.addEventListener('click',()=>{
+          if(locked)return;
+          tile.classList.add('wt-used');
+          placed.push({word,srcIdx:wi});
+          const pt=document.createElement("button");pt.className="word-tile wt-placed";pt.type="button";pt.textContent=word;
+          pt.addEventListener('click',()=>{
+            if(locked)return;
+            const pi=placed.findIndex(p=>p.srcIdx===wi);
+            if(pi>-1)placed.splice(pi,1);
+            tile.classList.remove('wt-used');
+            pt.remove();
+            updateTgtTiles();
+          });
+          target.appendChild(pt);
+          updateTgtTiles();
+        });
+        source.appendChild(tile);
+        srcTiles.push(tile);
+      });
+
+      function updateTgtTiles(){
+        tgtTiles.length=0;
+        target.querySelectorAll('.word-tile').forEach(t=>tgtTiles.push(t));
+      }
+
+      const notify=()=>{if(typeof onStatusChange==='function')onStatusChange();};
+
+      function checkTiles(){
+        if(locked)return input._correct;
+        if(placed.length===0){feedback.textContent="Bitte ordne die Wörter.";feedback.className="feedback warn";return false;}
+        const userSentence=placed.map(p=>p.word).join(' ');
+        const userNorm=normalizeAnswer(userSentence);
+        const okSet=answers.map(normalizeAnswer);
+        if(okSet.some(a=>a===userNorm)){
+          feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+          input._correct=true;input._done=true;locked=true;
+          tgtTiles.forEach(t=>{t.classList.remove('wt-placed');t.classList.add('wt-correct');});
+          // Satzzeichen anhängen
+          const punctTile=document.createElement('span');
+          punctTile.textContent=punct;
+          punctTile.style.cssText='font-size:22px;font-weight:800;color:#14532d;align-self:center;line-height:1;padding-left:2px;';
+          target.appendChild(punctTile);
+          if(!isSolved){const updated=[...solvedTasks,tHash];saveProgress(progressKey,updated);savedAnswers[tHash]=userSentence+punct;saveProgress(answersKey,savedAnswers);wrap.classList.add('task--solved');solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${userSentence}${punct}</i>`;}
+          // TTS-Button am "Bereits gelöst"-Label nachinjizieren
+          if(typeof TTS!=='undefined'&&TTS.enabled){delete solvedLabel.dataset.ttsReady;setTimeout(()=>TTS.injectAll(),30);}
+          notify();return true;
+        }else{
+          failCount++;
+          const hint=analyzeError(userSentence,answers);
+          if(hint&&failCount<=2){feedback.innerHTML=`✗ Das passt noch nicht. ${hint}`;feedback.className="feedback bad";}
+          else{feedback.textContent="✗ Das passt noch nicht. Versuche es erneut.";feedback.className="feedback bad";}
+          tgtTiles.forEach(t=>{t.classList.add('wt-wrong');setTimeout(()=>t.classList.remove('wt-wrong'),500);});
+          if(enableSolution){
+            if(failCount>=2&&!hintShown)hintBtn.style.display="inline-flex";
+            if(failCount>=3||(hintShown&&failCount>=2))solBtn.style.display="inline-flex";
+          }
+          input._correct=false;notify();return false;
+        }
+      }
+      checkBtn.addEventListener('click',()=>checkTiles());
+      clearBtn.addEventListener('click',()=>{
+        if(locked)return;
+        placed.length=0;target.innerHTML='';tgtTiles.length=0;
+        srcTiles.forEach(t=>t.classList.remove('wt-used'));
+        feedback.textContent='';feedback.className='feedback';
+      });
+      hintBtn.addEventListener('click',()=>{
+        hintShown=true;
+        hintBtn.style.display='none';
+        const partial=buildPartialHint(answers[0]||'');
+        hintBox.innerHTML=partial?`💡 <b>Tipp:</b> Fang so an: <i>${partial} …</i>`:`💡 <b>Tipp:</b> Schau dir die Regel im Akkordeon-Kopf an.`;
+        hintBox.style.display='block';
+      });
+      solBtn.addEventListener('click',()=>{
+        input._done=true;notify();solBox.style.display='block';locked=true;
+        solBox.innerHTML=`<b>Lösung:</b> ${answers[0]||''}`;
+      });
+
+      wrap.appendChild(sourceLabel);wrap.appendChild(source);
+      wrap.appendChild(targetLabel);wrap.appendChild(target);
+      wrap.appendChild(controls);wrap.appendChild(feedback);wrap.appendChild(hintBox);wrap.appendChild(solBox);
+      container.appendChild(wrap);
+      input._check=checkTiles;
+      input._reset=()=>{locked=false;placed.length=0;target.innerHTML='';tgtTiles.length=0;srcTiles.forEach(t=>t.classList.remove('wt-used'));input._correct=false;input._done=false;failCount=0;hintShown=false;feedback.textContent='';feedback.className='feedback';hintBtn.style.display='none';hintBox.style.display='none';hintBox.textContent='';solBtn.style.display='none';solBox.style.display='none';solBox.textContent='';solvedLabel.textContent='';wrap.classList.remove('task--solved');notify();};
+      return;
+    }
+
+    // ========== Freitext-Aufgabe ==========
+    let promptHTML=t.prompt||"";
+    // Wortreihenfolge in <i>...</i>-Listen mischen, damit die Aufgabe nicht trivial wird.
+    promptHTML=shufflePromptSlashList(promptHTML);
+    const prompt=document.createElement("p");prompt.className="prompt";prompt.innerHTML=promptHTML;
+    const input=document.createElement("input");input.type="text";input.id=`${sectionKey}-input-${idx}`;input.setAttribute("aria-label","Antwort eingeben");input.placeholder="Schreib den Satz hier …";
+    
+    if(isSolved){input._correct=true;input._done=true;}
+    const controls=document.createElement("div");controls.className="controls";
+    const checkBtn=document.createElement("button");checkBtn.className="btn primary";checkBtn.textContent="Prüfen";
+    const hintBtn=document.createElement("button");hintBtn.className="btn ghost";hintBtn.textContent="💡 Tipp zeigen";hintBtn.style.display='none';
+    const solBtn=document.createElement("button");solBtn.className="btn ghost";solBtn.textContent="Lösung anzeigen";solBtn.style.display='none';
+    const feedback=document.createElement("div");feedback.className="feedback";
+    const hintBox=document.createElement("div");hintBox.className="hint-box";
+    const solBox=document.createElement("div");solBox.className="solution";
+    controls.appendChild(checkBtn);
+    if(enableSolution){controls.appendChild(hintBtn);controls.appendChild(solBtn);}
+    wrap.appendChild(prompt);wrap.appendChild(input);wrap.appendChild(controls);wrap.appendChild(feedback);wrap.appendChild(hintBox);wrap.appendChild(solBox);
+    container.appendChild(wrap);
+    const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+    const notify=()=>{if(typeof onStatusChange==='function')onStatusChange();};
+    let failCount=0,hintShown=false;
+    function checkOne(batchMode){
+      const user=normalizeAnswer(input.value);
+      const okSet=answers.map(normalizeAnswer);
+      if(!user){feedback.textContent="Bitte gib eine Lösung ein.";feedback.className="feedback warn";input._correct=false;notify();return false;}
+      if(okSet.some(a=>a===user)){
+        feedback.textContent="✓ Richtig!";feedback.className="feedback ok";
+        input._correct=true;input._done=true;failCount=0;
+        if(!isSolved){
+          const updated=[...solvedTasks,tHash];
+          saveProgress(progressKey,updated);
+          savedAnswers[tHash]=input.value.trim();
+          saveProgress(answersKey,savedAnswers);
+          wrap.classList.add('task--solved');
+          solvedLabel.innerHTML=`✓ Bereits gelöst: <i>${input.value.trim()}</i>`;
+        }
+        // TTS-Button am "Bereits gelöst"-Label nachinjizieren
+        if(typeof TTS!=='undefined'&&TTS.enabled){delete solvedLabel.dataset.ttsReady;setTimeout(()=>TTS.injectAll(),30);}
+        notify();
+        if(!batchMode){const all=Array.from(container.querySelectorAll("input[type='text']"));const next=all[all.indexOf(input)+1];if(next)setTimeout(()=>{next.focus();next.scrollIntoView({behavior:'smooth',block:'nearest'});},150);}
+        return true;
+      }
+      failCount++;
+      // Fehleranalyse
+      const hint=analyzeError(input.value,answers);
+      if(hint&&failCount<=2){feedback.innerHTML=`✗ Das passt noch nicht. ${hint}`;feedback.className="feedback bad";}
+      else{feedback.textContent="✗ Das passt noch nicht. Versuche es erneut.";feedback.className="feedback bad";}
+      // Gestaffelte Hilfen: erst Tipp (ab 2. Fehler), dann volle Lösung (ab 3. Fehler oder nach Tipp)
+      if(enableSolution){
+        if(failCount>=2&&!hintShown)hintBtn.style.display="inline-flex";
+        if(failCount>=3||(hintShown&&failCount>=2))solBtn.style.display="inline-flex";
+      }
+      input._correct=false;notify();return false;
+    }
+    checkBtn.addEventListener("click",()=>checkOne(false));
+    input.addEventListener("keydown",(e)=>{if(e.key==="Enter"){e.preventDefault();checkOne(false);}});
+    hintBtn.addEventListener("click",()=>{
+      hintShown=true;
+      hintBtn.style.display='none';
+      const partial=buildPartialHint(answers[0]||'');
+      hintBox.innerHTML=partial?`💡 <b>Tipp:</b> Fang so an: <i>${partial} …</i>`:`💡 <b>Tipp:</b> Schau dir die Regel im Akkordeon-Kopf an.`;
+      hintBox.style.display='block';
+      input.focus();
+    });
+    solBtn.addEventListener("click",()=>{
+      input._done=true;notify();solBox.style.display="block";
+      let html=`<b>Lösung:</b> ${answers[0]||''}`;
+      if(t.explanation){html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">${t.explanation}</div>`;}
+      else{
+        const ans=(answers[0]||'').toLowerCase();
+        if(/\bits\b/.test(ans))html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">💡 <b>its</b> = sein/ihr (Possessivbegleiter, OHNE Apostroph).</div>`;
+        else if(/\bit'?s\b/.test(ans))html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">💡 <b>it's</b> = it is (Kurzform, MIT Apostroph).</div>`;
+        else if(/\btheir\b/.test(ans))html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">💡 <b>their</b> = ihr/e (Possessivbegleiter, gehört zu they).</div>`;
+        else if(/\bthey'?re\b/.test(ans))html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">💡 <b>they're</b> = they are (Kurzform).</div>`;
+        else if(/\bthere\b/.test(ans))html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">💡 <b>there</b> = dort, da.</div>`;
+        else html+=`<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">💡 <b>Grundregel:</b> Possessivbegleiter (my/your/his/her/its/our/their) steht direkt vor dem Nomen – KEIN Artikel davor!</div>`;
+      }
+      solBox.innerHTML=html;
+      // TTS-Button für Lösung
+      if(typeof TTS!=='undefined'&&TTS.enabled){const ans=answers[0]||'';const sb=TTS.createBtn(ans,'en-GB','font-size:14px;margin-left:6px;');const bEl=solBox.querySelector('b');if(bEl)bEl.insertAdjacentElement('afterend',sb);}
+    });
+    input._check=checkOne;
+    input._reset=()=>{input.value="";input._correct=false;input._done=false;failCount=0;hintShown=false;notify();feedback.textContent="";feedback.className="feedback";hintBtn.style.display='none';hintBox.style.display='none';hintBox.textContent='';solBtn.style.display='none';solBox.style.display="none";solBox.textContent="";solvedLabel.textContent='';wrap.classList.remove('task--solved');};
+  });
+  // TTS-Buttons injizieren falls aktiviert
+  if(typeof TTS!=='undefined'&&TTS.enabled)setTimeout(()=>TTS.injectAll(),50);
+}
+function setupSection(sectionKey,levelButtons,container,pools,checkAllBtn,resetBtn,enableSolution){
+  const progressRoot=document.querySelector(`#${sectionKey}-progress .progress`);
+  const progressCtrl=initProgressBar(progressRoot,15);
+  let currentLevel=1;const levelCache={};
+  function updateProgress(){
+    const inputs=container.querySelectorAll(".task input");let correct=0,done=0;
+    inputs.forEach(inp=>{if(inp._correct)correct++;if(inp._done)done++;});
+    progressCtrl.update(correct,done);
+    const total=inputs.length;
+    const activeBtn=levelButtons.querySelector(`button[data-level="${currentLevel}"]`);
+    if(activeBtn&&total>0){const base=activeBtn.dataset.label||activeBtn.textContent.replace(' ✓','');activeBtn.dataset.label=base;activeBtn.textContent=correct===total?base+' ✓':base;}
+    if(correct===total&&total>0)checkCelebration(container,progressCtrl);
+  }
+  const renderLevel=(lvl)=>{
+    currentLevel=lvl;
+    levelButtons.querySelectorAll('button').forEach(b=>{const isActive=+b.dataset.level===lvl;b.classList.toggle('active',isActive);b.setAttribute('aria-pressed',isActive?'true':'false');if(!b.dataset.label)b.dataset.label=b.textContent.replace(' ✓','');});
+    container.querySelectorAll('.result-banner').forEach(b=>b.remove());container.querySelectorAll('.error-list').forEach(b=>b.remove());
+    if(!levelCache[lvl]){const pickKey=`${sectionKey}_L${lvl}`;const div=document.createElement('div');renderTasks(div,pickRandom(pools[lvl],15,pickKey),sectionKey,{enableSolution,onStatusChange:updateProgress,currentLevel:lvl});levelCache[lvl]=div;}
+    Object.values(levelCache).forEach(div=>{if(div.parentNode===container)container.removeChild(div);});
+    container.appendChild(levelCache[lvl]);
+    progressCtrl.setTotal(levelCache[lvl].querySelectorAll(".task input").length);
+    updateProgress();
+    // "Alle prüfen" nur bei Levels mit Freitext-Aufgaben einblenden
+    const hasFreitext=levelCache[lvl].querySelector('input[type="text"]')!==null;
+    checkAllBtn.style.display=hasFreitext?'':'none';
+  };
+  levelButtons.addEventListener('click',(e)=>{const b=e.target.closest('button[data-level]');if(!b)return;renderLevel(+b.dataset.level);});
+  checkAllBtn.addEventListener('click',()=>{
+    const inputs=container.querySelectorAll(".task input");let ok=0,total=0;const wrongItems=[];
+    inputs.forEach(inp=>{if(typeof inp._check==='function'){total++;if(inp._check(true))ok++;}});
+    updateProgress();
+    if(total>0){
+      container.querySelectorAll('.result-banner').forEach(b=>b.remove());container.querySelectorAll('.error-list').forEach(b=>b.remove());
+      inputs.forEach(inp=>{const wrap=inp.closest('.task');if(!wrap)return;if(inp._correct){wrap.classList.remove('task--wrong');}else if(inp.value&&inp.value.trim()){wrap.classList.add('task--wrong');const pEl=wrap.querySelector('.prompt');const nEl=wrap.querySelector('div[style*="color:#b8905a"]');wrongItems.push({num:nEl?nEl.textContent:'',prompt:pEl?pEl.textContent:'',userVal:inp.value.trim()});}});
+      const pct=Math.round(ok/total*100);const banner=document.createElement('div');banner.className='result-banner';
+      const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';const em=pct===100?'🏆':pct>=60?'👍':'💪';
+      banner.style.cssText=`margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid ${col};background:${col}18;font-size:15px;font-weight:700;color:${col};display:flex;align-items:center;gap:10px;`;
+      banner.innerHTML=`<span style="font-size:22px">${em}</span><span>Ergebnis: <b>${ok} / ${total}</b> richtig (${pct}%)</span>`;
+      container.prepend(banner);
+      if(wrongItems.length>0){const el=document.createElement('div');el.className='error-list';el.style.cssText='margin:0 0 12px;padding:10px 14px;border-radius:10px;border:1px solid #fca5a5;background:#fff5f5;font-size:13px;';el.innerHTML=`<div style="font-weight:800;color:#b91c1c;margin-bottom:6px;">✗ Noch nicht richtig (${wrongItems.length}):</div>`+wrongItems.map(w=>`<div style="padding:3px 0;border-top:1px solid #fee2e2;color:#374151;"><span style="color:#9ca3af;font-size:11px;">${w.num}</span> <span>${w.prompt}</span></div>`).join('');container.insertBefore(el,banner.nextSibling);}
+      setTimeout(()=>banner.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+    }
+  });
+  resetBtn.addEventListener('click',()=>{customConfirm('Fortschritt zurücksetzen?',()=>{container.querySelectorAll('.result-banner,.celebrate-banner').forEach(b=>b.remove());container.querySelectorAll('.error-list').forEach(b=>b.remove());container.querySelectorAll('.task--wrong').forEach(t=>t.classList.remove('task--wrong'));container.querySelectorAll(".task input").forEach(inp=>{if(typeof inp._reset==='function')inp._reset();});[1,2,3].forEach(function(l){saveProgress(sectionKey+'_L'+l,[]);saveProgress(sectionKey+'_L'+l+'_ans',{});});updateProgress();});});
+  const rerollBtn=document.getElementById(`${sectionKey}-reroll`);
+  if(rerollBtn)rerollBtn.addEventListener('click',()=>{
+    progressCtrl.resetAnimated();
+    const old=levelCache[currentLevel];
+    if(old&&old.parentNode===container)container.removeChild(old);
+    delete levelCache[currentLevel];
+    const pKey=`${sectionKey}_L${currentLevel}`;
+    saveProgress('pick_'+pKey,null);
+    saveProgress(pKey,[]);
+    saveProgress(pKey+'_ans',{});
+    renderLevel(currentLevel);
+    // Banner NACH renderLevel entfernen (falls durch updateProgress erstellt)
+    container.querySelectorAll('.celebrate-banner').forEach(b=>b.remove());
+    // Explizit alle Inputs zurücksetzen
+    setTimeout(()=>{
+      container.querySelectorAll('.task input').forEach(inp=>{
+        inp._correct=false;
+        inp._done=false;
+      });
+      updateProgress();
+    },10);
+  });
+  renderLevel(1);
+}
+
+// ===== AUFGABEN-POOLS =====
+
+// ===== AUFGABEN-POOLS =====
+
+// --- AUS: Welcher Possessivbegleiter passt? (L1/L2/L3) ---
+const ausL1=[
+  // MC: Pronomen → Possessivbegleiter (rezeptiv)
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>I</i>?",options:["my","your","his","our"],correct:0,explanation:"✅ I → <b>my</b> (mein/e)."},
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>you</i>?",options:["my","your","his","their"],correct:1,explanation:"✅ you → <b>your</b> (dein/euer)."},
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>he</i>?",options:["her","his","its","their"],correct:1,explanation:"✅ he → <b>his</b> (sein/e)."},
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>she</i>?",options:["his","her","its","their"],correct:1,explanation:"✅ she → <b>her</b> (ihr/e)."},
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>it</i>?",options:["his","her","its","their"],correct:2,explanation:"✅ it → <b>its</b> (sein/ihr – für Tiere/Sachen, OHNE Apostroph!)."},
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>we</i>?",options:["our","your","their","my"],correct:0,explanation:"✅ we → <b>our</b> (unser/e)."},
+  {type:"mc",prompt:"Welcher Possessivbegleiter passt zu <i>they</i>?",options:["his","her","its","their"],correct:3,explanation:"✅ they → <b>their</b> (ihr/e)."},
+  // MC: Lückensätze
+  {type:"mc",prompt:"<i>I have a dog. ___ dog is brown.</i>",options:["My","Your","His","Our"],correct:0,explanation:"✅ I → <b>My</b> dog."},
+  {type:"mc",prompt:"<i>She has a bike. ___ bike is new.</i>",options:["His","Her","Its","Their"],correct:1,explanation:"✅ she → <b>Her</b> bike."},
+  {type:"mc",prompt:"<i>He has a cat. ___ cat is black.</i>",options:["My","Your","His","Her"],correct:2,explanation:"✅ he → <b>His</b> cat."},
+  {type:"mc",prompt:"<i>They are pupils. ___ school is in Bonn.</i>",options:["His","Their","Our","Her"],correct:1,explanation:"✅ they → <b>Their</b> school."},
+  {type:"mc",prompt:"<i>We have a teacher. ___ teacher is nice.</i>",options:["Our","Your","Their","His"],correct:0,explanation:"✅ we → <b>Our</b> teacher."},
+  {type:"mc",prompt:"<i>You have a book. ___ book is on the table.</i>",options:["My","Your","His","Their"],correct:1,explanation:"✅ you → <b>Your</b> book."},
+  {type:"mc",prompt:"<i>The cat plays with ___ ball.</i>",options:["his","her","its","their"],correct:2,explanation:"✅ the cat = it → <b>its</b> ball."},
+  {type:"mc",prompt:"<i>Tom has a sister. ___ sister is ten.</i>",options:["My","Your","His","Her"],correct:2,explanation:"✅ Tom = he → <b>His</b> sister."},
+  {type:"mc",prompt:"<i>Lisa has a brother. ___ brother is five.</i>",options:["His","Her","Its","Our"],correct:1,explanation:"✅ Lisa = she → <b>Her</b> brother."},
+  {type:"mc",prompt:"<i>My parents have a dog. ___ dog is friendly.</i>",options:["His","Her","Its","Their"],correct:3,explanation:"✅ my parents = they → <b>Their</b> dog."},
+  {type:"mc",prompt:"<i>I'm in a class. ___ class is fun.</i>",options:["My","Your","Our","Their"],correct:0,explanation:"✅ I → <b>My</b> class."},
+  {type:"mc",prompt:"<i>You and Tom have a teacher. ___ teacher is nice.</i>",options:["His","Her","Your","Their"],correct:2,explanation:"✅ you (Pl.) = ihr → <b>Your</b> teacher."},
+  {type:"mc",prompt:"Wie heißt <i>mein Hund</i> auf Englisch?",options:["your dog","my dog","the my dog","mine dog"],correct:1,explanation:"✅ mein → <b>my</b>; kein „the“ davor!"},
+  {type:"mc",prompt:"Wie heißt <i>ihr Bruder</i> (von Lisa) auf Englisch?",options:["his brother","her brother","their brother","its brother"],correct:1,explanation:"✅ Lisa = she → <b>her brother</b>."},
+  {type:"mc",prompt:"Wie heißt <i>unser Lehrer</i> auf Englisch?",options:["my teacher","your teacher","our teacher","their teacher"],correct:2,explanation:"✅ unser → <b>our teacher</b>."},
+  // Wörter ordnen
+  {words:["This","is","my","book"],answer:"This is my book.",label:"Ordne"},
+  {words:["Her","brother","is","ten"],answer:"Her brother is ten.",label:"Ordne"},
+  {words:["His","cat","is","black"],answer:"His cat is black.",label:"Ordne"},
+  {words:["Our","teacher","is","nice"],answer:"Our teacher is nice.",label:"Ordne"},
+  {words:["Their","class","is","fun"],answer:"Their class is fun.",label:"Ordne"},
+  {words:["Your","bag","is","red"],answer:"Your bag is red.",label:"Ordne"},
+  {words:["The","cat","loves","its","toy"],answer:"The cat loves its toy.",label:"Ordne"},
+  {words:["My","mum","is","a","nurse"],answer:"My mum is a nurse.",label:"Ordne"},
+  {words:["Tom","loves","his","dog"],answer:"Tom loves his dog.",label:"Ordne"},
+  {words:["Lisa","reads","her","book"],answer:"Lisa reads her book.",label:"Ordne"},
+  {words:["We","like","our","school"],answer:"We like our school.",label:"Ordne"},
+  {words:["They","play","with","their","friends"],answer:"They play with their friends.",label:"Ordne"},
+  {words:["I","love","my","family"],answer:"I love my family.",label:"Ordne"},
+  {words:["Look","at","my","new","bike"],answer:"Look at my new bike.",label:"Ordne"},
+  {words:["This","is","her","favourite","hat"],answer:"This is her favourite hat.",label:"Ordne"},
+];
+
+const ausL2=[
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>I have a cat. ___ cat is white.</i>",answer:["I have a cat. My cat is white.","My cat is white."],explanation:"💡 I → <b>my</b>."},
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>You have a book. ___ book is great.</i>",answer:["You have a book. Your book is great.","Your book is great."],explanation:"💡 you → <b>your</b>."},
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>He has a dog. ___ dog is fast.</i>",answer:["He has a dog. His dog is fast.","His dog is fast."],explanation:"💡 he → <b>his</b>."},
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>She has a bike. ___ bike is new.</i>",answer:["She has a bike. Her bike is new.","Her bike is new."],explanation:"💡 she → <b>her</b>."},
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>It is a cat. ___ name is Lily.</i>",answer:["It is a cat. Its name is Lily.","Its name is Lily."],explanation:"💡 it → <b>its</b> (ohne Apostroph!)."},
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>We have a teacher. ___ teacher is friendly.</i>",answer:["We have a teacher. Our teacher is friendly.","Our teacher is friendly."],explanation:"💡 we → <b>our</b>."},
+  {prompt:"Setze den passenden Possessivbegleiter ein: <i>They have a class. ___ class is great.</i>",answer:["They have a class. Their class is great.","Their class is great."],explanation:"💡 they → <b>their</b>."},
+  {prompt:"Ergänze: <i>Tom and Lisa love ___ parents.</i>",answer:["Tom and Lisa love their parents."],explanation:"💡 Tom and Lisa = they → <b>their</b>."},
+  {prompt:"Ergänze: <i>My sister plays with ___ friends every day.</i>",answer:["My sister plays with her friends every day."],explanation:"💡 my sister = she → <b>her</b>."},
+  {prompt:"Ergänze: <i>The dog is hungry. Give it ___ food!</i>",answer:["The dog is hungry. Give it its food!","Give it its food!"],explanation:"💡 the dog = it → <b>its</b> food."},
+  {prompt:"Ergänze: <i>I have a brother. ___ name is Max.</i>",answer:["I have a brother. His name is Max.","His name is Max."],explanation:"💡 brother = he → <b>His</b> name."},
+  {prompt:"Ergänze: <i>I have a sister. ___ name is Anna.</i>",answer:["I have a sister. Her name is Anna.","Her name is Anna."],explanation:"💡 sister = she → <b>Her</b> name."},
+  {prompt:"Ergänze: <i>My friends and I are at school. ___ school is in Bonn.</i>",answer:["My friends and I are at school. Our school is in Bonn.","Our school is in Bonn."],explanation:"💡 my friends and I = we → <b>Our</b>."},
+  {prompt:"Ergänze: <i>Are you and Tom in class 5? ___ teacher is Mrs Smith.</i>",answer:["Are you and Tom in class 5? Your teacher is Mrs Smith.","Your teacher is Mrs Smith."],explanation:"💡 you and Tom = you (Pl.) → <b>Your</b>."},
+  {prompt:"Ergänze: <i>The children are playing. ___ ball is in the garden.</i>",answer:["The children are playing. Their ball is in the garden.","Their ball is in the garden."],explanation:"💡 the children = they → <b>Their</b>."},
+  {prompt:"Ergänze: <i>This is Lisa. ___ favourite hobby is dancing.</i>",answer:["This is Lisa. Her favourite hobby is dancing.","Her favourite hobby is dancing."],explanation:"💡 Lisa = she → <b>Her</b>."},
+  {prompt:"Ergänze: <i>This is Tom. ___ favourite sport is football.</i>",answer:["This is Tom. His favourite sport is football.","His favourite sport is football."],explanation:"💡 Tom = he → <b>His</b>."},
+  {prompt:"Ergänze: <i>Look! The cat is washing ___ paws.</i>",answer:["Look! The cat is washing its paws."],explanation:"💡 the cat = it → <b>its</b> (ohne Apostroph!)."},
+  {prompt:"Ergänze: <i>Mum is in the kitchen. ___ favourite cup is on the table.</i>",answer:["Mum is in the kitchen. Her favourite cup is on the table.","Her favourite cup is on the table."],explanation:"💡 mum = she → <b>Her</b>."},
+  {prompt:"Ergänze: <i>Dad is at work. ___ office is in town.</i>",answer:["Dad is at work. His office is in town.","His office is in town."],explanation:"💡 dad = he → <b>His</b>."},
+  {prompt:"Ergänze: <i>I love ___ family. They are great.</i>",answer:["I love my family. They are great.","I love my family."],explanation:"💡 ich liebe <b>meine</b> Familie → <b>my</b>."},
+  {prompt:"Ergänze: <i>You have a phone. ___ phone is new.</i>",answer:["You have a phone. Your phone is new.","Your phone is new."],explanation:"💡 you → <b>Your</b>."},
+  {prompt:"Ergänze: <i>The boys are playing in ___ garden.</i>",answer:["The boys are playing in their garden."],explanation:"💡 the boys = they → <b>their</b>."},
+];
+
+const ausL3=[
+  {prompt:"Bilde einen Satz: <i>I / love / family.</i>",answer:["I love my family."],explanation:"💡 ich → <b>my family</b>."},
+  {prompt:"Bilde einen Satz: <i>She / read / book.</i>",answer:["She reads her book."],explanation:"💡 sie liest ihr Buch → <b>her book</b>."},
+  {prompt:"Bilde einen Satz: <i>He / play / with / dog.</i>",answer:["He plays with his dog."],explanation:"💡 er spielt mit seinem Hund → <b>his dog</b>."},
+  {prompt:"Bilde einen Satz: <i>We / like / teacher.</i>",answer:["We like our teacher."],explanation:"💡 wir mögen unseren Lehrer → <b>our teacher</b>."},
+  {prompt:"Bilde einen Satz: <i>They / love / school.</i>",answer:["They love their school."],explanation:"💡 sie lieben ihre Schule → <b>their school</b>."},
+  {prompt:"Bilde einen Satz: <i>I / have / a / bike. // bike / is / new.</i>",answer:["I have a bike. My bike is new."],explanation:"💡 mein Fahrrad → <b>My bike</b>."},
+  {prompt:"Bilde einen Satz: <i>Lisa / has / a / cat. // cat / is / black.</i>",answer:["Lisa has a cat. Her cat is black."],explanation:"💡 Lisa = she → <b>Her cat</b>."},
+  {prompt:"Bilde einen Satz: <i>Tom / has / a / brother. // brother / is / five.</i>",answer:["Tom has a brother. His brother is five."],explanation:"💡 Tom = he → <b>His brother</b>."},
+  {prompt:"Bilde einen Satz: <i>The / cat / loves / toys.</i>",answer:["The cat loves its toys."],explanation:"💡 die Katze (= it) liebt ihre Spielzeuge → <b>its toys</b>."},
+  {prompt:"Bilde einen Satz: <i>The / children / play / with / ball.</i>",answer:["The children play with their ball."],explanation:"💡 the children = they → <b>their ball</b>."},
+  // Fehlerkorrekturen
+  {prompt:"Korrigiere den Fehler: <i>This is the my book.</i>",answer:["This is my book."],explanation:"💡 Vor Possessivbegleitern KEIN Artikel → einfach <b>my book</b>."},
+  {prompt:"Korrigiere den Fehler: <i>Lisa loves his dog.</i>",answer:["Lisa loves her dog."],explanation:"💡 Lisa = she → <b>her dog</b> (nicht his)."},
+  {prompt:"Korrigiere den Fehler: <i>Tom plays with her ball.</i>",answer:["Tom plays with his ball."],explanation:"💡 Tom = he → <b>his ball</b> (nicht her)."},
+  {prompt:"Korrigiere den Fehler: <i>We love our the teacher.</i>",answer:["We love our teacher."],explanation:"💡 Kein Artikel davor → <b>our teacher</b>."},
+  {prompt:"Korrigiere den Fehler: <i>The cat plays with his ball.</i>",answer:["The cat plays with its ball."],explanation:"💡 the cat = it (Tier) → <b>its ball</b>."},
+  {prompt:"Korrigiere den Fehler: <i>They live in there house.</i>",answer:["They live in their house."],explanation:"💡 ihr Haus = <b>their</b> (nicht <i>there</i>)."},
+  {prompt:"Korrigiere den Fehler: <i>The dog wags it's tail.</i>",answer:["The dog wags its tail."],explanation:"💡 sein Schwanz = <b>its</b> (OHNE Apostroph)."},
+  {prompt:"Korrigiere den Fehler: <i>Mum loves him family.</i>",answer:["Mum loves her family."],explanation:"💡 mum = she → <b>her family</b>."},
+  // Übersetzung Deutsch → Englisch
+  {prompt:"Übersetze: <i>mein Bruder</i>",answer:["my brother"],explanation:"💡 mein → <b>my</b>."},
+  {prompt:"Übersetze: <i>ihr Hund</i> (von Lisa)",answer:["her dog"],explanation:"💡 Lisa = she → <b>her dog</b>."},
+  {prompt:"Übersetze: <i>sein Auto</i> (von Tom)",answer:["his car"],explanation:"💡 Tom = he → <b>his car</b>."},
+  {prompt:"Übersetze: <i>unsere Lehrer</i>",answer:["our teachers"],explanation:"💡 unser → <b>our teachers</b>."},
+  {prompt:"Übersetze: <i>ihre Klasse</i> (= sie als Gruppe)",answer:["their class"],explanation:"💡 sie (Plural) → <b>their class</b>."},
+  {prompt:"Übersetze: <i>dein Bleistift</i>",answer:["your pencil"],explanation:"💡 dein → <b>your pencil</b>."},
+  {prompt:"Übersetze: <i>euer Lehrer</i>",answer:["your teacher"],explanation:"💡 euer = you (Pl.) → <b>your teacher</b>."},
+];
+
+// --- ING: Stellung im Satz (kein Artikel davor) ---
+const ingPool=[
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["This is the my book.","This is my book.","This my book is."],correct:1,explanation:"✅ <b>This is my book.</b> – Possessivbegleiter ohne Artikel davor."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["I love a my dog.","I love my the dog.","I love my dog."],correct:2,explanation:"✅ <b>I love my dog.</b> – Kein „a“ oder „the“ vor dem Possessivbegleiter."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["She has the her bike.","She has her bike.","She has her the bike."],correct:1,explanation:"✅ <b>She has her bike.</b>"},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["His brother is here.","The his brother is here.","His the brother is here."],correct:0,explanation:"✅ <b>His brother is here.</b> – Possessivbegleiter direkt vor dem Nomen, kein Artikel."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Where is your the bag?","Where is the your bag?","Where is your bag?"],correct:2,explanation:"✅ <b>Where is your bag?</b>"},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Our class is fun.","The our class is fun.","Our the class is fun."],correct:0,explanation:"✅ <b>Our class is fun.</b>"},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Their dog is small.","The their dog is small.","Their the dog is small."],correct:0,explanation:"✅ <b>Their dog is small.</b>"},
+  {type:"mc",prompt:"Finde den Fehler: <i>This is a my pencil.</i>",options:["a → the","streiche „a“","my → mine"],correct:1,explanation:"✅ Streiche <b>„a“</b>: This is <b>my pencil</b>."},
+  {type:"mc",prompt:"Finde den Fehler: <i>The our school is nice.</i>",options:["The → A","streiche „The“","our → ours"],correct:1,explanation:"✅ Streiche <b>„The“</b>: <b>Our school is nice.</b>"},
+  {type:"mc",prompt:"Finde den Fehler: <i>I love the my family.</i>",options:["the → a","streiche „the“","my → mine"],correct:1,explanation:"✅ Streiche <b>„the“</b>: I love <b>my family</b>."},
+  {prompt:"Korrigiere: <i>This is the my book.</i>",answer:["This is my book."],explanation:"💡 Kein „the“ vor my!"},
+  {prompt:"Korrigiere: <i>I love a my dog.</i>",answer:["I love my dog."],explanation:"💡 Kein „a“ vor my!"},
+  {prompt:"Korrigiere: <i>She lives in the her house.</i>",answer:["She lives in her house."],explanation:"💡 Kein „the“ vor her!"},
+  {prompt:"Korrigiere: <i>Look at the his bike!</i>",answer:["Look at his bike!"],explanation:"💡 Kein „the“ vor his!"},
+  {prompt:"Korrigiere: <i>Our the teacher is nice.</i>",answer:["Our teacher is nice."],explanation:"💡 Kein „the“ zwischen our und teacher!"},
+  {prompt:"Korrigiere: <i>Their the dog is fast.</i>",answer:["Their dog is fast."],explanation:"💡 Kein „the“ zwischen their und dog!"},
+  {prompt:"Korrigiere: <i>Where is a your bag?</i>",answer:["Where is your bag?"],explanation:"💡 Kein „a“ vor your!"},
+  {prompt:"Korrigiere: <i>I have the my pencils on the desk.</i>",answer:["I have my pencils on the desk."],explanation:"💡 Streiche „the“ vor my; das „the“ vor desk darf bleiben."},
+  {prompt:"Korrigiere: <i>This is mine pencil.</i>",answer:["This is my pencil."],explanation:"💡 <b>my</b> ist der Possessivbegleiter; <i>mine</i> ist Possessivpronomen (anderes Thema)."},
+  {prompt:"Korrigiere: <i>Tom plays with him brother.</i>",answer:["Tom plays with his brother."],explanation:"💡 <b>his</b>, nicht <i>him</i> (him = Objektpronomen)."},
+];
+
+// --- VERN: its vs. it's (L1/L2/L3) ---
+const vernL1=[
+  {type:"mc",prompt:"Was passt? <i>The cat plays with ___ ball.</i>",options:["it's","its","it is","it are"],correct:1,explanation:"✅ <b>its</b> = sein/ihr (Possessivbegleiter, OHNE Apostroph)."},
+  {type:"mc",prompt:"Was passt? <i>___ a sunny day today.</i>",options:["Its","It's","It is's","Itsa"],correct:1,explanation:"✅ <b>It's</b> = It is (Kurzform, MIT Apostroph)."},
+  {type:"mc",prompt:"Was passt? <i>Look at the dog! ___ tail is wagging.</i>",options:["It's","Its","Is it","Its'"],correct:1,explanation:"✅ <b>Its</b> tail = sein Schwanz (Possessivbegleiter)."},
+  {type:"mc",prompt:"Was passt? <i>___ very hot in summer.</i>",options:["Its","It's","Is it","It's's"],correct:1,explanation:"✅ <b>It's</b> = It is."},
+  {type:"mc",prompt:"Was passt? <i>This is my dog. ___ name is Rex.</i>",options:["It's","Its","Is its","It is"],correct:1,explanation:"✅ <b>Its</b> name = sein Name."},
+  {type:"mc",prompt:"<b>its</b> = …",options:["it is","sein/ihr","es ist","du bist"],correct:1,explanation:"✅ <b>its</b> = sein/ihr (Possessivbegleiter)."},
+  {type:"mc",prompt:"<b>it's</b> = …",options:["sein/ihr","unser","it is","ihr seid"],correct:2,explanation:"✅ <b>it's</b> = it is (Kurzform mit Apostroph)."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["The dog wags it's tail.","The dog wags its tail.","The dog wags is tail."],correct:1,explanation:"✅ <b>its tail</b> – Possessivbegleiter ohne Apostroph."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Its raining today.","It's raining today.","Its' raining today."],correct:1,explanation:"✅ <b>It's raining</b> = It is raining (Kurzform)."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["The cat eats it's food.","The cat eats its food.","The cat eats his food."],correct:1,explanation:"✅ <b>its food</b> – sein Futter (its, kein Apostroph)."},
+  {type:"mc",prompt:"Finde den Fehler: <i>Its a great day!</i>",options:["Its → It's","day → days","kein Fehler"],correct:0,explanation:"✅ <b>It's</b> a great day! = It is a great day!"},
+  {type:"mc",prompt:"Finde den Fehler: <i>The bird sits in it's nest.</i>",options:["it's → its","sits → sit","kein Fehler"],correct:0,explanation:"✅ <b>its nest</b> – sein Nest (Possessivbegleiter, ohne Apostroph)."},
+  {type:"mc",prompt:"Was passt? <i>I love this song. ___ great!</i>",options:["Its","It's","Itss"],correct:1,explanation:"✅ <b>It's great!</b> = It is great!"},
+  {type:"mc",prompt:"Was passt? <i>The school has changed ___ name.</i>",options:["it's","its","is it"],correct:1,explanation:"✅ <b>its name</b> = sein/ihr Name."},
+  {type:"mc",prompt:"Was passt? <i>___ time to go home.</i>",options:["Its","It's","Itts"],correct:1,explanation:"✅ <b>It's time</b> = It is time."},
+  // Wörter ordnen
+  {words:["The","cat","plays","with","its","ball"],answer:"The cat plays with its ball.",label:"Ordne"},
+  {words:["It's","a","beautiful","day"],answer:"It's a beautiful day.",label:"Ordne"},
+];
+
+const vernL2=[
+  {prompt:"Setze its oder it's ein: <i>The dog wags ___ tail.</i>",answer:["The dog wags its tail."],explanation:"💡 sein Schwanz → <b>its</b> (Possessivbegleiter)."},
+  {prompt:"Setze its oder it's ein: <i>___ a sunny day.</i>",answer:["It's a sunny day."],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Setze its oder it's ein: <i>The cat is washing ___ paws.</i>",answer:["The cat is washing its paws."],explanation:"💡 seine Pfoten → <b>its</b>."},
+  {prompt:"Setze its oder it's ein: <i>___ raining outside.</i>",answer:["It's raining outside."],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Setze its oder it's ein: <i>The bird flies to ___ nest.</i>",answer:["The bird flies to its nest."],explanation:"💡 sein Nest → <b>its</b>."},
+  {prompt:"Setze its oder it's ein: <i>I think ___ a good idea.</i>",answer:["I think it's a good idea."],explanation:"💡 it is → <b>it's</b>."},
+  {prompt:"Setze its oder it's ein: <i>The school has ___ own library.</i>",answer:["The school has its own library."],explanation:"💡 seine eigene → <b>its</b>."},
+  {prompt:"Setze its oder it's ein: <i>Look! ___ snowing!</i>",answer:["Look! It's snowing!"],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Setze its oder it's ein: <i>This is a nice flower. ___ colour is amazing.</i>",answer:["This is a nice flower. Its colour is amazing.","Its colour is amazing."],explanation:"💡 seine Farbe → <b>Its</b>."},
+  {prompt:"Setze its oder it's ein: <i>___ time for dinner.</i>",answer:["It's time for dinner."],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Setze its oder it's ein: <i>The dog is happy. ___ tail is moving.</i>",answer:["The dog is happy. Its tail is moving.","Its tail is moving."],explanation:"💡 sein Schwanz → <b>Its</b>."},
+  {prompt:"Setze its oder it's ein: <i>I like this book. ___ very interesting.</i>",answer:["I like this book. It's very interesting.","It's very interesting."],explanation:"💡 it is → <b>It's</b>."},
+  {prompt:"Setze its oder it's ein: <i>The cat eats ___ food.</i>",answer:["The cat eats its food."],explanation:"💡 sein Futter → <b>its</b>."},
+  {prompt:"Setze its oder it's ein: <i>___ Monday today.</i>",answer:["It's Monday today."],explanation:"💡 it is → <b>It's</b>."},
+  {prompt:"Setze its oder it's ein: <i>Every animal has ___ own home.</i>",answer:["Every animal has its own home."],explanation:"💡 sein eigenes → <b>its</b>."},
+  {prompt:"Setze its oder it's ein: <i>I love my city. ___ very beautiful.</i>",answer:["I love my city. It's very beautiful.","It's very beautiful."],explanation:"💡 it is → <b>It's</b>."},
+];
+
+const vernL3=[
+  {prompt:"Korrigiere: <i>The dog wags it's tail.</i>",answer:["The dog wags its tail."],explanation:"💡 <b>its</b> (Possessivbegleiter, ohne Apostroph)."},
+  {prompt:"Korrigiere: <i>Its raining outside.</i>",answer:["It's raining outside."],explanation:"💡 <b>It's</b> = It is (mit Apostroph)."},
+  {prompt:"Korrigiere: <i>The cat eats it's food.</i>",answer:["The cat eats its food."],explanation:"💡 sein Futter → <b>its</b>."},
+  {prompt:"Korrigiere: <i>Its a great day!</i>",answer:["It's a great day!"],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Korrigiere: <i>The bird is in it's nest.</i>",answer:["The bird is in its nest."],explanation:"💡 <b>its nest</b> = sein Nest."},
+  {prompt:"Korrigiere: <i>I think its a good idea.</i>",answer:["I think it's a good idea."],explanation:"💡 it is → <b>it's</b>."},
+  {prompt:"Korrigiere: <i>The school has it's own gym.</i>",answer:["The school has its own gym."],explanation:"💡 seine eigene → <b>its</b>."},
+  {prompt:"Korrigiere: <i>Its time for school.</i>",answer:["It's time for school."],explanation:"💡 it is → <b>It's</b>."},
+  {prompt:"Korrigiere: <i>The dog plays with it's ball.</i>",answer:["The dog plays with its ball."],explanation:"💡 sein Ball → <b>its</b>."},
+  {prompt:"Korrigiere: <i>Its very cold today.</i>",answer:["It's very cold today."],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Korrigiere: <i>The cat washes it's paws.</i>",answer:["The cat washes its paws."],explanation:"💡 seine Pfoten → <b>its</b>."},
+  {prompt:"Korrigiere: <i>Look at the bird! Its flying high.</i>",answer:["Look at the bird! It's flying high."],explanation:"💡 it is → <b>It's</b>."},
+  {prompt:"Korrigiere: <i>The flower has lost it's colour.</i>",answer:["The flower has lost its colour."],explanation:"💡 seine Farbe → <b>its</b>."},
+  {prompt:"Korrigiere: <i>Its raining cats and dogs!</i>",answer:["It's raining cats and dogs!"],explanation:"💡 It is → <b>It's</b>."},
+  {prompt:"Korrigiere: <i>Every animal needs it's space.</i>",answer:["Every animal needs its space."],explanation:"💡 seinen Platz → <b>its</b>."},
+  {prompt:"Korrigiere: <i>I love this song. Its great!</i>",answer:["I love this song. It's great!"],explanation:"💡 It is → <b>It's</b>."},
+];
+
+// --- FRAG: their / they're / there (L1/L2/L3) ---
+const fragL1=[
+  {type:"mc",prompt:"Was passt? <i>Tom and Lisa love ___ school.</i>",options:["there","they're","their"],correct:2,explanation:"✅ <b>their</b> school = ihre Schule (Possessivbegleiter)."},
+  {type:"mc",prompt:"Was passt? <i>___ playing in the garden.</i>",options:["Their","There","They're"],correct:2,explanation:"✅ <b>They're</b> = They are (Kurzform)."},
+  {type:"mc",prompt:"Was passt? <i>Look! The book is over ___.</i>",options:["their","they're","there"],correct:2,explanation:"✅ <b>there</b> = dort/da."},
+  {type:"mc",prompt:"Was passt? <i>The children take ___ books to school.</i>",options:["there","they're","their"],correct:2,explanation:"✅ <b>their</b> books = ihre Bücher."},
+  {type:"mc",prompt:"Was passt? <i>___ very happy today.</i>",options:["Their","There","They're"],correct:2,explanation:"✅ <b>They're</b> = They are."},
+  {type:"mc",prompt:"Was passt? <i>Is ___ a problem?</i>",options:["their","they're","there"],correct:2,explanation:"✅ <b>there</b> – „Gibt es dort/da ein Problem?“"},
+  {type:"mc",prompt:"<b>their</b> = …",options:["sie sind","ihr/e","dort"],correct:1,explanation:"✅ <b>their</b> = ihr/e (Possessivbegleiter)."},
+  {type:"mc",prompt:"<b>they're</b> = …",options:["ihr/e","they are","dort"],correct:1,explanation:"✅ <b>they're</b> = they are (Kurzform)."},
+  {type:"mc",prompt:"<b>there</b> = …",options:["ihr/e","they are","dort/da"],correct:2,explanation:"✅ <b>there</b> = dort/da."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["There teacher is nice.","Their teacher is nice.","They're teacher is nice."],correct:1,explanation:"✅ <b>Their teacher</b> = ihr Lehrer."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Their is a cat in the garden.","There is a cat in the garden.","They're is a cat in the garden."],correct:1,explanation:"✅ <b>There is</b> = es gibt."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Their playing football.","There playing football.","They're playing football."],correct:2,explanation:"✅ <b>They're playing</b> = They are playing."},
+  {type:"mc",prompt:"Finde den Fehler: <i>The boys love there dog.</i>",options:["there → their","love → loves","kein Fehler"],correct:0,explanation:"✅ <b>their dog</b> = ihr Hund."},
+  {type:"mc",prompt:"Finde den Fehler: <i>Their over there!</i>",options:["Their → They're","there → their","kein Fehler"],correct:0,explanation:"✅ <b>They're over there</b> = They are over there!"},
+  {type:"mc",prompt:"Finde den Fehler: <i>Look! There playing football.</i>",options:["There → Their","There → They're","kein Fehler"],correct:1,explanation:"✅ <b>They're playing</b> = They are playing."},
+];
+
+const fragL2=[
+  {prompt:"Setze their/they're/there ein: <i>Tom and Lisa love ___ parents.</i>",answer:["Tom and Lisa love their parents."],explanation:"💡 ihre Eltern → <b>their</b>."},
+  {prompt:"Setze their/they're/there ein: <i>___ at school right now.</i>",answer:["They're at school right now."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Setze their/they're/there ein: <i>Look! Tom is over ___.</i>",answer:["Look! Tom is over there."],explanation:"💡 dort drüben → <b>there</b>."},
+  {prompt:"Setze their/they're/there ein: <i>The children play with ___ toys.</i>",answer:["The children play with their toys."],explanation:"💡 ihre Spielzeuge → <b>their</b>."},
+  {prompt:"Setze their/they're/there ein: <i>___ is a cat in the garden.</i>",answer:["There is a cat in the garden."],explanation:"💡 there is = es gibt → <b>There</b>."},
+  {prompt:"Setze their/they're/there ein: <i>___ very nice people.</i>",answer:["They're very nice people."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Setze their/they're/there ein: <i>The boys ride ___ bikes to school.</i>",answer:["The boys ride their bikes to school."],explanation:"💡 ihre Fahrräder → <b>their</b>."},
+  {prompt:"Setze their/they're/there ein: <i>I'm going ___ tomorrow.</i>",answer:["I'm going there tomorrow."],explanation:"💡 dort hin → <b>there</b>."},
+  {prompt:"Setze their/they're/there ein: <i>My parents say ___ proud of me.</i>",answer:["My parents say they're proud of me."],explanation:"💡 they are → <b>they're</b>."},
+  {prompt:"Setze their/they're/there ein: <i>The girls and ___ friends are at the cinema.</i>",answer:["The girls and their friends are at the cinema."],explanation:"💡 ihre Freunde → <b>their</b>."},
+  {prompt:"Setze their/they're/there ein: <i>Is ___ any milk in the fridge?</i>",answer:["Is there any milk in the fridge?"],explanation:"💡 there is/are = es gibt → <b>there</b>."},
+  {prompt:"Setze their/they're/there ein: <i>Tom and Lisa always finish ___ homework on time.</i>",answer:["Tom and Lisa always finish their homework on time."],explanation:"💡 ihre Hausaufgaben → <b>their</b>."},
+  {prompt:"Setze their/they're/there ein: <i>Where are the children? — ___ in the garden.</i>",answer:["They're in the garden."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Setze their/they're/there ein: <i>Look over ___! That's a beautiful tree.</i>",answer:["Look over there! That's a beautiful tree."],explanation:"💡 dort drüben → <b>there</b>."},
+  {prompt:"Setze their/they're/there ein: <i>The students forgot ___ books.</i>",answer:["The students forgot their books."],explanation:"💡 ihre Bücher → <b>their</b>."},
+  {prompt:"Setze their/they're/there ein: <i>I think ___ playing football now.</i>",answer:["I think they're playing football now."],explanation:"💡 they are → <b>they're</b>."},
+];
+
+const fragL3=[
+  {prompt:"Korrigiere: <i>The boys love there dog.</i>",answer:["The boys love their dog."],explanation:"💡 ihr Hund → <b>their</b>."},
+  {prompt:"Korrigiere: <i>Their playing in the garden.</i>",answer:["They're playing in the garden."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Korrigiere: <i>Look! Tom is over their.</i>",answer:["Look! Tom is over there."],explanation:"💡 dort → <b>there</b>."},
+  {prompt:"Korrigiere: <i>Lisa and Tom love they're parents.</i>",answer:["Lisa and Tom love their parents."],explanation:"💡 ihre Eltern → <b>their</b>."},
+  {prompt:"Korrigiere: <i>There playing football right now.</i>",answer:["They're playing football right now."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Korrigiere: <i>The children take they're books to school.</i>",answer:["The children take their books to school."],explanation:"💡 ihre Bücher → <b>their</b>."},
+  {prompt:"Korrigiere: <i>Their is a cat in the garden.</i>",answer:["There is a cat in the garden."],explanation:"💡 there is = es gibt → <b>There</b>."},
+  {prompt:"Korrigiere: <i>I'm going their tomorrow.</i>",answer:["I'm going there tomorrow."],explanation:"💡 dort hin → <b>there</b>."},
+  {prompt:"Korrigiere: <i>The girls finish there homework every day.</i>",answer:["The girls finish their homework every day."],explanation:"💡 ihre Hausaufgaben → <b>their</b>."},
+  {prompt:"Korrigiere: <i>Where are the boys? — There at home.</i>",answer:["Where are the boys? — They're at home."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Korrigiere: <i>Look over their! A rainbow!</i>",answer:["Look over there! A rainbow!"],explanation:"💡 dort drüben → <b>there</b>."},
+  {prompt:"Korrigiere: <i>Tom and Anna take they're seats.</i>",answer:["Tom and Anna take their seats."],explanation:"💡 ihre Plätze → <b>their</b>."},
+  {prompt:"Korrigiere: <i>Is their any milk left?</i>",answer:["Is there any milk left?"],explanation:"💡 there is/are = es gibt → <b>there</b>."},
+  {prompt:"Korrigiere: <i>The students forgot there books.</i>",answer:["The students forgot their books."],explanation:"💡 ihre Bücher → <b>their</b>."},
+  {prompt:"Korrigiere: <i>My friends are great. There always nice.</i>",answer:["My friends are great. They're always nice."],explanation:"💡 They are → <b>They're</b>."},
+  {prompt:"Korrigiere: <i>Their is a problem with the bike.</i>",answer:["There is a problem with the bike."],explanation:"💡 there is = es gibt → <b>There</b>."},
+];
+
+// --- SHORT: Übersetzung Deutsch → Englisch ---
+const shortPool=[
+  {prompt:"Übersetze: <i>mein Hund</i>",answer:["my dog"],explanation:"💡 mein → <b>my</b>."},
+  {prompt:"Übersetze: <i>dein Buch</i>",answer:["your book"],explanation:"💡 dein → <b>your</b>."},
+  {prompt:"Übersetze: <i>sein Auto</i> (von Tom)",answer:["his car"],explanation:"💡 Tom = he → <b>his</b>."},
+  {prompt:"Übersetze: <i>ihr Fahrrad</i> (von Lisa)",answer:["her bike"],explanation:"💡 Lisa = she → <b>her</b>."},
+  {prompt:"Übersetze: <i>sein Name</i> (von einer Katze)",answer:["its name"],explanation:"💡 die Katze = it → <b>its</b> (ohne Apostroph!)."},
+  {prompt:"Übersetze: <i>unser Lehrer</i>",answer:["our teacher"],explanation:"💡 unser → <b>our</b>."},
+  {prompt:"Übersetze: <i>euer Klassenzimmer</i>",answer:["your classroom"],explanation:"💡 euer = you (Pl.) → <b>your</b>."},
+  {prompt:"Übersetze: <i>ihre Klasse</i> (= Tom und Lisa)",answer:["their class"],explanation:"💡 sie (Plural) → <b>their</b>."},
+  {prompt:"Übersetze: <i>meine Mutter</i>",answer:["my mum","my mother"],explanation:"💡 meine → <b>my</b>."},
+  {prompt:"Übersetze: <i>dein Vater</i>",answer:["your dad","your father"],explanation:"💡 dein → <b>your</b>."},
+  {prompt:"Übersetze: <i>seine Schwester</i> (von Tom)",answer:["his sister"],explanation:"💡 Tom = he → <b>his</b>."},
+  {prompt:"Übersetze: <i>ihr Bruder</i> (von Lisa)",answer:["her brother"],explanation:"💡 Lisa = she → <b>her</b>."},
+  {prompt:"Übersetze: <i>unsere Freunde</i>",answer:["our friends"],explanation:"💡 unsere → <b>our</b>."},
+  {prompt:"Übersetze: <i>ihre Spielzeuge</i> (= die Kinder)",answer:["their toys"],explanation:"💡 die Kinder = they → <b>their</b>."},
+  {prompt:"Übersetze: <i>mein Lieblingsbuch</i>",answer:["my favourite book","my favorite book"],explanation:"💡 mein → <b>my</b>."},
+  {prompt:"Übersetze: <i>Das ist mein Hund.</i>",answer:["This is my dog.","That is my dog.","That's my dog."],explanation:"💡 mein Hund → <b>my dog</b>."},
+  {prompt:"Übersetze: <i>Ihr Bruder ist zehn.</i> (von Lisa)",answer:["Her brother is ten."],explanation:"💡 Lisa = she → <b>Her brother</b>."},
+  {prompt:"Übersetze: <i>Sein Vater ist Lehrer.</i> (von Tom)",answer:["His father is a teacher.","His dad is a teacher."],explanation:"💡 Tom = he → <b>His father</b>; bei Berufen: <b>a teacher</b>."},
+  {prompt:"Übersetze: <i>Unsere Schule ist groß.</i>",answer:["Our school is big."],explanation:"💡 unsere → <b>Our</b>."},
+  {prompt:"Übersetze: <i>Ihre Lehrerin ist nett.</i> (von den Kindern)",answer:["Their teacher is nice."],explanation:"💡 die Kinder = they → <b>Their</b>."},
+];
+
+// --- SIGNAL: Mix (L1/L2/L3) ---
+const signalL1=[
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>The dog wags ___ tail.</i>",options:["his","her","its","their"],correct:2,explanation:"✅ the dog = it (Tier) → <b>its</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>Tom and Anna play with ___ friends.</i>",options:["his","her","our","their"],correct:3,explanation:"✅ Tom and Anna = they → <b>their</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>I love ___ family.</i>",options:["my","your","his","our"],correct:0,explanation:"✅ I → <b>my</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>Lisa and I are at school. ___ school is fun.</i>",options:["My","Her","Our","Their"],correct:2,explanation:"✅ Lisa and I = we → <b>Our</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>Are you and Tom in class 5? ___ teacher is great.</i>",options:["His","Her","Your","Their"],correct:2,explanation:"✅ you and Tom = you (Pl.) → <b>Your</b>."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["This is the my book.","This is my book.","This my book."],correct:1,explanation:"✅ Possessivbegleiter ohne Artikel davor."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["The cat plays with it's ball.","The cat plays with its ball.","The cat plays with his ball."],correct:1,explanation:"✅ <b>its ball</b> – its (ohne Apostroph)."},
+  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["Their playing football.","They're playing football.","There playing football."],correct:1,explanation:"✅ <b>They're playing</b> = They are playing."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>My sister loves ___ new bike.</i>",options:["his","her","its","their"],correct:1,explanation:"✅ my sister = she → <b>her</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>My brother always cleans ___ room.</i>",options:["his","her","its","their"],correct:0,explanation:"✅ my brother = he → <b>his</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>The girls take ___ books to school.</i>",options:["his","her","its","their"],correct:3,explanation:"✅ the girls = they → <b>their</b>."},
+  {type:"mc",prompt:"Wähle den richtigen Possessivbegleiter:<br><i>You have a phone. ___ phone is new.</i>",options:["My","Your","His","Their"],correct:1,explanation:"✅ you → <b>Your</b>."},
+  {type:"mc",prompt:"Welche Übersetzung passt für <i>unser Klassenzimmer</i>?",options:["my classroom","your classroom","our classroom","their classroom"],correct:2,explanation:"✅ unser → <b>our</b>."},
+  {type:"mc",prompt:"Welche Übersetzung passt für <i>ihr Bruder</i> (von Lisa)?",options:["his brother","her brother","its brother","their brother"],correct:1,explanation:"✅ Lisa = she → <b>her brother</b>."},
+  {type:"mc",prompt:"Welche Übersetzung passt für <i>ihre Klasse</i> (= sie alle)?",options:["his class","her class","our class","their class"],correct:3,explanation:"✅ sie (Plural) → <b>their class</b>."},
+];
+
+const signalL2=[
+  {prompt:"Lese den Mini-Text und ergänze: <i>This is Tom. ___ favourite sport is football. ___ team is great.</i>",answer:["This is Tom. His favourite sport is football. His team is great."],explanation:"💡 Tom = he → <b>His</b> (zweimal)."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>This is Lisa. ___ hobby is dancing. ___ best friend is Anna.</i>",answer:["This is Lisa. Her hobby is dancing. Her best friend is Anna."],explanation:"💡 Lisa = she → <b>Her</b> (zweimal)."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>I have a cat. ___ name is Lily. ___ favourite food is fish.</i>",answer:["I have a cat. Its name is Lily. Its favourite food is fish."],explanation:"💡 the cat = it → <b>Its</b> (zweimal)."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>Tom and Anna are siblings. ___ parents are doctors. ___ home is in Bonn.</i>",answer:["Tom and Anna are siblings. Their parents are doctors. Their home is in Bonn."],explanation:"💡 Tom and Anna = they → <b>Their</b> (zweimal)."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>I love ___ school. ___ teachers are nice.</i>",answer:["I love my school. My teachers are nice."],explanation:"💡 I → <b>my / My</b>."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>Hey Lisa, is that ___ bag? And where are ___ books?</i>",answer:["Hey Lisa, is that your bag? And where are your books?"],explanation:"💡 du → <b>your</b> (zweimal)."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>We have a dog. ___ dog is brown. We love ___ dog.</i>",answer:["We have a dog. Our dog is brown. We love our dog."],explanation:"💡 we → <b>Our / our</b>."},
+  {prompt:"Lese den Mini-Text und ergänze: <i>The kids are at school. ___ teacher is Mrs Brown. ___ classroom is on the first floor.</i>",answer:["The kids are at school. Their teacher is Mrs Brown. Their classroom is on the first floor."],explanation:"💡 the kids = they → <b>Their</b> (zweimal)."},
+  {prompt:"Setze ein (its / it's): <i>The cat eats ___ food. ___ very hungry today.</i>",answer:["The cat eats its food. It's very hungry today."],explanation:"💡 sein Futter → <b>its</b>; It is → <b>It's</b>."},
+  {prompt:"Setze ein (their / they're / there): <i>Tom and Lisa love ___ school. ___ very happy ___.</i>",answer:["Tom and Lisa love their school. They're very happy there."],explanation:"💡 ihre Schule → <b>their</b>; They are → <b>They're</b>; dort → <b>there</b>."},
+  {prompt:"Lese und ergänze: <i>This is my friend Sara. ___ from Spain. ___ family lives in Madrid.</i>",answer:["This is my friend Sara. She's from Spain. Her family lives in Madrid."],explanation:"💡 Sara = she; She is → <b>She's</b>; <b>Her</b> family."},
+  {prompt:"Lese und ergänze: <i>I have a brother and a sister. ___ brother is twelve and ___ sister is eight.</i>",answer:["I have a brother and a sister. My brother is twelve and my sister is eight."],explanation:"💡 mein Bruder / meine Schwester → <b>My</b>."},
+  {prompt:"Lese und ergänze: <i>Tom plays football. ___ team trains every Friday. ___ coach is very nice.</i>",answer:["Tom plays football. His team trains every Friday. His coach is very nice."],explanation:"💡 Tom = he → <b>His</b> (zweimal)."},
+  {prompt:"Lese und ergänze: <i>Look at the dog! ___ wagging ___ tail.</i>",answer:["Look at the dog! It's wagging its tail."],explanation:"💡 It is → <b>It's</b>; sein Schwanz → <b>its</b>."},
+  {prompt:"Lese und ergänze: <i>Where are the children? — ___ in the garden with ___ friends.</i>",answer:["Where are the children? — They're in the garden with their friends."],explanation:"💡 They are → <b>They're</b>; ihre Freunde → <b>their</b>."},
+  {prompt:"Lese und ergänze: <i>I love ___ family. ___ always nice to me.</i>",answer:["I love my family. They're always nice to me."],explanation:"💡 meine Familie → <b>my</b>; They are → <b>They're</b>."},
+];
+
+const signalL3=[
+  {prompt:"Korrigiere: <i>This is the my favourite book.</i>",answer:["This is my favourite book."],explanation:"💡 Kein „the“ vor my!"},
+  {prompt:"Korrigiere: <i>The cat plays with it's ball.</i>",answer:["The cat plays with its ball."],explanation:"💡 sein Ball → <b>its</b> (ohne Apostroph)."},
+  {prompt:"Korrigiere: <i>Tom and Anna love there teacher.</i>",answer:["Tom and Anna love their teacher."],explanation:"💡 ihren Lehrer → <b>their</b>."},
+  {prompt:"Korrigiere: <i>Lisa loves his sister.</i>",answer:["Lisa loves her sister."],explanation:"💡 Lisa = she → <b>her sister</b>."},
+  {prompt:"Korrigiere: <i>We like our the new school.</i>",answer:["We like our new school."],explanation:"💡 Kein „the“ zwischen our und new school."},
+  {prompt:"Korrigiere: <i>My sister plays with him friends.</i>",answer:["My sister plays with her friends."],explanation:"💡 my sister = she → <b>her friends</b>."},
+  {prompt:"Korrigiere: <i>Tom plays with her ball.</i>",answer:["Tom plays with his ball."],explanation:"💡 Tom = he → <b>his ball</b>."},
+  {prompt:"Korrigiere: <i>The boys ride they're bikes.</i>",answer:["The boys ride their bikes."],explanation:"💡 ihre Fahrräder → <b>their bikes</b>."},
+  {prompt:"Übersetze: <i>Mein Bruder mag seinen neuen Hund.</i>",answer:["My brother likes his new dog."],explanation:"💡 mein → <b>my</b>; mein Bruder = he → <b>his</b>."},
+  {prompt:"Übersetze: <i>Lisa und Tom mögen ihre Lehrer.</i>",answer:["Lisa and Tom like their teachers."],explanation:"💡 sie (Plural) → <b>their teachers</b>."},
+  {prompt:"Übersetze: <i>Unsere Schule ist neu. Wir lieben sie.</i>",answer:["Our school is new. We love it."],explanation:"💡 unsere Schule → <b>Our school</b>."},
+  {prompt:"Übersetze: <i>Das ist meine Freundin. Ihr Name ist Anna.</i>",answer:["This is my friend. Her name is Anna.","That is my friend. Her name is Anna."],explanation:"💡 my friend (sie) → <b>Her</b> name."},
+  {prompt:"Übersetze: <i>Schau mal! Es ist ein Vogel in seinem Nest.</i>",answer:["Look! There is a bird in its nest."],explanation:"💡 there is = es gibt; sein Nest → <b>its</b> (ohne Apostroph)."},
+  {prompt:"Übersetze: <i>Sie sind in ihrem Garten.</i>",answer:["They're in their garden.","They are in their garden."],explanation:"💡 sie sind → <b>They're/They are</b>; ihrem Garten → <b>their garden</b>."},
+  {prompt:"Übersetze: <i>Mein Bruder hat ein Fahrrad. Sein Fahrrad ist neu.</i>",answer:["My brother has a bike. His bike is new."],explanation:"💡 mein Bruder = he → <b>His bike</b>."},
+  {prompt:"Übersetze: <i>Wir lieben unseren Lehrer und unsere Klasse.</i>",answer:["We love our teacher and our class."],explanation:"💡 unser → <b>our</b> (zweimal)."},
+];
+
+// --- QUIZ-POOL ---
+const quizPool=[
+// d:1 – Grundregel-Erkennung
+{prompt:"Welcher Possessivbegleiter passt zu <i>he</i>?",options:["my","her","his","their"],correct:2,tip:"he → <b>his</b>",explanation:"✅ he → <b>his</b> (sein/e).",d:1},
+{prompt:"Welcher Possessivbegleiter passt zu <i>she</i>?",options:["his","her","its","their"],correct:1,tip:"she → <b>her</b>",explanation:"✅ she → <b>her</b> (ihr/e).",d:1},
+{prompt:"Welcher Possessivbegleiter passt zu <i>they</i>?",options:["his","her","its","their"],correct:3,tip:"they → <b>their</b>",explanation:"✅ they → <b>their</b> (ihr/e, Plural).",d:1},
+{prompt:"Welcher Satz ist richtig?",options:["This is a my book.","This is the my book.","This is my book.","This my book."],correct:2,tip:"Possessivbegleiter ohne Artikel davor!",explanation:"✅ <b>This is my book.</b> – Kein „a“ oder „the“ vor my.",d:1},
+// d:2 – mittlere Schwierigkeit
+{prompt:"Was passt? <i>The cat plays with ___ ball.</i>",options:["his","her","its","their"],correct:2,tip:"the cat = it (Tier)",explanation:"✅ the cat = it → <b>its</b> ball.",d:2},
+{prompt:"Was passt? <i>Tom loves ___ dog.</i>",options:["my","your","his","her"],correct:2,tip:"Tom = he",explanation:"✅ Tom = he → <b>his</b> dog.",d:2},
+{prompt:"Was passt? <i>Lisa loves ___ cat.</i>",options:["his","her","its","their"],correct:1,tip:"Lisa = she",explanation:"✅ Lisa = she → <b>her</b> cat.",d:2},
+{prompt:"Was passt? <i>Lisa and I are at school. ___ school is great.</i>",options:["My","Her","Our","Their"],correct:2,tip:"Lisa and I = we",explanation:"✅ Lisa and I = we → <b>Our</b> school.",d:2},
+{prompt:"Welche Übersetzung passt für <i>unser Lehrer</i>?",options:["my teacher","your teacher","our teacher","their teacher"],correct:2,tip:"unser → <b>our</b>",explanation:"✅ unser → <b>our teacher</b>.",d:2},
+// d:3 – Stolpersteine + Bedeutungsnuance
+{prompt:"its oder it's? <i>The dog wags ___ tail.</i>",options:["it's","its","it is","it's's"],correct:1,tip:"Possessivbegleiter = OHNE Apostroph",explanation:"✅ <b>its</b> tail = sein Schwanz (Possessivbegleiter, ohne Apostroph).",d:3},
+{prompt:"its oder it's? <i>___ a beautiful day!</i>",options:["Its","It's","Its'","Itss"],correct:1,tip:"Kannst du „It is“ sagen? → it's",explanation:"✅ <b>It's</b> = It is.",d:3},
+{prompt:"their, they're oder there? <i>The boys love ___ school.</i>",options:["there","they're","their","they"],correct:2,tip:"ihre Schule (Possessivbegleiter)",explanation:"✅ <b>their</b> school = ihre Schule.",d:3},
+{prompt:"their, they're oder there? <i>___ playing football.</i>",options:["Their","There","They're","They"],correct:2,tip:"They are → They're",explanation:"✅ <b>They're</b> = They are (Kurzform).",d:3},
+{prompt:"Finde den Fehler: <i>This is the my favourite book.</i>",options:["the → a","streiche „the“","my → mine","kein Fehler"],correct:1,tip:"Vor my kommt KEIN Artikel",explanation:"✅ Streiche <b>„the“</b>: This is <b>my favourite book</b>.",d:3},
+{prompt:"Welcher Satz ist grammatisch korrekt?",options:["Lisa loves his dog.","Lisa loves her the dog.","Lisa loves her dog.","Lisa loves she dog."],correct:2,tip:"Lisa = she; kein Artikel vor her",explanation:"✅ <b>Lisa loves her dog.</b> – Lisa = she → her; ohne „the“.",d:3},
+];
+
+// ===== EINFACHES SECTION-SETUP (ohne Niveaustufen) =====
+function setupSimpleSection(sectionKey,container,pool,checkAllBtn,resetBtn){
+  const progressRoot=document.querySelector(`#${sectionKey}-progress .progress`);
+  const progressCtrl=initProgressBar(progressRoot,15);
+  let cache=null;
+  function updateProgress(){
+    const inputs=container.querySelectorAll(".task input");let correct=0,done=0;
+    inputs.forEach(inp=>{if(inp._correct)correct++;if(inp._done)done++;});
+    progressCtrl.update(correct,done);
+    if(correct===inputs.length&&inputs.length>0)checkCelebration(container,progressCtrl);
+  }
+  function render(){
+    container.querySelectorAll('.result-banner,.error-list').forEach(b=>b.remove());
+    const pickKey=`${sectionKey}_L1`;
+    const div=document.createElement('div');
+    renderTasks(div,pickRandom(pool,15,pickKey),sectionKey,{enableSolution:true,onStatusChange:updateProgress,currentLevel:1});
+    cache=div;
+    if(container.firstChild)container.innerHTML='';
+    container.prepend(div);
+    progressCtrl.setTotal(div.querySelectorAll(".task input").length);
+    updateProgress();
+    // "Alle prüfen" nur einblenden wenn Freitext-Aufgaben vorhanden
+    const hasFreitext=div.querySelector('input[type="text"]')!==null;
+    checkAllBtn.style.display=hasFreitext?'':'none';
+  }
+  checkAllBtn.addEventListener('click',()=>{
+    const inputs=container.querySelectorAll(".task input");let ok=0,total=0;const wrongItems=[];
+    inputs.forEach(inp=>{if(typeof inp._check==='function'){total++;if(inp._check(true))ok++;}});
+    updateProgress();
+    if(total>0){
+      container.querySelectorAll('.result-banner,.error-list').forEach(b=>b.remove());
+      inputs.forEach(inp=>{const wrap=inp.closest('.task');if(!wrap)return;if(inp._correct){wrap.classList.remove('task--wrong');}else if(inp.value&&inp.value.trim()){wrap.classList.add('task--wrong');const pEl=wrap.querySelector('.prompt');const nEl=wrap.querySelector('div[style*="color:#b8905a"]');wrongItems.push({num:nEl?nEl.textContent:'',prompt:pEl?pEl.textContent:'',userVal:inp.value.trim()});}});
+      const pct=Math.round(ok/total*100);const banner=document.createElement('div');banner.className='result-banner';
+      const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';const em=pct===100?'🏆':pct>=60?'👍':'💪';
+      banner.style.cssText=`margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid ${col};background:${col}18;font-size:15px;font-weight:700;color:${col};display:flex;align-items:center;gap:10px;`;
+      banner.innerHTML=`<span style="font-size:22px">${em}</span><span>Ergebnis: <b>${ok} / ${total}</b> richtig (${pct}%)</span>`;
+      container.prepend(banner);
+      setTimeout(()=>banner.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+    }
+  });
+  resetBtn.addEventListener('click',()=>{customConfirm('Fortschritt zurücksetzen?',()=>{container.querySelectorAll('.result-banner,.error-list').forEach(b=>b.remove());container.querySelectorAll('.task--wrong').forEach(t=>t.classList.remove('task--wrong'));container.querySelectorAll(".task input").forEach(inp=>{if(typeof inp._reset==='function')inp._reset();});const pKey=`${sectionKey}_L1`;saveProgress(pKey,[]);saveProgress(pKey+'_ans',{});updateProgress();});});
+  const rerollBtn=document.getElementById(`${sectionKey}-reroll`);
+  if(rerollBtn)rerollBtn.addEventListener('click',()=>{progressCtrl.resetAnimated();if(cache&&cache.parentNode===container)container.removeChild(cache);cache=null;const pKey=`${sectionKey}_L1`;saveProgress('pick_'+pKey,null);saveProgress(pKey,[]);saveProgress(pKey+'_ans',{});render();});
+  render();
+}
+
+// ===== ABSCHNITT-SETUP =====
+try{setupSection('aus',document.getElementById('aus-levels'),document.getElementById('aus-tasks'),{1:ausL1,2:ausL2,3:ausL3},document.getElementById('aus-check-all'),document.getElementById('aus-reset'),true);}catch(e){console.error('Setup aus:',e);}
+try{setupSimpleSection('ing',document.getElementById('ing-tasks'),ingPool,document.getElementById('ing-check-all'),document.getElementById('ing-reset'));}catch(e){console.error('Setup ing:',e);}
+try{setupSection('vern',document.getElementById('vern-levels'),document.getElementById('vern-tasks'),{1:vernL1,2:vernL2,3:vernL3},document.getElementById('vern-check-all'),document.getElementById('vern-reset'),true);}catch(e){console.error('Setup vern:',e);}
+try{setupSection('frag',document.getElementById('frag-levels'),document.getElementById('frag-tasks'),{1:fragL1,2:fragL2,3:fragL3},document.getElementById('frag-check-all'),document.getElementById('frag-reset'),true);}catch(e){console.error('Setup frag:',e);}
+try{setupSimpleSection('short',document.getElementById('short-tasks'),shortPool,document.getElementById('short-check-all'),document.getElementById('short-reset'));}catch(e){console.error('Setup short:',e);}
+try{setupSection('signal',document.getElementById('signal-levels'),document.getElementById('signal-tasks'),{1:signalL1,2:signalL2,3:signalL3},document.getElementById('signal-check-all'),document.getElementById('signal-reset'),true);}catch(e){console.error('Setup signal:',e);}
+
+
+// ===== QUIZ =====
+(function initQuiz(){
+  function pickByDifficulty(pool,total){
+    function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    const d1=shuffle(pool.filter(q=>q.d===1));
+    const d2=shuffle(pool.filter(q=>q.d===2));
+    const d3=shuffle(pool.filter(q=>q.d===3));
+    const n1=Math.min(4,d1.length);
+    const n3=Math.min(6,d3.length);
+    const n2=Math.min(total-n1-n3,d2.length);
+    return [...d1.slice(0,n1),...d2.slice(0,n2),...d3.slice(0,n3)];
+  }
+  let tasks=pickByDifficulty(quizPool,15);
+  const total=tasks.length;
+  const wrap=document.getElementById('quiz-tasks');
+  const progressRoot=document.querySelector('#quiz-progress .progress');
+  const progressCtrl=initProgressBar(progressRoot,total);
+  const resultBox=document.getElementById('quiz-result');
+  let current=0,correct=0,wrongCount=0,wrongTasks=[],streak=0,earnedLevel=0,securedFloor=0;
+  let timerStart=null,timerInterval=null,elapsedSeconds=0;
+  const timerEl=document.createElement('div');
+  timerEl.style.cssText='font-size:13px;font-weight:700;color:#ffcc00;text-align:center;margin:4px 0 8px;letter-spacing:1px;display:none;';
+  timerEl.textContent='⏱ 0:00';
+  progressRoot.parentElement.insertAdjacentElement('afterend',timerEl);
+  function startTimer(){if(timerInterval)return;timerStart=Date.now()-elapsedSeconds*1000;timerInterval=setInterval(()=>{elapsedSeconds=Math.floor((Date.now()-timerStart)/1000);const m=Math.floor(elapsedSeconds/60);const s=String(elapsedSeconds%60).padStart(2,'0');timerEl.textContent=`⏱ ${m}:${s}`;},1000);timerEl.style.display='block';}
+  function stopTimer(){clearInterval(timerInterval);timerInterval=null;}
+  function resetTimer(){stopTimer();elapsedSeconds=0;timerStart=null;timerEl.textContent='⏱ 0:00';timerEl.style.display='none';}
+  function formatTime(sec){return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;}
+  function updateProgress(){progressCtrl.update(correct,correct+wrongCount);}
+  const wwmAmounts=['100','200','300','500','1.000','2.000','4.000','8.000','16.000','32.000','64.000','125.000','250.000','500.000','1.000.000'];
+  const wwmMilestones=[4,9,14];
+  function buildLadder(questionIdx,earnedLvl){
+    const ladder=document.createElement('div');ladder.className='wwm-ladder';
+    for(let i=total-1;i>=0;i--){
+      const row=document.createElement('div');row.className='wwm-ladder-row';
+      if(wwmMilestones.includes(i))row.classList.add('milestone');
+      if(i<earnedLvl)row.classList.add('done');
+      if(i===earnedLvl)row.classList.add('current');
+      const qnum=document.createElement('span');qnum.className='wwm-qnum';qnum.textContent=i+1;
+      const amt=document.createElement('span');amt.className='wwm-amount';
+      amt.textContent=(i===earnedLvl?'▶ ':'')+wwmAmounts[i];
+      row.appendChild(qnum);row.appendChild(amt);
+      ladder.appendChild(row);
+    }
+    return ladder;
+  }
+  const jokerUsed={fifty:false,phone:false,audience:false};
+  let currentBtns=[];
+
+  function applyJoker(key,task,correctIdx,btns,stage){
+    stage.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(el=>el.remove());
+    const letters=['A','B','C','D'];
+    if(key==='fifty'){
+      const wrongIdxs=[0,1,2,3].filter(i=>i!==correctIdx);
+      for(let i=wrongIdxs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[wrongIdxs[i],wrongIdxs[j]]=[wrongIdxs[j],wrongIdxs[i]];}
+      wrongIdxs.slice(0,2).forEach(i=>{
+        btns[i].style.opacity='0.15';
+        btns[i].style.pointerEvents='none';
+        btns[i].disabled=true;
+      });
+    }else if(key==='phone'){
+      const isWrong=Math.random()<0.30;
+      let answerIdx,confidence;
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        answerIdx=wi[Math.floor(Math.random()*wi.length)];
+        confidence='Ich bin nicht ganz sicher, aber ich glaube …';
+      }else{
+        answerIdx=correctIdx;
+        confidence='Da bin ich mir ziemlich sicher:';
+      }
+      const box=document.createElement('div');box.className='wwm-phone-bubble';
+      box.innerHTML=`<span class="wwm-phone-icon">📞</span><div class="wwm-phone-text"><b>Dein Freund sagt:</b><br>${confidence}<br><em style="display:block;margin-top:6px;">${letters[answerIdx]}: ${task.options[answerIdx]}</em></div>`;
+      stage.appendChild(box);
+    }else if(key==='audience'){
+      const isWrong=Math.random()<0.30;
+      const pcts=[0,0,0,0];
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const winner=wi[Math.floor(Math.random()*wi.length)];
+        pcts[winner]=Math.floor(Math.random()*15)+45;
+        pcts[correctIdx]=Math.floor(Math.random()*15)+10;
+        const rest=[0,1,2,3].filter(i=>i!==winner&&i!==correctIdx);
+        const r=100-pcts[winner]-pcts[correctIdx];
+        pcts[rest[0]]=Math.floor(r*0.55);
+        pcts[rest[1]]=r-pcts[rest[0]];
+      }else{
+        pcts[correctIdx]=Math.floor(Math.random()*25)+50;
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const r=100-pcts[correctIdx];
+        pcts[wi[0]]=Math.floor(r*0.45);
+        pcts[wi[1]]=Math.floor(r*0.30);
+        pcts[wi[2]]=r-pcts[wi[0]]-pcts[wi[1]];
+      }
+      const barColors=['#d4922e','#e53935','#43a047','#f9a825'];
+      const barsHTML=pcts.map((p,i)=>`<div class="wwm-audience-col" style="cursor:pointer" data-idx="${i}"><div class="wwm-audience-pct">${p}%</div><div class="wwm-audience-bar" style="height:${Math.max(p,4)}%;background:${barColors[i]};border-radius:4px 4px 0 0;"></div><div class="wwm-audience-label">${letters[i]}</div></div>`).join('');
+      const box=document.createElement('div');box.className='wwm-audience-box';
+      box.innerHTML=`<div class="wwm-audience-title">📊 Publikumsjoker</div><div class="wwm-audience-bars" style="align-items:flex-end;height:110px;">${barsHTML}</div>`;
+      stage.appendChild(box);
+      box.querySelectorAll('[data-idx]').forEach(col=>{
+        col.addEventListener('click',()=>{
+          const idx=parseInt(col.dataset.idx);
+          if(btns[idx]&&!btns[idx].disabled)btns[idx].click();
+        });
+      });
+    }
+  }
+
+  function renderQuestion(){
+    if(current>=total){showFinal();return;}
+    startTimer();
+    wrap.innerHTML='';
+    const t=tasks[current];
+    const opts=t.options;
+    const correctIdx=t.correct;
+    currentBtns=[];
+    const fw=document.createElement('div');fw.className='quiz-question-enter';
+    const streakEl=document.createElement('div');streakEl.className='quiz-streak';
+    if(streak>=3)streakEl.textContent=`🔥 ${streak}er-Serie!`;
+    fw.appendChild(streakEl);
+    // Jokers: Publikum | Telefonjoker | 50:50
+    const lifelines=document.createElement('div');lifelines.className='wwm-lifelines';
+    [{key:'audience',label:'👥 Publikum'},{key:'phone',label:'📞 Joker'},{key:'fifty',label:'50:50'}].forEach(j=>{
+      const used=jokerUsed[j.key];
+      const chip=document.createElement('button');chip.className='chip'+(used?' chip-used':'');
+      chip.textContent=j.label;chip.disabled=used;
+      chip.addEventListener('click',()=>{
+        if(jokerUsed[j.key])return;
+        jokerUsed[j.key]=true;chip.classList.add('chip-used');chip.disabled=true;
+        applyJoker(j.key,t,correctIdx,currentBtns,stage);
+      });
+      lifelines.appendChild(chip);
+    });
+    fw.appendChild(lifelines);
+    const layout=document.createElement('div');layout.className='wwm-layout';
+    const stage=document.createElement('div');stage.className='wwm-stage';
+    const prompt=document.createElement('div');prompt.className='prompt';prompt.innerHTML=t.prompt;
+    stage.appendChild(prompt);
+    const optWrap=document.createElement('div');optWrap.className='wwm-joker-options';
+    const letters=['A','B','C','D'];
+    let answered=false;
+    opts.forEach((optText,i)=>{
+      const btn=document.createElement('button');btn.className='wwm-option-btn';btn.type='button';
+      btn.innerHTML=`<span class="wwm-opt-letter">${letters[i]}</span>${optText}`;
+      btn.addEventListener('click',()=>{
+        if(answered)return;
+        answered=true;
+        currentBtns.forEach(b=>b.disabled=true);
+        // Color buttons
+        currentBtns.forEach((b,bi)=>{
+          const letter=b.querySelector('.wwm-opt-letter');
+          if(bi===correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#1b5e20,#2e7d32);border-color:#4caf50;';if(letter)letter.style.cssText='background:rgba(76,175,80,.3);border-color:#4caf50;color:#b9f6ca;';}
+          else if(bi===i&&i!==correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#7f0000,#b71c1c);border-color:#ef5350;';if(letter)letter.style.cssText='background:rgba(239,83,80,.3);border-color:#ef5350;color:#ffcdd2;';}
+        });
+        const isCorrect=i===correctIdx;
+        if(isCorrect){
+          fb.textContent='✓ Richtig!';fb.className='feedback ok';
+          correct++;streak++;earnedLevel++;
+          if(wwmMilestones.includes(earnedLevel-1))securedFloor=earnedLevel-1;
+          if(t.explanation){eb.innerHTML=t.explanation;eb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn green';nb.dataset.next='1';nb.textContent='Weiter →';
+          nb.addEventListener('click',()=>{updateProgress();current++;renderQuestion();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }else{
+          fb.innerHTML=`✗ Falsch! Richtige Antwort: <b>${letters[correctIdx]}: ${opts[correctIdx]}</b>`;fb.className='feedback bad';
+          wrongTasks.push({...t,_questionNumber:current+1,_userInput:`${letters[i]}: ${opts[i]}`});
+          wrongCount++;streak=0;
+          const floor=wwmMilestones.filter(m=>m<=earnedLevel).pop();earnedLevel=floor!==undefined?floor:0;
+          if(t.explanation){eb.innerHTML=t.explanation.replace('✅','💡');eb.style.display='block';}
+          if(t.tip){tb.innerHTML=`💡 <b>Tipp:</b> ${t.tip}`;tb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn gray';nb.dataset.next='1';nb.textContent='Ergebnis ansehen →';
+          nb.addEventListener('click',()=>{updateProgress();showFinal();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }
+      });
+      optWrap.appendChild(btn);
+      currentBtns.push(btn);
+    });
+    stage.appendChild(optWrap);
+    const fb=document.createElement('div');fb.className='feedback';stage.appendChild(fb);
+    const tb=document.createElement('div');tb.className='quiz-tip-box';tb.style.display='none';stage.appendChild(tb);
+    const eb=document.createElement('div');eb.className='quiz-explanation-box';eb.style.display='none';stage.appendChild(eb);
+    const ctrl=document.createElement('div');ctrl.className='controls';ctrl.style.cssText='margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,204,0,.15);';stage.appendChild(ctrl);
+    layout.appendChild(stage);layout.appendChild(buildLadder(current,earnedLevel));
+    fw.appendChild(layout);wrap.appendChild(fw);
+  }
+
+  function showFinal(){
+    stopTimer();wrap.innerHTML='';
+    const pct=Math.round((correct/total)*100);const ts=formatTime(elapsedSeconds);
+    const prize=earnedLevel>0?wwmAmounts[earnedLevel-1]+' €':'0 €';
+    let emoji='',headline='',msg='';
+    if(pct===100){emoji='🏆';headline='EINE MILLION! 🎉';msg='PERFEKT! Alle 15 Fragen richtig – die Possessivbegleiter haben keine Chance gegen dich!';}
+    else if(pct>=90){emoji='🤩';headline='Fast perfekt – Respekt!';msg='Wow, kaum ein Fehler! my/your/his/her und Co. sitzen bei dir.';}
+    else if(pct>=80){emoji='🌟';headline='Richtig stark, weiter so!';msg='Starke Leistung! Du weißt, wann du welchen Possessivbegleiter brauchst.';}
+    else if(pct>=70){emoji='😎';headline='Solide – du weißt, was du tust!';msg='Mehr als zwei Drittel richtig – das ist kein Glück, das ist Können!';}
+    else if(pct>=60){emoji='🙌';headline='Auf dem richtigen Weg!';msg='Über die Hälfte richtig – noch etwas üben und du nagelst es!';}
+    else if(pct>=50){emoji='💡';headline='Halbzeit – Luft nach oben!';msg='Die Hälfte sitzt schon! Schau nochmal in die Tabelle (I→my, he→his …).';}
+    else if(pct>=30){emoji='🐣';headline='Der Anfang ist gemacht!';msg='Noch ist nicht alles verloren – du weißt jetzt, wo du ansetzen musst.';}
+    else{emoji='😅';headline='Ups – aber kein Problem!';msg='Schau nochmal in die Tabelle der Possessivbegleiter und übe nochmal – dann klappt\'s besser.';}
+    let errorHTML='';
+    if(wrongTasks.length>0){
+      errorHTML=`<div style="margin-top:22px;text-align:left;"><div style="font-size:16px;font-weight:900;color:#ffcc00;margin-bottom:10px;text-align:center;">📋 Deine Fehler – schau sie dir nochmal an:</div><div style="display:flex;flex-direction:column;gap:8px;">${wrongTasks.map(wt=>`<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,110,110,.45);border-radius:10px;padding:10px 14px;"><div style="font-size:12px;color:#ffb3b3;font-weight:700;margin-bottom:3px;">Frage ${wt._questionNumber}</div><div style="font-size:14px;color:#e8d0aa;margin-bottom:4px;">${wt.prompt}</div><div style="font-size:14px;color:#ff6b6b;font-style:italic;margin-bottom:4px;">✗ ${wt._userInput||'–'}</div><div style="font-size:14px;color:#7fffb3;font-weight:700;">✓ ${['A','B','C','D'][wt.correct]}: ${wt.options[wt.correct]}</div>${wt.explanation?`<div style="font-size:13px;color:#c7d2fe;margin-top:5px;">${wt.explanation}</div>`:''}</div>`).join('')}</div></div>`;
+    }
+    resultBox.innerHTML=`<div style="position:relative;overflow:hidden;"><div style="height:8px;background:repeating-linear-gradient(90deg,#ffcc00 0 14%,#d4922e 14% 28%,#e53935 28% 42%,#43a047 42% 56%,#ffcc00 56% 70%,#ab47bc 70% 84%,#d4922e 84% 100%);"></div><div style="padding:28px 20px 24px;text-align:center;"><div style="font-size:72px;line-height:1;margin-bottom:10px;filter:drop-shadow(0 4px 12px rgba(255,204,0,.6));">${emoji}</div><div style="font-size:clamp(26px,6vw,38px);font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-bottom:6px;">${headline}</div><div style="display:inline-block;background:rgba(255,204,0,.15);border:2px solid #ffcc00;border-radius:16px;padding:14px 32px;margin:12px 0 18px;"><div style="font-size:clamp(36px,8vw,52px);font-weight:900;color:#fff;line-height:1;">${correct} <span style="font-size:.55em;color:#ffcc00;">/ ${total}</span></div><div style="font-size:16px;font-weight:700;color:#ffcc00;letter-spacing:1px;margin-top:2px;">${pct} % RICHTIG</div><div style="font-size:13px;color:rgba(255,204,0,.8);margin-top:6px;">⏱ Zeit: ${ts}</div><div style="font-size:18px;font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-top:8px;">🏅 Gewonnen: ${prize}</div></div><div style="font-size:clamp(14px,3vw,17px);color:#fff;max-width:500px;margin:0 auto;line-height:1.7;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;border:1px solid rgba(255,255,255,.2);">${msg}</div>${errorHTML}</div><div style="height:8px;background:repeating-linear-gradient(90deg,#43a047 0 14%,#ffcc00 14% 28%,#ab47bc 28% 42%,#e53935 42% 56%,#d4922e 56% 70%,#ffcc00 70% 84%,#43a047 84% 100%);"></div></div>`;
+    resultBox.style.display='block';setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  }
+
+  document.getElementById('quiz-reset').addEventListener('click',()=>{
+    tasks=pickByDifficulty(quizPool,15);current=0;correct=0;wrongCount=0;wrongTasks=[];streak=0;earnedLevel=0;securedFloor=0;
+    jokerUsed.fifty=false;jokerUsed.phone=false;jokerUsed.audience=false;
+    updateProgress();resetTimer();
+    progressRoot.querySelector('.progress-fill').style.width='0%';
+    document.querySelector('#quiz-progress .progress-text').textContent=`Fortschritt: 0/${total} richtig (0%)`;
+    resultBox.style.display='none';resultBox.innerHTML='';
+    renderQuestion();
+  });
+  updateProgress();
+  let quizRendered=false;
+  const qa=document.getElementById('wwm-quiz');
+  if(qa)qa.addEventListener('toggle',()=>{
+    if(!qa.open){stopTimer();}
+    else{if(!quizRendered){quizRendered=true;renderQuestion();}else if(current<total&&timerStart!==null){startTimer();}}
+  });
+})();
+
+
+// ===== SCHWEBENDER REGELN-BUTTON =====
+(function(){
+  const fab=document.getElementById('rules-fab');
+  const rules=document.querySelector('.rules-combined');
+  const modal=document.getElementById('rules-modal');
+  const box=document.getElementById('rules-modal-box');
+  const header=document.getElementById('rules-modal-header');
+  const modalBody=document.getElementById('rules-modal-body');
+  const modalTitle=modal.querySelector('.rules-modal-header h3');
+  const closeBtn=document.getElementById('rules-modal-close');
+  if(!fab||!rules||!modal)return;
+
+  // FAB nur sichtbar wenn Regelkarten außerhalb Viewport UND ein Akkordeon offen ist
+  let rulesVisible=true;
+  function updateFabVisibility(){
+    const anyOpen=['acc-aus','acc-ing','acc-vern','acc-frag','acc-short','acc-signal']
+      .some(id=>{const el=document.getElementById(id);return el&&el.open;});
+    fab.style.display=(!rulesVisible&&anyOpen)?'block':'none';
+  }
+  const obs=new IntersectionObserver(([e])=>{rulesVisible=e.isIntersecting;updateFabVisibility();},{threshold:0});
+  obs.observe(rules);
+  ['acc-aus','acc-ing','acc-vern','acc-frag','acc-short','acc-signal'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.addEventListener('toggle',updateFabVisibility);
+  });
+
+  // Mapping: Akkordeon-ID → Kartenindizes (0-basiert) + Titel
+  const ACC_MAP={
+    'acc-aus':    {indices:[0],    title:'Regel: Possessivbegleiter-Tabelle'},
+    'acc-ing':    {indices:[1],    title:'Regel: Stellung im Satz'},
+    'acc-vern':   {indices:[2],    title:'Regel: its vs. it\'s'},
+    'acc-frag':   {indices:[3],    title:'Regel: their / they\'re / there'},
+    'acc-short':  {indices:[0],    title:'Regel: Possessivbegleiter-Tabelle'},
+    'acc-signal': {indices:[0],    title:'Regel: Possessivbegleiter-Tabelle'},
+  };
+
+  function getActiveAccordion(){
+    return ['acc-aus','acc-ing','acc-vern','acc-frag','acc-short','acc-signal']
+      .map(id=>document.getElementById(id))
+      .find(el=>el&&el.open)||null;
+  }
+
+  function openModal(){
+    modalBody.innerHTML='';
+    const allCards=Array.from(rules.querySelectorAll('.rc-card'));
+    const activeAcc=getActiveAccordion();
+    const accId=activeAcc?activeAcc.id:null;
+    const map=accId&&ACC_MAP[accId]?ACC_MAP[accId]:null;
+
+    const wrapper=document.createElement('div');
+    wrapper.style.cssText='display:flex;flex-direction:column;gap:12px;';
+
+    if(map){
+      modalTitle.textContent=map.title;
+      map.indices.forEach(i=>{
+        if(allCards[i]){
+          const clone=allCards[i].cloneNode(true);
+          clone.querySelectorAll('.tts-btn').forEach(b=>b.remove());
+          clone.style.cssText='width:100%;max-width:520px;margin:0 auto;';
+          wrapper.appendChild(clone);
+        }
+      });
+    }else{
+      modalTitle.textContent='⚡ Alle Regeln';
+      const grid=document.createElement('div');
+      grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;';
+      allCards.forEach(card=>{
+        const clone=card.cloneNode(true);
+        clone.querySelectorAll('.tts-btn').forEach(b=>b.remove());
+        grid.appendChild(clone);
+      });
+      wrapper.appendChild(grid);
+    }
+
+    modalBody.appendChild(wrapper);
+    // Position zurücksetzen wenn noch nie verschoben
+    if(!box.dataset.dragged){box.style.top='80px';box.style.right='20px';box.style.left='';}
+    modal.classList.add('show');
+    if(closeBtn)closeBtn.focus();
+  }
+
+  function closeModal(){
+    modal.classList.remove('show');
+    fab.focus();
+  }
+
+  fab.addEventListener('click',openModal);
+  closeBtn.addEventListener('click',closeModal);
+  document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
+})();
+
+// ===== CELEBRATION BEI 15/15 =====
+function checkCelebration(container,progressCtrl){
+  const inputs=container.querySelectorAll('.task input');
+  if(!inputs.length)return;
+  const allCorrect=Array.from(inputs).every(i=>i._correct);
+  if(!allCorrect)return;
+  if(container.querySelector('.celebrate-banner'))return;
+  const banner=document.createElement('div');
+  banner.className='celebrate-banner';
+  banner.innerHTML='🎉 Perfekt! Alle Aufgaben richtig – super gemacht!';
+  container.prepend(banner);
+  setTimeout(()=>banner.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+}
+
+// ===== AKKORDEON-STATE =====
+(function(){
+  const IDS=['acc-aus','acc-ing','acc-vern','acc-frag','acc-short','acc-signal','wwm-quiz'];
+  const els=IDS.map(id=>document.getElementById(id)).filter(Boolean);
+  // Alle initial schließen
+  els.forEach(el=>el.removeAttribute('open'));
+  els.forEach(el=>{
+    el.addEventListener('toggle',()=>{
+      if(el.open){
+        els.forEach(other=>{if(other!==el&&other.open)other.open=false;});
+        setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),80);
+      }
+    });
+  });
+  // Letztes offenes Akkordeon wiederherstellen
+  setTimeout(function(){
+    try{
+      var reopen=sessionStorage.getItem('reopen');
+      if(reopen){sessionStorage.removeItem('reopen');var t=document.getElementById(reopen);if(t){t.setAttribute('open','');t.open=true;return;}}
+    }catch(e){}
+  },0);
+})();
+
+// ===== DARK MODE =====
+(function(){
+  const btn=document.getElementById('dark-toggle');
+  try{if(localStorage.getItem('pd_dark_v1')==='1'){document.body.classList.add('dark-mode');btn.textContent='☀️ Hell';}}catch(e){}
+  btn.addEventListener('click',()=>{const on=document.body.classList.toggle('dark-mode');btn.textContent=on?'☀️ Hell':'🌙 Dark Mode';try{localStorage.setItem('pd_dark_v1',on?'1':'0');}catch(e){}});
+})();
+
+// ===== TTS / VORLESEN (LRS-Unterstützung) =====
+var TTS={
+  enabled:false,
+  synth:(function(){try{return window.speechSynthesis||null;}catch(e){return null;}})(),
+  speaking:false,
+  
+  toggle(){
+    this.enabled=!this.enabled;
+    document.body.classList.toggle('tts-enabled',this.enabled);
+    const btn=document.getElementById('tts-toggle');
+    if(btn){btn.textContent=this.enabled?'🔊 Vorlesen ✓':'🔊 Vorlesen';btn.classList.toggle('tts-on',this.enabled);}
+    
+    document.dispatchEvent(new Event('ttsToggle'));
+    if(this.enabled){
+      this.injectAll();
+    }else{
+      // TTS deaktiviert: alle Buttons entfernen
+      if(this.synth)this.synth.cancel();
+      document.querySelectorAll('.tts-btn').forEach(b=>b.remove());
+      document.querySelectorAll('.task').forEach(t=>delete t.dataset.ttsReady);
+      document.querySelectorAll('.solution').forEach(s=>delete s.dataset.ttsReady);
+      document.querySelectorAll('.task-solved-label').forEach(l=>delete l.dataset.ttsReady);
+    }
+  },
+  
+  speak(text,lang){
+    if(!this.synth||!text)return;
+    this.synth.cancel();
+    // Text säubern: HTML-Tags, Sonderzeichen entfernen
+    const clean=text.replace(/<[^>]*>/g,' ').replace(/[→←·•📌✅❌❓🔵🕐⚠️💡✓✗]/g,' ').replace(/\s+/g,' ').trim();
+    if(!clean)return;
+    const utt=new SpeechSynthesisUtterance(clean);
+    utt.lang=lang||'en-GB';
+    utt.rate=lang==='de-DE'?0.95:0.85;// Englisch etwas langsamer
+    utt.pitch=1;
+    utt.onstart=()=>{this.speaking=true;};
+    utt.onend=()=>{this.speaking=false;document.querySelectorAll('.tts-btn.tts-playing').forEach(b=>b.classList.remove('tts-playing'));};
+    utt.onerror=()=>{this.speaking=false;};
+    this.synth.speak(utt);
+  },
+  
+  createBtn(text,lang,style){
+    const btn=document.createElement('button');
+    btn.className='tts-btn';
+    btn.type='button';
+    btn.setAttribute('aria-label','Vorlesen');
+    btn.textContent=lang==='de-DE'?'🇩🇪':'🇬🇧';
+    if(style)btn.style.cssText=style;
+    btn.addEventListener('click',(e)=>{
+      e.preventDefault();e.stopPropagation();
+      if(this.speaking){this.synth.cancel();this.speaking=false;btn.classList.remove('tts-playing');return;}
+      document.querySelectorAll('.tts-btn.tts-playing').forEach(b=>b.classList.remove('tts-playing'));
+      btn.classList.add('tts-playing');
+      this.speak(typeof text==='function'?text():text,lang);
+    });
+    return btn;
+  },
+  
+  injectRuleCards(){},
+  
+  injectAll(){
+    if(!this.enabled)return;
+    // Buttons in bereits gerenderten Aufgaben (Quiz ausgenommen)
+    document.querySelectorAll('.task').forEach(task=>{
+      if(task.closest('#wwm-quiz'))return;
+      if(task.dataset.ttsReady)return;
+      task.dataset.ttsReady='1';
+      const prompt=task.querySelector('.prompt');
+      if(prompt){
+        const pText=prompt.textContent||'';
+        const hasDe=/Ordne|Bilde|Verneine|Setze|Frage nach|Welch|Wann|Was ist/i.test(pText);
+        const hl=prompt.querySelector('.highlight');
+        const srcTiles=task.querySelector('.wt-source');
+        if(srcTiles){
+          // Wörter-Ordnen: 🇩🇪 Prompt + 🇬🇧 alle Wörter vorlesen
+          const ttsWrap=document.createElement('span');
+          ttsWrap.style.cssText='display:inline-flex;align-items:center;gap:5px;white-space:nowrap;vertical-align:middle;margin-left:6px;';
+          const makeFlag=function(flag,getTextFn,lang){
+            const b=document.createElement('button');
+            b.type='button';b.className='tts-btn tts-flag-btn';
+            b.textContent=flag;
+            b.style.cssText='font-size:18px;padding:1px 3px;line-height:1;';
+            b.setAttribute('aria-label','Vorlesen');
+            b.addEventListener('click',function(e){
+              e.preventDefault();e.stopPropagation();
+              const txt=typeof getTextFn==='function'?getTextFn():getTextFn;
+              if(TTS.speaking){TTS.synth.cancel();TTS.speaking=false;return;}
+              TTS.speak(txt,lang);
+            });
+            return b;
+          };
+          const deBtn=makeFlag('🇩🇪',pText,'de-DE');
+          const wordsText=Array.from(srcTiles.querySelectorAll('.word-tile')).map(t=>t.textContent).join(', ');
+          ttsWrap.appendChild(deBtn);
+          if(wordsText){
+            const enBtn=makeFlag('🇬🇧',()=>Array.from(task.querySelectorAll('.wt-source .word-tile')).map(t=>t.textContent).join(', '),'en-GB');
+            ttsWrap.appendChild(enBtn);
+          }
+          prompt.appendChild(ttsWrap);
+        }else if(hl){
+          const words=hl.textContent;
+          const btn=this.createBtn(words.replace(/\s*\/\s*/g,', '),'en-GB');
+          prompt.appendChild(btn);
+        }else{
+          const btn=this.createBtn(pText,hasDe?'de-DE':'en-GB');
+          prompt.appendChild(btn);
+        }
+      }
+    });
+    // Lösungsboxen die sichtbar sind
+    document.querySelectorAll('.solution').forEach(sol=>{
+      if(sol.style.display==='none'||!sol.textContent.trim())return;
+      if(sol.dataset.ttsReady)return;
+      sol.dataset.ttsReady='1';
+      const solText=sol.textContent.replace(/^Lösung:\s*/,'');
+      const btn=this.createBtn(solText,'en-GB','font-size:14px;margin-left:6px;');
+      sol.prepend(btn);
+    });
+    // "Bereits gelöst"-Labels: Vorlesen des englischen Zielsatzes
+    document.querySelectorAll('.task--solved .task-solved-label').forEach(label=>{
+      if(label.dataset.ttsReady)return;
+      const iEl=label.querySelector('i');
+      if(!iEl)return;
+      const txt=iEl.textContent.trim();
+      if(!txt)return;
+      label.dataset.ttsReady='1';
+      const btn=this.createBtn(txt,'en-GB','font-size:14px;margin-left:6px;vertical-align:middle;');
+      label.appendChild(btn);
+    });
+  },
+  
+  init(){
+    const btn=document.getElementById('tts-toggle');
+    if(!this.synth){if(btn)btn.style.display='none';return;}
+    // TTS startet immer deaktiviert – kein localStorage-Restore
+    if(btn)btn.addEventListener('click',()=>this.toggle());
+    // Nach jedem Accordion-Toggle neu injizieren
+    document.querySelectorAll('details.accordion').forEach(d=>{
+      d.addEventListener('toggle',()=>{if(d.open)setTimeout(()=>this.injectAll(),100);});
+    });
+  }
+};
+try{TTS.init();}catch(e){console.error('TTS init:',e);}
+
+// ===== ALLES ZURÜCKSETZEN ===== (in-memory, kein reload nötig)
+
+
+
+</script>
+
+<!-- Tutor zuletzt – konsumiert window.TUTOR_CONFIG -->
+<script src="../shared/tutor.js"></script>
+
+</body></html>

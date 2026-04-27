@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Englisch-Lernzentrum · Hellweg-Realschule Unna-Massen</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN-SYSTEM – warme Farbpalette (Terrakotta/Creme)
+   ============================================================ */
+:root{
+  --hr-blue:#b85c20;       /* Terrakotta – Primär / Grammatik */
+  --hr-red:#b83a22;        /* Backsteinrot – Fehler */
+  --hr-green:#3d7a2e;      /* Waldgrün – Vokabeln / Erfolg */
+  --hr-plum:#9b4880;       /* Pflaume – Skills */
+  --hr-amber:#d97706;      /* Bernstein */
+  --hr-ocker:#a16207;      /* Senf/Ocker – Übergreifend */
+  --hr-wine:#7c2d12;       /* Weinrot/Rost – ZAP */
+
+  --bg:#fef9f2;
+  --card:#ffffff;
+  --text:#2c1a0e;
+  --muted:#7a5a42;
+  --border:#e9d9c4;
+  --border-strong:#d4bfa3;
+  --shadow:0 2px 8px rgba(184,92,32,.08), 0 1px 3px rgba(44,26,14,.06);
+  --shadow-hover:0 6px 20px rgba(184,92,32,.18), 0 2px 6px rgba(44,26,14,.10);
+  --radius:16px;
+  --radius-sm:10px;
+}
+[data-theme="dark"]{
+  --bg:#1a120a;
+  --card:#2a1d12;
+  --text:#f4e8d8;
+  --muted:#b8a088;
+  --border:#4a3420;
+  --border-strong:#6a4c30;
+  --shadow:0 2px 8px rgba(0,0,0,.4);
+  --shadow-hover:0 6px 20px rgba(216,108,40,.25);
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Baloo 2',system-ui,-apple-system,sans-serif}
+body{min-height:100vh;min-height:100dvh;padding:0 0 60px;transition:background .25s,color .25s}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ============================================================ HEADER ============================================================ */
+.site-header{
+  background:var(--bg);
+  color:var(--text);
+  padding:22px 20px 20px;
+  position:relative;
+  border-bottom:3px solid var(--hr-blue);
+  box-shadow:0 2px 10px rgba(184,92,32,.08);
+}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;position:relative;z-index:1}
+.brand{flex:1;min-width:250px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand-logo{
+  height:64px;width:auto;display:block;
+  background:transparent;
+}
+.brand h1{
+  margin:0;font-size:26px;font-weight:800;letter-spacing:.3px;line-height:1.15;
+  color:var(--hr-blue);
+}
+.brand .sub{margin:4px 0 0;font-size:14px;font-weight:500;opacity:.94;color:var(--muted)}
+.header-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.icon-btn{
+  background:var(--card);
+  border:2px solid var(--border);
+  color:var(--text);
+  border-radius:12px;padding:8px 14px;
+  font-size:15px;font-weight:600;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:background .15s, transform .1s, border-color .15s;
+}
+.icon-btn:hover{background:var(--hr-blue);color:#fff;border-color:var(--hr-blue)}
+.icon-btn:active{transform:scale(.96)}
+
+/* Admin-Banner */
+.admin-banner{
+  background:#2a1d12;color:#f4e8d8;padding:10px 20px;
+  font-size:14px;font-weight:600;
+}
+.admin-banner-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;width:100%}
+.admin-banner .tools{display:flex;gap:8px;flex-wrap:wrap}
+.admin-banner button{
+  background:var(--hr-amber);color:#fff;border:none;border-radius:8px;
+  padding:6px 12px;font-size:13px;font-weight:700;
+}
+.admin-banner button.secondary{background:transparent;border:1.5px solid #f4e8d8;color:#f4e8d8}
+.admin-banner button.danger{background:var(--hr-red)}
+.admin-banner button:active{transform:scale(.96)}
+
+/* ============================================================ CONTROLS ============================================================ */
+.controls{max-width:1200px;margin:0 auto;padding:20px 20px 0}
+.search-box{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card);border:2px solid var(--border);
+  border-radius:var(--radius);padding:10px 14px;
+  box-shadow:var(--shadow);margin-bottom:16px;
+}
+.search-box:focus-within{border-color:var(--hr-blue)}
+.search-box input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:inherit;font-size:16px;font-weight:500;color:var(--text);
+}
+.search-icon{font-size:18px;opacity:.6}
+.clear-search{
+  background:var(--border);border:none;border-radius:8px;
+  width:28px;height:28px;display:none;align-items:center;justify-content:center;
+  font-size:14px;color:var(--text);
+}
+.clear-search.visible{display:flex}
+
+.filter-group{margin-bottom:12px}
+.filter-label{
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--muted);margin-bottom:6px;
+}
+.chip-row{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  background:var(--card);border:2px solid var(--border);color:var(--text);
+  border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;
+  transition:all .15s;display:inline-flex;align-items:center;gap:6px;
+}
+.chip:hover{border-color:var(--border-strong)}
+.chip.active{background:var(--hr-blue);color:#fff;border-color:var(--hr-blue)}
+.chip.active.cat-grammatik    {background:var(--hr-blue);  border-color:var(--hr-blue)}
+.chip.active.cat-vokabeln     {background:var(--hr-green); border-color:var(--hr-green)}
+.chip.active.cat-skills       {background:var(--hr-plum);  border-color:var(--hr-plum)}
+.chip.active.cat-uebergreifend{background:var(--hr-ocker); border-color:var(--hr-ocker)}
+.chip.active.cat-zap          {background:var(--hr-wine);  border-color:var(--hr-wine)}
+.chip-count{
+  background:rgba(0,0,0,.12);border-radius:999px;padding:1px 7px;
+  font-size:12px;font-weight:700;
+}
+.chip.active .chip-count{background:rgba(255,255,255,.25)}
+.chip.zero{opacity:.4}
+
+/* ============================================================ GRID ============================================================ */
+.grid-wrap{max-width:1200px;margin:0 auto;padding:16px 20px 0}
+.category-section{margin-bottom:24px}
+
+/* Klassische (nicht-akkordeon) Kategorien (Skills, ZAP) */
+.category-header{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 6px;padding-bottom:8px;
+  border-bottom:2px solid var(--border);flex-wrap:wrap;
+}
+.category-header h2{
+  margin:0;font-size:20px;font-weight:800;color:var(--text);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.category-header .dot{width:14px;height:14px;border-radius:4px;display:inline-block}
+.category-count{font-size:13px;color:var(--muted);font-weight:600}
+.category-note{
+  font-size:13px;color:var(--muted);font-weight:500;font-style:italic;
+  margin:0 0 12px 4px;
+}
+
+/* Akkordeon-Kategorien (Grammatik, Vokabeln, Übergreifend) */
+.category-section.cat-accordion{margin-bottom:14px}
+.category-section.cat-accordion > details{
+  background:var(--card);
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:border-color .15s, box-shadow .15s;
+}
+.category-section.cat-accordion > details[open]{
+  border-color:var(--border-strong);
+  box-shadow:var(--shadow-hover);
+}
+.category-section.cat-accordion > details > summary{
+  list-style:none;
+  cursor:pointer;
+  padding:14px 18px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  font-size:18px;font-weight:800;color:var(--text);
+  border-left:5px solid var(--border-strong);
+  transition:background .15s;
+  user-select:none;
+  outline:none;
+}
+.category-section.cat-accordion > details > summary::-webkit-details-marker{display:none}
+.category-section.cat-accordion > details > summary::after{
+  content:"▾";
+  margin-left:auto;
+  font-size:16px;color:var(--muted);
+  transition:transform .2s;
+}
+.category-section.cat-accordion > details[open] > summary::after{
+  transform:rotate(180deg);
+}
+.category-section.cat-accordion > details > summary:hover{
+  background:rgba(184,92,32,.05);
+}
+.category-section.cat-accordion > details > summary .dot{width:14px;height:14px;border-radius:4px;display:inline-block}
+.category-section.cat-accordion > details > summary .category-count{
+  font-size:13px;color:var(--muted);font-weight:600;
+}
+.category-section.cat-accordion > details > summary .summary-note{
+  font-size:13px;color:var(--muted);font-style:italic;font-weight:500;
+}
+.category-section.cat-accordion > details > .accordion-body{
+  padding:14px 18px 18px;
+  border-top:1px solid var(--border);
+}
+
+/* Per-Kategorie-Farbe für den Akkordeon-Border-Left */
+.category-section.cat-accordion[data-cat="grammatik"]    > details > summary{border-left-color:var(--hr-blue)}
+.category-section.cat-accordion[data-cat="vokabeln"]     > details > summary{border-left-color:var(--hr-green)}
+.category-section.cat-accordion[data-cat="uebergreifend"] > details > summary{border-left-color:var(--hr-ocker)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+
+/* Klassen-Trenner innerhalb sortierter Kategorien (Grammatik / Vokabeln) */
+.class-divider{
+  grid-column:1 / -1;
+  display:flex;align-items:center;gap:10px;
+  margin:8px 0 -4px;
+  font-size:11px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.6px;
+  color:var(--muted);
+}
+.class-divider::before{
+  content:"";flex:0 0 14px;height:2px;border-radius:2px;background:var(--border-strong);
+}
+.class-divider::after{
+  content:"";flex:1;height:1px;background:var(--border);
+}
+.class-divider:first-child{margin-top:0}
+
+.tile{
+  background:var(--card);border:2px solid var(--border);border-radius:var(--radius);
+  padding:16px;box-shadow:var(--shadow);
+  transition:transform .15s, box-shadow .15s, border-color .15s;
+  display:flex;flex-direction:column;gap:10px;
+  position:relative;min-height:140px;cursor:pointer;
+}
+.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--border-strong)}
+.tile:active{transform:translateY(0)}
+.tile.draft{opacity:.6;border-style:dashed}
+
+.tile-cat-grammatik    {border-top:4px solid var(--hr-blue)}
+.tile-cat-vokabeln     {border-top:4px solid var(--hr-green)}
+.tile-cat-skills       {border-top:4px solid var(--hr-plum)}
+.tile-cat-uebergreifend{border-top:4px solid var(--hr-ocker)}
+.tile-cat-zap          {border-top:4px solid var(--hr-wine)}
+
+.tile-head{display:flex;align-items:flex-start;gap:12px}
+.tile-icon{
+  width:48px;height:48px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;flex-shrink:0;
+}
+.tile-cat-grammatik     .tile-icon{background:rgba(184,92,32,.12)}
+.tile-cat-vokabeln      .tile-icon{background:rgba(61,122,46,.14)}
+.tile-cat-skills        .tile-icon{background:rgba(155,72,128,.14)}
+.tile-cat-uebergreifend .tile-icon{background:rgba(161,98,7,.14)}
+.tile-cat-zap           .tile-icon{background:rgba(124,45,18,.14)}
+
+.tile-title{font-size:17px;font-weight:700;line-height:1.2;margin:0;color:var(--text)}
+.tile-sub{font-size:13px;color:var(--muted);margin:3px 0 0;line-height:1.35;font-weight:500}
+.tile-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.badge{
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;
+  padding:3px 8px;border-radius:999px;
+  background:var(--border);color:var(--muted);
+}
+.badge.grade    {background:rgba(184,92,32,.15);color:var(--hr-blue)}
+.badge.grade-all{background:rgba(161,98,7,.15); color:var(--hr-ocker)}
+.badge.grade-10 {background:rgba(124,45,18,.15);color:var(--hr-wine)}
+[data-theme="dark"] .badge.grade    {background:rgba(216,118,40,.2); color:#e89558}
+[data-theme="dark"] .badge.grade-all{background:rgba(202,138,4,.22); color:#eab308}
+[data-theme="dark"] .badge.grade-10 {background:rgba(194,65,12,.25); color:#fb923c}
+
+.badge.status-new    {background:var(--hr-green); color:#fff}
+.badge.status-updated{background:var(--hr-amber); color:#fff}
+.badge.status-draft  {background:var(--hr-red);   color:#fff}
+.badge.subcat        {background:rgba(155,72,128,.14);color:var(--hr-plum)}
+[data-theme="dark"] .badge.subcat{background:rgba(195,112,168,.2);color:#d98cc0}
+
+.tile-admin{position:absolute;top:8px;right:8px;display:none;gap:4px}
+body.admin-mode .tile-admin{display:flex}
+body.admin-mode .tile{cursor:grab}
+body.admin-mode .tile.dragging{cursor:grabbing;opacity:.5}
+.tile-admin button{
+  width:28px;height:28px;border-radius:8px;
+  background:var(--card);border:1.5px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:var(--text);
+}
+.tile-admin button:hover{border-color:var(--hr-blue)}
+.tile-admin .del:hover{border-color:var(--hr-red);color:var(--hr-red)}
+
+.tile-hidden{filter:grayscale(.6)}
+.tile-hidden::after{
+  content:"ausgeblendet";position:absolute;top:8px;left:8px;
+  background:var(--hr-red);color:#fff;
+  font-size:10px;font-weight:700;text-transform:uppercase;
+  padding:2px 6px;border-radius:6px;
+}
+
+.empty-state{
+  text-align:center;padding:40px 20px;color:var(--muted);
+  background:var(--card);border:2px dashed var(--border);
+  border-radius:var(--radius);margin:0 20px;
+}
+.empty-state p{margin:8px 0;font-size:15px;font-weight:500}
+
+/* ============================================================ MODAL ============================================================ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(44,26,14,.6);
+  display:none;align-items:center;justify-content:center;
+  z-index:1000;padding:20px;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+}
+.modal-overlay.show{display:flex;animation:fadeIn .18s ease-out}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{
+  background:var(--card);color:var(--text);border-radius:var(--radius);
+  max-width:540px;width:100%;max-height:90vh;overflow-y:auto;
+  box-shadow:0 12px 40px rgba(0,0,0,.3);padding:22px;
+}
+.modal h3{margin:0 0 14px;font-size:20px;font-weight:800}
+.modal label{
+  display:block;font-size:13px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.3px;margin:12px 0 4px;
+}
+.modal input,.modal select,.modal textarea{
+  width:100%;padding:10px 12px;background:var(--bg);color:var(--text);
+  border:2px solid var(--border);border-radius:var(--radius-sm);
+  font-family:inherit;font-size:15px;font-weight:500;outline:none;
+}
+.modal input:focus,.modal select:focus,.modal textarea:focus{border-color:var(--hr-blue)}
+.modal textarea{resize:vertical;min-height:60px}
+.modal-row{display:flex;gap:10px}
+.modal-row > *{flex:1}
+.modal-check{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-weight:600}
+.modal-check input{width:auto}
+.modal-actions{
+  display:flex;gap:10px;justify-content:flex-end;margin-top:18px;
+  padding-top:14px;border-top:1px solid var(--border);
+}
+.modal-actions button{padding:10px 18px;border-radius:var(--radius-sm);font-weight:700;font-size:14px;border:none}
+.btn-primary{background:var(--hr-blue);color:#fff}
+.btn-secondary{background:var(--border);color:var(--text)}
+.btn-danger{background:var(--hr-red);color:#fff}
+
+/* ============================================================ FOOTER ============================================================ */
+.site-footer{
+  max-width:1200px;margin:30px auto 0;padding:16px 20px;
+  font-size:12px;color:var(--muted);text-align:center;
+  border-top:1px solid var(--border);
+}
+.hidden{display:none !important}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" class="brand-logo"/>
+      <h1>Englisch-Lernzentrum</h1>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" title="Dark Mode umschalten" aria-label="Dark Mode umschalten">
+        <span id="theme-icon">🌙</span>
+        <span id="theme-label">Dunkel</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="admin-banner hidden" id="admin-banner">
+  <div class="admin-banner-inner">
+    <div>🔧 <b>Admin-Modus aktiv</b> · Kacheln bearbeiten und sortieren</div>
+    <div class="tools">
+      <button id="btn-add">➕ Neu</button>
+      <button id="btn-export" class="secondary">💾 Export</button>
+      <button id="btn-import" class="secondary">📂 Import</button>
+      <button id="btn-reset" class="danger">🗑️ Reset</button>
+      <button id="btn-exit" class="secondary">🚪 Verlassen</button>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Thema suchen … (z.B. Simple Present, Vokabeln, Reading, ZAP)" autocomplete="off">
+    <button class="clear-search" id="clear-search" aria-label="Suche löschen">✕</button>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-label">Jahrgang</div>
+    <div class="chip-row" id="grade-filters"></div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-label">Kategorie</div>
+    <div class="chip-row" id="cat-filters"></div>
+  </div>
+</div>
+
+<main class="grid-wrap" id="grid-wrap"></main>
+
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal">
+    <h3 id="edit-title">Kachel bearbeiten</h3>
+    <label>Titel</label>
+    <input type="text" id="f-title" placeholder="z.B. Simple Present">
+    <label>Untertitel / Kurzbeschreibung</label>
+    <input type="text" id="f-sub" placeholder="z.B. Gewohnheiten · Fakten · Zeitpläne">
+    <div class="modal-row">
+      <div>
+        <label>Jahrgang</label>
+        <select id="f-grade">
+          <option value="alle">jahrgangsübergreifend</option>
+          <option value="5">Klasse 5</option>
+          <option value="6">Klasse 6</option>
+          <option value="7">Klasse 7</option>
+          <option value="8">Klasse 8</option>
+          <option value="9">Klasse 9</option>
+          <option value="10">Klasse 10</option>
+        </select>
+      </div>
+      <div>
+        <label>Kategorie</label>
+        <select id="f-cat">
+          <option value="grammatik">Grammatik</option>
+          <option value="vokabeln">Vokabeln</option>
+          <option value="skills">Skills</option>
+          <option value="uebergreifend">Übergreifend</option>
+          <option value="zap">ZAP (nur Klasse 10)</option>
+        </select>
+      </div>
+    </div>
+    <label>Unter-Kategorie (optional, z.B. „Reading", „Unit 3")</label>
+    <input type="text" id="f-subcat" placeholder="leer lassen wenn nicht nötig">
+    <label>Dateipfad (relativ zum Dashboard)</label>
+    <input type="text" id="f-file" placeholder="z.B. grammatik/05_simple_present.html">
+    <div class="modal-row">
+      <div>
+        <label>Icon (Emoji)</label>
+        <input type="text" id="f-icon" placeholder="📗" maxlength="4">
+      </div>
+      <div>
+        <label>Status</label>
+        <select id="f-status">
+          <option value="ready">fertig</option>
+          <option value="new">NEU</option>
+          <option value="updated">aktualisiert</option>
+          <option value="draft">in Arbeit (nur Admin sieht es)</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-check">
+      <input type="checkbox" id="f-visible" checked>
+      <label for="f-visible" style="margin:0;text-transform:none;letter-spacing:0;color:var(--text);font-size:14px">für Schüler sichtbar</label>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-secondary" id="edit-cancel">Abbrechen</button>
+      <button class="btn-primary" id="edit-save">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal" style="max-width:420px">
+    <h3 id="confirm-title">Sicher?</h3>
+    <p id="confirm-text" style="margin:0;color:var(--muted);font-weight:500">Diese Aktion kann nicht rückgängig gemacht werden.</p>
+    <div class="modal-actions">
+      <button class="btn-secondary" id="confirm-cancel">Abbrechen</button>
+      <button class="btn-danger" id="confirm-ok">Bestätigen</button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="file-import" accept=".json" style="display:none">
+
+<footer class="site-footer">
+  <div>Version 27.04.2026, 11:30</div>
+  <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+</footer>
+
+<script>
+// ============================================================
+// DEFAULT-KONFIGURATION
+// ============================================================
+const DEFAULT_CONFIG = {
+  // version: bei jeder inhaltlichen Änderung an tiles[] hochzählen.
+  // Beim Laden vergleicht loadConfig() mit der im LocalStorage gespeicherten
+  // version. Bei Mismatch läuft mergeWithDefaults():
+  //   - Default-Daten (title, sub, file, icon, status, since) werden überschrieben
+  //   - Lehrer-Anpassungen (Reihenfolge, visible, eigene Kacheln) bleiben erhalten
+  version: 8,
+  tiles: [
+    // ---- GRAMMATIK ----
+    // Titel-Schema: "Unit X – Thema" (X = Lighthouse-Unit, in der Grammatik eingeführt wird)
+    // Sortierung: zuerst nach Klasse (5→10), dann nach Unit-Nummer aufsteigend.
+    // Mehrere Themen in derselben Unit: nach Erstellungszeitpunkt der Unterseite.
+    {id:"g-05-tobe", title:"Unit 1 – to be (am/is/are)", sub:"Identität · Gefühle · Herkunft · Ort",
+     category:"grammatik", grade:"5", subcat:"",
+     file:"grammatik/05_to_be.html", icon:"📕", status:"new", visible:true, since:"2026-04-26"},
+
+    {id:"g-05-pd", title:"Units 1–2 – Possessivbegleiter", sub:"my · your · his · her · its · our · their · its vs. it's",
+     category:"grammatik", grade:"5", subcat:"",
+     file:"grammatik/05_possessive_determiners.html", icon:"📙", status:"new", visible:true, since:"2026-04-26"},
+
+    {id:"g-05-sp", title:"Unit 4 – Simple Present", sub:"Gewohnheiten · Fakten · Zeitpläne",
+     category:"grammatik", grade:"5", subcat:"",
+     file:"grammatik/05_simple_present.html", icon:"📗", status:"ready", visible:true},
+
+    {id:"g-05-prog", title:"Unit 5 – Present Progressive", sub:"am/is/are + Verb-ing · gerade jetzt · -ing-Schreibung",
+     category:"grammatik", grade:"5", subcat:"",
+     file:"grammatik/05_present_progressive.html", icon:"📓", status:"new", visible:true, since:"2026-04-26"},
+
+    {id:"g-06-saf", title:"Unit 4 – some/any · little/few", sub:"Mengenangaben · countable / uncountable",
+     category:"grammatik", grade:"6", subcat:"",
+     file:"grammatik/06_some_any_little_few.html", icon:"📙", status:"new", visible:true, since:"2026-04-25"},
+
+    {id:"g-06-prp", title:"Unit 4 – Present Perfect", sub:"have/has + past participle · just · already · yet · ever · never · for · since",
+     category:"grammatik", grade:"6", subcat:"",
+     file:"grammatik/06_present_perfect.html", icon:"📕", status:"new", visible:true, since:"2026-04-25"},
+
+    {id:"g-06-wf", title:"Unit 5 – Will Future", sub:"Vorhersagen · spontane Entscheidungen",
+     category:"grammatik", grade:"6", subcat:"",
+     file:"grammatik/06_will_future.html", icon:"🔮", status:"ready", visible:true},
+
+    {id:"g-06-aom", title:"Unit 5 – Adverbien der Art und Weise", sub:"Adverbs of manner · Adjektiv + ly · careful → carefully",
+     category:"grammatik", grade:"6", subcat:"",
+     file:"grammatik/06_adverbs_of_manner.html", icon:"📕", status:"new", visible:true, since:"2026-04-25"},
+
+    {id:"g-08-pas", title:"Unit 3 – Passive Voice", sub:"Passiv · am/is/are + past participle · was/were + past participle",
+     category:"grammatik", grade:"8", subcat:"",
+     file:"grammatik/08_passive.html", icon:"📔", status:"new", visible:true, since:"2026-04-26"},
+
+    {id:"g-08-pp", title:"Unit 4 – Past Perfect", sub:"Vorvergangenheit · had + past participle",
+     category:"grammatik", grade:"8", subcat:"",
+     file:"grammatik/08_past_perfect.html", icon:"📘", status:"ready", visible:true},
+        // ---- VOKABELN (Lighthouse) ----
+    // Namensschema: vokabeln/lighthouse_<Band>/unit_<Nr>.html
+    // Titel für Schüler: "Lighthouse <Band> – Unit <Nr>"
+    // Sortierung: zuerst nach Klasse (5→10), dann nach Unit-Nummer aufsteigend.
+    // Drafts (Platzhalter) entsprechend ihrer Klasse + Unit eingereiht.
+
+    // --- Klasse 5 (Lighthouse 1) ---
+    {id:"v-lh1-u01", title:"Lighthouse 1 – Unit 1", sub:"Vokabeln der Unit",
+     category:"vokabeln", grade:"5", subcat:"Lighthouse 1",
+     file:"vokabeln/lighthouse_1/unit_1.html", icon:"📒", status:"draft", visible:false},
+    {id:"v-lh1-u4", title:"Lighthouse 1 – Unit 4", sub:"Where I live",
+     category:"vokabeln", grade:"5", subcat:"Lighthouse 1",
+     file:"vokabeln/lighthouse_1/unit_4.html", icon:"📒", status:"new", visible:true, since:"2026-04-24"},
+    {id:"v-lh1-u5", title:"Lighthouse 1 – Unit 5", sub:"Enjoy!",
+     category:"vokabeln", grade:"5", subcat:"Lighthouse 1",
+     file:"vokabeln/lighthouse_1/unit_5.html", icon:"📒", status:"new", visible:true, since:"2026-04-27"},
+    // --- Klasse 6 (Lighthouse 2) ---
+    {id:"v-lh2-u01", title:"Lighthouse 2 – Unit 1", sub:"Vokabeln der Unit",
+     category:"vokabeln", grade:"6", subcat:"Lighthouse 2",
+     file:"vokabeln/lighthouse_2/unit_1.html", icon:"📒", status:"draft", visible:false},
+    {id:"v-lh2-u5", title:"Lighthouse 2 – Unit 5", sub:"Getting ready for the future",
+     category:"vokabeln", grade:"6", subcat:"Lighthouse 2",
+     file:"vokabeln/lighthouse_2/unit_5.html", icon:"📒", status:"new", visible:true, since:"2026-04-24"},
+
+    // --- Klasse 7 (Lighthouse 3) ---
+    {id:"v-lh3-u01", title:"Lighthouse 3 – Unit 1", sub:"Vokabeln der Unit",
+     category:"vokabeln", grade:"7", subcat:"Lighthouse 3",
+     file:"vokabeln/lighthouse_3/unit_1.html", icon:"📒", status:"draft", visible:false},
+
+    // --- Klasse 8 (Lighthouse 4) ---
+    {id:"v-lh4-u01", title:"Lighthouse 4 – Unit 1", sub:"Vokabeln der Unit",
+     category:"vokabeln", grade:"8", subcat:"Lighthouse 4",
+     file:"vokabeln/lighthouse_4/unit_1.html", icon:"📒", status:"draft", visible:false},
+
+    // --- Klasse 9 (Lighthouse 5) ---
+    {id:"v-lh5-u01", title:"Lighthouse 5 – Unit 1", sub:"Vokabeln der Unit",
+     category:"vokabeln", grade:"9", subcat:"Lighthouse 5",
+     file:"vokabeln/lighthouse_5/unit_1.html", icon:"📒", status:"draft", visible:false},
+
+    // --- Klasse 10 (Lighthouse 6) ---
+    {id:"v-lh6-u01", title:"Lighthouse 6 – Unit 1", sub:"Vokabeln der Unit",
+     category:"vokabeln", grade:"10", subcat:"Lighthouse 6",
+     file:"vokabeln/lighthouse_6/unit_1.html", icon:"📒", status:"draft", visible:false},
+
+    // ---- SKILLS (Platzhalter) ----
+    {id:"s-read-placeholder", title:"Reading – folgt bald", sub:"Leseverstehen",
+     category:"skills", grade:"alle", subcat:"Reading",
+     file:"#", icon:"📖", status:"draft", visible:false},
+    {id:"s-listen-placeholder", title:"Listening – folgt bald", sub:"Hörverstehen",
+     category:"skills", grade:"alle", subcat:"Listening",
+     file:"#", icon:"🎧", status:"draft", visible:false},
+    {id:"s-write-placeholder", title:"Writing – folgt bald", sub:"Schreiben",
+     category:"skills", grade:"alle", subcat:"Writing",
+     file:"#", icon:"✍️", status:"draft", visible:false},
+
+    // ---- ÜBERGREIFEND ----
+    {id:"u-wo", title:"Word Order", sub:"Satzstellung · SVO · Adverbien",
+     category:"uebergreifend", grade:"alle", subcat:"Grammatik-Tool",
+     file:"uebergreifend/word_order.html", icon:"🧩", status:"ready", visible:true},
+
+    {id:"u-schreib", title:"Schreibtrainer", sub:"Texte schreiben · Grammatik-Check · Feedback",
+     category:"uebergreifend", grade:"alle", subcat:"Writing-Tool",
+     file:"uebergreifend/schreibtrainer.html", icon:"✍️", status:"new", visible:true, since:"2026-04-24"},
+
+    {id:"u-ff", title:"False Friends", sub:"Falsche Freunde · Wortpaare nach Klassen 5–10",
+     category:"uebergreifend", grade:"alle", subcat:"Wortschatz-Tool",
+     file:"uebergreifend/false_friends.html", icon:"🪤", status:"new", visible:true, since:"2026-04-26"},
+
+    // ---- ZAP – Zentrale Abschlussprüfung Klasse 10 (Platzhalter) ----
+    {id:"z-orga",      title:"Organisatorisches – folgt bald", sub:"Termine · Ablauf · Regeln",
+     category:"zap", grade:"10", subcat:"Organisatorisches",
+     file:"#", icon:"📋", status:"draft", visible:false},
+    {id:"z-operatoren", title:"Operatoren – folgt bald", sub:"Prüfungsbefehle (describe, analyse …)",
+     category:"zap", grade:"10", subcat:"Operatoren",
+     file:"#", icon:"🎯", status:"draft", visible:false},
+    {id:"z-videos",    title:"Videos – folgt bald", sub:"Erklärvideos zur Prüfung",
+     category:"zap", grade:"10", subcat:"Videos",
+     file:"#", icon:"🎬", status:"draft", visible:false},
+    {id:"z-strategie", title:"Lernstrategien & Tipps – folgen bald", sub:"Prüfungsvorbereitung",
+     category:"zap", grade:"10", subcat:"Lernstrategien",
+     file:"#", icon:"💡", status:"draft", visible:false},
+    {id:"z-hoeren",    title:"Hörverstehen – folgt bald", sub:"Listening im ZAP-Format",
+     category:"zap", grade:"10", subcat:"Hörverstehen",
+     file:"#", icon:"🎧", status:"draft", visible:false},
+    {id:"z-lesen",     title:"Leseverstehen – folgt bald", sub:"Reading im ZAP-Format",
+     category:"zap", grade:"10", subcat:"Leseverstehen",
+     file:"#", icon:"📖", status:"draft", visible:false},
+    {id:"z-wortschatz",title:"Wortschatz – folgt bald", sub:"Prüfungswortschatz Klasse 10",
+     category:"zap", grade:"10", subcat:"Wortschatz",
+     file:"#", icon:"📚", status:"draft", visible:false},
+    {id:"z-schreiben", title:"Schreiben – folgt bald", sub:"Textproduktion im ZAP-Format",
+     category:"zap", grade:"10", subcat:"Schreiben",
+     file:"#", icon:"✍️", status:"draft", visible:false},
+  ]
+};
+
+const LS_KEY = "dashboard_config_v3";
+const LS_KEYS_OLD = ["dashboard_config_v1","dashboard_config_v2"];
+const THEME_KEY = "dashboard_theme_v1";
+
+var state = loadConfig();
+var filter = { search:"", grade:"alle", category:"alle" };
+var isAdmin = new URLSearchParams(location.search).get("admin") === "1";
+var editingId = null;
+var confirmCallback = null;
+
+function loadConfig(){
+  try{
+    // alte Keys aufräumen (Struktur hat sich geändert)
+    LS_KEYS_OLD.forEach(k=>{ if(localStorage.getItem(k)) localStorage.removeItem(k); });
+    const raw = localStorage.getItem(LS_KEY);
+    if(raw){
+      const parsed = JSON.parse(raw);
+      if(parsed && Array.isArray(parsed.tiles)){
+        // Versions-Check: bei fehlender oder kleinerer Version → Smart-Merge.
+        // Fehlende Version = Migration aus alter Hash-Konfig (configHash-Feld) oder Pre-Versions-Konfig.
+        if(!parsed.version || parsed.version < DEFAULT_CONFIG.version){
+          const merged = mergeWithDefaults(parsed, DEFAULT_CONFIG);
+          merged.version = DEFAULT_CONFIG.version;
+          // alte Hash-Reste aufräumen
+          if("configHash" in merged) delete merged.configHash;
+          try{ localStorage.setItem(LS_KEY, JSON.stringify(merged)); }catch(e){}
+          return merged;
+        }
+        return parsed;
+      }
+    }
+  }catch(e){console.warn("Konfig konnte nicht geladen werden:",e)}
+  const fresh = JSON.parse(JSON.stringify(DEFAULT_CONFIG));
+  return fresh;
+}
+
+/* Smart-Merge: aktualisiert Default-Tiles, behält Lehrer-Anpassungen
+   - Reihenfolge bleibt (so wie vom Lehrer sortiert)
+   - visible-Flag bleibt (Lehrer-Sichtbarkeitsentscheidung)
+   - Default-Felder (title, sub, file, icon, status, since, subcat, grade, category)
+     werden aus dem aktuellen DEFAULT_CONFIG übernommen
+   - Eigene Kacheln (ID nicht im Default) bleiben unverändert
+   - Neue Default-Tiles werden an passender Position eingefügt
+   - Aus Default entfernte Tiles werden gelöscht (sofern nicht user-eigen)
+*/
+function mergeWithDefaults(saved, defaults){
+  const defaultMap = new Map(defaults.tiles.map(t => [t.id, t]));
+  const savedMap = new Map(saved.tiles.map(t => [t.id, t]));
+
+  // 1. Bestehende saved-Reihenfolge durchgehen
+  const result = [];
+  saved.tiles.forEach(savedTile => {
+    const defTile = defaultMap.get(savedTile.id);
+    if(defTile){
+      // Default-Daten übernehmen, visible aus saved beibehalten
+      result.push(Object.assign({}, defTile, {
+        visible: typeof savedTile.visible === "boolean" ? savedTile.visible : defTile.visible
+      }));
+    } else if(!savedTile.id || !savedTile.id.startsWith("g-") && !savedTile.id.startsWith("v-")
+              && !savedTile.id.startsWith("s-") && !savedTile.id.startsWith("u-")
+              && !savedTile.id.startsWith("z-")){
+      // Kachel mit Custom-ID (vom Lehrer manuell angelegt) → behalten
+      result.push(savedTile);
+    }
+    // Sonst: Default-Tile wurde aus DEFAULT_CONFIG entfernt → wird verworfen
+  });
+
+  // 2. Neue Default-Tiles, die im Cache fehlen, an passender Position einfügen
+  defaults.tiles.forEach((defTile, idx) => {
+    if(savedMap.has(defTile.id)) return;
+    // Position: nach dem zuletzt vorhandenen vorherigen Default-Tile
+    let insertAt = result.length;
+    for(let i = idx - 1; i >= 0; i--){
+      const prevId = defaults.tiles[i].id;
+      const pos = result.findIndex(t => t.id === prevId);
+      if(pos >= 0){ insertAt = pos + 1; break; }
+    }
+    result.splice(insertAt, 0, JSON.parse(JSON.stringify(defTile)));
+  });
+
+  return { tiles: result };
+}
+function saveConfig(){
+  // Aktuelle Version mitspeichern, damit der nächste Load nicht in Smart-Merge läuft.
+  if(state && typeof state==="object"){
+    state.version = DEFAULT_CONFIG.version;
+    if("configHash" in state) delete state.configHash;
+  }
+  try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+  catch(e){ alert("Konfiguration konnte nicht gespeichert werden: "+e.message); }
+}
+
+// Dark Mode
+(function initTheme(){
+  const saved = localStorage.getItem(THEME_KEY);
+  if(saved === "dark") document.documentElement.setAttribute("data-theme","dark");
+  updateThemeBtn();
+})();
+function updateThemeBtn(){
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  document.getElementById("theme-icon").textContent = dark ? "☀️" : "🌙";
+  document.getElementById("theme-label").textContent = dark ? "Hell" : "Dunkel";
+}
+document.getElementById("theme-toggle").addEventListener("click", ()=>{
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  if(dark){ document.documentElement.removeAttribute("data-theme"); localStorage.setItem(THEME_KEY,"light"); }
+  else    { document.documentElement.setAttribute("data-theme","dark"); localStorage.setItem(THEME_KEY,"dark"); }
+  updateThemeBtn();
+});
+
+if(isAdmin){
+  document.body.classList.add("admin-mode");
+  document.getElementById("admin-banner").classList.remove("hidden");
+}
+
+const GRADES = [
+  {v:"alle",label:"Alle"},
+  {v:"5",label:"Klasse 5"},{v:"6",label:"Klasse 6"},{v:"7",label:"Klasse 7"},
+  {v:"8",label:"Klasse 8"},{v:"9",label:"Klasse 9"},{v:"10",label:"Klasse 10"},
+];
+
+/* gradeRestriction:
+   - wenn gesetzt: Chip & Kategorie werden nur angezeigt, wenn der aktuelle
+     Jahrgangsfilter "alle" ist ODER in der Liste enthalten ist.
+   - ZAP -> nur bei "alle" oder "10" sichtbar.
+*/
+const CATS = [
+  {v:"alle",         label:"Alle",         cls:""},
+  {v:"grammatik",    label:"Grammatik",    cls:"cat-grammatik"},
+  {v:"vokabeln",     label:"Vokabeln",     cls:"cat-vokabeln"},
+  {v:"skills",       label:"Skills",       cls:"cat-skills"},
+  {v:"uebergreifend",label:"Übergreifend", cls:"cat-uebergreifend"},
+  {v:"zap",          label:"ZAP",          cls:"cat-zap", gradeRestriction:["10"]},
+];
+
+function gradeMatches(tileGrade, filterGrade){
+  if(filterGrade === "alle") return true;
+  if(tileGrade === "alle")   return true;
+  return tileGrade === filterGrade;
+}
+function categoryMatches(tileCat, filterCat){
+  if(filterCat === "alle") return true;
+  return tileCat === filterCat;
+}
+
+function categoryAllowedForGrade(cat, gradeFilter){
+  if(!cat.gradeRestriction) return true;
+  if(gradeFilter === "alle") return true;
+  return cat.gradeRestriction.includes(gradeFilter);
+}
+
+/* Kontextsensitive Counts – berücksichtigen den jeweils anderen aktiven Filter */
+function countForGrade(gradeValue){
+  return visibleTiles().filter(t =>
+    gradeMatches(t.grade, gradeValue) &&
+    categoryMatches(t.category, filter.category)
+  ).length;
+}
+function countForCategory(catValue){
+  return visibleTiles().filter(t =>
+    categoryMatches(t.category, catValue) &&
+    gradeMatches(t.grade, filter.grade)
+  ).length;
+}
+
+function renderChips(){
+  const gr = document.getElementById("grade-filters");
+  gr.innerHTML = GRADES.map(g=>{
+    const n = countForGrade(g.v);
+    const active = filter.grade===g.v ? "active" : "";
+    const zero = (n===0 && !active) ? "zero" : "";
+    return `<button class="chip ${active} ${zero}" data-grade="${g.v}">${g.label} <span class="chip-count">${n}</span></button>`;
+  }).join("");
+  gr.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+    filter.grade = c.dataset.grade;
+    // Auto-Reset: falls die aktuell aktive Kategorie zu diesem Jahrgang nicht passt
+    const currentCat = CATS.find(x=>x.v===filter.category);
+    if(currentCat && !categoryAllowedForGrade(currentCat, filter.grade)){
+      filter.category = "alle";
+    }
+    render();
+  }));
+
+  const ct = document.getElementById("cat-filters");
+  ct.innerHTML = CATS
+    .filter(c => categoryAllowedForGrade(c, filter.grade))
+    .map(c=>{
+      const n = countForCategory(c.v);
+      const active = filter.category===c.v ? "active " + c.cls : "";
+      const zero = (n===0 && !active) ? "zero" : "";
+      return `<button class="chip ${active} ${zero}" data-cat="${c.v}">${c.label} <span class="chip-count">${n}</span></button>`;
+    }).join("");
+  ct.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+    filter.category=c.dataset.cat; render();
+  }));
+}
+
+function visibleTiles(){
+  return state.tiles.filter(t => isAdmin ? true : (t.visible && t.status!=="draft"));
+}
+
+function filteredTiles(){
+  const q = filter.search.trim().toLowerCase();
+  return visibleTiles().filter(t=>{
+    if(!gradeMatches(t.grade, filter.grade)) return false;
+    if(!categoryMatches(t.category, filter.category)) return false;
+    if(q){
+      const hay = (t.title+" "+(t.sub||"")+" "+(t.subcat||"")).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function catMeta(cat){
+  if(cat==="grammatik")     return {label:"Grammatik",    color:"var(--hr-blue)",  icon:"📚", note:""};
+  if(cat==="vokabeln")      return {label:"Vokabeln",     color:"var(--hr-green)", icon:"📒", note:""};
+  if(cat==="skills")        return {label:"Skills",       color:"var(--hr-plum)",  icon:"🎯", note:"Reading · Listening · Writing"};
+  if(cat==="uebergreifend") return {label:"Übergreifend", color:"var(--hr-ocker)", icon:"🧰", note:"Für alle Jahrgänge"};
+  if(cat==="zap")           return {label:"ZAP",          color:"var(--hr-wine)",  icon:"📝", note:"Zentrale Abschlussprüfung · Klasse 10"};
+  return {label:cat,color:"var(--muted)",icon:"•",note:""};
+}
+
+// Wie lange ein Status-Badge angezeigt wird (in Tagen)
+const STATUS_BADGE_DAYS = { new: 14, updated: 10 };
+
+function statusBadge(t){
+  const s = t.status;
+  if(s==="draft") return '<span class="badge status-draft">in Arbeit</span>';
+
+  // "new" und "updated" laufen automatisch ab
+  if(s==="new" || s==="updated"){
+    if(!t.since) return ""; // Ohne Datum gilt: Badge wird nicht mehr angezeigt
+    const sinceDate = new Date(t.since);
+    if(isNaN(sinceDate.getTime())) return "";
+    const ageDays = (Date.now() - sinceDate.getTime()) / 86400000;
+    if(ageDays > STATUS_BADGE_DAYS[s]) return ""; // abgelaufen
+    if(s==="new")     return '<span class="badge status-new">NEU</span>';
+    if(s==="updated") return '<span class="badge status-updated">Update</span>';
+  }
+  return "";
+}
+
+function render(){
+  renderChips();
+  const wrap = document.getElementById("grid-wrap");
+  const tiles = filteredTiles();
+
+  if(tiles.length===0){
+    wrap.innerHTML = `<div class="empty-state">
+      <p style="font-size:36px;margin:0">🔍</p>
+      <p><b>Keine Themen gefunden.</b></p>
+      <p>Versuch einen anderen Filter oder eine andere Suche.</p>
+    </div>`;
+    return;
+  }
+
+  const order = ["grammatik","vokabeln","skills","uebergreifend","zap"];
+  // Welche Kategorien sind ausklappbare Akkordeons (geschlossen by default)?
+  const ACCORDION_CATS = new Set(["grammatik","vokabeln","uebergreifend"]);
+  // Welche Kategorien werden beim Rendern automatisch nach Klasse → Unit sortiert?
+  // (Verbindlich laut Spec; überstimmt evtl. drag-and-drop Reihenfolge im saved State.)
+  const AUTOSORT_CATS = new Set(["grammatik","vokabeln"]);
+
+  function unitFromTitle(t){
+    // Erkennt "Unit 1 – …", "Unit 1-2 – …", "Units 1–2 – …", "Lighthouse 1 – Unit 4"
+    const m = (t.title||"").match(/Unit[s]?\s+(\d+)/i);
+    return m ? parseInt(m[1],10) : 99;
+  }
+  function gradeNum(t){
+    const n = parseInt(t.grade,10);
+    return isNaN(n) ? 99 : n;
+  }
+  function sortTiles(tiles){
+    return tiles.slice().sort((a,b)=>{
+      const ga = gradeNum(a), gb = gradeNum(b);
+      if(ga !== gb) return ga - gb;
+      const ua = unitFromTitle(a), ub = unitFromTitle(b);
+      if(ua !== ub) return ua - ub;
+      return 0; // stable
+    });
+  }
+
+  // Bei sortierten Kategorien: Tiles nach Klasse gruppiert mit Divider zwischen den Gruppen
+  function buildTilesWithClassDividers(list){
+    let html = "";
+    let prevGrade = null;
+    list.forEach(t => {
+      const g = t.grade;
+      if(g !== prevGrade){
+        const label = (g === "alle") ? "Jahrgangsübergreifend" : "Klasse " + g;
+        html += `<div class="class-divider">${label}</div>`;
+        prevGrade = g;
+      }
+      html += tileHTML(t);
+    });
+    return html;
+  }
+
+  const groups = {};
+  tiles.forEach(t=>{ if(!groups[t.category]) groups[t.category]=[]; groups[t.category].push(t); });
+
+  let html = "";
+  order.forEach(cat=>{
+    if(!groups[cat] || groups[cat].length===0) return;
+    const meta = catMeta(cat);
+    const list = AUTOSORT_CATS.has(cat) ? sortTiles(groups[cat]) : groups[cat];
+    const countLabel = `${list.length} ${list.length===1?"Thema":"Themen"}`;
+
+    if(ACCORDION_CATS.has(cat)){
+      // Ausklappbares Akkordeon (geschlossen by default)
+      html += `<section class="category-section cat-accordion" data-cat="${cat}">
+        <details>
+          <summary>
+            <span class="dot" style="background:${meta.color}"></span>
+            <span>${meta.icon} ${meta.label}</span>
+            <span class="category-count">${countLabel}</span>
+            ${meta.note ? `<span class="summary-note">· ${meta.note}</span>` : ""}
+          </summary>
+          <div class="accordion-body">
+            <div class="grid" data-cat-grid="${cat}">
+              ${AUTOSORT_CATS.has(cat) ? buildTilesWithClassDividers(list) : list.map(tileHTML).join("")}
+            </div>
+          </div>
+        </details>
+      </section>`;
+    } else {
+      // Klassischer Header (Skills, ZAP)
+      html += `<section class="category-section" data-cat="${cat}">
+        <div class="category-header">
+          <h2><span class="dot" style="background:${meta.color}"></span> ${meta.icon} ${meta.label}</h2>
+          <span class="category-count">${countLabel}</span>
+        </div>
+        ${meta.note ? `<div class="category-note">${meta.note}</div>` : ""}
+        <div class="grid" data-cat-grid="${cat}">
+          ${AUTOSORT_CATS.has(cat) ? buildTilesWithClassDividers(list) : list.map(tileHTML).join("")}
+        </div>
+      </section>`;
+    }
+  });
+  wrap.innerHTML = html;
+
+  wrap.querySelectorAll(".tile").forEach(el=>{
+    const id = el.dataset.id;
+    el.addEventListener("click",(ev)=>{
+      if(ev.target.closest(".tile-admin")) return;
+      const t = state.tiles.find(x=>x.id===id);
+      if(!t) return;
+      if(!t.file || t.file==="#"){
+        showConfirm("Kein Link","Diese Kachel hat noch keinen Dateipfad hinterlegt.",null);
+        return;
+      }
+      location.href = t.file;
+    });
+  });
+  wrap.querySelectorAll(".tile-admin .edit").forEach(b=>b.addEventListener("click",(e)=>{
+    e.stopPropagation(); openEdit(b.dataset.id);
+  }));
+  wrap.querySelectorAll(".tile-admin .del").forEach(b=>b.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    const t = state.tiles.find(x=>x.id===b.dataset.id);
+    showConfirm("Kachel löschen?", `„${t.title}" wird aus dem Dashboard entfernt.`, ()=>{
+      state.tiles = state.tiles.filter(x=>x.id!==b.dataset.id);
+      saveConfig(); render();
+    });
+  }));
+
+  if(isAdmin) enableDragDrop();
+}
+
+function tileHTML(t){
+  const subcat = t.subcat ? `<span class="badge subcat">${escapeHTML(t.subcat)}</span>` : "";
+  let grade;
+  if(t.grade==="alle"){
+    grade = '<span class="badge grade-all">alle Jahrgänge</span>';
+  } else if(t.category==="zap"){
+    grade = '<span class="badge grade-10">Klasse 10 · ZAP</span>';
+  } else {
+    grade = `<span class="badge grade">Klasse ${t.grade}</span>`;
+  }
+  const hiddenCls = (!t.visible && isAdmin) ? " tile-hidden" : "";
+  return `<div class="tile tile-cat-${t.category}${hiddenCls}${t.status==="draft"?" draft":""}" data-id="${t.id}" draggable="${isAdmin}">
+    <div class="tile-admin">
+      <button class="edit" data-id="${t.id}" title="Bearbeiten">✎</button>
+      <button class="del"  data-id="${t.id}" title="Löschen">🗑</button>
+    </div>
+    <div class="tile-head">
+      <div class="tile-icon">${escapeHTML(t.icon||"📄")}</div>
+      <div style="min-width:0;flex:1">
+        <div class="tile-title">${escapeHTML(t.title)}</div>
+        <div class="tile-sub">${escapeHTML(t.sub||"")}</div>
+      </div>
+    </div>
+    <div class="tile-badges">
+      ${grade}
+      ${subcat}
+      ${statusBadge(t)}
+    </div>
+  </div>`;
+}
+
+function escapeHTML(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c])}
+
+const searchInput = document.getElementById("search");
+const clearBtn = document.getElementById("clear-search");
+searchInput.addEventListener("input", ()=>{
+  filter.search = searchInput.value;
+  clearBtn.classList.toggle("visible", !!filter.search);
+  render();
+});
+clearBtn.addEventListener("click", ()=>{
+  searchInput.value=""; filter.search="";
+  clearBtn.classList.remove("visible");
+  render();
+});
+
+function enableDragDrop(){
+  document.querySelectorAll("[data-cat-grid]").forEach(grid=>{
+    const tiles = grid.querySelectorAll(".tile");
+    tiles.forEach(tile=>{
+      tile.addEventListener("dragstart",e=>{
+        tile.classList.add("dragging");
+        e.dataTransfer.effectAllowed="move";
+        e.dataTransfer.setData("text/plain", tile.dataset.id);
+      });
+      tile.addEventListener("dragend",()=>tile.classList.remove("dragging"));
+      tile.addEventListener("dragover",e=>{
+        e.preventDefault();
+        const dragging = document.querySelector(".tile.dragging");
+        if(!dragging || dragging===tile) return;
+        const rect = tile.getBoundingClientRect();
+        const midY = rect.top + rect.height/2;
+        if(e.clientY < midY) grid.insertBefore(dragging, tile);
+        else grid.insertBefore(dragging, tile.nextSibling);
+      });
+    });
+    grid.addEventListener("drop",e=>{
+      e.preventDefault();
+      const cat = grid.dataset.catGrid;
+      const newOrder = [...grid.querySelectorAll(".tile")].map(t=>t.dataset.id);
+      const othersBefore = [];
+      const othersAfter  = [];
+      let seenCat = false;
+      state.tiles.forEach(t=>{
+        if(t.category===cat){ if(!seenCat) seenCat=true; }
+        else {
+          if(!seenCat) othersBefore.push(t);
+          else othersAfter.push(t);
+        }
+      });
+      const reorderedCat = newOrder.map(id=>state.tiles.find(t=>t.id===id)).filter(Boolean);
+      state.tiles = [...othersBefore, ...reorderedCat, ...othersAfter];
+      saveConfig();
+    });
+  });
+}
+
+// ============================================================
+// EDIT-MODAL
+// ============================================================
+const editModal = document.getElementById("edit-modal");
+function openEdit(id){
+  editingId = id;
+  const t = id ? state.tiles.find(x=>x.id===id) : null;
+  document.getElementById("edit-title").textContent = t ? "Kachel bearbeiten" : "Neue Kachel";
+  document.getElementById("f-title").value   = t ? (t.title||"") : "";
+  document.getElementById("f-sub").value     = t ? (t.sub||"")   : "";
+  document.getElementById("f-grade").value   = t ? (t.grade||"alle") : "alle";
+  document.getElementById("f-cat").value     = t ? (t.category||"grammatik") : "grammatik";
+  document.getElementById("f-subcat").value  = t ? (t.subcat||"") : "";
+  document.getElementById("f-file").value    = t ? (t.file||"")  : "";
+  document.getElementById("f-icon").value    = t ? (t.icon||"")  : "📄";
+  document.getElementById("f-status").value  = t ? (t.status||"ready") : "ready";
+  document.getElementById("f-visible").checked = t ? (t.visible !== false) : true;
+  editModal.classList.add("show");
+}
+function closeEdit(){
+  editingId = null;
+  editModal.classList.remove("show");
+}
+document.getElementById("edit-cancel").addEventListener("click", closeEdit);
+editModal.addEventListener("click", (e)=>{ if(e.target === editModal) closeEdit(); });
+
+document.getElementById("edit-save").addEventListener("click", ()=>{
+  const title = document.getElementById("f-title").value.trim();
+  const file  = document.getElementById("f-file").value.trim();
+  if(!title){ alert("Bitte einen Titel eingeben."); return; }
+  const oldTile = editingId ? state.tiles.find(x=>x.id===editingId) : null;
+  const t = {
+    id: oldTile ? oldTile.id : ("custom-" + Date.now().toString(36)),
+    title,
+    sub: document.getElementById("f-sub").value.trim(),
+    grade: document.getElementById("f-grade").value,
+    category: document.getElementById("f-cat").value,
+    subcat: document.getElementById("f-subcat").value.trim(),
+    file: file || "#",
+    icon: document.getElementById("f-icon").value.trim() || "📄",
+    status: document.getElementById("f-status").value,
+    visible: document.getElementById("f-visible").checked
+  };
+  if(oldTile){
+    const i = state.tiles.findIndex(x=>x.id===editingId);
+    state.tiles[i] = Object.assign({}, oldTile, t);
+  } else {
+    state.tiles.push(t);
+  }
+  saveConfig();
+  closeEdit();
+  render();
+});
+
+// ============================================================
+// CONFIRM-MODAL
+// ============================================================
+const confirmModal = document.getElementById("confirm-modal");
+function showConfirm(title, text, onOk){
+  document.getElementById("confirm-title").textContent = title;
+  document.getElementById("confirm-text").textContent  = text;
+  confirmCallback = onOk;
+  confirmModal.classList.add("show");
+}
+function closeConfirm(){
+  confirmCallback = null;
+  confirmModal.classList.remove("show");
+}
+document.getElementById("confirm-cancel").addEventListener("click", closeConfirm);
+document.getElementById("confirm-ok").addEventListener("click", ()=>{
+  const cb = confirmCallback;
+  closeConfirm();
+  if(typeof cb === "function") cb();
+});
+confirmModal.addEventListener("click", (e)=>{ if(e.target === confirmModal) closeConfirm(); });
+
+// ============================================================
+// SEARCH
+// ============================================================
+searchInput.addEventListener("input", ()=>{
+  filter.search = searchInput.value;
+  clearBtn.classList.toggle("visible", !!filter.search);
+  render();
+});
+clearBtn.addEventListener("click", ()=>{
+  searchInput.value = "";
+  filter.search = "";
+  clearBtn.classList.remove("visible");
+  searchInput.focus();
+  render();
+});
+
+// ============================================================
+// ADMIN-TOOLS
+// ============================================================
+if(isAdmin){
+  document.getElementById("btn-add").addEventListener("click", ()=>openEdit(null));
+
+  document.getElementById("btn-export").addEventListener("click", ()=>{
+    const blob = new Blob([JSON.stringify(state, null, 2)], {type:"application/json"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "lernzentrum-config.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  document.getElementById("btn-import").addEventListener("click", ()=>{
+    document.getElementById("file-import").click();
+  });
+  document.getElementById("file-import").addEventListener("change", (e)=>{
+    const f = e.target.files[0];
+    if(!f) return;
+    const reader = new FileReader();
+    reader.onload = (ev)=>{
+      try{
+        const parsed = JSON.parse(ev.target.result);
+        if(parsed && Array.isArray(parsed.tiles)){
+          state = parsed;
+          saveConfig();
+          render();
+          showConfirm("Import erfolgreich", `${parsed.tiles.length} Kacheln geladen.`, null);
+        } else {
+          alert("Ungültige Konfigurationsdatei (kein tiles-Array).");
+        }
+      } catch(err){
+        alert("Datei konnte nicht gelesen werden: " + err.message);
+      }
+    };
+    reader.readAsText(f);
+    e.target.value = "";
+  });
+
+  document.getElementById("btn-reset").addEventListener("click", ()=>{
+    showConfirm(
+      "Alle Anpassungen verwerfen?",
+      "Reihenfolge, eigene Kacheln und Sichtbarkeitseinstellungen werden zurückgesetzt.",
+      ()=>{
+        state = JSON.parse(JSON.stringify(DEFAULT_CONFIG));
+        saveConfig();
+        render();
+      }
+    );
+  });
+
+  document.getElementById("btn-exit").addEventListener("click", ()=>{
+    location.href = location.pathname;
+  });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+render();
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                   

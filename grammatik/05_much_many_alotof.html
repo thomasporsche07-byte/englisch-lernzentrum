@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>much / many / a lot of – Hellweg-Realschule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+
+<link rel="stylesheet" href="../shared/style.css">
+<link rel="stylesheet" href="../shared/quiz.css">
+<link rel="stylesheet" href="../shared/tutor.css">
+
+
+<style>
+/* ============================================================
+   SLATE-GOLD DESIGN SYSTEM (Pilot 05_to_be.html, Apr 2026)
+   ============================================================ */
+:root{
+  --bg:#f8fafc;
+  --bg-card:#ffffff;
+  --bg-card-hover:#f1f5f9;
+  --bg-input:#ffffff;
+  --border:#e5e7eb;
+  --border-strong:#d1d5db;
+  --text:#1f2937;
+  --text-dim:#4b5563;
+  --accent:#d4a017;
+  --accent-soft:rgba(212,160,23,0.10);
+  --accent-strong:#a07408;
+  --accent-tint:#e2e8f0;
+  --success:#16a34a;
+  --success-soft:rgba(22,163,74,0.08);
+  --success-tint:#bbf7d0;
+  --warn:#ea580c;
+  --warn-soft:rgba(234,88,12,0.08);
+  --warn-tint:#fed7aa;
+  --error:#dc2626;
+  --error-soft:rgba(220,38,38,0.08);
+  --error-tint:#fecaca;
+  --info:#2563eb;
+  --info-soft:rgba(37,99,235,0.08);
+  --info-tint:#bfdbfe;
+  --indigo:#4f46e5;
+  --indigo-soft:rgba(79,70,229,0.08);
+  --indigo-tint:#ddd6fe;
+  --teal:#0d9488;
+  --teal-soft:rgba(13,148,136,0.08);
+  --teal-tint:#f0fdfa;
+  /* Pill-Tokens */
+  --pill-subj-bg:rgba(37,99,235,0.10);
+  --pill-subj-bd:#2563eb;
+  --pill-subj-tx:#1e40af;
+  --pill-do-bg:rgba(212,160,23,0.14);
+  --pill-do-bd:#d4a017;
+  --pill-do-tx:#7c5e0a;
+  --pill-verb-bg:rgba(8,145,178,0.10);
+  --pill-verb-bd:#0891b2;
+  --pill-verb-tx:#155e6e;
+  --pill-neg-bg:rgba(220,38,38,0.10);
+  --pill-neg-bd:#dc2626;
+  --pill-neg-tx:#991b1b;
+  --pill-wh-bg:rgba(234,88,12,0.10);
+  --pill-wh-bd:#ea580c;
+  --pill-wh-tx:#9a3a0e;
+  --pill-sig-bg:rgba(124,58,237,0.10);
+  --pill-sig-bd:#7c3aed;
+  --pill-sig-tx:#5b21b6;
+  --pill-s-bg:rgba(22,163,74,0.10);
+  --pill-s-bd:#16a34a;
+  --pill-s-tx:#15803d;
+  /* Karten-Akzent-Streifen pro Kategorie */
+  --card-aus:#16a34a;
+  --card-kf:#d4a017;
+  --card-vern:#dc2626;
+  --card-frag:#2563eb;
+  --card-ka:#7c3aed;
+  /* Saturierte Karten-Akzente (für Top-Stripe, Titel, Underlines pro Karte) */
+  --card-amber-strong:#475569;
+  --card-green-strong:#059669;
+  --card-teal-strong:#ea580c;
+  --card-red-strong:#dc2626;
+  --card-blue-strong:#2563eb;
+  --card-indigo-strong:#7c3aed;
+}
+body.dark-mode{
+  --bg:#0f1117;
+  --bg-card:#1a1d28;
+  --bg-card-hover:#232634;
+  --bg-input:#14161e;
+  --border:#2a2e3d;
+  --border-strong:#3a3f52;
+  --text:#e8e9ed;
+  --text-dim:#9ba0b3;
+  --accent:#f4c430;
+  --accent-soft:rgba(244,196,48,0.12);
+  --accent-strong:#facc15;
+  --success:#4ade80;
+  --success-soft:rgba(74,222,128,0.10);
+  --warn:#fb923c;
+  --warn-soft:rgba(251,146,60,0.10);
+  --error:#f87171;
+  --error-soft:rgba(248,113,113,0.10);
+  --info:#60a5fa;
+  --info-soft:rgba(96,165,250,0.10);
+  --pill-subj-bg:rgba(96,165,250,0.12);
+  --pill-subj-bd:#60a5fa;
+  --pill-subj-tx:#bfdbfe;
+  --pill-do-bg:rgba(244,196,48,0.12);
+  --pill-do-bd:#f4c430;
+  --pill-do-tx:#fde68a;
+  --pill-verb-bg:rgba(34,211,238,0.12);
+  --pill-verb-bd:#22d3ee;
+  --pill-verb-tx:#a5f3fc;
+  --pill-neg-bg:rgba(248,113,113,0.12);
+  --pill-neg-bd:#f87171;
+  --pill-neg-tx:#fca5a5;
+  --pill-wh-bg:rgba(251,146,60,0.12);
+  --pill-wh-bd:#fb923c;
+  --pill-wh-tx:#fdba74;
+  --pill-sig-bg:rgba(167,139,250,0.12);
+  --pill-sig-bd:#a78bfa;
+  --pill-sig-tx:#d8b4fe;
+  --pill-s-bg:rgba(74,222,128,0.12);
+  --pill-s-bd:#4ade80;
+  --pill-s-tx:#86efac;
+  --card-aus:#4ade80;
+  --card-kf:#f4c430;
+  --card-vern:#f87171;
+  --card-frag:#60a5fa;
+  --card-ka:#a78bfa;
+}
+
+/* === Layout Basics === */
+html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;font-size:18px;transition:background .25s,color .25s}
+.container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
+
+/* === Header (zentriert gestapelt: Logo · H1 · Subtitle) === */
+header{
+  text-align:center;
+  padding:36px 16px 24px;
+}
+.hdr-logo-link{
+  display:block;
+  text-decoration:none;
+  margin:0 auto 16px;
+}
+header img{
+  display:block;
+  margin:0 auto;
+  height:60px;
+  max-width:100%;
+  filter:drop-shadow(0 2px 6px rgba(15,23,42,0.10));
+  cursor:pointer;
+}
+header h1{
+  margin:0 0 8px;
+  font-size:clamp(26px,5vw,36px);
+  color:var(--text);
+  letter-spacing:.2px;
+  font-weight:700;
+  display:inline-block;
+  position:relative;
+}
+header h1::after{
+  content:"";
+  display:block;
+  width:56px;
+  height:3px;
+  background:var(--accent);
+  border-radius:2px;
+  margin:10px auto 0;
+}
+header p.sub{
+  margin:14px 0 0;
+  color:var(--text-dim);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+@media(max-width:600px){
+  header{padding:24px 12px 18px}
+  header img{height:50px}
+}
+
+/* === Regelkarten-Container === */
+.rules-combined{margin-top:14px;background:var(--bg-card);border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:22px 20px 18px;border:1px solid var(--border)}
+.rules-combined h2{font-size:13px;color:var(--accent-strong);margin:0 0 16px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;display:flex;align-items:center;gap:6px}
+body.dark-mode .rules-combined h2{color:var(--accent)}
+.rc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.rc-card{
+  border-radius:14px;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  position:relative;
+  background:var(--bg-card-hover);
+  border:1px solid var(--border);
+  border-top:6px solid var(--accent);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.rc-card.c-green{border-top-color:var(--success)}
+.rc-card.c-red{border-top-color:var(--error)}
+.rc-card.c-blue{border-top-color:var(--info)}
+.rc-card.c-indigo{border-top-color:var(--indigo)}
+.rc-card.c-amber{border-top-color:var(--accent)}
+.rc-card.c-teal{border-top-color:var(--warn)}
+body.dark-mode .rc-card.c-indigo{border-top-color:#a78bfa}
+body.dark-mode .rc-card.c-teal{border-top-color:#22d3ee}
+.rc-card-full{display:none}
+.rc-card-topbar{display:none}
+.rc-card-body{padding:24px;display:flex;flex-direction:column;gap:16px;flex:1}
+.rc-card-label{
+  font-size:17px;
+  font-weight:700;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--text);
+  text-transform:none;
+  line-height:1.25;
+}
+.rc-card-num{position:absolute;top:6px;right:10px;font-size:52px;font-weight:900;line-height:1;opacity:.06;pointer-events:none;user-select:none;color:var(--accent)}
+
+/* === Pill-Formeln === */
+.rc-formula{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px}
+.fc-pair{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;flex-shrink:0}
+.fc{display:inline-flex;align-items:center;justify-content:center;border-radius:7px;padding:3px 7px;font-size:11px;font-weight:800;white-space:nowrap;flex-shrink:0}
+.fc-subj{background:var(--pill-subj-bg);border:2px solid var(--pill-subj-bd);color:var(--pill-subj-tx)}
+.fc-do{background:var(--pill-do-bg);border:2px solid var(--pill-do-bd);color:var(--pill-do-tx)}
+.fc-verb{background:var(--pill-verb-bg);border:2px solid var(--pill-verb-bd);color:var(--pill-verb-tx)}
+.fc-neg{background:var(--pill-neg-bg);border:2px solid var(--pill-neg-bd);color:var(--pill-neg-tx)}
+.fc-sig{background:var(--pill-sig-bg);border:1.5px dashed var(--pill-sig-bd);color:var(--pill-sig-tx);font-style:italic}
+.fc-wh{background:var(--pill-wh-bg);border:2px solid var(--pill-wh-bd);color:var(--pill-wh-tx)}
+.fc-punct{background:transparent;border:none;font-size:16px;font-weight:900;color:var(--text-dim);padding:0 2px}
+.fc-short{background:var(--bg-input);border:2px solid var(--accent);color:var(--accent-strong);font-size:12px}
+body.dark-mode .fc-short{color:var(--accent)}
+.fc-plus{font-size:11px;color:var(--text-dim);font-weight:700;padding:0}
+.fc-s{background:var(--pill-s-bg);border:2px solid var(--pill-s-bd);color:var(--pill-s-tx);font-size:12px}
+
+/* === Regel-Text & Beispiele === */
+.rc-rule{font-size:13px;color:var(--text);line-height:1.55;padding:7px 10px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border)}
+.rc-card.c-green .rc-rule{border-left:3px solid var(--success)}
+.rc-card.c-red .rc-rule{border-left:3px solid var(--error)}
+.rc-card.c-blue .rc-rule{border-left:3px solid var(--info)}
+.rc-card.c-indigo .rc-rule{border-left:3px solid #7c3aed}
+.rc-card.c-amber .rc-rule{border-left:3px solid var(--accent)}
+.rc-card.c-teal .rc-rule{border-left:3px solid #0891b2}
+body.dark-mode .rc-card.c-indigo .rc-rule{border-left-color:#a78bfa}
+body.dark-mode .rc-card.c-teal .rc-rule{border-left-color:#22d3ee}
+.rc-examples-new{font-size:12.5px;color:var(--text-dim);line-height:1.75;padding:7px 10px;border-radius:8px;background:var(--bg-card);border:1px solid var(--border)}
+.rc-examples-new b{color:var(--text)}
+
+/* === Highlight-Spans === */
+.hl-subj{color:var(--pill-subj-tx);font-weight:800;background:var(--pill-subj-bg);border-radius:4px;padding:0 3px}
+.hl-do{color:var(--pill-do-tx);font-weight:800;background:var(--pill-do-bg);border-radius:4px;padding:0 3px}
+.hl-verb{color:var(--pill-verb-tx);font-weight:800;background:var(--pill-verb-bg);border-radius:4px;padding:0 3px}
+.hl-neg{color:var(--pill-neg-tx);font-weight:800;background:var(--pill-neg-bg);border-radius:4px;padding:0 3px}
+.hl-sig{color:var(--pill-sig-tx);font-weight:700;background:var(--pill-sig-bg);border-radius:4px;padding:0 3px}
+.hl-wh{color:var(--pill-wh-tx);font-weight:800;background:var(--pill-wh-bg);border-radius:4px;padding:0 3px}
+.hl-s{color:var(--pill-s-tx);font-weight:800;background:var(--pill-s-bg);border-radius:4px;padding:0 3px}
+
+/* === Signalwort-Chips === */
+.fc-tz{background:var(--success-soft);border:1.5px solid var(--success);color:var(--success);border-radius:999px;font-style:normal;font-weight:700;padding:3px 10px;font-size:11.5px}
+body.dark-mode .fc-tz{color:#86efac}
+.signal-box{display:none}
+
+/* === Akkordeons === */
+details.accordion{background:var(--bg-card);border-radius:12px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);margin:16px 0;overflow:hidden;transition:border-color .2s}
+details.accordion[open]{border-color:var(--border-strong)}
+details.accordion summary{list-style:none;cursor:pointer;padding:14px 18px;outline:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text);border-left:4px solid transparent;transition:background .2s,border-color .2s}
+.acc-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;flex-shrink:0;background:var(--accent-soft);color:var(--accent-strong)}
+body.dark-mode .acc-num{color:var(--accent)}
+.acc-num-pair{display:inline-flex;align-items:center;gap:3px;flex-shrink:0}
+.acc-num-sub{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:900;background:var(--accent-soft);color:var(--accent-strong)}
+body.dark-mode .acc-num-sub{color:var(--accent)}
+details.accordion[open] summary{border-bottom:1px solid var(--border)}
+details.accordion summary:hover{background:var(--bg-card-hover)}
+
+/* Akkordeon-Akzentstreifen pro Sektion */
+#acc-aus summary{border-left-color:var(--card-aus)}
+#acc-aus .acc-num{background:var(--success-soft);color:var(--success)}
+#acc-kf summary{border-left-color:var(--card-kf)}
+#acc-kf .acc-num{background:var(--accent-soft);color:var(--accent-strong)}
+body.dark-mode #acc-kf .acc-num{color:var(--accent)}
+#acc-vern summary{border-left-color:var(--card-vern)}
+#acc-vern .acc-num{background:var(--error-soft);color:var(--error)}
+#acc-frag summary{border-left-color:var(--card-frag)}
+#acc-frag .acc-num{background:var(--info-soft);color:var(--info)}
+#acc-ka summary{border-left-color:var(--card-ka)}
+#acc-ka .acc-num{background:rgba(124,58,237,0.10);color:#7c3aed}
+body.dark-mode #acc-ka .acc-num{background:rgba(167,139,250,0.12);color:#a78bfa}
+
+.content{padding:18px 20px}
+
+/* === Note-Box === */
+.note{background:var(--accent-soft);border:1px solid var(--border-strong);border-left:4px solid var(--accent);padding:11px 14px;border-radius:10px;margin:6px 0 16px;color:var(--text);font-size:14px;line-height:1.6}
+.highlight{font-weight:600}
+
+/* === Level-Switch === */
+.level-switch{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.level-switch button{border:1.5px solid var(--border);border-radius:999px;padding:8px 20px;font-weight:700;cursor:pointer;background:var(--bg-card);color:var(--text);transition:.2s all;font-size:14px;letter-spacing:.2px;outline:none}
+.level-switch button:hover{background:var(--bg-card-hover);border-color:var(--accent);transform:translateY(-1px)}
+.level-switch button.active{background:var(--accent);color:#1a1d28;border-color:var(--accent);box-shadow:0 2px 8px var(--accent-soft);transform:translateY(-1px)}
+body.dark-mode .level-switch button.active{color:#0f1117}
+
+/* === Aufgaben-Karten === */
+.task{border:1px solid var(--border);border-top:3px solid var(--accent);background:var(--bg-card);border-radius:12px;padding:16px 18px;margin:12px 0;scroll-margin-top:80px;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:box-shadow .2s,border-color .2s}
+#acc-aus .task{border-top-color:var(--card-aus)}
+#acc-kf .task{border-top-color:var(--card-kf)}
+#acc-vern .task{border-top-color:var(--card-vern)}
+#acc-frag .task{border-top-color:var(--card-frag)}
+#acc-ka .task{border-top-color:var(--card-ka)}
+.task:hover{box-shadow:0 4px 12px rgba(0,0,0,.07)}
+.task.task--solved{border:2px solid var(--success);box-shadow:0 0 0 3px var(--success-soft)}
+.task.task--solved .task-solved-label{display:block}
+.task-solved-label{display:none;font-size:12px;font-weight:700;color:var(--success);margin-bottom:4px}
+.task-type-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.task-type-badge.badge-mc{background:var(--info-soft);color:var(--info);border:1px solid var(--info)}
+.task-type-badge.badge-ordne{background:var(--accent-soft);color:var(--accent-strong);border:1px solid var(--accent)}
+body.dark-mode .task-type-badge.badge-ordne{color:var(--accent)}
+.task-type-badge.badge-frei{background:rgba(124,58,237,0.10);color:#7c3aed;border:1px solid #7c3aed}
+body.dark-mode .task-type-badge.badge-frei{background:rgba(167,139,250,0.12);color:#a78bfa;border-color:#a78bfa}
+.task.task--wrong{border-color:var(--error);border-top-color:var(--error);background:var(--error-soft)!important}
+.task.task--wrong .prompt{color:var(--error)}
+.task .prompt{margin:0 0 12px;font-weight:600;color:var(--text);line-height:1.6;font-size:15.5px}
+.task input[type="text"]{width:100%;padding:11px 16px;border:1.5px solid var(--border);border-radius:999px;font-size:16px;outline:none;transition:.2s all;box-sizing:border-box;background:var(--bg-input);color:var(--text)}
+.task input[type="text"]:focus{border-color:var(--accent);background:var(--bg-card);box-shadow:0 0 0 3px var(--accent-soft)}
+.task input[type="text"]:disabled{background:var(--bg-card-hover);color:var(--text-dim)}
+.task .controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+
+/* === Buttons === */
+.btn{border:1px solid var(--border);border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;background:var(--bg-card);color:var(--text);font-size:14px;transition:.15s all;letter-spacing:.1px}
+.btn:hover{transform:translateY(-1px);background:var(--bg-card-hover);border-color:var(--accent)}
+.btn:active{transform:translateY(0)}
+.btn.primary{background:var(--accent);color:#1a1d28;border-color:var(--accent);box-shadow:0 2px 6px var(--accent-soft)}
+body.dark-mode .btn.primary{color:#0f1117}
+.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn.blue{background:var(--info);color:#fff;border-color:var(--info);box-shadow:0 2px 6px var(--info-soft)}
+.btn.green{background:var(--success);color:#fff;border-color:var(--success);box-shadow:0 2px 6px var(--success-soft)}
+.btn.gray{background:var(--bg-card-hover);color:var(--text);border-color:var(--border)}
+.btn.gray:hover{background:var(--accent-soft);border-color:var(--accent)}
+.btn.ghost{background:transparent;color:var(--text-dim);border:1px solid var(--border)}
+
+/* === Feedback / Solution / Hint === */
+.feedback{margin-top:8px;font-size:14px;font-weight:700;padding:4px 0;letter-spacing:.1px}
+.solution{margin-top:8px;font-size:14px;background:var(--info-soft);border:1px solid var(--info);border-left:3px solid var(--info);padding:10px 14px;border-radius:10px;display:none;line-height:1.65;color:var(--text)}
+.hint-box{margin-top:8px;font-size:14px;background:var(--accent-soft);border:1px dashed var(--accent);color:var(--text);padding:10px 14px;border-radius:10px;display:none;line-height:1.55}
+.ok{color:var(--success)}.warn{color:var(--warn)}.bad{color:var(--error)}
+
+/* === MC-Optionen === */
+.mc-options{display:flex;flex-direction:column;gap:8px;margin:4px 0 8px}
+.mc-opt{display:flex;align-items:center;gap:10px;background:var(--bg-card);border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;cursor:pointer;font-size:15px;font-weight:500;transition:.15s all;color:var(--text);-webkit-tap-highlight-color:transparent}
+.mc-opt:hover{background:var(--bg-card-hover);border-color:var(--accent)}
+.mc-opt:active{transform:scale(.98)}
+.mc-opt.mc-selected{border-color:var(--accent);background:var(--accent-soft);font-weight:700}
+.mc-opt.mc-correct{border-color:var(--success);background:var(--success-soft);color:var(--success)}
+body.dark-mode .mc-opt.mc-correct{color:#86efac}
+.mc-opt.mc-wrong{border-color:var(--error);background:var(--error-soft);color:var(--error);text-decoration:line-through;opacity:.75}
+.mc-opt.mc-disabled{pointer-events:none;cursor:default}
+.mc-letter{width:28px;height:28px;border-radius:50%;background:var(--bg-card-hover);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;color:var(--text-dim);border:1px solid var(--border)}
+.mc-opt.mc-selected .mc-letter{background:var(--accent);color:#1a1d28;border-color:var(--accent)}
+body.dark-mode .mc-opt.mc-selected .mc-letter{color:#0f1117}
+.mc-opt.mc-correct .mc-letter{background:var(--success);color:#fff;border-color:var(--success)}
+.mc-opt.mc-wrong .mc-letter{background:var(--error);color:#fff;border-color:var(--error)}
+
+/* === Word-Tiles === */
+.word-tiles-wrap{margin:4px 0 8px}
+.word-tiles-label{font-size:11px;font-weight:700;color:var(--text-dim);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+.word-tiles{display:flex;flex-wrap:wrap;gap:8px;min-height:42px;padding:8px;border-radius:10px;background:var(--bg-card-hover);border:1.5px dashed var(--border-strong);transition:.2s all}
+.word-tiles.wt-source{background:var(--bg-card);border-color:var(--border)}
+.word-tiles.wt-target{background:var(--accent-soft);border-color:var(--accent);border-style:solid;min-height:46px}
+.word-tiles.wt-target:empty::before{content:"Tippe die Wörter in der richtigen Reihenfolge an ↑";color:var(--text-dim);font-size:13px;font-style:italic;padding:6px}
+.word-tile{display:inline-flex;align-items:center;padding:8px 14px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s all;-webkit-tap-highlight-color:transparent;user-select:none;border:1.5px solid var(--border);background:var(--bg-card);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.word-tile:hover{transform:translateY(-1px);box-shadow:0 3px 8px rgba(0,0,0,.08);border-color:var(--accent)}
+.word-tile:active{transform:scale(.95)}
+.word-tile.wt-placed{background:var(--accent-soft);border-color:var(--accent);color:var(--text)}
+.word-tile.wt-used{opacity:.3;pointer-events:none;transform:scale(.9)}
+.word-tile.wt-correct{background:var(--success-soft);border-color:var(--success);color:var(--success);pointer-events:none}
+body.dark-mode .word-tile.wt-correct{color:#86efac}
+.word-tile.wt-wrong{background:var(--error-soft);border-color:var(--error);color:var(--error);animation:wt-shake .4s}
+@keyframes wt-shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+
+/* === Section-Actions / Progress === */
+.section-actions{display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin:12px 0 10px}
+.progress{position:relative;width:260px;height:14px;background:var(--bg-card-hover);border-radius:999px;overflow:hidden;border:1px solid var(--border)}
+.progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:var(--accent);transition:width .3s ease;border-radius:999px}
+.progress.red .progress-fill{background:var(--error)}
+.progress.green .progress-fill{background:var(--success)}
+.progress.mixed .progress-fill{background:linear-gradient(90deg,var(--error) 0%,var(--accent) 100%)}
+.progress-text{font-size:13.5px;color:var(--text-dim);font-weight:600}
+
+/* === Result-Cards === */
+.result-card{margin-top:14px;border:1px solid var(--border);background:var(--bg-card);border-radius:14px;padding:14px;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.score{font-size:22px;font-weight:800;margin:6px 0;color:var(--text)}
+.celebrate-banner{background:var(--success-soft);border:2px solid var(--success);border-radius:12px;padding:16px 14px;margin-bottom:12px;text-align:center;color:var(--success);font-weight:700;font-size:16px;animation:celebrate-pop .5s ease}
+body.dark-mode .celebrate-banner{color:#86efac}
+@keyframes celebrate-pop{0%{transform:scale(.8);opacity:0}50%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+.result-banner{background:var(--bg-card-hover);border:2px solid var(--border-strong);border-radius:12px;padding:12px 14px;margin-bottom:10px;text-align:center;font-weight:700;color:var(--text)}
+.result-banner.result-green{border-color:var(--success);background:var(--success-soft);color:var(--success)}
+body.dark-mode .result-banner.result-green{color:#86efac}
+.result-banner.result-orange{border-color:var(--warn);background:var(--warn-soft);color:var(--warn)}
+.result-banner.result-red{border-color:var(--error);background:var(--error-soft);color:var(--error)}
+.error-list{margin-top:10px;padding:10px 14px;background:var(--error-soft);border:1px dashed var(--error);border-radius:10px;font-size:13px;color:var(--error)}
+.error-list li{margin:4px 0}
+
+/* === Floating Buttons === */
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:var(--bg-card);color:var(--text);box-shadow:0 2px 10px rgba(0,0,0,.12);transition:.2s all}
+.dark-toggle:hover{transform:translateY(-1px);background:var(--accent-soft);border-color:var(--accent)}
+.tts-toggle{position:fixed;bottom:46px;left:16px;z-index:99;border:1px solid var(--border);border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:var(--bg-card);color:var(--text);box-shadow:0 2px 10px rgba(0,0,0,.12);transition:.2s}
+.tts-toggle:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.16)}
+.tts-on{background:var(--accent);color:#1a1d28;border-color:var(--accent)}
+body.dark-mode .tts-on{color:#0f1117}
+.reset-all-btn{position:fixed;bottom:14px;left:16px;z-index:99;border:1px solid var(--border);border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:var(--bg-card);color:var(--text);box-shadow:0 2px 10px rgba(0,0,0,.12);transition:.2s}
+.reset-all-btn:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.16)}
+
+/* === Quiz-Divider === */
+.quiz-divider{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding:0 4px}
+.quiz-divider::before,.quiz-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.55}
+.quiz-divider span{font-size:13px;font-weight:800;color:var(--accent-strong);white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+body.dark-mode .quiz-divider span{color:var(--accent)}
+
+/* === WWM-Quiz (thematisches Dunkelblau-Gold, mit neuem Token-System harmonisiert) === */
+#wwm-quiz{background:linear-gradient(180deg,#0a1840 0%,#040c24 100%);border-radius:14px;border:1px solid rgba(244,196,48,.35);overflow:hidden}
+#wwm-quiz>summary{color:var(--accent);border-left-color:var(--accent)!important;background:linear-gradient(90deg,rgba(244,196,48,.10),rgba(244,196,48,.02))!important;font-size:17px}
+#wwm-quiz>summary .acc-num{background:linear-gradient(135deg,#b8860b,#daa520);color:#0f1117}
+.wwm-layout{display:grid;grid-template-columns:1fr 160px;gap:20px;align-items:start}
+.wwm-ladder{background:linear-gradient(180deg,#0c2056,#061840);border:1px solid rgba(244,196,48,.3);border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;gap:3px}
+.wwm-ladder-row{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);border:1px solid transparent;transition:.2s all;cursor:default}
+.wwm-ladder-row .wwm-qnum{width:18px;text-align:right;flex-shrink:0;font-size:10px;opacity:.6}
+.wwm-ladder-row .wwm-amount{flex:1;text-align:right;letter-spacing:.2px}
+.wwm-ladder-row.milestone{color:rgba(244,196,48,.6);border-color:rgba(244,196,48,.2);background:rgba(244,196,48,.05)}
+.wwm-ladder-row.done{color:rgba(100,220,120,.55)}
+.wwm-ladder-row.current{background:linear-gradient(90deg,rgba(244,196,48,.18),rgba(244,196,48,.08));border-color:rgba(244,196,48,.7);color:#f4c430;box-shadow:0 0 10px rgba(244,196,48,.25);font-size:12.5px}
+.wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(244,196,48,.6)}
+.wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(244,196,48,.28),rgba(244,196,48,.12))}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+.wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(244,196,48,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#f4c430;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(244,196,48,.2)}
+#wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
+#wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(244,196,48,.75);color:#f4c430;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(244,196,48,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(244,196,48,.4);cursor:pointer;transition:.2s all}
+#wwm-quiz .wwm-lifelines .chip:hover:not(.chip-used){background:radial-gradient(circle at 40% 35%,#2a4faa,#0d2060);box-shadow:0 0 22px rgba(244,196,48,.45),inset 0 1px 0 rgba(255,255,255,.15);transform:translateY(-2px) scale(1.05)}
+#wwm-quiz .task,#wwm-quiz .wwm-stage{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;margin:0}
+#wwm-quiz .task:hover,#wwm-quiz .wwm-stage:hover{box-shadow:none}
+#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{background:linear-gradient(180deg,#0f2d72 0%,#091e50 100%);color:#fff;border:2px solid #f4c430;border-radius:14px;padding:18px 22px;text-align:center;font-weight:800;font-size:19px;box-shadow:0 0 0 4px rgba(244,196,48,.12),0 6px 28px rgba(0,0,0,.5);line-height:1.6;margin-bottom:14px;position:relative;overflow:hidden}
+#wwm-quiz .task .prompt::before,#wwm-quiz .wwm-stage .prompt::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(244,196,48,.07),transparent 70%);pointer-events:none}
+#wwm-quiz .task .controls .btn.primary,#wwm-quiz .wwm-stage .controls .btn.primary{background:linear-gradient(135deg,#0f3080,#1a4db5);color:#ffecb3;border:1px solid rgba(244,196,48,.5);box-shadow:0 3px 14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1)}
+#wwm-quiz .task .controls .btn.green,#wwm-quiz .wwm-stage .controls .btn.green{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#b9f6ca;border:1px solid rgba(0,230,118,.45);box-shadow:0 3px 12px rgba(0,0,0,.4)}
+#wwm-quiz .task .controls .btn.gray,#wwm-quiz .wwm-stage .controls .btn.gray{background:linear-gradient(135deg,#1e2a38,#2d3d50);color:#90a4ae;border:1px solid rgba(255,255,255,.15)}
+#wwm-quiz .section-actions .btn{background:linear-gradient(135deg,#0c2a66,#163a8a);color:#ffecb3;border:1px solid rgba(244,196,48,.4);box-shadow:0 3px 10px rgba(0,0,0,.4)}
+#wwm-quiz .section-actions .btn:hover{background:linear-gradient(135deg,#163a8a,#1e4db5)}
+#wwm-quiz .feedback{color:#ffecb3;font-size:15px;margin-top:10px}
+#wwm-quiz .feedback.ok{color:#00e676;text-shadow:0 0 10px rgba(0,230,118,.5)}
+#wwm-quiz .feedback.bad{color:#ff6b6b;text-shadow:0 0 10px rgba(255,80,80,.4)}
+#wwm-quiz .feedback.warn{color:#f4c430}
+#wwm-quiz .controls .btn:focus{outline:2px solid rgba(255,255,255,.9);outline-offset:3px}
+#wwm-quiz .controls .btn.green:focus{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.2),0 3px 12px rgba(0,0,0,.4)}
+.quiz-tip-box{margin-top:12px;padding:12px 16px;background:rgba(244,196,48,.08);border:1px solid rgba(244,196,48,.45);border-left:3px solid #f4c430;border-radius:10px;color:#fde68a;font-size:14px;line-height:1.6}
+.quiz-explanation-box{margin-top:12px;padding:12px 16px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);border-left:3px solid #00e676;border-radius:10px;color:#b9f6ca;font-size:14px;line-height:1.6}
+.quiz-streak{text-align:center;font-size:22px;font-weight:900;color:#f4c430;letter-spacing:.5px;min-height:32px;margin-bottom:10px;text-shadow:0 0 16px rgba(244,196,48,.7)}
+#wwm-quiz .result-card{background:linear-gradient(160deg,#1a4faa 0%,#0d3080 50%,#071d55 100%);border:3px solid #f4c430;box-shadow:0 0 60px rgba(244,196,48,.35),0 20px 60px rgba(0,0,0,.7);color:#fff;border-radius:20px;overflow:hidden}
+#wwm-quiz .score{color:#f4c430}
+#wwm-quiz{overflow:visible!important}
+@keyframes quizFadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question-enter{animation:quizFadeIn .45s cubic-bezier(.22,1,.36,1) forwards}
+#wwm-quiz .wwm-lifelines .chip-used{opacity:.35;cursor:not-allowed;border-color:rgba(244,196,48,.25);color:rgba(244,196,48,.4);text-decoration:line-through;box-shadow:none}
+.wwm-joker-options{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wwm-option-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(10,30,90,.9),rgba(5,18,60,.9));border:2px solid rgba(244,196,48,.5);border-radius:999px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:10px 18px;text-align:left;transition:.2s all;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.wwm-option-btn:hover{background:linear-gradient(90deg,rgba(30,70,180,.9),rgba(15,45,130,.9));border-color:#f4c430;box-shadow:0 0 16px rgba(244,196,48,.3);transform:scale(1.01)}
+.wwm-opt-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(244,196,48,.15);border:2px solid rgba(244,196,48,.6);color:#f4c430;font-size:13px;font-weight:900;flex-shrink:0}
+.wwm-phone-bubble{margin-top:14px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(5,20,60,.95),rgba(3,12,40,.95));border:2px solid rgba(100,180,255,.4);border-radius:14px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.wwm-phone-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(100,180,255,.5))}
+.wwm-phone-text{font-size:14px;color:#c5deff;line-height:1.7}
+.wwm-phone-text b{color:#f4c430}
+.wwm-phone-text em{display:inline-block;margin-top:6px;font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(100,180,255,.3);border-radius:8px;padding:4px 10px;color:#fff;font-weight:700;font-size:15px}
+.wwm-audience-box{margin-top:14px;background:linear-gradient(180deg,rgba(5,18,55,.95),rgba(3,10,36,.95));border:2px solid rgba(244,196,48,.35);border-radius:14px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.wwm-audience-title{text-align:center;font-size:13px;font-weight:800;color:#f4c430;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 8px rgba(244,196,48,.4)}
+.wwm-audience-bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:110px}
+.wwm-audience-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:160px;height:100%}
+.wwm-audience-pct{font-size:13px;font-weight:900;color:#f4c430;min-height:18px}
+.wwm-audience-bar{width:100%;min-height:4px;border-radius:6px 6px 0 0;cursor:pointer;transition:filter .2s}
+.wwm-audience-bar:hover{filter:brightness(1.2)}
+.wwm-audience-label{font-size:11px;color:rgba(255,255,255,.65);text-align:center;line-height:1.3;max-width:100%;word-break:break-word;margin-top:4px}
+
+/* === Responsive === */
+@media(max-width:600px){.level-switch button,.btn{padding:7px 13px;font-size:13px}.progress{width:160px}}
+@media(max-width:768px){.rc-grid{grid-template-columns:1fr;gap:16px}.rc-card-mid-left,.rc-card-mid-right,.rc-card-top,.rc-card-full{grid-column:auto;grid-row:auto}}
+@media(max-width:600px){.dark-toggle{position:static;display:block;margin:0 auto 8px;box-shadow:0 1px 6px rgba(0,0,0,.10)}}
+
+
+/* === Neue Karten-Zonen (v2 Refactor) === */
+.rc-zone-core{font-size:17px;font-weight:500;color:var(--text);line-height:1.5;padding:4px 0;letter-spacing:.1px}
+.rc-zone-core b{font-weight:700;color:var(--accent-strong)}
+body.dark-mode .rc-zone-core b{color:var(--accent)}
+.rc-zone-table{background:var(--accent-soft);padding:16px;border-radius:8px;font-size:15px;line-height:1.65}
+.rc-zone-table-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--accent-strong);margin-bottom:8px}
+body.dark-mode .rc-zone-table-title{color:var(--accent)}
+.rc-zone-examples{background:var(--bg-input);border:1px solid var(--border);padding:12px 16px;border-radius:8px;font-size:16px;line-height:1.7;display:flex;gap:10px;align-items:flex-start}
+.rc-zone-examples-icon{flex-shrink:0;font-size:18px;line-height:1.4;padding-top:1px}
+.rc-zone-examples-body{flex:1;font-style:italic;color:var(--text)}
+.rc-zone-examples-body .ex-line{display:block;margin:2px 0}
+.rc-zone-examples-body .ex-de{font-style:normal;color:var(--text-dim);font-size:14px;margin-left:4px}
+/* Akzent-Highlight (reduzierter Pill-Style — nur EIN Wort hervorgehoben) */
+.hl-accent{font-weight:700;color:var(--accent-strong);background:var(--accent-soft);border-radius:4px;padding:0 4px;font-style:normal}
+body.dark-mode .hl-accent{color:var(--accent)}
+.hl-accent-error{font-weight:700;color:var(--error);background:var(--error-soft);border-radius:4px;padding:0 4px;font-style:normal}
+.hl-accent-info{font-weight:700;color:var(--info);background:var(--info-soft);border-radius:4px;padding:0 4px;font-style:normal}
+/* Pronomen-Tabelle (Karten 2, 3, 4) */
+.rc-table-pron{width:100%;border-collapse:collapse;font-size:15px;line-height:1.4}
+.rc-table-pron th,.rc-table-pron td{padding:8px 12px;text-align:left;vertical-align:middle;border:none}
+.rc-table-pron th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--text-dim);border-bottom:1px solid var(--border);padding-bottom:6px}
+.rc-table-pron tbody tr:nth-child(even){background:var(--accent-soft)}
+.rc-table-pron td:first-child{font-weight:600;color:var(--text);width:80px}
+.rc-table-pron td:nth-child(2){font-weight:700;color:var(--accent-strong);width:140px;font-family:'Baloo 2',monospace}
+body.dark-mode .rc-table-pron td:nth-child(2){color:var(--accent)}
+.rc-table-pron td:nth-child(3){color:var(--text-dim);font-size:14px}
+.rc-table-pron tbody tr.is-plural td:first-child::after{content:" (Pl.)";font-size:11px;font-weight:500;color:var(--text-dim);font-style:italic}
+/* Detail-Liste für Karten ohne Tabelle (Frage, Kurzantwort) */
+.rc-detail-list{margin:0;padding:0;list-style:none;font-size:15px;line-height:1.7;color:var(--text)}
+.rc-detail-list li{padding:4px 0;border-bottom:1px dashed var(--border)}
+.rc-detail-list li:last-child{border-bottom:none}
+.rc-detail-list .qa-q{font-weight:700;color:var(--info)}
+.rc-detail-list .qa-a{color:var(--text-dim);margin-left:6px}
+@media(max-width:480px){
+  .rc-card-body{padding:18px 16px;gap:12px}
+  .rc-zone-table{padding:12px}
+  .rc-zone-examples{padding:10px 12px;font-size:15px}
+  .rc-zone-core{font-size:16px}
+  .rc-table-pron{font-size:14px}
+  .rc-table-pron th,.rc-table-pron td{padding:6px 8px}
+  .rc-table-pron td:first-child{width:60px}
+  .rc-table-pron td:nth-child(2){width:90px}
+}
+
+/* ============================================================
+   LIGHT-MODE v8 — Soft-Pastel-Karten pro Kategorie, weiße Tabellen-Boxen
+   Dark-Mode bleibt separat unverändert.
+   ============================================================ */
+
+/* === Page-BG (subtiler Slate-Gradient für Tiefe) === */
+body:not(.dark-mode){
+  background:linear-gradient(180deg, #f0f4f8 0%, #f8fafc 60%, #f8fafc 100%);
+  background-attachment:fixed;
+}
+
+/* === Karten: Default weiß + Hover-Lift === */
+body:not(.dark-mode) .rc-card{
+  background:var(--bg-card);
+  box-shadow:0 1px 3px rgba(15,23,42,0.06),0 1px 2px rgba(15,23,42,0.04);
+  border:1px solid var(--border);
+}
+body:not(.dark-mode) .rc-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(15,23,42,0.10),0 2px 4px rgba(15,23,42,0.05);
+}
+
+/* === Karten-Tints pro Kategorie (Soft-Pastel) === */
+body:not(.dark-mode) .rc-card.c-amber{background:var(--accent-tint)}    /* Konzept: warm */
+body:not(.dark-mode) .rc-card.c-green{background:var(--success-tint)}   /* Aussage: mint */
+body:not(.dark-mode) .rc-card.c-teal{background:var(--warn-tint)}       /* Kurzform: warm/amber */
+body:not(.dark-mode) .rc-card.c-red{background:var(--error-tint)}       /* Verneinung: rosé */
+body:not(.dark-mode) .rc-card.c-blue{background:var(--info-tint)}       /* Frage: blau */
+body:not(.dark-mode) .rc-card.c-indigo{background:var(--indigo-tint)}   /* Kurzantwort: indigo */
+
+/* === Karten-Titel: 18px Bold, saturierte Kategorie-Farbe === */
+body:not(.dark-mode) .rc-card-label{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.1px;
+}
+body:not(.dark-mode) .rc-card.c-amber .rc-card-label{color:var(--card-amber-strong)}
+body:not(.dark-mode) .rc-card.c-green .rc-card-label{color:var(--card-green-strong)}
+body:not(.dark-mode) .rc-card.c-teal .rc-card-label{color:var(--card-teal-strong)}
+body:not(.dark-mode) .rc-card.c-red .rc-card-label{color:var(--card-red-strong)}
+body:not(.dark-mode) .rc-card.c-blue .rc-card-label{color:var(--card-blue-strong)}
+body:not(.dark-mode) .rc-card.c-indigo .rc-card-label{color:var(--card-indigo-strong)}
+
+/* Karten-Titel im Dark Mode (unverändert pastellige Helligkeit pro Kategorie) */
+body.dark-mode .rc-card.c-green .rc-card-label{color:#86efac}
+body.dark-mode .rc-card.c-red .rc-card-label{color:#fca5a5}
+body.dark-mode .rc-card.c-blue .rc-card-label{color:#93c5fd}
+body.dark-mode .rc-card.c-indigo .rc-card-label{color:#c4b5fd}
+body.dark-mode .rc-card.c-amber .rc-card-label{color:#fde68a}
+body.dark-mode .rc-card.c-teal .rc-card-label{color:#a5f3fc}
+
+/* Karten-Nummer (Wasserzeichen) sehr dezent */
+body:not(.dark-mode) .rc-card-num{opacity:.05}
+
+/* === Zone-1 (Kern-Aussage): dunkler Text, Bold-Wörter saturiert pro Kategorie === */
+body:not(.dark-mode) .rc-zone-core{color:var(--text)}
+body:not(.dark-mode) .rc-card.c-amber .rc-zone-core b{color:var(--card-amber-strong)}
+body:not(.dark-mode) .rc-card.c-green .rc-zone-core b{color:var(--card-green-strong)}
+body:not(.dark-mode) .rc-card.c-teal .rc-zone-core b{color:var(--card-teal-strong)}
+body:not(.dark-mode) .rc-card.c-red .rc-zone-core b{color:var(--card-red-strong)}
+body:not(.dark-mode) .rc-card.c-blue .rc-zone-core b{color:var(--card-blue-strong)}
+body:not(.dark-mode) .rc-card.c-indigo .rc-zone-core b{color:var(--card-indigo-strong)}
+
+/* === Zone-2 (Tabelle/Liste): rein weiße Box auf Pastell-Karte === */
+body:not(.dark-mode) .rc-zone-table{
+  background:#ffffff;
+  border:1px solid var(--border);
+  box-shadow:0 1px 2px rgba(15,23,42,0.03);
+}
+
+/* Zone-2-Heading: dunkel + Letterspacing-Uppercase, neutrale Trennlinie */
+body:not(.dark-mode) .rc-zone-table-title{
+  color:var(--text);
+  font-weight:800;
+  font-size:11.5px;
+  letter-spacing:.7px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--border-strong);
+  margin-bottom:10px;
+}
+
+/* === Pronomen-Tabelle (auf weißer Zone-2-Box) === */
+body:not(.dark-mode) .rc-table-pron th{
+  color:var(--text);
+  font-weight:800;
+  border-bottom:2px solid var(--border-strong);
+  letter-spacing:.6px;
+}
+body:not(.dark-mode) .rc-table-pron td:first-child{
+  color:var(--text);
+  font-weight:700;
+}
+body:not(.dark-mode) .rc-table-pron td:nth-child(2){
+  color:var(--text);
+  font-weight:800;
+  position:relative;
+}
+/* Spalte-2 Underline in KATEGORIE-Farbe (statt Gold) */
+body:not(.dark-mode) .rc-table-pron td:nth-child(2)::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  width:calc(100% - 24px);
+  bottom:6px;
+  height:2px;
+  background:var(--accent);
+  opacity:.7;
+  border-radius:1px;
+  pointer-events:none;
+}
+body:not(.dark-mode) .rc-card.c-amber .rc-table-pron td:nth-child(2)::after{background:var(--card-amber-strong)}
+body:not(.dark-mode) .rc-card.c-green .rc-table-pron td:nth-child(2)::after{background:var(--card-green-strong)}
+body:not(.dark-mode) .rc-card.c-teal .rc-table-pron td:nth-child(2)::after{background:var(--card-teal-strong)}
+body:not(.dark-mode) .rc-card.c-red .rc-table-pron td:nth-child(2)::after{background:var(--card-red-strong)}
+body:not(.dark-mode) .rc-card.c-blue .rc-table-pron td:nth-child(2)::after{background:var(--card-blue-strong)}
+body:not(.dark-mode) .rc-card.c-indigo .rc-table-pron td:nth-child(2)::after{background:var(--card-indigo-strong)}
+
+body:not(.dark-mode) .rc-table-pron td:nth-child(3){
+  color:var(--text-dim);
+  font-size:14.5px;
+  font-weight:500;
+}
+
+/* Zebra extrem dezent auf weißer Box */
+body:not(.dark-mode) .rc-table-pron tbody tr:nth-child(odd){background:transparent}
+body:not(.dark-mode) .rc-table-pron tbody tr:nth-child(even){background:rgba(0,0,0,0.025)}
+body.dark-mode .rc-table-pron tbody tr:nth-child(even){background:rgba(244,196,48,0.08)}
+
+/* Plural-Hinweis */
+body:not(.dark-mode) .rc-table-pron tbody tr.is-plural td:first-child::after{
+  color:var(--text-dim);
+  font-weight:600;
+}
+
+/* === Detail-Listen (Karten 1, 5, 6) === */
+body:not(.dark-mode) .rc-detail-list{
+  color:var(--text);
+  font-size:15px;
+}
+body:not(.dark-mode) .rc-detail-list li{
+  border-bottom:1px solid var(--border);
+  padding:6px 2px;
+}
+body:not(.dark-mode) .rc-detail-list li:last-child{border-bottom:none}
+body:not(.dark-mode) .rc-detail-list .qa-q{color:var(--info);font-weight:700}
+body:not(.dark-mode) .rc-detail-list .qa-a{color:var(--text);margin-left:4px}
+
+/* === Zone-3 (Beispiele): halbtransparente weiße Box mit Kategorie-Linksrand === */
+body:not(.dark-mode) .rc-zone-examples{
+  background:rgba(255,255,255,0.65);
+  border:1px solid var(--border);
+  border-left:4px solid var(--accent);
+  backdrop-filter:saturate(1.05);
+}
+body:not(.dark-mode) .rc-card.c-amber .rc-zone-examples{border-left-color:var(--card-amber-strong)}
+body:not(.dark-mode) .rc-card.c-green .rc-zone-examples{border-left-color:var(--card-green-strong)}
+body:not(.dark-mode) .rc-card.c-teal .rc-zone-examples{border-left-color:var(--card-teal-strong)}
+body:not(.dark-mode) .rc-card.c-red .rc-zone-examples{border-left-color:var(--card-red-strong)}
+body:not(.dark-mode) .rc-card.c-blue .rc-zone-examples{border-left-color:var(--card-blue-strong)}
+body:not(.dark-mode) .rc-card.c-indigo .rc-zone-examples{border-left-color:var(--card-indigo-strong)}
+body:not(.dark-mode) .rc-zone-examples-body{color:var(--text)}
+body:not(.dark-mode) .rc-zone-examples-body .ex-de{
+  color:var(--text-dim);
+  font-style:normal;
+  font-weight:500;
+  font-size:14px;
+}
+body:not(.dark-mode) .rc-zone-examples-icon{font-size:20px}
+
+/* === Akkordeons === */
+body:not(.dark-mode) details.accordion summary:hover{background:var(--bg-card-hover)}
+body:not(.dark-mode) details.accordion[open]{box-shadow:0 4px 14px rgba(15,23,42,0.08)}
+body:not(.dark-mode) #acc-aus summary:hover{background:rgba(22,163,74,0.06)}
+body:not(.dark-mode) #acc-kf summary:hover{background:rgba(212,160,23,0.06)}
+body:not(.dark-mode) #acc-vern summary:hover{background:rgba(220,38,38,0.06)}
+body:not(.dark-mode) #acc-frag summary:hover{background:rgba(37,99,235,0.06)}
+body:not(.dark-mode) #acc-ka summary:hover{background:rgba(124,58,237,0.06)}
+
+/* === Tasks === */
+body:not(.dark-mode) .task{
+  box-shadow:0 1px 3px rgba(15,23,42,0.05),0 1px 2px rgba(15,23,42,0.03);
+}
+body:not(.dark-mode) .task:hover{
+  box-shadow:0 4px 12px rgba(15,23,42,0.10),0 2px 4px rgba(15,23,42,0.05);
+}
+
+/* === Floating-Buttons (Dark-Toggle, TTS, Reset): weiß mit Slate-Schatten === */
+body:not(.dark-mode) .dark-toggle,
+body:not(.dark-mode) .tts-toggle,
+body:not(.dark-mode) .reset-all-btn{
+  background:#ffffff;
+  border:1px solid var(--border);
+  box-shadow:0 2px 8px rgba(15,23,42,0.10);
+}
+body:not(.dark-mode) .dark-toggle:hover,
+body:not(.dark-mode) .tts-toggle:hover,
+body:not(.dark-mode) .reset-all-btn:hover{
+  background:var(--bg-card-hover);
+  box-shadow:0 4px 14px rgba(15,23,42,0.14);
+}
+body:not(.dark-mode) .tts-toggle.tts-on{
+  background:var(--accent);
+  color:#1f2937;
+  border-color:var(--accent);
+  box-shadow:0 2px 12px rgba(212,160,23,0.35);
+}
+
+/* === Pill-Highlights === */
+body:not(.dark-mode) .hl-accent{background:var(--accent-soft);color:var(--accent-strong)}
+body:not(.dark-mode) .hl-accent-error{background:var(--error-soft);color:var(--error)}
+body:not(.dark-mode) .hl-accent-info{background:var(--info-soft);color:var(--info)}
+
+/* === Result-Banner === */
+body:not(.dark-mode) .result-banner{
+  background:var(--bg-card-hover);
+  border:2px solid var(--border-strong);
+  box-shadow:0 1px 3px rgba(15,23,42,0.06);
+}
+body:not(.dark-mode) .result-card{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  box-shadow:0 6px 18px rgba(15,23,42,0.08);
+}
+
+/* === Section-Title (rules-combined h2) === */
+body:not(.dark-mode) .rules-combined h2{
+  color:var(--accent-strong);
+  letter-spacing:.7px;
+}
+
+/* === Buttons === */
+body:not(.dark-mode) .btn.primary{
+  background:var(--accent);
+  color:#1f2937;
+  border-color:var(--accent);
+  box-shadow:0 2px 8px rgba(212,160,23,0.30),0 1px 2px rgba(15,23,42,0.06);
+}
+body:not(.dark-mode) .btn.primary:hover{
+  background:var(--accent-strong);
+  color:#ffffff;
+  border-color:var(--accent-strong);
+  box-shadow:0 4px 14px rgba(212,160,23,0.40),0 2px 4px rgba(15,23,42,0.08);
+}
+body:not(.dark-mode) .btn{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+}
+body:not(.dark-mode) .btn:hover{
+  background:var(--bg-card-hover);
+  border-color:var(--border-strong);
+}
+body:not(.dark-mode) .btn.gray{
+  background:var(--bg-card-hover);
+  color:var(--text);
+  border:1px solid var(--border);
+}
+body:not(.dark-mode) .btn.gray:hover{
+  background:var(--border);
+  border-color:var(--border-strong);
+}
+
+/* === Note-Box === */
+body:not(.dark-mode) .note{
+  background:var(--info-soft);
+  border:1px solid rgba(37,99,235,0.20);
+  border-left:4px solid var(--info);
+  color:var(--text);
+}
+
+/* === Level-Switch === */
+body:not(.dark-mode) .level-switch button{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+  color:var(--text);
+}
+body:not(.dark-mode) .level-switch button:hover{
+  background:var(--bg-card-hover);
+  border-color:var(--accent);
+}
+body:not(.dark-mode) .level-switch button.active{
+  background:var(--accent);
+  color:#1f2937;
+  border-color:var(--accent);
+  box-shadow:0 2px 8px rgba(212,160,23,0.30);
+}
+
+/* === MC-Optionen === */
+body:not(.dark-mode) .mc-opt{
+  background:var(--bg-card);
+  border:1px solid var(--border);
+}
+body:not(.dark-mode) .mc-opt:hover{
+  background:var(--bg-card-hover);
+  border-color:var(--accent);
+}
+body:not(.dark-mode) .mc-opt.mc-selected{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+}
+
+/* === Progress-Bar === */
+body:not(.dark-mode) .progress{
+  background:var(--bg-card-hover);
+  border:1px solid var(--border);
+}
+
+/* === Inputs === */
+body:not(.dark-mode) .task input[type="text"]{
+  background:var(--bg-card);
+  border:1px solid var(--border-strong);
+}
+body:not(.dark-mode) .task input[type="text"]:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+}
+
+/* === Solution-/Hint-Boxen === */
+body:not(.dark-mode) .solution{
+  background:var(--info-soft);
+  border:1px solid rgba(37,99,235,0.20);
+  border-left:3px solid var(--info);
+}
+body:not(.dark-mode) .hint-box{
+  background:var(--bg-card-hover);
+  border:1px dashed var(--border-strong);
+  color:var(--text);
+}
+
+/* === Word-Tiles === */
+body:not(.dark-mode) .word-tiles{
+  background:var(--bg-card-hover);
+  border-color:var(--border-strong);
+}
+body:not(.dark-mode) .word-tiles.wt-source{
+  background:var(--bg-card);
+  border-color:var(--border);
+}
+body:not(.dark-mode) .word-tiles.wt-target{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+}
+body:not(.dark-mode) .word-tile{
+  background:var(--bg-card);
+  border-color:var(--border);
+}
+
+/* === Quiz-Divider === */
+body:not(.dark-mode) .quiz-divider span{color:var(--accent-strong)}
+
+
+/* === v10: Karten-Top-Stripe-Farben pro Kategorie (Light) === */
+body:not(.dark-mode) .rc-card.c-amber{border-top-color:var(--card-amber-strong)}
+body:not(.dark-mode) .rc-card.c-green{border-top-color:var(--card-green-strong)}
+body:not(.dark-mode) .rc-card.c-teal{border-top-color:var(--card-teal-strong)}
+body:not(.dark-mode) .rc-card.c-red{border-top-color:var(--card-red-strong)}
+body:not(.dark-mode) .rc-card.c-blue{border-top-color:var(--card-blue-strong)}
+body:not(.dark-mode) .rc-card.c-indigo{border-top-color:var(--card-indigo-strong)}
+
+/* === v10: Akkordeon-Hover-Tints in den Karten-Akzent-Farben === */
+body:not(.dark-mode) #acc-aus summary:hover{background:rgba(5,150,105,0.07)}
+body:not(.dark-mode) #acc-kf summary:hover{background:rgba(234,88,12,0.07)}
+body:not(.dark-mode) #acc-vern summary:hover{background:rgba(220,38,38,0.07)}
+body:not(.dark-mode) #acc-frag summary:hover{background:rgba(37,99,235,0.07)}
+body:not(.dark-mode) #acc-ka summary:hover{background:rgba(124,58,237,0.07)}
+</style>
+<style>
+/* === File-specific overrides (carried over from original) === */
+.fc-some{background:#dcfce7;border:2px solid #16a34a;color:#14532d}
+.fc-any{background:#fee2e2;border:2px solid #ef4444;color:#7f1d1d}
+.fc-noun{background:#ecfeff;border:2px solid #0891b2;color:#164e63}
+.fc-aux{background:#fef9c3;border:2px solid #ca8a04;color:#713f12}
+.hl-some{color:#14532d;font-weight:800;background:#dcfce7;border-radius:4px;padding:0 3px}
+.hl-any{color:#7f1d1d;font-weight:800;background:#fee2e2;border-radius:4px;padding:0 3px}
+.hl-noun{color:#164e63;font-weight:800;background:#ecfeff;border-radius:4px;padding:0 3px}
+.hl-aux{color:#713f12;font-weight:800;background:#fef9c3;border-radius:4px;padding:0 3px}
+#acc-pos .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-pos summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+#acc-bitten .acc-num{background:#fbbf77;color:#a07408}
+#acc-bitten summary{border-left-color:#d4a017;background:linear-gradient(90deg,rgba(184,92,32,.14),rgba(184,92,32,.03))}
+#acc-comp .acc-num{background:#c4b5fd;color:#5b21b6}
+#acc-comp summary{border-left-color:#7c3aed;background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(124,58,237,.03))}
+#acc-fewlit .acc-num{background:#80cbc4;color:#00695c}
+#acc-fewlit summary{border-left-color:#00897b;background:linear-gradient(90deg,rgba(0,137,123,.14),rgba(0,137,123,.03))}
+#acc-mix .acc-num{background:#fde68a;color:#e65100}
+#acc-mix summary{border-left-color:#d4a017;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
+#acc-pos .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(170,200,160,.10),rgba(170,200,160,.04))}
+#acc-bitten .task{border-top-color:#d4a017;background:linear-gradient(135deg,rgba(184,92,32,.08),rgba(184,92,32,.02))}
+#acc-comp .task{border-top-color:#7c3aed;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(124,58,237,.02))}
+#acc-fewlit .task{border-top-color:#00897b;background:linear-gradient(135deg,rgba(0,137,123,.08),rgba(0,137,123,.02))}
+#acc-mix .task{border-top-color:#d4a017;background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(251,191,36,.02))}
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
+.confirm-box{background:#fff;border-radius:18px;padding:24px 22px;max-width:320px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center}
+.confirm-box p{margin:0 0 18px;font-size:16px;font-weight:600;color:#1f2937;line-height:1.5}
+.confirm-btns{display:flex;gap:10px;justify-content:center}
+.tts-btn{display:inline-flex;border:none;background:none;cursor:pointer;font-size:16px;padding:2px 4px;border-radius:6px;transition:.15s all;vertical-align:middle;-webkit-tap-highlight-color:transparent;line-height:1;flex-shrink:0}
+.tts-btn:hover{background:rgba(124,58,237,.12);transform:scale(1.15)}
+.tts-btn:active{transform:scale(.95)}
+.tts-btn.tts-playing{animation:tts-pulse .8s ease-in-out infinite}
+.prompt .tts-btn{margin-left:4px}
+.tts-flag-btn{font-size:18px!important;padding:1px 3px!important;line-height:1!important}
+body.dark-mode .confirm-box{background:#1a1d28}
+body.dark-mode .confirm-box p{color:#d1d5db}
+@media print{body>*:not(.print-frame){display:none!important}.task{border:1pt solid #ccc!important;background:#fff!important;border-radius:0!important;box-shadow:none!important;page-break-inside:avoid;margin:5pt 0;padding:8pt 10pt}.task .prompt{color:#000!important;font-weight:600}.task .controls,.task .solution,.task .feedback,.level-switch,.section-actions,.progress-wrap,.note{display:none!important}}
+#acc-cu  .acc-num{background:#fde047;color:#854d0e}
+#acc-mma .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-cu  summary{border-left-color:#ca8a04;background:linear-gradient(90deg,rgba(202,138,4,.12),rgba(202,138,4,.02))}
+#acc-mma summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(46,125,50,.12),rgba(46,125,50,.02))}
+body.dark-mode #acc-cu  summary{background:linear-gradient(90deg,rgba(202,138,4,.06),rgba(202,138,4,.01))}
+body.dark-mode #acc-mma summary{background:linear-gradient(90deg,rgba(46,125,50,.06),rgba(46,125,50,.01))}
+#acc-cu  .task{border-top-color:#ca8a04;background:linear-gradient(135deg,rgba(202,138,4,.08),rgba(202,138,4,.02))}
+#acc-mma .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(46,125,50,.08),rgba(46,125,50,.02))}
+body.dark-mode #acc-cu  .task{background:linear-gradient(135deg,rgba(202,138,4,.06),rgba(202,138,4,.01));border-top-color:#fde047}
+body.dark-mode #acc-mma .task{background:linear-gradient(135deg,rgba(46,125,50,.06),rgba(46,125,50,.01));border-top-color:#66bb6a}
+.fc-much{background:#fee2e2;border:2px solid #ef4444;color:#7f1d1d}
+.fc-many{background:#fef3c7;border:2px solid #d4a017;color:#7a3010}
+.fc-alot{background:#dcfce7;border:2px solid #16a34a;color:#14532d}
+body.dark-mode .fc-much{background:#450a0a;border-color:#ef4444;color:#fca5a5}
+body.dark-mode .fc-many{background:#0f1117;border-color:#d4a017;color:#fbbf77}
+body.dark-mode .fc-alot{background:#1e3025;border-color:#16a34a;color:#a8d4bc}
+</style>
+</head>
+<body>
+
+<div id="confirm-modal" style="display:none" class="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Fortschritt zurücksetzen?</p>
+    <div class="confirm-btns">
+      <button class="btn primary" id="confirm-ok">Ja, zurücksetzen</button>
+      <button class="btn ghost"   id="confirm-cancel">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<button class="dark-toggle"   id="dark-toggle">🌙 Dark Mode</button>
+<button class="tts-toggle"    id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" id="reset-all-btn">🗑️ Zurücksetzen</button>
+
+<header>
+  <a class="hdr-logo-link" href="../index.html" title="Zurück zum Englisch-Lernzentrum"><img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/></a>
+  <h1>much &middot; many &middot; a lot of</h1>
+  <p class="sub">Klasse 5 – Lighthouse 1, Unit 5 (LF 17, S. 155)</p>
+</header>
+
+<div class="container">
+
+<section class="rules-combined">
+<div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Regeln auf einen Blick</span></div>
+<div class="rc-grid">
+
+<div class="rc-card c-amber">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">📚 Countable / Uncountable</div>
+<div class="rc-card-num">1</div>
+<div class="rc-rule">Manche Nomen kann man <b>zählen</b> (countable), andere <b>nicht</b> (uncountable).</div>
+<div class="rc-examples-new">
+<b>countable</b> (haben einen Plural):<br>
+<i>one apple → two apples</i><br>
+<i>book, car, tomato, friend …</i><br><br>
+<b>uncountable</b> (kein Plural):<br>
+<i>cheese, fruit, music, love</i><br>
+<i>water, milk, bread, sugar …</i>
+</div>
+</div>
+</div>
+
+<div class="rc-card c-green">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">✅ Bejahter Satz</div>
+<div class="rc-card-num">2</div>
+<div class="rc-rule">In <b>bejahten Sätzen</b> nimmst du immer <b>a lot of</b> – egal ob countable oder uncountable.</div>
+<div class="rc-formula">
+  <span class="fc fc-subj">Subjekt</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">Verb</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-alot">a lot of</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-do">Nomen</span></span>
+</div>
+<div class="rc-examples-new">
+We've got <span class="hl-s">a lot of</span> apples.<br>
+I eat <span class="hl-s">a lot of</span> fruit.<br>
+She has <span class="hl-s">a lot of</span> friends.
+</div>
+</div>
+</div>
+
+<div class="rc-card c-red">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">❌ Verneinter Satz</div>
+<div class="rc-card-num">3</div>
+<div class="rc-rule">In Verneinungen unterscheidest du nach Nomen-Typ:<br><b>many</b> bei countable · <b>much</b> bei uncountable</div>
+<div class="rc-formula">
+  <span class="fc fc-neg">don't / doesn't</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-many">many</span></span><span class="fc-pair"><span class="fc-plus">/</span><span class="fc fc-much">much</span></span>
+</div>
+<div class="rc-examples-new">
+My dad doesn't watch <span class="hl-subj">many</span> films. <span style="font-size:11px;color:#6b7280">(films = countable)</span><br>
+I don't like <span class="hl-neg">much</span> sugar in my tea. <span style="font-size:11px;color:#6b7280">(sugar = uncountable)</span>
+</div>
+</div>
+</div>
+
+<div class="rc-card c-blue">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">❓ Fragen</div>
+<div class="rc-card-num">4</div>
+<div class="rc-rule">Auch in Fragen: <b>How many</b> bei countable · <b>How much</b> bei uncountable.</div>
+<div class="rc-formula">
+  <span class="fc fc-wh">How</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-many">many</span></span><span class="fc-pair"><span class="fc-plus">/</span><span class="fc fc-much">much</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-do">Nomen</span></span>
+</div>
+<div class="rc-examples-new">
+How <span class="hl-subj">many</span> apples do we need?<br>
+How <span class="hl-neg">much</span> money do you have?
+</div>
+</div>
+</div>
+
+<div class="rc-card c-indigo">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">💡 Eselsbrücke</div>
+<div class="rc-card-num">5</div>
+<div class="rc-rule">Wenn du dir unsicher bist:</div>
+<div class="rc-examples-new">
+Lassen sich die Nomen <b>zählen</b>,<br>
+musst du immer <b>many</b> wählen.<br><br>
+Bei <b>uncountable</b> (Stoffe, Begriffe): <b>much</b>.<br>
+Im bejahten Satz immer am sichersten: <b>a lot of</b>.
+</div>
+</div>
+</div>
+
+<div class="rc-card c-teal">
+<div class="rc-card-topbar"></div>
+<div class="rc-card-body">
+<div class="rc-card-label">⚠️ Häufige Fehler</div>
+<div class="rc-card-num">6</div>
+<div class="rc-examples-new">
+❌ I have <b>much</b> friends. → ✅ I have <b>many</b> friends.<br>
+❌ How <b>many</b> bread? → ✅ How <b>much</b> bread?<br>
+❌ I drink <b>much</b> water every day. → ✅ I drink <b>a lot of</b> water every day.<br>
+<span style="font-size:11px;color:#6b7280">(im bejahten Satz besser <b>a lot of</b>)</span>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<details class="accordion" id="acc-cu">
+<summary><span class="acc-num">1</span> Countable oder Uncountable?</summary>
+<div class="content">
+<div class="level-switch" id="cu-levels">
+<button class="level-btn active" data-level="1">Level 1: Erkennen</button>
+<button class="level-btn" data-level="2">Level 2: a / an / some</button>
+<button class="level-btn" data-level="3">Level 3: Tricky</button>
+</div>
+<div class="progress-wrap">
+<div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions">
+<button class="btn gray" id="cu-check-all">Alle prüfen</button>
+<button class="btn gray" id="cu-reset">Zurücksetzen</button>
+</div>
+<div id="cu-tasks"></div>
+</div>
+</details>
+
+<details class="accordion" id="acc-mma">
+<summary><span class="acc-num">2</span> much / many / a lot of</summary>
+<div class="content">
+<div class="level-switch" id="mma-levels">
+<button class="level-btn active" data-level="1">Level 1: Auswählen</button>
+<button class="level-btn" data-level="2">Level 2: Einsetzen</button>
+<button class="level-btn" data-level="3">Level 3: Umformen</button>
+</div>
+<div class="progress-wrap">
+<div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions">
+<button class="btn gray" id="mma-check-all">Alle prüfen</button>
+<button class="btn gray" id="mma-reset">Zurücksetzen</button>
+</div>
+<div id="mma-tasks"></div>
+</div>
+</details>
+
+<div id="tutor-mount"></div>
+
+<div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+<details class="accordion" id="wwm-quiz">
+<summary>🏆 Quiz</summary>
+<div class="content">
+<div class="progress-wrap" id="quiz-progress">
+<div class="progress mixed" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+<div class="progress-text">Fortschritt: 0/15 richtig (0%)</div>
+</div>
+<div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+<div id="quiz-tasks"></div>
+<div id="quiz-result" class="result-card" style="display:none"></div>
+</div>
+</details>
+
+</div>
+
+<footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
+  <div>Version 27.04.2026, 21:06</div>
+  <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+</footer>
+
+<script src="../shared/scorecards.js"></script>
+<script src="../shared/quiz.js"></script>
+
+<script>
+
+/* === HRShared stub (replaces missing ../shared/scorecards.js) === */
+if(!window.HRShared)window.HRShared={
+  shuffle:function(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;},
+  clearBanners:function(c){if(c)c.querySelectorAll('.result-banner,.error-list').forEach(b=>b.remove());},
+  checkCelebration:function(c,msg){if(!c)return;const all=c.querySelectorAll('.task');const solved=c.querySelectorAll('.task.task--solved').length;if(all.length>0&&solved===all.length){const exists=c.querySelector('.celebration-banner');if(!exists){const d=document.createElement('div');d.className='celebration-banner result-banner';d.style.cssText='background:linear-gradient(135deg,#fbbf24,#f59e0b);color:white;padding:14px 18px;border-radius:12px;text-align:center;font-weight:700;margin:14px 0;';d.textContent=msg||'Perfekt! Alles richtig!';c.prepend(d);}}},
+  showResultBanner:function(c,solved,total,opts){if(!c)return;c.querySelectorAll('.result-banner').forEach(b=>b.remove());const div=document.createElement('div');div.className='result-banner';div.style.cssText='background:#e0f2fe;border:2px solid #38bdf8;color:#0c4a6e;padding:14px 18px;border-radius:12px;margin:14px 0;font-weight:700;text-align:center;';div.innerHTML='<b>'+solved+' / '+total+' richtig</b>';c.prepend(div);if(opts&&opts.wrongItems&&opts.wrongItems.length){const ul=document.createElement('div');ul.className='error-list';ul.style.cssText='margin:10px 0;padding:10px 14px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;';ul.innerHTML='<b>Fehlerhaft:</b><br>'+opts.wrongItems.map(w=>'• '+(w.prompt||'').substring(0,80)).join('<br>');c.insertBefore(ul,div.nextSibling);}},
+  customConfirm:function(msg,onOk){if(confirm(msg))onOk();},
+  initDarkMode:function(btnId,storageKey){const btn=document.getElementById(btnId);if(!btn)return;const sav=localStorage.getItem(storageKey);if(sav==='1')document.body.classList.add('dark-mode');btn.addEventListener('click',()=>{document.body.classList.toggle('dark-mode');localStorage.setItem(storageKey,document.body.classList.contains('dark-mode')?'1':'0');});},
+  initTTS:function(btnId){const btn=document.getElementById(btnId);if(!btn)return;let active=false;btn.addEventListener('click',()=>{active=!active;btn.textContent=active?'🔊 Vorlesen aktiv':'🔊 Vorlesen';if(!active&&window.speechSynthesis)window.speechSynthesis.cancel();});document.body.addEventListener('click',e=>{if(!active||!window.speechSynthesis)return;const t=e.target.closest('.prompt,.feedback,p,h1,h2,h3,li');if(t&&!t.closest('button')){const u=new SpeechSynthesisUtterance(t.textContent);u.lang='en-US';speechSynthesis.cancel();speechSynthesis.speak(u);}});},
+  initResetAllButton:function(btnId,subResetIds,storageKeys){const btn=document.getElementById(btnId);if(!btn)return;btn.addEventListener('click',()=>{if(!confirm('Gesamten Fortschritt zurücksetzen?'))return;(storageKeys||[]).forEach(k=>localStorage.removeItem(k));(subResetIds||[]).forEach(id=>{const b=document.getElementById(id);if(b)b.click();});});}
+};
+
+/* === initProgressBar helper (used by quiz IIFE) === */
+function initProgressBar(progressRoot,total){
+  const fill=progressRoot.querySelector('.progress-fill');
+  const text=progressRoot.parentElement.querySelector('.progress-text');
+  function update(correct,done){
+    done=done!==undefined?done:correct;
+    const fp=total?Math.round((done/total)*100):0;
+    const rp=total?Math.round((correct/total)*100):0;
+    fill.style.width=fp+'%';
+    if(done===correct){text.textContent='Fortschritt: '+correct+'/'+total+' richtig ('+rp+'%)';}
+    else{text.textContent='Fortschritt: '+correct+'/'+total+' richtig - '+done+' bearbeitet';}
+    progressRoot.setAttribute('aria-valuenow',String(fp));
+  }
+  function setTotal(n){total=n;update(0,0);}
+  function resetAnimated(){fill.style.width='0%';text.textContent='Fortschritt: 0/'+total+' richtig (0%)';}
+  update(0,0);
+  return{update,setTotal,resetAnimated};
+}
+window.TUTOR_CONFIG = {
+  topic: "much / many / a lot of",
+  grade: 5,
+  unit: 5,
+  rules: [
+    "countable: Plural möglich (apple → apples)",
+    "uncountable: kein Plural (water, sugar, music)",
+    "bejahter Satz → a lot of",
+    "Verneinung/Frage + countable → many",
+    "Verneinung/Frage + uncountable → much"
+  ],
+  welcomeMessage:
+    "<strong>👋 Hallo! Ich bin dein KI-Tutor.</strong><br>" +
+    "Ich helfe dir mit <b>much, many und a lot of</b>. " +
+    "Frag mich nach den Regeln, lass mich einen Satz prüfen oder bitte um Beispiele. " +
+    "Ich gebe dir Tipps – aber keine fertigen Lösungen!",
+  quickChips: [
+    "Wann nehme ich much, wann many?",
+    "Was ist der Unterschied zwischen countable und uncountable?",
+    "Prüfe: I have much friends.",
+    "Warum sage ich „a lot of\" und nicht „much\"?"
+  ],
+  typicalErrors: [
+    "much friends statt many friends (countable!)",
+    "many bread statt much bread (uncountable!)",
+    "much in bejahten Sätzen (besser: a lot of)",
+    "a lot money ohne „of\" (richtig: a lot of money)"
+  ]
+};
+
+function mmaSave(key,val){try{localStorage.setItem('mma_'+key,JSON.stringify(val));}catch(e){}}
+function mmaLoad(key,def){try{const v=localStorage.getItem('mma_'+key);return v?JSON.parse(v):def;}catch(e){return def;}}
+
+const cuL1=[
+  {type:"mc",prompt:"Ist <b>information</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – ein Stoff/Begriff, kein Plural."},
+  {type:"mc",prompt:"Ist <b>sandwiches</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>apples</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>pencils</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>bananas</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>banana</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>tomato</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>sandwich</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>cars</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>salt</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – ein Stoff/Begriff, kein Plural."},
+  {type:"mc",prompt:"Ist <b>book</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>apple</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – kann man zählen, hat eine Mehrzahl-Form."},
+  {type:"mc",prompt:"Ist <b>coffee</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – ein Stoff/Begriff, kein Plural."},
+  {type:"mc",prompt:"Ist <b>flour</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – ein Stoff/Begriff, kein Plural."},
+  {type:"mc",prompt:"Ist <b>food</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – ein Stoff/Begriff, kein Plural."}
+,
+  {type:"mc",prompt:"Ist <b>rain</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>juice</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>window</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>rice</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>pasta</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>luggage</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>sport</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>chair</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>plate</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>table</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>toy</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>week</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>bike</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>ruler</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>baggage</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>pen</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>flower</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>glass</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>girl</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>sister</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>cheese</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>advice</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+  {type:"mc",prompt:"Ist <b>country</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>child</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>weather</b> zählbar (countable) oder nicht zählbar (uncountable)?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural möglich."},
+];
+const cuL2=[
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I have ___ apple.</i>",answer:["an"],explanation:"apple beginnt mit Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>She has ___ banana.</i>",answer:["a"],explanation:"banana beginnt mit Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I drink ___ milk every day.</i>",answer:["some"],explanation:"milk ist uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>He eats ___ orange.</i>",answer:["an"],explanation:"orange beginnt mit Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>We need ___ bread.</i>",answer:["some"],explanation:"bread ist uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There is ___ egg in the fridge.</i>",answer:["an"],explanation:"egg beginnt mit Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Mum bought ___ rice.</i>",answer:["some"],explanation:"rice ist uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I want ___ sandwich.</i>",answer:["a"],explanation:"sandwich beginnt mit Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Can I have ___ water?</i>",answer:["some"],explanation:"water ist uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There's ___ book on the table.</i>",answer:["a"],explanation:"book beginnt mit Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>She drinks ___ coffee.</i>",answer:["some"],explanation:"coffee ist uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I see ___ umbrella.</i>",answer:["an"],explanation:"umbrella beginnt mit Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Buy ___ butter, please.</i>",answer:["some"],explanation:"butter ist uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There is ___ pencil here.</i>",answer:["a"],explanation:"pencil beginnt mit Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Add ___ sugar to your tea.</i>",answer:["some"],explanation:"sugar ist uncountable → some"}
+,
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I want ___ orange juice.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>She buys ___ bottle of water.</i>",answer:["a"],explanation:"bottle → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There is ___ banana on the table.</i>",answer:["a"],explanation:"Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>He drinks ___ coffee in the morning.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Can I have ___ ice cream?</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There is ___ apple in the bowl.</i>",answer:["an"],explanation:"Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>We need ___ flour for the cake.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I see ___ elephant at the zoo.</i>",answer:["an"],explanation:"Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Mum makes ___ tea.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There is ___ cat in the garden.</i>",answer:["a"],explanation:"Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Add ___ salt, please.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Buy ___ honey at the shop.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I have ___ pen.</i>",answer:["a"],explanation:"Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>She wants ___ ice cube.</i>",answer:["an"],explanation:"Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Bring ___ bread, please.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There is ___ envelope on the desk.</i>",answer:["an"],explanation:"Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Mum cooks ___ pasta.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I have ___ idea!</i>",answer:["an"],explanation:"Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Add ___ pepper to the soup.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There's ___ horse in the field.</i>",answer:["a"],explanation:"Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Drink ___ water, please.</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>There's ___ orange in the basket.</i>",answer:["an"],explanation:"Vokal → an"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>I want ___ sandwich.</i>",answer:["a"],explanation:"Konsonant → a"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Can I have ___ rice?</i>",answer:["some"],explanation:"uncountable → some"},
+  {prompt:"Setze <b>a / an / some</b> ein:<br><i>Bring ___ milk from the fridge.</i>",answer:["some"],explanation:"uncountable → some"},
+];
+const cuL3=[
+  {type:"mc",prompt:"Ist <b>apples</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>water</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>information</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>books</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>homework</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>money</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>dollar</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>bread</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>sandwich</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>rice</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>egg</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>milk</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>friend</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."},
+  {type:"mc",prompt:"Ist <b>love</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b> – kein Plural."},
+  {type:"mc",prompt:"Ist <b>question</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b> – hat einen Plural."}
+,
+  {type:"mc",prompt:"Ist <b>fruit</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>time</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>minute</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b>"},
+  {type:"mc",prompt:"Ist <b>information</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>weather</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>sister</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b>"},
+  {type:"mc",prompt:"Ist <b>music</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>traffic</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>sport</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>window</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b>"},
+  {type:"mc",prompt:"Ist <b>help</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>luck</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>news</b> countable oder uncountable?",options:["countable","uncountable"],correct:1,answer:"uncountable",explanation:"✅ <b>uncountable</b>"},
+  {type:"mc",prompt:"Ist <b>chair</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b>"},
+  {type:"mc",prompt:"Ist <b>brother</b> countable oder uncountable?",options:["countable","uncountable"],correct:0,answer:"countable",explanation:"✅ <b>countable</b>"},
+  {prompt:"Schreibe den Plural: <i>I see one apple.</i> → I see two ___.",answer:["apples"],explanation:"countable → Plural mit -s"},
+  {prompt:"Schreibe den Plural: <i>There is one car.</i> → There are two ___.",answer:["cars"],explanation:"countable → Plural mit -s"},
+  {prompt:"Wähle: <i>How (much/many) ___ cheese?</i>",answer:["much"],explanation:"cheese ist uncountable → much"},
+  {prompt:"Wähle: <i>How (much/many) ___ apples?</i>",answer:["many"],explanation:"apples ist countable → many"},
+  {prompt:"Welcher Satz ist falsch? A: <i>I have an information.</i> B: <i>I have some information.</i>",answer:["A"],explanation:"information ist uncountable → kein 'an'"},
+  {prompt:"Welcher Satz ist richtig? A: <i>I bought a milk.</i> B: <i>I bought some milk.</i>",answer:["B"],explanation:"milk ist uncountable → some"},
+  {prompt:"Setze ein: <i>Can I have ___ apple?</i> (a/an/some)",answer:["an"],explanation:"apple beginnt mit Vokal"},
+  {prompt:"Setze ein: <i>Can I have ___ water?</i> (a/an/some)",answer:["some"],explanation:"water ist uncountable"},
+  {prompt:"Setze ein: <i>I see ___ umbrella.</i> (a/an/some)",answer:["an"],explanation:"umbrella → an"},
+  {prompt:"Setze ein: <i>She drinks ___ tea.</i> (a/an/some)",answer:["some"],explanation:"tea ist uncountable"},
+];
+const mmaL1=[
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ apples do we need?</i>",options:["many","much","a lot of"],correct:0,answer:"many",explanation:"✅ <b>many</b> – How + countable plural → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ sugar do you want?</i>",options:["many","much","a lot of"],correct:1,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I have ___ friends.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of (egal ob countable/uncountable)"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I don't have ___ money.</i>",options:["a lot of","many","much"],correct:2,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>She doesn't watch ___ films.</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – Verneinung + countable plural → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>We've got ___ apples in the basket.</i>",options:["many","a lot of","much"],correct:1,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ time do we have?</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ books do you have?</i>",options:["much","a lot of","many"],correct:2,answer:"many",explanation:"✅ <b>many</b> – How + countable plural → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There aren't ___ tomatoes left.</i>",options:["many","a lot of","much"],correct:0,answer:"many",explanation:"✅ <b>many</b> – Verneinung + countable plural → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There isn't ___ bread.</i>",options:["a lot of","much","many"],correct:1,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>My dad eats ___ fruit.</i>",options:["a lot of","many","much"],correct:0,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I don't drink ___ coffee.</i>",options:["a lot of","many","much"],correct:2,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>She has ___ shoes.</i>",options:["much","a lot of","many"],correct:1,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ water do you drink?</i>",options:["a lot of","many","much"],correct:2,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ pencils are in the box?</i>",options:["many","much","a lot of"],correct:0,answer:"many",explanation:"✅ <b>many</b> – How + countable plural → many"}
+,
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ pencils do you have?</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – How + countable plural → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ rice do we need?</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There are ___ trees in the park.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I don't have ___ time.</i>",options:["a lot of","many","much"],correct:2,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>She doesn't read ___ books.</i>",options:["a lot of","many","much"],correct:1,answer:"many",explanation:"✅ <b>many</b> – Verneinung + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>My mum makes ___ delicious cakes.</i>",options:["much","a lot of","many"],correct:1,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ children are in the class?</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – How + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ butter is in the fridge?</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I have ___ homework today.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There aren't ___ apples left.</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – Verneinung + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There isn't ___ snow this winter.</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>My brother eats ___ chocolate.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ minutes do we have?</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – How + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ flour do we need?</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>She has ___ toys.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I don't drink ___ tea.</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>My dad doesn't have ___ shirts.</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – Verneinung + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There are ___ people in the shop.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ honey do you eat?</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ tomatoes are in the bag?</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – How + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>I have ___ friends in this town.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There isn't ___ milk in the carton.</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – Verneinung + uncountable → much"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>There aren't ___ eggs in the fridge.</i>",options:["much","many","a lot of"],correct:1,answer:"many",explanation:"✅ <b>many</b> – Verneinung + countable → many"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>My grandma has ___ cats.</i>",options:["much","many","a lot of"],correct:2,answer:"a lot of",explanation:"✅ <b>a lot of</b> – Bejahter Satz → a lot of"},
+  {type:"mc",prompt:"Welches Wort passt?<br><i>How ___ water do you drink in a day?</i>",options:["much","many","a lot of"],correct:0,answer:"much",explanation:"✅ <b>much</b> – How + uncountable → much"},
+];
+const mmaL2=[
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ apples are in the basket?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>I don't drink ___ milk.</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>We have ___ friends in our class.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ sugar is in the cake?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My sister doesn't have ___ books.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>They eat ___ vegetables every day.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ time do we need?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>I don't have ___ questions.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>Mum has ___ work today.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ tomatoes do we need?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There isn't ___ butter in the fridge.</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>I have ___ homework tonight.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ money do you have?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My friend doesn't watch ___ films.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There are ___ trees in the park.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"}
+,
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ books do you read in a year?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There isn't ___ traffic today.</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My sister has ___ stickers.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ cheese is on the pizza?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>She doesn't write ___ letters.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>We drink ___ water every day.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ pencils do you need?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>I don't eat ___ chocolate.</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There are ___ stars in the sky.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ time do you spend on homework?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There aren't ___ shops in this village.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My dad has ___ work this week.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ pages does the book have?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There isn't ___ snow.</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My friends bring ___ snacks.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ money do you have?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>She doesn't have ___ toys.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>We have ___ fun at school.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ apples are in the bowl?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>There isn't ___ butter on the bread.</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My grandma cooks ___ delicious meals.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ milk do you drink?</i>",answer:["much"],explanation:"<b>much</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>How ___ days are in a week?</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>I don't have ___ ideas.</i>",answer:["many"],explanation:"<b>many</b>"},
+  {prompt:"Setze <b>much / many / a lot of</b> ein:<br><i>My brother spends ___ time on his phone.</i>",answer:["a lot of"],explanation:"<b>a lot of</b>"},
+];
+const mmaL3=[
+  {prompt:"Finde den Fehler: <i>I don't have a lot of money.</i> ist richtig oder falsch?",answer:["richtig"],explanation:"✅ Richtig! Auch in Verneinungen darf man <b>a lot of</b> verwenden — nur much/many sind dort etwas formaler."},
+  {prompt:"Wandle in eine Frage um: <i>I drink a lot of water.</i> (How …?)",answer:["How much water do you drink?","How much water do you drink"],explanation:"Frage: How <b>much</b> water do you drink? (uncountable → much)"},
+  {prompt:"Wandle in eine Frage um: <i>I have a lot of friends.</i> (How …?)",answer:["How many friends do you have?","How many friends do you have"],explanation:"Frage: How <b>many</b> friends do you have? (countable → many)"},
+  {prompt:"Verneine: <i>We have a lot of bread.</i>",answer:["We don't have much bread.","We do not have much bread."],explanation:"Verneinung + uncountable → <b>much</b>"},
+  {prompt:"Verneine: <i>She has a lot of books.</i>",answer:["She doesn't have many books.","She does not have many books."],explanation:"Verneinung + countable plural → <b>many</b>"},
+  {prompt:"Welcher Satz ist FALSCH? A: <i>I have many friends.</i> B: <i>I have a lot of friends.</i> C: <i>I have much friends.</i>",answer:["C"],explanation:"C ist falsch! Bei <i>friends</i> (countable) → many oder a lot of, aber NICHT much."},
+  {prompt:"Welcher Satz ist FALSCH? A: <i>I drink much water.</i> B: <i>I don't drink much water.</i> C: <i>I drink a lot of water.</i>",answer:["A"],explanation:"A ist falsch! In bejahten Sätzen sagt man besser <b>a lot of</b>, nicht much."},
+  {prompt:"Korrigiere: <i>How much apples do we need?</i> Schreibe das richtige Wort:",answer:["many"],explanation:"<b>apples</b> ist countable → How <b>many</b>"},
+  {prompt:"Korrigiere: <i>How many bread do you eat?</i> Schreibe das richtige Wort:",answer:["much"],explanation:"<b>bread</b> ist uncountable → How <b>much</b>"},
+  {prompt:"Setze ein: <i>I don't drink ___ tea, but I drink ___ water.</i>",answer:["much, a lot of","much / a lot of"],explanation:"Verneinung + uncountable → <b>much</b>; bejahter Satz → <b>a lot of</b>"},
+  {prompt:"Welcher Satz ist richtig? A: <i>How many money?</i> B: <i>How much money?</i>",answer:["B"],explanation:"B ist richtig — money ist uncountable → much."},
+  {prompt:"Welcher Satz ist richtig? A: <i>How many friends?</i> B: <i>How much friends?</i>",answer:["A"],explanation:"A ist richtig — friends ist countable → many."},
+  {prompt:"Setze ein: <i>There aren't ___ eggs in the fridge.</i>",answer:["many"],explanation:"Verneinung + countable plural → <b>many</b>"},
+  {prompt:"Setze ein: <i>There isn't ___ time.</i>",answer:["much"],explanation:"Verneinung + uncountable → <b>much</b>"},
+  {prompt:"Schreib den Satz mit „a lot of\" um: <i>She doesn't have many friends.</i> → <i>She has ___.</i>",answer:["a lot of friends","a lot of friends."],explanation:"Bejahter Satz → <b>a lot of</b>"}
+,
+  {prompt:"Wandle in eine Frage um: <i>I have a lot of brothers.</i>",answer:["How many brothers do you have?","How many brothers do you have"],explanation:"Frage: How many brothers do you have?"},
+  {prompt:"Wandle in eine Frage um: <i>I drink a lot of milk.</i>",answer:["How much milk do you drink?","How much milk do you drink"],explanation:"Frage: How much milk do you drink?"},
+  {prompt:"Wandle in eine Frage um: <i>I have a lot of pets.</i>",answer:["How many pets do you have?","How many pets do you have"],explanation:"Frage: How many pets do you have?"},
+  {prompt:"Wandle in eine Frage um: <i>She eats a lot of bread.</i>",answer:["How much bread does she eat?","How much bread does she eat"],explanation:"Frage: How much bread does she eat?"},
+  {prompt:"Wandle in eine Frage um: <i>They have a lot of cars.</i>",answer:["How many cars do they have?","How many cars do they have"],explanation:"Frage: How many cars do they have?"},
+  {prompt:"Wandle in eine Frage um: <i>He drinks a lot of water.</i>",answer:["How much water does he drink?","How much water does he drink"],explanation:"Frage: How much water does he drink?"},
+  {prompt:"Verneine: <i>We have a lot of cheese.</i>",answer:["We don't have much cheese.","We do not have much cheese."],explanation:"We don't have much cheese."},
+  {prompt:"Verneine: <i>She has a lot of friends.</i>",answer:["She doesn't have many friends.","She does not have many friends."],explanation:"She doesn't have many friends."},
+  {prompt:"Verneine: <i>They eat a lot of meat.</i>",answer:["They don't eat much meat.","They do not eat much meat."],explanation:"They don't eat much meat."},
+  {prompt:"Verneine: <i>I drink a lot of coffee.</i>",answer:["I don't drink much coffee.","I do not drink much coffee."],explanation:"I don't drink much coffee."},
+  {prompt:"Verneine: <i>He has a lot of toys.</i>",answer:["He doesn't have many toys.","He does not have many toys."],explanation:"He doesn't have many toys."},
+  {prompt:"Welcher Satz ist FALSCH? A: <i>I have many friends.</i> B: <i>I have much friends.</i> C: <i>I have a lot of friends.</i>",answer:["B"],explanation:"much + countable plural ist falsch"},
+  {prompt:"Welcher Satz ist FALSCH? A: <i>How much sugar?</i> B: <i>How many sugar?</i> C: <i>I don't have much sugar.</i>",answer:["B"],explanation:"many + uncountable ist falsch"},
+  {prompt:"Welcher Satz ist RICHTIG? A: <i>How much books?</i> B: <i>How many books?</i>",answer:["B"],explanation:"books = countable → many"},
+  {prompt:"Welcher Satz ist RICHTIG? A: <i>How much water?</i> B: <i>How many water?</i>",answer:["A"],explanation:"water = uncountable → much"},
+  {prompt:"Welcher Satz ist FALSCH? A: <i>There aren't many cookies.</i> B: <i>There aren't much cookies.</i>",answer:["B"],explanation:"much + countable plural ist falsch"},
+  {prompt:"Korrigiere: <i>How much apples are there?</i>",answer:["How many apples are there?"],explanation:"apples = countable → many"},
+  {prompt:"Korrigiere: <i>How many milk do you drink?</i>",answer:["How much milk do you drink?"],explanation:"milk = uncountable → much"},
+  {prompt:"Korrigiere: <i>I have much friends.</i>",answer:["I have a lot of friends.","I have many friends."],explanation:"Bejahter Satz: a lot of (oder many)"},
+  {prompt:"Korrigiere: <i>There are much eggs.</i>",answer:["There are a lot of eggs.","There are many eggs."],explanation:"eggs = countable plural"},
+  {prompt:"Setze ein: <i>I have ___ time but ___ friends.</i>",answer:["a lot of, a lot of","a lot of / a lot of"],explanation:"Beide bejahte Aussagen → a lot of"},
+  {prompt:"Setze ein: <i>There aren't ___ cookies.</i>",answer:["many"],explanation:"Verneinung + countable → many"},
+  {prompt:"Setze ein: <i>There isn't ___ bread.</i>",answer:["much"],explanation:"Verneinung + uncountable → much"},
+  {prompt:"Setze ein: <i>How ___ children?</i>",answer:["many"],explanation:"How + countable → many"},
+  {prompt:"Setze ein: <i>How ___ flour?</i>",answer:["much"],explanation:"How + uncountable → much"},
+];
+const quizPool=[
+  {prompt:"Welches Wort passt?<br><i>How ___ apples do you have?</i>",options:["much","many","a lot of","some"],correct:1,tip:"How + countable plural → <b>many</b>",explanation:"✅ <b>many</b> – apples ist countable plural.",d:1},
+  {prompt:"Welches Wort passt?<br><i>How ___ sugar do you want?</i>",options:["much","many","a lot of","some"],correct:0,tip:"How + uncountable → <b>much</b>",explanation:"✅ <b>much</b> – sugar ist uncountable.",d:1},
+  {prompt:"Was ist countable?",options:["water","milk","sugar","apples"],correct:3,tip:"countable = man kann zählen, hat einen Plural",explanation:"✅ <b>apples</b> – die anderen sind alle uncountable.",d:1},
+  {prompt:"Was ist uncountable?",options:["books","apples","water","cars"],correct:2,tip:"uncountable = kein Plural möglich",explanation:"✅ <b>water</b> – die anderen sind countable.",d:1},
+  {prompt:"Welches Wort passt?<br><i>I don't drink ___ coffee.</i>",options:["many","much","a lot of","a lot"],correct:1,tip:"Verneinung + uncountable → <b>much</b>",explanation:"✅ <b>much</b> – Verneinung mit uncountable.",d:2},
+  {prompt:"Welches Wort passt?<br><i>I have ___ friends in my class.</i>",options:["much","many friends","a lot of","an"],correct:2,tip:"Bejahter Satz → <b>a lot of</b>",explanation:"✅ <b>a lot of</b> – in bejahten Sätzen besser als many.",d:2},
+  {prompt:"Welcher Satz ist FALSCH?",options:["I have many books.","I have a lot of books.","I have much books.","I don't have many books."],correct:2,tip:"books ist countable → many oder a lot of, NICHT much",explanation:"❌ <b>I have much books.</b> – falsch! books ist countable.",d:2},
+  {prompt:"Welches Wort passt?<br><i>She doesn't have ___ time.</i>",options:["many","an","a lot","much"],correct:3,tip:"Verneinung + uncountable → <b>much</b>",explanation:"✅ <b>much</b> – time ist uncountable.",d:2},
+  {prompt:"Welcher Satz ist richtig?",options:["How much apples?","How many apples?","How a lot of apples?","How some apples?"],correct:1,tip:"apples ist countable → <b>many</b>",explanation:"✅ <b>How many apples?</b>",d:2},
+  {prompt:"Welcher Satz ist KORREKT?",options:["I don't have many money.","I don't have much money.","I don't have a money.","I don't have any much money."],correct:1,tip:"money ist uncountable → much",explanation:"✅ <b>I don't have much money.</b> – money ist uncountable.",d:3},
+  {prompt:"Frage zu <i>I have many friends.</i>",options:["How much friends do you have?","How many friends do you have?","Do you have many friends?","Both B and C are correct."],correct:3,tip:"How + countable → many; und ja/nein-Frage geht auch",explanation:"✅ Beide B und C sind grammatisch richtig.",d:3},
+  {prompt:"Welcher Satz ist FALSCH?",options:["I drink a lot of milk.","I don't drink much milk.","How much milk do you drink?","I drink much milk every day."],correct:3,tip:"In bejahten Sätzen ist much ungewöhnlich – besser a lot of",explanation:"❌ <b>I drink much milk every day.</b> – im bejahten Satz nimmt man <b>a lot of</b>.",d:3},
+  {prompt:"Setze richtig ein:<br><i>How ___ homework do you have?</i>",options:["many","much","a lot of","an"],correct:1,tip:"homework ist uncountable!",explanation:"✅ <b>much</b> – homework ist uncountable (kein Plural homeworks).",d:3},
+  {prompt:"Welche Antwort passt?<br><i>Do you have a lot of books? – Yes, I have ___.</i>",options:["a lot","many","much","a lot of"],correct:0,tip:"Ohne Nomen dahinter → <b>a lot</b> (ohne of)",explanation:"✅ <b>a lot</b> – ohne folgendes Nomen kein „of\".",d:3},
+  {prompt:"Welcher Satz ist grammatisch RICHTIG?",options:["There isn't many bread left.","There aren't much eggs left.","There isn't much bread left.","There isn't a lot bread left."],correct:2,tip:"bread = uncountable → isn't + much",explanation:"✅ <b>There isn't much bread left.</b> – uncountable → much.",d:3}
+,
+  {prompt:"Welches Wort passt?<br><i>How ___ tomatoes do you need?</i>",options:["much","many","a lot of","some"],correct:1,tip:"How + countable plural → many",explanation:"✅ many",d:1},
+  {prompt:"Welches Wort passt?<br><i>How ___ butter is on the bread?</i>",options:["much","many","a lot of","some"],correct:0,tip:"How + uncountable → much",explanation:"✅ much",d:1},
+  {prompt:"Was ist countable?",options:["water","milk","cars","sugar"],correct:2,tip:"countable = man kann zählen",explanation:"✅ cars.",d:1},
+  {prompt:"Was ist uncountable?",options:["pencils","bananas","sugar","apples"],correct:2,tip:"uncountable = kein Plural",explanation:"✅ sugar.",d:1},
+  {prompt:"Was ist uncountable?",options:["chairs","tables","information","cookies"],correct:2,tip:"kein Plural",explanation:"✅ information.",d:1},
+  {prompt:"Was ist countable?",options:["bread","music","cheese","sandwiches"],correct:3,tip:"hat Plural",explanation:"✅ sandwiches.",d:1},
+  {prompt:"Welches Wort passt?<br><i>I don't drink ___ milk.</i>",options:["many","much","a lot of","a lot"],correct:1,tip:"Verneinung + uncountable → much",explanation:"✅ much.",d:2},
+  {prompt:"Welches Wort passt?<br><i>I have ___ friends.</i>",options:["much","many friends","a lot of","an"],correct:2,tip:"Bejahter Satz → a lot of",explanation:"✅ a lot of.",d:2},
+  {prompt:"Welcher Satz ist FALSCH?",options:["I have many books.","I have a lot of books.","I have much books.","I don't have many books."],correct:2,tip:"much + countable plural",explanation:"❌ I have much books.",d:2},
+  {prompt:"Welcher Satz ist FALSCH?",options:["How much sugar?","How many sugar?","How much milk?","How many books?"],correct:1,tip:"many + uncountable",explanation:"❌ How many sugar?",d:2},
+  {prompt:"Welches Wort passt?<br><i>There aren't ___ apples left.</i>",options:["much","many","a lot","an"],correct:1,tip:"Verneinung + countable → many",explanation:"✅ many.",d:2},
+  {prompt:"Welches Wort passt?<br><i>She has ___ work today.</i>",options:["many","much","a lot of","an"],correct:2,tip:"Bejahter Satz mit work (uncountable) → a lot of",explanation:"✅ a lot of.",d:2},
+  {prompt:"Welches Wort passt?<br><i>How ___ time do we have?</i>",options:["much","many","a lot of","some"],correct:0,tip:"How + uncountable → much",explanation:"✅ much.",d:2},
+  {prompt:"Welches Wort passt?<br><i>How ___ minutes do we have?</i>",options:["much","many","a lot of","some"],correct:1,tip:"How + countable → many",explanation:"✅ many.",d:2},
+  {prompt:"Welcher Satz ist RICHTIG?",options:["I drink much water.","I don't drink much water.","I drink many water.","I have much friends."],correct:1,tip:"much in Verneinung OK",explanation:"✅ I don't drink much water.",d:2},
+  {prompt:"Korrigiere: <i>How much books are there?</i>",options:["How many books are there?","How much books are there?","How many book are there?","How much books is there?"],correct:0,tip:"books → many",explanation:"✅ How many books are there?",d:3},
+  {prompt:"Welche Frage ist richtig zu <i>I drink a lot of juice.</i>?",options:["How much juice do you drink?","How many juice do you drink?","How much juices do you drink?","How many juices?"],correct:0,tip:"juice = uncountable → much",explanation:"✅ How much juice do you drink?",d:3},
+  {prompt:"Wann benutzt man <i>much</i>?",options:["bei countable plural","bei uncountable","immer in Fragen","immer in bejahten Sätzen"],correct:1,tip:"much = uncountable",explanation:"✅ bei uncountable.",d:3},
+  {prompt:"Wann benutzt man <i>many</i>?",options:["bei uncountable","bei Singular","bei countable plural","nur in Fragen"],correct:2,tip:"many = countable plural",explanation:"✅ bei countable plural.",d:3},
+  {prompt:"Wann benutzt man besonders gerne <i>a lot of</i>?",options:["nur in Fragen","nur in Verneinungen","in bejahten Sätzen","nie"],correct:2,tip:"a lot of = bejahter Satz",explanation:"✅ in bejahten Sätzen.",d:3},
+  {prompt:"Welcher Satz ist FALSCH?",options:["She has many cousins.","She has a lot of cousins.","She has much cousins.","Does she have many cousins?"],correct:2,tip:"much + countable plural",explanation:"❌ She has much cousins.",d:3},
+  {prompt:"Wandle um: <i>I have a lot of cats.</i> → How …?",options:["How much cats do you have?","How many cats do you have?","How many cat?","How much cat?"],correct:1,tip:"cats = countable plural → many",explanation:"✅ How many cats do you have?",d:3},
+  {prompt:"Wandle um: <i>I drink a lot of tea.</i> → How …?",options:["How many tea?","How much tea do you drink?","How many teas do you drink?","How much teas?"],correct:1,tip:"tea = uncountable → much",explanation:"✅ How much tea do you drink?",d:3},
+  {prompt:"Verneine: <i>We have a lot of bread.</i>",options:["We have much bread.","We don't have much bread.","We don't have many bread.","We don't have any bread."],correct:1,tip:"Verneinung + uncountable → much",explanation:"✅ We don't have much bread.",d:3},
+  {prompt:"Setze ein: <i>I don't have ___ time but I have ___ friends.</i>",options:["much / a lot of","many / many","a lot of / much","much / much"],correct:0,tip:"Verneinung+uncountable → much; bejaht+countable → a lot of/many",explanation:"✅ much / a lot of",d:3},
+];
+
+
+function renderTask(task,idx,secKey){
+  const shuf=HRShared.shuffle;
+  let html='<div class="task" id="task-'+secKey+'-'+idx+'">';
+  if(task.type==='mc'){
+    html+='<span class="task-type-badge badge-mc">Multiple Choice</span>';
+    html+='<div class="prompt">'+task.prompt+'</div>';
+    html+='<div class="mc-options">';
+    task.options.forEach((opt,i)=>{
+      const isCorrect=i===task.correct;
+      html+='<div class="mc-opt" data-opt="'+i+'" data-correct="'+isCorrect+'"><span class="mc-letter">'+String.fromCharCode(65+i)+'</span><span>'+opt+'</span></div>';
+    });
+    html+='</div>';
+  }else{
+    html+='<span class="task-type-badge badge-frei">Freitext</span>';
+    html+='<div class="prompt">'+task.prompt+'</div>';
+    html+='<input type="text" class="task-input" placeholder="Antwort eingeben..." />';
+    if(task.explanation){html+='<div class="solution">'+task.explanation+'</div>';}
+  }
+  html+='<div class="controls" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">';
+  html+='<button class="btn blue task-check">Prüfen</button>';
+  html+='<button class="btn ghost task-show">Lösung zeigen</button>';
+  html+='</div>';
+  html+='<div class="feedback"></div>';
+  html+='</div>';
+  return html;
+}
+
+function setupSection(secKey,lvlSwitch,tasksDiv,pools,checkAllBtn,resetBtn){
+  let currentLevel=1;
+  let taskStates=mmaLoad(secKey+'_states',{})||{};
+
+  function renderTasks(){
+    tasksDiv.innerHTML='';
+    if(window.HRShared&&HRShared.clearBanners)HRShared.clearBanners(tasksDiv);
+    const pool=pools[currentLevel]||[];
+    const PICK=15;
+    const shuffled=pool.slice();
+    for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
+    const picked=shuffled.slice(0,Math.min(PICK,shuffled.length));
+    picked.forEach((task,idx)=>{
+      const taskId=currentLevel+'-'+idx;
+      tasksDiv.insertAdjacentHTML('beforeend',renderTask(task,idx,secKey));
+      const taskEl=tasksDiv.querySelector('#task-'+secKey+'-'+idx);
+      if(taskStates[taskId]==='solved')taskEl.classList.add('task--solved');
+      const checkBtn=taskEl.querySelector('.task-check');
+      const showBtn=taskEl.querySelector('.task-show');
+      const feedback=taskEl.querySelector('.feedback');
+      const input=taskEl.querySelector('.task-input');
+
+      if(task.type==='mc'){
+        const opts=taskEl.querySelectorAll('.mc-opt');
+        opts.forEach(o=>o.addEventListener('click',()=>{
+          if(taskEl.classList.contains('task--solved'))return;
+          opts.forEach(x=>x.classList.remove('mc-selected','mc-correct','mc-wrong'));
+          o.classList.add('mc-selected');
+        }));
+        if(checkBtn)checkBtn.addEventListener('click',()=>{
+          if(taskEl.classList.contains('task--solved'))return;
+          const sel=taskEl.querySelector('.mc-opt.mc-selected');
+          if(!sel){feedback.textContent='Bitte wähle eine Antwort.';feedback.className='feedback warn';return;}
+          const correct=sel.dataset.correct==='true';
+          opts.forEach(x=>x.classList.add('mc-disabled'));
+          if(correct){
+            sel.classList.add('mc-correct');
+            feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+            taskEl.classList.add('task--solved');
+            taskStates[taskId]='solved';mmaSave(secKey+'_states',taskStates);
+          }else{
+            sel.classList.add('mc-wrong');
+            const corr=Array.from(opts).find(x=>x.dataset.correct==='true');
+            if(corr)corr.classList.add('mc-correct');
+            feedback.innerHTML='✗ Falsch! Richtig: <b>'+(corr?corr.textContent:'')+'</b>';
+            feedback.className='feedback bad';
+            taskEl.classList.add('task--wrong');
+          }
+          updateProgress();
+          setTimeout(()=>HRShared.checkCelebration(tasksDiv,'🎉 Perfekt! Du hast alles gelöst!'),300);
+        });
+      }else{
+        if(checkBtn)checkBtn.addEventListener('click',()=>{
+          if(taskEl.classList.contains('task--solved'))return;
+          const val=(input.value||'').trim().toLowerCase();
+          const correctList=task.answer.map(a=>a.toLowerCase().trim());
+          const isCorrect=correctList.includes(val);
+          if(isCorrect){
+            feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+            input.disabled=true;
+            taskEl.classList.add('task--solved');
+            taskStates[taskId]='solved';mmaSave(secKey+'_states',taskStates);
+          }else{
+            feedback.innerHTML='✗ Falsch! Lösung: <b>'+task.answer.join(' / ')+'</b>';
+            feedback.className='feedback bad';
+            taskEl.classList.add('task--wrong');
+          }
+          updateProgress();
+          setTimeout(()=>HRShared.checkCelebration(tasksDiv,'🎉 Perfekt! Du hast alles gelöst!'),300);
+        });
+        if(showBtn)showBtn.addEventListener('click',()=>{
+          const sol=taskEl.querySelector('.solution');
+          if(sol)sol.style.display='block';
+        });
+      }
+    });
+  }
+
+  function updateProgress(){
+    const all=tasksDiv.querySelectorAll('.task');
+    const solved=tasksDiv.querySelectorAll('.task.task--solved').length;
+    const pct=all.length>0?Math.round(solved/all.length*100):0;
+    const wrap=lvlSwitch?lvlSwitch.parentNode:tasksDiv.parentNode;
+    const prog=wrap.querySelector('.progress-fill');
+    const txt=wrap.querySelector('.progress-text');
+    if(prog)prog.style.width=pct+'%';
+    if(txt)txt.textContent='Fortschritt: '+solved+'/'+all.length+' richtig ('+pct+'%)';
+  }
+
+  if(lvlSwitch){
+    lvlSwitch.querySelectorAll('.level-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        lvlSwitch.querySelectorAll('.level-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLevel=+btn.dataset.level;
+        renderTasks();updateProgress();
+      });
+    });
+  }
+  if(checkAllBtn)checkAllBtn.addEventListener('click',()=>{
+    tasksDiv.querySelectorAll('.task-check').forEach(btn=>btn.click());
+    const all=tasksDiv.querySelectorAll('.task').length;
+    const solved=tasksDiv.querySelectorAll('.task.task--solved').length;
+    const wrongItems=[];
+    tasksDiv.querySelectorAll('.task.task--wrong').forEach(t=>{
+      const p=t.querySelector('.prompt');
+      wrongItems.push({prompt:p?p.textContent:''});
+    });
+    HRShared.showResultBanner(tasksDiv,solved,all,{wrongItems:wrongItems});
+  });
+  if(resetBtn)resetBtn.addEventListener('click',()=>{
+    HRShared.customConfirm('Diese Sektion zurücksetzen?',()=>{
+      taskStates={};mmaSave(secKey+'_states',{});
+      renderTasks();updateProgress();
+    });
+  });
+  renderTasks();updateProgress();
+}
+
+setupSection('cu', document.getElementById('cu-levels'), document.getElementById('cu-tasks'),
+  {1:cuL1,2:cuL2,3:cuL3},
+  document.getElementById('cu-check-all'), document.getElementById('cu-reset'));
+setupSection('mma', document.getElementById('mma-levels'), document.getElementById('mma-tasks'),
+  {1:mmaL1,2:mmaL2,3:mmaL3},
+  document.getElementById('mma-check-all'), document.getElementById('mma-reset'));
+
+HRShared.initDarkMode('dark-toggle','mma_dark_v1');
+HRShared.initTTS('tts-toggle');
+HRShared.initResetAllButton('reset-all-btn',
+  ['cu-reset','mma-reset','quiz-reset'],
+  ['mma_cu_states','mma_mma_states','mma_openAcc']
+);
+
+(function initQuiz(){
+  function pickByDifficulty(pool,total){
+    function sh(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+    const d1=sh(pool.filter(q=>q.d===1));
+    const d2=sh(pool.filter(q=>q.d===2));
+    const d3=sh(pool.filter(q=>q.d===3));
+    const n1=Math.min(4,d1.length);
+    const n3=Math.min(6,d3.length);
+    const n2=Math.min(total-n1-n3,d2.length);
+    return [...d1.slice(0,n1),...d2.slice(0,n2),...d3.slice(0,n3)];
+  }
+  let tasks=pickByDifficulty(quizPool,15);
+  const total=tasks.length;
+  const wrap=document.getElementById('quiz-tasks');
+  const progressRoot=document.querySelector('#quiz-progress .progress');
+  const progressCtrl=initProgressBar(progressRoot,total);
+  const resultBox=document.getElementById('quiz-result');
+  let current=0,correct=0,wrongCount=0,wrongTasks=[],streak=0,earnedLevel=0,securedFloor=0;
+  let timerStart=null,timerInterval=null,elapsedSeconds=0;
+  const timerEl=document.createElement('div');
+  timerEl.style.cssText='font-size:13px;font-weight:700;color:#ffcc00;text-align:center;margin:4px 0 8px;letter-spacing:1px;display:none;';
+  timerEl.textContent='⏱ 0:00';
+  progressRoot.parentElement.insertAdjacentElement('afterend',timerEl);
+  function startTimer(){if(timerInterval)return;timerStart=Date.now()-elapsedSeconds*1000;timerInterval=setInterval(()=>{elapsedSeconds=Math.floor((Date.now()-timerStart)/1000);const m=Math.floor(elapsedSeconds/60);const s=String(elapsedSeconds%60).padStart(2,'0');timerEl.textContent=`⏱ ${m}:${s}`;},1000);timerEl.style.display='block';}
+  function stopTimer(){clearInterval(timerInterval);timerInterval=null;}
+  function resetTimer(){stopTimer();elapsedSeconds=0;timerStart=null;timerEl.textContent='⏱ 0:00';timerEl.style.display='none';}
+  function formatTime(sec){return `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;}
+  function updateProgress(){progressCtrl.update(correct,correct+wrongCount);}
+  const wwmAmounts=['100','200','300','500','1.000','2.000','4.000','8.000','16.000','32.000','64.000','125.000','250.000','500.000','1.000.000'];
+  const wwmMilestones=[4,9,14];
+  function buildLadder(questionIdx,earnedLvl){
+    const ladder=document.createElement('div');ladder.className='wwm-ladder';
+    for(let i=total-1;i>=0;i--){
+      const row=document.createElement('div');row.className='wwm-ladder-row';
+      if(wwmMilestones.includes(i))row.classList.add('milestone');
+      if(i<earnedLvl)row.classList.add('done');
+      if(i===earnedLvl)row.classList.add('current');
+      const qnum=document.createElement('span');qnum.className='wwm-qnum';qnum.textContent=i+1;
+      const amt=document.createElement('span');amt.className='wwm-amount';
+      amt.textContent=(i===earnedLvl?'▶ ':'')+wwmAmounts[i];
+      row.appendChild(qnum);row.appendChild(amt);
+      ladder.appendChild(row);
+    }
+    return ladder;
+  }
+  const jokerUsed={fifty:false,phone:false,audience:false};
+  let currentBtns=[];
+
+  function applyJoker(key,task,correctIdx,btns,stage){
+    stage.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(el=>el.remove());
+    const letters=['A','B','C','D'];
+    if(key==='fifty'){
+      const wrongIdxs=[0,1,2,3].filter(i=>i!==correctIdx);
+      for(let i=wrongIdxs.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[wrongIdxs[i],wrongIdxs[j]]=[wrongIdxs[j],wrongIdxs[i]];}
+      wrongIdxs.slice(0,2).forEach(i=>{
+        btns[i].style.opacity='0.15';
+        btns[i].style.pointerEvents='none';
+        btns[i].disabled=true;
+      });
+    }else if(key==='phone'){
+      const isWrong=Math.random()<0.30;
+      let answerIdx,confidence;
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        answerIdx=wi[Math.floor(Math.random()*wi.length)];
+        confidence='Ich bin nicht ganz sicher, aber ich glaube …';
+      }else{
+        answerIdx=correctIdx;
+        confidence='Da bin ich mir ziemlich sicher:';
+      }
+      const box=document.createElement('div');box.className='wwm-phone-bubble';
+      box.innerHTML=`<span class="wwm-phone-icon">📞</span><div class="wwm-phone-text"><b>Dein Freund sagt:</b><br>${confidence}<br><em style="display:block;margin-top:6px;">${letters[answerIdx]}: ${task.options[answerIdx]}</em></div>`;
+      stage.appendChild(box);
+    }else if(key==='audience'){
+      const isWrong=Math.random()<0.30;
+      const pcts=[0,0,0,0];
+      if(isWrong){
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const winner=wi[Math.floor(Math.random()*wi.length)];
+        pcts[winner]=Math.floor(Math.random()*15)+45;
+        pcts[correctIdx]=Math.floor(Math.random()*15)+10;
+        const rest=[0,1,2,3].filter(i=>i!==winner&&i!==correctIdx);
+        const r=100-pcts[winner]-pcts[correctIdx];
+        pcts[rest[0]]=Math.floor(r*0.55);
+        pcts[rest[1]]=r-pcts[rest[0]];
+      }else{
+        pcts[correctIdx]=Math.floor(Math.random()*25)+50;
+        const wi=[0,1,2,3].filter(i=>i!==correctIdx);
+        const r=100-pcts[correctIdx];
+        pcts[wi[0]]=Math.floor(r*0.45);
+        pcts[wi[1]]=Math.floor(r*0.30);
+        pcts[wi[2]]=r-pcts[wi[0]]-pcts[wi[1]];
+      }
+      const barColors=['#e8b73c','#e53935','#43a047','#f9a825'];
+      const barsHTML=pcts.map((p,i)=>`<div class="wwm-audience-col" style="cursor:pointer" data-idx="${i}"><div class="wwm-audience-pct">${p}%</div><div class="wwm-audience-bar" style="height:${Math.max(p,4)}%;background:${barColors[i]};border-radius:4px 4px 0 0;"></div><div class="wwm-audience-label">${letters[i]}</div></div>`).join('');
+      const box=document.createElement('div');box.className='wwm-audience-box';
+      box.innerHTML=`<div class="wwm-audience-title">📊 Publikumsjoker</div><div class="wwm-audience-bars" style="align-items:flex-end;height:110px;">${barsHTML}</div>`;
+      stage.appendChild(box);
+      box.querySelectorAll('[data-idx]').forEach(col=>{
+        col.addEventListener('click',()=>{
+          const idx=parseInt(col.dataset.idx);
+          if(btns[idx]&&!btns[idx].disabled)btns[idx].click();
+        });
+      });
+    }
+  }
+
+  function renderQuestion(){
+    if(current>=total){showFinal();return;}
+    startTimer();
+    wrap.innerHTML='';
+    const t=tasks[current];
+    const opts=t.options;
+    const correctIdx=t.correct;
+    currentBtns=[];
+    const fw=document.createElement('div');fw.className='quiz-question-enter';
+    const streakEl=document.createElement('div');streakEl.className='quiz-streak';
+    if(streak>=3)streakEl.textContent=`🔥 ${streak}er-Serie!`;
+    fw.appendChild(streakEl);
+    const lifelines=document.createElement('div');lifelines.className='wwm-lifelines';
+    const layout=document.createElement('div');layout.className='wwm-layout';
+    const stage=document.createElement('div');stage.className='wwm-stage';
+    [{key:'audience',label:'👥 Publikum'},{key:'phone',label:'📞 Joker'},{key:'fifty',label:'50:50'}].forEach(j=>{
+      const used=jokerUsed[j.key];
+      const chip=document.createElement('button');chip.className='chip'+(used?' chip-used':'');
+      chip.textContent=j.label;chip.disabled=used;chip.type='button';
+      chip.addEventListener('click',()=>{
+        if(jokerUsed[j.key])return;
+        jokerUsed[j.key]=true;chip.classList.add('chip-used');chip.disabled=true;
+        applyJoker(j.key,t,correctIdx,currentBtns,stage);
+      });
+      lifelines.appendChild(chip);
+    });
+    fw.appendChild(lifelines);
+    const prompt=document.createElement('div');prompt.className='prompt';prompt.innerHTML=t.prompt;
+    stage.appendChild(prompt);
+    const optWrap=document.createElement('div');optWrap.className='wwm-joker-options';
+    const letters=['A','B','C','D'];
+    let answered=false;
+    opts.forEach((optText,i)=>{
+      const btn=document.createElement('button');btn.className='wwm-option-btn';btn.type='button';
+      btn.innerHTML=`<span class="wwm-opt-letter">${letters[i]}</span>${optText}`;
+      btn.addEventListener('click',()=>{
+        if(answered)return;
+        answered=true;
+        currentBtns.forEach(b=>b.disabled=true);
+        currentBtns.forEach((b,bi)=>{
+          const letter=b.querySelector('.wwm-opt-letter');
+          if(bi===correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#1b5e20,#2e7d32);border-color:#4caf50;';if(letter)letter.style.cssText='background:rgba(76,175,80,.3);border-color:#4caf50;color:#b9f6ca;';}
+          else if(bi===i&&i!==correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#7f0000,#b71c1c);border-color:#ef5350;';if(letter)letter.style.cssText='background:rgba(239,83,80,.3);border-color:#ef5350;color:#ffcdd2;';}
+        });
+        const isCorrect=i===correctIdx;
+        if(isCorrect){
+          fb.textContent='✓ Richtig!';fb.className='feedback ok';
+          correct++;streak++;earnedLevel++;
+          if(wwmMilestones.includes(earnedLevel-1))securedFloor=earnedLevel-1;
+          if(t.explanation){eb.innerHTML=t.explanation;eb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn green';nb.dataset.next='1';nb.textContent='Weiter →';nb.type='button';
+          nb.addEventListener('click',()=>{updateProgress();current++;renderQuestion();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }else{
+          fb.innerHTML=`✗ Falsch! Richtige Antwort: <b>${letters[correctIdx]}: ${opts[correctIdx]}</b>`;fb.className='feedback bad';
+          wrongTasks.push({...t,_questionNumber:current+1,_userInput:`${letters[i]}: ${opts[i]}`});
+          wrongCount++;streak=0;
+          const floor=wwmMilestones.filter(m=>m<=earnedLevel).pop();earnedLevel=floor!==undefined?floor:0;
+          if(t.explanation){eb.innerHTML=t.explanation.replace('✅','💡');eb.style.display='block';}
+          if(t.tip){tb.innerHTML=`💡 <b>Tipp:</b> ${t.tip}`;tb.style.display='block';}
+          const nb=document.createElement('button');nb.className='btn gray';nb.dataset.next='1';nb.textContent='Ergebnis ansehen →';nb.type='button';
+          nb.addEventListener('click',()=>{updateProgress();showFinal();});
+          ctrl.appendChild(nb);setTimeout(()=>nb.focus(),50);
+        }
+      });
+      optWrap.appendChild(btn);
+      currentBtns.push(btn);
+    });
+    stage.appendChild(optWrap);
+    const fb=document.createElement('div');fb.className='feedback';stage.appendChild(fb);
+    const tb=document.createElement('div');tb.className='quiz-tip-box';tb.style.display='none';stage.appendChild(tb);
+    const eb=document.createElement('div');eb.className='quiz-explanation-box';eb.style.display='none';stage.appendChild(eb);
+    const ctrl=document.createElement('div');ctrl.className='controls';ctrl.style.cssText='margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,204,0,.15);';stage.appendChild(ctrl);
+    layout.appendChild(stage);layout.appendChild(buildLadder(current,earnedLevel));
+    fw.appendChild(layout);wrap.appendChild(fw);
+  }
+
+  function showFinal(){
+    stopTimer();wrap.innerHTML='';
+    const pct=Math.round((correct/total)*100);const ts=formatTime(elapsedSeconds);
+    const prize=earnedLevel>0?wwmAmounts[earnedLevel-1]+' €':'0 €';
+    let emoji='',headline='',msg='';
+    if(pct===100){emoji='🏆';headline='EINE MILLION! 🎉';msg='PERFEKT! Alle 15 Fragen richtig – much, many und a lot of sitzen perfekt!';}
+    else if(pct>=90){emoji='🤩';headline='Fast perfekt – Respekt!';msg='Wow, kaum ein Fehler! much, many und a lot of sitzen perfekt.';}
+    else if(pct>=80){emoji='🌟';headline='Richtig stark, weiter so!';msg='Starke Leistung! Den Unterschied countable / uncountable hast du voll im Griff.';}
+    else if(pct>=70){emoji='😎';headline='Solide – du weißt, was du tust!';msg='Mehr als zwei Drittel richtig – das ist kein Glück, das ist Können!';}
+    else if(pct>=60){emoji='🙌';headline='Auf dem richtigen Weg!';msg='Über die Hälfte richtig – noch etwas üben (vor allem few/little ohne „a“) und du nagelst es!';}
+    else if(pct>=50){emoji='💡';headline='Halbzeit – Luft nach oben!';msg='Die Hälfte sitzt schon! Schau dir die Regeln zu some/any und a few/a little nochmal an.';}
+    else if(pct>=30){emoji='🐣';headline='Der Anfang ist gemacht!';msg='Noch ist nicht alles verloren – du weißt jetzt, wo du ansetzen musst.';}
+    else{emoji='😅';headline='Ups – aber kein Problem!';msg='Schau nochmal in die Regelkarten oben, dann klappts garantiert besser.';}
+    let errorHTML='';
+    if(wrongTasks.length>0){
+      errorHTML=`<div style="margin-top:22px;text-align:left;"><div style="font-size:16px;font-weight:900;color:#ffcc00;margin-bottom:10px;text-align:center;">📋 Deine Fehler – schau sie dir nochmal an:</div><div style="display:flex;flex-direction:column;gap:8px;">${wrongTasks.map(wt=>`<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,110,110,.45);border-radius:10px;padding:10px 14px;"><div style="font-size:12px;color:#ffb3b3;font-weight:700;margin-bottom:3px;">Frage ${wt._questionNumber}</div><div style="font-size:14px;color:#d1d5db;margin-bottom:4px;">${wt.prompt}</div><div style="font-size:14px;color:#ff6b6b;font-style:italic;margin-bottom:4px;">✗ ${wt._userInput||'–'}</div><div style="font-size:14px;color:#7fffb3;font-weight:700;">✓ ${['A','B','C','D'][wt.correct]}: ${wt.options[wt.correct]}</div>${wt.explanation?`<div style="font-size:13px;color:#c7d2fe;margin-top:5px;">${wt.explanation}</div>`:''}</div>`).join('')}</div></div>`;
+    }
+    resultBox.innerHTML=`<div style="position:relative;overflow:hidden;"><div style="height:8px;background:repeating-linear-gradient(90deg,#ffcc00 0 14%,#e8b73c 14% 28%,#e53935 28% 42%,#43a047 42% 56%,#ffcc00 56% 70%,#ab47bc 70% 84%,#e8b73c 84% 100%);"></div><div style="padding:28px 20px 24px;text-align:center;"><div style="font-size:72px;line-height:1;margin-bottom:10px;filter:drop-shadow(0 4px 12px rgba(255,204,0,.6));">${emoji}</div><div style="font-size:clamp(26px,6vw,38px);font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-bottom:6px;">${headline}</div><div style="display:inline-block;background:rgba(255,204,0,.15);border:2px solid #ffcc00;border-radius:16px;padding:14px 32px;margin:12px 0 18px;"><div style="font-size:clamp(36px,8vw,52px);font-weight:900;color:#fff;line-height:1;">${correct} <span style="font-size:.55em;color:#ffcc00;">/ ${total}</span></div><div style="font-size:16px;font-weight:700;color:#ffcc00;letter-spacing:1px;margin-top:2px;">${pct} % RICHTIG</div><div style="font-size:13px;color:rgba(255,204,0,.8);margin-top:6px;">⏱ Zeit: ${ts}</div><div style="font-size:18px;font-weight:900;color:#ffcc00;letter-spacing:.5px;margin-top:8px;">🏅 Gewonnen: ${prize}</div></div><div style="font-size:clamp(14px,3vw,17px);color:#fff;max-width:500px;margin:0 auto;line-height:1.7;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;border:1px solid rgba(255,255,255,.2);">${msg}</div>${errorHTML}</div><div style="height:8px;background:repeating-linear-gradient(90deg,#43a047 0 14%,#ffcc00 14% 28%,#ab47bc 28% 42%,#e53935 42% 56%,#e8b73c 56% 70%,#ffcc00 70% 84%,#43a047 84% 100%);"></div></div>`;
+    resultBox.style.display='block';setTimeout(()=>resultBox.scrollIntoView({behavior:'smooth',block:'nearest'}),80);
+  }
+
+  document.getElementById('quiz-reset').addEventListener('click',()=>{
+    tasks=pickByDifficulty(quizPool,15);current=0;correct=0;wrongCount=0;wrongTasks=[];streak=0;earnedLevel=0;securedFloor=0;
+    jokerUsed.fifty=false;jokerUsed.phone=false;jokerUsed.audience=false;
+    updateProgress();resetTimer();
+    progressRoot.querySelector('.progress-fill').style.width='0%';
+    document.querySelector('#quiz-progress .progress-text').textContent=`Fortschritt: 0/${total} richtig (0%)`;
+    resultBox.style.display='none';resultBox.innerHTML='';
+    renderQuestion();
+  });
+  updateProgress();
+  let quizRendered=false;
+  const qa=document.getElementById('wwm-quiz');
+  if(qa)qa.addEventListener('toggle',()=>{
+    if(!qa.open){stopTimer();}
+    else{if(!quizRendered){quizRendered=true;renderQuestion();}else if(current<total&&timerStart!==null){startTimer();}}
+  });
+})();
+
+(function(){
+  const ACC_IDS=['acc-cu','acc-mma','wwm-quiz','acc-ki'];
+  const savedOpen=mmaLoad('openAcc',null);
+  ACC_IDS.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    el.removeAttribute('open');
+    el.addEventListener('toggle',()=>{
+      if(el.open) mmaSave('openAcc',id);
+    });
+  });
+  setTimeout(()=>{
+    if(savedOpen){
+      const el=document.getElementById(savedOpen);
+      if(el){el.setAttribute('open','');el.open=true;}
+    }
+  },50);
+})();
+</script>
+
+<script src="../shared/tutor.js"></script>
+
+</body>
+</html>

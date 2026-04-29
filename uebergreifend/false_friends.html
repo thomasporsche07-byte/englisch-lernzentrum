@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>False Friends – Hellweg-Realschule</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --hr-blue:#b85c20;--hr-red:#C62828;--hr-green:#2e7d32;--hr-gray:#455A64;--ok:#2e7d32;--warn:#ef6c00;--bad:#b71c1c;
+  /* === Master-Token-System (Slate-Gold, aus 06_will_future.html) === */
+  --bg:#f8fafc;--bg-card:#ffffff;--bg-card-hover:#f1f5f9;--bg-input:#ffffff;
+  --border:#e5e7eb;--border-strong:#d1d5db;
+  --text:#1f2937;--text-dim:#4b5563;
+  --accent:#d4a017;--accent-soft:rgba(212,160,23,0.10);--accent-strong:#a07408;--accent-tint:#e2e8f0;
+  --success:#16a34a;--success-soft:rgba(22,163,74,0.08);--success-tint:#bbf7d0;
+  --error:#dc2626;--error-soft:rgba(220,38,38,0.08);--error-tint:#fecaca;
+  --info:#2563eb;--info-soft:rgba(37,99,235,0.08);--info-tint:#bfdbfe;
+}
+body.dark-mode{
+  --bg:#0f1117;--bg-card:#1a1d28;--bg-card-hover:#232634;--bg-input:#14161e;
+  --border:#2a2e3d;--border-strong:#3a3f52;
+  --text:#e8e9ed;--text-dim:#9ba0b3;
+  --accent:#f4c430;--accent-soft:rgba(244,196,48,0.12);--accent-strong:#facc15;
+  --success:#4ade80;--success-soft:rgba(74,222,128,0.10);
+  --error:#f87171;--error-soft:rgba(248,113,113,0.10);
+  --info:#60a5fa;--info-soft:rgba(96,165,250,0.10);
+}
+html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:#fef9f2;color:#2c1a0e;line-height:1.55;font-size:18px}
+.container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
+header{text-align:center;padding:20px 10px 10px}
+header img{height:70px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
+header h1{margin:10px 0 0;font-size:clamp(26px,5vw,38px);color:var(--hr-blue);letter-spacing:.2px}
+header p.sub{margin:6px 0 0;color:#7a5c3a}
+.rules-combined{margin-top:14px;background:linear-gradient(145deg,#fdf2e3 0%,#fef5e4 40%,#f5f0ff 100%);border-radius:20px;box-shadow:0 8px 28px rgba(180,90,30,.12);padding:22px 20px 18px;border:1.5px solid #e8c99a}
+.rules-combined h2{font-size:13px;color:#b85c20;margin:0 0 16px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+.rc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rc-card{border-radius:14px;padding:0;display:flex;flex-direction:column;overflow:hidden;position:relative;background:linear-gradient(135deg,#f1f5fb,#f7f9fd);border:1.5px solid #d1dae8}
+.rc-card-topbar{height:6px;width:100%;flex-shrink:0}
+.rc-card.c-green .rc-card-topbar{background:linear-gradient(90deg,#43a047,#66bb6a)}
+.rc-card.c-red .rc-card-topbar{background:linear-gradient(90deg,#e53935,#ec407a)}
+.rc-card.c-blue .rc-card-topbar{background:linear-gradient(90deg,#b85c20,#d4922e)}
+.rc-card.c-indigo .rc-card-topbar{background:linear-gradient(90deg,#3949ab,#7e57c2)}
+.rc-card.c-amber .rc-card-topbar{background:linear-gradient(90deg,#f9a825,#ffca28)}
+.rc-card.c-teal .rc-card-topbar{background:linear-gradient(90deg,#00897b,#26a69a)}
+.rc-card-body{padding:12px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+.rc-card-label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;display:flex;align-items:center;gap:5px}
+.rc-card-num{position:absolute;top:6px;right:10px;font-size:52px;font-weight:900;line-height:1;opacity:.07;pointer-events:none;user-select:none}
+.rc-card.c-green .rc-card-label{color:#1b5e20}
+.rc-card.c-red .rc-card-label{color:#880e4f}
+.rc-card.c-blue .rc-card-label{color:#8b4518}
+.rc-card.c-indigo .rc-card-label{color:#1a237e}
+.rc-card.c-amber .rc-card-label{color:#e65100}
+.rc-card.c-teal .rc-card-label{color:#00695c}
+.rc-rule{font-size:13px;color:#374151;line-height:1.55;padding:5px 10px;border-radius:9px;background:rgba(255,255,255,.7)}
+.rc-card.c-green .rc-rule{border:1px solid #a5d6a7;border-left:3px solid #a5d6a7;border-right:3px solid #a5d6a7}
+.rc-card.c-red .rc-rule{border:1px solid #ef4444;border-left:3px solid #ef4444;border-right:3px solid #ef4444}
+.rc-card.c-blue .rc-rule{border:1px solid #d97520;border-left:3px solid #d97520;border-right:3px solid #d97520}
+.rc-card.c-indigo .rc-rule{border:1px solid #6366f1;border-left:3px solid #6366f1;border-right:3px solid #6366f1}
+.rc-card.c-amber .rc-rule{border:1px solid #ca8a04;border-left:3px solid #ca8a04;border-right:3px solid #ca8a04}
+.rc-card.c-teal .rc-rule{border:1px solid #0891b2;border-left:3px solid #0891b2;border-right:3px solid #0891b2}
+.rc-examples-new{font-size:12.5px;color:#4b5563;line-height:1.75;padding:7px 10px;border-radius:8px;background:rgba(0,0,0,.04)}
+.rc-examples-new b{color:#140c04}
+.fc-tz{display:inline-block;background:#e0f7fa;border:1.5px solid #80cbc4;color:#00695c;border-radius:999px;font-weight:700;padding:3px 10px;font-size:11.5px;margin:2px 3px 2px 0}
+.hl-en{color:#1b5e20;font-weight:800;background:#dcfce7;border-radius:4px;padding:0 3px}
+.hl-de-correct{color:#1a237e;font-weight:800;background:#e0e7ff;border-radius:4px;padding:0 3px}
+.hl-de-wrong{color:#7f1d1d;font-weight:800;background:#fee2e2;border-radius:4px;padding:0 3px;text-decoration:line-through;text-decoration-color:#dc2626}
+@media(max-width:900px){.rc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.rc-grid{grid-template-columns:1fr}}
+.ff-word-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:6px}
+@media(max-width:700px){.ff-word-grid{grid-template-columns:1fr}}
+.ff-word-card{background:#fff;border:1.5px solid #e8d5b8;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ff-word-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#b8905a,#d4a574)}
+.ff-word-card.diff-1::before{background:linear-gradient(180deg,#43a047,#66bb6a)}
+.ff-word-card.diff-2::before{background:linear-gradient(180deg,#d97520,#f9a825)}
+.ff-word-card.diff-3::before{background:linear-gradient(180deg,#dc2626,#ef4444)}
+.ff-word-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-left:8px}
+.ff-en{font-size:18px;font-weight:800;color:#1b5e20}
+.ff-tags{display:flex;gap:5px;flex-wrap:wrap}
+.ff-tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:2px 9px;border-radius:999px}
+.ff-tag-diff-1{background:rgba(46,125,50,.10);border:1px solid rgba(46,125,50,.35);color:#1b5e20}
+.ff-tag-diff-2{background:rgba(217,117,32,.10);border:1px solid rgba(217,117,32,.35);color:#8b4518}
+.ff-tag-diff-3{background:rgba(198,40,40,.10);border:1px solid rgba(198,40,40,.35);color:#b91c1c}
+.ff-diff-dots{display:inline-flex;gap:2px;line-height:1}
+.ff-diff-dots span{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.15)}
+.ff-tag-diff-1 .ff-diff-dots span.on{background:#43a047}
+.ff-tag-diff-2 .ff-diff-dots span.on{background:#d97520}
+.ff-tag-diff-3 .ff-diff-dots span.on{background:#dc2626}
+.ff-row{font-size:14px;line-height:1.5;margin-left:8px;display:flex;gap:6px;align-items:flex-start}
+.ff-row-icon{flex-shrink:0;font-size:16px;line-height:1.3}
+.ff-row-text{flex:1}
+.ff-row-text b{font-weight:700}
+.ff-row-text i{color:#7a5c3a;font-style:italic;font-size:13px}
+.ff-example{margin-left:8px;font-size:13px;background:rgba(0,0,0,.04);padding:6px 10px;border-radius:8px;color:#4b5563;line-height:1.5}
+.ff-example .en{color:#1b5e20;font-weight:600}
+.ff-example .de{color:#1a237e}
+details.accordion{background:#fff;border-radius:16px;border:1px solid #e8d5b8;box-shadow:0 6px 20px rgba(0,0,0,.06);margin:16px 0;overflow:hidden}
+details.accordion summary{list-style:none;cursor:pointer;padding:14px 18px;outline:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:#140c04;border-left:5px solid transparent;transition:background .2s}
+.acc-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:14px;font-weight:900;flex-shrink:0}
+.acc-num-pair{display:inline-flex;align-items:center;gap:3px;flex-shrink:0}
+.acc-num-sub{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:900;background:#c5cae9;color:#1a237e}
+#acc-words .acc-num{background:#fbbf77;color:#8b4518}
+#acc-uebungen .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-words summary{border-left-color:#d97706;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
+#acc-uebungen summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+details.accordion[open] summary{border-bottom:1px solid #e8d5b8}
+details.accordion summary:hover{filter:brightness(.97)}
+.content{padding:18px 20px}
+.note{background:linear-gradient(135deg,#fef5e4,#fef8f0);border:1px solid #f5c070;border-left:4px solid #b85c20;padding:11px 14px;border-radius:10px;margin:6px 0 16px;color:#3d2010;font-size:14px;line-height:1.6}
+.level-switch{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}
+.level-switch button{border:2px solid #e8c99a;border-radius:999px;padding:8px 20px;font-weight:700;cursor:pointer;background:#fef5e4;color:#1e40af;transition:.2s all;font-size:14px;outline:none;font-family:inherit}
+.level-switch button:hover{background:#fde8c0;border-color:#d4922e;transform:translateY(-1px)}
+.level-switch button.active{background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;border-color:transparent;box-shadow:0 3px 10px rgba(184,92,32,.4)}
+.task{border:1px solid #e8d5b8;border-top:3px solid #b8905a;background:#fff;border-radius:14px;padding:16px 18px;margin:12px 0;line-height:1.6;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.task .prompt{margin:0 0 12px;font-weight:600;color:#140c04;line-height:1.6;font-size:15.5px}
+.task input[type="text"]{width:100%;padding:11px 16px;border:2px solid #e8d0aa;border-radius:999px;font-size:16px;outline:none;box-sizing:border-box;background:#fef8f0;color:#140c04;font-family:inherit}
+.task input[type="text"]:focus{border-color:#b85c20;background:#fff;box-shadow:0 0 0 4px rgba(184,92,32,.10)}
+.task input[type="text"]:disabled{background:#f5ece0;color:#9a7050}
+.task .controls{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.task.task--solved{border:2px solid #2e7d32;box-shadow:0 0 0 3px rgba(46,125,50,.15)}
+.task.task--solved .task-solved-label{display:block}
+.task-solved-label{display:none;font-size:12px;font-weight:700;color:#2e7d32;margin-bottom:4px}
+.task-type-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.task-type-badge.badge-mc{background:#e0f2fe;color:#b85c20;border:1px solid #f5c070}
+.task-type-badge.badge-frei{background:#f3e8ff;color:#7c3aed;border:1px solid #c4b5fd}
+.task .grade-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.4px;background:rgba(184,92,32,.15);color:#b85c20;border-radius:999px;padding:2px 8px;margin-left:6px}
+.task.task--wrong{border-color:#f87171;border-top-color:#b91c1c;background:#fff5f5!important}
+.task.task--wrong .prompt{color:#b91c1c}
+.btn{border:none;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;background:#e8d0aa;color:#3d2510;font-size:14px;transition:.15s all;font-family:inherit}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn.primary{background:linear-gradient(135deg,#C62828,#e53935);color:#fff;box-shadow:0 2px 6px rgba(198,40,40,.3)}
+.btn.blue{background:linear-gradient(135deg,#b85c20,#d4922e);color:#fff;box-shadow:0 2px 6px rgba(184,92,32,.3)}
+.btn.green{background:linear-gradient(135deg,#2e7d32,#43a047);color:#fff;box-shadow:0 2px 6px rgba(46,125,50,.3)}
+.btn.gray{background:linear-gradient(135deg,#455A64,#9a7050);color:#fff;box-shadow:0 2px 6px rgba(69,90,100,.2)}
+.btn.ghost{background:#f5ece0;color:#7a5c3a;border:1px solid #e8d0aa}
+.feedback{margin-top:8px;font-size:14px;font-weight:700;padding:4px 0}
+.solution{margin-top:8px;font-size:14px;background:linear-gradient(135deg,#f0f9ff,#fef8f0);border:1px solid #bae6fd;padding:10px 14px;border-radius:10px;display:none;line-height:1.65}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.mc-options{display:flex;flex-direction:column;gap:8px;margin:4px 0 8px}
+.mc-opt{display:flex;align-items:center;gap:10px;background:#fef8f0;border:2px solid #e8d0aa;border-radius:12px;padding:10px 14px;cursor:pointer;font-size:15px;font-weight:500;transition:.15s all;color:#2c1a0e;font-family:inherit;text-align:left;width:100%}
+.mc-opt:hover{background:#fef3e4;border-color:#93c5fd}
+.mc-opt.mc-selected{border-color:#b85c20;background:#fde8c0;font-weight:700}
+.mc-opt.mc-correct{border-color:#2e7d32;background:#dcfce7;color:#14532d}
+.mc-opt.mc-wrong{border-color:#dc2626;background:#fef2f2;color:#991b1b;text-decoration:line-through;opacity:.7}
+.mc-opt.mc-disabled{pointer-events:none;cursor:default}
+.mc-letter{width:28px;height:28px;border-radius:50%;background:#e8d0aa;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;color:#7a5c3a}
+.mc-opt.mc-correct .mc-letter{background:#2e7d32;color:#fff}
+.mc-opt.mc-wrong .mc-letter{background:#dc2626;color:#fff}
+.section-actions{display:flex;gap:8px;margin:14px 0 10px;flex-wrap:wrap}
+.progress-wrap{display:flex;align-items:center;gap:12px;margin:12px 0 10px}
+.progress{position:relative;width:260px;height:16px;background:#e8d0aa;border-radius:999px;overflow:hidden;border:none;box-shadow:inset 0 1px 3px rgba(0,0,0,.1)}
+.progress-fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:#b85c20;transition:width .3s ease;border-radius:999px}
+.progress.mixed .progress-fill{background:linear-gradient(90deg,#C62828 0%,#b85c20 100%)}
+.progress.green .progress-fill{background:linear-gradient(90deg,#2e7d32,#43a047)}
+.progress-text{font-size:13.5px;color:#7a5c3a;font-weight:600}
+.result-card{margin-top:14px;border:1px solid #e8d5b8;background:#fff;border-radius:16px;padding:14px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.score{font-size:22px;font-weight:800;margin:6px 0}
+@keyframes celebrate-pop{0%{transform:scale(0.5);opacity:0}60%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+.celebrate-banner{animation:celebrate-pop .4s ease-out;background:linear-gradient(135deg,#1b5e20,#2e7d32);border:2px solid #66bb6a;border-radius:14px;padding:14px 18px;margin:10px 0 6px;font-size:16px;font-weight:800;color:#fff;text-align:center;box-shadow:0 4px 16px rgba(46,125,50,.4)}
+body.dark-mode .celebrate-banner{background:linear-gradient(135deg,#1e1005,#1b5e20)}
+@media(max-width:600px){.level-switch button,.btn{padding:7px 13px;font-size:13px}.progress{width:160px}}
+.quiz-divider{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding:0 4px}
+.quiz-divider::before,.quiz-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(106,53,176,.35),transparent)}
+.quiz-divider span{font-size:13px;font-weight:800;color:#6a35b0;white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:#b85c20;color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);font-family:inherit}
+.dark-toggle:hover{transform:translateY(-1px);background:#8b4518}
+.tts-toggle{position:fixed;bottom:46px;left:16px;z-index:99;border:none;border-radius:999px;padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer;background:#fff;color:#b85c20;box-shadow:0 4px 16px rgba(0,0,0,.15);font-family:inherit}
+.tts-toggle:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.tts-toggle.tts-on{background:#b85c20;color:#fff;box-shadow:0 4px 20px rgba(184,92,32,.4)}
+.reset-all-btn{position:fixed;bottom:14px;left:16px;z-index:99;border:none;border-radius:999px;padding:7px 12px;font-weight:700;font-size:12px;cursor:pointer;background:#fef9f2;color:#b91c1c;box-shadow:0 3px 12px rgba(0,0,0,.15);font-family:inherit}
+.reset-all-btn:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,0,0,.2)}
+.tts-btn{display:none;border:none;background:none;cursor:pointer;font-size:16px;padding:2px 4px;border-radius:6px;vertical-align:middle;line-height:1;flex-shrink:0;font-family:inherit}
+.tts-btn:hover{background:rgba(124,58,237,.12);transform:scale(1.15)}
+.tts-btn.tts-playing{animation:tts-pulse .8s ease-in-out infinite}
+body.tts-enabled .tts-btn{display:inline-flex}
+@keyframes tts-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:600px){.dark-toggle{position:static;display:block;margin:0 auto 8px}.tts-toggle{padding:8px 13px;font-size:13px}.reset-all-btn{padding:6px 10px;font-size:11px}}
+</style>
+<style>
+body.dark-mode{background:#140c04;color:#e8d0aa}
+body.dark-mode .rules-combined{background:linear-gradient(145deg,#0f1e38 0%,#111a30 50%,#2a1408 100%);border-color:#2a3a5e}
+body.dark-mode .rules-combined h2{color:#e8a060}
+body.dark-mode .rc-card{background:linear-gradient(135deg,#1e1408,#1e2840);border-color:#3d2510}
+body.dark-mode .rc-rule{background:rgba(255,255,255,.05);color:#c8b8a0}
+body.dark-mode .rc-examples-new{background:rgba(255,255,255,.06);color:#b8905a}
+body.dark-mode .rc-examples-new b{color:#e8d0aa}
+body.dark-mode details.accordion{background:#1e1408;border-color:#3d2510}
+body.dark-mode details.accordion summary{color:#e8d0aa}
+body.dark-mode details.accordion[open] summary{border-bottom:1px solid #3d2510}
+body.dark-mode .content{background:#1e1408}
+body.dark-mode .note{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .ff-word-card{background:#1e1408;border-color:#3d2510}
+body.dark-mode .ff-en{color:#a5d6a7}
+body.dark-mode .ff-row-text{color:#e8d0aa}
+body.dark-mode .ff-row-text i{color:#9a7050}
+body.dark-mode .ff-example{background:rgba(255,255,255,.06);color:#c8b8a0}
+body.dark-mode .ff-example .en{color:#a5d6a7}
+body.dark-mode .ff-example .de{color:#c5cae9}
+body.dark-mode .task{background:#1e1408;border-color:#3d2510}
+body.dark-mode .task .prompt{color:#e8d0aa}
+body.dark-mode .task input[type="text"]{background:#140c04;color:#e8d0aa;border-color:#3d2510}
+body.dark-mode .progress{background:#1e1408;border-color:#3d2510}
+body.dark-mode .progress-text{color:#b8905a}
+body.dark-mode .solution{background:#1e1408;border-color:#3d2510;color:#b8905a}
+body.dark-mode .result-card{background:#1e1408;border-color:#3d2510}
+body.dark-mode .mc-opt{background:#1e1408;border-color:#3d2510;color:#e8d0aa}
+body.dark-mode .mc-opt:hover{background:#1e3050;border-color:#d97520}
+body.dark-mode .mc-opt.mc-correct{background:#1e1005;border-color:#22c55e;color:#86efac}
+body.dark-mode .mc-opt.mc-wrong{background:#450a0a;border-color:#ef4444;color:#fca5a5}
+body.dark-mode .mc-letter{background:#3d2510;color:#b8905a}
+body.dark-mode .level-switch button{background:#1e1408;color:#e8a060;border-color:#3d2510}
+body.dark-mode .level-switch button.active{background:linear-gradient(135deg,#d97520,#e8a060);color:#fff}
+body.dark-mode .dark-toggle{background:#3d2510;color:#e8d0aa}
+body.dark-mode .tts-toggle{background:#3d2510;color:#e8d0aa}
+body.dark-mode .tts-toggle.tts-on{background:#d97520;color:#fff}
+body.dark-mode .reset-all-btn{background:#3d2510;color:#fca5a5}
+body.dark-mode .hl-en{background:#1e1005;color:#a5d6a7}
+body.dark-mode .hl-de-correct{background:#1e1408;color:#c5cae9}
+body.dark-mode .hl-de-wrong{background:#450a0a;color:#fca5a5}
+body.dark-mode .quiz-divider span{color:#a78bfa}
+</style>
+<style>
+#wwm-quiz summary{background:radial-gradient(130% 200% at 50% -30%,#1a4db5 0%,#001a38 55%,#000d1f 100%);color:#ffcc00;border-bottom:2px solid rgba(255,204,0,.4);font-size:19px;font-weight:900;letter-spacing:.5px;text-shadow:0 0 20px rgba(255,204,0,.5),0 2px 8px rgba(0,0,0,.8)}
+#wwm-quiz .content{background:#020c22;background-image:radial-gradient(ellipse 80% 60% at 50% -10%, rgba(30,70,180,.55) 0%, transparent 70%),radial-gradient(ellipse 60% 40% at 50% 50%, rgba(10,30,100,.4) 0%, transparent 80%);border:2px solid rgba(255,204,0,.55)}
+#wwm-quiz .progress-wrap{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,#020c22 60%,transparent);margin:-18px -20px 0;padding:14px 20px 10px;border-bottom:1px solid rgba(255,204,0,.25)}
+#wwm-quiz .progress{background:rgba(255,255,255,.10);border:2px solid rgba(255,204,0,.7);height:20px}
+#wwm-quiz .progress-fill{background:linear-gradient(90deg,#b8860b,#ffcc00,#fff176)}
+#wwm-quiz .progress-text{color:#fff;font-weight:900;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.9)}
+.wwm-layout{display:flex;gap:16px;align-items:flex-start;margin-top:16px}
+.wwm-stage{flex:1;min-width:0}
+.wwm-ladder{width:140px;flex-shrink:0;display:flex;flex-direction:column;gap:3px}
+.wwm-ladder-row{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);border:1px solid transparent;transition:.2s all}
+.wwm-ladder-row .wwm-qnum{width:22px;text-align:right;flex-shrink:0;font-size:10px;opacity:.6}
+.wwm-ladder-row .wwm-amount{flex:1;text-align:right;letter-spacing:.2px}
+.wwm-ladder-row.milestone{color:rgba(255,204,0,.6);border-color:rgba(255,204,0,.2);background:rgba(255,204,0,.05)}
+.wwm-ladder-row.done{color:rgba(100,220,120,.55)}
+.wwm-ladder-row.current{background:linear-gradient(90deg,rgba(255,204,0,.18),rgba(255,204,0,.08));border-color:rgba(255,204,0,.7);color:#ffcc00;box-shadow:0 0 10px rgba(255,204,0,.25);font-size:12.5px}
+.wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(255,204,0,.28),rgba(255,204,0,.12))}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+#wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
+#wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(255,204,0,.75);color:#ffcc00;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;cursor:pointer;transition:.2s all;font-family:inherit}
+#wwm-quiz .wwm-lifelines .chip:hover:not(.chip-used){background:radial-gradient(circle at 40% 35%,#2a4faa,#0d2060);transform:translateY(-2px) scale(1.05)}
+#wwm-quiz .wwm-lifelines .chip-used{opacity:.35;cursor:not-allowed;border-color:rgba(255,204,0,.25);color:rgba(255,204,0,.4);text-decoration:line-through}
+#wwm-quiz .wwm-stage .prompt{background:linear-gradient(180deg,#0f2d72 0%,#091e50 100%);color:#fff;border:2px solid #ffcc00;border-radius:16px;padding:18px 22px;text-align:center;font-weight:800;font-size:18px;line-height:1.6;margin-bottom:14px}
+#wwm-quiz .feedback{color:#ffecb3;font-size:15px;margin-top:10px}
+#wwm-quiz .feedback.ok{color:#00e676}
+#wwm-quiz .feedback.bad{color:#ff6b6b}
+.quiz-tip-box{margin-top:12px;padding:12px 16px;background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.45);border-left:3px solid #ffcc00;border-radius:10px;color:#ffe082;font-size:14px;line-height:1.6}
+.quiz-explanation-box{margin-top:12px;padding:12px 16px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);border-left:3px solid #00e676;border-radius:10px;color:#b9f6ca;font-size:14px;line-height:1.6}
+.quiz-streak{text-align:center;font-size:22px;font-weight:900;color:#ffcc00;letter-spacing:.5px;min-height:32px;margin-bottom:10px}
+#wwm-quiz .result-card{background:linear-gradient(160deg,#1a4faa 0%,#0d3080 50%,#071d55 100%);border:3px solid #ffcc00;color:#fff;border-radius:22px;overflow:hidden}
+#wwm-quiz{overflow:visible!important}
+@keyframes quizFadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question-enter{animation:quizFadeIn .45s cubic-bezier(.22,1,.36,1) forwards}
+.wwm-joker-options{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wwm-option-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(10,30,90,.9),rgba(5,18,60,.9));border:2px solid rgba(255,204,0,.5);border-radius:999px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:10px 18px;text-align:left;transition:.2s all;font-family:inherit;width:100%}
+.wwm-option-btn:hover:not(:disabled){background:linear-gradient(90deg,rgba(30,70,180,.9),rgba(15,45,130,.9));border-color:#ffcc00;transform:scale(1.01)}
+.wwm-opt-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(255,204,0,.15);border:2px solid rgba(255,204,0,.6);color:#ffcc00;font-size:13px;font-weight:900;flex-shrink:0}
+.wwm-phone-bubble{margin-top:14px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(5,20,60,.95),rgba(3,12,40,.95));border:2px solid rgba(100,180,255,.4);border-radius:16px;padding:14px 16px}
+.wwm-phone-icon{font-size:32px;flex-shrink:0}
+.wwm-phone-text{font-size:14px;color:#c5deff;line-height:1.7}
+.wwm-phone-text b{color:#fbbf77}
+.wwm-phone-text em{display:inline-block;margin-top:6px;font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(100,180,255,.3);border-radius:8px;padding:4px 10px;color:#fff;font-weight:700;font-size:15px}
+.wwm-audience-box{margin-top:14px;background:linear-gradient(180deg,rgba(5,18,55,.95),rgba(3,10,36,.95));border:2px solid rgba(255,204,0,.35);border-radius:16px;padding:14px 16px}
+.wwm-audience-title{text-align:center;font-size:13px;font-weight:800;color:#ffcc00;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px}
+.wwm-audience-bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:110px}
+.wwm-audience-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:160px;height:100%;cursor:pointer}
+.wwm-audience-pct{font-size:13px;font-weight:900;color:#ffcc00;min-height:18px}
+.wwm-audience-bar{width:100%;min-height:4px;border-radius:6px 6px 0 0}
+.wwm-audience-label{font-size:11px;color:rgba(255,255,255,.65);text-align:center;line-height:1.3;margin-top:4px}
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:none;align-items:center;justify-content:center;padding:20px}
+.confirm-overlay.show{display:flex}
+.confirm-box{background:#fff;border-radius:18px;padding:24px 22px;max-width:340px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center}
+.confirm-box p{margin:0 0 18px;font-size:16px;font-weight:600;color:#140c04;line-height:1.5}
+.confirm-btns{display:flex;gap:10px;justify-content:center}
+body.dark-mode .confirm-box{background:#1e1408}
+body.dark-mode .confirm-box p{color:#e8d0aa}
+</style>
+</head>
+<body>
+<div id="confirm-modal" class="confirm-overlay">
+  <div class="confirm-box">
+    <p id="confirm-msg">Fortschritt zurücksetzen?</p>
+    <div class="confirm-btns">
+      <button class="btn primary" id="confirm-ok">Ja</button>
+      <button class="btn ghost" id="confirm-cancel">Abbrechen</button>
+    </div>
+  </div>
+</div>
+<button class="tts-toggle" id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" id="reset-all-btn">🗑️ Zurücksetzen</button>
+<button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+<header>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/>
+  </a>
+  <h1>False Friends</h1>
+  <p class="sub">Falsche Freunde – Wörter, die anders sind, als sie klingen</p>
+</header>
+<div class="container">
+  <section class="rules-combined">
+    <div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Was sind False Friends?</span></div>
+    <div class="rc-grid">
+      <div class="rc-card c-red"><div class="rc-card-topbar"></div><div class="rc-card-num">1</div><div class="rc-card-body">
+        <div class="rc-card-label">⚠️ Definition</div>
+        <div class="rc-rule">Wörter, die <b>im Englischen und Deutschen gleich oder ähnlich aussehen</b>, aber etwas <b>anderes bedeuten</b>.</div>
+        <div class="rc-examples-new"><span class="hl-en">gift</span> = <span class="hl-de-correct">Geschenk</span> · NICHT: <span class="hl-de-wrong">Gift</span> (Gift = poison)<br><span class="hl-en">become</span> = <span class="hl-de-correct">werden</span> · NICHT: <span class="hl-de-wrong">bekommen</span></div>
+      </div></div>
+      <div class="rc-card c-blue"><div class="rc-card-topbar"></div><div class="rc-card-num">2</div><div class="rc-card-body">
+        <div class="rc-card-label">💥 Typischer Fehler</div>
+        <div class="rc-rule">Schüler nehmen das deutsche Wort und tun so, als wäre es englisch. → falsche Bedeutung im Satz.</div>
+        <div class="rc-examples-new">❌ <i>I become a gift.</i> (= Ich werde ein Geschenk?)<br>✅ <i>I get / receive a gift.</i></div>
+      </div></div>
+      <div class="rc-card c-green"><div class="rc-card-topbar"></div><div class="rc-card-num">3</div><div class="rc-card-body">
+        <div class="rc-card-label">🛡️ Strategie</div>
+        <div class="rc-rule">Im Zweifel: Kontext prüfen, Wörterbuch nutzen, Wortpaar lernen <b>(EN-Wort + falsche DE-Übersetzung)</b>.</div>
+        <div class="rc-examples-new">Frage dich: <i>„Macht das Sinn im Satz?"</i><br><i>„The medicine was a gift."</i> = Medizin war ein Geschenk – passt!</div>
+      </div></div>
+    </div>
+  </section>
+
+  <div class="quiz-divider"><span>📖 Wortübersicht</span></div>
+
+  <details class="accordion" id="acc-words">
+    <summary><span class="acc-num">📖</span>Wortliste – False Friends</summary>
+    <div class="content">
+      <div class="note">Jede Karte zeigt das englische Wort, die <b>richtige</b> deutsche Bedeutung und die <b>falsche</b> Übersetzung, die viele Schüler wählen. Sortiert nach <b>Schwierigkeit</b> – von leicht bis schwer.</div>
+      <div id="ff-word-grid" class="ff-word-grid"></div>
+    </div>
+  </details>
+
+  <div class="quiz-divider"><span>✏️ Übungen</span></div>
+
+  <details class="accordion" id="acc-uebungen">
+    <summary><span class="acc-num-pair"><span class="acc-num-sub">1</span><span class="acc-num-sub">2</span><span class="acc-num-sub">3</span></span>✏️ Übungen zu False Friends</summary>
+    <div class="content">
+      <div class="note"><b>Stufe 1:</b> Erkennen (Multiple Choice) · <b>Stufe 2:</b> Anwenden (Lückensätze) · <b>Stufe 3:</b> Transfer (Übersetzung &amp; Fehlerkorrektur)</div>
+      <div class="level-switch" id="uebungs-levels">
+        <button data-level="1" class="active">🟢 Aufwärmen</button>
+        <button data-level="2">🟡 Üben</button>
+        <button data-level="3">🔴 Profi-Aufgabe</button>
+      </div>
+      <div class="progress-wrap" id="uebungs-progress">
+        <div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+        <div class="progress-text">Fortschritt: 0/0 richtig (0%)</div>
+      </div>
+      <div class="section-actions">
+        <button class="btn green" id="uebungs-check-all">Alle prüfen</button>
+        <button class="btn gray" id="uebungs-reset">Zurücksetzen</button>
+        <button class="btn ghost" id="uebungs-reroll">🎲 Neu würfeln</button>
+      </div>
+      <div id="uebungs-tasks"></div>
+    </div>
+  </details>
+
+  <div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+  <details class="accordion" id="wwm-quiz">
+    <summary>🏆 Quiz</summary>
+    <div class="content">
+      <div class="progress-wrap" id="quiz-progress">
+        <div class="progress mixed" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div>
+        <div class="progress-text">Fortschritt: 0/0 richtig (0%)</div>
+      </div>
+      <div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+      <div id="quiz-tasks"></div>
+      <div id="quiz-result" class="result-card" style="display:none"></div>
+    </div>
+  </details>
+
+  <footer style="text-align:center;color:#b8905a;font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid rgba(184,144,90,.25)">
+    <div>Version 28.04.2026, 00:43</div>
+    <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+  </footer>
+</div>
+
+<script>
+window.onerror=function(msg,url,line,col,err){
+  console.error('JS Error:',msg,'Line:',line,'Col:',col,err);
+  var d=document.createElement('div');
+  d.style.cssText='position:fixed;bottom:0;left:0;right:0;background:#b91c1c;color:#fff;padding:10px 14px;font-size:12px;z-index:9999;font-family:monospace;max-height:40vh;overflow:auto;';
+  d.textContent='ERROR: '+msg+' (Zeile '+line+')';
+  document.body.appendChild(d);
+};
+function normalizeAnswer(text){
+  if(!text) return "";
+  let s=(""+text).toLowerCase();
+  s=s.replace(/['´‘’‚‛′‵`]/g,"'");
+  s=s.replace(/[.,!?:;„“”"]+/g," ").replace(/\s+/g," ").trim();
+  s=s.normalize("NFD").replace(/[̀-ͯ]/g,"");
+  return s;
+}
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+function customConfirm(msg,onOk){
+  const m=document.getElementById('confirm-modal');
+  document.getElementById('confirm-msg').textContent=msg;
+  m.classList.add('show');
+  function close(){m.classList.remove('show');}
+  document.getElementById('confirm-ok').onclick=function(){close();onOk();};
+  document.getElementById('confirm-cancel').onclick=close;
+}
+function initProgressBar(progressRoot,total){
+  const fill=progressRoot.querySelector('.progress-fill');
+  const text=progressRoot.parentElement.querySelector('.progress-text');
+  function update(correct,done){
+    done=done!==undefined?done:correct;
+    const fp=total?Math.round((done/total)*100):0;
+    const rp=total?Math.round((correct/total)*100):0;
+    fill.style.width=fp+'%';
+    if(done===correct){text.textContent='Fortschritt: '+correct+'/'+total+' richtig ('+rp+'%)';}
+    else{text.textContent='Fortschritt: '+correct+'/'+total+' richtig - '+done+' bearbeitet';}
+    if(total>0&&correct===total){fill.style.background='linear-gradient(90deg,#2e7d32,#43a047)';}
+    else if(done===0){fill.style.background='';}
+    else if(rp>=60){fill.style.background='';}
+    else{fill.style.background='linear-gradient(90deg,#e65100,#ff8f00)';}
+  }
+  function setTotal(n){total=n;update(0,0);}
+  update(0,0);
+  return{update,setTotal,getTotal:function(){return total;}};
+}
+
+const FF_WORDS=[
+  {en:"become",grade:5,topic:"alltag",diff:1,correct:"werden",wrong:"bekommen",note:"Klassiker! Im Englischen ist „become\" = werden. „bekommen\" = to get / to receive.",ex_en:"She wants to become a doctor.",ex_de:"Sie möchte Ärztin werden."},
+  {en:"gift",grade:5,topic:"freizeit_kultur",diff:1,correct:"Geschenk",wrong:"Gift",note:"„Gift\" auf Englisch ist ein Geschenk. Das deutsche „Gift\" (Toxin) heißt poison.",ex_en:"Thank you for the lovely gift!",ex_de:"Danke für das schöne Geschenk!"},
+  {en:"who",grade:5,topic:"sprache_logik",diff:1,correct:"wer",wrong:"wo",note:"who = wer (Person), where = wo (Ort). Nicht verwechseln!",ex_en:"Who is your best friend?",ex_de:"Wer ist dein bester Freund?"},
+  {en:"where",grade:5,topic:"sprache_logik",diff:1,correct:"wo",wrong:"wer",note:"where = wo (Ort), who = wer (Person).",ex_en:"Where do you live?",ex_de:"Wo wohnst du?"},
+  {en:"hat",grade:5,topic:"alltag",diff:1,correct:"Hut / Mütze",wrong:"hat (von haben)",note:"„hat\" ist NICHT die deutsche Verbform – im Englischen ist es immer der Hut.",ex_en:"He is wearing a red hat.",ex_de:"Er trägt einen roten Hut."},
+  {en:"art",grade:5,topic:"schule",diff:1,correct:"Kunst",wrong:"Art / Sorte",note:"art = Kunst (Schulfach, Bilder). Das deutsche „Art\" (Sorte) = kind / type.",ex_en:"I love art class at school.",ex_de:"Ich liebe den Kunstunterricht in der Schule."},
+  {en:"also",grade:5,topic:"sprache_logik",diff:1,correct:"auch",wrong:"also (= deswegen)",note:"„also\" auf Englisch = auch. Das deutsche „also\" (= deswegen) heißt so / therefore.",ex_en:"I like pizza, and I also like pasta.",ex_de:"Ich mag Pizza, und ich mag auch Nudeln."},
+  {en:"will",grade:6,topic:"sprache_logik",diff:1,correct:"wird (Zukunft)",wrong:"will / wollen",note:"„will\" bildet die Zukunft. „wollen\" = to want.",ex_en:"It will rain tomorrow.",ex_de:"Es wird morgen regnen."},
+  {en:"brave",grade:6,topic:"alltag",diff:1,correct:"mutig / tapfer",wrong:"brav",note:"brave = mutig. „brav\" (artig) = well-behaved / good.",ex_en:"The brave knight saved the village.",ex_de:"Der mutige Ritter rettete das Dorf."},
+  {en:"must not",grade:6,topic:"sprache_logik",diff:1,correct:"darf nicht (Verbot)",wrong:"nicht müssen",note:"WICHTIG! „must not\" = darf nicht. „nicht müssen\" = don't have to / needn't.",ex_en:"You must not smoke here.",ex_de:"Du darfst hier nicht rauchen."},
+  {en:"bald",grade:6,topic:"alltag",diff:1,correct:"kahl / glatzköpfig",wrong:"bald (= soon)",note:"bald (englisch) = kahl. Das deutsche „bald\" = soon.",ex_en:"My grandfather is going bald.",ex_de:"Mein Großvater bekommt eine Glatze."},
+  {en:"fast",grade:6,topic:"sprache_logik",diff:1,correct:"schnell",wrong:"fast (= almost)",note:"fast (englisch) = schnell. Das deutsche „fast\" = almost / nearly.",ex_en:"My new bike is really fast.",ex_de:"Mein neues Fahrrad ist wirklich schnell."},
+  {en:"when",grade:6,topic:"sprache_logik",diff:1,correct:"wann (Frage) / wenn",wrong:"wer / wo",note:"when = wann (Frage) oder wenn (Bedingung). Nicht: wer (= who) oder wo (= where).",ex_en:"When does the film start?",ex_de:"Wann fängt der Film an?"},
+  {en:"actually",grade:7,topic:"sprache_logik",diff:2,correct:"eigentlich / tatsächlich",wrong:"aktuell",note:"actually = eigentlich. „aktuell\" (jetzt) = currently / at the moment.",ex_en:"Actually, I don't like coffee.",ex_de:"Eigentlich mag ich keinen Kaffee."},
+  {en:"eventually",grade:7,topic:"sprache_logik",diff:2,correct:"schließlich / am Ende",wrong:"eventuell",note:"eventually = schließlich. „eventuell\" = possibly / maybe.",ex_en:"He eventually finished his homework.",ex_de:"Schließlich machte er seine Hausaufgaben fertig."},
+  {en:"sensible",grade:7,topic:"alltag",diff:2,correct:"vernünftig",wrong:"sensibel",note:"sensible = vernünftig. „sensibel\" (empfindsam) = sensitive.",ex_en:"Wearing a helmet is a sensible choice.",ex_de:"Einen Helm zu tragen ist eine vernünftige Entscheidung."},
+  {en:"sympathetic",grade:7,topic:"alltag",diff:2,correct:"mitfühlend",wrong:"sympathisch",note:"sympathetic = mitfühlend. „sympathisch\" (nett) = likeable / nice.",ex_en:"She was sympathetic when I told her about my problem.",ex_de:"Sie war mitfühlend, als ich ihr von meinem Problem erzählte."},
+  {en:"chef",grade:7,topic:"wohnen_beruf",diff:2,correct:"Koch (Profi)",wrong:"Chef",note:"chef = Profikoch. Der deutsche „Chef\" = boss.",ex_en:"The chef cooked an amazing meal.",ex_de:"Der Koch kochte ein fantastisches Essen."},
+  {en:"sensitive",grade:7,topic:"alltag",diff:2,correct:"empfindsam / empfindlich",wrong:"vernünftig",note:"sensitive = sensibel/empfindlich. „vernünftig\" = sensible.",ex_en:"Her skin is very sensitive to the sun.",ex_de:"Ihre Haut ist sehr empfindlich gegenüber der Sonne."},
+  {en:"novel",grade:8,topic:"schule",diff:2,correct:"Roman",wrong:"Novelle",note:"novel = Roman (langes Buch). „Novelle\" (kürzere Erzählung) = novella / short novel.",ex_en:"I'm reading a thrilling novel.",ex_de:"Ich lese gerade einen spannenden Roman."},
+  {en:"slip",grade:8,topic:"alltag",diff:2,correct:"ausrutschen / Zettel",wrong:"Slip / Unterhose",note:"slip (Verb) = ausrutschen. „Slip\" (Unterhose) = briefs / underwear.",ex_en:"Be careful, you might slip on the wet floor.",ex_de:"Pass auf, du könntest auf dem nassen Boden ausrutschen."},
+  {en:"handy",grade:8,topic:"alltag",diff:2,correct:"praktisch / nützlich",wrong:"Handy",note:"handy = praktisch. „Handy\" (Mobiltelefon) = mobile phone (UK) / cell phone (US).",ex_en:"This little tool is really handy.",ex_de:"Dieses kleine Werkzeug ist wirklich praktisch."},
+  {en:"rent",grade:8,topic:"wohnen_beruf",diff:2,correct:"Miete / mieten",wrong:"Rente",note:"rent = Miete. „Rente\" = pension.",ex_en:"How much rent do you pay each month?",ex_de:"Wie viel Miete zahlst du im Monat?"},
+  {en:"to spend",grade:8,topic:"wohnen_beruf",diff:2,correct:"ausgeben (Geld) / verbringen (Zeit)",wrong:"spenden",note:"to spend = ausgeben oder verbringen. „spenden\" (Geld geben) = to donate.",ex_en:"How much did you spend on the new shoes?",ex_de:"Wie viel hast du für die neuen Schuhe ausgegeben?"},
+  {en:"pathetic",grade:9,topic:"alltag",diff:3,correct:"erbärmlich / mitleiderregend",wrong:"pathetisch",note:"pathetic = erbärmlich. „pathetisch\" (übertrieben dramatisch) = melodramatic / overly emotional.",ex_en:"His excuse was really pathetic.",ex_de:"Seine Ausrede war wirklich erbärmlich."},
+  {en:"gymnasium",grade:9,topic:"schule",diff:3,correct:"Turnhalle",wrong:"Gymnasium (Schule)",note:"gymnasium = Turnhalle. „Gymnasium\" (Schule) = grammar school (UK) / academic high school.",ex_en:"We have PE in the gymnasium.",ex_de:"Wir haben Sport in der Turnhalle."},
+  {en:"billion",grade:9,topic:"schule",diff:3,correct:"Milliarde (1.000.000.000)",wrong:"Billion",note:"billion = Milliarde. Die deutsche „Billion\" (1 mit 12 Nullen) = trillion.",ex_en:"The company is worth one billion dollars.",ex_de:"Die Firma ist eine Milliarde Dollar wert."},
+  {en:"prospect",grade:9,topic:"wohnen_beruf",diff:3,correct:"Aussicht / Perspektive",wrong:"Prospekt",note:"prospect = Aussicht. „Prospekt\" (Werbeheft) = brochure / leaflet.",ex_en:"There is no prospect of getting the money back.",ex_de:"Es gibt keine Aussicht, das Geld zurückzubekommen."},
+  {en:"mode",grade:9,topic:"alltag",diff:3,correct:"Modus / Art",wrong:"Mode (Kleidung)",note:"mode = Modus oder Art und Weise. Die „Mode\" (Kleidung) = fashion.",ex_en:"The phone is in silent mode.",ex_de:"Das Handy ist im stummen Modus."},
+  {en:"public school",grade:9,topic:"schule",diff:3,correct:"Privatschule (UK) / staatliche Schule (US)",wrong:"öffentliche Schule (UK)",note:"In Großbritannien ist eine „public school\" eine teure Privatschule! In den USA dagegen eine staatliche Schule.",ex_en:"Eton is a famous public school in England.",ex_de:"Eton ist eine berühmte Privatschule in England."},
+  {en:"undertaker",grade:10,topic:"wohnen_beruf",diff:3,correct:"Bestatter",wrong:"Unternehmer",note:"undertaker = Bestatter. Ein „Unternehmer\" = entrepreneur / businessman.",ex_en:"The undertaker organised the funeral.",ex_de:"Der Bestatter organisierte die Beerdigung."},
+  {en:"fabric",grade:10,topic:"alltag",diff:3,correct:"Stoff / Gewebe",wrong:"Fabrik",note:"fabric = Stoff. „Fabrik\" (Gebäude) = factory.",ex_en:"This shirt is made of soft fabric.",ex_de:"Dieses Hemd ist aus weichem Stoff."},
+  {en:"oldtimer",grade:10,topic:"freizeit_kultur",diff:3,correct:"alter Hase / Veteran (US, veraltet)",wrong:"Oldtimer (Auto)",note:"„oldtimer\" (US, alt) = ein erfahrener älterer Mensch. Das „Oldtimer-Auto\" = vintage car / classic car.",ex_en:"My grandfather is an oldtimer in this club.",ex_de:"Mein Großvater ist ein alter Hase in diesem Verein."},
+  {en:"brief",grade:10,topic:"schule",diff:3,correct:"kurz / Anweisung",wrong:"Brief",note:"brief (Adjektiv) = kurz. Ein „Brief\" = letter.",ex_en:"He gave a brief speech.",ex_de:"Er hielt eine kurze Rede."},
+  {en:"smoking",grade:10,topic:"freizeit_kultur",diff:3,correct:"das Rauchen",wrong:"Smoking (Anzug)",note:"smoking = das Rauchen. Der „Smoking\" (Festanzug) = tuxedo (US) / dinner jacket (UK).",ex_en:"Smoking is bad for your health.",ex_de:"Rauchen ist schlecht für die Gesundheit."},
+  {en:"to control",grade:10,topic:"wohnen_beruf",diff:3,correct:"steuern / beherrschen",wrong:"kontrollieren / prüfen",note:"to control = steuern. „kontrollieren\" (überprüfen) = to check / to inspect.",ex_en:"The pilot controls the plane.",ex_de:"Der Pilot steuert das Flugzeug."}
+];
+
+const FF_TASKS={
+L1:[
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>gift</b> auf Deutsch?",options:["Gift (Toxin)","Geschenk","Stoff","Hund"],correct:1,explanation:"✅ <b>gift</b> = Geschenk. Das deutsche Gift heißt poison."},
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>become</b>?",options:["bekommen","werden","beginnen","verstehen"],correct:1,explanation:"✅ <b>become</b> = werden. Bekommen wäre to get / receive."},
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>who</b>?",options:["wo","wer","wie","was"],correct:1,explanation:"✅ <b>who</b> = wer. wo wäre where."},
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>where</b>?",options:["wer","was","wo","wann"],correct:2,explanation:"✅ <b>where</b> = wo. wer wäre who."},
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>hat</b> im Englischen?",options:["er hat (haben)","Hut/Mütze","Hass","Heim"],correct:1,explanation:"✅ <b>hat</b> = Hut. Es ist NICHT die deutsche Verbform hat."},
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>art</b>?",options:["Kunst","Sorte/Art","Atmen","Antwort"],correct:0,explanation:"✅ <b>art</b> = Kunst. Sorte/Art wäre kind / type."},
+  {grade:5,diff:1,type:"mc",prompt:"Was bedeutet <b>also</b>?",options:["also/deswegen","alle","auch","sonst"],correct:2,explanation:"✅ <b>also</b> = auch. Das deutsche also wäre so / therefore."},
+  {grade:6,diff:1,type:"mc",prompt:"Was bedeutet <b>brave</b>?",options:["brav/artig","mutig","traurig","schnell"],correct:1,explanation:"✅ <b>brave</b> = mutig. brav = well-behaved / good."},
+  {grade:6,diff:1,type:"mc",prompt:"Was bedeutet <b>fast</b> im Englischen?",options:["fast (= almost)","schnell","nahe","feststehend"],correct:1,explanation:"✅ <b>fast</b> = schnell. Das deutsche fast = almost / nearly."},
+  {grade:6,diff:1,type:"mc",prompt:"Was bedeutet <b>bald</b> im Englischen?",options:["bald (= soon)","kahl/glatzköpfig","tapfer","bereit"],correct:1,explanation:"✅ <b>bald</b> = kahl. Das deutsche bald = soon."},
+  {grade:6,diff:1,type:"mc",prompt:"„You <b>must not</b> smoke here.\" bedeutet ...",options:["Du musst hier nicht rauchen","Du darfst hier nicht rauchen","Du sollst hier nicht rauchen","Du wirst hier nicht rauchen"],correct:1,explanation:"✅ <b>must not</b> = darf nicht (Verbot). nicht müssen = don't have to."},
+  {grade:6,diff:1,type:"mc",prompt:"Was bedeutet <b>will</b> in „It will rain\"?",options:["wollen","wird (Zukunft)","wirklich","wenig"],correct:1,explanation:"✅ <b>will</b> bildet die Zukunft = wird. wollen = to want."},
+  {grade:6,diff:1,type:"mc",prompt:"Was bedeutet <b>when</b> in „When does the film start?\"",options:["wer","wo","wann","wieso"],correct:2,explanation:"✅ <b>when</b> = wann (Frage)."},
+  {grade:7,diff:2,type:"mc",prompt:"Was bedeutet <b>actually</b>?",options:["aktuell","eigentlich","aktiv","akkurat"],correct:1,explanation:"✅ <b>actually</b> = eigentlich. aktuell = currently / at the moment."},
+  {grade:7,diff:2,type:"mc",prompt:"Was bedeutet <b>eventually</b>?",options:["eventuell","schließlich/am Ende","ereignisreich","selten"],correct:1,explanation:"✅ <b>eventually</b> = schließlich. eventuell = possibly / maybe."},
+  {grade:7,diff:2,type:"mc",prompt:"Was bedeutet <b>sensible</b>?",options:["sensibel","vernünftig","sichtbar","leise"],correct:1,explanation:"✅ <b>sensible</b> = vernünftig. sensibel = sensitive."},
+  {grade:7,diff:2,type:"mc",prompt:"Was bedeutet <b>sympathetic</b>?",options:["sympathisch","mitfühlend","symbolisch","systematisch"],correct:1,explanation:"✅ <b>sympathetic</b> = mitfühlend. sympathisch = likeable / nice."},
+  {grade:7,diff:2,type:"mc",prompt:"Was ist ein <b>chef</b>?",options:["der Chef/Boss","ein Profikoch","ein Kellner","ein Lehrer"],correct:1,explanation:"✅ <b>chef</b> = Profikoch. Der deutsche Chef = boss."},
+  {grade:7,diff:2,type:"mc",prompt:"Was bedeutet <b>sensitive</b>?",options:["vernünftig","empfindsam/empfindlich","sichtbar","stabil"],correct:1,explanation:"✅ <b>sensitive</b> = sensibel/empfindlich. vernünftig = sensible."},
+  {grade:8,diff:2,type:"mc",prompt:"Was ist ein <b>novel</b>?",options:["eine Novelle","ein Roman","eine Neuigkeit","eine Notiz"],correct:1,explanation:"✅ <b>novel</b> = Roman. Novelle = novella / short novel."},
+  {grade:8,diff:2,type:"mc",prompt:"Was bedeutet <b>to slip</b>?",options:["schlüpfen/Slip tragen","ausrutschen","schlafen","lächeln"],correct:1,explanation:"✅ <b>to slip</b> = ausrutschen. Slip (Unterhose) = briefs / underwear."},
+  {grade:8,diff:2,type:"mc",prompt:"Was bedeutet <b>handy</b>?",options:["Handy/Mobiltelefon","praktisch/nützlich","Hand","heimlich"],correct:1,explanation:"✅ <b>handy</b> = praktisch. Handy = mobile phone."},
+  {grade:8,diff:2,type:"mc",prompt:"Was bedeutet <b>rent</b>?",options:["Rente","Miete","Rennen","Rest"],correct:1,explanation:"✅ <b>rent</b> = Miete. Rente = pension."},
+  {grade:8,diff:2,type:"mc",prompt:"Was bedeutet <b>to spend</b>?",options:["spenden","ausgeben/verbringen","spannen","spielen"],correct:1,explanation:"✅ <b>to spend</b> = ausgeben (Geld) oder verbringen (Zeit). spenden = to donate."},
+  {grade:9,diff:3,type:"mc",prompt:"Was bedeutet <b>pathetic</b>?",options:["pathetisch/dramatisch","erbärmlich/mitleiderregend","leidenschaftlich","panisch"],correct:1,explanation:"✅ <b>pathetic</b> = erbärmlich. pathetisch = melodramatic."},
+  {grade:9,diff:3,type:"mc",prompt:"Was ist ein <b>gymnasium</b> in einer englischen Schule?",options:["ein Gymnasium (höhere Schule)","eine Turnhalle","ein Gymnastikkurs","ein Gymnasialabschluss"],correct:1,explanation:"✅ <b>gymnasium</b> = Turnhalle. Das deutsche Gymnasium = grammar school."},
+  {grade:9,diff:3,type:"mc",prompt:"Wie viel ist 1 <b>billion</b> auf Deutsch?",options:["eine Billion (10^12)","eine Milliarde (10^9)","eine Million (10^6)","eine Billiarde (10^15)"],correct:1,explanation:"✅ 1 billion = 1 Milliarde. Die deutsche Billion = trillion."},
+  {grade:9,diff:3,type:"mc",prompt:"Was bedeutet <b>prospect</b>?",options:["Prospekt/Werbeheft","Aussicht/Perspektive","Projekt","Probe"],correct:1,explanation:"✅ <b>prospect</b> = Aussicht. Prospekt = brochure / leaflet."},
+  {grade:9,diff:3,type:"mc",prompt:"Was bedeutet <b>mode</b> in „silent mode\"?",options:["Mode/Kleidung","Modus","Methode","Modell"],correct:1,explanation:"✅ <b>mode</b> = Modus. Die deutsche Mode = fashion."},
+  {grade:9,diff:3,type:"mc",prompt:"Was ist eine <b>public school</b> in Großbritannien?",options:["eine staatliche Schule","eine teure Privatschule","eine Volkshochschule","eine Berufsschule"],correct:1,explanation:"✅ In UK ist eine public school eine Privatschule. In den USA dagegen eine staatliche Schule."},
+  {grade:10,diff:3,type:"mc",prompt:"Was ist ein <b>undertaker</b>?",options:["ein Unternehmer","ein Bestatter","ein Unterzeichner","ein Untermieter"],correct:1,explanation:"✅ <b>undertaker</b> = Bestatter. Unternehmer = entrepreneur / businessman."},
+  {grade:10,diff:3,type:"mc",prompt:"Was ist <b>fabric</b>?",options:["eine Fabrik","Stoff/Gewebe","ein Fabrikat","ein Fahrzeug"],correct:1,explanation:"✅ <b>fabric</b> = Stoff. Fabrik = factory."},
+  {grade:10,diff:3,type:"mc",prompt:"Was ist ein <b>oldtimer</b> auf Englisch (US)?",options:["ein altes Auto","ein erfahrener älterer Mensch","ein altes Spielzeug","ein Wecker"],correct:1,explanation:"✅ Im US-Englischen ist ein oldtimer ein älterer Mensch (alter Hase). Ein Oldtimer-Auto = vintage car / classic car."},
+  {grade:10,diff:3,type:"mc",prompt:"Was bedeutet <b>brief</b> als Adjektiv?",options:["Brief/Schreiben","kurz","beruflich","frei"],correct:1,explanation:"✅ <b>brief</b> = kurz. Ein Brief = letter."},
+  {grade:10,diff:3,type:"mc",prompt:"Was bedeutet <b>smoking</b>?",options:["der Smoking (Anzug)","das Rauchen","das Brennen","das Schwitzen"],correct:1,explanation:"✅ <b>smoking</b> = das Rauchen. Der Smoking = tuxedo (US) / dinner jacket (UK)."},
+  {grade:10,diff:3,type:"mc",prompt:"Was bedeutet <b>to control</b> hauptsächlich?",options:["kontrollieren/prüfen","steuern/beherrschen","kontaktieren","kosten"],correct:1,explanation:"✅ <b>to control</b> = steuern. kontrollieren/prüfen = to check / inspect."}
+],
+L2:[
+  {grade:5,diff:1,prompt:"Setze ein: \"Thank you for the lovely ___!\" (= Geschenk)",answer:["gift"],explanation:"✅ <b>gift</b> = Geschenk. Nicht: Gift (poison)."},
+  {grade:5,diff:1,prompt:"Setze ein: \"She wants to ___ a teacher.\" (= Sie möchte Lehrerin werden.)",answer:["become"],explanation:"✅ <b>become</b> = werden."},
+  {grade:5,diff:1,prompt:"Setze ein: \"___ is your name?\" (= Wer)",answer:["who"],explanation:"✅ <b>Who</b> = wer."},
+  {grade:5,diff:1,prompt:"Setze ein: \"___ do you live?\" (= Wo wohnst du?)",answer:["where"],explanation:"✅ <b>Where</b> = wo."},
+  {grade:5,diff:1,prompt:"Setze ein: \"He is wearing a red ___.\" (= Hut)",answer:["hat"],explanation:"✅ <b>hat</b> = Hut."},
+  {grade:5,diff:1,prompt:"Setze ein: \"I love ___ class. I like to draw.\" (= Kunst)",answer:["art"],explanation:"✅ <b>art</b> = Kunst."},
+  {grade:5,diff:1,prompt:"Setze ein: \"I like pizza, and I ___ like pasta.\" (= auch)",answer:["also"],explanation:"✅ <b>also</b> = auch."},
+  {grade:6,diff:1,prompt:"Setze ein: \"My new bike is really ___.\" (= schnell)",answer:["fast"],explanation:"✅ <b>fast</b> = schnell."},
+  {grade:6,diff:1,prompt:"Setze ein: \"The ___ knight saved the village.\" (= mutig)",answer:["brave"],explanation:"✅ <b>brave</b> = mutig."},
+  {grade:6,diff:1,prompt:"Setze ein: \"My grandfather is going ___.\" (= kahl/glatzköpfig)",answer:["bald"],explanation:"✅ <b>bald</b> = kahl."},
+  {grade:6,diff:1,prompt:"Setze ein: \"You ___ smoke here. It's forbidden.\" (= darfst nicht, 2 Wörter)",answer:["must not","mustn't"],explanation:"✅ <b>must not / mustn't</b> = darfst nicht."},
+  {grade:6,diff:1,prompt:"Setze ein: \"It ___ rain tomorrow.\" (= wird – Zukunft)",answer:["will"],explanation:"✅ <b>will</b> bildet die Zukunft = wird."},
+  {grade:6,diff:1,prompt:"Setze ein: \"___ does the film start?\" (= Wann)",answer:["when"],explanation:"✅ <b>When</b> = wann."},
+  {grade:7,diff:2,prompt:"Setze ein: \"___, I don't like coffee at all.\" (= Eigentlich)",answer:["actually"],explanation:"✅ <b>Actually</b> = eigentlich. NICHT: currently."},
+  {grade:7,diff:2,prompt:"Setze ein: \"He ___ finished his homework.\" (= schließlich/am Ende)",answer:["eventually"],explanation:"✅ <b>eventually</b> = schließlich. NICHT: possibly."},
+  {grade:7,diff:2,prompt:"Setze ein: \"Wearing a helmet is a ___ choice.\" (= vernünftige)",answer:["sensible"],explanation:"✅ <b>sensible</b> = vernünftig."},
+  {grade:7,diff:2,prompt:"Setze ein: \"Her skin is very ___ to the sun.\" (= empfindlich)",answer:["sensitive"],explanation:"✅ <b>sensitive</b> = empfindlich."},
+  {grade:7,diff:2,prompt:"Setze ein: \"The ___ cooked an amazing meal.\" (= Koch)",answer:["chef"],explanation:"✅ <b>chef</b> = Profikoch. NICHT: boss."},
+  {grade:7,diff:2,prompt:"Setze ein: \"She was ___ when I told her about my problem.\" (= mitfühlend)",answer:["sympathetic"],explanation:"✅ <b>sympathetic</b> = mitfühlend."},
+  {grade:8,diff:2,prompt:"Setze ein: \"I'm reading a thrilling ___.\" (= Roman)",answer:["novel"],explanation:"✅ <b>novel</b> = Roman."},
+  {grade:8,diff:2,prompt:"Setze ein: \"Be careful, you might ___ on the wet floor.\" (= ausrutschen)",answer:["slip"],explanation:"✅ <b>slip</b> = ausrutschen."},
+  {grade:8,diff:2,prompt:"Setze ein: \"This little tool is really ___.\" (= praktisch)",answer:["handy"],explanation:"✅ <b>handy</b> = praktisch."},
+  {grade:8,diff:2,prompt:"Setze ein: \"How much ___ do you pay each month?\" (= Miete)",answer:["rent"],explanation:"✅ <b>rent</b> = Miete."},
+  {grade:8,diff:2,prompt:"Setze ein: \"How much did you ___ on the new shoes?\" (= ausgeben)",answer:["spend"],explanation:"✅ <b>spend</b> = ausgeben."},
+  {grade:9,diff:3,prompt:"Setze ein: \"His excuse was really ___.\" (= erbärmlich)",answer:["pathetic"],explanation:"✅ <b>pathetic</b> = erbärmlich."},
+  {grade:9,diff:3,prompt:"Setze ein: \"We have PE in the ___.\" (= Turnhalle)",answer:["gymnasium","gym"],explanation:"✅ <b>gymnasium / gym</b> = Turnhalle."},
+  {grade:9,diff:3,prompt:"Setze ein: \"The company is worth one ___ dollars.\" (= Milliarde)",answer:["billion"],explanation:"✅ <b>billion</b> = Milliarde (1.000.000.000)."},
+  {grade:9,diff:3,prompt:"Setze ein: \"There is no ___ of getting the money back.\" (= Aussicht)",answer:["prospect"],explanation:"✅ <b>prospect</b> = Aussicht."},
+  {grade:9,diff:3,prompt:"Setze ein: \"My phone is in silent ___.\" (= Modus)",answer:["mode"],explanation:"✅ <b>mode</b> = Modus."},
+  {grade:9,diff:3,prompt:"Setze ein: \"Eton is a famous ___ in England.\" (= Privatschule, UK – 2 Wörter)",answer:["public school"],explanation:"✅ Eine UK <b>public school</b> ist eine Privatschule!"},
+  {grade:10,diff:3,prompt:"Setze ein: \"The ___ organised the funeral.\" (= Bestatter)",answer:["undertaker"],explanation:"✅ <b>undertaker</b> = Bestatter."},
+  {grade:10,diff:3,prompt:"Setze ein: \"This shirt is made of soft ___.\" (= Stoff)",answer:["fabric"],explanation:"✅ <b>fabric</b> = Stoff."},
+  {grade:10,diff:3,prompt:"Setze ein: \"My grandfather is an ___ in this club.\" (= alter Hase, US)",answer:["oldtimer","old-timer"],explanation:"✅ Im US-Englisch: <b>oldtimer</b> = alter Hase / Veteran."},
+  {grade:10,diff:3,prompt:"Setze ein: \"He gave a ___ speech.\" (= kurze)",answer:["brief"],explanation:"✅ <b>brief</b> = kurz."},
+  {grade:10,diff:3,prompt:"Setze ein: \"___ is bad for your health.\" (= Rauchen)",answer:["smoking"],explanation:"✅ <b>Smoking</b> = das Rauchen."},
+  {grade:10,diff:3,prompt:"Setze ein: \"The pilot ___ the plane.\" (= steuert)",answer:["controls"],explanation:"✅ <b>controls</b> = steuert. NICHT kontrolliert/prüft."}
+],
+L3:[
+  {grade:5,diff:1,prompt:"Übersetze: <i>Sie wird Ärztin.</i>",answer:["She becomes a doctor.","She is becoming a doctor."],explanation:"✅ werden = become, NICHT get!"},
+  {grade:5,diff:1,prompt:"Übersetze: <i>Danke für das Geschenk!</i>",answer:["Thank you for the gift!","Thanks for the gift!"],explanation:"✅ Geschenk = gift (NICHT poison)."},
+  {grade:5,diff:1,prompt:"FEHLER: <i>I become a gift for my birthday.</i> – Schreib den Satz richtig.",answer:["I get a gift for my birthday.","I receive a gift for my birthday."],explanation:"❌ become = werden! ✅ I get / receive a gift."},
+  {grade:5,diff:1,prompt:"Übersetze: <i>Wo wohnt deine Oma?</i>",answer:["Where does your grandma live?","Where does your grandmother live?"],explanation:"✅ wo = where (NICHT who)."},
+  {grade:5,diff:1,prompt:"Übersetze: <i>Ich mag Pizza und ich mag auch Pasta.</i>",answer:["I like pizza and I also like pasta.","I like pizza and I like pasta too."],explanation:"✅ auch = also / too."},
+  {grade:6,diff:1,prompt:"Übersetze: <i>Du darfst hier nicht parken.</i>",answer:["You must not park here.","You mustn't park here."],explanation:"✅ darf nicht = must not / mustn't (NICHT don't have to)."},
+  {grade:6,diff:1,prompt:"FEHLER: <i>Tom is bald, he runs very quickly.</i> – Was ist falsch?",answer:["Tom is fast, he runs very quickly.","Tom runs very quickly, he is fast."],explanation:"❌ bald = kahl, nicht schnell! ✅ Tom is fast."},
+  {grade:6,diff:1,prompt:"Übersetze: <i>Mein Bruder ist sehr mutig.</i>",answer:["My brother is very brave.","My brother is really brave."],explanation:"✅ mutig = brave (NICHT brav = well-behaved)."},
+  {grade:6,diff:1,prompt:"Übersetze: <i>Es wird morgen schneien.</i>",answer:["It will snow tomorrow.","Tomorrow it will snow."],explanation:"✅ wird = will (Zukunftsform)."},
+  {grade:6,diff:1,prompt:"FEHLER: <i>I bald come home.</i> – Was sollte hier stehen?",answer:["I will come home soon.","I'll come home soon.","I am coming home soon."],explanation:"❌ Das deutsche bald ist im Englischen soon. ✅ I will come home soon."},
+  {grade:7,diff:2,prompt:"Übersetze: <i>Eigentlich mag ich keine Pizza.</i>",answer:["Actually, I don't like pizza.","Actually I don't like pizza."],explanation:"✅ Eigentlich = Actually (NICHT currently)."},
+  {grade:7,diff:2,prompt:"Was bedeutet <i>actual</i> auf Deutsch korrekt?",answer:["tatsächlich","wirklich"],explanation:"⚠️ actual = tatsächlich (nicht aktuell)! Wer aktuell meint, sollte current nehmen."},
+  {grade:7,diff:2,prompt:"Übersetze: <i>Mein Chef ist nett.</i>",answer:["My boss is nice.","My boss is friendly."],explanation:"✅ Chef = boss (NICHT chef = Koch)."},
+  {grade:7,diff:2,prompt:"Übersetze: <i>Sie ist eine vernünftige Frau.</i>",answer:["She is a sensible woman.","She is a sensible person."],explanation:"✅ vernünftig = sensible (NICHT sensitive)."},
+  {grade:7,diff:2,prompt:"Übersetze: <i>Ich finde ihn sympathisch.</i>",answer:["I like him.","I find him likeable."],explanation:"❌ sympathetic = mitfühlend! Wer sagen will Ich finde ihn sympathisch, sagt: I like him."},
+  {grade:8,diff:2,prompt:"Übersetze: <i>Ich lese gerade einen Roman.</i>",answer:["I am reading a novel.","I am reading a novel at the moment."],explanation:"✅ Roman = novel (NICHT novella)."},
+  {grade:8,diff:2,prompt:"Übersetze: <i>Mein Handy ist kaputt.</i>",answer:["My mobile phone is broken.","My cell phone is broken.","My phone is broken."],explanation:"✅ Handy ist KEIN englisches Wort. Korrekt: mobile phone (UK) / cell phone (US)."},
+  {grade:8,diff:2,prompt:"Übersetze ins Deutsche: <i>This screwdriver is very handy.</i>",answer:["Dieser Schraubenzieher ist sehr praktisch.","Dieser Schraubenzieher ist sehr nützlich."],explanation:"✅ handy = praktisch / nützlich (NICHT Handy)."},
+  {grade:8,diff:2,prompt:"Übersetze: <i>Wie viel Miete zahlst du?</i>",answer:["How much rent do you pay?","How much rent are you paying?"],explanation:"✅ Miete = rent (NICHT pension)."},
+  {grade:8,diff:2,prompt:"Übersetze: <i>Ich gebe viel Geld für Bücher aus.</i>",answer:["I spend a lot of money on books.","I spend much money on books."],explanation:"✅ ausgeben = to spend (NICHT to donate)."},
+  {grade:9,diff:3,prompt:"Übersetze: <i>Wir haben Sport in der Turnhalle.</i>",answer:["We have PE in the gymnasium.","We have PE in the gym."],explanation:"✅ Turnhalle = gymnasium / gym (NICHT grammar school)."},
+  {grade:9,diff:3,prompt:"Was ist 1 billion auf Deutsch?",answer:["1 milliarde","eine milliarde","milliarde"],explanation:"⚠️ Im Englischen ist 1 billion = 1 Milliarde, nicht 1 Billion!"},
+  {grade:9,diff:3,prompt:"Übersetze: <i>Sein Auftritt war erbärmlich.</i>",answer:["His performance was pathetic.","His performance was really pathetic."],explanation:"✅ erbärmlich = pathetic."},
+  {grade:9,diff:3,prompt:"Übersetze: <i>Ich habe ein Reise-Prospekt mitgenommen.</i>",answer:["I took a travel brochure.","I took a brochure for the trip.","I picked up a travel brochure."],explanation:"✅ Prospekt = brochure (NICHT prospect = Aussicht)."},
+  {grade:9,diff:3,prompt:"Was ist eine UK-<i>public school</i>?",answer:["privatschule","eine privatschule","teure privatschule"],explanation:"⚠️ In UK ist public school eine teure Privatschule! Eine staatliche Schule = state school."},
+  {grade:10,diff:3,prompt:"Übersetze: <i>Mein Onkel ist Unternehmer.</i>",answer:["My uncle is an entrepreneur.","My uncle is a businessman.","My uncle is a businessperson."],explanation:"✅ Unternehmer = entrepreneur / businessman (NICHT undertaker = Bestatter)."},
+  {grade:10,diff:3,prompt:"Übersetze: <i>Sie arbeitet in einer Fabrik.</i>",answer:["She works in a factory.","She works at a factory."],explanation:"✅ Fabrik = factory (NICHT fabric = Stoff)."},
+  {grade:10,diff:3,prompt:"FEHLER: <i>Many fabrics in China produce clothes.</i> – Was ist falsch? (Schreib den korrekten Satz)",answer:["Many factories in China produce clothes."],explanation:"❌ fabric = Stoff. ✅ Many factories in China produce clothes."},
+  {grade:10,diff:3,prompt:"Übersetze: <i>Ich habe einen Brief bekommen.</i>",answer:["I got a letter.","I received a letter.","I have got a letter.","I have received a letter."],explanation:"✅ Brief = letter (NICHT brief = kurz)."},
+  {grade:10,diff:3,prompt:"Übersetze: <i>Er trägt einen Smoking auf der Hochzeit.</i>",answer:["He is wearing a tuxedo at the wedding.","He wears a tuxedo at the wedding.","He is wearing a dinner jacket at the wedding."],explanation:"✅ Smoking = tuxedo (US) / dinner jacket (UK)."},
+  {grade:10,diff:3,prompt:"FEHLER: <i>The teacher controls our homework every day.</i> – Korrigiere den Satz.",answer:["The teacher checks our homework every day.","The teacher checks our homework everyday."],explanation:"❌ to control = steuern. ✅ The teacher checks our homework. (kontrollieren = to check)."}
+]
+};
+
+const FF_QUIZ=[
+  {grade:5,d:1,prompt:"Was bedeutet das englische Wort <b>gift</b>?",options:["Geschenk","Gift (Toxin)","Sorte","Stoff"],correct:0,tip:"Englisch ungleich Deutsch.",explanation:"✅ <b>gift</b> = Geschenk."},
+  {grade:5,d:1,prompt:"Was bedeutet <b>become</b>?",options:["bekommen","werden","beginnen","beobachten"],correct:1,tip:"Klassischer FF.",explanation:"✅ <b>become</b> = werden."},
+  {grade:5,d:2,prompt:"„Where is your school?\" – Wie übersetzt du <b>Where</b>?",options:["Wer","Wo","Was","Wann"],correct:1,tip:"Wer/Wo verwechseln viele.",explanation:"✅ where = wo. who = wer."},
+  {grade:5,d:2,prompt:"„I love art!\" – Was ist <b>art</b>?",options:["Kunst","Sorte","Atem","Antwort"],correct:0,tip:"Schulfach.",explanation:"✅ art = Kunst."},
+  {grade:5,d:3,prompt:"Welcher Satz ist KORREKT?",options:["I become a gift for Christmas.","I get a gift for Christmas.","I take a gift for Christmas.","I make a gift for Christmas."],correct:1,tip:"Achte auf become.",explanation:"✅ Geschenk bekommen = to get / to receive a gift."},
+  {grade:6,d:1,prompt:"Was bedeutet <b>fast</b>?",options:["fast (almost)","schnell","fest","weit"],correct:1,tip:"NICHTS mit deutsch fast zu tun.",explanation:"✅ fast = schnell."},
+  {grade:6,d:2,prompt:"Was bedeutet <b>brave</b>?",options:["brav","mutig","brechen","brüllen"],correct:1,tip:"Brave Knight!",explanation:"✅ brave = mutig."},
+  {grade:6,d:2,prompt:"„My uncle is bald.\" bedeutet ...",options:["Mein Onkel kommt bald.","Mein Onkel ist kahl.","Mein Onkel ist mutig.","Mein Onkel ist müde."],correct:1,tip:"Zwei sehr verschiedene Bedeutungen.",explanation:"✅ bald (englisch) = kahl."},
+  {grade:6,d:3,prompt:"„You <b>must not</b> swim here.\" bedeutet ...",options:["Du musst hier nicht schwimmen.","Du darfst hier nicht schwimmen.","Du wirst hier nicht schwimmen.","Du sollst hier schwimmen."],correct:1,tip:"must not = Verbot!",explanation:"✅ must not = darf nicht."},
+  {grade:6,d:3,prompt:"Übersetze richtig: <i>Ich komme bald.</i>",options:["I come bald.","I will come soon.","I will come bald.","I come soon."],correct:1,tip:"Vorsicht bei bald!",explanation:"✅ I will come soon."},
+  {grade:7,d:2,prompt:"<b>actually</b> bedeutet ...",options:["aktuell","eigentlich","aktiv","akkurat"],correct:1,tip:"NICHT von aktuell verleiten lassen!",explanation:"✅ actually = eigentlich/tatsächlich."},
+  {grade:7,d:2,prompt:"<b>eventually</b> bedeutet ...",options:["eventuell","schließlich","erfreulicherweise","selten"],correct:1,tip:"Endgültig.",explanation:"✅ eventually = schließlich."},
+  {grade:7,d:3,prompt:"Wer ist ein <b>chef</b>?",options:["der Boss","ein Profikoch","ein Kellner","ein Angestellter"],correct:1,tip:"Französisch-Englisch.",explanation:"✅ chef = Profikoch."},
+  {grade:7,d:3,prompt:"Welcher Satz ist KORREKT?",options:["She is a sensible person, she has good ideas.","She is a sensible person, she cries easily.","She is sensible to noise.","She is a sensitive choice."],correct:0,tip:"sensible vs. sensitive!",explanation:"✅ sensible = vernünftig (gute Ideen). sensitive = empfindsam."},
+  {grade:7,d:3,prompt:"Übersetze: <i>Ich finde sie sympathisch.</i>",options:["I find her sympathetic.","I like her.","I sympathise with her.","She is sympathetic to me."],correct:1,tip:"sympathetic ist ein FF!",explanation:"✅ I like her."},
+  {grade:8,d:1,prompt:"Was ist ein <b>novel</b>?",options:["eine Notiz","ein Roman","eine Novelle","ein Neuling"],correct:1,tip:"Lange Geschichte.",explanation:"✅ novel = Roman."},
+  {grade:8,d:2,prompt:"Was bedeutet <b>handy</b>?",options:["Mobiltelefon","praktisch","Handvoll","handgemacht"],correct:1,tip:"Adjektiv.",explanation:"✅ handy = praktisch."},
+  {grade:8,d:3,prompt:"Welcher Satz ist KORREKT?",options:["I want to buy a new handy.","I want to buy a new mobile phone.","I want to buy a new handphone.","I want to buy a new hand."],correct:1,tip:"Handy gibt es NICHT im Englischen!",explanation:"✅ I want to buy a new mobile phone."},
+  {grade:8,d:3,prompt:"Übersetze: <i>Ich gebe viel Geld für Süßigkeiten aus.</i>",options:["I donate much money for sweets.","I spend a lot of money on sweets.","I give a lot of money for sweets.","I distribute much money on sweets."],correct:1,tip:"Geld ausgeben = ?",explanation:"✅ to spend money = Geld ausgeben."},
+  {grade:8,d:3,prompt:"„How much rent do you pay?\" – Worum geht es?",options:["Rente","Miete","Pacht","Zinsen"],correct:1,tip:"Vorsicht: rent ist nicht Rente!",explanation:"✅ rent = Miete."},
+  {grade:9,d:2,prompt:"Wenn jemand sagt „I have one billion dollars\", wie viel hat er?",options:["1 Million","1 Milliarde","1 Billion","1 Billiarde"],correct:1,tip:"Achtung: Zahlensystem!",explanation:"✅ 1 billion = 1 Milliarde."},
+  {grade:9,d:2,prompt:"<b>pathetic</b> bedeutet ...",options:["leidenschaftlich","erbärmlich","pathetisch (übertrieben)","panisch"],correct:1,tip:"Negativ behaftet!",explanation:"✅ pathetic = erbärmlich/mitleiderregend."},
+  {grade:9,d:3,prompt:"Was bedeutet <b>prospect</b>?",options:["Prospekt (Werbeheft)","Aussicht/Perspektive","Projekt","Prozess"],correct:1,tip:"Achtung Werbeheft!",explanation:"✅ prospect = Aussicht."},
+  {grade:9,d:3,prompt:"In England ist eine <b>public school</b> ...",options:["eine staatliche Schule","eine teure Privatschule","eine Volkshochschule","eine Berufsschule"],correct:1,tip:"Britischer Sonderfall!",explanation:"✅ In UK = Privatschule. In USA dagegen staatlich."},
+  {grade:9,d:3,prompt:"„The phone is in silent mode.\" Was bedeutet <b>mode</b>?",options:["Mode/Kleidung","Modus","Methode","Mobiltelefon"],correct:1,tip:"Smartphone-Vokabular!",explanation:"✅ mode = Modus."},
+  {grade:10,d:2,prompt:"Was ist ein <b>undertaker</b>?",options:["ein Unternehmer","ein Bestatter","ein Untermieter","ein Unterzeichner"],correct:1,tip:"Düsterer Beruf.",explanation:"✅ undertaker = Bestatter."},
+  {grade:10,d:2,prompt:"<b>fabric</b> ist ...",options:["eine Fabrik","Stoff/Gewebe","ein Fabrikat","Fanware"],correct:1,tip:"Material!",explanation:"✅ fabric = Stoff."},
+  {grade:10,d:3,prompt:"Welcher Satz nutzt <b>brief</b> KORREKT?",options:["He gave a brief speech (eine kurze Rede).","He gave a brief speech (einen Brief).","She wrote a brief to her friend.","I want to send you a brief from Germany."],correct:0,tip:"brief als Adjektiv.",explanation:"✅ brief = kurz."},
+  {grade:10,d:3,prompt:"Übersetze: <i>Er trägt einen Smoking.</i>",options:["He is smoking.","He wears a smoking.","He is wearing a tuxedo.","He smokes a cigarette."],correct:2,tip:"Smoking = Anzug, NICHT rauchend!",explanation:"✅ He is wearing a tuxedo."},
+  {grade:10,d:3,prompt:"Welche Übersetzung von <i>kontrollieren (= prüfen)</i> ist passend?",options:["to control","to check","to direct","to govern"],correct:1,tip:"to control hat eine andere Bedeutung.",explanation:"✅ kontrollieren (überprüfen) = to check."}
+];
+
+// Schwierigkeits-Labels
+const FF_DIFF_LABEL={1:'leicht',2:'mittel',3:'schwer'};
+function diffTagHTML(diff){
+  const d=diff||1;
+  const label=FF_DIFF_LABEL[d]||'';
+  const dots='<span class="ff-diff-dots">'+
+    '<span'+(d>=1?' class="on"':'')+'></span>'+
+    '<span'+(d>=2?' class="on"':'')+'></span>'+
+    '<span'+(d>=3?' class="on"':'')+'></span>'+
+    '</span>';
+  return '<span class="ff-tag ff-tag-diff-'+d+'">'+dots+' '+label+'</span>';
+}
+// Sortierung: nach Schwierigkeit aufsteigend, innerhalb gleicher Stufe alphabetisch nach EN
+function sortByDiffThenAlpha(arr){
+  return arr.slice().sort(function(a,b){
+    const da=a.diff||1,db=b.diff||1;
+    if(da!==db)return da-db;
+    return a.en.toLowerCase().localeCompare(b.en.toLowerCase(),'en');
+  });
+}
+
+function renderWords(){
+  const grid=document.getElementById('ff-word-grid');
+  const list=sortByDiffThenAlpha(FF_WORDS);
+  if(list.length===0){
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:24px;color:#7a5c3a;">Keine Wörter vorhanden.</div>';
+    return;
+  }
+  grid.innerHTML=list.map(function(w){
+    return '<div class="ff-word-card diff-'+(w.diff||1)+'">'+
+      '<div class="ff-word-head"><div class="ff-en">'+w.en+'</div>'+
+      '<div class="ff-tags">'+diffTagHTML(w.diff)+'</div></div>'+
+      '<div class="ff-row"><span class="ff-row-icon">✅</span><div class="ff-row-text"><b>richtig:</b> <span class="hl-de-correct">'+w.correct+'</span></div></div>'+
+      '<div class="ff-row"><span class="ff-row-icon">❌</span><div class="ff-row-text"><b>falscher Freund:</b> <span class="hl-de-wrong">'+w.wrong+'</span></div></div>'+
+      '<div class="ff-row"><span class="ff-row-icon">💡</span><div class="ff-row-text"><i>'+w.note+'</i></div></div>'+
+      '<div class="ff-example"><span class="en">EN:</span> '+w.ex_en+'<br><span class="de">DE:</span> '+w.ex_de+'</div>'+
+      '</div>';
+  }).join('');
+}
+
+function renderTasks(container,tasks,sectionKey,onStatusChange){
+  container.innerHTML='';
+  tasks.forEach(function(t,idx){
+    const wrap=document.createElement('div');wrap.className='task';
+    const nb=document.createElement('div');nb.style.cssText='font-size:12px;font-weight:700;color:#b8905a;margin-bottom:4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;';
+    nb.textContent='Aufgabe '+(idx+1)+' / '+tasks.length;
+    const badge=document.createElement('span');badge.className='task-type-badge';
+    if(t.type==='mc'){badge.classList.add('badge-mc');badge.textContent='Multiple Choice';}
+    else{badge.classList.add('badge-frei');badge.textContent='Freitext';}
+    nb.appendChild(badge);
+    const gtag=document.createElement('span');gtag.className='grade-tag';gtag.textContent='Kl. '+t.grade;
+    nb.appendChild(gtag);
+    wrap.appendChild(nb);
+    const solvedLabel=document.createElement('div');solvedLabel.className='task-solved-label';wrap.appendChild(solvedLabel);
+
+    if(t.type==='mc'){
+      const prompt=document.createElement('p');prompt.className='prompt';prompt.innerHTML=t.prompt;wrap.appendChild(prompt);
+      const mcBox=document.createElement('div');mcBox.className='mc-options';
+      const letters=['A','B','C','D'];
+      const input=document.createElement('input');input.type='hidden';wrap.appendChild(input);
+      const feedback=document.createElement('div');feedback.className='feedback';
+      let answered=false;
+      const optIndices=[];for(let i=0;i<t.options.length;i++)optIndices.push(i);
+      for(let i=optIndices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const tmp=optIndices[i];optIndices[i]=optIndices[j];optIndices[j]=tmp;}
+      const shuffledOpts=optIndices.map(function(i){return t.options[i];});
+      const correctIdx=optIndices.indexOf(t.correct);
+      const optBtns=[];
+      shuffledOpts.forEach(function(opt,oi){
+        const btn=document.createElement('button');btn.type='button';btn.className='mc-opt';
+        btn.innerHTML='<span class="mc-letter">'+letters[oi]+'</span><span>'+opt+'</span>';
+        btn.addEventListener('click',function(){
+          if(answered)return;answered=true;
+          optBtns.forEach(function(b){b.classList.add('mc-disabled');});
+          if(oi===correctIdx){
+            btn.classList.add('mc-correct');
+            feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+            input._correct=true;input._done=true;input.value=opt;
+            wrap.classList.add('task--solved');solvedLabel.innerHTML='✓ Bereits gelöst: <i>'+opt+'</i>';
+          }else{
+            btn.classList.add('mc-wrong');optBtns[correctIdx].classList.add('mc-correct');
+            feedback.textContent='✗ Leider falsch.';feedback.className='feedback bad';
+            input._correct=false;input._done=true;input.value=opt;
+            if(t.explanation){const expl=document.createElement('div');expl.className='solution';expl.style.display='block';expl.innerHTML=t.explanation;wrap.appendChild(expl);}
+          }
+          if(typeof onStatusChange==='function')onStatusChange();
+        });
+        optBtns.push(btn);mcBox.appendChild(btn);
+      });
+      wrap.appendChild(mcBox);wrap.appendChild(feedback);
+      input._check=function(){if(!answered){feedback.textContent='Bitte wähle eine Antwort.';feedback.className='feedback warn';return false;}return input._correct;};
+      input._reset=function(){answered=false;input._correct=false;input._done=false;input.value='';feedback.textContent='';feedback.className='feedback';optBtns.forEach(function(b){b.classList.remove('mc-correct','mc-wrong','mc-selected','mc-disabled');});solvedLabel.textContent='';wrap.classList.remove('task--solved');wrap.querySelectorAll('.solution').forEach(function(e){e.remove();});if(typeof onStatusChange==='function')onStatusChange();};
+      container.appendChild(wrap);
+      return;
+    }
+
+    const prompt=document.createElement('p');prompt.className='prompt';prompt.innerHTML=t.prompt;
+    const input=document.createElement('input');input.type='text';input.placeholder='Schreib deine Antwort hier ...';
+    const controls=document.createElement('div');controls.className='controls';
+    const checkBtn=document.createElement('button');checkBtn.className='btn primary';checkBtn.textContent='Prüfen';
+    const solBtn=document.createElement('button');solBtn.className='btn ghost';solBtn.textContent='Lösung anzeigen';solBtn.style.display='none';
+    const feedback=document.createElement('div');feedback.className='feedback';
+    const solBox=document.createElement('div');solBox.className='solution';
+    controls.appendChild(checkBtn);controls.appendChild(solBtn);
+    wrap.appendChild(prompt);wrap.appendChild(input);wrap.appendChild(controls);wrap.appendChild(feedback);wrap.appendChild(solBox);
+    container.appendChild(wrap);
+    const answers=Array.isArray(t.answer)?t.answer:[t.answer];
+    let failCount=0;
+    function checkOne(batchMode){
+      const user=normalizeAnswer(input.value);
+      const okSet=answers.map(normalizeAnswer);
+      if(!user){feedback.textContent='Bitte gib eine Lösung ein.';feedback.className='feedback warn';input._correct=false;if(typeof onStatusChange==='function')onStatusChange();return false;}
+      if(okSet.indexOf(user)>=0){
+        feedback.textContent='✓ Richtig!';feedback.className='feedback ok';
+        input._correct=true;input._done=true;failCount=0;
+        wrap.classList.add('task--solved');solvedLabel.innerHTML='✓ Bereits gelöst: <i>'+input.value.trim()+'</i>';
+        if(typeof onStatusChange==='function')onStatusChange();
+        if(!batchMode){const all=Array.prototype.slice.call(container.querySelectorAll("input[type='text']"));const next=all[all.indexOf(input)+1];if(next)setTimeout(function(){next.focus();next.scrollIntoView({behavior:'smooth',block:'nearest'});},150);}
+        return true;
+      }
+      failCount++;
+      feedback.textContent='✗ Das passt noch nicht. Versuche es erneut.';feedback.className='feedback bad';
+      if(failCount>=2)solBtn.style.display='inline-flex';
+      input._correct=false;if(typeof onStatusChange==='function')onStatusChange();return false;
+    }
+    checkBtn.addEventListener('click',function(){checkOne(false);});
+    input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();checkOne(false);}});
+    solBtn.addEventListener('click',function(){
+      input._done=true;if(typeof onStatusChange==='function')onStatusChange();
+      solBox.style.display='block';
+      let html='<b>Lösung:</b> '+answers[0];
+      if(t.explanation)html+='<div style="margin-top:6px;font-size:13px;color:#7a5c3a;">'+t.explanation+'</div>';
+      solBox.innerHTML=html;
+    });
+    input._check=checkOne;
+    input._reset=function(){input.value='';input._correct=false;input._done=false;failCount=0;if(typeof onStatusChange==='function')onStatusChange();feedback.textContent='';feedback.className='feedback';solBtn.style.display='none';solBox.style.display='none';solBox.textContent='';solvedLabel.textContent='';wrap.classList.remove('task--solved');};
+  });
+  if(typeof TTS!=='undefined'&&TTS.enabled)setTimeout(function(){TTS.injectAll();},50);
+}
+
+const uebungsState={level:1,progressCtrl:null};
+function pickRandom(pool,n){
+  const ind=[];for(let i=0;i<pool.length;i++)ind.push(i);
+  for(let i=ind.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const tmp=ind[i];ind[i]=ind[j];ind[j]=tmp;}
+  return ind.slice(0,Math.min(n,pool.length)).map(function(i){return pool[i];});
+}
+// 1:1-Pattern aus 05_simple_present.html: Celebration bei 100%
+function checkCelebration(container){
+  const inputs=container.querySelectorAll('.task input');
+  if(!inputs.length)return;
+  const allCorrect=Array.prototype.every.call(inputs,function(i){return i._correct;});
+  if(!allCorrect)return;
+  if(container.querySelector('.celebrate-banner'))return;
+  // Bei Wiederanzeige alte Score-Banner entfernen
+  container.querySelectorAll('.result-banner,.error-list').forEach(function(b){b.remove();});
+  const banner=document.createElement('div');
+  banner.className='celebrate-banner';
+  banner.innerHTML='🎉 Perfekt! Alle Aufgaben richtig – super gemacht!';
+  container.prepend(banner);
+  setTimeout(function(){banner.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+// Score-Banner wenn alle done, aber nicht 100% (für L1 ohne "Alle prüfen")
+function checkSectionDone(container){
+  const inputs=container.querySelectorAll('.task input');
+  if(!inputs.length)return;
+  let correct=0,done=0;
+  inputs.forEach(function(inp){if(inp._correct)correct++;if(inp._done)done++;});
+  if(done!==inputs.length)return;
+  if(correct===inputs.length)return; // Celebration übernimmt
+  if(container.querySelector('.result-banner'))return;
+  const total=inputs.length,pct=Math.round(correct/total*100);
+  const col=pct>=60?'#b85c20':'#b83a22';
+  const em=pct>=60?'👍':'💪';
+  const banner=document.createElement('div');banner.className='result-banner';
+  banner.style.cssText='margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid '+col+';background:'+col+'18;font-size:15px;font-weight:700;color:'+col+';display:flex;align-items:center;gap:10px;';
+  banner.innerHTML='<span style="font-size:22px">'+em+'</span><span>Ergebnis: <b>'+correct+' / '+total+'</b> richtig ('+pct+'%)</span>';
+  container.prepend(banner);
+  setTimeout(function(){banner.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+
+function renderUebungen(){
+  const lvl=uebungsState.level;
+  const key='L'+lvl;
+  const pool=FF_TASKS[key]||[];
+  const want=Math.min(pool.length,15);
+  // Pool nach diff aufsteigend sortieren, dann zufällig 15 ziehen, dann wieder nach diff sortieren
+  const picked=pickRandom(pool,want).sort(function(a,b){return (a.diff||1)-(b.diff||1);});
+  const container=document.getElementById('uebungs-tasks');
+  const progressRoot=document.querySelector('#uebungs-progress .progress');
+  if(!uebungsState.progressCtrl){uebungsState.progressCtrl=initProgressBar(progressRoot,want);}
+  else{uebungsState.progressCtrl.setTotal(want);}
+  function updateProgress(){
+    const inputs=container.querySelectorAll('.task input');let correct=0,done=0;
+    inputs.forEach(function(inp){if(inp._correct)correct++;if(inp._done)done++;});
+    uebungsState.progressCtrl.update(correct,done);
+    const total=inputs.length;
+    if(total>0&&correct===total)checkCelebration(container);
+    else if(total>0&&done===total)checkSectionDone(container);
+  }
+  if(picked.length===0){
+    container.innerHTML='<div style="text-align:center;padding:24px;color:#7a5c3a;">Keine Aufgaben auf Stufe '+lvl+'.</div>';
+    uebungsState.progressCtrl.setTotal(0);return;
+  }
+  // Alte Banner aus vorigem Level/Filter entfernen
+  container.querySelectorAll('.result-banner,.error-list,.celebrate-banner').forEach(function(b){b.remove();});
+  renderTasks(container,picked,'uebungs',updateProgress);
+  const checkAll=document.getElementById('uebungs-check-all');
+  const hasFreitext=container.querySelector('input[type="text"]')!==null;
+  checkAll.style.display=hasFreitext?'':'none';
+  updateProgress();
+}
+
+const wwmAmounts=['100','200','300','500','1.000','2.000','4.000','8.000','16.000','32.000','64.000','125.000','250.000','500.000','1.000.000','2.000.000','4.000.000','8.000.000','16.000.000','32.000.000'];
+function pickQuizByDifficulty(pool,total){
+  function sh(arr){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const tmp=a[i];a[i]=a[j];a[j]=tmp;}return a;}
+  const d1=sh(pool.filter(function(q){return q.d===1;}));
+  const d2=sh(pool.filter(function(q){return q.d===2;}));
+  const d3=sh(pool.filter(function(q){return q.d===3;}));
+  const wantTotal=Math.min(total,d1.length+d2.length+d3.length);
+  let n1=Math.min(d1.length,Math.max(1,Math.round(wantTotal*0.25)));
+  let n3=Math.min(d3.length,Math.max(1,Math.round(wantTotal*0.40)));
+  let n2=Math.min(d2.length,Math.max(0,wantTotal-n1-n3));
+  let combined=d1.slice(0,n1).concat(d2.slice(0,n2)).concat(d3.slice(0,n3));
+  if(combined.length<wantTotal){
+    const rest=d1.slice(n1).concat(d2.slice(n2)).concat(d3.slice(n3));
+    combined=combined.concat(rest.slice(0,wantTotal-combined.length));
+  }
+  return combined;
+}
+
+const quizState={tasks:[],current:0,correct:0,wrongCount:0,wrongTasks:[],streak:0,earnedLevel:0,jokerUsed:{fifty:false,phone:false,audience:false},progressCtrl:null,timerStart:null,timerInterval:null,elapsed:0,timerEl:null};
+
+function startQuizTimer(){if(quizState.timerInterval)return;quizState.timerStart=Date.now()-quizState.elapsed*1000;quizState.timerInterval=setInterval(function(){quizState.elapsed=Math.floor((Date.now()-quizState.timerStart)/1000);const m=Math.floor(quizState.elapsed/60);const s=String(quizState.elapsed%60).padStart(2,'0');if(quizState.timerEl)quizState.timerEl.textContent='⏱ '+m+':'+s;},1000);if(quizState.timerEl)quizState.timerEl.style.display='block';}
+function stopQuizTimer(){clearInterval(quizState.timerInterval);quizState.timerInterval=null;}
+function resetQuizTimer(){stopQuizTimer();quizState.elapsed=0;quizState.timerStart=null;if(quizState.timerEl){quizState.timerEl.textContent='⏱ 0:00';quizState.timerEl.style.display='none';}}
+
+function buildLadder(total,earnedLvl){
+  const milestones=[Math.floor(total*0.3),Math.floor(total*0.6),total-1];
+  const ladder=document.createElement('div');ladder.className='wwm-ladder';
+  for(let i=total-1;i>=0;i--){
+    const row=document.createElement('div');row.className='wwm-ladder-row';
+    if(milestones.indexOf(i)>=0)row.classList.add('milestone');
+    if(i<earnedLvl)row.classList.add('done');
+    if(i===earnedLvl)row.classList.add('current');
+    const qnum=document.createElement('span');qnum.className='wwm-qnum';qnum.textContent=i+1;
+    const amt=document.createElement('span');amt.className='wwm-amount';
+    amt.textContent=(i===earnedLvl?'▶ ':'')+(wwmAmounts[i]||'');
+    row.appendChild(qnum);row.appendChild(amt);
+    ladder.appendChild(row);
+  }
+  return ladder;
+}
+
+function applyJoker(key,task,correctIdx,btns,stage){
+  stage.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(function(el){el.remove();});
+  const letters=['A','B','C','D'];
+  if(key==='fifty'){
+    const wrong=[0,1,2,3].filter(function(i){return i!==correctIdx;});
+    for(let i=wrong.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const tmp=wrong[i];wrong[i]=wrong[j];wrong[j]=tmp;}
+    wrong.slice(0,2).forEach(function(i){btns[i].style.opacity='0.15';btns[i].style.pointerEvents='none';btns[i].disabled=true;});
+  }else if(key==='phone'){
+    const isWrong=Math.random()<0.30;
+    let answerIdx,confidence;
+    if(isWrong){const wi=[0,1,2,3].filter(function(i){return i!==correctIdx;});answerIdx=wi[Math.floor(Math.random()*wi.length)];confidence='Ich bin nicht ganz sicher, aber ich glaube ...';}
+    else{answerIdx=correctIdx;confidence='Da bin ich mir ziemlich sicher:';}
+    const box=document.createElement('div');box.className='wwm-phone-bubble';
+    box.innerHTML='<span class="wwm-phone-icon">📞</span><div class="wwm-phone-text"><b>Dein Freund sagt:</b><br>'+confidence+'<br><em>'+letters[answerIdx]+': '+task.options[answerIdx]+'</em></div>';
+    stage.appendChild(box);
+  }else if(key==='audience'){
+    const isWrong=Math.random()<0.30;
+    const pcts=[0,0,0,0];
+    if(isWrong){const wi=[0,1,2,3].filter(function(i){return i!==correctIdx;});const winner=wi[Math.floor(Math.random()*wi.length)];pcts[winner]=Math.floor(Math.random()*15)+45;pcts[correctIdx]=Math.floor(Math.random()*15)+10;const rest=[0,1,2,3].filter(function(i){return i!==winner&&i!==correctIdx;});const r=100-pcts[winner]-pcts[correctIdx];pcts[rest[0]]=Math.floor(r*0.55);pcts[rest[1]]=r-pcts[rest[0]];}
+    else{pcts[correctIdx]=Math.floor(Math.random()*25)+50;const wi=[0,1,2,3].filter(function(i){return i!==correctIdx;});const r=100-pcts[correctIdx];pcts[wi[0]]=Math.floor(r*0.45);pcts[wi[1]]=Math.floor(r*0.30);pcts[wi[2]]=r-pcts[wi[0]]-pcts[wi[1]];}
+    const colors=['#d4922e','#e53935','#43a047','#f9a825'];
+    const bars=pcts.map(function(p,i){return '<div class="wwm-audience-col" data-idx="'+i+'"><div class="wwm-audience-pct">'+p+'%</div><div class="wwm-audience-bar" style="height:'+Math.max(p,4)+'%;background:'+colors[i]+';"></div><div class="wwm-audience-label">'+letters[i]+'</div></div>';}).join('');
+    const box=document.createElement('div');box.className='wwm-audience-box';
+    box.innerHTML='<div class="wwm-audience-title">📊 Publikumsjoker</div><div class="wwm-audience-bars">'+bars+'</div>';
+    stage.appendChild(box);
+    box.querySelectorAll('[data-idx]').forEach(function(col){col.addEventListener('click',function(){const idx=parseInt(col.dataset.idx);if(btns[idx]&&!btns[idx].disabled)btns[idx].click();});});
+  }
+}
+
+function updateQuizProgress(){if(quizState.progressCtrl)quizState.progressCtrl.update(quizState.correct,quizState.correct+quizState.wrongCount);}
+
+function renderQuizQuestion(){
+  const wrap=document.getElementById('quiz-tasks');
+  const total=quizState.tasks.length;
+  if(quizState.current>=total){showQuizFinal();return;}
+  startQuizTimer();
+  wrap.innerHTML='';
+  const t=quizState.tasks[quizState.current];
+  const opts=t.options;const correctIdx=t.correct;
+  const fw=document.createElement('div');fw.className='quiz-question-enter';
+  const streakEl=document.createElement('div');streakEl.className='quiz-streak';
+  if(quizState.streak>=3)streakEl.textContent='🔥 '+quizState.streak+'er-Serie!';
+  fw.appendChild(streakEl);
+  const lifelines=document.createElement('div');lifelines.className='wwm-lifelines';
+  const jokers=[{key:'audience',label:'👥 Publikum'},{key:'phone',label:'📞 Joker'},{key:'fifty',label:'50:50'}];
+  const layout=document.createElement('div');layout.className='wwm-layout';
+  const stage=document.createElement('div');stage.className='wwm-stage';
+  const currentBtns=[];
+  jokers.forEach(function(j){
+    const used=quizState.jokerUsed[j.key];
+    const chip=document.createElement('button');chip.className='chip'+(used?' chip-used':'');chip.textContent=j.label;chip.disabled=used;
+    chip.addEventListener('click',function(){if(quizState.jokerUsed[j.key])return;quizState.jokerUsed[j.key]=true;chip.classList.add('chip-used');chip.disabled=true;applyJoker(j.key,t,correctIdx,currentBtns,stage);});
+    lifelines.appendChild(chip);
+  });
+  fw.appendChild(lifelines);
+  const promptDiv=document.createElement('div');promptDiv.className='prompt';promptDiv.innerHTML=t.prompt;
+  const gradeTag=document.createElement('div');gradeTag.style.cssText='font-size:11px;font-weight:800;color:#ffcc00;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;text-align:center;';
+  const stars=t.d===1?'★':t.d===2?'★★':'★★★';
+  gradeTag.textContent='Frage '+(quizState.current+1)+' / '+total+' · Klasse '+t.grade+' · '+stars;
+  stage.appendChild(gradeTag);
+  stage.appendChild(promptDiv);
+  const optWrap=document.createElement('div');optWrap.className='wwm-joker-options';
+  const letters=['A','B','C','D'];
+  let answered=false;
+  opts.forEach(function(optText,i){
+    const btn=document.createElement('button');btn.className='wwm-option-btn';btn.type='button';
+    btn.innerHTML='<span class="wwm-opt-letter">'+letters[i]+'</span>'+optText;
+    btn.addEventListener('click',function(){
+      if(answered)return;answered=true;
+      currentBtns.forEach(function(b){b.disabled=true;});
+      currentBtns.forEach(function(b,bi){const letter=b.querySelector('.wwm-opt-letter');if(bi===correctIdx){b.style.cssText+=';background:linear-gradient(90deg,#1b5e20,#2e7d32);border-color:#4caf50;';if(letter)letter.style.cssText='background:rgba(76,175,80,.3);border-color:#4caf50;color:#b9f6ca;';}else if(bi===i){b.style.cssText+=';background:linear-gradient(90deg,#7f0000,#b71c1c);border-color:#ef5350;';if(letter)letter.style.cssText='background:rgba(239,83,80,.3);border-color:#ef5350;color:#ffcdd2;';}});
+      const isCorrect=i===correctIdx;
+      const milestones=[Math.floor(total*0.3),Math.floor(total*0.6),total-1];
+      if(isCorrect){
+        fb.textContent='✓ Richtig!';fb.className='feedback ok';
+        quizState.correct++;quizState.streak++;quizState.earnedLevel++;
+        if(t.explanation){eb.innerHTML=t.explanation;eb.style.display='block';}
+        const nb=document.createElement('button');nb.className='btn green';nb.textContent='Weiter →';
+        nb.addEventListener('click',function(){updateQuizProgress();quizState.current++;renderQuizQuestion();});
+        ctrl.appendChild(nb);setTimeout(function(){nb.focus();},50);
+      }else{
+        fb.innerHTML='✗ Falsch! Richtige Antwort: <b>'+letters[correctIdx]+': '+opts[correctIdx]+'</b>';fb.className='feedback bad';
+        const wt=Object.assign({},t,{_qn:quizState.current+1,_user:letters[i]+': '+opts[i]});
+        quizState.wrongTasks.push(wt);
+        quizState.wrongCount++;quizState.streak=0;
+        const floor=milestones.filter(function(m){return m<=quizState.earnedLevel;}).pop();
+        quizState.earnedLevel=floor!==undefined?floor:0;
+        if(t.explanation){eb.innerHTML=t.explanation.replace('✅','💡');eb.style.display='block';}
+        if(t.tip){tb.innerHTML='💡 <b>Tipp:</b> '+t.tip;tb.style.display='block';}
+        const nb=document.createElement('button');nb.className='btn gray';nb.textContent='Ergebnis ansehen →';
+        nb.addEventListener('click',function(){updateQuizProgress();showQuizFinal();});
+        ctrl.appendChild(nb);setTimeout(function(){nb.focus();},50);
+      }
+    });
+    optWrap.appendChild(btn);currentBtns.push(btn);
+  });
+  stage.appendChild(optWrap);
+  const fb=document.createElement('div');fb.className='feedback';stage.appendChild(fb);
+  const tb=document.createElement('div');tb.className='quiz-tip-box';tb.style.display='none';stage.appendChild(tb);
+  const eb=document.createElement('div');eb.className='quiz-explanation-box';eb.style.display='none';stage.appendChild(eb);
+  const ctrl=document.createElement('div');ctrl.className='controls';ctrl.style.cssText='margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,204,0,.15);';stage.appendChild(ctrl);
+  layout.appendChild(stage);layout.appendChild(buildLadder(total,quizState.earnedLevel));
+  fw.appendChild(layout);wrap.appendChild(fw);
+}
+
+function showQuizFinal(){
+  stopQuizTimer();
+  const wrap=document.getElementById('quiz-tasks');wrap.innerHTML='';
+  const total=quizState.tasks.length;
+  const pct=total?Math.round((quizState.correct/total)*100):0;
+  const m=Math.floor(quizState.elapsed/60),s=String(quizState.elapsed%60).padStart(2,'0');
+  const ts=m+':'+s;
+  const prizeIdx=Math.min(quizState.earnedLevel-1,wwmAmounts.length-1);
+  const prize=quizState.earnedLevel>0?(wwmAmounts[prizeIdx]+' €'):'0 €';
+  let emoji='',headline='',msg='';
+  if(pct===100){emoji='🏆';headline='PERFEKT!';msg='Alle Fragen richtig - False Friends können dir nichts mehr anhaben!';}
+  else if(pct>=80){emoji='🌟';headline='Stark!';msg='Sehr gute Leistung - die meisten False Friends sitzen.';}
+  else if(pct>=60){emoji='🙌';headline='Solide';msg='Über die Hälfte richtig - noch zwei, drei Karten lernen, dann läuft\'s.';}
+  else if(pct>=40){emoji='💡';headline='Halbzeit';msg='Du erkennst schon einige - schau dir die Fehler unten in Ruhe an.';}
+  else{emoji='😅';headline='Aufwärmen!';msg='Schau dir die Wortliste oben nochmal an.';}
+  let errorHTML='';
+  if(quizState.wrongTasks.length>0){
+    errorHTML='<div style="margin-top:22px;text-align:left;"><div style="font-size:16px;font-weight:900;color:#ffcc00;margin-bottom:10px;text-align:center;">📋 Deine Fehler:</div><div style="display:flex;flex-direction:column;gap:8px;">'+quizState.wrongTasks.map(function(wt){return '<div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,110,110,.45);border-radius:10px;padding:10px 14px;"><div style="font-size:12px;color:#ffb3b3;font-weight:700;margin-bottom:3px;">Frage '+wt._qn+' (Kl. '+wt.grade+')</div><div style="font-size:14px;color:#e8d0aa;margin-bottom:4px;">'+wt.prompt+'</div><div style="font-size:14px;color:#ff6b6b;font-style:italic;margin-bottom:4px;">✗ '+wt._user+'</div><div style="font-size:14px;color:#7fffb3;font-weight:700;">✓ '+['A','B','C','D'][wt.correct]+': '+wt.options[wt.correct]+'</div>'+(wt.explanation?'<div style="font-size:13px;color:#c7d2fe;margin-top:5px;">'+wt.explanation+'</div>':'')+'</div>';}).join('')+'</div></div>';
+  }
+  const resultBox=document.getElementById('quiz-result');
+  resultBox.innerHTML='<div style="position:relative;overflow:hidden;"><div style="height:8px;background:repeating-linear-gradient(90deg,#ffcc00 0 14%,#d4922e 14% 28%,#e53935 28% 42%,#43a047 42% 56%,#ffcc00 56% 70%,#ab47bc 70% 84%,#d4922e 84% 100%);"></div><div style="padding:28px 20px 24px;text-align:center;"><div style="font-size:72px;line-height:1;margin-bottom:10px;">'+emoji+'</div><div style="font-size:clamp(24px,5vw,34px);font-weight:900;color:#ffcc00;margin-bottom:6px;">'+headline+'</div><div style="display:inline-block;background:rgba(255,204,0,.15);border:2px solid #ffcc00;border-radius:16px;padding:14px 32px;margin:12px 0 18px;"><div style="font-size:clamp(34px,7vw,46px);font-weight:900;color:#fff;line-height:1;">'+quizState.correct+' <span style="font-size:.55em;color:#ffcc00;">/ '+total+'</span></div><div style="font-size:15px;font-weight:700;color:#ffcc00;margin-top:2px;">'+pct+' % RICHTIG</div><div style="font-size:13px;color:rgba(255,204,0,.8);margin-top:6px;">⏱ Zeit: '+ts+'</div><div style="font-size:17px;font-weight:900;color:#ffcc00;margin-top:8px;">🏅 Gewonnen: '+prize+'</div></div><div style="font-size:15px;color:#fff;max-width:500px;margin:0 auto;line-height:1.7;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 18px;border:1px solid rgba(255,255,255,.2);">'+msg+'</div>'+errorHTML+'</div></div>';
+  resultBox.style.display='block';
+  setTimeout(function(){resultBox.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+
+function initQuiz(){
+  // Difficulty-Verteilung wie in 05_simple_present.html / 06_will_future.html: 20 Fragen (5 d:1, 7 d:2, 8 d:3)
+  quizState.tasks=pickQuizByDifficulty(FF_QUIZ,20);
+  quizState.current=0;quizState.correct=0;quizState.wrongCount=0;quizState.wrongTasks=[];quizState.streak=0;quizState.earnedLevel=0;
+  quizState.jokerUsed={fifty:false,phone:false,audience:false};
+  resetQuizTimer();
+  const progressRoot=document.querySelector('#quiz-progress .progress');
+  if(!quizState.progressCtrl){quizState.progressCtrl=initProgressBar(progressRoot,quizState.tasks.length);}
+  else{quizState.progressCtrl.setTotal(quizState.tasks.length);}
+  if(!quizState.timerEl){
+    quizState.timerEl=document.createElement('div');
+    quizState.timerEl.style.cssText='font-size:13px;font-weight:700;color:#ffcc00;text-align:center;margin:4px 0 8px;letter-spacing:1px;display:none;';
+    quizState.timerEl.textContent='⏱ 0:00';
+    progressRoot.parentElement.insertAdjacentElement('afterend',quizState.timerEl);
+  }else{quizState.timerEl.style.display='none';quizState.timerEl.textContent='⏱ 0:00';}
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-result').innerHTML='';
+  if(quizState.tasks.length===0){
+    document.getElementById('quiz-tasks').innerHTML='<div style="text-align:center;padding:32px;color:#ffcc00;">Keine Quizfragen verfügbar.</div>';
+    return;
+  }
+  renderQuizQuestion();
+}
+
+function setupUebungsHandlers(){
+  document.querySelectorAll('#uebungs-levels button').forEach(function(b){
+    b.addEventListener('click',function(){
+      const lvl=parseInt(b.dataset.level,10);uebungsState.level=lvl;
+      document.querySelectorAll('#uebungs-levels button').forEach(function(x){x.classList.toggle('active',x===b);});
+      renderUebungen();
+    });
+  });
+  document.getElementById('uebungs-check-all').addEventListener('click',function(){
+    const container=document.getElementById('uebungs-tasks');
+    const inputs=container.querySelectorAll('.task input');let ok=0,total=0;const wrongItems=[];
+    inputs.forEach(function(inp){if(typeof inp._check==='function'){total++;if(inp._check(true))ok++;}});
+    inputs.forEach(function(inp){
+      const wrap=inp.closest('.task');if(!wrap)return;
+      if(inp._correct){wrap.classList.remove('task--wrong');}
+      else if(inp.value&&inp.value.trim()){
+        wrap.classList.add('task--wrong');
+        const pEl=wrap.querySelector('.prompt');
+        const nEl=wrap.querySelector('div[style*="color:#b8905a"]');
+        wrongItems.push({num:nEl?nEl.textContent.trim():'',prompt:pEl?pEl.textContent.trim():'',userVal:inp.value.trim()});
+      }
+    });
+    if(total>0){
+      container.querySelectorAll('.result-banner,.error-list,.celebrate-banner').forEach(function(b){b.remove();});
+      const pct=Math.round(ok/total*100);
+      const banner=document.createElement('div');banner.className='result-banner';
+      const col=pct===100?'#3d7a2e':pct>=60?'#b85c20':'#b83a22';
+      const em=pct===100?'🏆':pct>=60?'👍':'💪';
+      banner.style.cssText='margin:10px 0 6px;padding:12px 16px;border-radius:12px;border:2px solid '+col+';background:'+col+'18;font-size:15px;font-weight:700;color:'+col+';display:flex;align-items:center;gap:10px;';
+      banner.innerHTML='<span style="font-size:22px">'+em+'</span><span>Ergebnis: <b>'+ok+' / '+total+'</b> richtig ('+pct+'%)</span>';
+      container.prepend(banner);
+      if(wrongItems.length>0){
+        const el=document.createElement('div');el.className='error-list';
+        el.style.cssText='margin:0 0 12px;padding:10px 14px;border-radius:10px;border:1px solid #fca5a5;background:#fff5f5;font-size:13px;';
+        el.innerHTML='<div style="font-weight:800;color:#b91c1c;margin-bottom:6px;">✗ Noch nicht richtig ('+wrongItems.length+'):</div>'+wrongItems.map(function(w){return '<div style="padding:3px 0;border-top:1px solid #fee2e2;color:#374151;"><span style="color:#9ca3af;font-size:11px;">'+w.num+'</span> <span>'+w.prompt+'</span></div>';}).join('');
+        container.insertBefore(el,banner.nextSibling);
+      }
+      setTimeout(function(){banner.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+    }
+  });
+  document.getElementById('uebungs-reset').addEventListener('click',function(){
+    customConfirm('Übungs-Fortschritt zurücksetzen?',function(){
+      const container=document.getElementById('uebungs-tasks');
+      container.querySelectorAll('.result-banner,.error-list,.celebrate-banner').forEach(function(b){b.remove();});
+      container.querySelectorAll('.task--wrong').forEach(function(t){t.classList.remove('task--wrong');});
+      container.querySelectorAll('.task input').forEach(function(inp){if(typeof inp._reset==='function')inp._reset();});
+    });
+  });
+  document.getElementById('uebungs-reroll').addEventListener('click',function(){renderUebungen();});
+}
+
+var TTS={
+  enabled:false,
+  synth:(function(){try{return window.speechSynthesis||null;}catch(e){return null;}})(),
+  speaking:false,
+  toggle:function(){
+    this.enabled=!this.enabled;
+    document.body.classList.toggle('tts-enabled',this.enabled);
+    const btn=document.getElementById('tts-toggle');
+    if(btn){btn.textContent=this.enabled?'🔊 Vorlesen ✓':'🔊 Vorlesen';btn.classList.toggle('tts-on',this.enabled);}
+    if(this.enabled){this.injectAll();}
+    else{if(this.synth)this.synth.cancel();document.querySelectorAll('.tts-btn').forEach(function(b){b.remove();});document.querySelectorAll('.task').forEach(function(t){delete t.dataset.ttsReady;});}
+  },
+  speak:function(text,lang){
+    if(!this.synth||!text)return;
+    this.synth.cancel();
+    const clean=text.replace(/<[^>]*>/g,' ').replace(/[→←·•📌✅❌❓🔵🕐⚠️💡✓✗]/g,' ').replace(/\s+/g,' ').trim();
+    if(!clean)return;
+    const utt=new SpeechSynthesisUtterance(clean);
+    utt.lang=lang||'en-GB';utt.rate=lang==='de-DE'?0.95:0.85;utt.pitch=1;
+    const self=this;
+    utt.onstart=function(){self.speaking=true;};
+    utt.onend=function(){self.speaking=false;document.querySelectorAll('.tts-btn.tts-playing').forEach(function(b){b.classList.remove('tts-playing');});};
+    utt.onerror=function(){self.speaking=false;};
+    this.synth.speak(utt);
+  },
+  createBtn:function(text,lang,style){
+    const btn=document.createElement('button');btn.className='tts-btn';btn.type='button';btn.setAttribute('aria-label','Vorlesen');btn.textContent='🔊';
+    if(style)btn.style.cssText=style;
+    const self=this;
+    btn.addEventListener('click',function(e){
+      e.preventDefault();e.stopPropagation();
+      if(self.speaking){self.synth.cancel();self.speaking=false;btn.classList.remove('tts-playing');return;}
+      document.querySelectorAll('.tts-btn.tts-playing').forEach(function(b){b.classList.remove('tts-playing');});
+      btn.classList.add('tts-playing');
+      self.speak(typeof text==='function'?text():text,lang);
+    });
+    return btn;
+  },
+  injectAll:function(){
+    if(!this.enabled)return;
+    const self=this;
+    document.querySelectorAll('.task').forEach(function(task){
+      if(task.dataset.ttsReady)return;task.dataset.ttsReady='1';
+      const prompt=task.querySelector('.prompt');
+      if(prompt){
+        const pText=prompt.textContent||'';
+        const hasDe=/Setze ein|Übersetze|Was bedeutet|FEHLER|Wie übersetzt|Worum geht|Welche|Wer ist|Welcher|Wenn|Korrigiere/i.test(pText);
+        const btn=self.createBtn(pText,hasDe?'de-DE':'en-GB');
+        prompt.appendChild(btn);
+      }
+    });
+  },
+  init:function(){
+    const btn=document.getElementById('tts-toggle');
+    if(!this.synth){if(btn)btn.style.display='none';return;}
+    const self=this;
+    if(btn)btn.addEventListener('click',function(){self.toggle();});
+    document.querySelectorAll('details.accordion').forEach(function(d){
+      d.addEventListener('toggle',function(){if(d.open&&self.enabled)setTimeout(function(){self.injectAll();},100);});
+    });
+  }
+};
+
+(function(){
+  const btn=document.getElementById('dark-toggle');
+  try{if(localStorage.getItem('ff_dark_v1')==='1'){document.body.classList.add('dark-mode');btn.textContent='☀️ Hell';}}catch(e){}
+  btn.addEventListener('click',function(){const on=document.body.classList.toggle('dark-mode');btn.textContent=on?'☀️ Hell':'🌙 Dark Mode';try{localStorage.setItem('ff_dark_v1',on?'1':'0');}catch(e){}});
+})();
+
+(function(){
+  const ids=['acc-words','acc-uebungen','wwm-quiz'];
+  const els=ids.map(function(id){return document.getElementById(id);}).filter(Boolean);
+  els.forEach(function(el){el.removeAttribute('open');});
+  els.forEach(function(el){
+    el.addEventListener('toggle',function(){
+      if(el.open){
+        els.forEach(function(o){if(o!==el&&o.open)o.open=false;});
+        setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'start'});},80);
+      }
+    });
+  });
+})();
+
+document.addEventListener('DOMContentLoaded',function(){
+  try{
+    setupUebungsHandlers();
+    renderWords();
+    renderUebungen();
+    initQuiz();
+    TTS.init();
+    const qa=document.getElementById('wwm-quiz');
+    if(qa)qa.addEventListener('toggle',function(){
+      if(!qa.open){stopQuizTimer();}
+      else{if(quizState.current<quizState.tasks.length&&quizState.timerStart!==null)startQuizTimer();}
+    });
+    document.getElementById('quiz-reset').addEventListener('click',function(){
+      customConfirm('Quiz neu starten?',function(){initQuiz();});
+    });
+    document.getElementById('reset-all-btn').addEventListener('click',function(){
+      customConfirm('Gesamten Fortschritt zurücksetzen?',function(){
+        const container=document.getElementById('uebungs-tasks');
+        container.querySelectorAll('.result-banner,.error-list,.celebrate-banner').forEach(function(b){b.remove();});
+        container.querySelectorAll('.task--wrong').forEach(function(t){t.classList.remove('task--wrong');});
+        container.querySelectorAll('.task input').forEach(function(inp){if(typeof inp._reset==='function')inp._reset();});
+        initQuiz();
+      });
+    });
+  }catch(e){console.error('Init error:',e);}
+});
+</script>
+</body>
+</html>

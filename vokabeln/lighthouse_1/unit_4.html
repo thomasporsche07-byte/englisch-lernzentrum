@@ -30,6 +30,8 @@ body.dark-mode{
   --info:#60a5fa;--info-soft:rgba(96,165,250,0.10);
 }
 html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:#fef9f2;color:#2c1a0e;line-height:1.55;font-size:18px}
+body{min-height:100vh}
+html:has(body.dark-mode){background:#111827}
 .container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
 header{text-align:center;padding:20px 10px 10px;position:relative}
 header img{height:70px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
@@ -1752,7 +1754,7 @@ document.getElementById('btn-reset-progress').addEventListener('click',()=>{if(!
 </script>
 
 <footer style="text-align:center;padding:16px 20px 8px;font-size:12px;color:#a0845c;font-family:'Baloo 2',sans-serif;border-top:1px solid rgba(160,132,92,.25);margin-top:24px">
-  <div>Version 28.04.2026, 23:00</div>
+  <div>Version 30.04.2026, 20:40</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 <script id="auto-version-stamp">

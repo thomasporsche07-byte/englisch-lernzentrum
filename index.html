@@ -147,7 +147,7 @@ button{font-family:inherit;cursor:pointer}
 .grid-wrap{max-width:1200px;margin:0 auto;padding:16px 20px 0}
 .category-section{margin-bottom:24px}
 
-/* Klassische (nicht-akkordeon) Kategorien (Skills, ZAP) */
+/* Klassische (nicht-akkordeon) Kategorien (Skills) */
 .category-header{
   display:flex;align-items:center;gap:10px;
   margin:0 0 6px;padding-bottom:8px;
@@ -164,7 +164,7 @@ button{font-family:inherit;cursor:pointer}
   margin:0 0 12px 4px;
 }
 
-/* Akkordeon-Kategorien (Grammatik, Vokabeln, Übergreifend) */
+/* Akkordeon-Kategorien (Grammatik, Vokabeln, Übergreifend, ZAP) */
 .category-section.cat-accordion{margin-bottom:14px}
 .category-section.cat-accordion > details{
   background:var(--card);
@@ -218,6 +218,7 @@ button{font-family:inherit;cursor:pointer}
 .category-section.cat-accordion[data-cat="grammatik"]    > details > summary{border-left-color:var(--hr-blue)}
 .category-section.cat-accordion[data-cat="vokabeln"]     > details > summary{border-left-color:var(--hr-green)}
 .category-section.cat-accordion[data-cat="uebergreifend"] > details > summary{border-left-color:var(--hr-ocker)}
+.category-section.cat-accordion[data-cat="zap"]           > details > summary{border-left-color:var(--hr-wine)}
 
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
@@ -491,7 +492,7 @@ body.admin-mode .tile.dragging{cursor:grabbing;opacity:.5}
 <input type="file" id="file-import" accept=".json" style="display:none">
 
 <footer class="site-footer">
-  <div>Version 29.04.2026, 22:00</div>
+  <div>Version 30.04.2026, 20:33</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 
@@ -505,7 +506,7 @@ const DEFAULT_CONFIG = {
   // version. Bei Mismatch läuft mergeWithDefaults():
   //   - Default-Daten (title, sub, file, icon, status, since) werden überschrieben
   //   - Lehrer-Anpassungen (Reihenfolge, visible, eigene Kacheln) bleiben erhalten
-  version: 13,
+  version: 14,
   tiles: [
     // ---- GRAMMATIK ----
     // Titel-Schema: "Unit X – Thema" (X = Lighthouse-Unit, in der Grammatik eingeführt wird)
@@ -587,6 +588,9 @@ const DEFAULT_CONFIG = {
     {id:"v-lh4-u01", title:"Lighthouse 4 – Unit 1", sub:"Vokabeln der Unit",
      category:"vokabeln", grade:"8", subcat:"",
      file:"vokabeln/lighthouse_4/unit_1.html", icon:"📒", status:"draft", visible:false},
+    {id:"v-lh4-u4", title:"Lighthouse 4 – Unit 4", sub:"Stories from the Deep South",
+     category:"vokabeln", grade:"8", subcat:"",
+     file:"vokabeln/lighthouse_4/unit_4.html", icon:"📒", status:"new", visible:true, since:"2026-04-30"},
 
     // --- Klasse 9 (Lighthouse 5) ---
     {id:"v-lh5-u01", title:"Lighthouse 5 – Unit 1", sub:"Vokabeln der Unit",
@@ -924,7 +928,7 @@ function render(){
 
   const order = ["grammatik","vokabeln","skills","uebergreifend","zap"];
   // Welche Kategorien sind ausklappbare Akkordeons (geschlossen by default)?
-  const ACCORDION_CATS = new Set(["grammatik","vokabeln","uebergreifend"]);
+  const ACCORDION_CATS = new Set(["grammatik","vokabeln","uebergreifend","zap"]);
   // Welche Kategorien werden beim Rendern automatisch nach Klasse → Unit sortiert?
   // (Verbindlich laut Spec; überstimmt evtl. drag-and-drop Reihenfolge im saved State.)
   const AUTOSORT_CATS = new Set(["grammatik","vokabeln"]);
@@ -995,7 +999,7 @@ function render(){
         </details>
       </section>`;
     } else {
-      // Klassischer Header (Skills, ZAP)
+      // Klassischer Header (Skills)
       html += `<section class="category-section" data-cat="${cat}">
         <div class="category-header">
           <h2><span class="dot" style="background:${meta.color}"></span> ${meta.icon} ${meta.label}</h2>

@@ -2,6 +2,22 @@
 
 Verbindliche Spec für jede neue Grammatikdatei. Vor Arbeitsbeginn lesen.
 
+## ⚠️ AKTIVE MERKER FÜR CLAUDE
+
+> **Quiz-Implementierung:** Das WWM-Quiz wird pro Datei als Inline-IIFE umgesetzt — `(function initQuiz(){…})()` direkt im topic-spezifischen `<script>`-Block. Logik 1:1 aus Referenzdatei (`grammatik/06_will_future.html` oder `grammatik/08_past_perfect.html`) kopieren. Kein zentrales `shared/`-Modul, kein `HRQuiz.init`.
+
+> **Wort-Wrap bei Tile-Aufgaben:** Bei JEDER Aufgabe, bei der mehrere Buchstaben-Tiles oder Underscore-Lücken ein Wort darstellen (Scramble `.scr-built`, Spell-Clue `.spell-clue`, künftige Buchstaben-Pools), gilt: **kein Wort darf mitten umbrechen — Umbruch nur ZWISCHEN Wörtern.** Pflicht-Pattern siehe Abschnitt „Wort-Wrap bei Tiles" unten. Test auf 375 px / 768 px / 1024 px.
+
+> **Matching-Übung (Vokabeldateien) – Farbpalette:** Die Paar-Farben in `MATCH_COLORS` werden **index-basiert** vergeben (`matched.length % MATCH_COLORS.length`). Pflicht: kuratierte **10-Farben-Palette mit gleichmäßiger Hue-Verteilung**, nicht zufällig/hashbasiert. Keine zwei Farben aus demselben Cluster (kein doppeltes Orange/Braun, kein doppeltes Grün, kein doppeltes Teal/Cyan, kein doppeltes Violett/Indigo) — sonst sehen unterschiedliche Paare optisch ähnlich aus und Schüler vermuten falsche Verwandtschaft. Verbindliche Palette (alle Farben dunkel genug für weißen Text):
+>
+> ```js
+> const MATCH_COLORS=['#C62828','#EF6C00','#827717','#2E7D32','#00838F','#1976D2','#1A237E','#6A1B9A','#AD1457','#5D4037'];
+> ```
+>
+> Hue-Reihenfolge: Rot · Orange · Olivgelb · Grün · Teal · Hellblau · Indigo · Violett · Magenta · Braun. Bei `COUNT_MATCH=10` reicht die Palette ohne Wiederholung pro Runde. Referenz-Implementierungen: `vokabeln/lighthouse_1/unit_4.html`, `vokabeln/lighthouse_1/unit_5.html`, `vokabeln/lighthouse_2/unit_5.html`.
+
+<!-- Rekonstruiert nach Refactor-Rollback. Falls dieser Hinweis-Block vor dem Refactor anders formuliert war, hier anpassen. -->
+
 ## Vorab: Referenzdatei lesen
 
 Vor jeder neuen Grammatikdatei eine bestehende öffnen und Konventionen 1:1 spiegeln. Nichts neu erfinden.
@@ -49,6 +65,72 @@ Pill-Formel-Zeilen mit `<span class="fc">…</span>` und `<span class="fc-plus">
 
 Test pflicht auf 3 Breiten: ≥1024 px / 768 px / 375 px.
 
+#### ⚠️ Pflicht: Wort-Wrap bei Buchstaben-/Lücken-Tiles
+
+Sobald eine Aufgabe ein **Mehrwort-Wort** (z. B. „baking powder", „main course") in mehrere Tiles/Spans zerlegt — sei es Buchstaben-Tiles (Scramble), Underscore-Lücken (Spell-Clue) oder neue ähnliche Pattern — MUSS jedes ganze Wort als untrennbare Einheit gerendert werden. **Umbruch nur ZWISCHEN Wörtern, nie mitten im Wort.**
+
+Falsch (was passierte vor dem Fix):
+```
+[b][a][k][i][n][g] [p]
+[o][w][d][e][r]
+```
+Richtig:
+```
+[b][a][k][i][n][g]
+[p][o][w][d][e][r]
+```
+
+**Verbindliches Pattern (Buchstaben-Tiles in Scramble `.scr-built`):**
+
+CSS:
+```css
+.scr-built{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;…}
+.scr-built .scr-word-group{display:inline-flex;align-items:center;gap:3px;flex-shrink:0;flex-wrap:nowrap;white-space:nowrap}
+.scr-built .scr-char{…}
+```
+
+JS (Render-Loop): Pro Wort eine `<span class="scr-word-group">` öffnen; bei jedem Leerzeichen (`spacePos`) die aktuelle Gruppe schließen und eine neue starten. NICHT mehr ein Spacer-`<span>` für jedes Leerzeichen einfügen — die Trennung erledigt der Container-Gap.
+
+```js
+let li=0;
+let wg=document.createElement('span');wg.className='scr-word-group';
+for(let pos=0;pos<totalSlots;pos++){
+  if(spacePos.has(pos)){
+    if(wg.childNodes.length>0)builtEl.appendChild(wg);
+    wg=document.createElement('span');wg.className='scr-word-group';
+  } else {
+    if(li<built.length){
+      const s=document.createElement('span');s.className='scr-char';s.textContent=built[li].ch;
+      wg.appendChild(s);
+    }
+    li++;
+  }
+}
+if(wg.childNodes.length>0)builtEl.appendChild(wg);
+```
+
+**Verbindliches Pattern (Spell-Clue Text `.spell-clue`):**
+
+CSS:
+```css
+.spell-clue{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 18px;…}
+.spell-clue-word{display:inline-block;white-space:nowrap;flex-shrink:0}
+```
+
+JS (`makeClue`): Jedes Wort in einen `.spell-clue-word`-Span wickeln. Innerhalb des Spans dürfen ruhig normale Spaces zwischen den Underscores stehen — `white-space:nowrap` verhindert den Bruch. Trennung zwischen Wörtern via Container-Gap.
+
+```js
+function makeClue(answer){
+  return answer.split(' ')
+    .map(w=>'<span class="spell-clue-word">'+(w[0]+' '+Array(w.length-1).fill('_').join(' '))+'</span>')
+    .join(' ');
+}
+```
+
+**Wort-Tiles** (Aufgabentyp „Ordne die Wörter" mit `.word-tile`/`.wo-chip`): Hier ist jedes Tile bereits ein ganzes Wort — kein In-Wort-Bruch möglich. Nichts zu tun.
+
+Test pflicht auf 375 px mit Mehrwort-Antwort wie „baking powder", „main course".
+
 #### ⚠️ Pflicht-Karten für Tense-Grammatikdateien (Zeitformen)
 
 Bei allen Grammatikdateien zu **Zeiten/Tenses** (Simple Present, Will Future, Present Perfect, Past Perfect, Simple Past, Past Continuous, …) sind **genau diese 6 Karten Pflicht** und in dieser Reihenfolge:
@@ -76,7 +158,7 @@ Referenzdatei: `grammatik/08_past_perfect.html` (Karten-Aufbau 1:1 spiegeln, nur
   - `{words:[…], answer:[…], label}` — Wörter ordnen (Tap-to-Order Tiles)
   - `{prompt, answer:[…], placeholder?, explanation?}` — Freitext (auch Lücken, Umformung, Fehlerkorrektur)
 - L1 = Erkennen (MC + Ordne), L2 = Anwenden (Lücken/Freitext), L3 = Transfer (Umformen/Fehlerkorrektur)
-- Mindestens 15 Aufgaben pro L1/L2/L3-Pool, 12 für simple Sektionen
+- **Mindestens 40 Aufgaben pro L1/L2/L3-Pool, dem Lernniveau angepasst.** Bei mehrfachem Durchlauf des Schülers sollen neue Aufgaben sichtbar werden. Pool wird pro Durchlauf zufällig durchmischt (`shuffle()` im `setupSection()`-Pattern). Quiz-Pools (15 Fragen) sind davon ausgenommen.
 - Realistischer Wortschatz der Zielklasse (Lighthouse-Vokabular)
 
 ### 3. WWM-Quiz (Wer-wird-Millionär-Stil)
@@ -102,23 +184,25 @@ Markup:
 </details>
 ```
 
-JS: `quizPool` (15 Fragen) + `(function initQuiz(){…})()` IIFE komplett aus Referenz übernehmen — keine eigene Variante.
+JS: `quizPool` (mind. 40 Fragen, Picker zieht 15 pro Runde) + Inline-IIFE `(function initQuiz(){ … })()` mit Geldleiter, 3 Jokern, Streak, Timer, Ergebnis-Karte. 1:1 aus Referenzdatei kopieren. Picker-Aufruf `pickByDifficulty(4,5,6)` (oder analog) ist Pflicht — sonst werden die zusätzlichen Pool-Fragen nie gezogen.
 
-Pflicht-Features (alle aus Referenz übernommen):
+Pflicht-Features:
 - Geldleiter (`wwm-amounts`, Meilensteine bei Index 4/9/14)
-- 3 Joker: 50:50 (`fifty`), Telefonjoker (`phone`), Publikumsjoker (`audience`) — Joker dürfen mit ~30 % auch falsch liegen
+- 3 Joker: 50:50, Telefonjoker, Publikumsjoker — Joker dürfen mit ~30 % auch falsch liegen
 - Streak-Anzeige bei 3+ richtigen in Folge
 - Timer
 - Ergebnis-Karte (`showFinal`) mit Emoji, Headline, Score, gewonnenem Betrag, Fehlerliste
 - Gerendert erst beim ersten Öffnen des Akkordeons (`toggle`-Listener)
 
-Quizfragen (15 Stück):
-- **d=1** (4 Fragen): Grundregel-Erkennung, klare MC
-- **d=2** (5 Fragen): Kontextverständnis, mittlere Schwierigkeit
-- **d=3** (6 Fragen): Bedeutungsnuance, Fehlerkorrektur, Edge Cases
+Quizfragen (Pool ≥ 40, Picker zieht 15 pro Runde mit Difficulty-Verteilung 4·d=1 / 5·d=2 / 6·d=3):
+- Pool-Verhältnis proportional erhalten: ca. **25 % d=1 / 35 % d=2 / 40 % d=3**. Beispiel bei 40 Fragen: 10·d=1 / 14·d=2 / 16·d=3.
+- **d=1**: Grundregel-Erkennung, klare MC
+- **d=2**: Kontextverständnis, mittlere Schwierigkeit
+- **d=3**: Bedeutungsnuance, Fehlerkorrektur, Edge Cases
 - Jede Frage: `{prompt, options:[4 Strings], correct:0–3, tip, explanation, d:1–3}`
 - 4 Optionen pro Frage (auch wenn weniger pädagogisch nötig — Geldleiter-Layout)
 - **Plausible Distraktoren** — typische Schülerfehler einbauen, keine offensichtlich falschen
+- Falls eine Datei `pickByDifficulty` nicht aufruft (statisch alle Fragen rendert), Picker ergänzen — sonst wirkt das Pool-Wachstum nicht.
 
 ### 4. Footer
 
@@ -136,7 +220,7 @@ Datum/Uhrzeit bei jeder Änderung aktualisieren. Format: `DD.MM.YYYY, HH:MM` (24
 Nach Anlage der Datei: Eintrag in `index.html` `DEFAULT_CONFIG.tiles[]`.
 
 - Position: einsortiert nach Sortier-Regeln (siehe unten)
-- ID-Schema: `g-<grade>-<short>` (Grammatik-Präfix + Klasse + Kürzel, z.B. `g-06-saf` für some/any/few)
+- ID-Schema: `g-<grade>-<short>` (Grammatik-Präfix + Klasse + Kürzel, z. B. `g-06-saf` für some/any/few)
 - Pflichtfelder:
   ```js
   {id, title, sub, category:"grammatik", grade, subcat:"", file, icon, status, visible, since?}
@@ -144,6 +228,7 @@ Nach Anlage der Datei: Eintrag in `index.html` `DEFAULT_CONFIG.tiles[]`.
 - `status:"new"` mit `since:"YYYY-MM-DD"` setzen (Badge läuft nach 14 Tagen automatisch ab)
 - Icon: passend zur Themenfarbe, möglichst Buch-Emoji (📗📘📙📕) für Grammatik
 - Index-Footer-Datum ebenfalls aktualisieren
+- **`DEFAULT_CONFIG.version` hochzählen** (Integer, +1 bei jeder inhaltlichen Änderung an `tiles[]`). Schüler/Eltern bekommen beim nächsten Reload `mergeWithDefaults()` und damit die neuen Tiles.
 
 ### Sortier-Regeln in `DEFAULT_CONFIG.tiles[]`
 
@@ -165,31 +250,12 @@ Beispiel Klasse 5: `v-lh1-u01` (Unit 1, draft) steht vor `v-lh1-u4` (Unit 4, rea
 
 **Andere Kategorien (Skills, Übergreifend, ZAP):** keine spezifische Sortier-Regel, aktuelle Reihenfolge beibehalten.
 
-### ⚠️ Versions-Bump pflicht
-
-Bei JEDER Änderung an `DEFAULT_CONFIG.tiles[]` (neue Kachel, geänderter Titel, anderer Dateiname, neues Icon, neuer Status, entfernte Kachel) MUSS `DEFAULT_CONFIG.version` um 1 erhöht werden.
-
-```js
-const DEFAULT_CONFIG = {
-  version: 2,   // ← bumpen!
-  tiles: [ ... ]
-};
-```
-
-Hintergrund: Schüler/Eltern speichern die Konfiguration in `localStorage` (`dashboard_config_v3`). Ohne Versions-Bump bleibt die alte Konfig im Browser-Cache, neue Kacheln/Titel/Icons werden NICHT sichtbar.
-
-Bei Versions-Bump läuft `mergeWithDefaults()` automatisch und aktualisiert smart:
-- ✓ Default-Felder (`title`, `sub`, `file`, `icon`, `status`, `since`, `subcat`, `grade`, `category`) werden überschrieben
-- ✓ Lehrer-Anpassungen bleiben erhalten: Reihenfolge (Drag&Drop), `visible`-Flag, eigene Custom-Kacheln (IDs ohne Standard-Präfix `g-`/`v-`/`s-`/`u-`/`z-`)
-- ✓ Neue Default-Tiles werden an passender Position eingefügt
-- ✓ Aus DEFAULT_CONFIG entfernte Default-Tiles werden gelöscht (Custom bleibt)
-
 ## Konventionen
 
 ### Dateinamen
 - Schema: `<Klassenstufe>_<thema>.html`
 - Präfix = Klassenstufe (5/6/7/8/9/10), **NICHT sequentiell**
-- Mehrere Dateien pro Klasse möglich (z.B. `06_will_future.html` + `06_some_any_little_few.html`)
+- Mehrere Dateien pro Klasse möglich (z. B. `06_will_future.html` + `06_some_any_little_few.html`)
 - Thema in snake_case, kein Umlaut
 
 ### Terminologie (Schüler-Sicht)
@@ -221,188 +287,7 @@ Bei Versions-Bump läuft `mergeWithDefaults()` automatisch und aktualisiert smar
 ### Style-Konventionen
 - Designsystem: Terrakotta/Creme (`--hr-blue:#b85c20`, `--bg:#fef9f2`)
 - Font: `Baloo 2`
-- Dark-Mode: über `body.dark-mode` gesteuert, `localStorage`-Key projektspezifisch (z.B. `samllf_dark_v1`)
+- Dark-Mode: über `body.dark-mode` gesteuert, `localStorage`-Key projektspezifisch (z. B. `samllf_dark_v1`)
 - Print-Styles vorhanden (Aufgaben sichtbar, Controls/Solutions ausgeblendet)
 
-### Button-Layout (Pflicht in jeder Grammatik-Datei)
-
-Drei feste Bildschirm-Ecken-Buttons – Position 1:1 aus `05_simple_present.html` übernehmen:
-
-| Button | Position | CSS-Klasse | Zweck |
-|---|---|---|---|
-| 🌙 Dark Mode | **oben rechts** (`top:14px;right:16px`) | `.dark-toggle` | Dark/Hell umschalten |
-| 🔊 Vorlesen | **unten links** (`bottom:46px;left:16px`) | `.tts-toggle` | TTS für LRS-Schüler |
-| 🗑️ Zurücksetzen | **unten links** (`bottom:14px;left:16px`) | `.reset-all-btn` | Globaler Fortschritts-Reset |
-
-Reihenfolge im HTML: dark-toggle, tts-toggle, reset-all-btn (DOM-Reihenfolge irrelevant, da fixed positioniert).
-
-**TTS-Modul** (`var TTS={…}`): komplett 1:1 aus `05_simple_present.html` (Zeilen ~2289–2430) übernehmen, inkl. CSS-Klassen `.tts-btn`, `.tts-flag-btn`, `@keyframes tts-pulse`, `body.dark-mode .tts-toggle`. Liest Aufgaben-Prompts (DE/EN automatisch erkannt), Lösungen und gelöste Sätze beim Aktivieren.
-
-⚠️ Mobile-Breakpoint: nur `.dark-toggle` wird `position:static` (Hamburger-Stil). `.tts-toggle` und `.reset-all-btn` bleiben fixed unten (nur Padding/Schriftgröße kleiner).
-
-## Pflicht-Verifikation (vor Abschluss)
-
-Nach jeder Änderung an einer HTML-Datei automatisch prüfen:
-
-1. **HTML-Tag-Balance**: Öffnende = schließende Tags für `html, head, body, div, section, details, summary, style, script, header, footer`
-2. **JS-Syntax**: `new Function(scriptBlock)` muss ohne Fehler durchlaufen (oder `node --check` auf extrahierten Block)
-3. **Pool-Validierung**:
-   - Alle MC-Aufgaben: `options.length >= 2` (Quiz: genau 4), `correct` in Range, `correct`-Index zeigt auf erwartete Antwort
-   - Alle Wörter-Ordnen: `words.length > 0`, `answer` vorhanden
-   - Alle Freitext: `prompt` und `answer` vorhanden
-4. **Quiz-Spezifisch**: `quizPool.length === 15`, Verteilung d=1:4, d=2:5, d=3:6, alle Fragen haben `tip` und `explanation`
-5. **Ergebnis-Karte pro Akkordeon**: Jedes Übungs-Akkordeon zeigt nach Abschluss ein Ergebnis. Pattern 1:1 aus `grammatik/05_simple_present.html`:
-   - `checkCelebration(container)` → grünes `.celebrate-banner` „🎉 Perfekt!" bei 100 % korrekt
-   - „Alle prüfen"-Klick → farbiger `.result-banner` (grün/orange/rot je nach %) + `.error-list` mit allen falsch beantworteten Aufgaben
-   - Aufruf erfolgt aus `updateProgress()`-Hook bzw. `checkAllBtn`-Handler
-   - CSS-Klassen `.celebrate-banner` (`@keyframes celebrate-pop`), `.result-banner`, `.error-list` müssen vorhanden sein
-   - Reset-Buttons müssen alle drei Banner-Typen entfernen
-6. **Footer-Datum**: aktuell
-
-## Bekannte Fallstricke
-
-### Quote-Encoding in JS-Strings
-Deutsche Anführungszeichen `„…"` brauchen schließendes `"` (U+201C), NICHT `"` (ASCII 34) — sonst terminiert die JS-String-Definition vorzeitig.
-
-Falsch: `"… kein „two milks"."` (ASCII-Quote schließt String)
-Richtig: `"… kein „two milks"."` (mit U+201C als schließendem Quote)
-
-### Datei-Größe beim Schreiben
-Sehr große Dateien (>92 KB) können beim direkten Write trunkiert werden. Strategie:
-- Ersten Teil mit `Write` schreiben
-- Rest mit `bash` und `cat >> file << 'EOF'` anhängen
-- Am Ende immer Tag-Balance + JS-Syntax verifizieren
-
-### LocalStorage-Keys eindeutig
-Dark-Mode-Key pro Datei eindeutig wählen (z.B. `<topic>_dark_v1`), sonst Konflikte zwischen Seiten.
-
-
-## Shared-Modules-Architektur (ab Phase 1a)
-
-Seit dem Refactor liegen wiederverwendbare Bestandteile zentral unter `shared/`. Eine Grammatikdatei lädt sie nur noch und liefert die topic-spezifischen Daten.
-
-### Was liegt zentral (`shared/`)
-
-| Datei                         | Inhalt                                                                                                    |
-|-------------------------------|-----------------------------------------------------------------------------------------------------------|
-| `shared/style.css`            | Variablen, Layout, Header, Container, Akkordeon-Basis, Regelkarten, Pill-Formeln (`.fc/.fc-pair/.fc-plus`), Aufgaben (`.task`), MC, Wörter-Ordnen, Buttons, Score-Karten (Banner/Error-List/Celebrate), Drei-Ecken-Buttons (Dark/TTS/Reset), Quiz-Divider, Confirm-Modal-Stil, alle Dark-Mode-Switches. |
-| `shared/quiz.css`             | WWM-Quiz-Styles (Geldleiter, Joker-Optionen, Phone-/Audience-Boxen, Quiz-Bühne, Quiz-Result-Karte).        |
-| `shared/quiz.js`              | WWM-Quiz-Logik. `window.HRQuiz.init(quizPool, options)` initialisiert das Quiz, wenn `#wwm-quiz`, `#quiz-tasks` und `#quiz-result` im DOM existieren. Erst beim ersten Öffnen des Akkordeons gestartet. |
-| `shared/scorecards.js`        | Globale Helfer in `window.HRShared`: `shuffle`, `initProgressBar`, `checkCelebration`, `showResultBanner`, `clearBanners`, `initDarkMode`, `initTTS` (setzt zugleich `window.TTS`), `customConfirm` (auch global), `initResetAllButton`. |
-| `shared/tutor.css`            | Stile für KI-Tutor-Akkordeon (`#acc-ki`, Welcome-Karte, Quick-Chips, Chatbubbles, Eingabezeile, Typing-Indicator). |
-| `shared/tutor.js`             | KI-Tutor-Logik. Liest `window.TUTOR_CONFIG`, lädt `tutor_base_prompt.txt` per `fetch`, baut System-Prompt, injiziert das Akkordeon in `#tutor-mount` und exportiert `window.kiSend`/`window.kiClear`. |
-| `shared/tutor_base_prompt.txt`| Gemeinsamer Lehrer-Prompt (Realschule, Klasse 5–10, Lighthouse/Camden Market, sehr einfache Sprache, keine Fachbegriffe ohne Schülerverständnis, max. 4 Sätze, keine fertigen Lösungen). |
-
-### Was bleibt pro Datei (topic-spezifisch)
-
-- Header (Titel, Klasse/Unit, Logo)
-- Regelkarten-Markup (Texte, Beispiele, Pill-Klassen-Wahl)
-- Akkordeon-Markup mit den fünf bzw. sechs Übungs-Sektionen + WWM-Quiz
-- **Akkordeon-Farbig­machung** für die topic-spezifischen IDs (`#acc-aus`, `#acc-frag`, …) – das CSS hierfür im Inline-`<style>` lassen.
-- Pool-Daten (`xL1`, `xL2`, `xL3`, …) und `quizPool`
-- Topic-spezifische `setupSection()`/`renderTask()`-Implementierung (kann bei zukünftigen Refactors weiter zentralisiert werden – Phase 1b/2).
-- `window.TUTOR_CONFIG` mit topic-spezifischen Texten
-- Init-Aufrufe (`HRShared.initDarkMode`, `HRShared.initTTS`, `HRShared.initResetAllButton`, `HRQuiz.init`)
-- Datei-spezifische LocalStorage-Keys (z. B. `tobe_*`, `pas_*`)
-- Footer
-
-### Pflicht-Pattern für `<head>`-Includes
-
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,...">
-
-<link rel="stylesheet" href="../shared/style.css">
-<link rel="stylesheet" href="../shared/quiz.css">
-<link rel="stylesheet" href="../shared/tutor.css">
-
-<style>
-  /* topic-spezifisches CSS — nur Akkordeon-Farben & Task-Hintergründe pro Section-ID */
-</style>
-```
-
-### Pflicht-Pattern für `<script>`-Reihenfolge (vor `</body>`)
-
-```html
-<!-- 1. Shared scripts: definieren window.HRShared und window.HRQuiz -->
-<script src="../shared/scorecards.js"></script>
-<script src="../shared/quiz.js"></script>
-
-<!-- 2. Inline script: TUTOR_CONFIG + Pool-Daten + setupSection-Definition + Init-Aufrufe -->
-<script>
-  window.TUTOR_CONFIG = { /* … */ };
-  // Pool-Daten
-  // Helper- und setupSection-Implementierungen
-  // Init: setupSection(...) × 4-6, HRShared.initDarkMode/TTS/ResetAll, HRQuiz.init
-</script>
-
-<!-- 3. Tutor zuletzt: konsumiert window.TUTOR_CONFIG -->
-<script src="../shared/tutor.js"></script>
-```
-
-Die Reihenfolge ist verbindlich:
-1. Shared definieren `HRShared`/`HRQuiz` als Globale, bevor das Inline-Script sie aufruft.
-2. Das Inline-Script setzt `TUTOR_CONFIG` und führt die Inits aus.
-3. `tutor.js` liest `TUTOR_CONFIG` und injiziert das Tutor-Akkordeon in `#tutor-mount`.
-
-### Pflicht-DOM-Elemente in der Topic-Datei
-
-- `<div id="confirm-modal" style="display:none" class="confirm-overlay">…</div>` direkt nach `<body>` – wird von `HRShared.customConfirm` benötigt.
-- `<button class="dark-toggle"  id="dark-toggle">🌙 Dark Mode</button>`
-- `<button class="tts-toggle"   id="tts-toggle">🔊 Vorlesen</button>`
-- `<button class="reset-all-btn" id="reset-all-btn">🗑️ Zurücksetzen</button>`
-- `<div id="tutor-mount"></div>` an gewünschter Stelle (Tutor injiziert hier sein Akkordeon).
-- `<details id="wwm-quiz">…</details>` mit `#quiz-progress`, `#quiz-tasks`, `#quiz-result`, `#quiz-reset` (siehe Referenzdatei).
-
-### TUTOR_CONFIG-Schema
-
-```js
-window.TUTOR_CONFIG = {
-  topic:           "to be (am/is/are)",     // Pflicht – wird in Welcome-Karte und Akkordeon-Titel verwendet
-  grade:           5,                        // Klassenstufe 5–10
-  unit:            1,                        // Lighthouse-Unit
-  rules: [                                   // Kurzform der Regelpunkte → erscheinen als Badges
-    "I → am", "he/she/it → is", "you/we/they → are"
-  ],
-  welcomeMessage:  "<strong>👋 …</strong>…", // HTML erlaubt; ersetzt den Default-Begrüßungstext
-  quickChips: [                              // 3-5 Beispielfragen als anklickbare Chips
-    "Wann nehme ich am, is oder are?",
-    "Prüfe diesen Satz: She are happy."
-  ],
-  typicalErrors: [                           // Wird in den System-Prompt eingebaut, damit der Tutor gezielt darauf eingehen kann
-    "„I are\" oder „I is\" statt „I am\""
-  ],
-  // Optional:
-  mountId:         "tutor-mount",            // Default: "tutor-mount"
-  endpoint:        "https://…",              // Default: bekannter Worker-URL
-  basePromptUrl:   "../shared/tutor_base_prompt.txt"
-};
-```
-
-### Topic-spezifische LocalStorage-Keys
-
-Jede Datei nutzt einen eindeutigen Präfix (z. B. `tobe_`, `pas_`, `pre_`):
-
-- `<topic>_dark_v1`       – Dark-Mode-Persistenz (übergeben an `HRShared.initDarkMode(btnId, lsKey)`)
-- `<topic>_<sec>_states`  – Aufgabenstatus pro Sektion
-- `<topic>_openAcc`       – zuletzt offenes Akkordeon
-- (Reset-All löscht diese Keys via `HRShared.initResetAllButton(btnId, sectionResetIds, lsKeys)`)
-
-### Refactor-Status
-
-- ✅ `grammatik/05_to_be.html` – migriert in Phase 1a (Pilot)
-- ⬜ Restliche Grammatikdateien – Phase 1b: schrittweise migrieren, Master-Pattern aus `05_to_be.html` übernehmen
-- ⬜ Phase 2: ggf. `setupSection()`/`renderTask()` ebenfalls in ein gemeinsames `shared/sections.js` ziehen
-
-### Bekannter Fallstrick: OneDrive-Sync-Tail-Truncation
-
-OneDrive überschreibt manchmal nur die ersten N Bytes einer Datei und füllt den Rest mit `\x00`-Bytes auf, statt die Datei korrekt zu truncieren. Nach jedem großen `Write` prüfen:
-```bash
-python3 -c "
-with open(PFAD,'rb') as f: d=f.read()
-print('bytes:',len(d),'nulls:',d.count(b'\\x00'))
-"
-```
-Falls Nulls vorhanden: trailing `\x00` strippen und Datei mit korrekter Länge zurückschreiben.
+<!-- Hinweis Rollback: Der ursprüngliche Abschnitt „Button-Layout (Pflicht in jeder Grammatik-Datei)" enthielt eine Tabelle mit drei festen Bildschirm-Ecken-Buttons (🌙 Dark Mode oben rechts, 🔊 Vorlesen, 🧹 Alles zurücksetzen). Da die zugehörige .bak von CLAUDE.md fehlt UND die im Repo verfügbare Quelle (CLAUDE.md auf Festplatte) mitten im Satz abbrach, ist die genaue Tabelle hier NICHT rekonstruiert. Wer die exakte Position/Beschriftung braucht, soll als Source of Truth `grammatik/05_simple_present.html` (jetzt zurückgespielt) lesen — dort steht der echte Markup. -->

@@ -14,7 +14,19 @@ Verbindliche Spec für jede neue Grammatikdatei. Vor Arbeitsbeginn lesen.
 > const MATCH_COLORS=['#C62828','#EF6C00','#827717','#2E7D32','#00838F','#1976D2','#1A237E','#6A1B9A','#AD1457','#5D4037'];
 > ```
 >
-> Hue-Reihenfolge: Rot · Orange · Olivgelb · Grün · Teal · Hellblau · Indigo · Violett · Magenta · Braun. Bei `COUNT_MATCH=10` reicht die Palette ohne Wiederholung pro Runde. Referenz-Implementierungen: `vokabeln/lighthouse_1/unit_4.html`, `vokabeln/lighthouse_1/unit_5.html`, `vokabeln/lighthouse_2/unit_5.html`.
+> Hue-Reihenfolge: Rot · Orange · Olivgelb · Grün · Teal · Hellblau · Indigo · Violett · Magenta · Braun. Bei `COUNT_MATCH=10` reicht die Palette ohne Wiederholung pro Runde. Referenz-Implementierungen: `vokabeln/lighthouse_1/unit_4.html`, `vokabeln/lighthouse_1/unit_5.html`, `vokabeln/lighthouse_2/unit_5.html`, `vokabeln/lighthouse_4/unit_4.html`.
+
+> **Memory-Akkordeon (Vokabeldateien) – Paar-Farben:** Beim Memory-Spiel wird **bei jedem Treffer** beiden Karten dieselbe Farbe gegeben (CSS-Variable `--match-col`). Verbindliche **12-Farben-Palette** (für 12 Paare = 24 Karten):
+>
+> ```js
+> const MEMORY_COLORS = ['#C62828','#E65100','#827717','#558B2F','#1B5E20','#00838F','#0277BD','#1A237E','#6A1B9A','#AD1457','#5D4037','#455A64'];
+> ```
+>
+> Hue-Reihenfolge: Rot · Tiefrotorange · Olivgelb · Hellgrün · Tiefgrün · Teal · Stahlblau · Indigo · Violett · Magenta · Braun · Schiefergrau. Index-basierte Vergabe (`MEMORY_COLORS[matched % 12]`). Master: `vokabeln/lighthouse_4/unit_4.html`.
+
+> **PAGE_TITLE in Vokabeldateien muss EINDEUTIG sein.** Schema: `"Lighthouse <N> · Unit <X> · Vokabeln"` (z. B. `"Lighthouse 4 · Unit 4 · Vokabeln"`). Begründung: localStorage-Keys (`pb_*`, `lt_*`, `album_*`) werden aus `PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_')` gebildet — bei doppeltem PAGE_TITLE vermischen sich die Daten verschiedener Dateien. **Pflicht:** Migration-Block einbauen, der beim ersten Laden alte Sammel-Keys (`Unit_4___Vokabeln` o. ä.) auf neue eindeutige Keys (`Lighthouse_4___Unit_4___Vokabeln`) umkopiert. Referenz-Implementierung in jeder Vokabeldatei direkt nach `PAGE_SUB`.
+
+> **Master-Datei für Vokabeldateien: `vokabeln/lighthouse_4/unit_4.html`.** Diese hat den vollständigen Feature-Stack (Tranchen A+B+C: Cloze-L4, Tastatur-Shortcuts, Memory mit Farb-Paaren, Leitner-Score, Speech-Recognition, Karten-Album, Crossword, System-Dark-Mode, Profil-Button im Header, eindeutiger PAGE_TITLE, Migration-Block). Bei neuen Vokabeldateien diese Vorlage kopieren und nur Inhalte (PAGE_TITLE/PAGE_SUB/TOPICS/VOCAB) ersetzen.
 
 <!-- Rekonstruiert nach Refactor-Rollback. Falls dieser Hinweis-Block vor dem Refactor anders formuliert war, hier anpassen. -->
 
@@ -215,6 +227,122 @@ Quizfragen (Pool ≥ 40, Picker zieht 15 pro Runde mit Difficulty-Verteilung 4·
 
 Datum/Uhrzeit bei jeder Änderung aktualisieren. Format: `DD.MM.YYYY, HH:MM` (24h).
 
+## Standardstruktur Vokabeldatei
+
+Pfad: `vokabeln/lighthouse_<N>/unit_<X>.html`. Master: `vokabeln/lighthouse_4/unit_4.html`. Bei neuer Vokabeldatei: Master kopieren, nur PAGE_TITLE / PAGE_SUB / `<title>` / `<h1>` / `<p class="sub">` / TOPICS / VOCAB ersetzen.
+
+### Engine-Features (Pflicht, Reihenfolge wie Master)
+
+| # | Akkordeon | Engine-Funktion | Notizen |
+|---|---|---|---|
+| 1 | ✏️ Lückentext | `setupGap()` | 4 Stufen: 🟢 MC · 🟡 Wortfeld · 🔴 Freitext (2 Versuche) · 🟣 **Cloze ohne Hilfe** (1 Versuch) |
+| 2 | 🔗 Zuordnung | `setupMatch()` | Farbpalette `MATCH_COLORS` (10 Farben) |
+| 3 | 🔤 Buchstabensalat | `setupScramble()` | Wort-Wrap-Pattern (siehe oben) |
+| 4 | ✍️ Schreibübung | `setupSpelling()` | – |
+| 5 | 🎧 Diktat | `setupDictation()` | TTS engl. Aussprache |
+| 6 | 🃏 **Memory** | `setupMemory()` | 12 Paare, **MEMORY_COLORS-Palette** |
+| 7 | 🎤 **Aussprache** | `setupSpeech()` | Web Speech API (Chrome/Edge/Safari) |
+| 8 | 🧩 **Kreuzworträtsel** | `setupCrossword()` | Greedy-Solver, 8–10 Wörter |
+| — | section-divider „🎮 Spiele" | – | – |
+| 9 | 🏎️ Vokabel-Rennen | `setupRace()` | – |
+| 10 | 👾 Vokabel-Invaders | `setupSpaceInvaders()` | – |
+| — | section-divider „🎴 Sammelalbum" | – | – |
+| 11 | 🎴 **Album** | `setupAlbum()` | Hooks via `lt_record(en, true)` → `album_add(en)` |
+
+### Header-Konvention
+
+```html
+<header>
+  <button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+  <a class="profile-btn-vk" href="../../uebergreifend/lernprofil.html" title="Mein Lernprofil">📊 Profil <span class="streak-pill" id="profile-streak" style="display:none"></span></a>
+  <a href="../../index.html" ...><img src="../../assets/logo_hellweg.png" .../></a>
+  <h1 id="page-title">Unit X · Vokabeln</h1>
+  <p class="sub" id="page-sub">Topic-Beschreibung · Lighthouse N</p>
+</header>
+```
+
+- `📊 Profil`-Button **fixed top:14px right:160px**, Streak-Pill liest live aus `lp_streak`.
+- Dark-Toggle bleibt rechts oben.
+- Auf Mobile (≤ 600 px): beide Buttons static, mittig zentriert.
+
+### Leitner-Score (Pool-Bias)
+
+- Helper: `lt_load()`, `lt_save()`, `lt_record(en, ok)`, `lt_pick(arr, n)`.
+- `lt_record(en, true)` erhöht Score, ruft zusätzlich `album_add(en)` auf.
+- `lt_pick` zieht **60 % aus den schwächsten 50 %, 40 % random**.
+- Score-Range: −5 bis +5 (geclamped).
+- localStorage-Key: `lt_<title>` mit Map `{en: score}`.
+
+### Sammelalbum
+
+- Helper: `album_load()`, `album_save()`, `album_add(en)`, `album_toast(en)`.
+- Toast oben rechts beim ersten Sammeln einer Karte.
+- Album-Akkordeon zeigt 24-Karten-Grid (Goldener Look für gesammelt, „?" für noch offen).
+- localStorage-Key: `album_<title>` mit Array von `en`-Strings.
+
+### Tastatur-Shortcuts (Pflicht)
+
+| Taste | Aktion |
+|---|---|
+| 1, 2, 3, … | Wählt n-te MC-Option der **obersten sichtbaren** Aufgabe im offenen Akkordeon |
+| ↓ / ↑ | Springt zur nächsten/vorherigen `.task` im offenen Akkordeon |
+| Enter | (in Inputs) Lösung prüfen |
+
+In Inputs/Textareas werden Zifferntasten ignoriert (sonst kein Tippen möglich).
+
+### System-Dark-Mode (prefers-color-scheme)
+
+```js
+// Dark Mode: System-Präferenz als Default, manueller Toggle überschreibt
+const stored = localStorage.getItem('darkMode');
+const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const useDark = stored==='1' || (stored===null && sysDark);
+```
+
+Bei Live-Änderung der System-Präferenz reagiert die Seite, **solange der User noch keinen manuellen Toggle gesetzt hat**.
+
+### CSS-Pflicht: Body-Höhe & Dark-Mode-Hintergrund
+
+```css
+body{min-height:100vh}
+html:has(body.dark-mode){background:#111827}
+```
+
+Verhindert, dass im Dark Mode der weiße `<html>`-Hintergrund unter kurzem Inhalt durchscheint.
+
+### localStorage-Schlüssel-Schema
+
+| Key-Präfix | Inhalt |
+|---|---|
+| `pb_<TitleNorm>_<section>` | Aufgaben-Akkordeon-Fortschritt `{c, t}` |
+| `lt_<TitleNorm>` | Leitner-Score-Map `{en: score}` |
+| `album_<TitleNorm>` | Album-Liste `[en, en, …]` |
+| `mig_title_v1_<TitleNorm>` | Flag: Migration v1 erledigt |
+| `lp_streak` | Streak-Counter (datei-übergreifend) |
+| `darkMode` | `'1'` / `'0'` (datei-übergreifend) |
+
+`<TitleNorm>` = `PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_')`. Pflicht: PAGE_TITLE so wählen, dass `TitleNorm` **eindeutig pro Datei** ist.
+
+### Migrations-Block (Pflicht direkt nach `PAGE_SUB`)
+
+Kopiert beim ersten Laden alte Sammel-Keys auf den neuen eindeutigen Lighthouse-Key. Referenzcode siehe Master `vokabeln/lighthouse_4/unit_4.html` (Funktion `migrateTitleKeysV1`).
+
+## Lernprofil-Datei
+
+- Pfad: `uebergreifend/lernprofil.html`
+- Snapshot-only Aggregator über alle `pb_*`/`lt_*`/`album_*`-Keys
+- Streak-Counter wird beim Öffnen aktualisiert
+- KNOWN_FILES-Map: hardcoded Mapping `<TitleNorm> → {display, path}`. Bei neuer Vokabeldatei dort eintragen.
+- Reset-Button löscht alle `pb_/lt_/album_/lp_streak/sect_/boss_*`-Keys.
+
+## ZAP-Operatoren-Datei
+
+- Pfad: `zap/operatoren.html`
+- Inhalt 1:1 aus offiziellem **NRW-MSA-Operatorenkatalog** ([Quelle](https://www.standardsicherung.schulministerium.nrw.de/system/files/media/document/file/operatorenliste_msa.pdf))
+- 7 Operatoren (describe, summarise/present, point out, explain, compare, comment, discuss) + 4 Textsorten (online article, email/letter, diary entry, continuation of a story)
+- Pro Operator: Erläuterung + Beispielaufgabe + ausklappbar: weitere Beispiele · Schreibanfänge & Phrasen · Musterlösung · Übungsaufgabe
+- Layout-Konsistenz Aufgabe 3b an 1–3a: weinrote Schrift (`var(--zap)`), Hinweisbox **unter** den Karten
+
 ## Dashboard-Integration
 
 Nach Anlage der Datei: Eintrag in `index.html` `DEFAULT_CONFIG.tiles[]`.
@@ -253,10 +381,22 @@ Beispiel Klasse 5: `v-lh1-u01` (Unit 1, draft) steht vor `v-lh1-u4` (Unit 4, rea
 ## Konventionen
 
 ### Dateinamen
+
+**Grammatik:**
 - Schema: `<Klassenstufe>_<thema>.html`
 - Präfix = Klassenstufe (5/6/7/8/9/10), **NICHT sequentiell**
 - Mehrere Dateien pro Klasse möglich (z. B. `06_will_future.html` + `06_some_any_little_few.html`)
 - Thema in snake_case, kein Umlaut
+
+**Vokabeln:**
+- Schema: `vokabeln/lighthouse_<N>/unit_<X>.html`
+- `PAGE_TITLE` (in JS) muss eindeutig sein: `"Lighthouse <N> · Unit <X> · Vokabeln"` — sonst localStorage-Kollision
+
+**Übergreifend:**
+- Schema: `uebergreifend/<thema>.html`
+
+**ZAP:**
+- Schema: `zap/<thema>.html`
 
 ### Terminologie (Schüler-Sicht)
 - „past participle" statt „V3"

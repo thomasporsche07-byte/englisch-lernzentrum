@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ZAP-Operatoren · Hellweg-Realschule</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--zap:#7c2d12;--zap-soft:#fef2f2;--zap-mid:#b45309;--bg:#fef9f2;--text:#2c1a0e;--card:#fff;--border:#e2e8f0}
+html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;font-size:18px}
+body{min-height:100vh}
+html:has(body.dark-mode){background:#111827}
+body.dark-mode{background:#111827;color:#f0e6d8;--bg:#111827;--card:#1e2a3a;--border:#334155;--zap-soft:rgba(220,38,38,.12)}
+.container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
+header{text-align:center;padding:20px 10px 10px;position:relative}
+header img{height:70px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
+header h1{margin:10px 0 0;font-size:clamp(26px,5vw,38px);color:var(--zap);letter-spacing:.2px}
+header p.sub{margin:6px 0 0;color:#475569}
+body.dark-mode header h1{color:#fca5a5}
+body.dark-mode header p.sub{color:#94a3b8}
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:var(--zap);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:.2s background,.2s transform}
+.dark-toggle:hover{transform:translateY(-1px);filter:brightness(1.1)}
+body.dark-mode .dark-toggle{background:#334155;color:#f0e6d8}
+@media(max-width:600px){.dark-toggle{position:static;display:block;margin:0 auto 8px}}
+details.opener{background:linear-gradient(135deg,#fff7ed,#fef2f2);border:1px solid #fecaca;border-radius:16px;margin-bottom:18px;line-height:1.7;font-size:15px;color:#7c2410;overflow:hidden}
+details.opener>summary{cursor:pointer;padding:16px 22px;font-size:18px;font-weight:900;color:var(--zap);text-align:center;list-style:none}
+details.opener>summary::-webkit-details-marker{display:none}
+details.opener>div{padding:0 22px 18px}
+body.dark-mode details.opener{background:linear-gradient(135deg,#1e2a3a,#3a1010);border-color:#7f1d1d;color:#fca5a5}
+body.dark-mode details.opener>summary{color:#fca5a5}
+.filter-bar{position:sticky;top:8px;z-index:50;display:flex;flex-wrap:wrap;gap:8px;background:rgba(254,249,242,.9);padding:10px 12px;border-radius:14px;border:1px solid var(--border);backdrop-filter:blur(6px);margin:14px 0}
+body.dark-mode .filter-bar{background:rgba(17,24,39,.85);border-color:#334155}
+.filter-bar button{border:2px solid var(--border);border-radius:999px;padding:6px 14px;font-weight:700;font-size:13px;cursor:pointer;background:var(--card);color:var(--text);transition:.15s;font-family:inherit}
+.filter-bar button:hover{transform:translateY(-1px)}
+.filter-bar button.active{background:linear-gradient(135deg,var(--zap),#a32f1a);color:#fff;border-color:transparent;box-shadow:0 3px 8px rgba(124,45,18,.35)}
+body.dark-mode .filter-bar button{background:#162032;color:#f0e6d8;border-color:#334155}
+body.dark-mode .filter-bar button.active{background:linear-gradient(135deg,#dc2626,#7c2d12);color:#fff}
+.op-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px;margin:14px 0}
+@media(max-width:600px){.op-grid{grid-template-columns:1fr}}
+.op-card{background:var(--card);border:1px solid var(--border);border-top:4px solid var(--zap);border-radius:14px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.op-card.afb-1{border-top-color:#16a34a}
+.op-card.afb-2{border-top-color:#ca8a04}
+.op-card.afb-3{border-top-color:#dc2626}
+.op-card.text-type{border-top-color:#7c3aed}
+.op-tag{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:6px;margin-bottom:8px}
+.op-card.afb-1 .op-tag{background:#dcfce7;color:#166534}
+.op-card.afb-2 .op-tag{background:#fef3c7;color:#92400e}
+.op-card.afb-3 .op-tag{background:#fee2e2;color:#991b1b}
+.op-card.text-type .op-tag{background:#ede9fe;color:#5b21b6}
+body.dark-mode .op-card.afb-1 .op-tag{background:rgba(22,101,52,.30);color:#86efac}
+body.dark-mode .op-card.afb-2 .op-tag{background:rgba(146,64,14,.30);color:#fde68a}
+body.dark-mode .op-card.afb-3 .op-tag{background:rgba(127,29,29,.35);color:#fca5a5}
+body.dark-mode .op-card.text-type .op-tag{background:rgba(91,33,182,.30);color:#c4b5fd}
+.op-name{font-size:24px;font-weight:900;color:var(--zap);margin:2px 0 6px}
+body.dark-mode .op-name{color:#fca5a5}
+.op-de{font-size:14px;color:#475569;margin-bottom:10px;font-style:italic}
+body.dark-mode .op-de{color:#94a3b8}
+.op-section-title{font-size:11px;font-weight:800;text-transform:uppercase;color:#94a3b8;letter-spacing:.5px;margin:12px 0 4px}
+body.dark-mode .op-section-title{color:#64748b}
+.op-def{font-size:15px;line-height:1.6;margin:0 0 10px}
+.op-example{background:var(--zap-soft);border-left:3px solid var(--zap);border-radius:8px;padding:10px 14px;font-style:italic;font-size:14px;line-height:1.55;color:#7c2410}
+body.dark-mode .op-example{color:#fca5a5}
+.op-example b{font-style:normal}
+.op-example .focus{display:block;margin-top:6px;font-size:13px}
+.op-example ul{margin:4px 0 0;padding-left:18px}
+.op-example li{font-style:italic;font-size:13px}
+.req-box{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #ca8a04;border-radius:12px;padding:14px 18px;margin:14px 0;color:#7c2410}
+body.dark-mode .req-box{background:rgba(146,64,14,.18);border-color:#92400e;color:#fde68a}
+.req-box h3{margin:0 0 6px;font-size:15px;color:#92400e}
+body.dark-mode .req-box h3{color:#fde68a}
+.req-box ul{margin:6px 0 0;padding-left:20px;font-size:14px;line-height:1.6}
+.req-box li{margin:3px 0}
+.tt-card{background:var(--card);border:1px solid var(--border);border-top:4px solid var(--zap);border-radius:14px;padding:16px 18px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tt-name{font-size:18px;font-weight:900;color:var(--zap);margin:0 0 4px}
+body.dark-mode .tt-name{color:#fca5a5}
+.tt-en{font-size:14px;color:#94a3b8;font-style:italic;margin-bottom:10px}
+body.dark-mode .tt-en{color:#64748b}
+.tt-card ul{margin:0;padding-left:20px;font-size:14px;line-height:1.65}
+.tt-card li{margin:4px 0}
+.tt-card li b{color:#92400e}
+body.dark-mode .tt-card li b{color:#fde68a}
+.section-divider{display:flex;align-items:center;gap:14px;margin:28px 0 12px;padding:0 4px}
+.section-divider::before,.section-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#cbd5e1,transparent)}
+.section-divider span{font-size:12px;font-weight:800;color:#7c2d12;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap}
+body.dark-mode .section-divider span{color:#fca5a5}
+footer{text-align:center;padding:16px 20px 8px;font-size:12px;color:#a0845c;border-top:1px solid rgba(160,132,92,.25);margin-top:30px}
+body.dark-mode footer{color:#94a3b8;border-color:#334155}
+
+/* ─── Operator-Details (ausklappbare Sub-Sektionen) ─── */
+.op-card details{margin-top:10px;border-radius:8px;border:1px solid var(--border);background:rgba(0,0,0,.02);overflow:hidden}
+.op-card details>summary{padding:8px 12px;cursor:pointer;font-size:13px;font-weight:700;color:var(--zap);list-style:none;display:flex;align-items:center;gap:6px}
+.op-card details>summary::-webkit-details-marker{display:none}
+.op-card details>summary::after{content:'▾';margin-left:auto;transition:transform .2s;font-size:11px;opacity:.6}
+.op-card details[open]>summary::after{transform:rotate(180deg)}
+.op-card details>summary:hover{background:rgba(124,45,18,.06)}
+.op-card details>div{padding:0 14px 12px;font-size:13px;line-height:1.6}
+body.dark-mode .op-card details{background:rgba(255,255,255,.03);border-color:#334155}
+body.dark-mode .op-card details>summary{color:#fca5a5}
+body.dark-mode .op-card details>summary:hover{background:rgba(220,38,38,.08)}
+.tt-card details{margin-top:10px;border-radius:8px;border:1px solid var(--border);background:rgba(0,0,0,.02);overflow:hidden}
+.tt-card details>summary{padding:8px 12px;cursor:pointer;font-size:13px;font-weight:700;color:var(--zap);list-style:none;display:flex;align-items:center;gap:6px}
+.tt-card details>summary::-webkit-details-marker{display:none}
+.tt-card details>summary::after{content:'▾';margin-left:auto;transition:transform .2s;font-size:11px;opacity:.6}
+.tt-card details[open]>summary::after{transform:rotate(180deg)}
+.tt-card details>summary:hover{background:rgba(124,45,18,.06)}
+.tt-card details>div{padding:0 14px 12px;font-size:13px;line-height:1.6}
+body.dark-mode .tt-card details{background:rgba(255,255,255,.03);border-color:#334155}
+body.dark-mode .tt-card details>summary{color:#fca5a5}
+
+.examples-list{list-style:none;padding:0;margin:0}
+.examples-list li{background:#fff7ed;border-left:3px solid #ca8a04;border-radius:6px;padding:8px 12px;margin:6px 0;font-style:italic;color:#7c2410}
+body.dark-mode .examples-list li{background:rgba(146,64,14,.18);color:#fde68a;border-left-color:#ca8a04}
+
+.phrase-table{width:100%;border-collapse:collapse;margin:6px 0;font-size:13px}
+.phrase-table th,.phrase-table td{padding:5px 8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.phrase-table th{font-weight:800;font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+.phrase-table tr:last-child td{border-bottom:none}
+.phrase-table .ph-de{font-style:italic;color:#94a3b8;width:38%}
+.phrase-table .ph-en{color:var(--text);font-weight:600}
+body.dark-mode .phrase-table .ph-en{color:#f0e6d8}
+body.dark-mode .phrase-table .ph-de{color:#94a3b8}
+body.dark-mode .phrase-table th{color:#94a3b8}
+
+.model-answer{background:#ecfeff;border:1px solid #a5f3fc;border-left:4px solid #0891b2;border-radius:8px;padding:12px 14px;margin:6px 0;font-size:13.5px;line-height:1.7;color:#155e75}
+.model-answer h4{margin:0 0 4px;font-size:12px;color:#0e7490;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+.model-answer .task-line{font-style:italic;font-weight:700;margin-bottom:8px;color:#0e7490}
+.model-answer p{margin:6px 0}
+body.dark-mode .model-answer{background:rgba(8,145,178,.10);border-color:#0e7490;color:#a5f3fc}
+body.dark-mode .model-answer h4,body.dark-mode .model-answer .task-line{color:#67e8f9}
+
+.exercise-box{background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:8px;padding:12px 14px;margin:6px 0;font-size:13.5px;line-height:1.6;color:#166534}
+.exercise-box h4{margin:0 0 6px;font-size:12px;color:#15803d;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+.exercise-box .ex-prompt{font-weight:700;font-style:italic}
+.exercise-box .ex-hint{margin-top:6px;font-size:12px;opacity:.85}
+body.dark-mode .exercise-box{background:rgba(22,163,74,.10);border-color:#16a34a;color:#bbf7d0}
+body.dark-mode .exercise-box h4{color:#86efac}
+
+</style>
+</head>
+<body>
+<header>
+  <button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo Hellweg-Realschule" style="cursor:pointer"/>
+  </a>
+  <h1>ZAP-Operatoren · Schreiben</h1>
+  <p class="sub">Übersicht der MSA-Operatoren · Hellweg-Realschule</p>
+</header>
+
+<div class="container">
+
+  <details class="opener">
+    <summary>📖 Was sind Operatoren?</summary>
+    <div>
+      <p style="margin:0 0 10px"><b>Operatoren</b> sind Arbeitsanweisungen in Klassenarbeiten und der ZAP. Sie sagen dir genau, <b>was du tun sollst</b>: nur beschreiben, oder auch erklären, oder sogar Stellung beziehen.</p>
+      <p style="margin:0 0 10px">In der ZAP-Englisch (MSA) sind Schreibaufgaben in <b>drei Aufgabentypen</b> gegliedert:</p>
+      <ul style="margin:0 0 10px;padding-left:20px;line-height:1.7">
+        <li><b style="color:#16a34a">Aufgabe 1</b> – einfache Wiedergabe: <i>describe, summarise/present, point out</i></li>
+        <li><b style="color:#ca8a04">Aufgabe 2</b> – Erläuterung &amp; Vergleich: <i>explain, compare</i></li>
+        <li><b style="color:#dc2626">Aufgabe 3a</b> – Stellungnahme / Diskussion: <i>comment (on), discuss</i></li>
+        <li><b style="color:#7c3aed">Aufgabe 3b</b> – kreatives Schreiben: <i>write + (text type)</i></li>
+      </ul>
+      <p style="margin:0">Wer den Operator richtig liest und seine Anforderungen befolgt, schreibt automatisch <b>strukturierter</b> und bekommt mehr Punkte. Diese Übersicht ist 1:1 dem offiziellen NRW-Operatorenkatalog (MSA) entnommen.</p>
+    </div>
+  </details>
+
+  <div class="filter-bar" id="filter-bar">
+    <button data-filter="all" class="active">Alle</button>
+    <button data-filter="1">Aufgabe 1</button>
+    <button data-filter="2">Aufgabe 2</button>
+    <button data-filter="3a">Aufgabe 3a</button>
+    <button data-filter="3b">Aufgabe 3b · Textsorten</button>
+  </div>
+
+  <div id="op-area"></div>
+
+  <footer>
+    <div>Version 01.05.2026, 02:00</div>
+    <div style="margin-top:6px">Inhalte 1:1 aus dem NRW-Operatorenkatalog MSA. Layout: KI-generiert. © Thomas Porsche</div>
+  </footer>
+
+</div>
+
+<script>
+const OPS = [
+  // ───── Aufgabe 1 (AFB I/II) ─────
+  {id:'describe', task:'1', afb:'1', en:'describe', de:'beschreiben',
+   def:'Beschreibe etwas/jemanden im Detail.',
+   example:'Describe what you get to know about the young man and the rules he has to follow.'},
+  {id:'summarise', task:'1', afb:'1', en:'summarise / present', de:'zusammenfassen / darstellen',
+   def:'Fasse die Idee des Textes / die im Text beschriebenen Ereignisse in eigenen Worten zusammen.',
+   example:'Summarise/Present the information about teenage Internet addiction given in the text.'},
+  {id:'point-out', task:'1', afb:'1', en:'point out', de:'aufzeigen / herausstellen',
+   def:'Finde und erkläre bestimmte Aspekte.',
+   example:"Point out the reasons for Lisa and Michael's meeting."},
+  // ───── Aufgabe 2 (AFB II) ─────
+  {id:'explain', task:'2', afb:'2', en:'explain', de:'erläutern',
+   def:'Erläutere etwas, indem du Gründe und/oder Details benennst und belege diese anhand von Textbeispielen.',
+   example:'Explain the young man’s opinion of a curfew and "checking in".',
+   focus:['his arguments','the way the story is told']},
+  {id:'compare', task:'2', afb:'2', en:'compare', de:'vergleichen',
+   def:'Zeige Gemeinsamkeiten und Unterschiede zwischen Dingen, Menschen, etc. auf.',
+   example:"Compare Tim’s reaction with Sarah’s.",
+   focus:['the reasons for their behaviour','the language used to present their reactions']},
+  // ───── Aufgabe 3a (AFB III) ─────
+  {id:'comment', task:'3a', afb:'3', en:'comment (on)', de:'Stellung nehmen',
+   def:'Präsentiere ausschließlich deine Meinung zum Thema oder zur Fragestellung und gib Gründe dafür an. Vertritt ausschließlich eine eindeutige Position.',
+   example:'"A curfew is not an instrument to control or ruin your fun. It’s a matter of responsibility." Comment on the statement.',
+   focus:['possible consequences for Tim and his friends','possible consequences for you and your life']},
+  {id:'discuss', task:'3a', afb:'3', en:'discuss', de:'diskutieren / erörtern',
+   def:'Nenne Argumente oder Gründe für und gegen bezogen auf eine Fragestellung, wäge sie gegeneinander ab und komme zu einem begründeten Abschluss.',
+   example:'In the story Tim and Sarah stay outside after curfew. Discuss the arguments for and against a curfew.',
+   focus:['the specific time of a curfew','reasons for teenagers to be out late',"a parent’s or guardian’s position"]},
+];
+
+// ── Erweiterte Inhalte: zusätzliche Beispiele, Phrasen, Musterlösungen, Übungen ──
+const OP_EXTRA = {
+  'describe': {
+    examples: [
+      'Describe the main character of the story.',
+      "Describe what Tim's room looks like.",
+    ],
+    phrases: [
+      ['Der Text beschreibt …', 'The text describes …'],
+      ['X wird beschrieben als …', 'X is described as …'],
+      ['Laut Text ist X …', 'According to the text, X is …'],
+      ['Der Autor zeigt, dass X …', 'The author shows that X …'],
+      ['Es heißt im Text, dass …', 'It is said in the text that …'],
+    ],
+    model: {
+      task: 'Describe the young man and the rules he has to follow.',
+      answer: 'The text describes a young man called Tim who is fifteen years old and lives in London. According to the text, his parents have set strict rules for him. First, he has to be home by 9 p.m. on weekdays. Furthermore, he must do his homework before going out and help with household tasks. The text shows that Tim feels the rules are unfair.'
+    },
+    exercise: {prompt:'Describe a person you know well.', hint:'4–5 Sätze; nutze Schreibanfänge wie „X is described as …" oder „According to me, X …"'},
+  },
+  'summarise': {
+    examples: [
+      'Summarise the events of chapter 3.',
+      'Present the most important facts about the new school rules.',
+    ],
+    phrases: [
+      ['Der Text handelt von …', 'The text deals with …'],
+      ['Der Autor berichtet/erklärt/zeigt, dass …', 'The author reports/explains/shows that …'],
+      ['Die Hauptidee ist, dass …', 'The main idea is that …'],
+      ['Zuerst / Dann / Schließlich …', 'First / Then / Finally …'],
+      ['Insgesamt zeigt der Text …', 'All in all, the text shows …'],
+    ],
+    model: {
+      task: 'Summarise the information about teenage Internet addiction given in the text.',
+      answer: 'The text deals with the problem of teenage Internet addiction. The author explains that more and more young people spend too much time online, especially on social media. As a result, many of them have problems sleeping, learning, and meeting friends in real life. The text also mentions that experts give parents practical advice. All in all, the article shows that Internet addiction is a growing problem.'
+    },
+    exercise: {prompt:'Summarise the plot of your favourite film in 4–5 sentences.', hint:'Eigene Worte! Kein Kopieren.'},
+  },
+  'point-out': {
+    examples: [
+      'Point out three reasons why teenagers use social media.',
+      'Point out the differences between school in the US and in Germany.',
+    ],
+    phrases: [
+      ['Der Text nennt …', 'The text mentions …'],
+      ['Der Autor zeigt/stellt heraus, dass …', 'The author points out / states that …'],
+      ['Es gibt mehrere Gründe / Aspekte / Punkte …', 'There are several reasons / aspects / points …'],
+      ['Erstens, … / Zweitens, …', 'First, … / Second, …'],
+      ['Außerdem … / Schließlich …', 'Furthermore … / Finally …'],
+    ],
+    model: {
+      task: "Point out the reasons for Lisa and Michael's meeting.",
+      answer: "There are several reasons for Lisa and Michael's meeting. First, they want to plan their school project together. The text mentions that they need to choose a topic and divide the work. Furthermore, Michael has new books from the library that could help them. Finally, they want to spend time together because they are also good friends."
+    },
+    exercise: {prompt:'Point out three things that make a good friend.', hint:'Pro Punkt 1–2 Sätze. Verwende Aufzählungs-Wörter.'},
+  },
+  'explain': {
+    examples: [
+      "Explain why Sarah refuses to go to the party. Focus on her arguments and her relationship with her parents.",
+      "Explain how Tim's daily life is influenced by his curfew.",
+    ],
+    phrases: [
+      ['Es gibt mehrere Gründe, warum …', 'There are several reasons why …'],
+      ['Ein Grund dafür ist, dass …', 'One reason for this is that …'],
+      ['Das wird deutlich, wenn …', 'This becomes clear when …'],
+      ['In Zeile X schreibt der Autor, dass …', 'In line X, the author writes that …'],
+      ['Das zeigt, dass …', 'This shows that …'],
+      ['Daher / Deshalb …', 'Therefore / That is why …'],
+    ],
+    model: {
+      task: 'Explain the young man\'s opinion of a curfew. Focus on his arguments and the way the story is told.',
+      answer: 'Tim has a clearly negative opinion of the curfew. There are several reasons for this. First, he feels that the rule is unfair because his parents do not trust him (l. 14–15). Second, he argues that other teenagers his age are allowed to stay out longer (l. 22). The way the story is told supports his point of view: it is written from his perspective, using short, emotional sentences (l. 5, 18). This makes the reader sympathise with him. All in all, the text shows that Tim feels controlled rather than protected.'
+    },
+    exercise: {prompt:"Explain why students should or shouldn't have to wear a school uniform.", hint:'Mindestens zwei Argumente, jeweils mit Begründung. Topic sentences nutzen.'},
+  },
+  'compare': {
+    examples: [
+      'Compare life in the city and life in the country as described in the text.',
+      "Compare the two main characters' opinions on technology.",
+    ],
+    phrases: [
+      ['X und Y sind ähnlich/unterschiedlich in mehreren Punkten.', 'X and Y are similar / different in several ways.'],
+      ['Sowohl X als auch Y …', 'Both X and Y …'],
+      ['Während X … , Y …', 'While X … , Y …'],
+      ['Im Gegensatz zu X, Y …', 'In contrast to X, Y …'],
+      ['Einerseits … andererseits …', 'On the one hand … on the other hand …'],
+      ['Wohingegen X … , Y …', 'Whereas X … , Y …'],
+    ],
+    model: {
+      task: "Compare Tim's reaction with Sarah's. Focus on the reasons for their behaviour and the language they use.",
+      answer: "Tim and Sarah react very differently to their parents' rules. While Tim openly argues with his mother and shouts at her (l. 12–13), Sarah stays calm and tries to find a compromise (l. 18–20). The reason for Tim's behaviour is that he feels he is not taken seriously, whereas Sarah is used to talking things out. The language also reflects this difference: Tim uses short, angry sentences and exclamation marks, while Sarah speaks in longer, polite sentences. To sum up, both teenagers want more freedom, but they choose very different ways to ask for it."
+    },
+    exercise: {prompt:'Compare your weekday routine with your weekend routine.', hint:'5 Sätze. Nutze „while", „in contrast to", „on the other hand".'},
+  },
+  'comment': {
+    examples: [
+      "'Teenagers should not use smartphones at school.' Comment on this statement.",
+      "Comment on the parents' decision to limit their daughter's social media use.",
+    ],
+    phrases: [
+      ['Meiner Meinung nach …', 'In my opinion …'],
+      ['Ich denke, dass …', 'I think that …'],
+      ['Zunächst einmal …', 'First of all, …'],
+      ['Außerdem … / Darüber hinaus …', 'Furthermore, … / Moreover, …'],
+      ['Ein wichtiger Grund ist …', 'An important reason is …'],
+      ['Insgesamt / Zusammenfassend …', 'All in all, … / To sum up, …'],
+    ],
+    model: {
+      task: '"A curfew is not an instrument to control or ruin your fun. It\'s a matter of responsibility." Comment on the statement. Include possible consequences for Tim and his friends and possible consequences for you and your life.',
+      answer: 'In my opinion, the statement is correct. A curfew is not just a rule for control – it teaches teenagers to be responsible. First of all, it helps Tim and his friends learn to plan their evening. They have to think about how to get home in time and to say no to their friends if needed. Furthermore, a curfew makes parents trust their children more, because they know that the rules are accepted. In my own life, I notice that having a fixed time for being home helps me sleep better and start school relaxed. All in all, I believe that a clear curfew is helpful for teenagers, even if it sometimes feels unfair.'
+    },
+    exercise: {prompt:'Comment on the statement: „Homework is a waste of time."', hint:'6–8 Sätze. Klare Position + 2–3 Gründe + Fazit.'},
+  },
+  'discuss': {
+    examples: [
+      'Discuss whether students should wear school uniforms. Include arguments for and against.',
+      "Discuss the role of social media in teenagers' lives.",
+    ],
+    phrases: [
+      ['Es gibt Argumente dafür und dagegen …', 'There are arguments for and against …'],
+      ['Einerseits …', 'On the one hand, …'],
+      ['Andererseits …', 'On the other hand, …'],
+      ['Manche Leute argumentieren, dass …', 'Some people argue that …'],
+      ['Andere sagen jedoch, dass …', 'However, others say that …'],
+      ['Nach Abwägung beider Seiten denke ich, dass …', 'After weighing both sides, I think that …'],
+    ],
+    model: {
+      task: 'Discuss the arguments for and against a curfew for teenagers.',
+      answer: 'There are good arguments for and against a curfew for teenagers. On the one hand, a curfew can protect teenagers from dangerous situations, especially late at night. It also helps parents to know where their children are and gives them peace of mind. On the other hand, many teenagers say that a curfew limits their freedom. They argue that they need to make their own decisions to grow up. Furthermore, fixed times often lead to fights between parents and children. After weighing both sides, I think that a flexible curfew – one that depends on the situation – is the best solution. This way, teenagers can learn responsibility, and parents can still feel safe.'
+    },
+    exercise: {prompt:'Discuss whether teenagers should be allowed to vote.', hint:'8–10 Sätze. Pro/Contra ausgewogen. Eigene Position am Schluss begründen.'},
+  },
+};
+
+const TT_EXTRA = {
+  'online article': {
+    phrases: [
+      ['Titel', 'Why … / How … / When …'],
+      ['Aufmacher', 'Have you ever …? / Imagine you … / Most people know the situation …'],
+      ['Übergang', 'First of all, … / What is more, … / On top of that, …'],
+      ['Fazit', 'All in all, … / It is clear that …'],
+    ],
+    model: {
+      task: 'Write an online article about teenage curfews.',
+      answer: '<b>When freedom meets responsibility: the curfew debate</b><br><br>Most teenagers know the situation: it is late at night, the party is great – and then the phone says „come home now". But why do parents insist on curfews?<br><br>First of all, curfews are about safety. Late nights can mean dangerous situations, and parents want to protect their children. What is more, a fixed time helps teenagers plan their evening and learn to be responsible.<br><br>On the other hand, many teenagers feel that curfews are unfair. They argue that they should be trusted to make their own decisions.<br><br>All in all, a clear but flexible curfew can be the best of both worlds: enough freedom for the teenager and enough safety for the parent.'
+    },
+    exercise: {prompt:'Write an online article: „Smartphones at school – yes or no?"', hint:'150–200 Wörter. Titel + Aufmacher + Hauptteil + Fazit.'},
+  },
+  'email / letter': {
+    phrases: [
+      ['Anrede', 'Dear Mr / Mrs / Ms … ,'],
+      ['Eröffnung', 'I am writing to you about … / Thank you for your letter.'],
+      ['Hauptteil', 'First, I would like to mention that … / Furthermore, …'],
+      ['Schluss', 'I would be glad to hear back from you. / Thank you for your time.'],
+      ['Verabschiedung', 'Yours sincerely, / Kind regards,'],
+    ],
+    model: {
+      task: 'Write an email to your school principal asking for permission to organise a school disco.',
+      answer: '<b>Subject: Request for a school disco</b><br><br>Dear Mr Wilson,<br><br>I am writing to you on behalf of class 9b. We would like to organise a small school disco for the older students at the end of this term.<br><br>First of all, the disco would be a good way to celebrate the end of a busy school year. Furthermore, it would help students from different classes to get to know each other.<br><br>We are happy to take responsibility for the planning, the music and the cleaning afterwards. Of course, we would only have soft drinks and snacks.<br><br>We would be very grateful if you could give us your permission. Thank you for your time and attention.<br><br>Kind regards,<br>Anna Müller (Class 9b)'
+    },
+    exercise: {prompt:'Schreibe eine E-Mail an einen Brieffreund / eine Brieffreundin und erzähle von deiner letzten Klassenfahrt.', hint:'120–150 Wörter. Anrede + Hauptteil + Verabschiedung.'},
+  },
+  'diary entry': {
+    phrases: [
+      ['Datum', 'Friday, 20th October'],
+      ['Anrede (optional)', 'Dear diary,'],
+      ['Einstieg', "I can't believe what happened today. / Today was the best/worst day ever."],
+      ['Reflexion', 'I felt … / I think that … / I really hope that …'],
+    ],
+    model: {
+      task: "Write a diary entry from Tim's perspective after his fight with his parents.",
+      answer: '<b>Friday, 20th October</b><br><br>Dear diary,<br><br>Today was the worst day ever. Mum told me that I have to be home by 8 p.m. every day – even on weekends! I can\'t believe it.<br><br>When I tried to explain that all my friends are allowed to stay out longer, she just said that „rules are rules". Dad didn\'t say anything – as always. I felt so angry and lonely.<br><br>I really hope that they will change their minds soon. Otherwise this is going to be the most boring year of my life.'
+    },
+    exercise: {prompt:'Schreibe einen Tagebucheintrag zu deinem ersten Schultag in einer neuen Schule.', hint:'100–150 Wörter. Datum + Reflexion + emotionale Sprache.'},
+  },
+  'continuation of a story': {
+    phrases: [
+      ['Direkter Anschluss', 'Gleiche Zeitform, gleiche Erzählperspektive beibehalten!'],
+      ['Übergangs-Wörter', 'After/When that, … / Suddenly, … / A few minutes later, …'],
+      ['Stimmung halten', 'Atmosphäre und Sprachstil aus dem Originaltext übernehmen.'],
+    ],
+    model: {
+      task: 'Continue the story (Tim comes home late after his curfew). Write 6–8 sentences.',
+      answer: '<p>When Tim opened the door, the lights were still on. His mother was sitting in the kitchen, her arms crossed. „Where have you been?" she asked, her voice cold.</p><p>Tim took a deep breath. „I\'m sorry, Mum. I lost track of time."</p><p>His mother stood up slowly. For a moment, she didn\'t say anything. Then she sighed and said, „We have to talk – but not now. Go to bed."</p><p>Tim went to his room without looking at her. He had hoped for a fight, an argument, anything – but her silence felt much worse.</p>'
+    },
+    exercise: {prompt:'Schreibe das Ende dieser Geschichte: „It was already dark when Anna walked into the empty house. Suddenly, she heard a sound from the living room …"', hint:'80–120 Wörter. Perspektive (3. Person, Past Tense) und Spannungs-Stimmung halten.'},
+  },
+};
+
+function escHtmlAttr(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function renderExtraSections(extra){
+  if(!extra) return '';
+  let html = '';
+  if(extra.examples && extra.examples.length){
+    html += '<details><summary>📋 Weitere Beispielaufgaben</summary><div><ul class="examples-list">' +
+      extra.examples.map(e=>'<li>'+escHtml(e)+'</li>').join('') +
+      '</ul></div></details>';
+  }
+  if(extra.phrases && extra.phrases.length){
+    html += '<details><summary>✍️ Schreibanfänge & Phrasen</summary><div><table class="phrase-table"><thead><tr><th>Deutsch</th><th>English</th></tr></thead><tbody>' +
+      extra.phrases.map(p=>'<tr><td class="ph-de">'+escHtml(p[0])+'</td><td class="ph-en">'+escHtml(p[1])+'</td></tr>').join('') +
+      '</tbody></table></div></details>';
+  }
+  if(extra.model){
+    html += '<details><summary>💡 Musterlösung</summary><div><div class="model-answer"><h4>Beispielaufgabe</h4><div class="task-line">'+escHtml(extra.model.task)+'</div><h4>Modellantwort</h4><p>'+extra.model.answer+'</p></div></div></details>';
+  }
+  if(extra.exercise){
+    html += '<details><summary>📝 Übung für dich</summary><div><div class="exercise-box"><h4>Übungsaufgabe</h4><div class="ex-prompt">'+escHtml(extra.exercise.prompt)+'</div>'+(extra.exercise.hint?'<div class="ex-hint">💡 '+escHtml(extra.exercise.hint)+'</div>':'')+'</div></div></details>';
+  }
+  return html;
+}
+
+const REQS = {
+  '1': {
+    title:'Anforderungen an das Zieltextformat – Aufgabe 1',
+    items:[
+      'sachliche, nicht-wertende Darstellung von in der Aufgabenstellung benannten Aspekten',
+      'i. d. R. Verwendung des Present tense',
+      'keine wörtliche Übernahme aus dem Text',
+    ],
+  },
+  '2': {
+    title:'Anforderungen an das Zieltextformat – Aufgabe 2',
+    items:[
+      'Verwendung von topic sentences',
+      'i. d. R. Verwendung des Present tense',
+      'Verwendung neutraler, nicht-wertender Sprache',
+      'Strukturierung in eine kurze, einleitende Problembeschreibung, einen Hauptteil mit Bearbeitung der Aufgabenstellung und den dazugehörigen Aspekten, einen anschließenden ggf. zusammenfassenden Satz',
+      'Bezug auf konkrete Aspekte mit Textbelegen und Zeilenangaben',
+      'Verzicht auf eine persönliche Wertung bzw. Stellungnahme',
+    ],
+  },
+  '3a': {
+    title:'Anforderungen an das Zieltextformat – Aufgabe 3a',
+    items:[
+      '<b>Einleitung:</b> kurze Stellungnahme mit erster Positionierung (bei <i>discuss</i> auch Darstellung möglicher Positionen)',
+      '<b>Hauptteil:</b> Aufführung und Konkretisierung von Gründen mithilfe konkreter Beispiele (bei <i>discuss</i>: zusätzlich Abwägen von Für und Wider)',
+      '<b>Fazit:</b> zusammenfassende Stellungnahme unter Berücksichtigung der vorherigen Argumentationslinie',
+    ],
+  },
+};
+
+const TEXT_TYPES = [
+  {de:'Beitrag für eine Internetseite', en:'online article',
+   parts:[
+     'ggf. Titel',
+     '<b>Einleitung:</b> Vorstellung des Themas / Anlass / Ziel / Zweck',
+     '<b>Hauptteil:</b> adressatengerechte Darstellung der vorgegebenen inhaltlichen Aspekte unter Rückgriff auf konkrete Beispiele',
+     '<b>Abschluss:</b> zusammenfassendes Fazit',
+   ]},
+  {de:'E-Mail / Brief', en:'email / letter',
+   parts:[
+     '<b>Einleitung:</b> adressatenorientierte Ansprache',
+     '<b>Hauptteil:</b> Darstellung der vorgegebenen inhaltlichen Aspekte unter Rückgriff auf konkrete Beispiele',
+     '<b>Abschluss:</b> adressatenorientierte Abschlussformel',
+   ]},
+  {de:'Tagebucheintrag', en:'diary entry',
+   parts:[
+     'ggf. Einführung in den Zusammenhang / abrupter Einstieg in die vorgegebene Fragestellung / Anrede des Tagebuchs mit Datum',
+     '<b>Hauptteil:</b> Reflexion eines Ereignisses unter Verwendung emotionaler, dem Charakter und der Situation angemessener Sprache',
+     '<b>Abschluss:</b> optional',
+   ]},
+  {de:'Fortsetzung einer Geschichte', en:'continuation of a story',
+   parts:[
+     'Anknüpfung an das Ende der vorgegebenen Textstelle',
+     'Fortführung der Geschichte unter Beibehaltung der Perspektive, der Erzählzeit (<i>tense</i>), Atmosphäre und des Sprachstils',
+   ]},
+];
+
+function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function renderOpCard(o){
+  const tagText = 'Aufgabe '+o.task;
+  const focusHtml = o.focus ? '<div class="focus"><b>Focus on:</b><ul>'+o.focus.map(f=>'<li>'+escHtml(f)+'</li>').join('')+'</ul></div>' : '';
+  const extra = OP_EXTRA && OP_EXTRA[o.id] ? renderExtraSections(OP_EXTRA[o.id]) : '';
+  return `
+    <div class="op-card afb-${o.afb}" data-task="${o.task}">
+      <div class="op-tag">${tagText}</div>
+      <div class="op-name">${o.en}</div>
+      <div class="op-de">${o.de}</div>
+      <div class="op-section-title">Erläuterung</div>
+      <p class="op-def">${escHtml(o.def)}</p>
+      <div class="op-section-title">Illustrierende Aufgabenstellung</div>
+      <div class="op-example">${escHtml(o.example)}${focusHtml}</div>
+      ${extra}
+    </div>
+  `;
+}
+
+function renderReq(taskKey){
+  const r = REQS[taskKey];
+  if(!r) return '';
+  return `<div class="req-box"><h3>${r.title}</h3><ul>${r.items.map(i=>'<li>'+i+'</li>').join('')}</ul></div>`;
+}
+
+function renderTextTypes(){
+  let html = '<div class="section-divider"><span>📝 Textsorten · Aufgabe 3b</span></div>';
+  TEXT_TYPES.forEach(t=>{
+    const extra = TT_EXTRA && TT_EXTRA[t.en] ? renderExtraSections(TT_EXTRA[t.en]) : '';
+    html += `<div class="tt-card">
+      <div class="tt-name">${t.de}</div>
+      <div class="tt-en">${t.en}</div>
+      <ul>${t.parts.map(p=>'<li>'+p+'</li>').join('')}</ul>
+      ${extra}
+    </div>`;
+  });
+  html += '<div class="req-box"><h3>Operator <i>write + (text type)</i></h3><p style="margin:6px 0 0;font-size:14px">Die textsortenspezifischen Merkmale, die durch den übergeordneten Operator <b>write + text type</b> vorgegeben werden, müssen berücksichtigt werden:</p></div>';
+  return html;
+}
+
+function render(filter){
+  const area = document.getElementById('op-area');
+  let html = '';
+  if(filter==='all' || filter==='1'){
+    html += '<div class="section-divider"><span>📋 Aufgabe 1 · Wiedergabe</span></div>';
+    html += '<div class="op-grid">' + OPS.filter(o=>o.task==='1').map(renderOpCard).join('') + '</div>';
+    html += renderReq('1');
+  }
+  if(filter==='all' || filter==='2'){
+    html += '<div class="section-divider"><span>🔍 Aufgabe 2 · Erläuterung &amp; Vergleich</span></div>';
+    html += '<div class="op-grid">' + OPS.filter(o=>o.task==='2').map(renderOpCard).join('') + '</div>';
+    html += renderReq('2');
+  }
+  if(filter==='all' || filter==='3a'){
+    html += '<div class="section-divider"><span>💬 Aufgabe 3a · Stellungnahme</span></div>';
+    html += '<div class="op-grid">' + OPS.filter(o=>o.task==='3a').map(renderOpCard).join('') + '</div>';
+    html += renderReq('3a');
+  }
+  if(filter==='all' || filter==='3b'){
+    html += renderTextTypes();
+  }
+  area.innerHTML = html;
+}
+
+// Filter-Bar
+document.getElementById('filter-bar').addEventListener('click', e=>{
+  const b = e.target.closest('button[data-filter]'); if(!b) return;
+  document.getElementById('filter-bar').querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  render(b.dataset.filter);
+  try{localStorage.setItem('op_filter', b.dataset.filter);}catch(e){}
+});
+
+// Initial: gespeicherter Filter
+let initialFilter = 'all';
+try{const s = localStorage.getItem('op_filter'); if(s) initialFilter = s;}catch(e){}
+const initialBtn = document.querySelector('.filter-bar button[data-filter="'+initialFilter+'"]');
+if(initialBtn){
+  document.querySelectorAll('.filter-bar button').forEach(x=>x.classList.remove('active'));
+  initialBtn.classList.add('active');
+}
+render(initialFilter);
+
+// Dark Mode (System-Default + Override)
+(function(){
+  const b = document.getElementById('dark-toggle');
+  let stored = null;
+  try{stored = localStorage.getItem('darkMode');}catch(e){}
+  const sysQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  const sysDark = sysQuery && sysQuery.matches;
+  function apply(on){
+    document.body.classList.toggle('dark-mode', on);
+    b.textContent = on ? '☀️ Hell' : '🌙 Dark Mode';
+  }
+  apply(stored==='1' || (stored===null && sysDark));
+  b.addEventListener('click', ()=>{
+    const on = !document.body.classList.contains('dark-mode');
+    apply(on);
+    try{localStorage.setItem('darkMode', on?'1':'0');}catch(e){}
+  });
+  if(sysQuery && sysQuery.addEventListener){
+    sysQuery.addEventListener('change', ev=>{
+      let cur=null; try{cur=localStorage.getItem('darkMode');}catch(e){}
+      if(cur===null) apply(ev.matches);
+    });
+  }
+})();
+</script>
+
+<script id="auto-version-stamp">
+(function(){try{
+  var d=new Date(document.lastModified);if(isNaN(d.getTime()))return;
+  var p=function(n){return String(n).padStart(2,'0');};
+  var t='Version '+p(d.getDate())+'.'+p(d.getMonth()+1)+'.'+d.getFullYear()+', '+p(d.getHours())+':'+p(d.getMinutes());
+  document.querySelectorAll('footer div').forEach(function(el){
+    if(el.textContent.trim().indexOf('Version ')===0)el.textContent=t;
+  });
+}catch(e){}})();
+</script>
+</body>
+</html>
+                                                                            

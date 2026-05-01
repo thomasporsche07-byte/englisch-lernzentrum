@@ -81,6 +81,10 @@ button{font-family:inherit;cursor:pointer}
 }
 .icon-btn:hover{background:var(--hr-blue);color:#fff;border-color:var(--hr-blue)}
 .icon-btn:active{transform:scale(.96)}
+.profile-btn{text-decoration:none}
+.profile-btn:hover{background:var(--hr-ocker, #a16207);border-color:var(--hr-ocker, #a16207)}
+.profile-btn .streak-pill{background:#dc2626;color:#fff;padding:1px 7px;border-radius:999px;font-size:12px;font-weight:800;line-height:1.4}
+.profile-btn:hover .streak-pill{background:#fff;color:#dc2626}
 
 /* Admin-Banner */
 .admin-banner{
@@ -98,7 +102,9 @@ button{font-family:inherit;cursor:pointer}
 .admin-banner button:active{transform:scale(.96)}
 
 /* ============================================================ CONTROLS ============================================================ */
-.controls{max-width:1200px;margin:0 auto;padding:20px 20px 0}
+.controls{max-width:1200px;margin:0 auto;padding:14px 20px 12px;position:sticky;top:0;z-index:40;background:linear-gradient(to bottom, var(--bg) 85%, rgba(0,0,0,0));backdrop-filter:saturate(160%) blur(10px);-webkit-backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s, box-shadow .2s}
+.controls.scrolled{border-bottom-color:var(--border);box-shadow:0 4px 14px rgba(0,0,0,.06)}
+@media(max-width:600px){.controls{padding:10px 14px 8px}}
 .search-box{
   display:flex;align-items:center;gap:10px;
   background:var(--card);border:2px solid var(--border);
@@ -376,6 +382,11 @@ body.admin-mode .tile.dragging{cursor:grabbing;opacity:.5}
       <h1>Englisch-Lernzentrum</h1>
     </div>
     <div class="header-actions">
+      <a class="icon-btn profile-btn" id="profile-link" href="uebergreifend/lernprofil.html" title="Mein Lernprofil" aria-label="Mein Lernprofil">
+        <span>📊</span>
+        <span>Profil</span>
+        <span class="streak-pill" id="profile-streak" style="display:none"></span>
+      </a>
       <button class="icon-btn" id="theme-toggle" title="Dark Mode umschalten" aria-label="Dark Mode umschalten">
         <span id="theme-icon">🌙</span>
         <span id="theme-label">Dunkel</span>
@@ -492,7 +503,7 @@ body.admin-mode .tile.dragging{cursor:grabbing;opacity:.5}
 <input type="file" id="file-import" accept=".json" style="display:none">
 
 <footer class="site-footer">
-  <div>Version 30.04.2026, 20:33</div>
+  <div>Version 01.05.2026, 00:40</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 
@@ -506,7 +517,7 @@ const DEFAULT_CONFIG = {
   // version. Bei Mismatch läuft mergeWithDefaults():
   //   - Default-Daten (title, sub, file, icon, status, since) werden überschrieben
   //   - Lehrer-Anpassungen (Reihenfolge, visible, eigene Kacheln) bleiben erhalten
-  version: 14,
+  version: 16,
   tiles: [
     // ---- GRAMMATIK ----
     // Titel-Schema: "Unit X – Thema" (X = Lighthouse-Unit, in der Grammatik eingeführt wird)
@@ -637,9 +648,9 @@ const DEFAULT_CONFIG = {
     {id:"z-orga",      title:"Organisatorisches – folgt bald", sub:"Termine · Ablauf · Regeln",
      category:"zap", grade:"10", subcat:"Organisatorisches",
      file:"#", icon:"📋", status:"draft", visible:false},
-    {id:"z-operatoren", title:"Operatoren – folgt bald", sub:"Prüfungsbefehle (describe, analyse …)",
+    {id:"z-operatoren", title:"Operatoren – Schreiben", sub:"NRW-MSA · describe · summarise · explain · compare · comment · discuss · write …",
      category:"zap", grade:"10", subcat:"Operatoren",
-     file:"#", icon:"🎯", status:"draft", visible:false},
+     file:"zap/operatoren.html", icon:"🎯", status:"new", visible:true, since:"2026-04-30"},
     {id:"z-videos",    title:"Videos – folgt bald", sub:"Erklärvideos zur Prüfung",
      category:"zap", grade:"10", subcat:"Videos",
      file:"#", icon:"🎬", status:"draft", visible:false},
@@ -1291,6 +1302,30 @@ if(isAdmin){
 // INIT
 // ============================================================
 render();
+
+// Sticky-Pin-Bar: schaltet Schatten/Border, sobald gescrollt wird
+(function(){
+  const ctrl = document.querySelector('.controls');
+  if(!ctrl) return;
+  function onScroll(){
+    if(window.scrollY > 4) ctrl.classList.add('scrolled');
+    else ctrl.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+
+// Streak-Pill am Profil-Button
+(function(){
+  const pill = document.getElementById('profile-streak');
+  if(!pill) return;
+  let streak = 0;
+  try{ const s = JSON.parse(localStorage.getItem('lp_streak') || '{}'); streak = s.count || 0; }catch(e){}
+  if(streak > 0){
+    pill.textContent = '🔥 ' + streak;
+    pill.style.display = '';
+  }
+})();
 </script>
 <script id="auto-version-stamp">
 /* Selbstpflegender Footer-Stempel: zeigt echte mtime der HTML-Datei. */

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leseverstehen – ZP 10 Vorbereitung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   SLATE-GOLD DESIGN SYSTEM (Pilot 05_to_be.html, Apr 2026)
+   ============================================================ */
+:root{
+  --bg:#f8fafc;
+  --bg-card:#ffffff;
+  --bg-card-hover:#f1f5f9;
+  --bg-input:#ffffff;
+  --border:#e5e7eb;
+  --border-strong:#d1d5db;
+  --text:#1f2937;
+  --text-dim:#4b5563;
+  --accent:#d4a017;
+  --accent-soft:rgba(212,160,23,0.10);
+  --accent-strong:#a07408;
+  --accent-tint:#e2e8f0;
+  --success:#16a34a;
+  --success-soft:rgba(22,163,74,0.08);
+  --success-tint:#bbf7d0;
+  --warn:#ea580c;
+  --warn-soft:rgba(234,88,12,0.08);
+  --warn-tint:#fed7aa;
+  --error:#dc2626;
+  --error-soft:rgba(220,38,38,0.08);
+  --error-tint:#fecaca;
+  --info:#2563eb;
+  --info-soft:rgba(37,99,235,0.08);
+  --info-tint:#bfdbfe;
+  --indigo:#4f46e5;
+  --indigo-soft:rgba(79,70,229,0.08);
+  --indigo-tint:#ddd6fe;
+  --teal:#0d9488;
+  --teal-soft:rgba(13,148,136,0.08);
+  --teal-tint:#f0fdfa;
+  /* Pill-Tokens */
+  --pill-subj-bg:rgba(37,99,235,0.10);
+  --pill-subj-bd:#2563eb;
+  --pill-subj-tx:#1e40af;
+  --pill-do-bg:rgba(212,160,23,0.14);
+  --pill-do-bd:#d4a017;
+  --pill-do-tx:#7c5e0a;
+  --pill-verb-bg:rgba(8,145,178,0.10);
+  --pill-verb-bd:#0891b2;
+  --pill-verb-tx:#155e6e;
+  --pill-neg-bg:rgba(220,38,38,0.10);
+  --pill-neg-bd:#dc2626;
+  --pill-neg-tx:#991b1b;
+  --pill-wh-bg:rgba(234,88,12,0.10);
+  --pill-wh-bd:#ea580c;
+  --pill-wh-tx:#9a3a0e;
+  --pill-sig-bg:rgba(124,58,237,0.10);
+  --pill-sig-bd:#7c3aed;
+  --pill-sig-tx:#5b21b6;
+  --pill-s-bg:rgba(22,163,74,0.10);
+  --pill-s-bd:#16a34a;
+  --pill-s-tx:#15803d;
+  /* Karten-Akzent-Streifen pro Kategorie */
+  --card-aus:#16a34a;
+  --card-kf:#d4a017;
+  --card-vern:#dc2626;
+  --card-frag:#2563eb;
+  --card-ka:#7c3aed;
+  /* Saturierte Karten-Akzente (für Top-Stripe, Titel, Underlines pro Karte) */
+  --card-amber-strong:#475569;
+  --card-green-strong:#059669;
+  --card-teal-strong:#ea580c;
+  --card-red-strong:#dc2626;
+  --card-blue-strong:#2563eb;
+  --card-indigo-strong:#7c3aed;
+}
+body.dark-mode{
+  --bg:#0f1117;
+  --bg-card:#1a1d28;
+  --bg-card-hover:#232634;
+  --bg-input:#14161e;
+  --border:#2a2e3d;
+  --border-strong:#3a3f52;
+  --text:#e8e9ed;
+  --text-dim:#9ba0b3;
+  --accent:#f4c430;
+  --accent-soft:rgba(244,196,48,0.12);
+  --accent-strong:#facc15;
+  --success:#4ade80;
+  --success-soft:rgba(74,222,128,0.10);
+  --warn:#fb923c;
+  --warn-soft:rgba(251,146,60,0.10);
+  --error:#f87171;
+  --error-soft:rgba(248,113,113,0.10);
+  --info:#60a5fa;
+  --info-soft:rgba(96,165,250,0.10);
+  --pill-subj-bg:rgba(96,165,250,0.12);
+  --pill-subj-bd:#60a5fa;
+  --pill-subj-tx:#bfdbfe;
+  --pill-do-bg:rgba(244,196,48,0.12);
+  --pill-do-bd:#f4c430;
+  --pill-do-tx:#fde68a;
+  --pill-verb-bg:rgba(34,211,238,0.12);
+  --pill-verb-bd:#22d3ee;
+  --pill-verb-tx:#a5f3fc;
+  --pill-neg-bg:rgba(248,113,113,0.12);
+  --pill-neg-bd:#f87171;
+  --pill-neg-tx:#fca5a5;
+  --pill-wh-bg:rgba(251,146,60,0.12);
+  --pill-wh-bd:#fb923c;
+  --pill-wh-tx:#fdba74;
+  --pill-sig-bg:rgba(167,139,250,0.12);
+  --pill-sig-bd:#a78bfa;
+  --pill-sig-tx:#d8b4fe;
+  --pill-s-bg:rgba(74,222,128,0.12);
+  --pill-s-bd:#4ade80;
+  --pill-s-tx:#86efac;
+  --card-aus:#4ade80;
+  --card-kf:#f4c430;
+  --card-vern:#f87171;
+  --card-frag:#60a5fa;
+  --card-ka:#a78bfa;
+}
+/* ===== ZP-Spezifische Styles (zusätzlich zum Master) ===== */
+.task{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.task[data-done="1"]{border-color:var(--success-tint);background:var(--success-soft)}
+.task-prompt{font-weight:600;margin-bottom:10px;color:var(--text);line-height:1.5}
+.task-num{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:24px;height:24px;text-align:center;font-size:13px;line-height:24px;margin-right:8px;font-weight:700}
+.mc-options{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.mc-opt{background:var(--bg-input);border:1.5px solid var(--border-strong);border-radius:8px;padding:9px 14px;text-align:left;cursor:pointer;font:inherit;color:var(--text);transition:.15s}
+.mc-opt:hover:not([disabled]){background:var(--bg-card-hover);border-color:var(--accent)}
+.mc-opt.correct{background:var(--success-soft);border-color:var(--success);color:var(--success)}
+.mc-opt.wrong{background:var(--error-soft);border-color:var(--error);color:var(--error)}
+.mc-opt[disabled]{cursor:default;opacity:.7}
+.feedback{margin-top:10px;padding:8px 12px;border-radius:8px;font-size:14px}
+.feedback.ok{background:var(--success-soft);color:var(--success);border-left:3px solid var(--success)}
+.feedback.bad{background:var(--error-soft);color:var(--error);border-left:3px solid var(--error)}
+.ft-wrap{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.ft-input{flex:1;min-width:200px;padding:9px 12px;border:1.5px solid var(--border-strong);border-radius:8px;font:inherit;background:var(--bg-input);color:var(--text)}
+.ft-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:9px 16px;cursor:pointer;font:inherit;font-weight:600;transition:.15s}
+.btn:hover{background:var(--accent-strong)}
+.btn.gray{background:var(--text-dim)}
+.btn.gray:hover{background:var(--text)}
+.tf-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.tf-row{background:var(--bg-input);border:1px solid var(--border);border-radius:10px;padding:10px 14px}
+.tf-row[data-done="1"]{background:var(--bg-card-hover)}
+.tf-stmt{margin-bottom:8px;font-size:15px;line-height:1.5}
+.tf-btns{display:flex;gap:6px;flex-wrap:wrap}
+.tf-btn{flex:1;min-width:90px;padding:7px 10px;font-size:13px}
+.section-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.note{background:var(--info-soft);border-left:3px solid var(--info);padding:10px 14px;border-radius:6px;margin-bottom:14px;font-size:14px;line-height:1.55}
+/* WWM-Quiz */
+.wwm-ladder{display:none}
+@media(min-width:900px){.wwm-ladder{display:block;float:right;width:200px;margin-left:18px;font-size:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:8px 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}}
+.wwm-rung{padding:4px 12px;color:var(--text-dim);border-left:3px solid transparent}
+.wwm-rung.milestone{font-weight:700;color:var(--accent-strong);border-left-color:var(--accent)}
+.wwm-rung.active{background:var(--accent-soft);color:var(--accent-strong);font-weight:700}
+.wwm-rung.won{color:var(--success);text-decoration:line-through;opacity:.7}
+.wwm-card{background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:18px 20px;margin-top:14px;box-shadow:0 3px 14px rgba(212,160,23,.15)}
+.wwm-q{font-size:17px;font-weight:600;margin-bottom:14px;line-height:1.5;color:var(--text)}
+.wwm-jokers{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.jk{background:var(--bg-input);border:1.5px solid var(--accent);color:var(--accent-strong);border-radius:20px;padding:6px 14px;cursor:pointer;font:inherit;font-size:13px;font-weight:600}
+.jk:hover:not([disabled]){background:var(--accent);color:#fff}
+.jk[disabled]{opacity:.4;cursor:default}
+.streak-box{background:linear-gradient(135deg,#ea580c,#dc2626);color:#fff;border-radius:8px;padding:6px 12px;display:inline-block;margin-bottom:10px;font-weight:700;font-size:13px}
+.wwm-options{display:flex;flex-direction:column;gap:8px}
+.wwm-fb{margin-top:14px;padding:10px 14px;border-radius:8px;font-size:14px}
+.wwm-fb.ok{background:var(--success-soft);color:var(--success);border-left:3px solid var(--success)}
+.wwm-fb.bad{background:var(--error-soft);color:var(--error);border-left:3px solid var(--error)}
+.result-card{text-align:center;background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:24px;margin-top:18px}
+.result-card h3{margin:8px 0;color:var(--accent-strong)}
+.result-card details{margin-top:14px;text-align:left}
+.result-card summary{cursor:pointer;font-weight:600;color:var(--accent-strong)}
+/* Quiz divider */
+.quiz-divider{text-align:center;margin:30px 0 16px;position:relative}
+.quiz-divider::before{content:'';position:absolute;left:0;top:50%;width:100%;height:1px;background:var(--border);z-index:0}
+.quiz-divider span{position:relative;background:var(--bg);padding:0 18px;color:var(--accent-strong);font-weight:700;font-size:15px;z-index:1}
+/* Section divider */
+.section-divider{text-align:center;margin:24px 0 14px;color:var(--text-dim);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+/* Strategien-Karten Grid */
+.strat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px}
+.strat-card{background:var(--bg-card);border:1px solid var(--border);border-top:4px solid var(--accent);border-radius:12px;padding:16px 18px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.strat-card.s-green{border-top-color:var(--success)}
+.strat-card.s-red{border-top-color:var(--error)}
+.strat-card.s-blue{border-top-color:var(--info)}
+.strat-card.s-amber{border-top-color:var(--accent)}
+.strat-card.s-teal{border-top-color:var(--teal)}
+.strat-card.s-indigo{border-top-color:var(--indigo)}
+.strat-card h3{margin:0 0 8px;font-size:16px;color:var(--text)}
+.strat-card p{margin:6px 0;font-size:14px;line-height:1.55;color:var(--text)}
+.strat-card .ex{background:var(--accent-soft);padding:6px 10px;border-radius:6px;margin-top:8px;font-size:13px;font-style:italic;color:var(--text-dim)}
+/* Reading text box */
+.read-text{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:10px 0;line-height:1.7;font-size:15px;max-height:none}
+.read-text h4{margin:0 0 8px;color:var(--accent-strong)}
+.read-text .meta{font-size:12px;color:var(--text-dim);font-style:italic;margin-bottom:8px}
+/* Audio script box */
+.audio-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0;padding:10px 12px;background:var(--accent-soft);border-radius:10px}
+.audio-controls label{font-size:13px;color:var(--text-dim)}
+.audio-controls select,.audio-controls button{padding:6px 12px;border-radius:6px;border:1px solid var(--border-strong);background:var(--bg-input);color:var(--text);font:inherit;font-size:13px;cursor:pointer}
+.audio-controls button.play-btn{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.script-box{background:var(--bg-input);border:1px dashed var(--border-strong);border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.6;margin:10px 0;display:none}
+.script-box.show{display:block}
+/* Vocabulary list */
+.vocab-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-top:10px}
+.vocab-item{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.vocab-item .en{font-weight:600;color:var(--accent-strong)}
+.vocab-item .de{color:var(--text-dim);font-style:italic}
+/* Floating Buttons */
+.dark-toggle,.tts-toggle,.reset-all-btn{position:fixed;top:14px;background:var(--bg-card);border:1.5px solid var(--accent);color:var(--accent-strong);border-radius:24px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px;font-weight:600;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.dark-toggle{right:14px}
+.tts-toggle{right:140px}
+.reset-all-btn{right:265px}
+.dark-toggle:hover,.tts-toggle:hover,.reset-all-btn:hover{background:var(--accent);color:#fff}
+@media(max-width:700px){.dark-toggle,.tts-toggle,.reset-all-btn{position:static;display:inline-block;margin:4px}.dark-toggle{margin-top:8px}}
+header{text-align:center;padding:24px 20px 16px;border-bottom:1px solid var(--border);margin-bottom:18px}
+header h1{margin:8px 0 4px;color:var(--accent-strong);font-size:26px}
+header .sub{color:var(--text-dim);font-size:14px;margin:0}
+.hdr-logo-link img{max-height:48px;display:block;margin:0 auto 6px}
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
+.crosslink{background:var(--bg-card);border:1.5px solid var(--accent);border-radius:10px;padding:12px 16px;text-decoration:none;color:var(--text);transition:.15s;display:block}
+.crosslink:hover{background:var(--accent-soft);border-color:var(--accent-strong);transform:translateY(-2px)}
+.crosslink .ic{font-size:20px;margin-right:8px}
+.crosslink .ttl{font-weight:700;color:var(--accent-strong);font-size:15px}
+.crosslink .desc{font-size:12px;color:var(--text-dim);margin-top:3px}
+.checklist{margin:14px 0;padding:0;list-style:none}
+.checklist li{padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px}
+.checklist li:hover{background:var(--bg-card-hover)}
+.checklist input[type="checkbox"]{margin-top:2px;width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
+.checklist li.done{opacity:.55;text-decoration:line-through}
+body{background:var(--bg);color:var(--text);font-family:'Baloo 2',sans-serif;margin:0;padding:0;min-height:100vh}
+html:has(body.dark-mode){background:var(--bg)}
+.container{max-width:1100px;margin:0 auto;padding:0 16px 60px}
+.accordion{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;margin:14px 0;overflow:hidden}
+.accordion[open]{box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.accordion summary{padding:14px 18px;font-weight:700;cursor:pointer;font-size:16px;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{content:'▾';color:var(--accent);transition:.2s}
+.accordion[open] summary::after{transform:rotate(180deg)}
+.accordion .content{padding:0 18px 18px;border-top:1px solid var(--border)}
+.progress-wrap{margin:10px 0 14px}
+.progress{background:var(--bg-input);border-radius:6px;height:10px;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,var(--success),var(--accent));height:100%;width:0%;transition:.3s}
+.progress-text{font-size:12px;color:var(--text-dim);margin-top:4px}
+footer{text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)}
+.acc-num{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:26px;height:26px;text-align:center;line-height:26px;margin-right:8px;font-size:14px}
+
+/* ============= WWM-Quiz Master-Skin (1:1 aus 08_passive.html) ============= */
+/* === Quiz-Divider === */
+.quiz-divider{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding:0 4px}
+.quiz-divider::before,.quiz-divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.55}
+.quiz-divider span{font-size:13px;font-weight:800;color:var(--accent-strong);white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+body.dark-mode .quiz-divider span{color:var(--accent)}
+
+/* === WWM-Quiz (thematisches Dunkelblau-Gold, mit neuem Token-System harmonisiert) === */
+#wwm-quiz{background:linear-gradient(180deg,#0a1840 0%,#040c24 100%);border-radius:14px;border:1px solid rgba(244,196,48,.35);overflow:hidden}
+#wwm-quiz>summary{color:var(--accent);border-left-color:var(--accent)!important;background:linear-gradient(90deg,rgba(244,196,48,.10),rgba(244,196,48,.02))!important;font-size:17px}
+#wwm-quiz>summary .acc-num{background:linear-gradient(135deg,#b8860b,#daa520);color:#0f1117}
+.wwm-layout{display:grid;grid-template-columns:1fr 160px;gap:20px;align-items:start}
+.wwm-ladder{background:linear-gradient(180deg,#0c2056,#061840);border:1px solid rgba(244,196,48,.3);border-radius:12px;padding:10px 8px;display:flex;flex-direction:column;gap:3px}
+.wwm-ladder-row{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:6px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.45);border:1px solid transparent;transition:.2s all;cursor:default}
+.wwm-ladder-row .wwm-qnum{width:18px;text-align:right;flex-shrink:0;font-size:10px;opacity:.6}
+.wwm-ladder-row .wwm-amount{flex:1;text-align:right;letter-spacing:.2px}
+.wwm-ladder-row.milestone{color:rgba(244,196,48,.6);border-color:rgba(244,196,48,.2);background:rgba(244,196,48,.05)}
+.wwm-ladder-row.done{color:rgba(100,220,120,.55)}
+.wwm-ladder-row.current{background:linear-gradient(90deg,rgba(244,196,48,.18),rgba(244,196,48,.08));border-color:rgba(244,196,48,.7);color:#f4c430;box-shadow:0 0 10px rgba(244,196,48,.25);font-size:12.5px}
+.wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(244,196,48,.6)}
+.wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(244,196,48,.28),rgba(244,196,48,.12))}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+.wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(244,196,48,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#f4c430;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(244,196,48,.2)}
+#wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
+#wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(244,196,48,.75);color:#f4c430;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(244,196,48,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(244,196,48,.4);cursor:pointer;transition:.2s all}
+#wwm-quiz .wwm-lifelines .chip:hover:not(.chip-used){background:radial-gradient(circle at 40% 35%,#2a4faa,#0d2060);box-shadow:0 0 22px rgba(244,196,48,.45),inset 0 1px 0 rgba(255,255,255,.15);transform:translateY(-2px) scale(1.05)}
+#wwm-quiz .task,#wwm-quiz .wwm-stage{background:transparent;border:none;border-radius:0;box-shadow:none;padding:0;margin:0}
+#wwm-quiz .task:hover,#wwm-quiz .wwm-stage:hover{box-shadow:none}
+#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{background:linear-gradient(180deg,#0f2d72 0%,#091e50 100%);color:#fff;border:2px solid #f4c430;border-radius:14px;padding:18px 22px;text-align:center;font-weight:800;font-size:19px;box-shadow:0 0 0 4px rgba(244,196,48,.12),0 6px 28px rgba(0,0,0,.5);line-height:1.6;margin-bottom:14px;position:relative;overflow:hidden}
+#wwm-quiz .task .prompt::before,#wwm-quiz .wwm-stage .prompt::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(244,196,48,.07),transparent 70%);pointer-events:none}
+#wwm-quiz .task .controls .btn.primary,#wwm-quiz .wwm-stage .controls .btn.primary{background:linear-gradient(135deg,#0f3080,#1a4db5);color:#ffecb3;border:1px solid rgba(244,196,48,.5);box-shadow:0 3px 14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1)}
+#wwm-quiz .task .controls .btn.green,#wwm-quiz .wwm-stage .controls .btn.green{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#b9f6ca;border:1px solid rgba(0,230,118,.45);box-shadow:0 3px 12px rgba(0,0,0,.4)}
+#wwm-quiz .task .controls .btn.gray,#wwm-quiz .wwm-stage .controls .btn.gray{background:linear-gradient(135deg,#1e2a38,#2d3d50);color:#90a4ae;border:1px solid rgba(255,255,255,.15)}
+#wwm-quiz .section-actions .btn{background:linear-gradient(135deg,#0c2a66,#163a8a);color:#ffecb3;border:1px solid rgba(244,196,48,.4);box-shadow:0 3px 10px rgba(0,0,0,.4)}
+#wwm-quiz .section-actions .btn:hover{background:linear-gradient(135deg,#163a8a,#1e4db5)}
+#wwm-quiz .feedback{color:#ffecb3;font-size:15px;margin-top:10px}
+#wwm-quiz .feedback.ok{color:#00e676;text-shadow:0 0 10px rgba(0,230,118,.5)}
+#wwm-quiz .feedback.bad{color:#ff6b6b;text-shadow:0 0 10px rgba(255,80,80,.4)}
+#wwm-quiz .feedback.warn{color:#f4c430}
+#wwm-quiz .controls .btn:focus{outline:2px solid rgba(255,255,255,.9);outline-offset:3px}
+#wwm-quiz .controls .btn.green:focus{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.2),0 3px 12px rgba(0,0,0,.4)}
+.quiz-tip-box{margin-top:12px;padding:12px 16px;background:rgba(244,196,48,.08);border:1px solid rgba(244,196,48,.45);border-left:3px solid #f4c430;border-radius:10px;color:#fde68a;font-size:14px;line-height:1.6}
+.quiz-explanation-box{margin-top:12px;padding:12px 16px;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.3);border-left:3px solid #00e676;border-radius:10px;color:#b9f6ca;font-size:14px;line-height:1.6}
+.quiz-streak{text-align:center;font-size:22px;font-weight:900;color:#f4c430;letter-spacing:.5px;min-height:32px;margin-bottom:10px;text-shadow:0 0 16px rgba(244,196,48,.7)}
+#wwm-quiz .result-card{background:linear-gradient(160deg,#1a4faa 0%,#0d3080 50%,#071d55 100%);border:3px solid #f4c430;box-shadow:0 0 60px rgba(244,196,48,.35),0 20px 60px rgba(0,0,0,.7);color:#fff;border-radius:20px;overflow:hidden}
+#wwm-quiz .score{color:#f4c430}
+#wwm-quiz{overflow:visible!important}
+@keyframes quizFadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.quiz-question-enter{animation:quizFadeIn .45s cubic-bezier(.22,1,.36,1) forwards}
+#wwm-quiz .wwm-lifelines .chip-used{opacity:.35;cursor:not-allowed;border-color:rgba(244,196,48,.25);color:rgba(244,196,48,.4);text-decoration:line-through;box-shadow:none}
+.wwm-joker-options{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.wwm-option-btn{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,rgba(10,30,90,.9),rgba(5,18,60,.9));border:2px solid rgba(244,196,48,.5);border-radius:999px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;padding:10px 18px;text-align:left;transition:.2s all;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.wwm-option-btn:hover{background:linear-gradient(90deg,rgba(30,70,180,.9),rgba(15,45,130,.9));border-color:#f4c430;box-shadow:0 0 16px rgba(244,196,48,.3);transform:scale(1.01)}
+.wwm-opt-letter{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(244,196,48,.15);border:2px solid rgba(244,196,48,.6);color:#f4c430;font-size:13px;font-weight:900;flex-shrink:0}
+.wwm-phone-bubble{margin-top:14px;display:flex;align-items:flex-start;gap:12px;background:linear-gradient(135deg,rgba(5,20,60,.95),rgba(3,12,40,.95));border:2px solid rgba(100,180,255,.4);border-radius:14px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.06)}
+.wwm-phone-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 8px rgba(100,180,255,.5))}
+.wwm-phone-text{font-size:14px;color:#c5deff;line-height:1.7}
+.wwm-phone-text b{color:#f4c430}
+.wwm-phone-text em{display:inline-block;margin-top:6px;font-style:normal;background:rgba(255,255,255,.08);border:1px solid rgba(100,180,255,.3);border-radius:8px;padding:4px 10px;color:#fff;font-weight:700;font-size:15px}
+.wwm-audience-box{margin-top:14px;background:linear-gradient(180deg,rgba(5,18,55,.95),rgba(3,10,36,.95));border:2px solid rgba(244,196,48,.35);border-radius:14px;padding:14px 16px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.wwm-audience-title{text-align:center;font-size:13px;font-weight:800;color:#f4c430;letter-spacing:.6px;text-transform:uppercase;margin-bottom:12px;text-shadow:0 0 8px rgba(244,196,48,.4)}
+.wwm-audience-bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:110px}
+.wwm-audience-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;max-width:160px;height:100%}
+.wwm-audience-pct{font-size:13px;font-weight:900;color:#f4c430;min-height:18px}
+.wwm-audience-bar{width:100%;min-height:4px;border-radius:6px 6px 0 0;cursor:pointer;transition:filter .2s}
+.wwm-audience-bar:hover{filter:brightness(1.2)}
+.wwm-audience-label{font-size:11px;color:rgba(255,255,255,.65);text-align:center;line-height:1.3;max-width:100%;word-break:break-word;margin-top:4px}
+
+
+</style>
+
+</head>
+<body>
+<button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+<button class="tts-toggle" id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" onclick="resetAllProgress('lv')">🗑️ Zurücksetzen</button>
+
+<div class="container">
+
+<header>
+  <a class="hdr-logo-link" href="../index.html" title="Zurück"><img src="../assets/logo_hellweg.png" alt="Hellweg-Realschule"/></a>
+  <h1>Leseverstehen · Reading</h1>
+  <p class="sub">ZP 10 Vorbereitung · Klasse 10</p>
+</header>
+
+<section class="rules-combined">
+  <div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Strategien auf einen Blick</span></div>
+  <div class="strat-grid">
+    <div class="strat-card s-blue">
+      <h3>👀 Skimmen vs. Scannen</h3>
+      <p><b>Skimmen:</b> Text einmal schnell überfliegen, um den Hauptinhalt zu erfassen. Erste/letzte Sätze pro Absatz lesen.</p>
+      <p><b>Scannen:</b> Gezielt nach einer bestimmten Information suchen (Zahl, Name, Schlüsselwort).</p>
+      <div class="ex">Erst skimmen → dann mit gezieltem Scannen Aufgaben beantworten.</div>
+    </div>
+    <div class="strat-card s-amber">
+      <h3>🔑 Schlüsselwörter & Signalwörter</h3>
+      <p><b>Schlüsselwörter:</b> Substantive, Verben, Zahlen, Eigennamen — die Inhalts-Träger.</p>
+      <p><b>Signalwörter:</b> "however" (Gegensatz), "therefore" (Folge), "first/then/finally" (Reihenfolge), "for example" (Beispiel).</p>
+      <div class="ex">Markiere beim ersten Lesen Schlüsselwörter mit Bleistift.</div>
+    </div>
+    <div class="strat-card s-teal">
+      <h3>🤔 Bei Lücken: Kontext nutzen</h3>
+      <p>Unbekannte Wörter? Nicht panisch das Lexikon zücken — frag dich:</p>
+      <p>1. Welche Wortart? (Verb/Substantiv/Adjektiv?)<br>2. Positiv oder negativ?<br>3. Was passt zum Thema?</p>
+      <div class="ex">Bei Aufgaben mit "Not given": Wenn der Text das Thema gar nicht erwähnt → Not given.</div>
+    </div>
+  </div>
+</section>
+
+<details class="accordion" id="acc-texts">
+  <summary><span><span class="acc-num">1</span>📝 Übungstexte mit Aufgaben</span></summary>
+  <div class="content">
+    <div class="note">Pro Text: <b>True/False/Not given</b>, <b>Multiple Choice</b>, <b>Offene Fragen</b>. Ziel-Niveau: A2/B1. Bearbeitungszeit pro Text: ca. 12–15 Min.</div>
+    <div id="lv-texts-list"></div>
+  </div>
+</details>
+
+<details class="accordion" id="acc-vocab">
+  <summary><span><span class="acc-num">2</span>🛠 Useful Vocabulary für Antworten</span></summary>
+  <div class="content">
+    <div class="note">Diese Phrasen brauchst du in den offenen Antworten und auch bei der Sprachmittlung.</div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">📖 Bezug zum Text nehmen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"According to the text…"</span><span class="de">Laut dem Text …</span></div>
+      <div class="vocab-item"><span class="en">"The author claims that…"</span><span class="de">Der Autor behauptet, dass …</span></div>
+      <div class="vocab-item"><span class="en">"The text suggests that…"</span><span class="de">Der Text deutet an, dass …</span></div>
+      <div class="vocab-item"><span class="en">"It is said in the text that…"</span><span class="de">Im Text heißt es, dass …</span></div>
+      <div class="vocab-item"><span class="en">"As mentioned in the article…"</span><span class="de">Wie im Artikel erwähnt …</span></div>
+      <div class="vocab-item"><span class="en">"The article points out that…"</span><span class="de">Der Artikel weist darauf hin, dass …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">📋 Antworten formulieren</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"In my opinion, …"</span><span class="de">Meiner Meinung nach …</span></div>
+      <div class="vocab-item"><span class="en">"From my point of view, …"</span><span class="de">Aus meiner Sicht …</span></div>
+      <div class="vocab-item"><span class="en">"This shows that…"</span><span class="de">Das zeigt, dass …</span></div>
+      <div class="vocab-item"><span class="en">"For example, …"</span><span class="de">Zum Beispiel …</span></div>
+      <div class="vocab-item"><span class="en">"The reason is that…"</span><span class="de">Der Grund ist, dass …</span></div>
+      <div class="vocab-item"><span class="en">"This is because…"</span><span class="de">Das liegt daran, dass …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">⚖️ Vergleichen / Gegenüberstellen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"On the one hand … on the other hand"</span><span class="de">Einerseits … andererseits</span></div>
+      <div class="vocab-item"><span class="en">"In contrast to…"</span><span class="de">Im Gegensatz zu …</span></div>
+      <div class="vocab-item"><span class="en">"However, …"</span><span class="de">Allerdings, …</span></div>
+      <div class="vocab-item"><span class="en">"Compared to…"</span><span class="de">Verglichen mit …</span></div>
+      <div class="vocab-item"><span class="en">"Both … and …"</span><span class="de">Sowohl … als auch …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">📊 Zahlen / Mengen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"about / around / approximately"</span><span class="de">ungefähr</span></div>
+      <div class="vocab-item"><span class="en">"more than / over"</span><span class="de">mehr als / über</span></div>
+      <div class="vocab-item"><span class="en">"less than / under"</span><span class="de">weniger als / unter</span></div>
+      <div class="vocab-item"><span class="en">"the majority of"</span><span class="de">die Mehrheit der</span></div>
+      <div class="vocab-item"><span class="en">"a few / several"</span><span class="de">einige</span></div>
+    </div>
+  </div>
+</details>
+
+<div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+
+<details class="accordion" id="wwm-quiz">
+  <summary><span class="acc-num">🏆</span>Quiz</summary>
+  <div class="content" style="background:linear-gradient(180deg,#061840,#030e2b);padding:20px 16px">
+    <div class="progress-wrap" id="quiz-progress"><div class="progress" style="background:rgba(255,204,0,.15);border-color:rgba(255,204,0,.3)" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="background:linear-gradient(90deg,#b8860b,#ffcc00)"></div></div><div class="progress-text" style="color:#ffcc00">Fortschritt: 0/15 richtig (0%)</div></div>
+    <div class="section-actions"><button class="btn" id="quiz-reset">🔄 Neues Spiel</button></div>
+    <div id="quiz-tasks"></div>
+    <div id="quiz-result" style="display:none;margin-top:20px;" class="result-card"></div>
+  </div>
+</details>
+
+<footer>
+  <div>Version 02.05.2026, 16:00</div>
+  <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+</footer>
+
+</div>
+<script>
+
+window.PAGE_KEY='lv';
+
+const LV_TEXTS=[
+  {
+    id:'lv1', titel:'School lunch in three countries', wortzahl:285,
+    text:`<p>School lunch is very different from country to country. In Britain, most schools have a canteen where students can choose between a hot meal and a packed lunch from home. A typical hot meal might include pasta with tomato sauce, a small salad and a fruit yoghurt. The price is around £2.50 per meal. Many schools have replaced fizzy drinks with water or milk over the past ten years. Children with low-income families often get a free lunch.</p>
+    <p>In France, school meals are seen as part of education. Students sit down at long tables and eat a three-course meal: starter, main course and dessert. Cheese and bread are always on the table. Even small children get the chance to taste new things — like fish, vegetables or salad they wouldn't normally eat at home. The meal can take up to one hour.</p>
+    <p>In Japan, "kyushoku" is the school lunch tradition. Students eat in their classroom, not in a canteen. Two students from each class collect the food in big pots from the kitchen. Everyone helps to serve the food and clean up afterwards. The meals are very healthy: rice, miso soup, fish or vegetables. Eating together is part of social learning.</p>
+    <p>So school lunch isn't just about food — it's about culture, health and growing up.</p>`,
+    aufgaben: {
+      tf:[
+        {s:'British students must eat in the canteen.', a:'False', why:'Sie können auch ein Lunchpaket von zu Hause mitbringen.'},
+        {s:'In Britain, fizzy drinks are still common in schools today.', a:'False', why:'Sie wurden in den letzten 10 Jahren ersetzt.'},
+        {s:'A French school lunch normally lasts about 30 minutes.', a:'False', why:'Es heißt: bis zu einer Stunde.'},
+        {s:'French children eat dessert as part of the school lunch.', a:'True', why:'Three-course meal: starter, main, dessert.'},
+        {s:'In Japan, students eat in a special canteen.', a:'False', why:'Sie essen im Klassenraum.'},
+        {s:'Japanese students serve the food themselves.', a:'True', why:'Two students collect food, everyone helps.'},
+        {s:'In all three countries, lunch costs the same.', a:'Not given', why:'Der Text nennt nur den britischen Preis.'},
+        {s:'School lunches in all three countries include rice.', a:'False', why:'Nur in Japan.'}
+      ],
+      mc:[
+        {prompt:'In which country is lunch seen as part of education?', options:['Britain','France','Japan','Germany'], correct:1},
+        {prompt:'What do British students typically pay for a hot meal?', options:['£1.50','£2.50','£3.50','£5.00'], correct:1},
+        {prompt:'What does "kyushoku" mean?', options:['Japanese tea ceremony','School lunch tradition in Japan','A type of soup','A school holiday'], correct:1},
+        {prompt:'According to the text, what is true about all three countries?', options:['They eat the same food','School lunch is more than just food','Children pay nothing','Meals last one hour'], correct:1},
+        {prompt:'What is on the table at every French school meal?', options:['Pizza and cola','Rice and miso soup','Cheese and bread','Pasta and ketchup'], correct:2}
+      ],
+      open:[
+        {prompt:'How long does a French school meal take? (Stichwort)', answer:['up to one hour','one hour','60 minutes','an hour'], hint:'Im 2. Absatz.'},
+        {prompt:'Who collects the food in a Japanese classroom?', answer:['two students from each class','two students','students from the class'], hint:'Stichwort: number + role'},
+        {prompt:'Why do British students sometimes get free lunches? (Stichwort)', answer:['low-income families','because of low income','poor families','low-income family'], hint:'Sozialer Grund.'}
+      ]
+    }
+  },
+  {
+    id:'lv2', titel:'Climate change and young people', wortzahl:280,
+    text:`<p>Climate change is the biggest challenge of our generation — at least, that's what most teenagers in Europe say. A recent survey of 5,000 students aged 14 to 18 showed that 78% are worried about global warming. Many feel that adults are not doing enough.</p>
+    <p>Greta Thunberg is the most famous teenage climate activist. In 2018, when she was just 15 years old, she started skipping school every Friday. She sat in front of the Swedish parliament with a sign saying "School strike for climate". Within months, students all over the world joined her — the movement is now called "Fridays for Future".</p>
+    <p>However, not everyone agrees with school strikes. Some teachers and parents say students should learn first and protest later. Others argue that schools should support the protests because climate change affects young people the most.</p>
+    <p>Many teenagers also try to live more sustainably in their daily life. They eat less meat, take the bike instead of the car, and avoid flying. Some buy second-hand clothes instead of fast fashion. But experts say small individual changes are not enough — bigger political decisions are needed.</p>
+    <p>So what can young people do? Vote when they are old enough, write letters to politicians, and stay informed. The future, after all, belongs to them.</p>`,
+    aufgaben: {
+      tf:[
+        {s:'78% of all European teenagers are worried about climate change.', a:'False', why:'Nur 78% der befragten Schüler (5,000 zwischen 14–18 Jahren).'},
+        {s:'Greta Thunberg started her protest at age 15.', a:'True', why:'Direkt im Text genannt.'},
+        {s:'The "Fridays for Future" movement started in Sweden.', a:'True', why:'Sie saß vor dem schwedischen Parlament.'},
+        {s:'All teachers support school strikes.', a:'False', why:'Manche sagen, Schüler sollten zuerst lernen.'},
+        {s:'Eating less meat is a way to live more sustainably.', a:'True', why:'Im 4. Absatz erwähnt.'},
+        {s:'Greta Thunberg lives in Norway.', a:'Not given', why:'Land ihres Wohnorts wird nicht gesagt.'},
+        {s:'Buying second-hand clothes is mentioned as a positive action.', a:'True', why:'Direkt erwähnt im Text.'}
+      ],
+      mc:[
+        {prompt:'How many students were asked in the survey?', options:['1,000','5,000','10,000','50,000'], correct:1},
+        {prompt:'What did Greta Thunberg do in 2018?', options:['She wrote a book','She skipped school every Friday','She moved to America','She gave a TV interview'], correct:1},
+        {prompt:'According to the text, what is NOT enough to stop climate change?', options:['Voting','Political decisions','Small individual changes','Writing to politicians'], correct:2},
+        {prompt:'Who is most affected by climate change, according to the text?', options:['Adults','Teachers','Young people','Politicians'], correct:2},
+        {prompt:'What does "fast fashion" probably mean here?', options:['Designer clothes','Cheap, quickly produced clothes','Expensive sportswear','Second-hand clothes'], correct:1}
+      ],
+      open:[
+        {prompt:'In which year did Greta Thunberg start her school strike?', answer:['2018'], hint:'Eine Jahreszahl.'},
+        {prompt:'Name one way teenagers can live more sustainably (mentioned in the text).', answer:['eat less meat','take the bike','avoid flying','buy second-hand clothes','second-hand clothes'], hint:'Es gibt 4 Möglichkeiten.'},
+        {prompt:'What is the name of the global student movement?', answer:['Fridays for Future','fridays for future'], hint:'Wochentag im Namen.'}
+      ]
+    }
+  },
+  {
+    id:'lv3', titel:'Smartphones at school: yes or no?', wortzahl:260,
+    text:`<p>Should students bring their smartphones to school? In many European countries, this question is hotly debated. France banned smartphones in schools in 2018. The UK is now thinking about a similar law.</p>
+    <p>Supporters of a ban say smartphones are a big distraction. Students text in class, take photos of classmates without permission and become victims of cyberbullying. A British study found that schools without phones had better exam results — about 6% higher.</p>
+    <p>However, some parents and teachers disagree. They say smartphones can be useful tools: students can quickly look up unknown words, take photos of the blackboard or use language-learning apps. In emergencies, parents want to be able to call their children directly.</p>
+    <p>What about the students themselves? In a survey, 64% of 12 to 16-year-olds said they would NOT want a complete ban. But interestingly, 52% admitted they spend too much time on their phones during break.</p>
+    <p>Some schools have found a middle way: phones are allowed in the breaks but must be switched off and put away in lessons. Phones can be used in some lessons (like research projects) but only with the teacher's permission.</p>
+    <p>The debate continues — and there's probably no single right answer for every school.</p>`,
+    aufgaben: {
+      tf:[
+        {s:'France banned smartphones in schools in 2018.', a:'True', why:'Direkt genannt.'},
+        {s:'The UK has the same law as France.', a:'False', why:'UK denkt nur darüber nach.'},
+        {s:'Schools without smartphones have 10% better exam results.', a:'False', why:'Es waren 6%, nicht 10%.'},
+        {s:'All teachers want a smartphone ban.', a:'False', why:'Manche sehen Vorteile.'},
+        {s:'52% of students admit they spend too much time on their phones during break.', a:'True', why:'Direkt genannt im Text.'},
+        {s:'Some schools allow phones during break but not in lessons.', a:'True', why:'Mittelweg im 5. Absatz.'},
+        {s:'Smartphones in school are illegal in Germany.', a:'Not given', why:'Deutschland wird nicht erwähnt.'}
+      ],
+      mc:[
+        {prompt:'When did France ban smartphones in schools?', options:['2008','2018','2020','2023'], correct:1},
+        {prompt:'According to the British study, how much better were exam results in schools without phones?', options:['2%','4%','6%','10%'], correct:2},
+        {prompt:'What is one positive use of smartphones mentioned in the text?', options:['Listening to music','Looking up unknown words','Playing games','Watching films'], correct:1},
+        {prompt:'What percentage of students would NOT want a complete ban?', options:['52%','64%','78%','90%'], correct:1},
+        {prompt:'What is the "middle way" some schools use?', options:['Complete ban','Phones during break only','Phones in every lesson','No rules at all'], correct:1}
+      ],
+      open:[
+        {prompt:'Which country banned smartphones in schools in 2018?', answer:['France','france'], hint:'Europäisches Land.'},
+        {prompt:'What can phones be used for in some lessons (with permission)?', answer:['research projects','research','projects'], hint:'Im 5. Absatz.'},
+        {prompt:'How much higher were exam results without phones (number + unit)?', answer:['6%','about 6%','six percent','6 percent'], hint:'Eine Prozentzahl.'}
+      ]
+    }
+  },
+  {
+    id:'lv4', titel:'Travelling alone for the first time', wortzahl:295,
+    text:`<p>Last summer I did something I had never done before: I travelled alone for two weeks through Scotland. I was 17 years old. My parents weren't sure at first, but in the end they agreed — under one condition: I had to call them every evening.</p>
+    <p>I started in Edinburgh. The city is amazing — narrow streets, old buildings, bagpipes everywhere. I stayed in a youth hostel for £24 per night. There I met other young travellers from Spain, Canada and Germany. We had dinner together and one girl, Maria, even joined me for the next two days in the Highlands.</p>
+    <p>The Highlands are wild and beautiful. I took the train to Inverness, then a small bus to Loch Ness. Yes, I looked for the monster, but I only saw lots of sheep. The weather changed every 30 minutes — sun, rain, wind, then sun again. Locals told me: "If you don't like the weather in Scotland, just wait ten minutes."</p>
+    <p>One day I almost got lost. I was hiking on a small path and suddenly there was no signal on my phone. The map app didn't work. I started to panic a little. But then I remembered: the road I came from is south, so I just walked back. After an hour I was safe again — and very tired.</p>
+    <p>What did I learn? Travelling alone is not always easy. Sometimes you feel lonely. But you grow up. You make decisions on your own. And you meet wonderful people. I would do it again — but next time, I'll bring a paper map.</p>`,
+    aufgaben: {
+      tf:[
+        {s:'The author was 18 years old during the trip.', a:'False', why:'17 Jahre alt.'},
+        {s:'The parents agreed without any conditions.', a:'False', why:'Bedingung: jeden Abend anrufen.'},
+        {s:'A night in the Edinburgh youth hostel cost £24.', a:'True', why:'Direkt genannt.'},
+        {s:'The author saw the Loch Ness monster.', a:'False', why:'Nur Schafe gesehen.'},
+        {s:'In Scotland, the weather is always sunny.', a:'False', why:'Wechselt alle 30 Min.'},
+        {s:'The author got completely lost and needed help from locals.', a:'False', why:'Er fand selbst zurück.'},
+        {s:'The trip lasted two weeks.', a:'True', why:'„two weeks through Scotland".'},
+        {s:'Maria was from Germany.', a:'Not given', why:'Marias Land wird nicht genannt.'}
+      ],
+      mc:[
+        {prompt:'How old was the author?', options:['15','16','17','18'], correct:2},
+        {prompt:'What was the condition for travelling alone?', options:['Travel in a group','Call parents every evening','Stay only in hostels','Only travel for one week'], correct:1},
+        {prompt:'Where did the author meet other young travellers?', options:['On the train','In a hotel','In a youth hostel','At Loch Ness'], correct:2},
+        {prompt:'What does the locals\' saying about Scottish weather mean?', options:['It\'s always good','It changes very quickly','It rains every day','It\'s the worst in Europe'], correct:1},
+        {prompt:'What does the author plan for next time?', options:['Travel with friends','Bring a paper map','Stay in hotels','Skip the Highlands'], correct:1}
+      ],
+      open:[
+        {prompt:'How much did one night in the youth hostel cost? (number + currency)', answer:['£24','24 pounds','£24 per night','24£'], hint:'Britische Währung.'},
+        {prompt:'What did the author actually see at Loch Ness?', answer:['sheep','lots of sheep','only sheep'], hint:'Ein Tier — keine Monster.'},
+        {prompt:'Name one thing the author learned from the trip (any answer in your own words is ok in real life — here, give a keyword).', answer:['grow up','make decisions','meet people','meet wonderful people','growing up'], hint:'Persönliche Entwicklung.'}
+      ]
+    }
+  },
+  {
+    id:'lv5', titel:'My first job interview', wortzahl:240,
+    text:`<p>I'll never forget my first job interview. I was 16 and applied for a part-time job in a coffee shop. I needed money for my driving lessons. My friend Jake worked there already and told me: "It's super relaxed, don't worry."</p>
+    <p>I worried anyway. The night before, I couldn't sleep. I tried on three different shirts. Mum said the blue one looked most professional, so I went with that. I arrived 15 minutes early — too early, actually. The manager wasn't there yet, so I sat on a chair, sweating.</p>
+    <p>When the manager finally appeared, I stood up too quickly and almost knocked over a coffee cup. Great start. She smiled, however, and asked normal questions: Why this job? When can I work? Do I have experience? I had no experience but I tried to sound confident.</p>
+    <p>The most embarrassing moment came when she asked about my hobbies. I wanted to say "reading" but in my nervous English I said "writing books". She looked surprised and asked which book I had written. I had to admit I just like reading them. She laughed, and I laughed too. The atmosphere relaxed.</p>
+    <p>Two days later, she called: I got the job. I worked there for one year and learned a lot — about coffee, about teamwork, and about not panicking before interviews.</p>`,
+    aufgaben: {
+      tf:[
+        {s:'The author was 17 when applying for the job.', a:'False', why:'16 Jahre alt.'},
+        {s:'The author needed money for driving lessons.', a:'True', why:'Direkt erwähnt.'},
+        {s:'Jake also worked at the coffee shop.', a:'True', why:'Im 1. Absatz.'},
+        {s:'The author wore a red shirt.', a:'False', why:'Blau.'},
+        {s:'The manager was there before the author.', a:'False', why:'Manager war noch nicht da.'},
+        {s:'The author has written a book.', a:'False', why:'Verwechselte „reading" mit „writing books".'},
+        {s:'The author got the job after one week.', a:'False', why:'Nach zwei Tagen.'},
+        {s:'The author worked there for two years.', a:'False', why:'Ein Jahr.'}
+      ],
+      mc:[
+        {prompt:'Why did the author need money?', options:['For a holiday','For driving lessons','For new clothes','For a phone'], correct:1},
+        {prompt:'How early did the author arrive?', options:['5 minutes','10 minutes','15 minutes','30 minutes'], correct:2},
+        {prompt:'What did the author almost knock over?', options:['A chair','A coffee cup','The manager','A book'], correct:1},
+        {prompt:'What did the author actually mean to say about hobbies?', options:['Writing books','Reading','Running','Cooking'], correct:1},
+        {prompt:'How did the manager react to the funny answer?', options:['She got angry','She laughed','She ended the interview','She offered a different job'], correct:1}
+      ],
+      open:[
+        {prompt:'How long did the author work at the coffee shop?', answer:['one year','1 year','a year'], hint:'Zeitspanne.'},
+        {prompt:'What colour was the shirt the author wore?', answer:['blue'], hint:'Englisches Farbwort.'},
+        {prompt:'Name one thing the author learned at the job.', answer:['coffee','teamwork','about coffee','about teamwork','not panicking','about not panicking'], hint:'Drei Dinge werden genannt.'}
+      ]
+    }
+  }
+];
+
+const quizPool=[
+  // d=1 (10) — Strategien-Grundlagen
+  {prompt:'Was bedeutet "Skimmen"?',options:['Genau jedes Wort lesen','Schnell den groben Inhalt erfassen','Eine Wortliste anlegen','Den Text auswendig lernen'],correct:1,explanation:'Skimmen = überfliegen für den Hauptinhalt.',d:1},
+  {prompt:'Was bedeutet "Scannen"?',options:['Etwas Bestimmtes im Text suchen','Den Text einscannen','Den Text in Abschnitte teilen','Auswendig lernen'],correct:0,explanation:'Scannen = gezielt nach einer Info suchen.',d:1},
+  {prompt:'Wann benutzt du Skimmen?',options:['Wenn du den Hauptinhalt schnell erfassen willst','Wenn du eine Jahreszahl suchst','Wenn du Vokabeln nachschlägst','Beim Vorlesen'],correct:0,explanation:'Skimmen für den Hauptinhalt.',d:1},
+  {prompt:'Was sind "Schlüsselwörter"?',options:['Wörter mit Schloss-Symbol','Wichtige Wörter, die den Inhalt tragen','Eigennamen','Lange Wörter'],correct:1,explanation:'Schlüsselwörter = inhaltlich wichtige Begriffe.',d:1},
+  {prompt:'Wenn du eine Frage zu einer bestimmten Zahl im Text hast, …',options:['…liest du jeden Satz langsam','…suchst du gezielt nach Zahlen (Scannen)','…liest du nur die Überschrift','…überspringst du den Text'],correct:1,explanation:'Scannen für gezielte Infos.',d:1},
+  {prompt:'Was bedeutet "Not given" bei True/False/Not given?',options:['Die Aussage ist falsch','Die Aussage ist im Text nicht enthalten','Die Aussage ist richtig','Die Aussage ist wichtig'],correct:1,explanation:'Not given = Information fehlt im Text.',d:1},
+  {prompt:'Wenn ein Wort im Text unbekannt ist, …',options:['…brichst du die Aufgabe ab','…rätst du die Bedeutung aus dem Kontext','…übersetzt du den Text neu','…überspringst du das ganze Kapitel'],correct:1,explanation:'Kontext nutzen statt aufgeben.',d:1},
+  {prompt:'Was sind typische Signalwörter im Text?',options:['Wörter wie "the", "a", "of"','Wörter wie "however", "therefore", "first"','Eigennamen','Zahlen'],correct:1,explanation:'Signalwörter strukturieren den Text.',d:1},
+  {prompt:'Was tust du als ERSTES bei einer Leseaufgabe?',options:['Den Text dreimal lesen','Den Text und die Aufgaben kurz überfliegen','Vokabeln raten','Schreiben'],correct:1,explanation:'Beide kurz überfliegen, dann gezielt arbeiten.',d:1},
+  {prompt:'Welcher Tipp hilft bei langen Texten?',options:['Alle Absätze auswendig lernen','Pro Absatz das Hauptthema markieren','Nur den ersten Absatz lesen','Das Lexikon dauernd benutzen'],correct:1,explanation:'Strukturieren mit Markierungen.',d:1},
+  // d=2 (14) — Strategien anwenden
+  {prompt:'In Aufgaben mit Multiple Choice: Was hilft bei der Auswahl?',options:['Falsche Optionen ausschließen','Immer A wählen','Längste Option wählen','Optionen ignorieren'],correct:0,explanation:'Ausschluss-Methode hilft.',d:2},
+  {prompt:'Eine Aussage steht so ÄHNLICH im Text — aber NICHT wörtlich. Was ist die Aussage?',options:['False','Not given','True (auch wenn umformuliert)','Unklar'],correct:2,explanation:'Auch Paraphrasen sind „True".',d:2},
+  {prompt:'Bei Lückentext-Aufgaben: Welche Wortart musst du oft einsetzen?',options:['Immer ein Verb','Wortart aus dem Kontext bestimmen','Immer ein Substantiv','Immer ein Adjektiv'],correct:1,explanation:'Wortart aus dem Satzbau ableiten.',d:2},
+  {prompt:'Was bedeutet "the author claims that…"?',options:['Der Autor weiß genau …','Der Autor behauptet, dass …','Der Autor verleiht …','Der Autor reklamiert …'],correct:1,explanation:'„claim" = behaupten.',d:2},
+  {prompt:'Welcher Satz ist ein Beispiel für ein typisches Signalwort?',options:['"and"','"however"','"the"','"is"'],correct:1,explanation:'„however" = Gegensatz-Signal.',d:2},
+  {prompt:'Du suchst eine Jahreszahl im Text. Wie suchst du am schnellsten?',options:['Wort für Wort lesen','Mit dem Auge nach Zahlen scannen','Den Text auswendig lernen','Ein Wörterbuch holen'],correct:1,explanation:'Visuelles Scannen.',d:2},
+  {prompt:'Wenn der Text sagt "the price is around £2.50", was ist richtig?',options:['Der Preis ist genau 2,50 £','Der Preis ist ungefähr 2,50 £','Der Preis ist mehr als 2,50 £','Der Preis ist unbekannt'],correct:1,explanation:'„around" = ungefähr.',d:2},
+  {prompt:'Welche Phrase weist auf eine Aussage hin, die DAGEGEN steht?',options:['"Moreover"','"For example"','"On the other hand"','"In addition"'],correct:2,explanation:'„On the other hand" = Gegensatz.',d:2},
+  {prompt:'Welche Information ist im Text NICHT enthalten? Wie findest du das raus?',options:['Du suchst nach Schlüsselwörtern der Aussage und prüfst, ob sie vorkommen','Du verlässt dich auf dein Bauchgefühl','Du fragst die Lehrkraft','Du markierst alles als True'],correct:0,explanation:'Schlüsselwörter prüfen.',d:2},
+  {prompt:'Welche dieser Phrasen leitet eine Schlussfolgerung ein?',options:['"For instance"','"Therefore"','"Although"','"Yesterday"'],correct:1,explanation:'„Therefore" = also/deshalb.',d:2},
+  {prompt:'Bei einer offenen Frage: Wie kurz darf eine Antwort sein?',options:['Mindestens 5 Sätze','So kurz wie möglich, aber vollständig','Genau 1 Wort','Mindestens 1 Absatz'],correct:1,explanation:'Stichwort/Phrase reicht oft.',d:2},
+  {prompt:'Welche Phrase passt nicht zu sachlichem Text-Verständnis?',options:['"According to the text"','"The text suggests that"','"OMG, this text says"','"It is mentioned that"'],correct:2,explanation:'„OMG" passt nicht.',d:2},
+  {prompt:'Im Text steht: "Within months, students all over the world joined her." Was bedeutet das?',options:['Nach Wochen','Innerhalb weniger Monate','In ein paar Jahren','Sofort'],correct:1,explanation:'„within months" = innerhalb von Monaten.',d:2},
+  {prompt:'Welcher Tipp hilft bei Zeitnot in einer Klausur?',options:['Wörtlich übersetzen','Aufgaben abarbeiten — leichte zuerst','Erst Vokabeln lernen','Zufällig ankreuzen'],correct:1,explanation:'Easy-first-Strategie.',d:2},
+  // d=3 (16) — Bedeutungsnuance / Edge Cases
+  {prompt:'Im Text: "She was over the moon." Was bedeutet das?',options:['Sie war im All','Sie war überglücklich','Sie war müde','Sie war traurig'],correct:1,explanation:'Idiom: überglücklich.',d:3},
+  {prompt:'Welche Aussage zeigt, dass eine T/F/NG-Antwort wahrscheinlich "Not given" ist?',options:['Der Text erwähnt das Thema gar nicht','Der Text widerspricht der Aussage','Der Text bestätigt die Aussage','Der Text ist auf Deutsch'],correct:0,explanation:'Wenn nichts dazu im Text → Not given.',d:3},
+  {prompt:'Was bedeutet "to skip school"?',options:['Zur Schule rennen','Die Schule schwänzen','Schule wiederholen','Schule beenden'],correct:1,explanation:'„skip" = auslassen/schwänzen.',d:3},
+  {prompt:'Was ist eine "fake-friend"-Falle bei "Gymnasium"?',options:['Heißt im Englischen "high school" / "grammar school"','Heißt im Englischen "gym"','Heißt im Englischen dasselbe','Existiert nicht'],correct:0,explanation:'„gym" = Sporthalle, NICHT Schultyp.',d:3},
+  {prompt:'Welche Aussage zeigt eine Schlussfolgerung des Autors?',options:['"It says that…"','"The fact is…"','"This suggests that…"','"My friend told me…"'],correct:2,explanation:'„suggests" = es deutet hin auf …',d:3},
+  {prompt:'Bei "would have done" handelt es sich um …',options:['…etwas, das passiert ist','…etwas, das hätte passieren können','…etwas, das passieren wird','…einen Befehl'],correct:1,explanation:'Conditional III = hypothetisch.',d:3},
+  {prompt:'Welche Aussage ist im Text "experts say small individual changes are not enough" enthalten?',options:['Kleine Änderungen reichen aus','Kleine Änderungen reichen NICHT aus','Experten sagen nichts','Es gibt keine Experten'],correct:1,explanation:'„are not enough" = reichen nicht.',d:3},
+  {prompt:'Welcher Satz ist ein Beispiel für eine PERSÖNLICHE Meinung?',options:['"Statistics show…"','"In my opinion…"','"It is reported…"','"The data says…"'],correct:1,explanation:'„In my opinion" = persönlich.',d:3},
+  {prompt:'„The price is around £2.50 per meal." → Was kann man daraus NICHT direkt schließen?',options:['Der Preis ist ca. 2,50 £','Der Preis kann etwas höher oder niedriger sein','Der Preis ist exakt 2,50 £','Es geht um Mahlzeiten'],correct:2,explanation:'„around" lässt Spielraum.',d:3},
+  {prompt:'Welche dieser Aussagen ist eine "Not given"-Aussage zum Text "School lunch in three countries"?',options:['"In Britain, fizzy drinks were replaced by water"','"In Japan, students eat in their classroom"','"In Germany, school lunches cost €4"','"French children eat dessert"'],correct:2,explanation:'Deutschland nicht erwähnt.',d:3},
+  {prompt:'Welche Phrase impliziert "Wahrscheinlichkeit, aber nicht Sicherheit"?',options:['"It is certain that…"','"It might be that…"','"I know that…"','"Definitely…"'],correct:1,explanation:'„might" = Wahrscheinlichkeit/Vermutung.',d:3},
+  {prompt:'Wenn der Text sagt "The UK is now thinking about a similar law", ist es richtig zu sagen "The UK has a law"?',options:['True','False','Not given','Beides'],correct:1,explanation:'„thinking about" ≠ „has".',d:3},
+  {prompt:'„Within ten years, schools have replaced fizzy drinks with water." → Wie verstehst du das?',options:['Es passiert gerade jetzt','Es ist seit 10 Jahren passiert','Es wird in 10 Jahren passieren','Es ist nicht passiert'],correct:1,explanation:'Past Perfect — abgeschlossen seit damals.',d:3},
+  {prompt:'Was ist ein typischer Fehler beim Beantworten offener Fragen?',options:['Nur Stichworte','Komplette Sätze','Mit Stichworten antworten','Genau abschreiben'],correct:3,explanation:'Wörtliches Abschreiben ist oft falsch — eigene Worte verwenden.',d:3},
+  {prompt:'Wenn die Aufgabe sagt "Give a reason why…", erwartet sie …',options:['…ein „Ja" oder „Nein"','…einen Grund / eine Begründung','…ein Wort','…eine Zahl'],correct:1,explanation:'„reason" = Grund.',d:3},
+  {prompt:'Was tust du, wenn zwei MC-Optionen ähnlich richtig wirken?',options:['Beide ankreuzen','Genau im Text nachprüfen, welche besser passt','Erste wählen','Beide auslassen'],correct:1,explanation:'Wieder im Text prüfen.',d:3}
+];
+
+
+/* ===== Page-Setup ===== */
+function renderLvTexts(){
+  const list=document.getElementById('lv-texts-list');
+  list.innerHTML='';
+  const state=pb_load('pb_lv_texts');
+  LV_TEXTS.forEach((t,i)=>{
+    const wrap=document.createElement('div');wrap.className='task';wrap.style.padding='16px 18px';
+    wrap.innerHTML='<div class="task-prompt"><span class="task-num">'+(i+1)+'</span> '+t.titel+' <span style="color:var(--text-dim);font-size:12px;font-weight:400">· '+t.wortzahl+' Wörter</span></div>';
+    const txtBox=document.createElement('div');txtBox.className='read-text';txtBox.innerHTML=t.text;
+    wrap.appendChild(txtBox);
+    let totalCorrect=0,totalItems=0;
+    // T/F/NG
+    const tfHead=document.createElement('h4');tfHead.style.cssText='color:var(--info);margin:14px 0 8px';tfHead.innerHTML='✓✗ True / False / Not given';wrap.appendChild(tfHead);
+    const tfList=document.createElement('div');tfList.className='tf-list';
+    t.aufgaben.tf.forEach((it,ii)=>{
+      const row=document.createElement('div');row.className='tf-row';
+      row.innerHTML='<div class="tf-stmt">'+(ii+1)+'. '+it.s+'</div>';
+      const btns=document.createElement('div');btns.className='tf-btns';
+      ['True','False','Not given'].forEach((label)=>{
+        const b=document.createElement('button');b.className='mc-opt tf-btn';b.textContent=label;
+        b.onclick=()=>{
+          if(row.dataset.done)return;
+          row.dataset.done='1';
+          const want=it.a;
+          const ok=(label.toLowerCase().replace(' ','')===want.toLowerCase().replace(' ',''));
+          b.classList.add(ok?'correct':'wrong');
+          if(!ok){btns.querySelectorAll('.tf-btn').forEach(x=>{if(x.textContent.toLowerCase().replace(' ','')===want.toLowerCase().replace(' ',''))x.classList.add('correct');});}
+          const fb=document.createElement('div');fb.className='feedback '+(ok?'ok':'bad');fb.style.fontSize='13px';fb.innerHTML=(ok?'✅ ':'❌ Korrekt: '+want+'. ')+(it.why||'');
+          row.appendChild(fb);
+          if(ok)totalCorrect++;
+          totalItems++;updScore();
+        };
+        btns.appendChild(b);
+      });
+      row.appendChild(btns);
+      tfList.appendChild(row);
+    });
+    wrap.appendChild(tfList);
+    // MC
+    const mcHead=document.createElement('h4');mcHead.style.cssText='color:var(--accent-strong);margin:14px 0 8px';mcHead.innerHTML='🅰 Multiple Choice';wrap.appendChild(mcHead);
+    t.aufgaben.mc.forEach((q,qi)=>{
+      const card=document.createElement('div');card.className='task';card.style.margin='8px 0';card.style.padding='10px 14px';
+      card.innerHTML='<div class="task-prompt" style="font-size:14px"><span class="task-num">'+(qi+1)+'</span>'+q.prompt+'</div>';
+      const opts=document.createElement('div');opts.className='mc-options';
+      q.options.forEach((o,oi)=>{
+        const b=document.createElement('button');b.className='mc-opt';b.textContent=o;
+        b.onclick=()=>{
+          if(card.dataset.done)return;
+          card.dataset.done='1';
+          const ok=(oi===q.correct);
+          b.classList.add(ok?'correct':'wrong');
+          if(!ok)opts.children[q.correct].classList.add('correct');
+          if(ok)totalCorrect++;
+          totalItems++;updScore();
+        };
+        opts.appendChild(b);
+      });
+      card.appendChild(opts);
+      wrap.appendChild(card);
+    });
+    // Open
+    const opHead=document.createElement('h4');opHead.style.cssText='color:var(--success);margin:14px 0 8px';opHead.innerHTML='✏️ Offene Fragen';wrap.appendChild(opHead);
+    t.aufgaben.open.forEach((q,qi)=>{
+      const card=document.createElement('div');card.className='task';card.style.margin='8px 0';card.style.padding='10px 14px';
+      card.innerHTML='<div class="task-prompt" style="font-size:14px"><span class="task-num">'+(qi+1)+'</span>'+q.prompt+'</div>';
+      const w2=document.createElement('div');w2.className='ft-wrap';
+      const inp=document.createElement('input');inp.type='text';inp.className='ft-input';inp.placeholder='Stichwort/Phrase…';
+      const cb=document.createElement('button');cb.className='btn';cb.textContent='Prüfen';
+      const sb=document.createElement('button');sb.className='btn gray';sb.textContent='Lösung';
+      w2.appendChild(inp);w2.appendChild(cb);w2.appendChild(sb);
+      card.appendChild(w2);
+      const fb=document.createElement('div');fb.className='feedback';card.appendChild(fb);
+      cb.onclick=()=>{
+        if(card.dataset.done)return;
+        const ok=isCorrect(inp.value,q.answer);
+        if(ok){card.dataset.done='1';fb.classList.add('ok');fb.innerHTML='✅ Richtig!';inp.disabled=true;totalCorrect++;totalItems++;updScore();}
+        else{fb.classList.remove('ok');fb.classList.add('bad');fb.innerHTML='❌ '+(q.hint||'Versuche es nochmal.');}
+      };
+      sb.onclick=()=>{const a=Array.isArray(q.answer)?q.answer[0]:q.answer;inp.value=a;fb.classList.add('ok');fb.innerHTML='💡 Lösung: <b>'+a+'</b>';card.dataset.done='1';inp.disabled=true;totalItems++;updScore();};
+      inp.addEventListener('keydown',e=>{if(e.key==='Enter')cb.click();});
+      wrap.appendChild(card);
+    });
+    // Score per text
+    const scoreBox=document.createElement('div');scoreBox.style.cssText='margin-top:14px;padding:12px 16px;background:var(--accent-soft);border-radius:10px;text-align:center;font-weight:700';
+    scoreBox.id='lv-score-'+t.id;scoreBox.innerHTML='Bearbeite die Aufgaben — dann erscheint hier die Note.';
+    wrap.appendChild(scoreBox);
+    function updScore(){
+      const total=t.aufgaben.tf.length+t.aufgaben.mc.length+t.aufgaben.open.length;
+      const pct=Math.round(totalCorrect/total*100);
+      let note='';
+      if(pct>=85)note='🏆 sehr gut (1)';
+      else if(pct>=70)note='👍 gut (2)';
+      else if(pct>=55)note='👌 befriedigend (3)';
+      else if(pct>=40)note='📚 ausreichend (4)';
+      else note='📖 mangelhaft (5)';
+      scoreBox.innerHTML=note+' · '+totalCorrect+' von '+total+' Punkten ('+pct+'%)';
+    }
+    list.appendChild(wrap);
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderLvTexts();
+  // (WWM-Quiz IIFE läuft auto-self-init)
+});
+
+/* ============= SHARED ENGINE: Helpers + renderTasks + Quiz + Dark/TTS/Reset ============= */
+function _norm(s){return (s||'').toString().trim().toLowerCase().replace(/\s+/g,' ').replace(/[‘’ʼ]/g,"'").replace(/[“”]/g,'"').replace(/[.,!?;:]+$/,'');}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickN(arr,n){return shuffle(arr).slice(0,Math.min(n,arr.length));}
+function pb_load(key){try{return JSON.parse(localStorage.getItem(key)||'{}');}catch(e){return{};}}
+function pb_save(key,obj){try{localStorage.setItem(key,JSON.stringify(obj));}catch(e){}}
+function taskHash(t){return (JSON.stringify(t.prompt||t.q||t.text||'')+'|'+JSON.stringify(t.answer||t.options||'')).slice(0,90);}
+function initBar(wrap){const fill=wrap.querySelector('.progress-fill');const txt=wrap.querySelector('.progress-text');return{set(c,t){const pct=t?Math.round(c/t*100):0;fill.style.width=pct+'%';txt.textContent='Fortschritt: '+c+'/'+t+' richtig ('+pct+'%)';},reset(){fill.style.width='0%';txt.textContent='Fortschritt: 0/0 richtig (0%)';}};}
+function isCorrect(user,answers){if(!Array.isArray(answers))answers=[answers];const u=_norm(user);return answers.some(a=>_norm(a)===u);}
+
+/* ===== renderTasks: MC, Freitext, Notizaufgabe ===== */
+function renderTasks(container,tasks,storageKey){
+  container.innerHTML='';
+  const state=pb_load(storageKey);
+  const wrap=container.parentElement.querySelector('.progress-wrap');
+  const bar=wrap?initBar(wrap):null;
+  let correct=0;
+  tasks.forEach((t,idx)=>{
+    const card=document.createElement('div');card.className='task';
+    const hash=taskHash(t);
+    const saved=state[hash];
+    if(t.type==='mc' || (Array.isArray(t.options) && typeof t.correct==='number')){
+      // Multiple Choice
+      const promptHtml='<div class="task-prompt"><span class="task-num">'+(idx+1)+'</span> '+(t.prompt||t.q)+'</div>';
+      card.innerHTML=promptHtml;
+      const opts=document.createElement('div');opts.className='mc-options';
+      const shuffled=t.shuffleOptions===false?t.options.map((o,i)=>({o,i})):shuffle(t.options.map((o,i)=>({o,i})));
+      shuffled.forEach(({o,i})=>{
+        const btn=document.createElement('button');btn.className='mc-opt';btn.textContent=o;
+        btn.onclick=()=>{
+          if(card.dataset.done)return;
+          card.dataset.done='1';
+          const ok=(i===t.correct);
+          btn.classList.add(ok?'correct':'wrong');
+          if(!ok){
+            const right=opts.children[shuffled.findIndex(x=>x.i===t.correct)];
+            if(right)right.classList.add('correct');
+          }
+          const fb=document.createElement('div');fb.className='feedback '+(ok?'ok':'bad');
+          fb.innerHTML=ok?'✅ Richtig!':'❌ Leider falsch.'+(t.explanation?' <em>'+t.explanation+'</em>':'');
+          card.appendChild(fb);
+          if(ok){correct++;state[hash]=1;pb_save(storageKey,state);}else{state[hash]=0;pb_save(storageKey,state);}
+          if(bar)bar.set(correct,tasks.length);
+        };
+        opts.appendChild(btn);
+      });
+      card.appendChild(opts);
+      if(saved===1){correct++;card.dataset.done='1';opts.querySelectorAll('.mc-opt').forEach((b,bi)=>{if(shuffled[bi].i===t.correct)b.classList.add('correct');b.disabled=true;});}
+    } else if(t.type==='tf' && Array.isArray(t.items)){
+      // True/False/Not given Mehrfach-Item-Karte
+      card.innerHTML='<div class="task-prompt"><span class="task-num">'+(idx+1)+'</span> '+(t.prompt||'True / False / Not given')+'</div>';
+      const list=document.createElement('div');list.className='tf-list';
+      t.items.forEach((it,ii)=>{
+        const row=document.createElement('div');row.className='tf-row';
+        row.innerHTML='<div class="tf-stmt">'+it.s+'</div>';
+        const btns=document.createElement('div');btns.className='tf-btns';
+        ['True','False','Not given'].forEach((label,bi)=>{
+          const b=document.createElement('button');b.className='mc-opt tf-btn';b.textContent=label;
+          b.onclick=()=>{
+            if(row.dataset.done)return;
+            row.dataset.done='1';
+            const want=it.a;
+            const ok=(label.toLowerCase().replace(' ','')===want.toLowerCase().replace(' ',''));
+            b.classList.add(ok?'correct':'wrong');
+            if(!ok){btns.querySelectorAll('.tf-btn').forEach(x=>{if(x.textContent.toLowerCase().replace(' ','')===want.toLowerCase().replace(' ',''))x.classList.add('correct');});}
+            const fb=document.createElement('div');fb.className='feedback '+(ok?'ok':'bad');fb.style.fontSize='13px';fb.innerHTML=(ok?'✅ ':'❌ Korrekt: '+want+'. ')+(it.why||'');
+            row.appendChild(fb);
+            const itemHash=hash+'_'+ii;state[itemHash]=ok?1:0;pb_save(storageKey,state);
+            if(ok){correct++;}
+            if(bar)bar.set(correct,tasks.length);
+          };
+          btns.appendChild(b);
+        });
+        row.appendChild(btns);
+        list.appendChild(row);
+      });
+      card.appendChild(list);
+    } else {
+      // Freitext / Lückenfüller
+      card.innerHTML='<div class="task-prompt"><span class="task-num">'+(idx+1)+'</span> '+(t.prompt||t.q)+'</div>';
+      const inp=document.createElement('input');inp.type='text';inp.className='ft-input';inp.placeholder=t.placeholder||'Antwort eingeben…';
+      const btn=document.createElement('button');btn.className='btn';btn.textContent='Prüfen';
+      const sol=document.createElement('button');sol.className='btn gray';sol.textContent='Lösung';
+      const wrap2=document.createElement('div');wrap2.className='ft-wrap';
+      wrap2.appendChild(inp);wrap2.appendChild(btn);wrap2.appendChild(sol);
+      card.appendChild(wrap2);
+      const fb=document.createElement('div');fb.className='feedback';card.appendChild(fb);
+      btn.onclick=()=>{
+        if(card.dataset.done)return;
+        const ok=isCorrect(inp.value,t.answer);
+        if(ok){
+          card.dataset.done='1';
+          fb.classList.add('ok');fb.innerHTML='✅ Richtig!'+(t.explanation?' <em>'+t.explanation+'</em>':'');
+          state[hash]=1;correct++;pb_save(storageKey,state);
+          if(bar)bar.set(correct,tasks.length);
+          inp.disabled=true;
+        } else {
+          fb.classList.remove('ok');fb.classList.add('bad');
+          fb.innerHTML='❌ Versuche es nochmal.'+(t.hint?' <em>Tipp: '+t.hint+'</em>':'');
+        }
+      };
+      sol.onclick=()=>{
+        const a=Array.isArray(t.answer)?t.answer[0]:t.answer;
+        inp.value=a;fb.classList.remove('bad');fb.classList.add('ok');
+        fb.innerHTML='💡 Lösung: <b>'+a+'</b>'+(t.explanation?' <em>'+t.explanation+'</em>':'');
+        card.dataset.done='1';inp.disabled=true;
+      };
+      inp.addEventListener('keydown',e=>{if(e.key==='Enter')btn.click();});
+      if(saved===1){correct++;card.dataset.done='1';inp.value=Array.isArray(t.answer)?t.answer[0]:t.answer;inp.disabled=true;fb.classList.add('ok');fb.innerHTML='✅ Bereits richtig gelöst.';}
+    }
+    container.appendChild(card);
+  });
+  if(bar)bar.set(correct,tasks.length);
+}
+
+/* ===== Section-Setup ===== */
+function setupSection(key,pool,n,resetBtn,rerollBtn,checkBtn){
+  const tasksEl=document.getElementById(key+'-tasks');
+  const storageKey='pb_'+(window.PAGE_KEY||'page')+'_'+key;
+  function render(){const picks=pickN(pool,n);renderTasks(tasksEl,picks,storageKey);}
+  if(resetBtn)resetBtn.onclick=()=>{if(confirm('Diesen Abschnitt zurücksetzen?')){localStorage.removeItem(storageKey);render();}};
+  if(rerollBtn)rerollBtn.onclick=render;
+  if(checkBtn)checkBtn.onclick=()=>{tasksEl.querySelectorAll('.task').forEach(c=>{if(!c.dataset.done){const b=c.querySelector('.btn');if(b)b.click();}});};
+  render();
+}
+
+/* ===== Quiz Helpers (Compat-Shim für Master-IIFE) ===== */
+function initProgressBar(root,total){
+  const fill=root.querySelector('.progress-fill');
+  const txt=root.parentElement.querySelector('.progress-text');
+  let _total=total||15;
+  return {
+    update(correct,denom){
+      const d=denom!=null?denom:_total;
+      const pct=d>0?Math.round(correct/d*100):0;
+      if(fill)fill.style.width=pct+'%';
+      if(txt)txt.textContent='Fortschritt: '+correct+'/'+(denom!=null?denom:_total)+' richtig ('+pct+'%)';
+    },
+    setTotal(t){_total=t;},
+    resetAnimated(){if(fill)fill.style.width='0%';}
+  };
+}
+function saveProgress(key,val){try{localStorage.setItem('pb_'+(window.PAGE_KEY||'page')+'_'+key,JSON.stringify(val));}catch(e){}}
+
+/* ===== WWM-Quiz (Master-Skin aus 08_passive.html, 1:1 portiert) ===== */
+(function initQuiz(){
+  const AMOUNTS=['50 €','100 €','200 €','300 €','500 €','1.000 €','2.000 €','4.000 €','8.000 €','16.000 €','32.000 €','64.000 €','125.000 €','500.000 €','1.000.000 €'];
+  const MILESTONES=[4,9];
+  const container=document.getElementById('quiz-tasks');
+  const resultDiv=document.getElementById('quiz-result');
+  const progressRoot=document.querySelector('#quiz-progress .progress');
+  const progressCtrl=initProgressBar(progressRoot,15);
+  let questions=[],current=0,correctCount=0,phoneUsed=false,audienceUsed=false,fiftyUsed=false;
+  let lastHiddenIndices=[];
+
+  function buildLadder(cur){
+    let html='';
+    for(let i=AMOUNTS.length-1;i>=0;i--){
+      let cls='wwm-ladder-row';
+      if(MILESTONES.includes(i))cls+=' milestone';
+      if(i<cur)cls+=' done';
+      if(i===cur)cls+=' current';
+      const icon=MILESTONES.includes(i)?(i<cur?'✅':i===cur?'🏆':'🛡️'):(i<cur?'✓':i===cur?'▶':'');
+      html+='<div class="'+cls+'"><span class="wwm-qnum">'+(i+1)+'</span><span class="wwm-amount">'+AMOUNTS[i]+'</span><span style="font-size:11px;margin-left:2px">'+icon+'</span></div>';
+    }
+    return html;
+  }
+
+  function showQuestion(idx){
+    if(idx>=questions.length){showFinal(correctCount,questions.length);return;}
+    const q=questions[idx];
+    const letters=['A','B','C','D'];
+    const optIndices=[...Array(q.options.length).keys()];
+    for(let i=optIndices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[optIndices[i],optIndices[j]]=[optIndices[j],optIndices[i]];}
+    const shuffled=optIndices.map(i=>q.options[i]);
+    const correctShuffled=optIndices.indexOf(q.correct);
+    lastHiddenIndices=[];
+    const lifelines=[
+      {id:'fifty',label:'50/50',used:fiftyUsed},
+      {id:'phone',label:'📞 Joker',used:phoneUsed},
+      {id:'audience',label:'👥 Publikum',used:audienceUsed}
+    ];
+    const lifelineHtml=lifelines.map(l=>'<span class="chip'+(l.used?' chip-used':'')+'" data-joker="'+l.id+'">'+l.label+'</span>').join('');
+    const html='<div class="wwm-layout quiz-question-enter">'+
+      '<div class="wwm-main">'+
+        '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px">'+
+          '<div class="wwm-qbadge">Frage '+(idx+1)+' / '+questions.length+' &nbsp;·&nbsp; '+AMOUNTS[idx]+'</div>'+
+          '<div class="quiz-streak" id="quiz-streak"></div>'+
+        '</div>'+
+        '<div class="wwm-lifelines">'+lifelineHtml+'</div>'+
+        '<div class="task wwm-stage">'+
+          '<div class="prompt">'+q.prompt+'</div>'+
+          '<div class="wwm-joker-options" id="wwm-options">'+
+            shuffled.map((opt,i)=>'<button class="wwm-option-btn" data-opt="'+i+'"><span class="wwm-opt-letter">'+letters[i]+'</span><span>'+opt+'</span></button>').join('')+
+          '</div>'+
+          '<div id="wwm-joker-extra"></div>'+
+          '<div class="feedback" id="wwm-feedback"></div>'+
+          '<div id="wwm-explanation" style="display:none" class="quiz-explanation-box"></div>'+
+          '<div class="controls" style="margin-top:14px;display:none" id="wwm-next-ctrl">'+
+            '<button class="btn green" id="wwm-next">Weiter →</button>'+
+          '</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="wwm-ladder">'+buildLadder(idx)+'</div>'+
+    '</div>';
+    container.innerHTML=html;
+    progressCtrl.update(correctCount,idx);
+
+    document.querySelectorAll('.wwm-option-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const chosen=+btn.dataset.opt;
+        document.querySelectorAll('.wwm-option-btn').forEach(b=>b.disabled=true);
+        const fb=document.getElementById('wwm-feedback');
+        const expl=document.getElementById('wwm-explanation');
+        const nctrl=document.getElementById('wwm-next-ctrl');
+        if(chosen===correctShuffled){
+          btn.style.background='linear-gradient(90deg,rgba(0,180,80,.3),rgba(0,150,60,.2))';
+          btn.style.borderColor='#00e676';
+          fb.textContent='✓ Richtig! +'+AMOUNTS[idx];fb.className='feedback ok';
+          correctCount++;
+          progressCtrl.update(correctCount,idx+1);
+        }else{
+          btn.style.background='linear-gradient(90deg,rgba(180,0,0,.3),rgba(140,0,0,.2))';
+          btn.style.borderColor='#ff5555';
+          const correctBtn=document.querySelectorAll('.wwm-option-btn')[correctShuffled];
+          if(correctBtn){correctBtn.style.background='linear-gradient(90deg,rgba(0,180,80,.3),rgba(0,150,60,.2))';correctBtn.style.borderColor='#00e676';}
+          fb.innerHTML='✗ Falsch! Richtige Antwort: <b>'+shuffled[correctShuffled]+'</b>';fb.className='feedback bad';
+          if(q.explanation){expl.innerHTML=q.explanation;expl.style.display='block';}
+          if(q.tip){const tb=document.createElement('div');tb.className='quiz-tip-box';tb.innerHTML='💡 <b>Tipp:</b> '+q.tip;nctrl.parentNode.insertBefore(tb,nctrl);}
+          nctrl.style.display='flex';
+          const nextBtn=document.getElementById('wwm-next');
+          if(nextBtn){nextBtn.textContent='Ergebnis ansehen →';nextBtn.className='btn gray';nextBtn.dataset.next='1';nextBtn.addEventListener('click',()=>showFinal(correctCount,questions.length));}
+          return;
+        }
+        if(q.explanation){expl.innerHTML=q.explanation;expl.style.display='block';}
+        nctrl.style.display='flex';
+        const nextBtn=document.getElementById('wwm-next');
+        if(nextBtn){
+          nextBtn.addEventListener('click',()=>{
+            current++;
+            showQuestion(current);
+            setTimeout(()=>typeof TTS!=='undefined'&&TTS.injectAll&&TTS.injectAll(),60);
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll('.chip[data-joker]').forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        const joker=chip.dataset.joker;
+        if(chip.classList.contains('chip-used'))return;
+        chip.classList.add('chip-used');
+        if(joker==='fifty'){
+          fiftyUsed=true;
+          const wrong=[];
+          document.querySelectorAll('.wwm-option-btn').forEach((b,i)=>{if(i!==correctShuffled)wrong.push(i);});
+          const hide=wrong.sort(()=>Math.random()-.5).slice(0,2);
+          lastHiddenIndices=hide;
+          hide.forEach(i=>{const b=document.querySelectorAll('.wwm-option-btn')[i];if(b){b.style.opacity='0.2';b.disabled=true;}});
+        }else if(joker==='phone'){
+          phoneUsed=true;
+          const ruleHint=q.tip||'Denk an das Grundprinzip: Passiv = Form von to be + past participle';
+          const extra=document.getElementById('wwm-joker-extra');
+          extra.innerHTML='<div class="wwm-phone-bubble"><div class="wwm-phone-icon">📞</div><div class="wwm-phone-text"><b>Dein Lehrer meldet sich:</b><br>'+ruleHint+'</div></div>';
+        }else if(joker==='audience'){
+          audienceUsed=true;
+          const pcts=[];
+          for(let i=0;i<4;i++){const v=i===correctShuffled?Math.floor(40+Math.random()*35):Math.floor(5+Math.random()*20);pcts.push(v);}
+          const sum=pcts.reduce((a,b)=>a+b,0);const scale=100/sum;const scaled=pcts.map(v=>Math.round(v*scale));
+          const colors=['#4fc3f7','#ef5350','#66bb6a','#ffb74d'];
+          const extra=document.getElementById('wwm-joker-extra');
+          const barsHtml=shuffled.map((opt,i)=>'<div class="wwm-audience-col"><div class="wwm-audience-pct">'+scaled[i]+'%</div><div class="wwm-audience-bar" style="height:'+Math.max(4,Math.round(scaled[i]*0.8))+'px;background:'+colors[i]+';align-self:flex-end"></div><div class="wwm-audience-label">'+letters[i]+'</div></div>').join('');
+          extra.innerHTML='<div class="wwm-audience-box"><div class="wwm-audience-title">👥 Publikumsjoker</div><div class="wwm-audience-bars">'+barsHtml+'</div></div>';
+        }
+      });
+    });
+    setTimeout(()=>typeof TTS!=='undefined'&&TTS.injectAll&&TTS.injectAll(),60);
+  }
+
+  function showFinal(correct,total){
+    const pct=Math.round(correct/total*100);
+    let msg,emoji;
+    if(pct===100){msg='EINE MILLION! 🎉 PERFEKT! Das Passiv hat keine Chance gegen dich!';emoji='🏆';}
+    else if(pct>=90){msg='Fast perfekt – be + past participle sitzt schon sehr gut!';emoji='🥇';}
+    else if(pct>=80){msg='Richtig stark – Aktiv und Passiv sind klar getrennt!';emoji='🥈';}
+    else if(pct>=60){msg='Gut gemacht – noch etwas üben, dann sitzt es!';emoji='👍';}
+    else if(pct>=40){msg='Weiter üben – besonders die past-participle-Formen!';emoji='💪';}
+    else{msg='Nochmal von vorne – schau dir die Regelkarten an!';emoji='📚';}
+    container.innerHTML='';
+    resultDiv.style.display='block';
+    resultDiv.innerHTML='<div style="padding:28px 22px;text-align:center">'+
+      '<div style="font-size:52px;margin-bottom:8px">'+emoji+'</div>'+
+      '<div style="font-size:26px;font-weight:900;color:#ffcc00;margin-bottom:8px" class="score">'+correct+' / '+total+'</div>'+
+      '<div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:16px">'+msg+'</div>'+
+      '<button class="btn" style="background:linear-gradient(135deg,#0d3080,#1e4db5);color:#ffecb3;border:1px solid rgba(255,204,0,.4);padding:12px 28px;font-size:15px" onclick="document.getElementById(\'quiz-reset\').click()">🔄 Nochmal spielen</button>'+
+    '</div>';
+    progressCtrl.update(correct,total);
+  }
+
+  function startGame(){
+    current=0;correctCount=0;phoneUsed=false;audienceUsed=false;fiftyUsed=false;lastHiddenIndices=[];
+    resultDiv.style.display='none';
+    const byDiff=(d)=>quizPool.filter(q=>q.d===d);
+    const d1=shuffle(byDiff(1)).slice(0,4);
+    const d2=shuffle(byDiff(2)).slice(0,5);
+    const d3=shuffle(byDiff(3)).slice(0,6);
+    questions=[...d1,...d2,...d3];
+    progressCtrl.setTotal(questions.length);
+    progressCtrl.update(0,0);
+    showQuestion(0);
+  }
+
+  document.getElementById('quiz-reset').addEventListener('click',startGame);
+  startGame();
+  saveProgress('quiz_started',true);
+})();
+
+
+
+/* ===== Dark Mode (System-Default + manueller Override) ===== */
+(function(){const stored=localStorage.getItem('darkMode');const sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;const useDark=stored==='1'||(stored===null && sysDark);if(useDark)document.body.classList.add('dark-mode');const btn=document.getElementById('dark-toggle');if(btn){btn.textContent=useDark?'☀️ Hell':'🌙 Dark Mode';btn.onclick=()=>{const on=document.body.classList.toggle('dark-mode');btn.textContent=on?'☀️ Hell':'🌙 Dark Mode';try{localStorage.setItem('darkMode',on?'1':'0');}catch(e){}};}})();
+
+/* ===== TTS (Web Speech API) ===== */
+const TTS={enabled:false,toggle(){this.enabled=!this.enabled;const b=document.getElementById('tts-toggle');if(b)b.textContent=this.enabled?'🔇 TTS aus':'🔊 Vorlesen';},speak(text,lang,rate){if(!this.enabled || !window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang||'en-US';u.rate=rate||0.95;window.speechSynthesis.speak(u);},stop(){if(window.speechSynthesis)window.speechSynthesis.cancel();}};
+(function(){const b=document.getElementById('tts-toggle');if(b)b.onclick=()=>TTS.toggle();})();
+
+/* ===== Reset-All Button ===== */
+function resetAllProgress(prefix){if(!confirm('Gesamten Fortschritt dieser Seite zurücksetzen?'))return;const keys=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k && k.startsWith('pb_'+prefix))keys.push(k);}keys.forEach(k=>localStorage.removeItem(k));location.reload();}
+
+
+</script>
+</body>
+</html>

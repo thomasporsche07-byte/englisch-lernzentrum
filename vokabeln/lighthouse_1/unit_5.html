@@ -516,6 +516,48 @@ body.dark-mode .cw-win{background:linear-gradient(135deg,#064e3b,#065f46);color:
 body.dark-mode .profile-btn-vk{background:#3a2f0a;color:#fde68a}
 body.dark-mode .profile-btn-vk:hover{background:#5a4515;color:#fde68a}
 @media(max-width:600px){.profile-btn-vk{position:static;display:inline-flex;margin:0 auto 8px;box-shadow:0 1px 6px rgba(0,0,0,.15)}}
+
+/* ── SPACED REPETITION (Phase-2) ─────────────────────────── */
+#acc-spaced summary{border-left-color:#0e9f6e;background:linear-gradient(90deg,rgba(14,159,110,.12),rgba(14,159,110,.02))}
+body.dark-mode #acc-spaced summary{background:linear-gradient(90deg,rgba(52,211,153,.12),rgba(52,211,153,.01))}
+.sr-stats{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:1px solid #a7f3d0;border-left:4px solid #059669;border-radius:10px;padding:10px 14px;margin:6px 0 12px;font-size:14px;color:#065f46;font-weight:600}
+.sr-stats .sr-pill{display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid #d1fae5;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;color:#065f46}
+.sr-stats .sr-pill b{color:#047857}
+.sr-stats .sr-due-big{font-size:18px;font-weight:900;color:#b91c1c}
+body.dark-mode .sr-stats{background:linear-gradient(135deg,#022c22,#064e3b);border-color:#065f46;color:#a7f3d0}
+body.dark-mode .sr-stats .sr-pill{background:#064e3b;border-color:#047857;color:#a7f3d0}
+.sr-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+body.dark-mode .sr-card{background:#1f2937;border-color:#374151;color:#e5e7eb}
+.sr-card .sr-de{font-size:18px;font-weight:800;color:#b85c20;margin-bottom:6px}
+body.dark-mode .sr-card .sr-de{color:#fbbf24}
+.sr-card .sr-sentence{font-size:14px;color:#475569;margin-bottom:10px;font-style:italic}
+body.dark-mode .sr-card .sr-sentence{color:#cbd5e1}
+.sr-card .sr-input-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sr-card input[type=text]{flex:1;min-width:160px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px;font-family:'Baloo 2',sans-serif}
+body.dark-mode .sr-card input[type=text]{background:#374151;border-color:#4b5563;color:#e5e7eb}
+.sr-card .sr-feedback{margin-top:8px;font-weight:700}
+.sr-card .sr-feedback.ok{color:#047857}
+.sr-card .sr-feedback.bad{color:#b91c1c}
+.sr-card .sr-en-reveal{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15px}
+.sr-card .sr-en-reveal b{color:#0e9f6e;font-size:17px}
+body.dark-mode .sr-card .sr-en-reveal b{color:#34d399}
+.sr-empty{padding:20px;text-align:center;color:#64748b;font-size:14px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px}
+body.dark-mode .sr-empty{background:#1f2937;border-color:#4b5563;color:#94a3b8}
+.sr-result{padding:18px;text-align:center;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:14px;margin:10px 0;color:#064e3b}
+body.dark-mode .sr-result{background:linear-gradient(135deg,#064e3b,#065f46);color:#a7f3d0;border-color:#047857}
+.sr-result h3{margin:0 0 6px;font-size:20px;color:#047857}
+body.dark-mode .sr-result h3{color:#34d399}
+.sr-result .sr-result-meta{font-size:14px;margin:4px 0}
+.sr-progress-text{font-size:13px;color:#64748b;margin-bottom:6px;font-weight:600}
+body.dark-mode .sr-progress-text{color:#94a3b8}
+.ipa{display:inline-block;color:#94a3b8;font-size:12px;font-family:'DejaVu Sans','Noto Sans',sans-serif;font-weight:500;letter-spacing:.3px;margin-left:6px;cursor:help}
+body.dark-mode .ipa{color:#9ca3af}
+.ipa:hover{color:#475569}
+body.dark-mode .ipa:hover{color:#cbd5e1}
+.sr-card .sr-tts-row{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:#94a3b8}
+.sr-card .sr-tts-row .tts-btn{font-size:13px}
+.sr-album-tts{font-size:11px;padding:2px 6px;margin-left:4px}
+
 </style>
 </head>
 <body>
@@ -555,6 +597,21 @@ body.dark-mode .profile-btn-vk:hover{background:#5a4515;color:#fde68a}
       <button class="btn ghost" id="btn-print-vocab" style="font-size:13px">📄 Vokabelliste drucken</button>
       <button class="btn ghost" id="btn-reset-progress" style="font-size:13px">🗑️ Fortschritt zurücksetzen</button>
     </div>
+    </div>
+  </details>
+
+  
+  <!-- ACCORDION SR: Spaced Repetition (Phase-2) -->
+  <details class="accordion" id="acc-spaced">
+    <summary><span style="color:#94a3b8;font-weight:600">★ ·</span> 📅 Spaced Repetition – heute fällig</summary>
+    <div class="content">
+      <div class="note" style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border-color:#a7f3d0;border-left-color:#059669;color:#065f46">Wiederhole täglich genau die Vokabeln, die <b>heute fällig</b> sind. Nach jeder richtigen Antwort wandert die Vokabel in die nächste Box (1→2→3→4→5) und wird später wieder gezeigt. Bei einem Fehler geht sie zurück in Box 1.<br><b>Tipp:</b> 5–10 Minuten täglich reichen für nachhaltigen Lernerfolg.</div>
+      <div id="sr-stats" class="sr-stats"></div>
+      <div class="section-actions">
+        <button class="btn green" id="sr-start">📅 Heute fällig starten</button>
+        <button class="btn ghost" id="sr-refresh">🔄 Statistik aktualisieren</button>
+      </div>
+      <div id="sr-area"></div>
     </div>
   </details>
 
@@ -835,9 +892,9 @@ const VOCAB = [
 {t:"t1",en:"meat",de:"das Fleisch",s:"Vegetarians don't eat __________.",h:"Vegetarier essen kein Fleisch.",k:"Fleisch"},
 {t:"t1",en:"vegetarian",de:"vegetarisch; der/die Vegetarier/in",s:"My sister is a __________. She doesn't eat meat.",h:"Meine Schwester ist Vegetarierin. Sie isst kein Fleisch.",k:"vegetarisch"},
 {t:"t1",en:"cheese",de:"der Käse",s:"I'd like a __________ sandwich, please.",h:"Ich hätte gern ein Käsesandwich, bitte.",k:"Käse"},
-{t:"t1",en:"pea",de:"die Erbse",s:"There are green __________s on my plate.",h:"Auf meinem Teller sind grüne Erbsen.",k:"Erbse"},
+{t:"t1",en:"pea",de:"die Erbse",s:"I see a green __________ on my plate.",h:"Ich sehe eine grüne Erbse auf meinem Teller.",k:"Erbse"},
 {t:"t1",en:"tomato",de:"die Tomate",s:"I put a __________ in my salad.",h:"Ich tue eine Tomate in meinen Salat.",k:"Tomate"},
-{t:"t1",en:"spice",de:"das Gewürz",s:"This curry has many __________s.",h:"Dieses Curry hat viele Gewürze.",k:"Gewürz"},
+{t:"t1",en:"spice",de:"das Gewürz",s:"Pepper is a very popular __________.",h:"Pfeffer ist ein sehr beliebtes Gewürz.",k:"Gewürz"},
 {t:"t1",en:"usually",de:"normalerweise, meistens",s:"I __________ have toast for breakfast.",h:"Ich habe normalerweise Toast zum Frühstück.",k:"normalerweise"},
 {t:"t1",en:"bread",de:"das Brot",s:"Can you buy some __________ at the shop?",h:"Kannst du etwas Brot im Laden kaufen?",k:"Brot"},
 {t:"t1",en:"rice",de:"der Reis",s:"In China people eat __________ every day.",h:"In China essen die Leute jeden Tag Reis.",k:"Reis"},
@@ -847,7 +904,7 @@ const VOCAB = [
 {t:"t1",en:"reason",de:"der Grund, die Begründung",s:"What's the __________ for the party?",h:"Was ist der Grund für die Party?",k:"Grund"},
 {t:"t1",en:"religious",de:"religiös",s:"Christmas is a __________ holiday.",h:"Weihnachten ist ein religiöser Feiertag.",k:"religiös"},
 {t:"t1",en:"invitation",de:"die Einladung (zu, nach)",s:"Thanks for the __________ to your party!",h:"Danke für die Einladung zu deiner Party!",k:"Einladung",mEn:"invitation (to)"},
-{t:"t1",en:"sausage",de:"das Würstchen, die Wurst",s:"At the BBQ we eat __________s.",h:"Beim Grillen essen wir Würstchen.",k:"Würstchen"},
+{t:"t1",en:"sausage",de:"das Würstchen, die Wurst",s:"At the BBQ I eat a __________.",h:"Beim Grillen esse ich ein Würstchen.",k:"Würstchen"},
 {t:"t1",en:"cake",de:"der Kuchen, die Torte",s:"Mum is making a chocolate __________.",h:"Mama macht einen Schokoladenkuchen.",k:"Kuchen"},
 {t:"t1",en:"twelfth birthday",de:"der zwölfte Geburtstag",s:"Today is my __________. I'm twelve!",h:"Heute ist mein zwölfter Geburtstag. Ich bin zwölf!",k:"zwölfter Geburtstag",mEn:"twelfth (12th) birthday"},
 {t:"t1",en:"circus",de:"der Zirkus",s:"There are clowns and animals at the __________.",h:"Im Zirkus gibt es Clowns und Tiere.",k:"Zirkus"},
@@ -859,10 +916,10 @@ const VOCAB = [
 {t:"t1",en:"juggle",de:"jonglieren",s:"The clown can __________ five balls.",h:"Der Clown kann fünf Bälle jonglieren.",k:"jonglieren",mEn:"to juggle"},
 {t:"t1",en:"sleep",de:"schlafen",s:"Babies __________ a lot.",h:"Babys schlafen viel.",k:"schlafen",mEn:"to sleep"},
 {t:"t1",en:"must",de:"müssen",s:"You __________ do your homework now.",h:"Du musst jetzt deine Hausaufgaben machen.",k:"müssen"},
-{t:"t1",en:"teach",de:"lehren, unterrichten",s:"Mr Brown __________es English at our school.",h:"Mr Brown unterrichtet Englisch an unserer Schule.",k:"unterrichten",mEn:"to teach"},
+{t:"t1",en:"teach",de:"lehren, unterrichten",s:"Mr Brown wants to __________ English at our school.",h:"Mr Brown möchte Englisch an unserer Schule unterrichten.",k:"unterrichten",mEn:"to teach"},
 {t:"t1",en:"lie",de:"liegen",s:"The cat likes to __________ in the sun.",h:"Die Katze liegt gern in der Sonne.",k:"liegen",mEn:"to lie"},
-{t:"t1",en:"balloon",de:"der Ballon",s:"There are red and blue __________s at the party.",h:"Es gibt rote und blaue Ballons auf der Party.",k:"Ballon"},
-{t:"t2",en:"present",de:"das Geschenk",s:"I got many __________s for my birthday.",h:"Ich habe viele Geschenke zum Geburtstag bekommen.",k:"Geschenk"},
+{t:"t1",en:"balloon",de:"der Ballon",s:"I have a red __________ at the party.",h:"Ich habe einen roten Ballon auf der Party.",k:"Ballon"},
+{t:"t2",en:"present",de:"das Geschenk",s:"This __________ is for my birthday.",h:"Dieses Geschenk ist für meinen Geburtstag.",k:"Geschenk"},
 {t:"t2",en:"magic set",de:"der Zauberkasten",s:"My brother got a __________ for Christmas.",h:"Mein Bruder hat einen Zauberkasten zu Weihnachten bekommen.",k:"Zauberkasten"},
 {t:"t2",en:"What about a … ?",de:"Wie wäre es mit einer/einem … ?",s:"__________ pizza? I'm hungry.",h:"Wie wäre es mit einer Pizza? Ich habe Hunger.",k:"Wie wäre es mit"},
 {t:"t2",en:"sure",de:"sicher",s:"I'm not __________ if she's coming.",h:"Ich bin nicht sicher, ob sie kommt.",k:"sicher"},
@@ -871,7 +928,7 @@ const VOCAB = [
 {t:"t2",en:"menu",de:"die Speisekarte",s:"Could I see the __________, please?",h:"Könnte ich bitte die Speisekarte sehen?",k:"Speisekarte"},
 {t:"t2",en:"ham",de:"der Schinken",s:"I'd like a __________ sandwich.",h:"Ich hätte gern ein Schinkensandwich.",k:"Schinken"},
 {t:"t2",en:"salad",de:"der Salat",s:"Mum makes a green __________ for dinner.",h:"Mama macht einen grünen Salat zum Abendessen.",k:"Salat"},
-{t:"t2",en:"carrot",de:"die Möhre, die Karotte",s:"Rabbits love __________s.",h:"Hasen lieben Möhren.",k:"Möhre"},
+{t:"t2",en:"carrot",de:"die Möhre, die Karotte",s:"A __________ is orange and sweet.",h:"Eine Möhre ist orange und süß.",k:"Möhre"},
 {t:"t2",en:"melon",de:"die Melone",s:"This __________ is very sweet!",h:"Diese Melone ist sehr süß!",k:"Melone"},
 {t:"t2",en:"lemonade",de:"die Limonade",s:"Can I have a glass of __________?",h:"Kann ich ein Glas Limonade haben?",k:"Limonade"},
 {t:"t2",en:"shopping list",de:"die Einkaufsliste",s:"Don't forget the __________!",h:"Vergiss nicht die Einkaufsliste!",k:"Einkaufsliste"},
@@ -879,13 +936,13 @@ const VOCAB = [
 {t:"t2",en:"lemon",de:"die Zitrone",s:"Add a slice of __________ to your tea.",h:"Gib eine Scheibe Zitrone in deinen Tee.",k:"Zitrone"},
 {t:"t2",en:"sugar",de:"der Zucker",s:"How much __________ do you want in your coffee?",h:"Wie viel Zucker möchtest du in deinem Kaffee?",k:"Zucker"},
 {t:"t2",en:"piece",de:"das Stück, der/das Teil",s:"Could I have a __________ of cake, please?",h:"Könnte ich ein Stück Kuchen haben, bitte?",k:"Stück"},
-{t:"t3",en:"gram",de:"das Gramm",s:"You need 200 __________s of flour.",h:"Du brauchst 200 Gramm Mehl.",k:"Gramm",mEn:"gram (g)"},
+{t:"t3",en:"gram",de:"das Gramm",s:"Add one __________ of salt.",h:"Gib ein Gramm Salz dazu.",k:"Gramm",mEn:"gram (g)"},
 {t:"t3",en:"flour",de:"das Mehl",s:"You need __________ to make bread.",h:"Du brauchst Mehl, um Brot zu machen.",k:"Mehl"},
-{t:"t3",en:"millilitre",de:"der Milliliter",s:"Add 250 __________s of milk.",h:"Gib 250 Milliliter Milch dazu.",k:"Milliliter",mEn:"millilitre (ml)"},
+{t:"t3",en:"millilitre",de:"der Milliliter",s:"Add one __________ of vanilla.",h:"Gib einen Milliliter Vanille dazu.",k:"Milliliter",mEn:"millilitre (ml)"},
 {t:"t3",en:"oil",de:"das Öl",s:"Heat the __________ in the pan.",h:"Erhitze das Öl in der Pfanne.",k:"Öl"},
 {t:"t3",en:"cocoa",de:"der Kakao",s:"Hot __________ tastes great in winter.",h:"Heißer Kakao schmeckt im Winter toll.",k:"Kakao"},
 {t:"t3",en:"milk",de:"die Milch",s:"I drink __________ every morning.",h:"Ich trinke jeden Morgen Milch.",k:"Milch"},
-{t:"t3",en:"egg",de:"das Ei",s:"For the cake you need three __________s.",h:"Für den Kuchen brauchst du drei Eier.",k:"Ei"},
+{t:"t3",en:"egg",de:"das Ei",s:"For breakfast I eat one __________.",h:"Zum Frühstück esse ich ein Ei.",k:"Ei"},
 {t:"t3",en:"salt",de:"das Salz",s:"There's too much __________ in this soup.",h:"Es ist zu viel Salz in dieser Suppe.",k:"Salz"},
 {t:"t3",en:"teaspoon",de:"der Teelöffel",s:"Add one __________ of sugar.",h:"Gib einen Teelöffel Zucker dazu.",k:"Teelöffel"},
 {t:"t3",en:"vanilla",de:"die Vanille",s:"I love __________ ice cream!",h:"Ich liebe Vanilleeis!",k:"Vanille"},
@@ -901,18 +958,18 @@ const VOCAB = [
 {t:"t3",en:"true",de:"wahr, richtig",s:"Is this story __________?",h:"Ist diese Geschichte wahr?",k:"wahr"},
 {t:"t3",en:"fry",de:"braten; frittieren",s:"Mum is going to __________ some chips.",h:"Mama wird ein paar Pommes braten.",k:"braten",mEn:"to fry"},
 {t:"t3",en:"savoury",de:"herzhaft, salzig",s:"I prefer __________ snacks to sweet ones.",h:"Ich mag herzhafte Snacks lieber als süße.",k:"herzhaft"},
-{t:"t3",en:"scone",de:"das kleine runde Milchbrötchen (oft mit Rosinen)",s:"For tea we have __________s with jam.",h:"Zum Tee gibt es Scones mit Marmelade.",k:"Milchbrötchen"},
+{t:"t3",en:"scone",de:"das kleine runde Milchbrötchen (oft mit Rosinen)",s:"For tea I have a __________ with jam.",h:"Zum Tee esse ich ein Milchbrötchen mit Marmelade.",k:"Milchbrötchen"},
 {t:"t3",en:"round",de:"rund",s:"The pizza is __________.",h:"Die Pizza ist rund.",k:"rund"},
 {t:"t3",en:"jam",de:"die Marmelade",s:"I love strawberry __________ on my toast.",h:"Ich liebe Erdbeermarmelade auf meinem Toast.",k:"Marmelade"},
 {t:"t3",en:"chicken",de:"das Huhn; das (Brat-)Hähnchen",s:"For dinner we have roast __________.",h:"Zum Abendessen gibt es Brathähnchen.",k:"Hähnchen"},
-{t:"t3",en:"taste",de:"schmecken; kosten, probieren",s:"This soup __________s great!",h:"Diese Suppe schmeckt großartig!",k:"schmecken",mEn:"to taste"},
+{t:"t3",en:"taste",de:"schmecken; kosten, probieren",s:"Can I __________ the soup?",h:"Darf ich die Suppe probieren?",k:"schmecken",mEn:"to taste"},
 {t:"t3",en:"main course",de:"das Hauptgericht",s:"For the __________ I'd like fish, please.",h:"Als Hauptgericht hätte ich gern Fisch, bitte.",k:"Hauptgericht"},
 {t:"t3",en:"be called",de:"heißen",s:"This dish is __________ \"jollof rice\".",h:"Dieses Gericht heißt „Jollof rice\".",k:"heißen",mEn:"to be called"},
 {t:"t3",en:"Nigeria",de:"Nigeria",s:"My friend's family is from __________.",h:"Die Familie meines Freundes ist aus Nigeria.",k:"Nigeria"},
 {t:"t3",en:"onion",de:"die Zwiebel",s:"Cut the __________ into small pieces.",h:"Schneide die Zwiebel in kleine Stücke.",k:"Zwiebel"},
 {t:"t3",en:"pepper",de:"die Paprika; der Pfeffer",s:"Add some salt and __________ to taste.",h:"Gib nach Geschmack Salz und Pfeffer dazu.",k:"Paprika"},
 {t:"t3",en:"delicious",de:"köstlich, lecker",s:"This cake is absolutely __________!",h:"Dieser Kuchen ist absolut köstlich!",k:"köstlich"},
-{t:"t3",en:"banana",de:"die Banane",s:"Monkeys love __________s.",h:"Affen lieben Bananen.",k:"Banane"},
+{t:"t3",en:"banana",de:"die Banane",s:"I eat a __________ every morning.",h:"Ich esse jeden Morgen eine Banane.",k:"Banane"},
 {t:"t3",en:"honey",de:"der Honig",s:"Bees make __________.",h:"Bienen machen Honig.",k:"Honig"},
 {t:"t3",en:"important",de:"wichtig",s:"Breakfast is an __________ meal.",h:"Frühstück ist eine wichtige Mahlzeit.",k:"wichtig"},
 {t:"t3",en:"culture",de:"die Kultur",s:"Food is part of every __________.",h:"Essen gehört zu jeder Kultur.",k:"Kultur"},
@@ -929,10 +986,10 @@ const VOCAB = [
 {t:"bf",en:"dough",de:"der Teig",s:"The pizza __________ needs to rest.",h:"Der Pizzateig muss ruhen.",k:"Teig"},
 {t:"bf",en:"glass",de:"das Glas",s:"Could I have a __________ of water?",h:"Könnte ich ein Glas Wasser haben?",k:"Glas"},
 {t:"bf",en:"cut",de:"schneiden",s:"__________ the cake into eight pieces.",h:"Schneide den Kuchen in acht Stücke.",k:"schneiden",mEn:"to cut"},
-{t:"bf",en:"potato",de:"die Kartoffel",s:"In Germany we eat __________es a lot.",h:"In Deutschland essen wir viel Kartoffeln.",k:"Kartoffel"},
-{t:"bf",en:"crumb",de:"die Flocke, der Krümel",s:"There are bread __________s on the table.",h:"Auf dem Tisch sind Brotkrümel.",k:"Krümel"},
+{t:"bf",en:"potato",de:"die Kartoffel",s:"I want one big __________.",h:"Ich möchte eine große Kartoffel.",k:"Kartoffel"},
+{t:"bf",en:"crumb",de:"die Flocke, der Krümel",s:"There is a bread __________ on the table.",h:"Auf dem Tisch ist ein Brotkrümel.",k:"Krümel"},
 {t:"bf",en:"garlic",de:"der Knoblauch",s:"Add some __________ to the pasta.",h:"Gib etwas Knoblauch zur Pasta.",k:"Knoblauch"},
-{t:"st",en:"wave",de:"(jm. zu)winken",s:"She __________d at me from the bus.",h:"Sie winkte mir aus dem Bus zu.",k:"winken",mEn:"to wave (to sb.)"},
+{t:"st",en:"wave",de:"(jm. zu)winken",s:"She wants to __________ at me from the bus.",h:"Sie möchte mir aus dem Bus zuwinken.",k:"winken",mEn:"to wave (to sb.)"},
 {t:"st",en:"be good at",de:"etwas gut können; gut in etwas sein",s:"He's __________ Maths.",h:"Er ist gut in Mathe.",k:"gut können",mEn:"to be good at sth."},
 {t:"st",en:"just",de:"nur, bloß; einfach",s:"It's __________ a small mistake.",h:"Es ist nur ein kleiner Fehler.",k:"nur"},
 {t:"st",en:"a little",de:"ein wenig, ein bisschen",s:"I'm __________ tired.",h:"Ich bin ein bisschen müde.",k:"ein wenig"},
@@ -940,10 +997,10 @@ const VOCAB = [
 {t:"st",en:"face",de:"das Gesicht",s:"She has a happy __________.",h:"Sie hat ein glückliches Gesicht.",k:"Gesicht"},
 {t:"st",en:"smile",de:"lächeln",s:"Please __________ for the photo!",h:"Bitte lächle für das Foto!",k:"lächeln",mEn:"to smile"},
 {t:"st",en:"it is sb.'s turn",de:"jm. ist dran / an der Reihe",s:"It is your __________ to choose.",h:"Du bist dran zu wählen.",k:"dran sein",mEn:"it is sb.'s turn (to do sth.)"},
-{t:"ut",en:"research",de:"erforschen, untersuchen, recherchieren",s:"We __________ed Indian food for school.",h:"Wir haben indisches Essen für die Schule recherchiert.",k:"recherchieren",mEn:"to research"},
+{t:"ut",en:"research",de:"erforschen, untersuchen, recherchieren",s:"We want to __________ Indian food for school.",h:"Wir wollen indisches Essen für die Schule recherchieren.",k:"recherchieren",mEn:"to research"},
 {t:"ut",en:"boil",de:"kochen (in Wasser); sieden",s:"__________ the water for the pasta.",h:"Koche das Wasser für die Pasta.",k:"kochen",mEn:"to boil"},
 {t:"ut",en:"introduction",de:"die Einführung, die Einleitung",s:"Write a short __________ to your project.",h:"Schreibe eine kurze Einleitung zu deinem Projekt.",k:"Einleitung"},
-{t:"ut",en:"instruction",de:"die Anweisung",s:"Read the __________s carefully.",h:"Lies die Anweisungen sorgfältig.",k:"Anweisung"}
+{t:"ut",en:"instruction",de:"die Anweisung",s:"Read every __________ carefully.",h:"Lies jede Anweisung sorgfältig.",k:"Anweisung"}
 
 
 ];
@@ -1209,6 +1266,8 @@ function lt_record(en, ok){
   if(s[key]<-5) s[key]=-5;
   lt_save(s);
   if(ok) album_add(key);
+  // Phase-2: zusätzlich Spaced-Repetition tracken
+  try{ sr_record(key, !!ok); }catch(e){}
 }
 // Bias-Pick: 60% aus den schwächsten 50%, 40% random
 function lt_pick(arr, n){
@@ -1242,6 +1301,102 @@ function lt_pick(arr, n){
   }
   return dedup.slice(0, n);
 }
+
+
+// ── SPACED REPETITION (SM-2 vereinfacht) ───────────────────────────
+const SR_KEY = 'sr_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
+const SR_INTERVALS_DAYS = [1, 3, 7, 14, 30]; // box 1..5 (Index 0..4)
+const SR_DAY_MS = 86400000;
+const SR_FAIL_DELAY_MS = 10*60*1000; // 10 Minuten bei Fehler
+
+function sr_load(){try{return JSON.parse(localStorage.getItem(SR_KEY))||{};}catch(e){return {};}}
+function sr_save(s){try{localStorage.setItem(SR_KEY,JSON.stringify(s));}catch(e){}}
+
+function sr_record(en, ok){
+  if(!en) return;
+  const key = String(en);
+  const s = sr_load();
+  const now = Date.now();
+  let e = s[key];
+  if(!e){
+    e = { box:1, nextDue: now + (ok ? SR_INTERVALS_DAYS[0]*SR_DAY_MS : SR_FAIL_DELAY_MS), correctStreak: ok?1:0, lastReviewed: now };
+  } else if(ok){
+    e.box = Math.min(5, (e.box||1) + 1);
+    e.nextDue = now + SR_INTERVALS_DAYS[e.box-1]*SR_DAY_MS;
+    e.correctStreak = (e.correctStreak||0) + 1;
+    e.lastReviewed = now;
+  } else {
+    e.box = 1;
+    e.nextDue = now + SR_FAIL_DELAY_MS;
+    e.correctStreak = 0;
+    e.lastReviewed = now;
+  }
+  s[key] = e;
+  sr_save(s);
+}
+
+function sr_get_due(){
+  const s = sr_load();
+  const now = Date.now();
+  const due = [];
+  if(typeof VOCAB === 'undefined') return due;
+  VOCAB.forEach(v=>{
+    const e = s[v.en];
+    if(!e || (e.nextDue||0) <= now) due.push(v);
+  });
+  return due;
+}
+
+function sr_stats(){
+  const s = sr_load();
+  const now = Date.now();
+  const out = { box:[0,0,0,0,0], due:0, total:(typeof VOCAB!=='undefined'?VOCAB.length:0), untouched:0 };
+  if(typeof VOCAB === 'undefined') return out;
+  VOCAB.forEach(v=>{
+    const e = s[v.en];
+    if(!e){ out.untouched++; out.due++; return; }
+    const b = e.box||1;
+    if(b>=1 && b<=5) out.box[b-1]++;
+    if((e.nextDue||0) <= now) out.due++;
+  });
+  return out;
+}
+
+// Migration alter lt_-Scores → SR-Boxen (einmalig pro Browser/Datei)
+(function sr_migrate_v1(){
+  try{
+    const MIG = 'sr_mig_v1_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
+    if(localStorage.getItem(MIG)) return;
+    const sr = sr_load();
+    const ltKey = 'lt_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
+    let lt = {};
+    try{ lt = JSON.parse(localStorage.getItem(ltKey)||'{}')||{}; }catch(e){}
+    const now = Date.now();
+    Object.keys(lt).forEach(en=>{
+      if(sr[en]) return;
+      const score = lt[en]||0;
+      let box = 1;
+      if(score >= 4) box = 4;
+      else if(score >= 2) box = 3;
+      else if(score >= 1) box = 2;
+      // nextDue = jetzt → erste Wiederholung kann sofort starten
+      sr[en] = { box, nextDue: now, correctStreak: Math.max(0, score), lastReviewed: now };
+    });
+    sr_save(sr);
+    localStorage.setItem(MIG,'1');
+  }catch(e){}
+})();
+
+// IPA-Helper
+function ipaHTML(v){
+  if(!v || !v.ipa) return '';
+  const ipa = String(v.ipa).replace(/[<>]/g,'');
+  return '<span class="ipa" title="Lautschrift (IPA) – Aussprachehilfe">'+ipa+'</span>';
+}
+
+// Einzelwort-TTS-Hilfsbutton (Wrapper um makeTtsBtn) – Pflicht-Helper für SR/Album
+function wordTtsBtn(text, mini){ return makeTtsBtn(text, 'en-GB', mini!==false); }
+
 
 function setupGap(){
 const ct=document.getElementById('gap-tasks');
@@ -1917,6 +2072,34 @@ function setupSpeech(){
 }
 
 // ── ALBUM ─────────────────────────────────────────────────────────
+function setupAlbum_augment(rootSelector){
+  // Erweitert frisch gerenderte Album-Karten mit 🔊-TTS + IPA (falls vorhanden).
+  try{
+    const grid = document.querySelector(rootSelector||'#album-grid');
+    if(!grid) return;
+    grid.querySelectorAll('.album-card').forEach(card=>{
+      if(card.dataset.augmented==='1') return;
+      const enRaw = card.getAttribute('data-en') || card.dataset.en || '';
+      const en = enRaw || (card.querySelector('.album-en')?card.querySelector('.album-en').textContent:'');
+      if(!en) return;
+      const v = (typeof VOCAB!=='undefined') ? VOCAB.find(x=>x.en===en) : null;
+      // 🔊 Button
+      const btn = makeTtsBtn(en,'en-GB',true);
+      btn.classList.add('sr-album-tts');
+      const enEl = card.querySelector('.album-en') || card;
+      enEl.appendChild(btn);
+      // IPA
+      if(v && v.ipa){
+        const ipaSpan = document.createElement('span');
+        ipaSpan.className = 'ipa';
+        ipaSpan.title = 'Lautschrift (IPA)';
+        ipaSpan.textContent = v.ipa;
+        enEl.appendChild(ipaSpan);
+      }
+      card.dataset.augmented = '1';
+    });
+  }catch(e){}
+}
 function setupAlbum(){
   const acc = document.getElementById('acc-album');
   const grid = document.getElementById('album-grid');
@@ -2312,10 +2495,141 @@ function setupCrossword(){
   acc.addEventListener('toggle', function(){ if(this.open && !board.innerHTML.trim()) render(); });
 }
 
-setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();setupAlbum();
+
+// ── SETUP: SPACED REPETITION ──────────────────────────────────────
+function setupSpaced(){
+  const acc = document.getElementById('acc-spaced'); if(!acc) return;
+  const statsEl = document.getElementById('sr-stats');
+  const areaEl  = document.getElementById('sr-area');
+  const startBtn= document.getElementById('sr-start');
+  const refrBtn = document.getElementById('sr-refresh');
+  if(!statsEl || !areaEl) return;
+
+  function renderStats(){
+    const st = sr_stats();
+    const dueClass = st.due>0 ? 'sr-due-big' : '';
+    const boxLine = st.box.map((n,i)=>'<span class="sr-pill">📦 Box '+(i+1)+': <b>'+n+'</b></span>').join('');
+    statsEl.innerHTML =
+      '<span class="'+dueClass+'">📅 '+st.due+' Vokabeln heute fällig</span>'+
+      ' &nbsp;·&nbsp; '+
+      '<span style="font-size:12px;color:#475569">von '+st.total+' insgesamt ('+st.untouched+' noch nie gesehen)</span>'+
+      '<div style="flex-basis:100%;height:0"></div>'+
+      boxLine;
+    startBtn.textContent = '📅 Heute fällig starten ('+st.due+')';
+    startBtn.disabled = st.due===0;
+    startBtn.style.opacity = st.due===0 ? '.55' : '';
+  }
+
+  function renderSession(){
+    const due = sr_get_due();
+    if(due.length === 0){
+      areaEl.innerHTML = '<div class="sr-empty">🎉 Heute keine Vokabeln fällig! Komm morgen wieder.</div>';
+      return;
+    }
+    const pool = shuffle([...due]);
+    let idx = 0, correct = 0, wrong = 0;
+    const startedAt = Date.now();
+
+    function renderCard(){
+      if(idx >= pool.length){
+        areaEl.innerHTML =
+          '<div class="sr-result">'+
+          '<h3>🎉 Heutige Wiederholung geschafft!</h3>'+
+          '<div class="sr-result-meta">✅ '+correct+' richtig · ❌ '+wrong+' falsch</div>'+
+          '<div class="sr-result-meta" style="font-size:12px;color:#475569">Dauer: '+Math.round((Date.now()-startedAt)/1000)+'s</div>'+
+          '<div style="margin-top:10px"><button class="btn green" id="sr-again">🔄 Nochmal (neue fällige)</button></div>'+
+          '</div>';
+        if(correct === pool.length) try{ fireConfetti(); }catch(e){}
+        renderStats();
+        const ag = document.getElementById('sr-again');
+        if(ag) ag.addEventListener('click', renderSession);
+        return;
+      }
+      const v = pool[idx];
+      const cor = (v.ans ? (Array.isArray(v.ans)?v.ans[0]:v.ans) : v.en);
+      const ans = (v.ans ? (Array.isArray(v.ans)?v.ans:[v.ans, v.en]) : [v.en]);
+      const sentenceHTML = (v.s||'').replace('__________','<span style="border-bottom:2px solid #b85c20;padding:0 18px;margin:0 2px"></span>');
+      areaEl.innerHTML =
+        '<div class="sr-progress-text">📅 Vokabel '+(idx+1)+' / '+pool.length+' &nbsp;·&nbsp; ✅ '+correct+' &nbsp;·&nbsp; ❌ '+wrong+'</div>'+
+        '<div class="sr-card" data-en="'+encodeURIComponent(v.en)+'">'+
+          '<div class="sr-de">🇩🇪 '+v.de+'</div>'+
+          (sentenceHTML?'<div class="sr-sentence">'+sentenceHTML+'</div>':'')+
+          '<div class="sr-input-row">'+
+            '<input type="text" placeholder="Englisches Wort eintippen..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'+
+            '<button class="btn green sr-check">Prüfen</button>'+
+            '<button class="btn ghost sr-skip">⏭ Überspringen</button>'+
+          '</div>'+
+          '<div class="sr-feedback"></div>'+
+          '<div class="sr-en-reveal" style="display:none"></div>'+
+        '</div>';
+      const inp = areaEl.querySelector('input');
+      const fb  = areaEl.querySelector('.sr-feedback');
+      const rev = areaEl.querySelector('.sr-en-reveal');
+      const checkBtn = areaEl.querySelector('.sr-check');
+      const skipBtn  = areaEl.querySelector('.sr-skip');
+      let done = false;
+
+      function reveal(ok){
+        done = true;
+        inp.disabled = true;
+        checkBtn.style.display='none';
+        skipBtn.style.display='none';
+        rev.style.display = 'flex';
+        rev.innerHTML = '👉 <b>'+cor+'</b>'+ipaHTML(v);
+        const tb = makeTtsBtn(cor,'en-GB',false);
+        rev.appendChild(tb);
+        const next = document.createElement('button');
+        next.className='btn green';
+        next.style.marginLeft='auto';
+        next.textContent='Weiter ▶';
+        next.addEventListener('click', ()=>{ idx++; renderCard(); });
+        rev.appendChild(next);
+        // Tracking
+        try{ sr_record(v.en, ok); }catch(e){}
+        try{ if(ok) album_add(v.en); }catch(e){}
+        if(ok) correct++; else wrong++;
+        // ENTER zum Weiter
+        setTimeout(()=>next.focus(), 50);
+      }
+
+      function check(){
+        if(done) return;
+        const u = (typeof normalizeAnswer==='function'?normalizeAnswer(inp.value):(inp.value||'').trim().toLowerCase());
+        if(!u){ fb.textContent='Bitte gib eine Antwort ein.'; fb.className='sr-feedback bad'; return; }
+        const norm = ans.map(a=> typeof normalizeAnswer==='function'?normalizeAnswer(a):String(a).trim().toLowerCase());
+        if(norm.includes(u)){
+          fb.textContent='✓ Richtig!'; fb.className='sr-feedback ok';
+          reveal(true);
+        } else {
+          fb.textContent='✗ Leider nicht.'; fb.className='sr-feedback bad';
+          reveal(false);
+        }
+      }
+      checkBtn.addEventListener('click', check);
+      skipBtn.addEventListener('click', ()=>{ if(!done){ fb.textContent='⏭ Übersprungen.'; fb.className='sr-feedback bad'; reveal(false); }});
+      inp.addEventListener('keydown', e=>{
+        if(e.key==='Enter'){
+          if(done){ const nx=rev.querySelector('button.btn.green'); if(nx) nx.click(); }
+          else check();
+        }
+      });
+      setTimeout(()=>inp.focus(), 50);
+    }
+    renderCard();
+  }
+
+  startBtn.addEventListener('click', renderSession);
+  refrBtn.addEventListener('click', ()=>{ areaEl.innerHTML=''; renderStats(); });
+  acc.addEventListener('toggle', function(){ if(this.open){ renderStats(); }});
+  // initial: bei geschlossenem Akkordeon einmal die Stats vorbereiten
+  renderStats();
+}
+
+
+setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();setupAlbum();setupSpaced();
 // Auto-close other accordions
 (function(){
-  const IDS=['acc-uebungen','acc-matching','acc-scramble','acc-spell','acc-dictation','acc-race','acc-invaders'];
+  const IDS=['acc-spaced','acc-uebungen','acc-matching','acc-scramble','acc-spell','acc-dictation','acc-race','acc-invaders'];
   const els=IDS.map(id=>document.getElementById(id)).filter(Boolean);
   els.forEach(el=>{
     el.addEventListener('toggle',()=>{
@@ -2425,7 +2739,7 @@ document.getElementById('btn-reset-progress').addEventListener('click',()=>{if(!
 </script>
 
 <footer style="text-align:center;padding:16px 20px 8px;font-size:12px;color:#a0845c;font-family:'Baloo 2',sans-serif;border-top:1px solid rgba(160,132,92,.25);margin-top:24px">
-  <div>Version 01.05.2026, 01:00</div>
+  <div>Version 02.05.2026, 18:32</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 <script id="auto-version-stamp">

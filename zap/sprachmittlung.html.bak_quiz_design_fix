@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sprachmittlung – ZP 10 Vorbereitung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   SLATE-GOLD DESIGN SYSTEM (Pilot 05_to_be.html, Apr 2026)
+   ============================================================ */
+:root{
+  --bg:#f8fafc;
+  --bg-card:#ffffff;
+  --bg-card-hover:#f1f5f9;
+  --bg-input:#ffffff;
+  --border:#e5e7eb;
+  --border-strong:#d1d5db;
+  --text:#1f2937;
+  --text-dim:#4b5563;
+  --accent:#d4a017;
+  --accent-soft:rgba(212,160,23,0.10);
+  --accent-strong:#a07408;
+  --accent-tint:#e2e8f0;
+  --success:#16a34a;
+  --success-soft:rgba(22,163,74,0.08);
+  --success-tint:#bbf7d0;
+  --warn:#ea580c;
+  --warn-soft:rgba(234,88,12,0.08);
+  --warn-tint:#fed7aa;
+  --error:#dc2626;
+  --error-soft:rgba(220,38,38,0.08);
+  --error-tint:#fecaca;
+  --info:#2563eb;
+  --info-soft:rgba(37,99,235,0.08);
+  --info-tint:#bfdbfe;
+  --indigo:#4f46e5;
+  --indigo-soft:rgba(79,70,229,0.08);
+  --indigo-tint:#ddd6fe;
+  --teal:#0d9488;
+  --teal-soft:rgba(13,148,136,0.08);
+  --teal-tint:#f0fdfa;
+  /* Pill-Tokens */
+  --pill-subj-bg:rgba(37,99,235,0.10);
+  --pill-subj-bd:#2563eb;
+  --pill-subj-tx:#1e40af;
+  --pill-do-bg:rgba(212,160,23,0.14);
+  --pill-do-bd:#d4a017;
+  --pill-do-tx:#7c5e0a;
+  --pill-verb-bg:rgba(8,145,178,0.10);
+  --pill-verb-bd:#0891b2;
+  --pill-verb-tx:#155e6e;
+  --pill-neg-bg:rgba(220,38,38,0.10);
+  --pill-neg-bd:#dc2626;
+  --pill-neg-tx:#991b1b;
+  --pill-wh-bg:rgba(234,88,12,0.10);
+  --pill-wh-bd:#ea580c;
+  --pill-wh-tx:#9a3a0e;
+  --pill-sig-bg:rgba(124,58,237,0.10);
+  --pill-sig-bd:#7c3aed;
+  --pill-sig-tx:#5b21b6;
+  --pill-s-bg:rgba(22,163,74,0.10);
+  --pill-s-bd:#16a34a;
+  --pill-s-tx:#15803d;
+  /* Karten-Akzent-Streifen pro Kategorie */
+  --card-aus:#16a34a;
+  --card-kf:#d4a017;
+  --card-vern:#dc2626;
+  --card-frag:#2563eb;
+  --card-ka:#7c3aed;
+  /* Saturierte Karten-Akzente (für Top-Stripe, Titel, Underlines pro Karte) */
+  --card-amber-strong:#475569;
+  --card-green-strong:#059669;
+  --card-teal-strong:#ea580c;
+  --card-red-strong:#dc2626;
+  --card-blue-strong:#2563eb;
+  --card-indigo-strong:#7c3aed;
+}
+body.dark-mode{
+  --bg:#0f1117;
+  --bg-card:#1a1d28;
+  --bg-card-hover:#232634;
+  --bg-input:#14161e;
+  --border:#2a2e3d;
+  --border-strong:#3a3f52;
+  --text:#e8e9ed;
+  --text-dim:#9ba0b3;
+  --accent:#f4c430;
+  --accent-soft:rgba(244,196,48,0.12);
+  --accent-strong:#facc15;
+  --success:#4ade80;
+  --success-soft:rgba(74,222,128,0.10);
+  --warn:#fb923c;
+  --warn-soft:rgba(251,146,60,0.10);
+  --error:#f87171;
+  --error-soft:rgba(248,113,113,0.10);
+  --info:#60a5fa;
+  --info-soft:rgba(96,165,250,0.10);
+  --pill-subj-bg:rgba(96,165,250,0.12);
+  --pill-subj-bd:#60a5fa;
+  --pill-subj-tx:#bfdbfe;
+  --pill-do-bg:rgba(244,196,48,0.12);
+  --pill-do-bd:#f4c430;
+  --pill-do-tx:#fde68a;
+  --pill-verb-bg:rgba(34,211,238,0.12);
+  --pill-verb-bd:#22d3ee;
+  --pill-verb-tx:#a5f3fc;
+  --pill-neg-bg:rgba(248,113,113,0.12);
+  --pill-neg-bd:#f87171;
+  --pill-neg-tx:#fca5a5;
+  --pill-wh-bg:rgba(251,146,60,0.12);
+  --pill-wh-bd:#fb923c;
+  --pill-wh-tx:#fdba74;
+  --pill-sig-bg:rgba(167,139,250,0.12);
+  --pill-sig-bd:#a78bfa;
+  --pill-sig-tx:#d8b4fe;
+  --pill-s-bg:rgba(74,222,128,0.12);
+  --pill-s-bd:#4ade80;
+  --pill-s-tx:#86efac;
+  --card-aus:#4ade80;
+  --card-kf:#f4c430;
+  --card-vern:#f87171;
+  --card-frag:#60a5fa;
+  --card-ka:#a78bfa;
+}
+/* ===== ZP-Spezifische Styles (zusätzlich zum Master) ===== */
+.task{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.task[data-done="1"]{border-color:var(--success-tint);background:var(--success-soft)}
+.task-prompt{font-weight:600;margin-bottom:10px;color:var(--text);line-height:1.5}
+.task-num{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:24px;height:24px;text-align:center;font-size:13px;line-height:24px;margin-right:8px;font-weight:700}
+.mc-options{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.mc-opt{background:var(--bg-input);border:1.5px solid var(--border-strong);border-radius:8px;padding:9px 14px;text-align:left;cursor:pointer;font:inherit;color:var(--text);transition:.15s}
+.mc-opt:hover:not([disabled]){background:var(--bg-card-hover);border-color:var(--accent)}
+.mc-opt.correct{background:var(--success-soft);border-color:var(--success);color:var(--success)}
+.mc-opt.wrong{background:var(--error-soft);border-color:var(--error);color:var(--error)}
+.mc-opt[disabled]{cursor:default;opacity:.7}
+.feedback{margin-top:10px;padding:8px 12px;border-radius:8px;font-size:14px}
+.feedback.ok{background:var(--success-soft);color:var(--success);border-left:3px solid var(--success)}
+.feedback.bad{background:var(--error-soft);color:var(--error);border-left:3px solid var(--error)}
+.ft-wrap{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.ft-input{flex:1;min-width:200px;padding:9px 12px;border:1.5px solid var(--border-strong);border-radius:8px;font:inherit;background:var(--bg-input);color:var(--text)}
+.ft-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:9px 16px;cursor:pointer;font:inherit;font-weight:600;transition:.15s}
+.btn:hover{background:var(--accent-strong)}
+.btn.gray{background:var(--text-dim)}
+.btn.gray:hover{background:var(--text)}
+.tf-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.tf-row{background:var(--bg-input);border:1px solid var(--border);border-radius:10px;padding:10px 14px}
+.tf-row[data-done="1"]{background:var(--bg-card-hover)}
+.tf-stmt{margin-bottom:8px;font-size:15px;line-height:1.5}
+.tf-btns{display:flex;gap:6px;flex-wrap:wrap}
+.tf-btn{flex:1;min-width:90px;padding:7px 10px;font-size:13px}
+.section-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.note{background:var(--info-soft);border-left:3px solid var(--info);padding:10px 14px;border-radius:6px;margin-bottom:14px;font-size:14px;line-height:1.55}
+/* WWM-Quiz */
+.wwm-ladder{display:none}
+@media(min-width:900px){.wwm-ladder{display:block;float:right;width:200px;margin-left:18px;font-size:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:8px 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}}
+.wwm-rung{padding:4px 12px;color:var(--text-dim);border-left:3px solid transparent}
+.wwm-rung.milestone{font-weight:700;color:var(--accent-strong);border-left-color:var(--accent)}
+.wwm-rung.active{background:var(--accent-soft);color:var(--accent-strong);font-weight:700}
+.wwm-rung.won{color:var(--success);text-decoration:line-through;opacity:.7}
+.wwm-card{background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:18px 20px;margin-top:14px;box-shadow:0 3px 14px rgba(212,160,23,.15)}
+.wwm-q{font-size:17px;font-weight:600;margin-bottom:14px;line-height:1.5;color:var(--text)}
+.wwm-jokers{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.jk{background:var(--bg-input);border:1.5px solid var(--accent);color:var(--accent-strong);border-radius:20px;padding:6px 14px;cursor:pointer;font:inherit;font-size:13px;font-weight:600}
+.jk:hover:not([disabled]){background:var(--accent);color:#fff}
+.jk[disabled]{opacity:.4;cursor:default}
+.streak-box{background:linear-gradient(135deg,#ea580c,#dc2626);color:#fff;border-radius:8px;padding:6px 12px;display:inline-block;margin-bottom:10px;font-weight:700;font-size:13px}
+.wwm-options{display:flex;flex-direction:column;gap:8px}
+.wwm-fb{margin-top:14px;padding:10px 14px;border-radius:8px;font-size:14px}
+.wwm-fb.ok{background:var(--success-soft);color:var(--success);border-left:3px solid var(--success)}
+.wwm-fb.bad{background:var(--error-soft);color:var(--error);border-left:3px solid var(--error)}
+.result-card{text-align:center;background:var(--bg-card);border:2px solid var(--accent);border-radius:14px;padding:24px;margin-top:18px}
+.result-card h3{margin:8px 0;color:var(--accent-strong)}
+.result-card details{margin-top:14px;text-align:left}
+.result-card summary{cursor:pointer;font-weight:600;color:var(--accent-strong)}
+/* Quiz divider */
+.quiz-divider{text-align:center;margin:30px 0 16px;position:relative}
+.quiz-divider::before{content:'';position:absolute;left:0;top:50%;width:100%;height:1px;background:var(--border);z-index:0}
+.quiz-divider span{position:relative;background:var(--bg);padding:0 18px;color:var(--accent-strong);font-weight:700;font-size:15px;z-index:1}
+/* Section divider */
+.section-divider{text-align:center;margin:24px 0 14px;color:var(--text-dim);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+/* Strategien-Karten Grid */
+.strat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px}
+.strat-card{background:var(--bg-card);border:1px solid var(--border);border-top:4px solid var(--accent);border-radius:12px;padding:16px 18px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.strat-card.s-green{border-top-color:var(--success)}
+.strat-card.s-red{border-top-color:var(--error)}
+.strat-card.s-blue{border-top-color:var(--info)}
+.strat-card.s-amber{border-top-color:var(--accent)}
+.strat-card.s-teal{border-top-color:var(--teal)}
+.strat-card.s-indigo{border-top-color:var(--indigo)}
+.strat-card h3{margin:0 0 8px;font-size:16px;color:var(--text)}
+.strat-card p{margin:6px 0;font-size:14px;line-height:1.55;color:var(--text)}
+.strat-card .ex{background:var(--accent-soft);padding:6px 10px;border-radius:6px;margin-top:8px;font-size:13px;font-style:italic;color:var(--text-dim)}
+/* Reading text box */
+.read-text{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin:10px 0;line-height:1.7;font-size:15px;max-height:none}
+.read-text h4{margin:0 0 8px;color:var(--accent-strong)}
+.read-text .meta{font-size:12px;color:var(--text-dim);font-style:italic;margin-bottom:8px}
+/* Audio script box */
+.audio-controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0;padding:10px 12px;background:var(--accent-soft);border-radius:10px}
+.audio-controls label{font-size:13px;color:var(--text-dim)}
+.audio-controls select,.audio-controls button{padding:6px 12px;border-radius:6px;border:1px solid var(--border-strong);background:var(--bg-input);color:var(--text);font:inherit;font-size:13px;cursor:pointer}
+.audio-controls button.play-btn{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+.script-box{background:var(--bg-input);border:1px dashed var(--border-strong);border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.6;margin:10px 0;display:none}
+.script-box.show{display:block}
+/* Vocabulary list */
+.vocab-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-top:10px}
+.vocab-item{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.vocab-item .en{font-weight:600;color:var(--accent-strong)}
+.vocab-item .de{color:var(--text-dim);font-style:italic}
+/* Floating Buttons */
+.dark-toggle,.tts-toggle,.reset-all-btn{position:fixed;top:14px;background:var(--bg-card);border:1.5px solid var(--accent);color:var(--accent-strong);border-radius:24px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px;font-weight:600;z-index:50;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.dark-toggle{right:14px}
+.tts-toggle{right:140px}
+.reset-all-btn{right:265px}
+.dark-toggle:hover,.tts-toggle:hover,.reset-all-btn:hover{background:var(--accent);color:#fff}
+@media(max-width:700px){.dark-toggle,.tts-toggle,.reset-all-btn{position:static;display:inline-block;margin:4px}.dark-toggle{margin-top:8px}}
+header{text-align:center;padding:24px 20px 16px;border-bottom:1px solid var(--border);margin-bottom:18px}
+header h1{margin:8px 0 4px;color:var(--accent-strong);font-size:26px}
+header .sub{color:var(--text-dim);font-size:14px;margin:0}
+.hdr-logo-link img{max-height:48px;display:block;margin:0 auto 6px}
+.crosslinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
+.crosslink{background:var(--bg-card);border:1.5px solid var(--accent);border-radius:10px;padding:12px 16px;text-decoration:none;color:var(--text);transition:.15s;display:block}
+.crosslink:hover{background:var(--accent-soft);border-color:var(--accent-strong);transform:translateY(-2px)}
+.crosslink .ic{font-size:20px;margin-right:8px}
+.crosslink .ttl{font-weight:700;color:var(--accent-strong);font-size:15px}
+.crosslink .desc{font-size:12px;color:var(--text-dim);margin-top:3px}
+.checklist{margin:14px 0;padding:0;list-style:none}
+.checklist li{padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px}
+.checklist li:hover{background:var(--bg-card-hover)}
+.checklist input[type="checkbox"]{margin-top:2px;width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
+.checklist li.done{opacity:.55;text-decoration:line-through}
+body{background:var(--bg);color:var(--text);font-family:'Baloo 2',sans-serif;margin:0;padding:0;min-height:100vh}
+html:has(body.dark-mode){background:var(--bg)}
+.container{max-width:1100px;margin:0 auto;padding:0 16px 60px}
+.accordion{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;margin:14px 0;overflow:hidden}
+.accordion[open]{box-shadow:0 4px 18px rgba(0,0,0,.06)}
+.accordion summary{padding:14px 18px;font-weight:700;cursor:pointer;font-size:16px;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center}
+.accordion summary::-webkit-details-marker{display:none}
+.accordion summary::after{content:'▾';color:var(--accent);transition:.2s}
+.accordion[open] summary::after{transform:rotate(180deg)}
+.accordion .content{padding:0 18px 18px;border-top:1px solid var(--border)}
+.progress-wrap{margin:10px 0 14px}
+.progress{background:var(--bg-input);border-radius:6px;height:10px;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,var(--success),var(--accent));height:100%;width:0%;transition:.3s}
+.progress-text{font-size:12px;color:var(--text-dim);margin-top:4px}
+footer{text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)}
+.acc-num{display:inline-block;background:var(--accent);color:#fff;border-radius:50%;width:26px;height:26px;text-align:center;line-height:26px;margin-right:8px;font-size:14px}
+</style>
+
+</head>
+<body>
+<button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+<button class="tts-toggle" id="tts-toggle">🔊 Vorlesen</button>
+<button class="reset-all-btn" onclick="resetAllProgress('sm')">🗑️ Zurücksetzen</button>
+
+<div class="container">
+
+<header>
+  <a class="hdr-logo-link" href="../index.html" title="Zurück"><img src="../assets/logo_hellweg.png" alt="Hellweg-Realschule"/></a>
+  <h1>Sprachmittlung · Mediation</h1>
+  <p class="sub">ZP 10 Vorbereitung · Klasse 10</p>
+</header>
+
+<section class="rules-combined">
+  <div class="quiz-divider" style="margin:0 0 16px"><span>⚡ Regeln auf einen Blick</span></div>
+  <div class="strat-grid">
+    <div class="strat-card s-blue">
+      <h3>📌 Was ist Sprachmittlung?</h3>
+      <p>Sprachmittlung heißt: einen Text <b>sinngemäß</b> für einen anderen Adressaten übertragen — <b>nicht Wort-für-Wort</b> übersetzen.</p>
+      <p>Du wählst die wichtigen Infos aus, lässt Unwichtiges weg und passt den Stil an.</p>
+      <div class="ex">EN-Text → DE-Zusammenfassung für Mutter · DE-Text → EN-E-Mail an Brieffreund</div>
+    </div>
+    <div class="strat-card s-amber">
+      <h3>👤 Adressatenbezug — der Schlüssel</h3>
+      <p>Frage zuerst: <b>Wer liest/hört das?</b> Mama, Lehrer, Klassenkamerad, Tourist?</p>
+      <p>→ Stil anpassen: Förmlich (Lehrer) vs. locker (Freund). Fachbegriffe nur, wenn Adressat sie kennt.</p>
+      <div class="ex">Für Oma: einfache Worte. Für Schulleitung: höflich, sachlich.</div>
+    </div>
+    <div class="strat-card s-teal">
+      <h3>🏗 Aufbau einer Mediation</h3>
+      <p><b>1. Einleitung:</b> Worum geht es? (1 Satz)</p>
+      <p><b>2. Hauptpunkte:</b> Wichtigste Infos für den Adressaten (3–5 Sätze)</p>
+      <p><b>3. Schluss:</b> Abschluss/Gruß/Frage (1 Satz)</p>
+      <div class="ex">Insgesamt meist 5–8 Sätze — kurz und klar.</div>
+    </div>
+    <div class="strat-card s-red">
+      <h3>⚠️ Häufige Fehler</h3>
+      <p><b>Wort-für-Wort:</b> klingt unnatürlich, kostet Punkte.</p>
+      <p><b>Falsches Register:</b> "Hey Bro" an die Schulleitung 🚫</p>
+      <p><b>Zu viel oder zu wenig:</b> alle Details kopieren ODER Hauptpunkte vergessen.</p>
+      <p><b>Idiome wörtlich:</b> "had a blast" ≠ "hatte eine Explosion"</p>
+    </div>
+  </div>
+</section>
+
+<details class="accordion" id="acc-tasks">
+  <summary><span><span class="acc-num">1</span>📝 Mediation-Aufgaben</span></summary>
+  <div class="content">
+    <div class="note">Lies den Quelltext, dann arbeite die Aufgabenstellung ab. Schreibe deine Antwort auf Papier oder in einen Editor — die Modell-Antwort kannst du danach einklappen.</div>
+    <div id="sm-tasks-list"></div>
+  </div>
+</details>
+
+<details class="accordion" id="acc-phrases">
+  <summary><span><span class="acc-num">2</span>🛠 Useful Phrases (nach Funktion)</span></summary>
+  <div class="content">
+    <div class="note">Nutze diese Phrasen als Sentence-Starter. Auch in der ZP-Klausur erlaubt — sie sind Standard-Werkzeug.</div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">📥 Einleiten</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"In the German text I read…"</span><span class="de">Im deutschen Text habe ich gelesen …</span></div>
+      <div class="vocab-item"><span class="en">"The text is about…"</span><span class="de">In dem Text geht es um …</span></div>
+      <div class="vocab-item"><span class="en">"According to the article, …"</span><span class="de">Laut dem Artikel …</span></div>
+      <div class="vocab-item"><span class="en">"The author/text says that…"</span><span class="de">Der Autor / Text sagt, dass …</span></div>
+      <div class="vocab-item"><span class="en">"As reported in …"</span><span class="de">Wie in … berichtet wird …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">📋 Zusammenfassen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"To sum up, …"</span><span class="de">Zusammenfassend …</span></div>
+      <div class="vocab-item"><span class="en">"The main point is …"</span><span class="de">Der Hauptpunkt ist …</span></div>
+      <div class="vocab-item"><span class="en">"In short, …"</span><span class="de">Kurz gesagt …</span></div>
+      <div class="vocab-item"><span class="en">"Most importantly, …"</span><span class="de">Am wichtigsten …</span></div>
+      <div class="vocab-item"><span class="en">"Briefly, …"</span><span class="de">Kurz …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">💬 Zitieren / Bezugnehmen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"The text mentions that…"</span><span class="de">Der Text erwähnt, dass …</span></div>
+      <div class="vocab-item"><span class="en">"It is pointed out that…"</span><span class="de">Es wird darauf hingewiesen, dass …</span></div>
+      <div class="vocab-item"><span class="en">"X claims that…"</span><span class="de">X behauptet, dass …</span></div>
+      <div class="vocab-item"><span class="en">"X explains that…"</span><span class="de">X erklärt, dass …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">⚖️ Bewerten / Stellung nehmen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"In my opinion, …"</span><span class="de">Meiner Meinung nach …</span></div>
+      <div class="vocab-item"><span class="en">"It seems to me that…"</span><span class="de">Mir scheint, dass …</span></div>
+      <div class="vocab-item"><span class="en">"On the one hand … on the other hand"</span><span class="de">Einerseits … andererseits</span></div>
+      <div class="vocab-item"><span class="en">"From my point of view, …"</span><span class="de">Aus meiner Sicht …</span></div>
+    </div>
+    <h4 style="color:var(--accent-strong);margin:14px 0 6px">📤 Abschließen</h4>
+    <div class="vocab-list">
+      <div class="vocab-item"><span class="en">"Hope to hear from you soon."</span><span class="de">Ich hoffe, bald von dir zu hören.</span></div>
+      <div class="vocab-item"><span class="en">"All the best, …"</span><span class="de">Alles Gute, …</span></div>
+      <div class="vocab-item"><span class="en">"Yours sincerely, …"</span><span class="de">Mit freundlichen Grüßen, …</span></div>
+      <div class="vocab-item"><span class="en">"Looking forward to your reply."</span><span class="de">Ich freue mich auf deine Antwort.</span></div>
+      <div class="vocab-item"><span class="en">"Cheers, [name]"</span><span class="de">Tschüss, [Name] (informell)</span></div>
+    </div>
+  </div>
+</details>
+
+<details class="accordion" id="acc-bewertung">
+  <summary><span><span class="acc-num">3</span>📊 Bewertungsschema (Self-Check)</span></summary>
+  <div class="content">
+    <div class="note">Bewerte deine eigene Mediation. Pro Kriterium 0–3 Punkte. Insgesamt max. 12 Punkte. Ab 9 Pkt = gut, 6–8 = befriedigend, &lt;6 = überarbeiten.</div>
+    <div id="sm-bewertung"></div>
+    <div id="sm-score" style="margin-top:14px;padding:14px 18px;background:var(--accent-soft);border-radius:10px;font-size:16px;text-align:center;font-weight:700"></div>
+  </div>
+</details>
+
+<div class="quiz-divider"><span>🏆 Teste dein Wissen</span></div>
+
+<details class="accordion" id="wwm-quiz">
+  <summary>🏆 WWM-Quiz · 15 Fragen</summary>
+  <div class="content">
+    <div class="progress-wrap" id="quiz-progress"><div class="progress mixed"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+    <div class="section-actions"><button class="btn gray" id="quiz-reset">Zurücksetzen</button></div>
+    <div id="quiz-tasks"></div>
+    <div id="quiz-result" class="result-card" style="display:none"></div>
+  </div>
+</details>
+
+<footer>
+  <div>Version 02.05.2026, 14:00</div>
+  <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+</footer>
+
+</div>
+<script>
+
+window.PAGE_KEY='sm';
+
+/* ===== Strategien-Karten (rendered via HTML) — keine JS-Daten nötig ===== */
+
+/* ===== Mediation-Aufgaben — gemischt EN→DE und DE→EN ===== */
+const SM_TASKS=[
+  {
+    id:'sm1', dir:'EN→DE', titel:'Brief vom Brieffreund: Wochenend-Trip',
+    src:`<p><b>Hi Lukas,</b><br>thanks for your last email! Last weekend I went to a music festival with my older brother. We took the train to Manchester on Friday afternoon — it took only 2 hours. The festival was huge: about 30,000 people came. My favourite band was on stage at 9 pm. The crowd was singing every song! The only problem was the food: 12 pounds for a small burger. Way too expensive. We slept in a small tent on Saturday night. It rained twice but we didn't get wet. On Sunday we visited the Manchester United stadium before going home. Cheers, Tom</p>`,
+    aufgabe:'Deine Mutter spricht kein Englisch und möchte wissen, was Tom geschrieben hat. Erkläre ihr auf Deutsch in 4–6 Sätzen, was Tom am Wochenende erlebt hat.',
+    starters:['Tom war am Wochenende auf einem …','Er ist mit … gefahren …','Besonders gut fand er …','Ein Problem war, dass …'],
+    musterloesung:'Tom war am Wochenende mit seinem älteren Bruder auf einem Musikfestival in Manchester. Sie sind mit dem Zug hingefahren — die Fahrt dauerte nur zwei Stunden. Es waren etwa 30.000 Besucher dort. Toms Lieblingsband spielte um 21 Uhr und das Publikum hat alle Lieder mitgesungen. Das Essen war allerdings sehr teuer (12 Pfund für einen kleinen Burger). Sie haben in einem kleinen Zelt geschlafen, und obwohl es zweimal geregnet hat, sind sie nicht nass geworden. Am Sonntag haben sie noch das Stadion von Manchester United besucht.'
+  },
+  {
+    id:'sm2', dir:'DE→EN', titel:'Schulplan-Info für Austauschschüler',
+    src:`<p><b>Liebe Eltern,</b><br>am Donnerstag, 14.05., findet der Wandertag der Klasse 10b statt. Treffpunkt ist um 8:30 Uhr am Hauptbahnhof Unna. Wir fahren mit dem Zug nach Dortmund und besichtigen das Deutsche Fußballmuseum. Anschließend gibt es eine Mittagspause am Hansaplatz (Schüler bringen eigenes Geld mit, ca. 8–10 €). Rückkehr ist gegen 16:00 Uhr. Bitte denken Sie an wetterfeste Kleidung. Mit freundlichen Grüßen, Frau Müller</p>`,
+    aufgabe:'Dein Austauschschüler John aus Liverpool versteht kein Deutsch. Schreibe ihm eine kurze E-Mail in Englisch (5–7 Sätze) mit den wichtigsten Infos zum Wandertag.',
+    starters:['Hi John,','I just got info about our school trip on Thursday.','We are going to …','We need to bring …','See you, …'],
+    musterloesung:'Hi John, our school trip is on Thursday, May 14th. We meet at 8:30 a.m. at Unna main station and take the train to Dortmund. We will visit the German Football Museum. After that we have a lunch break at Hansaplatz — please bring around 8–10 € for food. We will be back around 4 p.m. Don\'t forget to wear weather-proof clothes! See you, [Your name]'
+  },
+  {
+    id:'sm3', dir:'EN→DE', titel:'Online-Artikel: Plastic in the ocean',
+    src:`<p><b>Plastic crisis in our oceans</b><br>Every year, around 8 million tons of plastic end up in the world's oceans. Scientists warn that by 2050, there could be more plastic than fish in the seas. Most of the waste comes from single-use products like bottles, bags and food packaging. The plastic breaks down into tiny pieces called microplastics. These are eaten by fish — and end up on our plates. The British government is now planning a ban on single-use plastic cutlery. Experts say this is a small but important step.</p>`,
+    aufgabe:'Deine Großmutter hat den Artikel im Internet gesehen, versteht aber kein Englisch. Erkläre ihr auf Deutsch (4–6 Sätze) das Hauptproblem und was getan wird.',
+    starters:['In dem Artikel geht es um …','Jedes Jahr gelangen … in die Ozeane.','Die britische Regierung plant …','Das Problem für uns Menschen ist …'],
+    musterloesung:'In dem Artikel geht es um Plastikmüll in den Weltmeeren. Jedes Jahr landen rund 8 Millionen Tonnen Plastik in den Ozeanen. Wissenschaftler warnen, dass es 2050 mehr Plastik als Fische geben könnte. Das Plastik zerfällt in winzige Teilchen, die von Fischen gegessen werden — und landet so auch auf unserem Teller. Die britische Regierung will jetzt Plastikbesteck zum Einmal-Gebrauch verbieten. Experten halten das für einen kleinen, aber wichtigen Schritt.'
+  },
+  {
+    id:'sm4', dir:'DE→EN', titel:'Veranstaltungs-Ankündigung',
+    src:`<p><b>Stadtfest Unna 2026</b><br>Vom 12. bis 14. Juni feiert Unna sein 33. Stadtfest. Eröffnung ist am Freitag um 18 Uhr auf dem Marktplatz mit der Live-Band „Sound Express". Am Samstag gibt es einen Bauernmarkt mit regionalen Produkten und Live-Musik. Sonntags findet ab 13 Uhr ein verkaufsoffener Sonntag mit Kinderprogramm im Stadtpark statt. Der Eintritt ist frei. Bei Regen wird das Programm in die Stadthalle verlegt.</p>`,
+    aufgabe:'Schreibe für die englische Tourismus-Website von Unna eine kurze Info (4–6 Sätze) über das Stadtfest.',
+    starters:['From 12 to 14 June, …','The opening event is on …','On Saturday, visitors can …','Admission is …'],
+    musterloesung:'From 12 to 14 June, Unna celebrates its 33rd town festival. The opening event is on Friday at 6 p.m. at the market square with the live band "Sound Express". On Saturday there is a farmers\' market with regional products and live music. On Sunday from 1 p.m. shops are open and there is a children\'s programme in the city park. Admission is free. In case of rain, the programme moves to the town hall.'
+  },
+  {
+    id:'sm5', dir:'EN→DE', titel:'SMS vom Freund',
+    src:`<p><b>From: Sarah</b><br>Hey! Big change of plan. My grandma is in hospital so we have to drive to my aunt's tomorrow. I know we wanted to go to the cinema. Can we move it to next Saturday? Same place, same time. Sorry! And I still owe you the 5 quid from last week — I'll bring it Saturday. Hope that's ok. Sarah</p>`,
+    aufgabe:'Erzähle deiner Mutter auf Deutsch (3–4 Sätze), was Sarah geschrieben hat.',
+    starters:['Sarah hat geschrieben, dass …','Sie schlägt vor, …','Außerdem will sie …'],
+    musterloesung:'Sarah hat geschrieben, dass ihre Großmutter im Krankenhaus liegt und sie morgen zu ihrer Tante fahren muss. Deshalb kann sie nicht mit ins Kino. Sie schlägt vor, den Kinobesuch auf nächsten Samstag zu verschieben — gleiche Zeit, gleicher Ort. Außerdem will sie mir am Samstag die 5 Pfund zurückgeben, die sie mir noch schuldet.'
+  },
+  {
+    id:'sm6', dir:'DE→EN', titel:'Touristen-Info: Bahnhof Unna',
+    src:`<p>Der Bahnhof Unna liegt etwa 10 Gehminuten vom Marktplatz entfernt. Es gibt direkte Verbindungen nach Dortmund (15 Min., alle 20 Minuten) und nach Hamm (12 Min.). Das Bahnhofsgebäude wurde 2019 renoviert. Im Erdgeschoss befindet sich ein Bäcker und eine kleine Touristen-Information (geöffnet Mo–Fr 9–17 Uhr, Sa 9–13 Uhr). Fahrkarten gibt es am Automaten oder per App. Achtung: Kein Schalter mit Personal mehr seit März 2024.</p>`,
+    aufgabe:'Ein englischer Tourist fragt dich am Bahnhof, wie er sich orientieren kann. Schreibe ihm eine kurze Info (4–6 Sätze) auf Englisch.',
+    starters:['The station is about …','There are direct trains to …','You can buy tickets …','The tourist info is open …'],
+    musterloesung:'Unna railway station is about a 10-minute walk from the market square. There are direct trains to Dortmund (15 min, every 20 minutes) and to Hamm (12 min). The station building was renovated in 2019. On the ground floor you find a bakery and a small tourist information (open Mon–Fri 9 a.m.–5 p.m., Sat 9 a.m.–1 p.m.). You can buy tickets at the machine or via the app — there is no staffed counter anymore since March 2024.'
+  },
+  {
+    id:'sm7', dir:'EN→DE', titel:'Schul-Newsletter: New canteen rules',
+    src:`<p><b>From the headteacher:</b><br>Starting next Monday, our school will introduce new canteen rules. From 12:00 to 12:30, only Year 7 and 8 students may use the canteen. From 12:30 to 13:00, it's open for Year 9 to 13. We had to do this because too many students were waiting in line and arriving late to lessons. Free water will be available all day. Please note: bringing food from home is still allowed, of course.</p>`,
+    aufgabe:'Erkläre einem deutschen Mitschüler in der 6. Klasse (3–5 Sätze), was sich in der Mensa ändert.',
+    starters:['Ab nächstem Montag …','Die 7. und 8. Klasse darf …','Älter Schüler dürfen …','Der Grund ist, …'],
+    musterloesung:'Ab nächstem Montag gibt es neue Regeln in der Mensa. Die 7. und 8. Klasse darf nur von 12:00 bis 12:30 Uhr in die Mensa, danach (12:30–13:00 Uhr) sind die Klassen 9 bis 13 dran. Der Grund ist, dass zu viele Schüler in der Schlange standen und zu spät zum Unterricht kamen. Wasser gibt es weiterhin den ganzen Tag kostenlos. Eigenes Essen darf man natürlich auch noch mitbringen.'
+  },
+  {
+    id:'sm8', dir:'DE→EN', titel:'Vereins-Information für Austauschschüler',
+    src:`<p><b>Sportverein TuS Unna</b><br>Der Verein bietet Fußball, Volleyball, Tischtennis und Schwimmen für Jugendliche zwischen 13 und 18 Jahren. Mitgliedsbeitrag: 12 € im Monat (ermäßigt 6 € für Schüler). Training ist immer dienstags und donnerstags ab 17 Uhr in der Sporthalle der Hellweg-Realschule. Neue Mitglieder sind herzlich willkommen — die ersten zwei Trainingseinheiten sind kostenlos zum Reinschnuppern.</p>`,
+    aufgabe:'Dein Austauschschüler interessiert sich für Sport. Schreibe ihm eine kurze E-Mail (5–7 Sätze) auf Englisch über den Verein.',
+    starters:['Hi [name],','You can join …','The fee is …','Training takes place …','Hope to see you there!'],
+    musterloesung:'Hi [name], the local sports club "TuS Unna" might be interesting for you. They offer football, volleyball, table tennis and swimming for teenagers between 13 and 18 years old. The fee is 12 € per month, but only 6 € if you\'re a student. Training takes place every Tuesday and Thursday from 5 p.m. in the gym of Hellweg-Realschule. New members are welcome — the first two training sessions are free, so you can just try it out. Hope to see you there!'
+  }
+];
+
+const quizPool=[
+  // d=1 (10 Fragen) — Grundlagen
+  {prompt:'Was bedeutet "Sprachmittlung"?',options:['Wort-für-Wort-Übersetzung','Sinn übertragen für einen bestimmten Adressaten','Auswendiglernen englischer Sätze','Ausschließlich vom Englischen ins Deutsche'],correct:1,explanation:'Sprachmittlung = sinngemäße Übertragung, Adressat im Blick.',d:1},
+  {prompt:'Du übersetzt einen englischen Text für deine Oma. Was solltest du beachten?',options:['Alle Fachbegriffe direkt übernehmen','Nur die Hauptpunkte verständlich erklären','So lang wie möglich antworten','Englische Zitate einfügen'],correct:1,explanation:'Adressatenbezug → Hauptpunkte einfach erklären.',d:1},
+  {prompt:'Welche Information gehört in eine Mediation IMMER?',options:['Datum des Originaltextes','Persönliche Meinung der Schreibenden','Die für den Adressaten relevanten Inhalte','Eine Übersetzung aller Eigennamen'],correct:2,explanation:'Adressatenbezug bestimmt die Inhalte.',d:1},
+  {prompt:'Welche Phrase eignet sich für die Einleitung einer englischen Mediation?',options:['"In the German text I read…"','"And then he said…"','"By the way, I think…"','"PS:"'],correct:0,explanation:'Neutraler Einstieg + Quellenangabe.',d:1},
+  {prompt:'Was ist ein typischer Fehler bei der Sprachmittlung?',options:['Adressatenbezug beachten','Wort-für-Wort übersetzen','Sätze vereinfachen','Wichtige Infos auswählen'],correct:1,explanation:'Wort-für-Wort funktioniert nicht — Sinn ist wichtig.',d:1},
+  {prompt:'In welcher Sprache schreibst du deine Mediation?',options:['Immer auf Englisch','Immer auf Deutsch','In der Sprache des Adressaten','In beiden Sprachen gemischt'],correct:2,explanation:'Adressat → Sprache.',d:1},
+  {prompt:'Welche Anrede passt zu einer förmlichen E-Mail?',options:['Hey there','Yo,','Dear Mr Smith','What\'s up'],correct:2,explanation:'„Dear Mr/Ms" ist förmlich.',d:1},
+  {prompt:'Welche Phrase leitet eine Zusammenfassung ein?',options:['"To sum up…"','"Anyway, …"','"Whatever, …"','"OMG…"'],correct:0,explanation:'„To sum up" ist eine Standardphrase.',d:1},
+  {prompt:'Was ist Hauptziel einer Mediation?',options:['Sprachfehler des Originaltextes ausbessern','Den Inhalt für einen anderen Adressaten verständlich machen','Den Originaltext kritisieren','Möglichst viele neue Vokabeln einbauen'],correct:1,explanation:'Verständlich für anderen Adressaten.',d:1},
+  {prompt:'Wenn deine Schwester (8 Jahre) etwas verstehen soll, solltest du …',options:['…viele Fremdwörter benutzen','…einfache, kurze Sätze schreiben','…den Text 1:1 übersetzen','…nur Stichpunkte schreiben'],correct:1,explanation:'Adressat = jüngeres Kind → einfache Sprache.',d:1},
+  // d=2 (14 Fragen) — Anwendung
+  {prompt:'Englischer Text: "Tickets cost £8 for adults and £4 for children under 12." Wie sagst du das deiner Mutter auf Deutsch?',options:['Tickets sind 8 für Adults und 4 für Kids','Eintritt: 8 Pfund für Erwachsene, 4 Pfund für Kinder unter 12','Tickets cost 8 pounds for adults','Es kostet etwa 8 Euro pro Person'],correct:1,explanation:'Sinnübertragung mit korrekter Währung.',d:2},
+  {prompt:'Deutscher Text: "Anmeldungen sind bis zum 15.05. erforderlich." Wie übermittelst du das auf Englisch?',options:['You have to register until 15 May','Please register by 15 May','You have time to register from 15 May','Register on 15 May'],correct:1,explanation:'„by 15 May" = bis spätestens 15.05.',d:2},
+  {prompt:'Du erklärst auf Deutsch einen englischen Text. Welcher Stil ist passend für eine Information an einen Lehrer?',options:['Sehr förmlich, Konjunktiv','Locker, Slang','Sachlich, höflich','Ironisch'],correct:2,explanation:'Sachlich-höflich passt für Lehrer-Adressat.',d:2},
+  {prompt:'Welche Phrase zitiert eine fremde Aussage?',options:['"The text says that…"','"I always think that…"','"My friend told me…"','"Yesterday, I saw…"'],correct:0,explanation:'„The text says that" ist Standard-Zitierweise.',d:2},
+  {prompt:'Welche Information darfst du beim Mediatieren weglassen?',options:['Eine Telefonnummer für die Anmeldung','Eine Detailbeschreibung des Wetters, das nichts mit der Aufgabe zu tun hat','Den Treffpunkt einer Veranstaltung','Den Preis einer Eintrittskarte'],correct:1,explanation:'Adressatenrelevanz: irrelevante Details streichen.',d:2},
+  {prompt:'Englisch: "It might rain on Saturday." Sinnvolle deutsche Wiedergabe für eine Touristin:',options:['Am Samstag wird es definitiv regnen','Am Samstag könnte es regnen','Samstag regnet es nicht','Samstag-Wetter unbekannt'],correct:1,explanation:'„might" = Vermutung → „könnte".',d:2},
+  {prompt:'Welche Anrede passt für eine englische E-Mail an einen Klassenkameraden?',options:['Dear Sir or Madam','Hi Tom,','To whom it may concern','Honoured Sir'],correct:1,explanation:'„Hi" passt für Klassenkamerad.',d:2},
+  {prompt:'Wie schließt du eine informelle englische E-Mail an einen Freund ab?',options:['Yours faithfully','Best regards','Cheers','Sincerely yours'],correct:2,explanation:'„Cheers" ist informell.',d:2},
+  {prompt:'Wie schließt du eine FÖRMLICHE englische E-Mail ab (du kennst den Namen)?',options:['Yours faithfully','Yours sincerely','Best','See ya'],correct:1,explanation:'„Yours sincerely" wenn der Name bekannt ist.',d:2},
+  {prompt:'Welche Phrase passt zum Bewerten/Kommentieren in einer Mediation?',options:['"In my opinion, …" (DE: Meiner Meinung nach …)','"Once upon a time, …"','"By the way, …"','"P.S.:"'],correct:0,explanation:'„In my opinion" leitet eine Bewertung ein.',d:2},
+  {prompt:'Englisch: "The exhibition is closed on Mondays." Welche deutsche Wiedergabe ist treffend?',options:['Die Ausstellung ist montags geöffnet','Die Ausstellung schließt am Montag','Die Ausstellung ist montags geschlossen','Die Ausstellung öffnet montags spät'],correct:2,explanation:'„closed on Mondays" = montags geschlossen.',d:2},
+  {prompt:'Welche dieser Stilebenen passt zu einer E-Mail an die Schulleiterin?',options:['Slang','Umgangssprachlich','Sachlich-formell','Ironisch'],correct:2,explanation:'Schulleiterin → sachlich-formell.',d:2},
+  {prompt:'Was machst du, wenn dein Adressat keine Fachbegriffe kennt?',options:['Ich übernehme die Begriffe einfach','Ich erkläre sie kurz oder ersetze sie','Ich lasse sie weg','Ich frage nach'],correct:1,explanation:'Adressatengerecht: erklären oder ersetzen.',d:2},
+  {prompt:'Englisch: "Please bring your own bottle." → adressatengerecht für jüngere Kinder auf Deutsch:',options:['Bringt eure eigene Trinkflasche mit','Es wird empfohlen, eigene Wasserflaschen mitzubringen','Mitnahme persönlicher Trinkbehältnisse erwünscht','Bring your bottle'],correct:0,explanation:'Einfache, direkte Sprache.',d:2},
+  // d=3 (16 Fragen) — Transfer/Nuance
+  {prompt:'Welcher Satz übermittelt am besten die Höflichkeit eines englischen Originals: "Could you possibly let us know…"?',options:['Sag uns Bescheid','Könntest du uns vielleicht informieren …','Sag mal!','Wann kommt die Info?'],correct:1,explanation:'Höflichkeitsregister bewahren.',d:3},
+  {prompt:'In einem Brief steht "I had a blast last weekend." Sinnvolle Wiedergabe für deine Mutter:',options:['Letztes Wochenende ist mir was geplatzt','Letztes Wochenende hatte ich riesigen Spaß','Letztes Wochenende war eine Explosion','Letztes Wochenende war ich erschöpft'],correct:1,explanation:'„had a blast" = Riesenspaß (idiomatisch).',d:3},
+  {prompt:'Welche Information solltest du in einer englischen Touri-Info NIE weglassen?',options:['Eine bunte Anekdote des Originalautors','Öffnungszeiten und Adresse','Eine Wetterbeschreibung','Den Verfasser des Originals'],correct:1,explanation:'Praktische Infos sind adressatenrelevant.',d:3},
+  {prompt:'Wie übersetzt du sinngemäß: "Brexit caused major problems for British tourists in Spain."?',options:['Der Brexit hat britischen Touristen in Spanien große Probleme gebracht','Brexit war Problem','Touristen brexiten nicht mehr nach Spanien','Spanien-Tour war schlecht'],correct:0,explanation:'Inhalt + grammatische Korrektheit.',d:3},
+  {prompt:'Was bedeutet "stilistisch passend mediatieren"?',options:['Möglichst viele Adjektive einbauen','Den Sprachstil dem Adressaten und Anlass anpassen','Möglichst kurz halten','Wörter einfach übernehmen'],correct:1,explanation:'Stilebene = Adressat + Anlass.',d:3},
+  {prompt:'Welcher Fehler ist typisch und KOSTET Punkte?',options:['Sätze umformulieren','Den Adressatenstil verfehlen','Phrasen aus der Phrasenliste benutzen','Stichpunkte zur Vorbereitung machen'],correct:1,explanation:'Adressat verfehlt = wertvoller Inhalt geht verloren.',d:3},
+  {prompt:'Englisch: "We are looking forward to your reply." → Förmliches Deutsch:',options:['Wir freuen uns auf deine Antwort','Antwort schicken!','Wir erwarten gespannt Ihre Antwort','Antworten Sie schnell'],correct:2,explanation:'„Wir erwarten gespannt Ihre Antwort" ist förmlich.',d:3},
+  {prompt:'Welche dieser Phrasen passt NICHT zu einer Sachinformation?',options:['"According to the article, …"','"As reported in the text, …"','"The text says that…"','"OMG, you guys, …"'],correct:3,explanation:'„OMG" passt nicht zu Sachinformationen.',d:3},
+  {prompt:'Du sollst einen englischen Witz auf Deutsch übermitteln. Wenn er auf einem Wortspiel beruht, …',options:['…übersetze Wort für Wort','…erkläre den Witz kurz, statt ihn zu übersetzen','…lass ihn weg','…behalte den englischen Wortlaut'],correct:1,explanation:'Wortspiele lassen sich oft nur erklären.',d:3},
+  {prompt:'Was machst du mit Eigennamen (z. B. "King\'s College")?',options:['Übersetzen','Beibehalten + ggf. kurz erklären','Weglassen','Ins Deutsche umformen'],correct:1,explanation:'Eigennamen bleiben, ggf. erklären.',d:3},
+  {prompt:'Was machst du mit Maßeinheiten wie miles, gallons, pounds (Geld vs. Gewicht)?',options:['Immer beibehalten','Ggf. ins metrische System umrechnen oder klar markieren','Komplett weglassen','Erfinden'],correct:1,explanation:'Adressatengerecht: ggf. umrechnen.',d:3},
+  {prompt:'Englisch: "He was over the moon when he heard the news." Adressatengerecht auf Deutsch:',options:['Er flog zum Mond bei der Nachricht','Er war überglücklich über die Nachricht','Er war im Mond','Er stand unter dem Mond'],correct:1,explanation:'Idiom = Sinn übertragen.',d:3},
+  {prompt:'Was tust du, wenn dir ein Wort fehlt?',options:['Aufgabe abbrechen','Einen passenden Umweg-Begriff (Umschreibung) finden','Lücke lassen','Deutsches Wort einfügen'],correct:1,explanation:'Umschreiben statt aufgeben.',d:3},
+  {prompt:'Welche Reihenfolge solltest du in einer Mediation einhalten?',options:['Schluss → Mitte → Anfang','Einleitung → Hauptpunkte → Schluss/Abschluss','Hauptpunkte zuerst, danach Erklärung','Beliebige Reihenfolge'],correct:1,explanation:'Klassischer Aufbau: Einleitung – Inhalt – Schluss.',d:3},
+  {prompt:'Du sollst eine kritische Stellungnahme in einer Mediation einbauen. Welche Phrase eignet sich?',options:['"It seems to me that…" / "Mir scheint, dass…"','"And then…"','"PS:"','"I forgot that"'],correct:0,explanation:'„It seems to me" leitet eine Stellungnahme ein.',d:3},
+  {prompt:'Englisch: "The new law has been criticised heavily." → Sinnvolle Wiedergabe:',options:['Das Gesetz hat man stark gelobt','Das neue Gesetz wurde stark kritisiert','Das Gesetz wurde verboten','Niemand mag das Gesetz'],correct:1,explanation:'Passiv korrekt übertragen.',d:3}
+];
+
+
+/* ===== Page-Setup ===== */
+function renderSmTasks(){
+  const list=document.getElementById('sm-tasks-list');
+  list.innerHTML='';
+  SM_TASKS.forEach((t,i)=>{
+    const wrap=document.createElement('div');wrap.className='task';wrap.style.padding='16px 18px';
+    const dirBadge='<span style="display:inline-block;background:'+(t.dir==='EN→DE'?'var(--info-soft)':'var(--accent-soft)')+';color:'+(t.dir==='EN→DE'?'var(--info)':'var(--accent-strong)')+';border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:8px">'+t.dir+'</span>';
+    wrap.innerHTML='<div class="task-prompt"><span class="task-num">'+(i+1)+'</span> '+t.titel+dirBadge+'</div>';
+    const src=document.createElement('div');src.className='read-text';src.innerHTML='<div class="meta">Quelltext:</div>'+t.src;
+    wrap.appendChild(src);
+    const auf=document.createElement('div');auf.style.cssText='background:var(--info-soft);border-left:3px solid var(--info);padding:10px 14px;border-radius:6px;margin:10px 0';
+    auf.innerHTML='<b>📌 Aufgabe:</b> '+t.aufgabe;
+    wrap.appendChild(auf);
+    const start=document.createElement('div');start.style.cssText='background:var(--bg-card-hover);padding:10px 14px;border-radius:6px;margin:10px 0;font-size:13px';
+    start.innerHTML='<b>Sentence-Starters:</b><ul style="margin:6px 0 0 18px">'+t.starters.map(s=>'<li>'+s+'</li>').join('')+'</ul>';
+    wrap.appendChild(start);
+    const det=document.createElement('details');det.style.marginTop='10px';
+    det.innerHTML='<summary style="cursor:pointer;font-weight:600;color:var(--accent-strong);padding:8px 0">💡 Modell-Antwort anzeigen</summary><div style="background:var(--success-soft);border-left:3px solid var(--success);padding:10px 14px;border-radius:6px;margin-top:6px;line-height:1.6">'+t.musterloesung+'</div>';
+    wrap.appendChild(det);
+    list.appendChild(wrap);
+  });
+}
+
+function renderBewertung(){
+  const cont=document.getElementById('sm-bewertung');
+  const KRIT=[
+    {k:'Inhalt',f:'Wurden alle wichtigen Punkte des Quelltexts übernommen?'},
+    {k:'Adressatenbezug',f:'Passt Stil/Register zum Empfänger?'},
+    {k:'Sprachliche Mittel',f:'Wortschatz, Phrasen, korrekte Zeitformen?'},
+    {k:'Form & Gliederung',f:'Einleitung – Hauptteil – Schluss erkennbar?'}
+  ];
+  cont.innerHTML='';
+  const scores={};
+  KRIT.forEach((k,i)=>{
+    const row=document.createElement('div');row.style.cssText='background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin:8px 0';
+    row.innerHTML='<div style="font-weight:700;color:var(--accent-strong);margin-bottom:4px">'+k.k+'</div><div style="font-size:13px;color:var(--text-dim);margin-bottom:8px">'+k.f+'</div>';
+    const opts=document.createElement('div');opts.style.cssText='display:flex;gap:6px;flex-wrap:wrap';
+    [0,1,2,3].forEach(p=>{
+      const b=document.createElement('button');b.className='mc-opt';b.style.flex='1';b.style.minWidth='80px';b.textContent=p+' Pkt';
+      b.onclick=()=>{scores[i]=p;Array.from(opts.children).forEach(x=>x.classList.remove('correct'));b.classList.add('correct');updateSmScore();};
+      opts.appendChild(b);
+    });
+    row.appendChild(opts);
+    cont.appendChild(row);
+  });
+  window._smScores=scores;
+  function updateSmScore(){
+    const total=Object.values(scores).reduce((a,b)=>a+b,0);
+    const max=KRIT.length*3;
+    const note=total>=9?'🏆 Sehr gut':total>=6?'👍 Befriedigend':'📚 Überarbeiten';
+    document.getElementById('sm-score').innerHTML=note+' · '+total+'/'+max+' Punkte';
+  }
+  document.getElementById('sm-score').innerHTML='Wähle pro Kriterium 0–3 Punkte ↑';
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  renderSmTasks();
+  renderBewertung();
+  const quizBox=document.getElementById('wwm-quiz');
+  initQuiz(quizPool,quizBox);
+});
+
+/* ============= SHARED ENGINE: Helpers + renderTasks + Quiz + Dark/TTS/Reset ============= */
+function _norm(s){return (s||'').toString().trim().toLowerCase().replace(/\s+/g,' ').replace(/[‘’ʼ]/g,"'").replace(/[“”]/g,'"').replace(/[.,!?;:]+$/,'');}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickN(arr,n){return shuffle(arr).slice(0,Math.min(n,arr.length));}
+function pb_load(key){try{return JSON.parse(localStorage.getItem(key)||'{}');}catch(e){return{};}}
+function pb_save(key,obj){try{localStorage.setItem(key,JSON.stringify(obj));}catch(e){}}
+function taskHash(t){return (JSON.stringify(t.prompt||t.q||t.text||'')+'|'+JSON.stringify(t.answer||t.options||'')).slice(0,90);}
+function initBar(wrap){const fill=wrap.querySelector('.progress-fill');const txt=wrap.querySelector('.progress-text');return{set(c,t){const pct=t?Math.round(c/t*100):0;fill.style.width=pct+'%';txt.textContent='Fortschritt: '+c+'/'+t+' richtig ('+pct+'%)';},reset(){fill.style.width='0%';txt.textContent='Fortschritt: 0/0 richtig (0%)';}};}
+function isCorrect(user,answers){if(!Array.isArray(answers))answers=[answers];const u=_norm(user);return answers.some(a=>_norm(a)===u);}
+
+/* ===== renderTasks: MC, Freitext, Notizaufgabe ===== */
+function renderTasks(container,tasks,storageKey){
+  container.innerHTML='';
+  const state=pb_load(storageKey);
+  const wrap=container.parentElement.querySelector('.progress-wrap');
+  const bar=wrap?initBar(wrap):null;
+  let correct=0;
+  tasks.forEach((t,idx)=>{
+    const card=document.createElement('div');card.className='task';
+    const hash=taskHash(t);
+    const saved=state[hash];
+    if(t.type==='mc' || (Array.isArray(t.options) && typeof t.correct==='number')){
+      // Multiple Choice
+      const promptHtml='<div class="task-prompt"><span class="task-num">'+(idx+1)+'</span> '+(t.prompt||t.q)+'</div>';
+      card.innerHTML=promptHtml;
+      const opts=document.createElement('div');opts.className='mc-options';
+      const shuffled=t.shuffleOptions===false?t.options.map((o,i)=>({o,i})):shuffle(t.options.map((o,i)=>({o,i})));
+      shuffled.forEach(({o,i})=>{
+        const btn=document.createElement('button');btn.className='mc-opt';btn.textContent=o;
+        btn.onclick=()=>{
+          if(card.dataset.done)return;
+          card.dataset.done='1';
+          const ok=(i===t.correct);
+          btn.classList.add(ok?'correct':'wrong');
+          if(!ok){
+            const right=opts.children[shuffled.findIndex(x=>x.i===t.correct)];
+            if(right)right.classList.add('correct');
+          }
+          const fb=document.createElement('div');fb.className='feedback '+(ok?'ok':'bad');
+          fb.innerHTML=ok?'✅ Richtig!':'❌ Leider falsch.'+(t.explanation?' <em>'+t.explanation+'</em>':'');
+          card.appendChild(fb);
+          if(ok){correct++;state[hash]=1;pb_save(storageKey,state);}else{state[hash]=0;pb_save(storageKey,state);}
+          if(bar)bar.set(correct,tasks.length);
+        };
+        opts.appendChild(btn);
+      });
+      card.appendChild(opts);
+      if(saved===1){correct++;card.dataset.done='1';opts.querySelectorAll('.mc-opt').forEach((b,bi)=>{if(shuffled[bi].i===t.correct)b.classList.add('correct');b.disabled=true;});}
+    } else if(t.type==='tf' && Array.isArray(t.items)){
+      // True/False/Not given Mehrfach-Item-Karte
+      card.innerHTML='<div class="task-prompt"><span class="task-num">'+(idx+1)+'</span> '+(t.prompt||'True / False / Not given')+'</div>';
+      const list=document.createElement('div');list.className='tf-list';
+      t.items.forEach((it,ii)=>{
+        const row=document.createElement('div');row.className='tf-row';
+        row.innerHTML='<div class="tf-stmt">'+it.s+'</div>';
+        const btns=document.createElement('div');btns.className='tf-btns';
+        ['True','False','Not given'].forEach((label,bi)=>{
+          const b=document.createElement('button');b.className='mc-opt tf-btn';b.textContent=label;
+          b.onclick=()=>{
+            if(row.dataset.done)return;
+            row.dataset.done='1';
+            const want=it.a;
+            const ok=(label.toLowerCase().replace(' ','')===want.toLowerCase().replace(' ',''));
+            b.classList.add(ok?'correct':'wrong');
+            if(!ok){btns.querySelectorAll('.tf-btn').forEach(x=>{if(x.textContent.toLowerCase().replace(' ','')===want.toLowerCase().replace(' ',''))x.classList.add('correct');});}
+            const fb=document.createElement('div');fb.className='feedback '+(ok?'ok':'bad');fb.style.fontSize='13px';fb.innerHTML=(ok?'✅ ':'❌ Korrekt: '+want+'. ')+(it.why||'');
+            row.appendChild(fb);
+            const itemHash=hash+'_'+ii;state[itemHash]=ok?1:0;pb_save(storageKey,state);
+            if(ok){correct++;}
+            if(bar)bar.set(correct,tasks.length);
+          };
+          btns.appendChild(b);
+        });
+        row.appendChild(btns);
+        list.appendChild(row);
+      });
+      card.appendChild(list);
+    } else {
+      // Freitext / Lückenfüller
+      card.innerHTML='<div class="task-prompt"><span class="task-num">'+(idx+1)+'</span> '+(t.prompt||t.q)+'</div>';
+      const inp=document.createElement('input');inp.type='text';inp.className='ft-input';inp.placeholder=t.placeholder||'Antwort eingeben…';
+      const btn=document.createElement('button');btn.className='btn';btn.textContent='Prüfen';
+      const sol=document.createElement('button');sol.className='btn gray';sol.textContent='Lösung';
+      const wrap2=document.createElement('div');wrap2.className='ft-wrap';
+      wrap2.appendChild(inp);wrap2.appendChild(btn);wrap2.appendChild(sol);
+      card.appendChild(wrap2);
+      const fb=document.createElement('div');fb.className='feedback';card.appendChild(fb);
+      btn.onclick=()=>{
+        if(card.dataset.done)return;
+        const ok=isCorrect(inp.value,t.answer);
+        if(ok){
+          card.dataset.done='1';
+          fb.classList.add('ok');fb.innerHTML='✅ Richtig!'+(t.explanation?' <em>'+t.explanation+'</em>':'');
+          state[hash]=1;correct++;pb_save(storageKey,state);
+          if(bar)bar.set(correct,tasks.length);
+          inp.disabled=true;
+        } else {
+          fb.classList.remove('ok');fb.classList.add('bad');
+          fb.innerHTML='❌ Versuche es nochmal.'+(t.hint?' <em>Tipp: '+t.hint+'</em>':'');
+        }
+      };
+      sol.onclick=()=>{
+        const a=Array.isArray(t.answer)?t.answer[0]:t.answer;
+        inp.value=a;fb.classList.remove('bad');fb.classList.add('ok');
+        fb.innerHTML='💡 Lösung: <b>'+a+'</b>'+(t.explanation?' <em>'+t.explanation+'</em>':'');
+        card.dataset.done='1';inp.disabled=true;
+      };
+      inp.addEventListener('keydown',e=>{if(e.key==='Enter')btn.click();});
+      if(saved===1){correct++;card.dataset.done='1';inp.value=Array.isArray(t.answer)?t.answer[0]:t.answer;inp.disabled=true;fb.classList.add('ok');fb.innerHTML='✅ Bereits richtig gelöst.';}
+    }
+    container.appendChild(card);
+  });
+  if(bar)bar.set(correct,tasks.length);
+}
+
+/* ===== Section-Setup ===== */
+function setupSection(key,pool,n,resetBtn,rerollBtn,checkBtn){
+  const tasksEl=document.getElementById(key+'-tasks');
+  const storageKey='pb_'+(window.PAGE_KEY||'page')+'_'+key;
+  function render(){const picks=pickN(pool,n);renderTasks(tasksEl,picks,storageKey);}
+  if(resetBtn)resetBtn.onclick=()=>{if(confirm('Diesen Abschnitt zurücksetzen?')){localStorage.removeItem(storageKey);render();}};
+  if(rerollBtn)rerollBtn.onclick=render;
+  if(checkBtn)checkBtn.onclick=()=>{tasksEl.querySelectorAll('.task').forEach(c=>{if(!c.dataset.done){const b=c.querySelector('.btn');if(b)b.click();}});};
+  render();
+}
+
+/* ===== Quiz (WWM-Style, 15 Fragen aus >=40 Pool, 3 Joker, Geldleiter) ===== */
+const WWM_AMOUNTS=['50€','100€','200€','300€','500€','1.000€','2.000€','4.000€','8.000€','16.000€','32.000€','64.000€','125.000€','500.000€','1 Mio. €'];
+function pickByDifficulty(pool,d1n,d2n,d3n){
+  const d1=pool.filter(q=>q.d===1),d2=pool.filter(q=>q.d===2),d3=pool.filter(q=>q.d===3);
+  return shuffle([...pickN(d1,d1n),...pickN(d2,d2n),...pickN(d3,d3n)]);
+}
+function initQuiz(pool,quizContainer){
+  const tasksEl=quizContainer.querySelector('#quiz-tasks');
+  const resBtn=quizContainer.querySelector('#quiz-reset');
+  const resultEl=quizContainer.querySelector('#quiz-result');
+  const progress=quizContainer.querySelector('#quiz-progress');
+  let questions=[],idx=0,correct=0,wrongs=[],streak=0,jokerUsed={fifty:false,phone:false,aud:false},startTime=0;
+  function render(){
+    if(idx>=questions.length){return showFinal();}
+    const q=questions[idx];
+    const lvlIdx=Math.min(idx,WWM_AMOUNTS.length-1);
+    const ladder='<div class="wwm-ladder">'+WWM_AMOUNTS.map((amt,i)=>'<div class="wwm-rung'+(i===lvlIdx?' active':'')+(i<idx?' won':'')+([4,9,14].includes(i)?' milestone':'')+'">'+(i+1)+'. '+amt+'</div>').reverse().join('')+'</div>';
+    const jokers='<div class="wwm-jokers"><button class="jk" id="jk-fifty"'+(jokerUsed.fifty?' disabled':'')+'>50:50</button><button class="jk" id="jk-phone"'+(jokerUsed.phone?' disabled':'')+'>📞 Telefon</button><button class="jk" id="jk-aud"'+(jokerUsed.aud?' disabled':'')+'>👥 Publikum</button></div>';
+    const streakBox=streak>=3?'<div class="streak-box">🔥 '+streak+'er-Streak!</div>':'';
+    tasksEl.innerHTML=ladder+'<div class="wwm-card"><div class="wwm-q">Frage '+(idx+1)+'/'+questions.length+': '+q.prompt+'</div>'+jokers+streakBox+'<div class="wwm-options" id="wwm-opts"></div><div class="wwm-fb" id="wwm-fb"></div></div>';
+    const optsEl=tasksEl.querySelector('#wwm-opts');
+    const optMap=q.options.map((o,i)=>({o,i}));
+    optMap.forEach(({o,i})=>{
+      const b=document.createElement('button');b.className='mc-opt';b.textContent=String.fromCharCode(65+i)+'. '+o;
+      b.onclick=()=>answer(i,b);
+      optsEl.appendChild(b);
+    });
+    document.getElementById('jk-fifty').onclick=()=>{if(jokerUsed.fifty)return;jokerUsed.fifty=true;document.getElementById('jk-fifty').disabled=true;
+      // 50:50 entfernt 2 falsche Antworten
+      const wrongOpts=[];optMap.forEach(({i})=>{if(i!==q.correct)wrongOpts.push(i);});
+      shuffle(wrongOpts).slice(0,2).forEach(wi=>{const b=optsEl.children[wi];if(b){b.style.opacity='0.25';b.disabled=true;}});};
+    document.getElementById('jk-phone').onclick=()=>{if(jokerUsed.phone)return;jokerUsed.phone=true;document.getElementById('jk-phone').disabled=true;
+      const correct70=Math.random()>0.3;const guess=correct70?q.correct:Math.floor(Math.random()*q.options.length);
+      alert('📞 Telefonjoker:\n"Hmm, ich glaube es ist '+String.fromCharCode(65+guess)+'."'+(correct70?'':' (klingt aber unsicher…)'));};
+    document.getElementById('jk-aud').onclick=()=>{if(jokerUsed.aud)return;jokerUsed.aud=true;document.getElementById('jk-aud').disabled=true;
+      // Publikum: 60% richtig, Rest verteilt
+      const dist=[0,0,0,0];const correctPct=Math.random()>0.3?(50+Math.random()*30):(20+Math.random()*30);dist[q.correct]=Math.round(correctPct);
+      let rem=100-dist[q.correct];for(let i=0;i<q.options.length;i++){if(i===q.correct)continue;const v=i===q.options.length-1?rem:Math.round(Math.random()*rem);dist[i]=v;rem-=v;if(rem<0)rem=0;}
+      alert('👥 Publikumsjoker:\n'+q.options.map((o,i)=>String.fromCharCode(65+i)+': '+dist[i]+'%').join('\n'));};
+  }
+  function answer(i,btn){
+    const q=questions[idx];const ok=(i===q.correct);
+    btn.classList.add(ok?'correct':'wrong');
+    const fb=document.getElementById('wwm-fb');
+    if(ok){correct++;streak++;fb.className='wwm-fb ok';fb.innerHTML='✅ Richtig! <em>'+(q.explanation||'')+'</em>';}
+    else{wrongs.push({q:q.prompt,correct:q.options[q.correct],chosen:q.options[i],expl:q.explanation||''});streak=0;fb.className='wwm-fb bad';fb.innerHTML='❌ Falsch. Richtig wäre: <b>'+q.options[q.correct]+'</b>. '+(q.explanation||'');
+      const right=Array.from(document.querySelectorAll('#wwm-opts .mc-opt')).find(b=>b.textContent.startsWith(String.fromCharCode(65+q.correct)+'.'));
+      if(right)right.classList.add('correct');}
+    document.querySelectorAll('#wwm-opts .mc-opt').forEach(b=>b.disabled=true);
+    updateBar();
+    setTimeout(()=>{idx++;if(idx>=questions.length||(!ok && idx<questions.length)){if(!ok){idx=questions.length;showFinal();return;}}render();},1700);
+  }
+  function updateBar(){const fill=progress.querySelector('.progress-fill');const txt=progress.querySelector('.progress-text');const pct=Math.round(correct/questions.length*100);fill.style.width=pct+'%';txt.textContent='Fortschritt: '+correct+'/'+questions.length+' richtig ('+pct+'%)';}
+  function showFinal(){
+    const won=correct>=14?WWM_AMOUNTS[14]:correct>=9?WWM_AMOUNTS[9]:correct>=4?WWM_AMOUNTS[4]:'0€';
+    const emoji=correct>=14?'🏆':correct>=10?'🎉':correct>=6?'👍':'📚';
+    const head=correct>=14?'Millionär!':correct>=10?'Stark!':correct>=6?'Solide.':'Üben hilft.';
+    let html='<div class="result-card"><div style="font-size:48px">'+emoji+'</div><h3>'+head+'</h3><p>'+correct+' von '+questions.length+' richtig · gewonnen: <b>'+won+'</b></p>';
+    if(wrongs.length){html+='<details><summary>Fehler ansehen ('+wrongs.length+')</summary><ul style="text-align:left;font-size:14px;line-height:1.6;margin-top:8px">';
+      wrongs.forEach(w=>{html+='<li><b>Frage:</b> '+w.q+'<br><b>Du:</b> '+w.chosen+' · <b>Richtig:</b> '+w.correct+(w.expl?'<br><em>'+w.expl+'</em>':'')+'</li>';});html+='</ul></details>';}
+    html+='<button class="btn" onclick="location.reload()">Nochmal versuchen</button></div>';
+    resultEl.innerHTML=html;resultEl.style.display='block';tasksEl.style.display='none';
+  }
+  function start(){questions=pickByDifficulty(pool,4,5,6);if(questions.length<15){const rest=pool.filter(p=>!questions.includes(p));questions=questions.concat(pickN(rest,15-questions.length));}idx=0;correct=0;wrongs=[];streak=0;jokerUsed={fifty:false,phone:false,aud:false};startTime=Date.now();resultEl.style.display='none';tasksEl.style.display='block';render();updateBar();}
+  resBtn.onclick=()=>{if(confirm('Quiz neu starten?'))start();};
+  // Erst beim ersten Öffnen rendern
+  const acc=quizContainer.closest('details');
+  let started=false;
+  acc.addEventListener('toggle',()=>{if(acc.open && !started){started=true;start();}});
+  if(acc.open){started=true;start();}
+}
+
+/* ===== Dark Mode (System-Default + manueller Override) ===== */
+(function(){const stored=localStorage.getItem('darkMode');const sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;const useDark=stored==='1'||(stored===null && sysDark);if(useDark)document.body.classList.add('dark-mode');const btn=document.getElementById('dark-toggle');if(btn){btn.textContent=useDark?'☀️ Hell':'🌙 Dark Mode';btn.onclick=()=>{const on=document.body.classList.toggle('dark-mode');btn.textContent=on?'☀️ Hell':'🌙 Dark Mode';try{localStorage.setItem('darkMode',on?'1':'0');}catch(e){}};}})();
+
+/* ===== TTS (Web Speech API) ===== */
+const TTS={enabled:false,toggle(){this.enabled=!this.enabled;const b=document.getElementById('tts-toggle');if(b)b.textContent=this.enabled?'🔇 TTS aus':'🔊 Vorlesen';},speak(text,lang,rate){if(!this.enabled || !window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang||'en-US';u.rate=rate||0.95;window.speechSynthesis.speak(u);},stop(){if(window.speechSynthesis)window.speechSynthesis.cancel();}};
+(function(){const b=document.getElementById('tts-toggle');if(b)b.onclick=()=>TTS.toggle();})();
+
+/* ===== Reset-All Button ===== */
+function resetAllProgress(prefix){if(!confirm('Gesamten Fortschritt dieser Seite zurücksetzen?'))return;const keys=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k && k.startsWith('pb_'+prefix))keys.push(k);}keys.forEach(k=>localStorage.removeItem(k));location.reload();}
+
+
+</script>
+</body>
+</html>

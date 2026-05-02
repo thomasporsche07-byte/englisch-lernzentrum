@@ -503,7 +503,7 @@ body.admin-mode .tile.dragging{cursor:grabbing;opacity:.5}
 <input type="file" id="file-import" accept=".json" style="display:none">
 
 <footer class="site-footer">
-  <div>Version 02.05.2026, 15:30</div>
+  <div>Version 02.05.2026, 14:00</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 
@@ -517,7 +517,7 @@ const DEFAULT_CONFIG = {
   // version. Bei Mismatch läuft mergeWithDefaults():
   //   - Default-Daten (title, sub, file, icon, status, since) werden überschrieben
   //   - Lehrer-Anpassungen (Reihenfolge, visible, eigene Kacheln) bleiben erhalten
-  version: 18,
+  version: 17,
   tiles: [
     // ---- GRAMMATIK ----
     // Titel-Schema: "Unit X – Thema" (X = Lighthouse-Unit, in der Grammatik eingeführt wird)
@@ -613,6 +613,20 @@ const DEFAULT_CONFIG = {
      category:"vokabeln", grade:"10", subcat:"",
      file:"vokabeln/lighthouse_6/unit_1.html", icon:"📒", status:"draft", visible:false},
 
+    // ---- SKILLS ----
+    {id:"s-leseverstehen", title:"Leseverstehen – ZP 10", sub:"5 Texte · True/False/Not given · MC · Offene Fragen + WWM-Quiz",
+     category:"skills", grade:"10", subcat:"Reading",
+     file:"zap/leseverstehen.html", icon:"📖", status:"new", visible:true, since:"2026-05-01"},
+    {id:"s-hoerverstehen", title:"Hörverstehen – ZP 10", sub:"5 TTS-Audios · Lückentext · MC · Notizen + WWM-Quiz",
+     category:"skills", grade:"10", subcat:"Listening",
+     file:"zap/hoerverstehen.html", icon:"🎧", status:"new", visible:true, since:"2026-05-01"},
+    {id:"s-sprachmittlung", title:"Sprachmittlung – ZP 10", sub:"8 Mediation-Aufgaben EN↔DE · Phrases · Bewertungsschema + WWM-Quiz",
+     category:"skills", grade:"10", subcat:"Mediation",
+     file:"zap/sprachmittlung.html", icon:"🔄", status:"new", visible:true, since:"2026-05-01"},
+    {id:"s-zp10", title:"ZP 10 – Übersicht & Strategie", sub:"Aufbau · Punktverteilung · Trainingsplan · Querverweise",
+     category:"skills", grade:"10", subcat:"Übersicht",
+     file:"zap/zp10_uebersicht.html", icon:"🎯", status:"new", visible:true, since:"2026-05-01"},
+
     // ---- ÜBERGREIFEND ----
     {id:"u-wo", title:"Word Order", sub:"Satzstellung · SVO · Adverbien",
      category:"uebergreifend", grade:"alle", subcat:"Grammatik-Tool",
@@ -634,15 +648,6 @@ const DEFAULT_CONFIG = {
     {id:"z-uebersicht", title:"ZP 10 – Übersicht & Strategie", sub:"Aufbau · Punktverteilung · Trainingsplan · Querverweise",
      category:"zap", grade:"10", subcat:"Übersicht",
      file:"zap/zp10_uebersicht.html", icon:"🎯", status:"new", visible:true, since:"2026-05-01"},
-    {id:"z-leseverstehen", title:"Leseverstehen – ZP 10", sub:"5 Texte · True/False/Not given · MC · Offene Fragen + WWM-Quiz",
-     category:"zap", grade:"10", subcat:"Leseverstehen",
-     file:"zap/leseverstehen.html", icon:"📖", status:"new", visible:true, since:"2026-05-01"},
-    {id:"z-hoerverstehen", title:"Hörverstehen – ZP 10", sub:"5 TTS-Audios · Lückentext · MC · Notizen + WWM-Quiz",
-     category:"zap", grade:"10", subcat:"Hörverstehen",
-     file:"zap/hoerverstehen.html", icon:"🎧", status:"new", visible:true, since:"2026-05-01"},
-    {id:"z-sprachmittlung", title:"Sprachmittlung – ZP 10", sub:"8 Mediation-Aufgaben EN↔DE · Phrases · Bewertungsschema + WWM-Quiz",
-     category:"zap", grade:"10", subcat:"Sprachmittlung",
-     file:"zap/sprachmittlung.html", icon:"🔄", status:"new", visible:true, since:"2026-05-01"},
     {id:"z-tenses",    title:"Tenses Wiederholung", sub:"Simple Present · Simple Past · Will Future",
      category:"zap", grade:"10", subcat:"Grammatik",
      file:"zap/tenses.html", icon:"⏱", status:"new", visible:true, since:"2026-04-29"},
@@ -658,6 +663,12 @@ const DEFAULT_CONFIG = {
     {id:"z-strategie", title:"Lernstrategien & Tipps – folgen bald", sub:"Prüfungsvorbereitung",
      category:"zap", grade:"10", subcat:"Lernstrategien",
      file:"#", icon:"💡", status:"draft", visible:false},
+    {id:"z-hoeren",    title:"Hörverstehen – folgt bald", sub:"Listening im ZAP-Format",
+     category:"zap", grade:"10", subcat:"Hörverstehen",
+     file:"#", icon:"🎧", status:"draft", visible:false},
+    {id:"z-lesen",     title:"Leseverstehen – folgt bald", sub:"Reading im ZAP-Format",
+     category:"zap", grade:"10", subcat:"Leseverstehen",
+     file:"#", icon:"📖", status:"draft", visible:false},
     {id:"z-wortschatz",title:"Wortschatz – folgt bald", sub:"Prüfungswortschatz Klasse 10",
      category:"zap", grade:"10", subcat:"Wortschatz",
      file:"#", icon:"📚", status:"draft", visible:false},
@@ -851,15 +862,8 @@ function renderChips(){
   }));
 
   const ct = document.getElementById("cat-filters");
-  // Skip Kategorien ohne sichtbare Tiles (z.B. wenn Skills komplett geleert wurde).
-  // "alle" bleibt immer sichtbar.
-  function categoryHasAnyVisibleTile(catValue){
-    if(catValue === "alle") return true;
-    return visibleTiles().some(t => t.category === catValue);
-  }
   ct.innerHTML = CATS
     .filter(c => categoryAllowedForGrade(c, filter.grade))
-    .filter(c => categoryHasAnyVisibleTile(c.v))
     .map(c=>{
       const n = countForCategory(c.v);
       const active = filter.category===c.v ? "active " + c.cls : "";

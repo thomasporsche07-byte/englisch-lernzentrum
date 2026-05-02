@@ -28,6 +28,8 @@ Verbindliche Spec für jede neue Grammatikdatei. Vor Arbeitsbeginn lesen.
 
 > **Master-Datei für Vokabeldateien: `vokabeln/lighthouse_4/unit_4.html`.** Diese hat den vollständigen Feature-Stack (Tranchen A+B+C: Cloze-L4, Tastatur-Shortcuts, Memory mit Farb-Paaren, Leitner-Score, Speech-Recognition, Karten-Album, Crossword, System-Dark-Mode, Profil-Button im Header, eindeutiger PAGE_TITLE, Migration-Block). Bei neuen Vokabeldateien diese Vorlage kopieren und nur Inhalte (PAGE_TITLE/PAGE_SUB/TOPICS/VOCAB) ersetzen.
 
+> **Beispielsätze in Vokabel-Datenmodell (`s:"…"`):** Vokabel muss als **unveränderter Wortlaut** in den Placeholder passen. Keine Suffix-Buchstaben (`s`, `es`, `ed`, `ing`, `er`, `est`, `ly`, `'s`, `n't`, `d`) NACH den Underscores anhängen — der Schüler tippt die Vokabel und der gerenderte Satz bleibt mehrdeutig (z. B. „many ________s" sieht aus wie „many spice" statt „many spices"). Stattdessen Beispielsatz so umformulieren, dass die Grundform passt (Singular bei Substantiven, `to`-Infinitiv oder Modalkonstruktion bei Verben). Details siehe Konventions-Abschnitt „Lückentext-Beispielsätze in Vokabeldateien".
+
 <!-- Rekonstruiert nach Refactor-Rollback. Falls dieser Hinweis-Block vor dem Refactor anders formuliert war, hier anpassen. -->
 
 ## Vorab: Referenzdatei lesen
@@ -419,6 +421,37 @@ Beispiel Klasse 5: `v-lh1-u01` (Unit 1, draft) steht vor `v-lh1-u4` (Unit 4, rea
 - Klassengetrenntes Tagging (`grade: 5..10`) bleibt für **klassengebundene** Inhalte (Lighthouse-Units, Klassen-Grammatik) der Standard.
 - Bei Bedarf darf `grade` zusätzlich im Datenmodell stehen (interne Reserve), wird aber im UI nicht ausgewertet.
 - Referenz-Implementierung: `uebergreifend/false_friends.html` (`diff:`-Feld, `sortByDiffThenAlpha()`, `diffTagHTML()`).
+
+### Lückentext-Beispielsätze in Vokabeldateien
+
+**Pflicht:** Der Beispielsatz im Vokabel-Datenmodell (`s:"…"`-Feld) muss so formuliert sein, dass die Vokabel als **unveränderter Wortlaut** in den Placeholder eingefügt werden kann. Keine Suffixe (`s`, `es`, `ed`, `ing`, `er`, `est`, `ly`, `'s`, `n't`, `d`) NACH den Placeholder-Underscores anhängen — das ergibt im gerenderten Text mehrdeutige Konstruktionen, die den Schüler verwirren. Beispiel: „many `__________`s" sieht beim Lesen aus wie „many spice" statt „many spices".
+
+**Falsch:**
+```js
+{en:"spice",   s:"This curry has many __________s.",          h:"…"}  // Plural-s außerhalb
+{en:"play",    s:"She __________ed tennis.",                  h:"…"}  // Past-ed außerhalb
+{en:"teach",   s:"Mr Brown __________es English.",            h:"…"}  // 3rd-person-es außerhalb
+{en:"potato",  s:"We eat __________es a lot.",                h:"…"}  // Plural-es außerhalb
+{en:"wave",    s:"She __________d at me.",                    h:"…"}  // Past-d außerhalb
+```
+
+**Richtig — Vokabel passt direkt rein:**
+```js
+{en:"spice",   s:"Pepper is a popular __________.",                  h:"…"}  // Singular
+{en:"play",    s:"She wants to __________ tennis.",                  h:"…"}  // Grundform via to-Infinitiv
+{en:"teach",   s:"Mr Brown wants to __________ English.",            h:"…"}  // Grundform via to-Infinitiv
+{en:"potato",  s:"I want one big __________.",                       h:"…"}  // Singular
+{en:"wave",    s:"She wants to __________ at me.",                   h:"…"}  // Grundform via to-Infinitiv
+```
+
+**Alternativ — vollständige Wortform als Lemma führen (selten, nur wenn pädagogisch sinnvoll):**
+```js
+{en:"played",  s:"She __________ tennis yesterday.",          h:"…"}
+```
+
+**Konsistenz-Pflicht:** Beim Umformulieren auch das `h:`-Feld (deutsche Übersetzung) anpassen, damit es zum neuen englischen Satz passt. Die Vokabel-Bedeutung (`de:`) und das Stichwort (`k:`) bleiben unverändert.
+
+**Audit-Regex** zum Prüfen einer Datei: `s:"[^"]*_+[a-zA-Z']` — sollte 0 Treffer geben.
 
 ### Dashboard-Titel
 - Schema: `Unit X – Thema` (X = Lighthouse-Unit, in der das Thema eingeführt wird)

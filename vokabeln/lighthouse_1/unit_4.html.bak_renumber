@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Unit 5 Vokabeln – Lighthouse 1</title>
+<title>Unit 4 Vokabeln – Lighthouse 1</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -400,7 +400,7 @@ body.dark-mode .opener .opener-end{color:#4ade80!important}
 .mc-opt.wrong-mc{background:linear-gradient(135deg,#C62828,#e53935)!important;color:#fff!important;border-color:transparent!important}
 
 /* ─── Memory ─── */
-.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.mem-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:14px 0}
 @media(max-width:600px){.mem-grid{grid-template-columns:repeat(4,1fr);gap:6px}}
 .mem-card{aspect-ratio:3/4;border-radius:10px;cursor:pointer;perspective:600px;position:relative;user-select:none;-webkit-tap-highlight-color:transparent}
 .mem-card-inner{position:absolute;inset:0;transition:transform .35s ease;transform-style:preserve-3d}
@@ -439,6 +439,29 @@ body.dark-mode .speech-en{color:#a78bfa}
 .speech-actions{margin-top:10px}
 .speech-card-done{padding:24px;text-align:center}
 .speech-card-done #speech-restart{margin-top:14px}
+
+/* ─── Karten-Album ─── */
+#acc-album summary{border-left-color:#ca8a04;background:linear-gradient(90deg,rgba(202,138,4,.12),rgba(202,138,4,.02))}
+body.dark-mode #acc-album summary{background:linear-gradient(90deg,rgba(250,204,21,.10),rgba(250,204,21,.01))}
+.album-meta{display:flex;justify-content:center;gap:14px;font-size:14px;font-weight:800;margin:10px 0;color:#7c2410}
+body.dark-mode .album-meta{color:#fde68a}
+.album-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:14px 0}
+@media(max-width:780px){.album-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:440px){.album-grid{grid-template-columns:repeat(3,1fr)}}
+.album-card{aspect-ratio:3/4;border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;border:2px solid #e2e8f0;background:#f8fafc;color:#94a3b8;font-size:11px;line-height:1.25;transition:.2s;position:relative;overflow:hidden}
+.album-card.got{background:linear-gradient(160deg,#fef9c3 0%,#fde68a 50%,#fbbf24 100%);border-color:#d97706;color:#7c2410;box-shadow:0 3px 8px rgba(217,119,6,.25)}
+.album-card.got::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.4) 0%,transparent 30%,transparent 70%,rgba(255,255,255,.2) 100%);pointer-events:none}
+body.dark-mode .album-card{background:#162032;border-color:#334155;color:#475569}
+body.dark-mode .album-card.got{background:linear-gradient(160deg,#3a2f0a 0%,#5a4515 50%,#7a5e1c 100%);border-color:#ca8a04;color:#fde68a}
+.album-en{font-size:13px;font-weight:900;letter-spacing:.2px;word-break:break-word;line-height:1.2;margin-bottom:4px;position:relative;z-index:1}
+.album-de{font-size:11px;font-weight:600;opacity:.85;line-height:1.2;position:relative;z-index:1}
+.album-locked{font-size:24px;font-weight:900;opacity:.4}
+
+/* ─── Album-Toast ─── */
+.album-toast{position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#7c2410;padding:14px 22px;border-radius:14px;font-weight:800;font-size:15px;box-shadow:0 6px 20px rgba(217,119,6,.4);z-index:10000;opacity:0;transform:translateX(120%);transition:.4s ease;border:2px solid #d97706}
+.album-toast.show{opacity:1;transform:translateX(0)}
+@media(max-width:600px){.album-toast{top:auto;bottom:80px;right:14px;left:14px}}
+
 
 /* ─── Crossword ─── */
 #acc-crossword summary{border-left-color:#0f766e;background:linear-gradient(90deg,rgba(15,118,110,.10),rgba(15,118,110,.02))}
@@ -499,6 +522,7 @@ body.dark-mode .profile-btn-vk:hover{background:#5a4515;color:#fde68a}
 body.dark-mode .ipa{color:#9ca3af}
 .ipa:hover{color:#475569}
 body.dark-mode .ipa:hover{color:#cbd5e1}
+.album-tts-btn{font-size:11px;padding:2px 6px;margin-left:4px}
 
 </style>
 </head>
@@ -509,8 +533,8 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
   <a href="../../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
     <img src="../../assets/logo_hellweg.png" alt="Logo Hellweg-Realschule" style="cursor:pointer"/>
   </a>
-  <h1 id="page-title">Unit 5 · Vokabeln</h1>
-  <p class="sub" id="page-sub">Enjoy! · Lighthouse 1</p>
+  <h1 id="page-title">Unit 4 · Vokabeln</h1>
+  <p class="sub" id="page-sub">Where I live · Lighthouse 1</p>
 </header>
 <div class="container">
 
@@ -612,7 +636,7 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
 
   <!-- ACCORDION: Speech -->
   <details class="accordion" id="acc-speech">
-    <summary><span style="color:#94a3b8;font-weight:600">6 ·</span> 🎤 Aussprache – Sprich das Wort</summary>
+    <summary><span style="color:#94a3b8;font-weight:600">·</span> 🎤 Aussprache – Sprich das Wort</summary>
     <div class="content">
       <div class="note">Klicke 🔊, um das Wort zu hören. Klicke dann 🎤 und sprich es selbst. Die App vergleicht deine Aussprache. <b>Funktioniert am besten in Chrome / Edge / Safari.</b></div>
       <div class="topic-switch" id="speech-topics"></div>
@@ -629,11 +653,11 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
 
   <!-- ACCORDION: Memory -->
   <details class="accordion" id="acc-memory">
-    <summary><span style="color:#94a3b8;font-weight:600">7 ·</span> 🃏 Memory – Paare aufdecken</summary>
+    <summary><span style="color:#94a3b8;font-weight:600">·</span> 🃏 Memory – Paare aufdecken</summary>
     <div class="content">
-      <div class="note">Decke 8 Paare auf: <b>englisches Wort</b> + <b>deutsche Bedeutung</b>. Klicke immer zwei Karten – passen sie zusammen, bleiben sie offen.</div>
+      <div class="note">Decke 12 Paare auf: <b>englisches Wort</b> + <b>deutsche Bedeutung</b>. Klicke immer zwei Karten – passen sie zusammen, bleiben sie offen.</div>
       <div class="topic-switch" id="mem-topics"></div>
-      <div class="mem-meta"><span id="mem-tries">🎯 Versuche: 0</span><span id="mem-found">✅ Paare: 0/8</span><span id="mem-time">⏱ 0:00</span></div>
+      <div class="mem-meta"><span id="mem-tries">🎯 Versuche: 0</span><span id="mem-found">✅ Paare: 0/12</span><span id="mem-time">⏱ 0:00</span></div>
       <div class="section-actions"><button class="btn ghost" id="mem-reroll">🔄 Neu starten</button></div>
       <div class="mem-grid" id="mem-grid"></div>
       <div class="mem-win" id="mem-win"></div>
@@ -642,7 +666,7 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
 
   <!-- ACCORDION 6: Rennen -->
   <details class="accordion" id="acc-race">
-    <summary><span style="color:#94a3b8;font-weight:600">8 ·</span> 🏎️ Vokabel-Rennen</summary>
+    <summary><span style="color:#94a3b8;font-weight:600">6 ·</span> 🏎️ Vokabel-Rennen</summary>
     <div class="content race-section">
       <div class="race-header-inner"><h3>🏎️ Vokabel-Rennen</h3><p>Wähle das richtige englische Wort – jede richtige Antwort gibt Gas!</p></div>
       <div class="topic-switch" id="race-topics"></div>
@@ -684,7 +708,7 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
 
   <!-- ACCORDION 7: Space Invaders -->
   <details class="accordion" id="acc-invaders">
-    <summary><span style="color:#94a3b8;font-weight:600">9 ·</span> 👾 Vokabel-Invaders</summary>
+    <summary><span style="color:#94a3b8;font-weight:600">7 ·</span> 👾 Vokabel-Invaders</summary>
     <div class="content">
       <div class="note">BVB-Aliens mit <b>deutschen Wörtern</b> greifen an! Verteidige Schalke – klicke auf die richtige <b>englische Übersetzung</b>, um sie abzuschießen. <b>Vorsicht:</b> Falsche Klicks lassen den Alien schneller fallen – nach 2 Fehlern verlierst du ein Leben! Du hast <b>3 Leben</b>.</div>
       <div class="note" style="background:linear-gradient(135deg,#fefce8,#fef9c3);border-color:#fde68a;border-left-color:#ca8a04;color:#713f12">💡 <b>Tipp:</b> Übe die Vokabeln zuerst mit dem Lückentext oder der Schreibübung – dann schaffst du hier deutlich mehr Punkte!</div>
@@ -707,7 +731,7 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
 
   <!-- ACCORDION: Crossword -->
   <details class="accordion" id="acc-crossword">
-    <summary><span style="color:#94a3b8;font-weight:600">10 ·</span> 🧩 Kreuzworträtsel</summary>
+    <summary><span style="color:#94a3b8;font-weight:600">·</span> 🧩 Kreuzworträtsel</summary>
     <div class="content">
       <div class="note">Klick auf einen Hinweis → das Wort wird im Gitter markiert. Tippe Buchstaben in die Felder. Richtige Buchstaben werden grün, falsche rot.</div>
       <div class="topic-switch" id="cw-topics"></div>
@@ -723,6 +747,16 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
     <span style="font-size:12px;font-weight:700;color:#ca8a04;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap">🎴 Sammelalbum</span>
     <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#fbbf24,transparent)"></div>
   </div>
+
+  <!-- ACCORDION: Album -->
+  <details class="accordion" id="acc-album">
+    <summary><span style="color:#94a3b8;font-weight:600">·</span> 🎴 Mein Album – gesammelte Vokabeln</summary>
+    <div class="content">
+      <div class="note" style="background:linear-gradient(135deg,#fef9c3,#fde68a);border-color:#fcd34d;border-left-color:#d97706;color:#7c2410">Jede Vokabel, die du <b>zum ersten Mal richtig</b> löst (in einer beliebigen Übung), wandert in dein Album. Sammle alle <b>123</b> Karten!</div>
+      <div class="album-meta" id="album-meta">🎴 0 / 123 gesammelt</div>
+      <div class="album-grid" id="album-grid"></div>
+    </div>
+  </details>
 
   <div class="print-vocab-table" style="display:none" id="print-vocab-table"></div>
 </div>
@@ -740,8 +774,8 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
 // ╚══════════════════════════════════════════════════════════════════╝
 
 // ── Seitentitel ─────────────────────────────────────────────────────
-const PAGE_TITLE = "Lighthouse 1 · Unit 5 · Vokabeln";
-const PAGE_SUB   = "Enjoy! · Lighthouse 1";
+const PAGE_TITLE = "Lighthouse 1 · Unit 4 · Vokabeln";
+const PAGE_SUB   = "Where I live · Lighthouse 1";
 
 // ── localStorage-Migration v1: alter Sammel-PAGE_TITLE -> eindeutiger Lighthouse-Title ──
 // Einmalig pro Browser. Kopiert pb_/lt_/album_-Daten vom alten Norm-Title auf den neuen.
@@ -789,138 +823,415 @@ const TOPICS = [
   { id: "t3", label: "Topic 3" },
   { id: "bf", label: "Background file" },
   { id: "st", label: "Story" },
+  { id: "sk", label: "Study skills" },
   { id: "ut", label: "Unit task" },
 ];
 
 // ── Vokabelliste ────────────────────────────────────────────────────
 const VOCAB = [
 
-{t:"t1",en:"enjoy",de:"genießen",s:"I really __________ Italian food.",h:"Ich genieße italienisches Essen wirklich.",k:"genießen",mEn:"to enjoy"},
-{t:"t1",en:"dessert",de:"die Nachspeise, das Dessert",s:"What's for __________? Ice cream!",h:"Was gibt's zum Nachtisch? Eis!",k:"Nachspeise"},
-{t:"t1",en:"birthday",de:"der Geburtstag",s:"Today is my __________. I'm twelve!",h:"Heute ist mein Geburtstag. Ich bin zwölf!",k:"Geburtstag"},
-{t:"t1",en:"Christmas",de:"(das) Weihnachten",s:"We meet our family at __________.",h:"Wir treffen unsere Familie an Weihnachten.",k:"Weihnachten"},
-{t:"t1",en:"fruit",de:"das Obst",s:"Mum says we should eat more __________.",h:"Mama sagt, wir sollen mehr Obst essen.",k:"Obst"},
-{t:"t1",en:"jelly",de:"das Gelee; der Wackelpudding",s:"There's a strawberry __________ for dessert.",h:"Es gibt einen Erdbeer-Wackelpudding zum Dessert.",k:"Wackelpudding"},
-{t:"t1",en:"cream",de:"die Sahne",s:"I want some __________ on my cake.",h:"Ich möchte etwas Sahne auf meinem Kuchen.",k:"Sahne"},
-{t:"t1",en:"strawberry",de:"die Erdbeere",s:"This __________ ice cream is delicious!",h:"Dieses Erdbeereis ist köstlich!",k:"Erdbeere"},
-{t:"t1",en:"allergic",de:"allergisch (gegen)",s:"Sam is __________ to peanuts.",h:"Sam ist allergisch gegen Erdnüsse.",k:"allergisch",mEn:"allergic (to)"},
-{t:"t1",en:"Indian",de:"indisch; der Inder, die Inderin",s:"My favourite food is __________ curry.",h:"Mein Lieblingsessen ist indisches Curry.",k:"indisch"},
-{t:"t1",en:"restaurant",de:"das Restaurant",s:"We go to a __________ on Saturdays.",h:"Wir gehen samstags ins Restaurant.",k:"Restaurant"},
-{t:"t1",en:"dish",de:"das Gericht (die Mahlzeit)",s:"Pizza is my favourite __________.",h:"Pizza ist mein Lieblingsgericht.",k:"Gericht"},
-{t:"t1",en:"meat",de:"das Fleisch",s:"Vegetarians don't eat __________.",h:"Vegetarier essen kein Fleisch.",k:"Fleisch"},
-{t:"t1",en:"vegetarian",de:"vegetarisch; der/die Vegetarier/in",s:"My sister is a __________. She doesn't eat meat.",h:"Meine Schwester ist Vegetarierin. Sie isst kein Fleisch.",k:"vegetarisch"},
-{t:"t1",en:"cheese",de:"der Käse",s:"I'd like a __________ sandwich, please.",h:"Ich hätte gern ein Käsesandwich, bitte.",k:"Käse"},
-{t:"t1",en:"pea",de:"die Erbse",s:"I see a green __________ on my plate.",h:"Ich sehe eine grüne Erbse auf meinem Teller.",k:"Erbse"},
-{t:"t1",en:"tomato",de:"die Tomate",s:"I put a __________ in my salad.",h:"Ich tue eine Tomate in meinen Salat.",k:"Tomate"},
-{t:"t1",en:"spice",de:"das Gewürz",s:"Pepper is a very popular __________.",h:"Pfeffer ist ein sehr beliebtes Gewürz.",k:"Gewürz"},
-{t:"t1",en:"usually",de:"normalerweise, meistens",s:"I __________ have toast for breakfast.",h:"Ich habe normalerweise Toast zum Frühstück.",k:"normalerweise"},
-{t:"t1",en:"bread",de:"das Brot",s:"Can you buy some __________ at the shop?",h:"Kannst du etwas Brot im Laden kaufen?",k:"Brot"},
-{t:"t1",en:"rice",de:"der Reis",s:"In China people eat __________ every day.",h:"In China essen die Leute jeden Tag Reis.",k:"Reis"},
-{t:"t1",en:"vegetables",de:"das Gemüse",s:"Eat your __________! They're good for you.",h:"Iss dein Gemüse! Es ist gut für dich.",k:"Gemüse"},
-{t:"t1",en:"recipe",de:"das (Koch-)Rezept",s:"Grandma's __________ for cake is the best.",h:"Omas Rezept für Kuchen ist das beste.",k:"Rezept"},
-{t:"t1",en:"health",de:"die Gesundheit",s:"Sport is good for your __________.",h:"Sport ist gut für deine Gesundheit.",k:"Gesundheit"},
-{t:"t1",en:"reason",de:"der Grund, die Begründung",s:"What's the __________ for the party?",h:"Was ist der Grund für die Party?",k:"Grund"},
-{t:"t1",en:"religious",de:"religiös",s:"Christmas is a __________ holiday.",h:"Weihnachten ist ein religiöser Feiertag.",k:"religiös"},
-{t:"t1",en:"invitation",de:"die Einladung (zu, nach)",s:"Thanks for the __________ to your party!",h:"Danke für die Einladung zu deiner Party!",k:"Einladung",mEn:"invitation (to)"},
-{t:"t1",en:"sausage",de:"das Würstchen, die Wurst",s:"At the BBQ I eat a __________.",h:"Beim Grillen esse ich ein Würstchen.",k:"Würstchen"},
-{t:"t1",en:"cake",de:"der Kuchen, die Torte",s:"Mum is making a chocolate __________.",h:"Mama macht einen Schokoladenkuchen.",k:"Kuchen"},
-{t:"t1",en:"twelfth birthday",de:"der zwölfte Geburtstag",s:"Today is my __________. I'm twelve!",h:"Heute ist mein zwölfter Geburtstag. Ich bin zwölf!",k:"zwölfter Geburtstag",mEn:"twelfth (12th) birthday"},
-{t:"t1",en:"circus",de:"der Zirkus",s:"There are clowns and animals at the __________.",h:"Im Zirkus gibt es Clowns und Tiere.",k:"Zirkus"},
-{t:"t1",en:"by phone",de:"per Telefon / telefonisch",s:"You can call me __________.",h:"Du kannst mich telefonisch anrufen.",k:"telefonisch"},
-{t:"t1",en:"season",de:"die Jahreszeit; die Saison",s:"Spring is my favourite __________.",h:"Frühling ist meine Lieblingsjahreszeit.",k:"Jahreszeit"},
-{t:"t1",en:"date",de:"das Datum",s:"What's the __________ today?",h:"Welches Datum ist heute?",k:"Datum"},
-{t:"t1",en:"the first of April",de:"der erste April",s:"My birthday is on __________.",h:"Mein Geburtstag ist am ersten April.",k:"erste April",mEn:"the first of April (1st April)"},
-{t:"t1",en:"rest",de:"ruhen; sich ausruhen",s:"You should __________ when you're ill.",h:"Du solltest dich ausruhen, wenn du krank bist.",k:"ausruhen",mEn:"to rest"},
-{t:"t1",en:"juggle",de:"jonglieren",s:"The clown can __________ five balls.",h:"Der Clown kann fünf Bälle jonglieren.",k:"jonglieren",mEn:"to juggle"},
-{t:"t1",en:"sleep",de:"schlafen",s:"Babies __________ a lot.",h:"Babys schlafen viel.",k:"schlafen",mEn:"to sleep"},
-{t:"t1",en:"must",de:"müssen",s:"You __________ do your homework now.",h:"Du musst jetzt deine Hausaufgaben machen.",k:"müssen"},
-{t:"t1",en:"teach",de:"lehren, unterrichten",s:"Mr Brown wants to __________ English at our school.",h:"Mr Brown möchte Englisch an unserer Schule unterrichten.",k:"unterrichten",mEn:"to teach"},
-{t:"t1",en:"lie",de:"liegen",s:"The cat likes to __________ in the sun.",h:"Die Katze liegt gern in der Sonne.",k:"liegen",mEn:"to lie"},
-{t:"t1",en:"balloon",de:"der Ballon",s:"I have a red __________ at the party.",h:"Ich habe einen roten Ballon auf der Party.",k:"Ballon"},
-{t:"t2",en:"present",de:"das Geschenk",s:"This __________ is for my birthday.",h:"Dieses Geschenk ist für meinen Geburtstag.",k:"Geschenk"},
-{t:"t2",en:"magic set",de:"der Zauberkasten",s:"My brother got a __________ for Christmas.",h:"Mein Bruder hat einen Zauberkasten zu Weihnachten bekommen.",k:"Zauberkasten"},
-{t:"t2",en:"What about a … ?",de:"Wie wäre es mit einer/einem … ?",s:"__________ pizza? I'm hungry.",h:"Wie wäre es mit einer Pizza? Ich habe Hunger.",k:"Wie wäre es mit"},
-{t:"t2",en:"sure",de:"sicher",s:"I'm not __________ if she's coming.",h:"Ich bin nicht sicher, ob sie kommt.",k:"sicher"},
-{t:"t2",en:"already",de:"schon",s:"It's __________ ten o'clock!",h:"Es ist schon zehn Uhr!",k:"schon"},
-{t:"t2",en:"kind",de:"die Art (von), die Sorte (von)",s:"What __________ of music do you like?",h:"Welche Art Musik magst du?",k:"Art von",mEn:"kind (of)"},
-{t:"t2",en:"menu",de:"die Speisekarte",s:"Could I see the __________, please?",h:"Könnte ich bitte die Speisekarte sehen?",k:"Speisekarte"},
-{t:"t2",en:"ham",de:"der Schinken",s:"I'd like a __________ sandwich.",h:"Ich hätte gern ein Schinkensandwich.",k:"Schinken"},
-{t:"t2",en:"salad",de:"der Salat",s:"Mum makes a green __________ for dinner.",h:"Mama macht einen grünen Salat zum Abendessen.",k:"Salat"},
-{t:"t2",en:"carrot",de:"die Möhre, die Karotte",s:"A __________ is orange and sweet.",h:"Eine Möhre ist orange und süß.",k:"Möhre"},
-{t:"t2",en:"melon",de:"die Melone",s:"This __________ is very sweet!",h:"Diese Melone ist sehr süß!",k:"Melone"},
-{t:"t2",en:"lemonade",de:"die Limonade",s:"Can I have a glass of __________?",h:"Kann ich ein Glas Limonade haben?",k:"Limonade"},
-{t:"t2",en:"shopping list",de:"die Einkaufsliste",s:"Don't forget the __________!",h:"Vergiss nicht die Einkaufsliste!",k:"Einkaufsliste"},
-{t:"t2",en:"packet",de:"die Packung, das Päckchen",s:"I bought a __________ of biscuits.",h:"Ich habe eine Packung Kekse gekauft.",k:"Packung"},
-{t:"t2",en:"lemon",de:"die Zitrone",s:"Add a slice of __________ to your tea.",h:"Gib eine Scheibe Zitrone in deinen Tee.",k:"Zitrone"},
-{t:"t2",en:"sugar",de:"der Zucker",s:"How much __________ do you want in your coffee?",h:"Wie viel Zucker möchtest du in deinem Kaffee?",k:"Zucker"},
-{t:"t2",en:"piece",de:"das Stück, der/das Teil",s:"Could I have a __________ of cake, please?",h:"Könnte ich ein Stück Kuchen haben, bitte?",k:"Stück"},
-{t:"t3",en:"gram",de:"das Gramm",s:"Add one __________ of salt.",h:"Gib ein Gramm Salz dazu.",k:"Gramm",mEn:"gram (g)"},
-{t:"t3",en:"flour",de:"das Mehl",s:"You need __________ to make bread.",h:"Du brauchst Mehl, um Brot zu machen.",k:"Mehl"},
-{t:"t3",en:"millilitre",de:"der Milliliter",s:"Add one __________ of vanilla.",h:"Gib einen Milliliter Vanille dazu.",k:"Milliliter",mEn:"millilitre (ml)"},
-{t:"t3",en:"oil",de:"das Öl",s:"Heat the __________ in the pan.",h:"Erhitze das Öl in der Pfanne.",k:"Öl"},
-{t:"t3",en:"cocoa",de:"der Kakao",s:"Hot __________ tastes great in winter.",h:"Heißer Kakao schmeckt im Winter toll.",k:"Kakao"},
-{t:"t3",en:"milk",de:"die Milch",s:"I drink __________ every morning.",h:"Ich trinke jeden Morgen Milch.",k:"Milch"},
-{t:"t3",en:"egg",de:"das Ei",s:"For breakfast I eat one __________.",h:"Zum Frühstück esse ich ein Ei.",k:"Ei"},
-{t:"t3",en:"salt",de:"das Salz",s:"There's too much __________ in this soup.",h:"Es ist zu viel Salz in dieser Suppe.",k:"Salz"},
-{t:"t3",en:"teaspoon",de:"der Teelöffel",s:"Add one __________ of sugar.",h:"Gib einen Teelöffel Zucker dazu.",k:"Teelöffel"},
-{t:"t3",en:"vanilla",de:"die Vanille",s:"I love __________ ice cream!",h:"Ich liebe Vanilleeis!",k:"Vanille"},
-{t:"t3",en:"baking powder",de:"das Backpulver",s:"Add some __________ to make the cake fluffy.",h:"Gib etwas Backpulver dazu, damit der Kuchen luftig wird.",k:"Backpulver"},
-{t:"t3",en:"icing",de:"die Glasur, der Zuckerguss",s:"There's pink __________ on the cupcake.",h:"Auf dem Cupcake ist rosa Zuckerguss.",k:"Glasur"},
-{t:"t3",en:"butter",de:"die Butter",s:"I put __________ on my bread.",h:"Ich tue Butter aufs Brot.",k:"Butter"},
-{t:"t3",en:"mixture",de:"die Mischung",s:"Stir the __________ with a spoon.",h:"Rühre die Mischung mit einem Löffel um.",k:"Mischung"},
-{t:"t3",en:"oven",de:"der Backofen",s:"The cake is in the __________.",h:"Der Kuchen ist im Backofen.",k:"Backofen"},
-{t:"t3",en:"break",de:"etwas zerbrechen",s:"Be careful! Don't __________ the glass!",h:"Pass auf! Zerbrich nicht das Glas!",k:"zerbrechen",mEn:"to break sth."},
-{t:"t3",en:"decorate",de:"dekorieren, schmücken",s:"We __________ the Christmas tree.",h:"Wir schmücken den Weihnachtsbaum.",k:"dekorieren",mEn:"to decorate"},
-{t:"t3",en:"better",de:"besser",s:"This cake tastes __________ than that one.",h:"Dieser Kuchen schmeckt besser als der andere.",k:"besser"},
-{t:"t3",en:"false",de:"falsch, unrichtig",s:"That answer is __________.",h:"Diese Antwort ist falsch.",k:"falsch"},
-{t:"t3",en:"true",de:"wahr, richtig",s:"Is this story __________?",h:"Ist diese Geschichte wahr?",k:"wahr"},
-{t:"t3",en:"fry",de:"braten; frittieren",s:"Mum is going to __________ some chips.",h:"Mama wird ein paar Pommes braten.",k:"braten",mEn:"to fry"},
-{t:"t3",en:"savoury",de:"herzhaft, salzig",s:"I prefer __________ snacks to sweet ones.",h:"Ich mag herzhafte Snacks lieber als süße.",k:"herzhaft"},
-{t:"t3",en:"scone",de:"das kleine runde Milchbrötchen (oft mit Rosinen)",s:"For tea I have a __________ with jam.",h:"Zum Tee esse ich ein Milchbrötchen mit Marmelade.",k:"Milchbrötchen"},
-{t:"t3",en:"round",de:"rund",s:"The pizza is __________.",h:"Die Pizza ist rund.",k:"rund"},
-{t:"t3",en:"jam",de:"die Marmelade",s:"I love strawberry __________ on my toast.",h:"Ich liebe Erdbeermarmelade auf meinem Toast.",k:"Marmelade"},
-{t:"t3",en:"chicken",de:"das Huhn; das (Brat-)Hähnchen",s:"For dinner we have roast __________.",h:"Zum Abendessen gibt es Brathähnchen.",k:"Hähnchen"},
-{t:"t3",en:"taste",de:"schmecken; kosten, probieren",s:"Can I __________ the soup?",h:"Darf ich die Suppe probieren?",k:"schmecken",mEn:"to taste"},
-{t:"t3",en:"main course",de:"das Hauptgericht",s:"For the __________ I'd like fish, please.",h:"Als Hauptgericht hätte ich gern Fisch, bitte.",k:"Hauptgericht"},
-{t:"t3",en:"be called",de:"heißen",s:"This dish is __________ \"jollof rice\".",h:"Dieses Gericht heißt „Jollof rice\".",k:"heißen",mEn:"to be called"},
-{t:"t3",en:"Nigeria",de:"Nigeria",s:"My friend's family is from __________.",h:"Die Familie meines Freundes ist aus Nigeria.",k:"Nigeria"},
-{t:"t3",en:"onion",de:"die Zwiebel",s:"Cut the __________ into small pieces.",h:"Schneide die Zwiebel in kleine Stücke.",k:"Zwiebel"},
-{t:"t3",en:"pepper",de:"die Paprika; der Pfeffer",s:"Add some salt and __________ to taste.",h:"Gib nach Geschmack Salz und Pfeffer dazu.",k:"Paprika"},
-{t:"t3",en:"delicious",de:"köstlich, lecker",s:"This cake is absolutely __________!",h:"Dieser Kuchen ist absolut köstlich!",k:"köstlich"},
-{t:"t3",en:"banana",de:"die Banane",s:"I eat a __________ every morning.",h:"Ich esse jeden Morgen eine Banane.",k:"Banane"},
-{t:"t3",en:"honey",de:"der Honig",s:"Bees make __________.",h:"Bienen machen Honig.",k:"Honig"},
-{t:"t3",en:"important",de:"wichtig",s:"Breakfast is an __________ meal.",h:"Frühstück ist eine wichtige Mahlzeit.",k:"wichtig"},
-{t:"t3",en:"culture",de:"die Kultur",s:"Food is part of every __________.",h:"Essen gehört zu jeder Kultur.",k:"Kultur"},
-{t:"t3",en:"tradition",de:"die Tradition",s:"It's a family __________ to eat together.",h:"Es ist eine Familientradition, zusammen zu essen.",k:"Tradition"},
-{t:"t3",en:"Chinese",de:"chinesisch; Chinesisch",s:"My family loves __________ food.",h:"Meine Familie liebt chinesisches Essen.",k:"chinesisch"},
-{t:"t3",en:"stir-fry",de:"das Pfannengericht (kurz angebraten)",s:"For dinner we make a vegetable __________.",h:"Zum Abendessen machen wir ein Gemüse-Pfannengericht.",k:"Pfannengericht"},
-{t:"t3",en:"noodles",de:"die Nudeln",s:"In China people eat __________ a lot.",h:"In China essen die Leute viel Nudeln.",k:"Nudeln"},
-{t:"t3",en:"tea",de:"der Tee",s:"Would you like a cup of __________?",h:"Möchtest du eine Tasse Tee?",k:"Tee"},
-{t:"t3",en:"coffee",de:"der Kaffee",s:"My dad drinks __________ every morning.",h:"Mein Vater trinkt jeden Morgen Kaffee.",k:"Kaffee"},
-{t:"bf",en:"afternoon tea",de:"der Nachmittagstee, der Fünfuhrtee",s:"In Britain people often have __________ at four o'clock.",h:"In Großbritannien gibt es oft Nachmittagstee um vier Uhr.",k:"Nachmittagstee"},
-{t:"bf",en:"meal",de:"die Mahlzeit, das Essen",s:"Breakfast is the most important __________.",h:"Frühstück ist die wichtigste Mahlzeit.",k:"Mahlzeit"},
-{t:"bf",en:"preheat",de:"(den Backofen) vorheizen",s:"__________ the oven to 180 degrees.",h:"Heize den Backofen auf 180 Grad vor.",k:"vorheizen",mEn:"to preheat (the oven to …)"},
-{t:"bf",en:"roll out",de:"rollen; ausrollen (Teig)",s:"__________ the dough on the table.",h:"Rolle den Teig auf dem Tisch aus.",k:"ausrollen",mEn:"to roll (out)"},
-{t:"bf",en:"dough",de:"der Teig",s:"The pizza __________ needs to rest.",h:"Der Pizzateig muss ruhen.",k:"Teig"},
-{t:"bf",en:"glass",de:"das Glas",s:"Could I have a __________ of water?",h:"Könnte ich ein Glas Wasser haben?",k:"Glas"},
-{t:"bf",en:"cut",de:"schneiden",s:"__________ the cake into eight pieces.",h:"Schneide den Kuchen in acht Stücke.",k:"schneiden",mEn:"to cut"},
-{t:"bf",en:"potato",de:"die Kartoffel",s:"I want one big __________.",h:"Ich möchte eine große Kartoffel.",k:"Kartoffel"},
-{t:"bf",en:"crumb",de:"die Flocke, der Krümel",s:"There is a bread __________ on the table.",h:"Auf dem Tisch ist ein Brotkrümel.",k:"Krümel"},
-{t:"bf",en:"garlic",de:"der Knoblauch",s:"Add some __________ to the pasta.",h:"Gib etwas Knoblauch zur Pasta.",k:"Knoblauch"},
-{t:"st",en:"wave",de:"(jm. zu)winken",s:"She wants to __________ at me from the bus.",h:"Sie möchte mir aus dem Bus zuwinken.",k:"winken",mEn:"to wave (to sb.)"},
-{t:"st",en:"be good at",de:"etwas gut können; gut in etwas sein",s:"He's __________ Maths.",h:"Er ist gut in Mathe.",k:"gut können",mEn:"to be good at sth."},
-{t:"st",en:"just",de:"nur, bloß; einfach",s:"It's __________ a small mistake.",h:"Es ist nur ein kleiner Fehler.",k:"nur"},
-{t:"st",en:"a little",de:"ein wenig, ein bisschen",s:"I'm __________ tired.",h:"Ich bin ein bisschen müde.",k:"ein wenig"},
-{t:"st",en:"worry",de:"sich Sorgen machen (wegen, um)",s:"Don't __________! It's going to be fine.",h:"Mach dir keine Sorgen! Es wird gut.",k:"Sorgen machen",mEn:"to worry (about)"},
-{t:"st",en:"face",de:"das Gesicht",s:"She has a happy __________.",h:"Sie hat ein glückliches Gesicht.",k:"Gesicht"},
-{t:"st",en:"smile",de:"lächeln",s:"Please __________ for the photo!",h:"Bitte lächle für das Foto!",k:"lächeln",mEn:"to smile"},
-{t:"st",en:"it is sb.'s turn",de:"jm. ist dran / an der Reihe",s:"It is your __________ to choose.",h:"Du bist dran zu wählen.",k:"dran sein",mEn:"it is sb.'s turn (to do sth.)"},
-{t:"ut",en:"research",de:"erforschen, untersuchen, recherchieren",s:"We want to __________ Indian food for school.",h:"Wir wollen indisches Essen für die Schule recherchieren.",k:"recherchieren",mEn:"to research"},
-{t:"ut",en:"boil",de:"kochen (in Wasser); sieden",s:"__________ the water for the pasta.",h:"Koche das Wasser für die Pasta.",k:"kochen",mEn:"to boil"},
-{t:"ut",en:"introduction",de:"die Einführung, die Einleitung",s:"Write a short __________ to your project.",h:"Schreibe eine kurze Einleitung zu deinem Projekt.",k:"Einleitung"},
-{t:"ut",en:"instruction",de:"die Anweisung",s:"Read every __________ carefully.",h:"Lies jede Anweisung sorgfältig.",k:"Anweisung"}
+// ═══ VOKABELN VOR TOPIC 1 (Screenshot 1) ══════════════════════════
+{t:"t1", en:"cinema", de:"das Kino",
+ s:"Let's go to the __________ and watch a film.",
+ h:"Lass uns ins Kino gehen und einen Film schauen.", k:"Kino"},
+{t:"t1", en:"pier", de:"der Pier, die Seebrücke",
+ s:"We walked along the __________ and looked at the sea.",
+ h:"Wir gingen am Pier entlang und schauten aufs Meer.", k:"Pier"},
+{t:"t1", en:"boring", de:"langweilig",
+ s:"This film is really __________!",
+ h:"Dieser Film ist wirklich langweilig!", k:"langweilig"},
+{t:"t1", en:"busy", de:"hektisch, belebt",
+ s:"The town centre is very __________ on Saturdays.",
+ h:"Das Stadtzentrum ist samstags sehr belebt.", k:"belebt"},
+{t:"t1", en:"palace", de:"der Palast, das Schloss",
+ s:"The king lives in a beautiful __________.",
+ h:"Der König lebt in einem wunderschönen Palast.", k:"Palast"},
+{t:"t1", en:"duke", de:"der Herzog",
+ s:"The __________ is a very important person.",
+ h:"Der Herzog ist eine sehr wichtige Person.", k:"Herzog"},
+{t:"t1", en:"marina", de:"der Jachthafen",
+ s:"Many boats are in the __________ today.",
+ h:"Viele Boote sind heute im Jachthafen.", k:"Jachthafen"},
+{t:"t1", en:"north", de:"der Norden; nördlich; Nord-",
+ s:"Scotland is in the __________ of Britain.",
+ h:"Schottland ist im Norden Großbritanniens.", k:"Norden"},
+{t:"t1", en:"picnic", de:"das Picknick",
+ s:"We had a __________ in the park yesterday.",
+ h:"Wir hatten gestern ein Picknick im Park.", k:"Picknick"},
+{t:"t1", en:"hear", de:"hören", mEn:"to hear",
+ s:"Can you __________ that noise?",
+ h:"Kannst du dieses Geräusch hören?", k:"hören"},
 
+// ═══ TOPIC 1 (Screenshots 2-3) ════════════════════════════════════
+{t:"t1", en:"practise", de:"üben", mEn:"to practise",
+ s:"I need to __________ my English every day.",
+ h:"Ich muss jeden Tag mein Englisch üben.", k:"üben"},
+{t:"t1", en:"skill", de:"die Fähigkeit, die Fertigkeit",
+ s:"Learning a new language is a useful __________.",
+ h:"Eine neue Sprache zu lernen ist eine nützliche Fähigkeit.", k:"Fähigkeit"},
+{t:"t1", en:"chips", de:"die Pommes frites",
+ s:"Would you like some __________ with your burger?",
+ h:"Möchtest du Pommes frites zu deinem Burger?", k:"Pommes frites"},
+{t:"t1", en:"mile", de:"die Meile (ca. 1,6 km)",
+ s:"The school is about two __________ from here.",
+ h:"Die Schule ist etwa zwei Meilen von hier entfernt.", k:"Meilen", ans:"miles"},
+{t:"t1", en:"kilometre", de:"der Kilometer",
+ s:"We walked five __________ yesterday.",
+ h:"Wir sind gestern fünf Kilometer gelaufen.", k:"Kilometer", ans:"kilometres"},
+{t:"t1", en:"smell", de:"riechen; schlecht riechen", mEn:"to smell",
+ s:"The cooking __________ delicious!",
+ h:"Das Essen riecht köstlich!", k:"riecht", ans:"smells"},
+{t:"t1", en:"cooking", de:"das Kochen, das (gekochte) Essen",
+ s:"I love my mum's __________.",
+ h:"Ich liebe das Kochen meiner Mutter.", k:"Kochen"},
+{t:"t1", en:"clean", de:"sauber",
+ s:"Please keep your room __________.",
+ h:"Bitte halte dein Zimmer sauber.", k:"sauber"},
+{t:"t1", en:"dirty", de:"schmutzig",
+ s:"Your shoes are really __________!",
+ h:"Deine Schuhe sind wirklich schmutzig!", k:"schmutzig"},
+{t:"t1", en:"youth centre", de:"das Jugendzentrum",
+ s:"We meet at the __________ every Friday.",
+ h:"Wir treffen uns jeden Freitag im Jugendzentrum.", k:"Jugendzentrum"},
+{t:"t1", en:"field", de:"das Feld; die Weide; die Wiese",
+ s:"The cows are in the __________ behind our house.",
+ h:"Die Kühe sind auf der Weide hinter unserem Haus.", k:"Weide"},
+{t:"t1", en:"estate", de:"die Wohnsiedlung; das Gewerbegebiet",
+ s:"They live in a housing __________ near the park.",
+ h:"Sie wohnen in einer Wohnsiedlung in der Nähe des Parks.", k:"Wohnsiedlung"},
+{t:"t1", en:"town", de:"die Stadt",
+ s:"I live in a small __________ in the countryside.",
+ h:"Ich wohne in einer kleinen Stadt auf dem Land.", k:"Stadt"},
+{t:"t1", en:"into the town centre", de:"ins Stadtzentrum (hinein)",
+ s:"Let's go __________ and do some shopping.",
+ h:"Lass uns ins Stadtzentrum gehen und einkaufen.", k:"Stadtzentrum"},
+{t:"t1", en:"look after", de:"sich kümmern um; aufpassen auf", mEn:"to look after",
+ s:"Can you __________ my cat while I'm away?",
+ h:"Kannst du auf meine Katze aufpassen, während ich weg bin?", k:"aufpassen"},
+{t:"t1", en:"rubbish", de:"der (Haus-)Müll, der Abfall",
+ s:"Please take the __________ out before you leave.",
+ h:"Bitte bring den Müll raus, bevor du gehst.", k:"Müll"},
+{t:"t1", en:"bin", de:"der (Müll-)Eimer",
+ s:"Throw the paper in the __________.",
+ h:"Wirf das Papier in den Mülleimer.", k:"Mülleimer"},
+{t:"t1", en:"note", de:"die Notiz; der kurze Brief",
+ s:"I left you a __________ on the kitchen table.",
+ h:"Ich habe dir eine Notiz auf dem Küchentisch hinterlassen.", k:"Notiz"},
+{t:"t1", en:"like", de:"wie; wie zum Beispiel",
+ s:"I like sports __________ football and tennis.",
+ h:"Ich mag Sportarten wie Fußball und Tennis.", k:"wie"},
+{t:"t1", en:"box", de:"boxen", mEn:"to box",
+ s:"My brother likes to __________ at the sports club.",
+ h:"Mein Bruder boxt gerne im Sportverein.", k:"boxt"},
+{t:"t1", en:"crafts", de:"das Kunsthandwerk, das Basteln",
+ s:"She loves doing __________ in her free time.",
+ h:"Sie bastelt gerne in ihrer Freizeit.", k:"bastelt"},
+{t:"t1", en:"a girls' group", de:"eine Mädchengruppe, eine Gruppe für Mädchen",
+ s:"She joined __________ at the youth centre.",
+ h:"Sie ist einer Mädchengruppe im Jugendzentrum beigetreten.", k:"Mädchengruppe"},
+{t:"t1", en:"What else?", de:"Was sonst noch?",
+ s:"We need milk and bread. __________ ?",
+ h:"Wir brauchen Milch und Brot. Was sonst noch?", k:"sonst noch"},
+{t:"t1", en:"buy", de:"kaufen", mEn:"to buy",
+ s:"I want to __________ a new bike.",
+ h:"Ich möchte ein neues Fahrrad kaufen.", k:"kaufen"},
+{t:"t1", en:"also", de:"auch",
+ s:"She speaks English and __________ French.",
+ h:"Sie spricht Englisch und auch Französisch.", k:"auch"},
+{t:"t1", en:"village", de:"das Dorf",
+ s:"My grandparents live in a small __________.",
+ h:"Meine Großeltern wohnen in einem kleinen Dorf.", k:"Dorf"},
+{t:"t1", en:"many", de:"viele",
+ s:"There are __________ shops in our town.",
+ h:"Es gibt viele Geschäfte in unserer Stadt.", k:"viele"},
 
+// ═══ TOPIC 2 (Screenshots 3-4) ════════════════════════════════════
+{t:"t2", en:"hospital", de:"das Krankenhaus",
+ s:"She works as a nurse at the local __________.",
+ h:"Sie arbeitet als Krankenschwester im örtlichen Krankenhaus.", k:"Krankenhaus"},
+{t:"t2", en:"ice rink", de:"die Schlittschuhbahn",
+ s:"Let's go skating at the __________ this weekend.",
+ h:"Lass uns dieses Wochenende zur Schlittschuhbahn gehen.", k:"Schlittschuhbahn"},
+{t:"t2", en:"library", de:"die Bücherei, die Bibliothek",
+ s:"I need to return these books to the __________.",
+ h:"Ich muss diese Bücher in die Bibliothek zurückbringen.", k:"Bibliothek"},
+{t:"t2", en:"supermarket", de:"der Supermarkt",
+ s:"We do our shopping at the __________ every week.",
+ h:"Wir kaufen jede Woche im Supermarkt ein.", k:"Supermarkt"},
+{t:"t2", en:"museum", de:"das Museum",
+ s:"The __________ has an exhibition about dinosaurs.",
+ h:"Das Museum hat eine Ausstellung über Dinosaurier.", k:"Museum"},
+{t:"t2", en:"stadium", de:"das Stadion",
+ s:"Our school's sports day is at the big __________.",
+ h:"Unser Schulsporttag ist im großen Stadion.", k:"Stadion"},
+{t:"t2", en:"train station", de:"der Bahnhof",
+ s:"Can you tell me the way to the __________ ?",
+ h:"Kannst du mir den Weg zum Bahnhof erklären?", k:"Bahnhof"},
+{t:"t2", en:"biggest", de:"der/die/das größte; am größten",
+ s:"London is the __________ city in the UK.",
+ h:"London ist die größte Stadt im Vereinigten Königreich.", k:"größte"},
+{t:"t2", en:"things that are good", de:"Dinge, die gut sind",
+ s:"Tell me about the __________ in your town.",
+ h:"Erzähl mir von den Dingen, die in deiner Stadt gut sind.", k:"gut sind"},
+{t:"t2", en:"visitor", de:"der Besucher, die Besucherin; der Gast",
+ s:"The museum welcomes many __________ every year.",
+ h:"Das Museum empfängt jedes Jahr viele Besucher.", k:"Besucher", ans:"visitors"},
+{t:"t2", en:"another", de:"ein/e andere/r/s; noch ein/e",
+ s:"Would you like __________ cup of tea?",
+ h:"Möchtest du noch eine Tasse Tee?", k:"noch eine"},
+{t:"t2", en:"information", de:"die Information(en)",
+ s:"Can you give me some __________ about the trip?",
+ h:"Kannst du mir Informationen über die Reise geben?", k:"Informationen"},
+{t:"t2", en:"everywhere", de:"überall",
+ s:"There are shops __________ in this area.",
+ h:"In dieser Gegend gibt es überall Geschäfte.", k:"überall"},
+{t:"t2", en:"head", de:"der Kopf",
+ s:"He hit his __________ on the door.",
+ h:"Er hat sich den Kopf an der Tür gestoßen.", k:"Kopf"},
+{t:"t2", en:"guide dog", de:"der Blindenhund",
+ s:"A __________ helps blind people walk safely.",
+ h:"Ein Blindenhund hilft blinden Menschen, sicher zu gehen.", k:"Blindenhund"},
+{t:"t2", en:"fish and chip shop", de:"die Imbissstube, die Fisch mit Pommes frites verkauft",
+ s:"Let's get dinner at the __________.",
+ h:"Lass uns Abendessen in der Imbissstube holen.", k:"Imbissstube"},
+{t:"t2", en:"warm", de:"warm",
+ s:"The weather is really __________ today.",
+ h:"Das Wetter ist heute wirklich warm.", k:"warm"},
+{t:"t2", en:"get warm", de:"warm werden", mEn:"to get warm",
+ s:"Come inside and __________ by the fire.",
+ h:"Komm rein und werde warm am Feuer.", k:"werde warm"},
+{t:"t2", en:"summer", de:"der Sommer",
+ s:"We always go to the beach in __________.",
+ h:"Wir gehen im Sommer immer an den Strand.", k:"Sommer"},
+{t:"t2", en:"Excuse me", de:"Entschuldigung,… / Entschuldigen Sie,…",
+ s:"__________, can you help me find the library?",
+ h:"Entschuldigung, können Sie mir helfen, die Bibliothek zu finden?", k:"Entschuldigung"},
+{t:"t2", en:"something", de:"etwas",
+ s:"I need to tell you __________.",
+ h:"Ich muss dir etwas sagen.", k:"etwas"},
+{t:"t2", en:"Welcome to", de:"Willkommen in/an …",
+ s:"__________ our school! We hope you enjoy your visit.",
+ h:"Willkommen in unserer Schule! Wir hoffen, dein Besuch gefällt dir.", k:"Willkommen"},
+{t:"t2", en:"ice cream", de:"das (Speise-)Eis",
+ s:"Can I have a chocolate __________ , please?",
+ h:"Kann ich bitte ein Schokoladeneis haben?", k:"Eis"},
+
+// ═══ TOPIC 3 (Screenshots 4-6) ════════════════════════════════════
+{t:"t3", en:"weather", de:"das Wetter, die Witterung",
+ s:"The __________ is really nice today.",
+ h:"Das Wetter ist heute wirklich schön.", k:"Wetter"},
+{t:"t3", en:"rainy", de:"regnerisch",
+ s:"It's a __________ day, so take an umbrella.",
+ h:"Es ist ein regnerischer Tag, also nimm einen Regenschirm mit.", k:"regnerischer"},
+{t:"t3", en:"snowy", de:"schneebedeckt; verschneit",
+ s:"The roads are __________ and dangerous.",
+ h:"Die Straßen sind schneebedeckt und gefährlich.", k:"schneebedeckt"},
+{t:"t3", en:"cloudy", de:"wolkig, bewölkt",
+ s:"It's __________ today but not raining.",
+ h:"Es ist heute bewölkt, aber es regnet nicht.", k:"bewölkt"},
+{t:"t3", en:"windy", de:"windig",
+ s:"It's very __________ – hold on to your hat!",
+ h:"Es ist sehr windig – halt deinen Hut fest!", k:"windig"},
+{t:"t3", en:"Russia", de:"Russland",
+ s:"Moscow is the capital of __________.",
+ h:"Moskau ist die Hauptstadt von Russland.", k:"Russland"},
+{t:"t3", en:"inside", de:"innerhalb (von)",
+ s:"Do your rabbits live __________ your house?",
+ h:"Leben deine Kaninchen innerhalb deines Hauses?", k:"innerhalb"},
+{t:"t3", en:"outside", de:"außerhalb (von)",
+ s:"No, they live __________ the house.",
+ h:"Nein, sie leben außerhalb des Hauses.", k:"außerhalb"},
+{t:"t3", en:"cold", de:"kalt",
+ s:"It's freezing __________ today!",
+ h:"Es ist heute eiskalt!", k:"kalt"},
+{t:"t3", en:"woman", de:"die Frau",
+ s:"That __________ is my English teacher.",
+ h:"Diese Frau ist meine Englischlehrerin.", k:"Frau"},
+{t:"t3", en:"up", de:"hinauf, hoch",
+ s:"The balloon flew __________ into the sky.",
+ h:"Der Ballon flog hoch in den Himmel.", k:"hoch"},
+{t:"t3", en:"travel", de:"reisen, fahren", mEn:"to travel",
+ s:"I love to __________ to new countries.",
+ h:"Ich reise gerne in neue Länder.", k:"reise"},
+{t:"t3", en:"amazing", de:"erstaunlich; großartig",
+ s:"The view from the top is __________!",
+ h:"Die Aussicht von oben ist großartig!", k:"großartig"},
+{t:"t3", en:"view", de:"der (An-)Blick, die (Aus-)Sicht",
+ s:"What an incredible __________ of the mountains!",
+ h:"Was für ein unglaublicher Blick auf die Berge!", k:"Blick"},
+{t:"t3", en:"second", de:"die Sekunde",
+ s:"Wait just a __________ – I'm coming!",
+ h:"Warte nur eine Sekunde – ich komme!", k:"Sekunde"},
+{t:"t3", en:"more", de:"mehr, weitere",
+ s:"Can I have some __________ pizza?",
+ h:"Kann ich noch mehr Pizza haben?", k:"mehr"},
+{t:"t3", en:"stop", de:"(an)halten; stoppen; aufhören (mit)", mEn:"to stop",
+ s:"Please __________ talking and listen!",
+ h:"Bitte hör auf zu reden und hör zu!", k:"hör auf"},
+{t:"t3", en:"cost", de:"kosten", mEn:"to cost",
+ s:"How much does this ticket __________ ?",
+ h:"Was kostet diese Karte?", k:"kostet"},
+{t:"t3", en:"upside down", de:"verkehrt herum, auf dem Kopf",
+ s:"You're holding the book __________!",
+ h:"Du hältst das Buch verkehrt herum!", k:"verkehrt herum"},
+{t:"t3", en:"degree", de:"das/der Grad",
+ s:"It's 25 __________ outside today.",
+ h:"Es sind heute 25 Grad draußen.", k:"Grad"},
+{t:"t3", en:"need", de:"etwas brauchen", mEn:"to need",
+ s:"I __________ a new pen for school.",
+ h:"Ich brauche einen neuen Stift für die Schule.", k:"brauche"},
+{t:"t3", en:"need to do", de:"etwas tun müssen", mEn:"to need to do",
+ s:"We __________ finish our homework tonight.",
+ h:"Wir müssen heute Abend unsere Hausaufgaben fertig machen.", k:"müssen"},
+{t:"t3", en:"tip", de:"der Tipp",
+ s:"Can you give me a __________ on how to solve this?",
+ h:"Kannst du mir einen Tipp geben, wie ich das lösen kann?", k:"Tipp"},
+{t:"t3", en:"turn over", de:"etwas umdrehen", mEn:"to turn sth. over",
+ s:"__________ the paper and write on the back.",
+ h:"Dreh das Papier um und schreib auf die Rückseite.", k:"Dreh|um"},
+{t:"t3", en:"hot", de:"heiß, warm",
+ s:"Be careful – the soup is very __________!",
+ h:"Sei vorsichtig – die Suppe ist sehr heiß!", k:"heiß"},
+{t:"t3", en:"swap", de:"der Tausch",
+ s:"Do you want to do a __________ ? I'll give you my apple for your sandwich.",
+ h:"Möchtest du tauschen? Ich gebe dir meinen Apfel für dein Sandwich.", k:"tauschen"},
+
+// ═══ BACKGROUND FILE (Screenshots 6-7) ════════════════════════════
+{t:"bf", en:"look", de:"aussehen", mEn:"to look",
+ s:"You __________ tired today.",
+ h:"Du siehst heute müde aus.", k:"siehst|aus"},
+{t:"bf", en:"beautiful", de:"wunderschön",
+ s:"What a __________ sunset!",
+ h:"Was für ein wunderschöner Sonnenuntergang!", k:"wunderschöner"},
+{t:"bf", en:"terrible", de:"schrecklich, fürchterlich",
+ s:"The weather was __________ yesterday.",
+ h:"Das Wetter war gestern schrecklich.", k:"schrecklich"},
+{t:"bf", en:"It's great, isn't it?", de:"Es ist großartig/toll, nicht wahr?",
+ s:"This game is amazing. __________ ?",
+ h:"Dieses Spiel ist toll, nicht wahr?", k:"nicht wahr"},
+{t:"bf", en:"island", de:"die Insel",
+ s:"We went on holiday to a Greek __________.",
+ h:"Wir sind auf einer griechischen Insel in den Urlaub gefahren.", k:"Insel"},
+{t:"bf", en:"change into", de:"(sich) (ver)ändern (zu/in); wechseln; (sich) verwandeln (in), werden (zu)", mEn:"to change into",
+ s:"The weather can __________ quickly in the mountains.",
+ h:"Das Wetter kann sich in den Bergen schnell ändern.", k:"ändern"},
+{t:"bf", en:"bring", de:"bringen, mitbringen", mEn:"to bring",
+ s:"Don't forget to __________ your umbrella!",
+ h:"Vergiss nicht, deinen Regenschirm mitzubringen!", k:"mitzubringen"},
+{t:"bf", en:"umbrella", de:"der Regenschirm",
+ s:"It's raining – I need my __________.",
+ h:"Es regnet – ich brauche meinen Regenschirm.", k:"Regenschirm"},
+{t:"bf", en:"moment", de:"der Moment",
+ s:"Wait a __________ – I'm not ready yet!",
+ h:"Warte einen Moment – ich bin noch nicht fertig!", k:"Moment"},
+{t:"bf", en:"shine", de:"der (Sonnen-)Schein; der Glanz",
+ s:"The sun's __________ is so bright today.",
+ h:"Der Sonnenschein ist heute so hell.", k:"Sonnenschein"},
+{t:"bf", en:"go up", de:"aufgehen (z. B. Sonne); (an)steigen", mEn:"to go up",
+ s:"The sun __________ at 6 am in summer.",
+ h:"Die Sonne geht im Sommer um 6 Uhr auf.", k:"geht|auf", ans:"goes up"},
+
+// ═══ STORY (Screenshots 7-8) ══════════════════════════════════════
+{t:"st", en:"clean up", de:"etwas aufräumen, sauber machen", mEn:"to clean sth. up",
+ s:"We need to __________ the kitchen after the party.",
+ h:"Wir müssen die Küche nach der Party aufräumen.", k:"aufräumen"},
+{t:"st", en:"guess", de:"(er)raten", mEn:"to guess",
+ s:"Can you __________ what's in this box?",
+ h:"Kannst du erraten, was in dieser Kiste ist?", k:"erraten"},
+{t:"st", en:"Well", de:"Nun,… / Also,… / Na ja,…",
+ s:"__________ , I think we should go home now.",
+ h:"Also, ich denke, wir sollten jetzt nach Hause gehen.", k:"Also"},
+{t:"st", en:"so (that)", de:"sodass",
+ s:"He spoke loudly __________ everyone could hear.",
+ h:"Er sprach laut, sodass jeder es hören konnte.", k:"sodass"},
+{t:"st", en:"over there", de:"da drüben, dort drüben",
+ s:"Look at that dog __________!",
+ h:"Schau dir den Hund dort drüben an!", k:"dort drüben"},
+{t:"st", en:"forget", de:"vergessen", mEn:"to forget",
+ s:"Don't __________ to bring your PE kit tomorrow!",
+ h:"Vergiss nicht, deine Sportsachen morgen mitzubringen!", k:"Vergiss|mitzubringen"},
+{t:"st", en:"together", de:"zusammen",
+ s:"Let's work __________ on this project.",
+ h:"Lass uns zusammen an diesem Projekt arbeiten.", k:"zusammen"},
+{t:"st", en:"dead", de:"tot",
+ s:"The plant is __________ – we didn't water it.",
+ h:"Die Pflanze ist tot – wir haben sie nicht gegossen.", k:"tot"},
+{t:"st", en:"mouse", de:"die Maus",
+ s:"There's a __________ in the kitchen!",
+ h:"Da ist eine Maus in der Küche!", k:"Maus"},
+{t:"st", en:"Next", de:"Als Nächstes …",
+ s:"__________ , we need to add the eggs.",
+ h:"Als Nächstes müssen wir die Eier hinzufügen.", k:"Nächstes"},
+{t:"st", en:"dig", de:"graben", mEn:"to dig",
+ s:"The dog loves to __________ holes in the garden.",
+ h:"Der Hund gräbt gerne Löcher im Garten.", k:"gräbt"},
+{t:"st", en:"bark at", de:"(jn. an)bellen", mEn:"to bark at sb.",
+ s:"Our dog always __________ the postman.",
+ h:"Unser Hund bellt immer den Postboten an.", k:"bellt|an", ans:"barks at"},
+{t:"st", en:"wedding", de:"die Hochzeit",
+ s:"We're going to my cousin's __________ next month.",
+ h:"Wir gehen nächsten Monat zur Hochzeit meiner Cousine.", k:"Hochzeit"},
+{t:"st", en:"bags of rubbish", de:"Tüten/Säcke (mit/voller) Müll",
+ s:"We threw away three __________ after cleaning.",
+ h:"Wir haben drei Säcke Müll weggeworfen nach dem Aufräumen.", k:"Säcke Müll"},
+{t:"st", en:"furniture", de:"die Möbel(stücke), das Mobiliar",
+ s:"We need new __________ for the living room.",
+ h:"Wir brauchen neue Möbel für das Wohnzimmer.", k:"Möbel"},
+{t:"st", en:"put up", de:"etwas aufhängen (an der Wand)", mEn:"to put sth. up",
+ s:"Can you help me __________ this poster?",
+ h:"Kannst du mir helfen, dieses Poster aufzuhängen?", k:"aufzuhängen"},
+{t:"st", en:"notice", de:"der Anschlag, die Bekanntmachung (an einem Schwarzen Brett)",
+ s:"There's a __________ on the board about the school trip.",
+ h:"Es gibt einen Anschlag am Schwarzen Brett über die Klassenfahrt.", k:"Anschlag"},
+{t:"st", en:"somebody", de:"jemand", ans:["somebody","someone"],
+ s:"__________ left their bag on the bus.",
+ h:"Jemand hat seine Tasche im Bus vergessen.", k:"Jemand"},
+{t:"st", en:"mean", de:"bedeuten; meinen (sagen wollen)", mEn:"to mean",
+ s:"What does this word __________ ?",
+ h:"Was bedeutet dieses Wort?", k:"bedeutet"},
+{t:"st", en:"scene", de:"die Szene",
+ s:"My favourite __________ in the film is at the end.",
+ h:"Meine Lieblingsszene im Film ist am Ende.", k:"Szene"},
+{t:"st", en:"go green", de:"grün/umweltfreundlich werden", mEn:"to go green",
+ s:"Our school is trying to __________ by recycling more.",
+ h:"Unsere Schule versucht umweltfreundlicher zu werden, indem sie mehr recycelt.", k:"umweltfreundlicher|werden"},
+{t:"st", en:"toy", de:"das Spielzeug",
+ s:"The children are playing with their __________.",
+ h:"Die Kinder spielen mit ihrem Spielzeug.", k:"Spielzeug", ans:"toys"},
+
+// ═══ STUDY SKILLS (Screenshot 9) ══════════════════════════════════
+{t:"sk", en:"greet", de:"begrüßen", mEn:"to greet",
+ s:"Always __________ your teacher when you arrive.",
+ h:"Begrüße immer deinen Lehrer, wenn du ankommst.", k:"Begrüße"},
+{t:"sk", en:"audience", de:"das Publikum; die Zuschauer/innen, die Zuhörer/innen",
+ s:"The __________ clapped loudly after the performance.",
+ h:"Das Publikum klatschte laut nach der Vorstellung.", k:"Publikum"},
+{t:"sk", en:"title", de:"der Titel, die Überschrift",
+ s:"Don't forget to write a __________ for your essay.",
+ h:"Vergiss nicht, einen Titel für deinen Aufsatz zu schreiben.", k:"Titel"},
+{t:"sk", en:"phrase", de:"der Ausdruck, die (Rede-)Wendung",
+ s:"I learned some useful __________ in Spanish today.",
+ h:"Ich habe heute einige nützliche Ausdrücke auf Spanisch gelernt.", k:"Ausdrücke", ans:"phrases"},
+{t:"sk", en:"finally", de:"schließlich, endlich",
+ s:"__________ , I'd like to thank everyone for coming.",
+ h:"Schließlich möchte ich allen danken, dass sie gekommen sind.", k:"Schließlich"},
+{t:"sk", en:"Do you have any questions?", de:"Habt ihr / Hast du (irgendwelche) Fragen?",
+ s:"That's everything from me. __________ ?",
+ h:"Das war alles von mir. Habt ihr Fragen?", k:"Fragen"},
+{t:"sk", en:"continue", de:"fortfahren, weitermachen; (sich) fortsetzen, weitergehen", mEn:"to continue",
+ s:"Please __________ with your work while I'm gone.",
+ h:"Bitte macht weiter mit eurer Arbeit, während ich weg bin.", k:"macht weiter"},
+
+// ═══ UNIT TASK (Screenshot 9) ═════════════════════════════════════
+{t:"ut", en:"zoo", de:"der Zoo",
+ s:"We're going to the __________ to see the lions.",
+ h:"Wir gehen in den Zoo, um die Löwen zu sehen.", k:"Zoo"},
+{t:"ut", en:"ride a bike", de:"(mit dem Fahrrad) fahren", mEn:"to ride a bike",
+ s:"I learned to __________ when I was five.",
+ h:"Ich habe mit fünf Jahren gelernt, Fahrrad zu fahren.", k:"Fahrrad"},
+{t:"ut", en:"topic", de:"das Thema",
+ s:"What's the __________ of your presentation?",
+ h:"Was ist das Thema deiner Präsentation?", k:"Thema"},
 ];
 
 // ╔══════════════════════════════════════════════════════════════════╗
@@ -1141,6 +1452,36 @@ inp._check=chk;inp._reset=()=>{inp.value='';inp.disabled=false;inp._correct=fals
 const LT_KEY = 'lt_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
 
 
+// ── KARTEN-ALBUM ──────────────────────────────────────────────────
+const ALBUM_KEY = 'album_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
+function album_load(){try{return JSON.parse(localStorage.getItem(ALBUM_KEY))||[];}catch(e){return [];}}
+function album_save(arr){try{localStorage.setItem(ALBUM_KEY,JSON.stringify(arr));}catch(e){}}
+function album_add(en){
+  if(!en) return false;
+  const a = album_load();
+  const k = String(en);
+  if(a.indexOf(k) !== -1) return false;
+  a.push(k);
+  album_save(a);
+  album_toast(k);
+  // ggf. live-Render im offenen Akkordeon
+  try{
+    const acc = document.getElementById('acc-album');
+    if(acc && acc.open && typeof window._renderAlbum === 'function') window._renderAlbum();
+  }catch(e){}
+  return true;
+}
+function album_toast(en){
+  const v = (typeof VOCAB !== 'undefined') ? VOCAB.find(x=>x.en===en) : null;
+  if(!v) return;
+  const t = document.createElement('div');
+  t.className = 'album-toast';
+  t.innerHTML = '🎴 Neue Karte: <b>'+(v.mEn||v.en)+'</b>';
+  document.body.appendChild(t);
+  setTimeout(()=>t.classList.add('show'), 30);
+  setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(), 450);}, 2200);
+}
+
 function lt_load(){try{return JSON.parse(localStorage.getItem(LT_KEY))||{};}catch(e){return {};}}
 function lt_save(s){try{localStorage.setItem(LT_KEY,JSON.stringify(s));}catch(e){}}
 function lt_score(en){const s=lt_load();return (s[en]||0);}
@@ -1153,6 +1494,7 @@ function lt_record(en, ok){
   if(s[key]>5) s[key]=5;
   if(s[key]<-5) s[key]=-5;
   lt_save(s);
+  if(ok) album_add(key);
 }
 // Bias-Pick: 60% aus den schwächsten 50%, 40% random
 function lt_pick(arr, n){
@@ -1710,7 +2052,7 @@ function setupMemory(){
   const foundEl = document.getElementById('mem-found');
   const timeEl  = document.getElementById('mem-time');
   const winEl   = document.getElementById('mem-win');
-  const PAIRS   = 8;
+  const PAIRS   = 12;
   let cur='all', cards=[], opened=[], matched=0, tries=0, t0=null, timer=null;
   buildTopicButtons('mem-topics');
   function fmt(s){const m=Math.floor(s/60), r=s%60;return m+':'+(r<10?'0':'')+r;}
@@ -1872,6 +2214,67 @@ function setupSpeech(){
   });
   acc.addEventListener('toggle', function(){ if(this.open && !cardEl.innerHTML.trim()) render(); });
 }
+
+// ── ALBUM ─────────────────────────────────────────────────────────
+function setupAlbum_augment(rootSelector){
+  // Erweitert frisch gerenderte Album-Karten mit 🔊-TTS + IPA (falls vorhanden).
+  try{
+    const grid = document.querySelector(rootSelector||'#album-grid');
+    if(!grid) return;
+    grid.querySelectorAll('.album-card').forEach(card=>{
+      if(card.dataset.augmented==='1') return;
+      const enRaw = card.getAttribute('data-en') || card.dataset.en || '';
+      const en = enRaw || (card.querySelector('.album-en')?card.querySelector('.album-en').textContent:'');
+      if(!en) return;
+      const v = (typeof VOCAB!=='undefined') ? VOCAB.find(x=>x.en===en) : null;
+      // 🔊 Button
+      const btn = makeTtsBtn(en,'en-GB',true);
+      btn.classList.add('album-tts-btn');
+      const enEl = card.querySelector('.album-en') || card;
+      enEl.appendChild(btn);
+      // IPA
+      if(v && v.ipa){
+        const ipaSpan = document.createElement('span');
+        ipaSpan.className = 'ipa';
+        ipaSpan.title = 'Lautschrift (IPA)';
+        ipaSpan.textContent = v.ipa;
+        enEl.appendChild(ipaSpan);
+      }
+      card.dataset.augmented = '1';
+    });
+  }catch(e){}
+}
+function setupAlbum(){
+  const acc = document.getElementById('acc-album');
+  const grid = document.getElementById('album-grid');
+  const meta = document.getElementById('album-meta');
+  function render(){
+    const owned = album_load();
+    meta.textContent = '🎴 ' + owned.length + ' / ' + VOCAB.length + ' gesammelt';
+    grid.innerHTML = '';
+    VOCAB.forEach(v=>{
+      const got = owned.indexOf(v.en) !== -1;
+      const card = document.createElement('div');
+      card.className = 'album-card' + (got ? ' got' : '');
+      if(got){
+        card.innerHTML = '<div class="album-en">'+(v.mEn||v.en)+'</div><div class="album-de">'+v.de+'</div>';
+      } else {
+        card.innerHTML = '<div class="album-locked">?</div>';
+      }
+      grid.appendChild(card);
+    });
+    if(owned.length === VOCAB.length){
+      const win = document.createElement('div');
+      win.style.cssText = 'margin-top:14px;padding:18px;text-align:center;background:linear-gradient(135deg,#fef9c3,#fde68a);border:2px solid #d97706;border-radius:14px;font-weight:900;color:#7c2410';
+      win.innerHTML = '🏆 Komplett! Alle '+VOCAB.length+' Karten gesammelt.';
+      grid.parentNode.insertBefore(win, grid.nextSibling);
+    }
+  }
+  window._renderAlbum = render;
+  acc.addEventListener('toggle', function(){ if(this.open) render(); });
+  if(acc.open) render();
+}
+
 
 // ── CROSSWORD ─────────────────────────────────────────────────────
 function setupCrossword(){
@@ -2237,7 +2640,7 @@ function setupCrossword(){
 }
 
 
-setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();
+setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();setupAlbum();
 // Auto-close other accordions
 (function(){
   const IDS=['acc-uebungen','acc-matching','acc-scramble','acc-spell','acc-dictation','acc-race','acc-invaders'];

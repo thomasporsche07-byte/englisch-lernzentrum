@@ -400,7 +400,7 @@ body.dark-mode .opener .opener-end{color:#4ade80!important}
 .mc-opt.wrong-mc{background:linear-gradient(135deg,#C62828,#e53935)!important;color:#fff!important;border-color:transparent!important}
 
 /* ─── Memory ─── */
-.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.mem-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:14px 0}
 @media(max-width:600px){.mem-grid{grid-template-columns:repeat(4,1fr);gap:6px}}
 .mem-card{aspect-ratio:3/4;border-radius:10px;cursor:pointer;perspective:600px;position:relative;user-select:none;-webkit-tap-highlight-color:transparent}
 .mem-card-inner{position:absolute;inset:0;transition:transform .35s ease;transform-style:preserve-3d}
@@ -631,9 +631,9 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
   <details class="accordion" id="acc-memory">
     <summary><span style="color:#94a3b8;font-weight:600">7 ·</span> 🃏 Memory – Paare aufdecken</summary>
     <div class="content">
-      <div class="note">Decke 8 Paare auf: <b>englisches Wort</b> + <b>deutsche Bedeutung</b>. Klicke immer zwei Karten – passen sie zusammen, bleiben sie offen.</div>
+      <div class="note">Decke 12 Paare auf: <b>englisches Wort</b> + <b>deutsche Bedeutung</b>. Klicke immer zwei Karten – passen sie zusammen, bleiben sie offen.</div>
       <div class="topic-switch" id="mem-topics"></div>
-      <div class="mem-meta"><span id="mem-tries">🎯 Versuche: 0</span><span id="mem-found">✅ Paare: 0/8</span><span id="mem-time">⏱ 0:00</span></div>
+      <div class="mem-meta"><span id="mem-tries">🎯 Versuche: 0</span><span id="mem-found">✅ Paare: 0/12</span><span id="mem-time">⏱ 0:00</span></div>
       <div class="section-actions"><button class="btn ghost" id="mem-reroll">🔄 Neu starten</button></div>
       <div class="mem-grid" id="mem-grid"></div>
       <div class="mem-win" id="mem-win"></div>
@@ -1710,7 +1710,7 @@ function setupMemory(){
   const foundEl = document.getElementById('mem-found');
   const timeEl  = document.getElementById('mem-time');
   const winEl   = document.getElementById('mem-win');
-  const PAIRS   = 8;
+  const PAIRS   = 12;
   let cur='all', cards=[], opened=[], matched=0, tries=0, t0=null, timer=null;
   buildTopicButtons('mem-topics');
   function fmt(s){const m=Math.floor(s/60), r=s%60;return m+':'+(r<10?'0':'')+r;}

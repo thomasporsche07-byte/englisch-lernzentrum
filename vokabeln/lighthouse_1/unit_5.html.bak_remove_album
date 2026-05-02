@@ -400,7 +400,7 @@ body.dark-mode .opener .opener-end{color:#4ade80!important}
 .mc-opt.wrong-mc{background:linear-gradient(135deg,#C62828,#e53935)!important;color:#fff!important;border-color:transparent!important}
 
 /* ─── Memory ─── */
-.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+.mem-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:14px 0}
 @media(max-width:600px){.mem-grid{grid-template-columns:repeat(4,1fr);gap:6px}}
 .mem-card{aspect-ratio:3/4;border-radius:10px;cursor:pointer;perspective:600px;position:relative;user-select:none;-webkit-tap-highlight-color:transparent}
 .mem-card-inner{position:absolute;inset:0;transition:transform .35s ease;transform-style:preserve-3d}
@@ -439,6 +439,29 @@ body.dark-mode .speech-en{color:#a78bfa}
 .speech-actions{margin-top:10px}
 .speech-card-done{padding:24px;text-align:center}
 .speech-card-done #speech-restart{margin-top:14px}
+
+/* ─── Karten-Album ─── */
+#acc-album summary{border-left-color:#ca8a04;background:linear-gradient(90deg,rgba(202,138,4,.12),rgba(202,138,4,.02))}
+body.dark-mode #acc-album summary{background:linear-gradient(90deg,rgba(250,204,21,.10),rgba(250,204,21,.01))}
+.album-meta{display:flex;justify-content:center;gap:14px;font-size:14px;font-weight:800;margin:10px 0;color:#7c2410}
+body.dark-mode .album-meta{color:#fde68a}
+.album-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:14px 0}
+@media(max-width:780px){.album-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:440px){.album-grid{grid-template-columns:repeat(3,1fr)}}
+.album-card{aspect-ratio:3/4;border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;border:2px solid #e2e8f0;background:#f8fafc;color:#94a3b8;font-size:11px;line-height:1.25;transition:.2s;position:relative;overflow:hidden}
+.album-card.got{background:linear-gradient(160deg,#fef9c3 0%,#fde68a 50%,#fbbf24 100%);border-color:#d97706;color:#7c2410;box-shadow:0 3px 8px rgba(217,119,6,.25)}
+.album-card.got::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.4) 0%,transparent 30%,transparent 70%,rgba(255,255,255,.2) 100%);pointer-events:none}
+body.dark-mode .album-card{background:#162032;border-color:#334155;color:#475569}
+body.dark-mode .album-card.got{background:linear-gradient(160deg,#3a2f0a 0%,#5a4515 50%,#7a5e1c 100%);border-color:#ca8a04;color:#fde68a}
+.album-en{font-size:13px;font-weight:900;letter-spacing:.2px;word-break:break-word;line-height:1.2;margin-bottom:4px;position:relative;z-index:1}
+.album-de{font-size:11px;font-weight:600;opacity:.85;line-height:1.2;position:relative;z-index:1}
+.album-locked{font-size:24px;font-weight:900;opacity:.4}
+
+/* ─── Album-Toast ─── */
+.album-toast{position:fixed;top:20px;right:20px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#7c2410;padding:14px 22px;border-radius:14px;font-weight:800;font-size:15px;box-shadow:0 6px 20px rgba(217,119,6,.4);z-index:10000;opacity:0;transform:translateX(120%);transition:.4s ease;border:2px solid #d97706}
+.album-toast.show{opacity:1;transform:translateX(0)}
+@media(max-width:600px){.album-toast{top:auto;bottom:80px;right:14px;left:14px}}
+
 
 /* ─── Crossword ─── */
 #acc-crossword summary{border-left-color:#0f766e;background:linear-gradient(90deg,rgba(15,118,110,.10),rgba(15,118,110,.02))}
@@ -499,6 +522,7 @@ body.dark-mode .profile-btn-vk:hover{background:#5a4515;color:#fde68a}
 body.dark-mode .ipa{color:#9ca3af}
 .ipa:hover{color:#475569}
 body.dark-mode .ipa:hover{color:#cbd5e1}
+.album-tts-btn{font-size:11px;padding:2px 6px;margin-left:4px}
 
 </style>
 </head>
@@ -631,9 +655,9 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
   <details class="accordion" id="acc-memory">
     <summary><span style="color:#94a3b8;font-weight:600">7 ·</span> 🃏 Memory – Paare aufdecken</summary>
     <div class="content">
-      <div class="note">Decke 8 Paare auf: <b>englisches Wort</b> + <b>deutsche Bedeutung</b>. Klicke immer zwei Karten – passen sie zusammen, bleiben sie offen.</div>
+      <div class="note">Decke 12 Paare auf: <b>englisches Wort</b> + <b>deutsche Bedeutung</b>. Klicke immer zwei Karten – passen sie zusammen, bleiben sie offen.</div>
       <div class="topic-switch" id="mem-topics"></div>
-      <div class="mem-meta"><span id="mem-tries">🎯 Versuche: 0</span><span id="mem-found">✅ Paare: 0/8</span><span id="mem-time">⏱ 0:00</span></div>
+      <div class="mem-meta"><span id="mem-tries">🎯 Versuche: 0</span><span id="mem-found">✅ Paare: 0/12</span><span id="mem-time">⏱ 0:00</span></div>
       <div class="section-actions"><button class="btn ghost" id="mem-reroll">🔄 Neu starten</button></div>
       <div class="mem-grid" id="mem-grid"></div>
       <div class="mem-win" id="mem-win"></div>
@@ -723,6 +747,16 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
     <span style="font-size:12px;font-weight:700;color:#ca8a04;text-transform:uppercase;letter-spacing:1.5px;white-space:nowrap">🎴 Sammelalbum</span>
     <div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,#fbbf24,transparent)"></div>
   </div>
+
+  <!-- ACCORDION: Album -->
+  <details class="accordion" id="acc-album">
+    <summary><span style="color:#94a3b8;font-weight:600">11 ·</span> 🎴 Mein Album – gesammelte Vokabeln</summary>
+    <div class="content">
+      <div class="note" style="background:linear-gradient(135deg,#fef9c3,#fde68a);border-color:#fcd34d;border-left-color:#d97706;color:#7c2410">Jede Vokabel, die du <b>zum ersten Mal richtig</b> löst (in einer beliebigen Übung), wandert in dein Album. Sammle alle <b>123</b> Karten!</div>
+      <div class="album-meta" id="album-meta">🎴 0 / 123 gesammelt</div>
+      <div class="album-grid" id="album-grid"></div>
+    </div>
+  </details>
 
   <div class="print-vocab-table" style="display:none" id="print-vocab-table"></div>
 </div>
@@ -1141,6 +1175,36 @@ inp._check=chk;inp._reset=()=>{inp.value='';inp.disabled=false;inp._correct=fals
 const LT_KEY = 'lt_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
 
 
+// ── KARTEN-ALBUM ──────────────────────────────────────────────────
+const ALBUM_KEY = 'album_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
+function album_load(){try{return JSON.parse(localStorage.getItem(ALBUM_KEY))||[];}catch(e){return [];}}
+function album_save(arr){try{localStorage.setItem(ALBUM_KEY,JSON.stringify(arr));}catch(e){}}
+function album_add(en){
+  if(!en) return false;
+  const a = album_load();
+  const k = String(en);
+  if(a.indexOf(k) !== -1) return false;
+  a.push(k);
+  album_save(a);
+  album_toast(k);
+  // ggf. live-Render im offenen Akkordeon
+  try{
+    const acc = document.getElementById('acc-album');
+    if(acc && acc.open && typeof window._renderAlbum === 'function') window._renderAlbum();
+  }catch(e){}
+  return true;
+}
+function album_toast(en){
+  const v = (typeof VOCAB !== 'undefined') ? VOCAB.find(x=>x.en===en) : null;
+  if(!v) return;
+  const t = document.createElement('div');
+  t.className = 'album-toast';
+  t.innerHTML = '🎴 Neue Karte: <b>'+(v.mEn||v.en)+'</b>';
+  document.body.appendChild(t);
+  setTimeout(()=>t.classList.add('show'), 30);
+  setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(), 450);}, 2200);
+}
+
 function lt_load(){try{return JSON.parse(localStorage.getItem(LT_KEY))||{};}catch(e){return {};}}
 function lt_save(s){try{localStorage.setItem(LT_KEY,JSON.stringify(s));}catch(e){}}
 function lt_score(en){const s=lt_load();return (s[en]||0);}
@@ -1153,6 +1217,7 @@ function lt_record(en, ok){
   if(s[key]>5) s[key]=5;
   if(s[key]<-5) s[key]=-5;
   lt_save(s);
+  if(ok) album_add(key);
 }
 // Bias-Pick: 60% aus den schwächsten 50%, 40% random
 function lt_pick(arr, n){
@@ -1710,7 +1775,7 @@ function setupMemory(){
   const foundEl = document.getElementById('mem-found');
   const timeEl  = document.getElementById('mem-time');
   const winEl   = document.getElementById('mem-win');
-  const PAIRS   = 8;
+  const PAIRS   = 12;
   let cur='all', cards=[], opened=[], matched=0, tries=0, t0=null, timer=null;
   buildTopicButtons('mem-topics');
   function fmt(s){const m=Math.floor(s/60), r=s%60;return m+':'+(r<10?'0':'')+r;}
@@ -1872,6 +1937,67 @@ function setupSpeech(){
   });
   acc.addEventListener('toggle', function(){ if(this.open && !cardEl.innerHTML.trim()) render(); });
 }
+
+// ── ALBUM ─────────────────────────────────────────────────────────
+function setupAlbum_augment(rootSelector){
+  // Erweitert frisch gerenderte Album-Karten mit 🔊-TTS + IPA (falls vorhanden).
+  try{
+    const grid = document.querySelector(rootSelector||'#album-grid');
+    if(!grid) return;
+    grid.querySelectorAll('.album-card').forEach(card=>{
+      if(card.dataset.augmented==='1') return;
+      const enRaw = card.getAttribute('data-en') || card.dataset.en || '';
+      const en = enRaw || (card.querySelector('.album-en')?card.querySelector('.album-en').textContent:'');
+      if(!en) return;
+      const v = (typeof VOCAB!=='undefined') ? VOCAB.find(x=>x.en===en) : null;
+      // 🔊 Button
+      const btn = makeTtsBtn(en,'en-GB',true);
+      btn.classList.add('album-tts-btn');
+      const enEl = card.querySelector('.album-en') || card;
+      enEl.appendChild(btn);
+      // IPA
+      if(v && v.ipa){
+        const ipaSpan = document.createElement('span');
+        ipaSpan.className = 'ipa';
+        ipaSpan.title = 'Lautschrift (IPA)';
+        ipaSpan.textContent = v.ipa;
+        enEl.appendChild(ipaSpan);
+      }
+      card.dataset.augmented = '1';
+    });
+  }catch(e){}
+}
+function setupAlbum(){
+  const acc = document.getElementById('acc-album');
+  const grid = document.getElementById('album-grid');
+  const meta = document.getElementById('album-meta');
+  function render(){
+    const owned = album_load();
+    meta.textContent = '🎴 ' + owned.length + ' / ' + VOCAB.length + ' gesammelt';
+    grid.innerHTML = '';
+    VOCAB.forEach(v=>{
+      const got = owned.indexOf(v.en) !== -1;
+      const card = document.createElement('div');
+      card.className = 'album-card' + (got ? ' got' : '');
+      if(got){
+        card.innerHTML = '<div class="album-en">'+(v.mEn||v.en)+'</div><div class="album-de">'+v.de+'</div>';
+      } else {
+        card.innerHTML = '<div class="album-locked">?</div>';
+      }
+      grid.appendChild(card);
+    });
+    if(owned.length === VOCAB.length){
+      const win = document.createElement('div');
+      win.style.cssText = 'margin-top:14px;padding:18px;text-align:center;background:linear-gradient(135deg,#fef9c3,#fde68a);border:2px solid #d97706;border-radius:14px;font-weight:900;color:#7c2410';
+      win.innerHTML = '🏆 Komplett! Alle '+VOCAB.length+' Karten gesammelt.';
+      grid.parentNode.insertBefore(win, grid.nextSibling);
+    }
+  }
+  window._renderAlbum = render;
+  acc.addEventListener('toggle', function(){ if(this.open) render(); });
+  if(acc.open) render();
+}
+
 
 // ── CROSSWORD ─────────────────────────────────────────────────────
 function setupCrossword(){
@@ -2237,7 +2363,7 @@ function setupCrossword(){
 }
 
 
-setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();
+setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();setupAlbum();
 // Auto-close other accordions
 (function(){
   const IDS=['acc-uebungen','acc-matching','acc-scramble','acc-spell','acc-dictation','acc-race','acc-invaders'];

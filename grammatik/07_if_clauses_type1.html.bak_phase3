@@ -1292,7 +1292,6 @@ body.dark-mode #acc-trans summary{background:linear-gradient(90deg,rgba(94,234,2
           <button class="ki-chip" onclick="kiSend(this.textContent)">Prüfe diesen Satz: If it will rain, we will stay at home.</button>
           <button class="ki-chip" onclick="kiSend(this.textContent)">Welches Tense steht im if-Satz?</button>
           <button class="ki-chip" onclick="kiSend(this.textContent)">Wann brauche ich ein Komma?</button>
-          <button class="ki-chip" onclick="kiSend(this.textContent)">Was ist der Unterschied zwischen If-Satz Typ 1 und Typ 2?</button>
         </div>
         <div class="ki-messages" id="ki-messages"></div>
         <div class="ki-err" id="ki-err" style="display:none"></div>
@@ -1317,7 +1316,7 @@ body.dark-mode #acc-trans summary{background:linear-gradient(90deg,rgba(94,234,2
     </div>
   </details>
   <footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
-  <div>Version 02.05.2026, 17:00</div>
+  <div>Version 28.04.2026, 22:30</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 </div>

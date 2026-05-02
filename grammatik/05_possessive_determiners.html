@@ -434,7 +434,9 @@ body.dark-mode .quiz-divider span{color:var(--accent)}
 .wwm-ladder-row.current{background:linear-gradient(90deg,rgba(244,196,48,.18),rgba(244,196,48,.08));border-color:rgba(244,196,48,.7);color:#f4c430;box-shadow:0 0 10px rgba(244,196,48,.25);font-size:12.5px}
 .wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(244,196,48,.6)}
 .wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(244,196,48,.28),rgba(244,196,48,.12))}
-@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
+@media(max-width:900px){.wwm-layout{grid-template-columns:1fr;gap:12px}.wwm-ladder{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px;padding:8px 6px;order:-1}.wwm-ladder-row{flex-direction:column;min-width:60px;padding:4px 6px;gap:2px;text-align:center;font-size:10px}.wwm-ladder-row .wwm-qnum{width:auto;text-align:center;font-size:9px}.wwm-ladder-row .wwm-amount{flex:none;text-align:center;font-size:11px;letter-spacing:0}.wwm-ladder-row.current{font-size:11.5px}}
+@media(max-width:600px){.wwm-ladder{flex-wrap:nowrap;justify-content:center;align-items:stretch}.wwm-ladder-row{display:none !important}.wwm-ladder-row.current{display:inline-flex !important;font-size:12.5px;min-width:78px;border-width:2px}.wwm-ladder-row.current+.wwm-ladder-row{display:inline-flex !important;opacity:.7}.wwm-ladder-row:has(+ .wwm-ladder-row.current){display:inline-flex !important;opacity:.55}#wwm-quiz .wwm-lifelines{gap:6px;margin:8px 0 12px}#wwm-quiz .wwm-lifelines .chip{padding:6px 10px;font-size:11.5px;letter-spacing:.2px;border-width:1.5px}#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{font-size:16px;padding:14px 16px;line-height:1.5}.wwm-option-btn{font-size:14px;padding:9px 14px;gap:10px}.wwm-opt-letter{width:24px;height:24px;font-size:12px}.wwm-qbadge{font-size:11px;padding:3px 10px;letter-spacing:.4px}}
+@media(max-width:375px){.wwm-ladder{padding:4px}.wwm-ladder-row.current{min-width:70px;font-size:11.5px;padding:3px 6px}.wwm-ladder-row.current+.wwm-ladder-row,.wwm-ladder-row:has(+ .wwm-ladder-row.current){min-width:55px;padding:3px 4px;font-size:9.5px}#wwm-quiz .wwm-lifelines .chip{padding:5px 8px;font-size:10.5px;letter-spacing:.1px}#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{font-size:15px;padding:12px 14px}.wwm-option-btn{font-size:13.5px;padding:8px 12px;gap:8px}.wwm-opt-letter{width:22px;height:22px;font-size:11px}}
 .wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(244,196,48,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#f4c430;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(244,196,48,.2)}
 #wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
 #wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(244,196,48,.75);color:#f4c430;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(244,196,48,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(244,196,48,.4);cursor:pointer;transition:.2s all}
@@ -1233,6 +1235,7 @@ body.dark-mode .confirm-box p{color:#d1d5db;}
           <button class="ki-chip" onclick="kiSend('Was ist der Unterschied zwischen its und it\\u0027s?')">⚠️ its vs. it's</button>
           <button class="ki-chip" onclick="kiSend('Was ist der Unterschied zwischen their, they\\u0027re und there?')">⚠️ their/they're/there</button>
           <button class="ki-chip" onclick="kiSend('Warum darf ich nicht „the my book“ sagen?')">📐 Stellung</button>
+          <button class="ki-chip" onclick="kiSend('Was ist der Unterschied zwischen Personalpronomen (I, you, he) und Possessivbegleiter (my, your, his)?')">👤 Personalpronomen vs Possessivbegleiter</button>
         </div>
         <div class="ki-messages" id="ki-messages"></div>
         <div class="ki-input-row">
@@ -1258,7 +1261,7 @@ body.dark-mode .confirm-box p{color:#d1d5db;}
   </details>
 
   <footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
-  <div>Version 28.04.2026, 22:30</div>
+  <div>Version 02.05.2026, 17:00</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 </div>
@@ -3175,6 +3178,78 @@ async function kiSend(quickText){
 }
 
 </script>
+
+<script>
+/* WWM-QUIZ-KBD-V1 */
+// ===== WWM-Quiz: Tastatur-Steuerung (1-4 Optionen, Enter/→ weiter, J/S/T Joker, Esc schließt) =====
+(function quizKbd(){
+  const quizEl=document.getElementById('wwm-quiz');
+  if(!quizEl)return;
+  function visibleOpts(){
+    return Array.from(quizEl.querySelectorAll('.wwm-option-btn')).filter(function(b){
+      var op=b.style.opacity;
+      var visible=(op===''||op==='1'||parseFloat(op)>=0.5);
+      return !b.disabled && visible;
+    });
+  }
+  function pickOpt(idx){
+    var live=visibleOpts();
+    if(live[idx]){live[idx].click();return true;}
+    return false;
+  }
+  function nextBtn(){
+    return quizEl.querySelector('#wwm-next, .controls [data-next="1"], .controls .btn.green:not([disabled]), .controls .btn.gray:not([disabled])');
+  }
+  function pickJoker(key){
+    var chips=Array.from(quizEl.querySelectorAll('.wwm-lifelines .chip'));
+    for(var i=0;i<chips.length;i++){
+      var c=chips[i];
+      if(c.classList.contains('chip-used'))continue;
+      var dj=c.dataset.joker;
+      var txt=c.textContent||'';
+      if(dj===key){c.click();return true;}
+      if(!dj){
+        if(key==='fifty' && /50/.test(txt)){c.click();return true;}
+        if(key==='phone' && /\u{1F4DE}|telefon|joker/iu.test(txt)){c.click();return true;}
+        if(key==='audience' && /\u{1F465}|publikum/iu.test(txt)){c.click();return true;}
+      }
+    }
+    return false;
+  }
+  function closeJoker(){
+    quizEl.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(function(b){b.remove();});
+    var ex=quizEl.querySelector('#wwm-joker-extra');
+    if(ex)ex.innerHTML='';
+  }
+  document.addEventListener('keydown',function(e){
+    if(!quizEl.open)return;
+    var ae=document.activeElement;
+    if(ae && (ae.tagName==='INPUT'||ae.tagName==='TEXTAREA'||ae.isContentEditable))return;
+    // Fokus muss innerhalb Quiz oder auf body liegen, sonst nicht handeln (andere Akkordeons mit Inputs).
+    if(ae && ae!==document.body && !quizEl.contains(ae))return;
+    var k=e.key;
+    if(k==='1'||k==='2'||k==='3'||k==='4'){
+      if(pickOpt(parseInt(k,10)-1))e.preventDefault();
+    }else if(k==='Enter'){
+      // Browser-Default: Enter auf fokussiertem Button = Klick. Nicht abfangen.
+      if(ae && ae.tagName==='BUTTON' && quizEl.contains(ae))return;
+      var nb=nextBtn();
+      if(nb){e.preventDefault();nb.click();}
+    }else if(k==='ArrowRight'){
+      var nb2=nextBtn();
+      if(nb2){e.preventDefault();nb2.click();}
+    }else if(k==='Escape'){
+      e.preventDefault();closeJoker();
+    }else{
+      var lk=(k||'').toLowerCase();
+      if(lk==='j'||k==='F1'){if(pickJoker('fifty'))e.preventDefault();}
+      else if(lk==='s'||k==='F2'){if(pickJoker('phone'))e.preventDefault();}
+      else if(lk==='t'||k==='F3'){if(pickJoker('audience'))e.preventDefault();}
+    }
+  });
+})();
+</script>
+
 <script id="auto-version-stamp">
 /* Selbstpflegender Footer-Stempel: zeigt echte mtime der HTML-Datei. */
 (function(){try{

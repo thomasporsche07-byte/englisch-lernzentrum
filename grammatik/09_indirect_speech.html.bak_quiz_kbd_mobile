@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Relativsätze – Hellweg-Realschule</title>
+<title>Indirekte Rede – Hellweg-Realschule</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -277,15 +277,15 @@ details.accordion[open] summary{border-bottom:1px solid var(--border)}
 details.accordion summary:hover{background:var(--bg-card-hover)}
 
 /* Akkordeon-Akzentstreifen pro Sektion */
-#acc-pron summary{border-left-color:var(--success)}
-#acc-pron .acc-num{background:var(--success-soft);color:var(--success)}
-#acc-pron .task{border-top-color:var(--success)}
-#acc-build summary{border-left-color:var(--info)}
-#acc-build .acc-num{background:var(--info-soft);color:var(--info)}
-#acc-build .task{border-top-color:var(--info)}
-#acc-cc summary{border-left-color:var(--warn)}
-#acc-cc .acc-num{background:var(--warn-soft);color:var(--warn)}
-#acc-cc .task{border-top-color:var(--warn)}
+#acc-stmt summary{border-left-color:var(--success)}
+#acc-stmt .acc-num{background:var(--success-soft);color:var(--success)}
+#acc-stmt .task{border-top-color:var(--success)}
+#acc-qyn summary{border-left-color:var(--error)}
+#acc-qyn .acc-num{background:var(--error-soft);color:var(--error)}
+#acc-qyn .task{border-top-color:var(--error)}
+#acc-qwh summary{border-left-color:var(--info)}
+#acc-qwh .acc-num{background:var(--info-soft);color:var(--info)}
+#acc-qwh .task{border-top-color:var(--info)}
 
 .content{padding:18px 20px}
 
@@ -431,9 +431,7 @@ body.dark-mode .quiz-divider span{color:var(--accent)}
 .wwm-ladder-row.current{background:linear-gradient(90deg,rgba(244,196,48,.18),rgba(244,196,48,.08));border-color:rgba(244,196,48,.7);color:#f4c430;box-shadow:0 0 10px rgba(244,196,48,.25);font-size:12.5px}
 .wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(244,196,48,.6)}
 .wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(244,196,48,.28),rgba(244,196,48,.12))}
-@media(max-width:900px){.wwm-layout{grid-template-columns:1fr;gap:12px}.wwm-ladder{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px;padding:8px 6px;order:-1}.wwm-ladder-row{flex-direction:column;min-width:60px;padding:4px 6px;gap:2px;text-align:center;font-size:10px}.wwm-ladder-row .wwm-qnum{width:auto;text-align:center;font-size:9px}.wwm-ladder-row .wwm-amount{flex:none;text-align:center;font-size:11px;letter-spacing:0}.wwm-ladder-row.current{font-size:11.5px}}
-@media(max-width:600px){.wwm-ladder{flex-wrap:nowrap;justify-content:center;align-items:stretch}.wwm-ladder-row{display:none !important}.wwm-ladder-row.current{display:inline-flex !important;font-size:12.5px;min-width:78px;border-width:2px}.wwm-ladder-row.current+.wwm-ladder-row{display:inline-flex !important;opacity:.7}.wwm-ladder-row:has(+ .wwm-ladder-row.current){display:inline-flex !important;opacity:.55}#wwm-quiz .wwm-lifelines{gap:6px;margin:8px 0 12px}#wwm-quiz .wwm-lifelines .chip{padding:6px 10px;font-size:11.5px;letter-spacing:.2px;border-width:1.5px}#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{font-size:16px;padding:14px 16px;line-height:1.5}.wwm-option-btn{font-size:14px;padding:9px 14px;gap:10px}.wwm-opt-letter{width:24px;height:24px;font-size:12px}.wwm-qbadge{font-size:11px;padding:3px 10px;letter-spacing:.4px}}
-@media(max-width:375px){.wwm-ladder{padding:4px}.wwm-ladder-row.current{min-width:70px;font-size:11.5px;padding:3px 6px}.wwm-ladder-row.current+.wwm-ladder-row,.wwm-ladder-row:has(+ .wwm-ladder-row.current){min-width:55px;padding:3px 4px;font-size:9.5px}#wwm-quiz .wwm-lifelines .chip{padding:5px 8px;font-size:10.5px;letter-spacing:.1px}#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{font-size:15px;padding:12px 14px}.wwm-option-btn{font-size:13.5px;padding:8px 12px;gap:8px}.wwm-opt-letter{width:22px;height:22px;font-size:11px}}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
 .wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(244,196,48,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#f4c430;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(244,196,48,.2)}
 #wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
 #wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(244,196,48,.75);color:#f4c430;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(244,196,48,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(244,196,48,.4);cursor:pointer;transition:.2s all}
@@ -1062,14 +1060,14 @@ body.dark-mode .confirm-box p{color:#f0e0d0;}
   </div>
 </div>
 <button class="tts-toggle" id="tts-toggle">🔊 Vorlesen</button>
-<button class="reset-all-btn" onclick="customConfirm('Gesamten Fortschritt zurücksetzen?',function(){try{localStorage.removeItem('relclause_progress_v1');}catch(e){}var orig=window.customConfirm;window.customConfirm=function(m,cb){cb();};var ids=['pron-reset','build-reset','cc-reset'];ids.forEach(function(id){var b=document.getElementById(id);if(b)b.click();});var qr=document.getElementById('quiz-reset');if(qr)qr.click();window.customConfirm=orig;})">🗑️ Zurücksetzen</button>
+<button class="reset-all-btn" onclick="customConfirm('Gesamten Fortschritt zurücksetzen?',function(){try{localStorage.removeItem('indspeech_progress_v1');}catch(e){}var orig=window.customConfirm;window.customConfirm=function(m,cb){cb();};var ids=['stmt-reset','qyn-reset','qwh-reset'];ids.forEach(function(id){var b=document.getElementById(id);if(b)b.click();});var qr=document.getElementById('quiz-reset');if(qr)qr.click();window.customConfirm=orig;})">🗑️ Zurücksetzen</button>
 <button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
 <button id="rules-fab" aria-label="Regeln anzeigen">📋</button>
 
 <header>
   <a class="hdr-logo-link" href="../index.html" title="Zurück zum Englisch-Lernzentrum"><img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/></a>
-  <h1>Relativsätze</h1>
-  <p class="sub">Mit <b>who · which · that</b> Personen und Dinge genauer beschreiben – und wann das Pronomen wegfallen darf</p>
+  <h1>Indirekte Rede</h1>
+  <p class="sub">Wie du wiedergibst, was jemand <b>gesagt</b> oder <b>gefragt</b> hat – inkl. <b>Backshift</b> und Fragen</p>
 </header>
 
 <div class="container">
@@ -1081,102 +1079,118 @@ body.dark-mode .confirm-box p{color:#f0e0d0;}
         <div class="rc-card-topbar"></div>
         <div class="rc-card-num">1</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">👤 who – für Personen</div>
+          <div class="rc-card-label">💬 Direkte vs. indirekte Rede</div>
           <div class="rc-formula">
-            <span class="fc fc-subj">Person</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">who</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-obj">Relativsatz</span></span>
+            <span class="fc fc-do">"Direkte Rede"</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-verb">indirekte Rede</span></span>
           </div>
-          <div class="rc-rule"><b>who</b> nimmst du immer, wenn du etwas über eine <b>Person</b> sagen willst.<br><span style="font-size:12px">Im Deutschen: <i>der · die · das</i> – aber für Menschen.</span></div>
+          <div class="rc-rule"><b>Direkte Rede:</b> wörtliches Zitat in Anführungszeichen.<br><b>Indirekte Rede:</b> du <i>berichtest</i>, was jemand sagt – ohne Anführungszeichen.<br><span style="font-size:12px">Einleitende Verben: <b>say · tell · ask · add · answer · think · explain</b></span></div>
           <div class="rc-examples-new">
-            This is the boy <span class="hl-verb">who</span> won the prize.<br>
-            <span style="font-size:11px;color:#6b7280">→ Das ist der Junge, <b>der</b> den Preis gewonnen hat.</span><br>
-            I know a girl <span class="hl-verb">who</span> speaks four languages.
-          </div>
-        </div>
-      </div>
-
-      <div class="rc-card c-amber">
-        <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">2</div>
-        <div class="rc-card-body">
-          <div class="rc-card-label">📦 which – für Dinge & Tiere</div>
-          <div class="rc-formula">
-            <span class="fc fc-subj">Sache / Tier</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">which</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-obj">Relativsatz</span></span>
-          </div>
-          <div class="rc-rule"><b>which</b> nimmst du für <b>Dinge</b> und für <b>Tiere</b> ohne Namen.<br><span style="font-size:12px">Tipp: Nur für Haustiere mit Namen kannst du auch <b>who</b> sagen.</span></div>
-          <div class="rc-examples-new">
-            I have a bike <span class="hl-verb">which</span> is really fast.<br>
-            <span style="font-size:11px;color:#6b7280">→ Ich habe ein Fahrrad, <b>das</b> richtig schnell ist.</span><br>
-            The film <span class="hl-verb">which</span> we saw was funny.
-          </div>
-        </div>
-      </div>
-
-      <div class="rc-card c-indigo">
-        <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">3</div>
-        <div class="rc-card-body">
-          <div class="rc-card-label">🔁 that – das Universal-Pronomen</div>
-          <div class="rc-formula">
-            <span class="fc fc-subj">Person / Sache</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">that</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-obj">Relativsatz</span></span>
-          </div>
-          <div class="rc-rule"><b>that</b> kannst du fast immer benutzen – für Personen <b>und</b> für Dinge.<br><span style="font-size:12px">Wenn du unsicher bist: nimm <b>that</b>. Im gesprochenen Englisch ist es sehr häufig.</span></div>
-          <div class="rc-examples-new">
-            This is the girl <span class="hl-verb">that</span> I told you about.<br>
-            The phone <span class="hl-verb">that</span> she uses is new.<br>
-            <span style="font-size:11px;color:#6b7280">→ Beides geht auch mit who / which.</span>
+            Direkt: Emily <span class="hl-verb">says</span>, "I like Kai."<br>
+            Indirekt: Emily <span class="hl-verb">says</span> <span class="hl-do">(that)</span> she likes Kai.
           </div>
         </div>
       </div>
 
       <div class="rc-card c-green">
         <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">2</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">📝 Aussagesätze: that-Klausel</div>
+          <div class="rc-formula">
+            <span class="fc fc-subj">Subj.</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">say(s)/said</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-do">(that)</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-obj">Aussagesatz</span></span>
+          </div>
+          <div class="rc-rule"><b>kein Komma</b> vor that – anders als im Deutschen!<br><b>that</b> kann (und wird oft) <b>weggelassen</b> werden.<br><span style="font-size:12px">⚠️ Pronomen anpassen: <b>I</b> → he/she · <b>my</b> → his/her</span></div>
+          <div class="rc-examples-new">
+            "I like <b>my</b> friend." → She says <span class="hl-do">(that)</span> she likes <b>her</b> friend.<br>
+            <span style="font-size:11px;color:#6b7280">→ I → she · my → her</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-amber">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">3</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">⏪ Backshift (Zeitenverschiebung)</div>
+          <div class="rc-formula">
+            <span class="fc fc-verb">said / told</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-obj">Backshift!</span></span>
+          </div>
+          <div class="rc-rule">Wenn das einleitende Verb im <b>Past</b> steht (said, told, asked …), <b>verschiebt sich</b> die Zeit:<br>· Simple Present → <b>Simple Past</b><br>· Simple Past / Present Perfect → <b>Past Perfect</b><br>· will → <b>would</b> · can → <b>could</b> · must → <b>had to</b></div>
+          <div class="rc-examples-new">
+            "I <b>like</b> Kai." → She <b>said</b> she <span class="hl-verb">liked</span> Kai.<br>
+            "I <b>was</b> there." → She <b>said</b> she <span class="hl-verb">had been</span> there.<br>
+            "I <b>will go</b>." → He <b>said</b> he <span class="hl-verb">would go</span>.
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-indigo">
+        <div class="rc-card-topbar"></div>
         <div class="rc-card-num">4</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">📝 Bestimmende Relativsätze</div>
+          <div class="rc-card-label">❓ W-Fragen: S-V-O</div>
           <div class="rc-formula">
-            <span class="fc fc-subj">Hauptsatz</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">who/which/that</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-obj">Relativsatz</span></span>
+            <span class="fc fc-subj">Subj.</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">asked</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-wh">W-Wort</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-do">Subj. + Verb</span></span>
           </div>
-          <div class="rc-rule">Diese Relativsätze sagen, <b>welche</b> Person oder Sache gemeint ist.<br><b>Wichtig:</b> <span class="hl-accent-error">kein Komma</span> vor who / which / that – anders als im Deutschen!<br><span style="font-size:12px">Englisch: <i>The boy who won …</i> · Deutsch: <i>Der Junge, der gewonnen hat, …</i></span></div>
+          <div class="rc-rule">W-Wort bleibt, aber die Wortstellung wird zum <b>Aussagesatz</b>: <b>S–V–O</b>.<br>Kein <i>do/does/did</i> mehr! Backshift wie bei Aussagesätzen.<br><span style="font-size:12px">⚠️ Am Ende <b>kein Fragezeichen</b> – ein Punkt!</span></div>
           <div class="rc-examples-new">
-            <b>✅</b> The man <span class="hl-verb">who</span> lives next door is nice.<br>
-            <b>❌</b> The man<span class="hl-accent-error">,</span> who lives next door<span class="hl-accent-error">,</span> is nice.
+            Direkt: "<span class="hl-wh">Where</span> <b>do you</b> live?"<br>
+            Indirekt: He asked <span class="hl-wh">where</span> <span class="hl-subj">she</span> <span class="hl-verb">lived</span>.<br>
+            <span style="font-size:11px;color:#6b7280">→ kein do, S-V-O, Punkt am Ende.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rc-card c-red">
+        <div class="rc-card-topbar"></div>
+        <div class="rc-card-num">5</div>
+        <div class="rc-card-body">
+          <div class="rc-card-label">🔀 Yes/No-Fragen: if / whether</div>
+          <div class="rc-formula">
+            <span class="fc fc-subj">Subj.</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-verb">asked</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-neg">if / whether</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-do">Subj. + Verb</span></span>
+          </div>
+          <div class="rc-rule">Bei Ja/Nein-Fragen fügst du <b>if</b> (oder <b>whether</b>) ein – das heißt hier <b>"ob"</b>!<br>Wortstellung: <b>S–V–O</b>. Kein Fragezeichen.<br><span style="font-size:12px">⚠️ Verwechsle <b>if = ob</b> nicht mit <b>if = falls/wenn</b> aus den if-Sätzen!</span></div>
+          <div class="rc-examples-new">
+            Direkt: "<b>Do you</b> like our club?"<br>
+            Indirekt: He asked <span class="hl-neg">if</span> <span class="hl-subj">she</span> <span class="hl-verb">liked</span> the club.
           </div>
         </div>
       </div>
 
       <div class="rc-card c-teal">
         <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">5</div>
+        <div class="rc-card-num">6</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">✂️ Contact Clauses – Pronomen weglassen</div>
-          <div class="rc-formula">
-            <span class="fc fc-subj">Hauptsatz</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-neg">(who/which/that)</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-obj">Subjekt + Verb</span></span>
+          <div class="rc-card-label">📌 Schnell-Check + Pronomen</div>
+          <div class="rc-formula" style="gap:5px 4px;flex-wrap:wrap">
+            <span class="fc-tz">I → he/she</span>
+            <span class="fc-tz">my → his/her</span>
+            <span class="fc-tz">we → they</span>
+            <span class="fc-tz">our → their</span>
           </div>
-          <div class="rc-rule">Wenn das Relativpronomen <b>Objekt</b> ist (also direkt ein neues Subjekt + Verb folgt), darf es <b>weggelassen</b> werden.<br><span style="font-size:12px">Test: Folgt nach who/which/that direkt ein Verb? Dann muss es bleiben (Subjekt). Folgt ein neues Subjekt? Dann darf es weg.</span></div>
+          <div class="rc-rule"><b>Frag dich beim Umformen:</b><br>1. Pronomen anpassen (<b>wer</b> spricht?)<br>2. Backshift? (Einleitendes Verb im Past?)<br>3. Frage? → <b>S-V-O</b>, kein Fragezeichen<br>4. Yes/No-Frage? → <b>if/whether</b> einfügen</div>
           <div class="rc-examples-new">
-            <b>✅ weglassen:</b> The book <span class="hl-neg">(that)</span> I read was great.<br>
-            <span style="font-size:11px;color:#6b7280">→ I = neues Subjekt, that ist Objekt → kann weg.</span><br>
-            <b>❌ nicht weglassen:</b> The boy <span class="hl-verb">who</span> won is here.<br>
-            <span style="font-size:11px;color:#6b7280">→ won = direkt ein Verb, who ist Subjekt → muss bleiben.</span>
+            "I am 16." → She said <span class="hl-do">(that)</span> <b>she was</b> 16.<br>
+            <span style="font-size:11px;color:#6b7280">→ I → she · am → was (Backshift)</span>
           </div>
         </div>
       </div>
 
-    </div>
+        </div>
   </section>
 
   <div class="quiz-divider"><span>🎥 Erklärvideos</span></div>
   <details class="accordion" id="acc-videos">
-    <summary><span class="acc-num">🎬</span>Erklärvideos zu Relativsätzen</summary>
+    <summary><span class="acc-num">🎬</span>Erklärvideos zur indirekten Rede</summary>
     <div class="content">
       <div class="video-grid">
-        <a class="video-card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0eHiD2IOkhQ" onclick="window.open(this.href);return false;">
+        <a class="video-card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Pb-CvoHyqaA" onclick="window.open(this.href);return false;">
           <div class="video-thumb-area"><div class="yt-icon"></div><div class="yt-title-overlay">▶ Auf YouTube ansehen</div></div>
-          <div class="video-info"><h4>who · which · that – einfach erklärt</h4><p>Grundregeln mit Beispielen · Einfach Englisch</p></div>
+          <div class="video-info"><h4>Indirect Speech – einfach erklärt</h4><p>Grundregeln + Backshift · Einfach Englisch</p></div>
         </a>
-        <a class="video-card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NFzdXtwoBwc" onclick="window.open(this.href);return false;">
+        <a class="video-card" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=czX-ykbJG7c" onclick="window.open(this.href);return false;">
           <div class="video-thumb-area"><div class="yt-icon"></div><div class="yt-title-overlay">▶ Auf YouTube ansehen</div></div>
-          <div class="video-info"><h4>Relativpronomen + Contact Clauses</h4><p>Wann Pronomen weglassen? Mit Übungsbeispielen</p></div>
+          <div class="video-info"><h4>Reported Speech / indirekte Rede</h4><p>Erklärung auf Deutsch mit Beispielen</p></div>
         </a>
       </div>
     </div>
@@ -1184,36 +1198,37 @@ body.dark-mode .confirm-box p{color:#f0e0d0;}
 
   <div class="quiz-divider"><span>✏️ Übungen</span></div>
 
-  <details class="accordion" id="acc-pron">
-    <summary><span class="acc-num">1</span>🎯 Welches Pronomen passt? (who · which · that)</summary>
+
+  <details class="accordion" id="acc-stmt">
+    <summary><span class="acc-num">1</span>📝 Aussagesätze + Backshift</summary>
     <div class="content">
-      <div class="note"><b>Stufe 1:</b> Pronomen wählen (Multiple Choice) &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentexte<br><b>Stufe 3:</b> Fehler finden &amp; korrigieren</div>
-      <div class="level-switch" id="pron-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Üben</button><button data-level="3">🔴 Profi-Aufgabe</button></div>
-      <div class="progress-wrap" id="pron-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn green" id="pron-check-all">Alle prüfen</button><button class="btn gray" id="pron-reset">Zurücksetzen</button><button class="btn ghost" id="pron-reroll">🎲 Neu würfeln</button></div>
-      <div id="pron-tasks"></div>
+      <div class="note"><b>Stufe 1:</b> Pronomen + that ergänzen (MC) &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentext (mit/ohne Backshift)<br><b>Stufe 3:</b> Komplette Umformung &amp; Übersetzung (Backshift Pflicht!)</div>
+      <div class="level-switch" id="stmt-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Üben</button><button data-level="3">🔴 Profi-Aufgabe</button></div>
+      <div class="progress-wrap" id="stmt-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn green" id="stmt-check-all">Alle prüfen</button><button class="btn gray" id="stmt-reset">Zurücksetzen</button><button class="btn ghost" id="stmt-reroll">🎲 Neu würfeln</button></div>
+      <div id="stmt-tasks"></div>
     </div>
   </details>
 
-  <details class="accordion" id="acc-build">
-    <summary><span class="acc-num">2</span>🔗 Relativsätze bilden</summary>
+  <details class="accordion" id="acc-qyn">
+    <summary><span class="acc-num">2</span>🔀 Yes/No-Fragen (if / whether)</summary>
     <div class="content">
-      <div class="note"><b>Stufe 1:</b> Wörter ordnen &nbsp;|&nbsp; <b>Stufe 2:</b> Zwei Sätze verbinden<br><b>Stufe 3:</b> Frei umformen / übersetzen</div>
-      <div class="level-switch" id="build-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Üben</button><button data-level="3">🔴 Profi-Aufgabe</button></div>
-      <div class="progress-wrap" id="build-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn blue" id="build-check-all">Alle prüfen</button><button class="btn gray" id="build-reset">Zurücksetzen</button><button class="btn ghost" id="build-reroll">🎲 Neu würfeln</button></div>
-      <div id="build-tasks"></div>
+      <div class="note"><b>Stufe 1:</b> if / whether erkennen (MC) &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentexte<br><b>Stufe 3:</b> Komplette Umformung – Wortstellung S-V-O · kein Fragezeichen!</div>
+      <div class="level-switch" id="qyn-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Üben</button><button data-level="3">🔴 Profi-Aufgabe</button></div>
+      <div class="progress-wrap" id="qyn-progress"><div class="progress red" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn primary" id="qyn-check-all">Alle prüfen</button><button class="btn gray" id="qyn-reset">Zurücksetzen</button><button class="btn ghost" id="qyn-reroll">🎲 Neu würfeln</button></div>
+      <div id="qyn-tasks"></div>
     </div>
   </details>
 
-  <details class="accordion" id="acc-cc">
-    <summary><span class="acc-num">3</span>✂️ Contact Clauses (Pronomen weglassen)</summary>
+  <details class="accordion" id="acc-qwh">
+    <summary><span class="acc-num">3</span>❓ W-Fragen (S-V-O)</summary>
     <div class="content">
-      <div class="note"><b>Stufe 1:</b> Darf das Pronomen weg? Ja/Nein &nbsp;|&nbsp; <b>Stufe 2:</b> Pronomen sichtbar entfernen<br><b>Stufe 3:</b> Frei bilden &amp; Fehler korrigieren</div>
-      <div class="level-switch" id="cc-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Üben</button><button data-level="3">🔴 Profi-Aufgabe</button></div>
-      <div class="progress-wrap" id="cc-progress"><div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="background:linear-gradient(90deg,#ea580c,#f59e0b)"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn" style="background:linear-gradient(135deg,#ea580c,#f59e0b);color:#fff;" id="cc-check-all">Alle prüfen</button><button class="btn gray" id="cc-reset">Zurücksetzen</button><button class="btn ghost" id="cc-reroll">🎲 Neu würfeln</button></div>
-      <div id="cc-tasks"></div>
+      <div class="note"><b>Stufe 1:</b> Wortstellung erkennen (MC) &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentexte<br><b>Stufe 3:</b> Komplette Umformung mit Backshift</div>
+      <div class="level-switch" id="qwh-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Üben</button><button data-level="3">🔴 Profi-Aufgabe</button></div>
+      <div class="progress-wrap" id="qwh-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn blue" id="qwh-check-all">Alle prüfen</button><button class="btn gray" id="qwh-reset">Zurücksetzen</button><button class="btn ghost" id="qwh-reroll">🎲 Neu würfeln</button></div>
+      <div id="qwh-tasks"></div>
     </div>
   </details>
 
@@ -1228,14 +1243,14 @@ body.dark-mode .confirm-box p{color:#f0e0d0;}
     </div>
   </details>
   <footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
-  <div>Version 28.04.2026, 22:30</div>
+  <div>Version 29.04.2026, 00:30</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 </div>
 
 <script>
 // ===== LOCALSTORAGE =====
-const LS_KEY='relclause_progress_v1';
+const LS_KEY='indspeech_progress_v1';
 try{['pp_progress_v1'].forEach(k=>{if(localStorage.getItem(k))localStorage.removeItem(k);});}catch(e){}
 const _STORE = {};
 function saveProgress(key, val){ try{_STORE[key]=val;}catch(e){} return true; }
@@ -1322,31 +1337,35 @@ function buildPartialHint(answer){
   return words.slice(0,Math.max(2,Math.ceil(words.length*0.4))).join(' ');
 }
 
-// ===== ANALYZE ERROR (Relative Clauses specific) =====
+// ===== ANALYZE ERROR (Indirect Speech specific) =====
 function analyzeError(userInput,correctAnswers){
   const u=userInput.toLowerCase().trim();
   const ansList=Array.isArray(correctAnswers)?correctAnswers:[correctAnswers];
   const c=(ansList[0]||'').toLowerCase().trim();
-  // who statt which (Sache)
-  if(/\bwho\b/.test(u)&&/\bwhich\b/.test(c)&&!/\bwho\b/.test(c))
-    return '\u{1f4a1} Das ist eine <b>Sache</b> – nimm <b>which</b> oder <b>that</b>, nicht <i>who</i>.';
-  // which statt who (Person)
-  if(/\bwhich\b/.test(u)&&/\bwho\b/.test(c)&&!/\bwhich\b/.test(c))
-    return '\u{1f4a1} Das ist eine <b>Person</b> – nimm <b>who</b> oder <b>that</b>, nicht <i>which</i>.';
-  // Komma-Fehler bei defining clauses
-  if(/,\s*(who|which|that)\b/.test(userInput)&&!/,\s*(who|which|that)\b/.test(c))
-    return '\u{1f4a1} Im Englischen <b>kein Komma</b> vor who / which / that bei bestimmenden Relativsätzen!';
-  // Doppeltes Pronomen (z.B. "the book that I read it")
-  if(/\b(who|which|that)\s+\w+\s+\w+\s+(it|him|her|them)\b/.test(u)&&!/\b(it|him|her|them)\b/.test(c))
-    return '\u{1f4a1} Das Objekt-Pronomen am Ende ist überflüssig – das Relativpronomen ersetzt es schon.';
-  // Pronomen fehlt komplett (wo es Subjekt ist)
-  if(!/\b(who|which|that)\b/.test(u)&&/\b(who|which|that)\b/.test(c)){
-    const m=c.match(/\b(who|which|that)\b/);
-    if(m)return '\u{1f4a1} Hier fehlt das Relativpronomen <b>'+m[1]+'</b>. (Bei Contact Clauses darf es nur weg, wenn es <b>Objekt</b> ist.)';
-  }
-  // whose fehlt
-  if(/\bwhose\b/.test(c)&&!/\bwhose\b/.test(u))
-    return '\u{1f4a1} Hier brauchst du <b>whose</b> (Besitz: dessen / deren).';
+  // Komma vor that/if
+  if(/,\s*(that|if|whether)\b/.test(userInput)&&!/,\s*(that|if|whether)\b/.test(c))
+    return '\u{1f4a1} Im Englischen <b>kein Komma</b> vor that / if / whether!';
+  // Fragezeichen am Ende einer indirekten Frage
+  if(/asked.*\?$/.test(u)&&!/asked.*\?$/.test(c))
+    return '\u{1f4a1} Indirekte Fragen enden mit einem <b>Punkt</b>, nicht mit einem Fragezeichen!';
+  // do/did in indirekter Frage
+  if(/asked\s+\w+\s+(do|does|did)\s+/.test(u)&&!/asked\s+\w+\s+(do|does|did)\s+/.test(c))
+    return '\u{1f4a1} In indirekten Fragen steht <b>kein do/does/did</b> – Wortstellung S-V-O.';
+  // am/is/are statt was/were nach said/asked
+  if(/\b(said|asked).+\b(am|is|are)\b/.test(u)&&/\b(said|asked).+\b(was|were)\b/.test(c))
+    return '\u{1f4a1} <b>Backshift!</b> Nach said/asked: am/is → was, are → were.';
+  // will statt would nach said/asked
+  if(/\b(said|asked).+\bwill\b/.test(u)&&/\bwould\b/.test(c))
+    return '\u{1f4a1} <b>Backshift!</b> Nach said/asked wird <b>will</b> zu <b>would</b>.';
+  // can statt could
+  if(/\b(said|asked).+\bcan\b/.test(u)&&/\bcould\b/.test(c))
+    return '\u{1f4a1} <b>Backshift!</b> Nach said/asked wird <b>can</b> zu <b>could</b>.';
+  // have statt had nach said/asked
+  if(/\b(said|asked).+\b(have|has)\b/.test(u)&&/\bhad\b/.test(c))
+    return '\u{1f4a1} <b>Backshift!</b> Nach said/asked wird <b>have/has</b> zu <b>had</b>.';
+  // Yes/No-Frage ohne if/whether
+  if(/asked\s+(i|he|she|they|we)\b/.test(u)&&/\b(if|whether)\b/.test(c))
+    return '\u{1f4a1} Bei Yes/No-Fragen brauchst du <b>if</b> oder <b>whether</b> (= „ob").';
   // Best match diff
   let best=ansList[0],bestDiff=Infinity;
   for(const a of ansList){
@@ -1579,11 +1598,10 @@ function renderTasks(container,tasks,sectionKey,options={}){
       solBtn.style.display='none';solBox.style.display='block';
       const ans=normalizeAnswer(Array.isArray(t.answer)?t.answer[0]:t.answer);
       let html='<b>L\u00f6sung:</b> '+(Array.isArray(t.answer)?t.answer[0]:t.answer);
-      if(/\bwhose\b/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>whose</b> = dessen / deren (Besitz).</div>';
-      else if(/\bwho\b/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>who</b> für Personen.</div>';
-      else if(/\bwhich\b/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>which</b> für Sachen und Tiere.</div>';
-      else if(/\bthat\b/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>that</b> geht für Personen UND Sachen.</div>';
-      else html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>Grundregel:</b> Pronomen Objekt → kann weg (Contact Clause). Pronomen Subjekt → muss bleiben. Im Englischen kein Komma vor who/which/that.</div>';
+      if(/\bif\b|\bwhether\b/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} Yes/No-Frage → <b>if</b> oder <b>whether</b> (= „ob"). Wortstellung: S-V-O.</div>';
+      else if(/\b(asked|said).+(was|were|had|would|could)\b/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>Backshift</b>: am/is → was · are → were · have/has → had · will → would · can → could · Past → Past Perfect.</div>';
+      else if(/^(he|she|they) (said|asked)/.test(ans))html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>Pronomen-Shift</b>: I → he/she · my → his/her · we → they · our → their.</div>';
+      else html+='<div style="margin-top:6px;font-size:13px;color:#4b5563;">\u{1f4a1} <b>Schnell-Check:</b> 1) Pronomen anpassen 2) Backshift (wenn said/asked) 3) Bei Fragen S-V-O 4) Yes/No → if/whether 5) Kein Komma, kein Fragezeichen.</div>';
       solBox.innerHTML=html;
       if(typeof TTS!=='undefined'&&TTS.enabled){const sb=TTS.createBtn(answers[0]||'','en-GB','font-size:14px;margin-left:6px;');const bEl=solBox.querySelector('b');if(bEl)bEl.insertAdjacentElement('afterend',sb);}
     });
@@ -1696,502 +1714,489 @@ function setupSimpleSection(sectionKey,container,pool,checkAllBtn,resetBtn){
 // ===== AUFGABEN-POOLS =====
 
 /* =================================================================
-   SEKTION 1 (pron): Welches Pronomen passt? — who · which · that
-   L1: MC + Wörter ordnen (Erkennen)
-   L2: Lückentexte / Freitext (Anwenden)
-   L3: Fehlerkorrektur · Umformen · Übersetzen (Profi)
+   SEKTION 1 (stmt): Aussagesätze + Backshift
 ==================================================================*/
-const pronL1=[
+const stmtL1=[
+  // 30× MC: Pronomen / that ergänzen (ohne Backshift, says-Variante)
+  {type:"mc",prompt:"Direct: <i>Tom says, \"I like pizza.\"</i><br>Indirect: Tom says (that) ___ likes pizza.",options:["I","he","she","we"],correct:1,explanation:"Tom = männlich → he."},
+  {type:"mc",prompt:"Direct: <i>Lisa says, \"I am tired.\"</i><br>Indirect: Lisa says (that) ___ is tired.",options:["I","he","she","they"],correct:2,explanation:"Lisa = weiblich → she."},
+  {type:"mc",prompt:"Direct: <i>The kids say, \"We are happy.\"</i><br>Indirect: The kids say (that) ___ are happy.",options:["he","she","they","we"],correct:2,explanation:"The kids = Plural → they."},
+  {type:"mc",prompt:"Direct: <i>Mum says, \"My car is broken.\"</i><br>Indirect: Mum says (that) ___ car is broken.",options:["my","his","her","their"],correct:2,explanation:"Mum = weiblich → her."},
+  {type:"mc",prompt:"Direct: <i>Dad says, \"I love my job.\"</i><br>Indirect: Dad says (that) he loves ___ job.",options:["my","his","her","their"],correct:1,explanation:"Dad = männlich → his."},
+  {type:"mc",prompt:"Direct: <i>The students say, \"We do our homework.\"</i><br>Indirect: The students say (that) they do ___ homework.",options:["our","their","his","her"],correct:1,explanation:"They → their."},
+  {type:"mc",prompt:"Welches Wort kann weggelassen werden? <i>She says that she is happy.</i>",options:["she","says","that","is"],correct:2,explanation:"that wird oft weggelassen."},
+  {type:"mc",prompt:"Direct: <i>He says, \"You are nice.\"</i> (zu mir)<br>Indirect: He says (that) ___ am nice.",options:["I","you","he","she"],correct:0,explanation:"\"You\" zu mir → I."},
+  {type:"mc",prompt:"Direct: <i>Anna says, \"My brother is funny.\"</i><br>Indirect: Anna says (that) ___ brother is funny.",options:["my","his","her","their"],correct:2,explanation:"Anna = weiblich → her."},
+  {type:"mc",prompt:"Direct: <i>The boys say, \"Our team is the best.\"</i><br>Indirect: The boys say (that) ___ team is the best.",options:["our","his","her","their"],correct:3,explanation:"They → their."},
+  {type:"mc",prompt:"Direct: <i>Tom says, \"I have a dog.\"</i><br>Indirect: Tom says (that) he ___ a dog.",options:["have","has","had","is having"],correct:1,explanation:"Tom (3. Person) → has."},
+  {type:"mc",prompt:"Direct: <i>Lisa says, \"I am 14.\"</i><br>Indirect: Lisa says (that) she ___ 14.",options:["am","is","are","was"],correct:1,explanation:"she → is."},
+  {type:"mc",prompt:"Direct: <i>The girls say, \"We like music.\"</i><br>Indirect: The girls say (that) they ___ music.",options:["like","likes","liked","liking"],correct:0,explanation:"they → like (kein Backshift, weil say)."},
+  {type:"mc",prompt:"Welches Pronomen passt? <i>My mum says, \"___ am happy.\"</i> → My mum says she is happy.",options:["You","I","She","He"],correct:1,explanation:"\"I\" wird zu \"she\" in der Indirekten Rede."},
+  {type:"mc",prompt:"Welches Verb passt? <i>The teacher says, \"You are smart.\"</i> → The teacher says (that) ___ are smart.",options:["I","you","we","they"],correct:0,explanation:"\"You\" → \"I\" (wenn er dich meint)."},
+  {type:"mc",prompt:"Direct: <i>Sam and Jen say, \"We are going home.\"</i><br>Indirect: Sam and Jen say (that) ___ are going home.",options:["we","they","he","she"],correct:1,explanation:"Plural → they."},
+  {type:"mc",prompt:"Direct: <i>Mr Lee says, \"I teach English.\"</i><br>Indirect: Mr Lee says (that) he ___ English.",options:["teach","teaches","taught","is teaching"],correct:1,explanation:"3. Person → teaches."},
+  {type:"mc",prompt:"Direct: <i>Mum says, \"I made dinner.\"</i><br>Indirect: Mum says (that) ___ made dinner.",options:["I","he","she","they"],correct:2,explanation:"Mum → she."},
+  {type:"mc",prompt:"Direct: <i>The kids say, \"Our toys are new.\"</i><br>Indirect: The kids say (that) ___ toys are new.",options:["our","my","their","his"],correct:2,explanation:"They → their."},
+  {type:"mc",prompt:"Direct: <i>Dad says, \"I love my family.\"</i><br>Indirect: Dad says (that) ___ loves ___ family.",options:["I / my","he / his","she / her","they / their"],correct:1,explanation:"Dad → he/his."},
+  {type:"mc",prompt:"Welches Wort kommt VOR dem Aussagesatz?",options:["which","that","who","whose"],correct:1,explanation:"that (kann weggelassen werden)."},
+  {type:"mc",prompt:"<i>Was ist im Englischen FALSCH bei der indirekten Rede?</i>",options:["kein Komma vor that","that kann weg","ein Komma vor that ist Pflicht","Anführungszeichen weg"],correct:2,explanation:"Im Englischen kein Komma vor that!"},
+  {type:"mc",prompt:"Direct: <i>Anna says, \"I am at home.\"</i><br>Indirect: Anna says (that) ___ at home.",options:["I am","she am","she is","she are"],correct:2,explanation:"Anna → she + is."},
+  {type:"mc",prompt:"Direct: <i>The boys say, \"We play football.\"</i><br>Indirect: The boys say (that) they ___ football.",options:["play","plays","played","playing"],correct:0,explanation:"they → play (kein s)."},
+  {type:"mc",prompt:"Direct: <i>Lisa says, \"My dog is cute.\"</i><br>Indirect: Lisa says (that) ___ dog is cute.",options:["my","her","his","their"],correct:1,explanation:"Lisa → her."},
+  {type:"mc",prompt:"Direct: <i>Tom says, \"I have a sister.\"</i><br>Indirect: Tom says (that) ___ has a sister.",options:["I","he","she","they"],correct:1,explanation:"Tom → he."},
+  {type:"mc",prompt:"Direct: <i>Mum says, \"You are tall.\"</i> (zu mir)<br>Indirect: Mum says (that) ___ am tall.",options:["I","you","he","she"],correct:0,explanation:"\"You\" zu mir → I."},
+  {type:"mc",prompt:"Direct: <i>Sara says, \"I want chocolate.\"</i><br>Indirect: Sara says (that) ___ wants chocolate.",options:["I","he","she","they"],correct:2,explanation:"Sara → she."},
+  {type:"mc",prompt:"Direct: <i>Ben says, \"I read books.\"</i><br>Indirect: Ben says (that) he ___ books.",options:["read","reads","reading","reaed"],correct:1,explanation:"3. Person → reads."},
+  {type:"mc",prompt:"Direct: <i>The girls say, \"Our school is big.\"</i><br>Indirect: The girls say (that) ___ school is big.",options:["our","my","their","her"],correct:2,explanation:"They → their."},
+  // 10× Wörter ordnen (ohne Backshift)
+  {words:["Tom","says","that","he","likes","pizza"],answer:"Tom says that he likes pizza.",label:"Ordne"},
+  {words:["She","says","that","she","is","tired"],answer:"She says that she is tired.",label:"Ordne"},
+  {words:["The","kids","say","that","they","are","happy"],answer:"The kids say that they are happy.",label:"Ordne"},
+  {words:["Mum","says","that","her","car","is","broken"],answer:"Mum says that her car is broken.",label:"Ordne"},
+  {words:["Dad","says","that","he","loves","his","job"],answer:"Dad says that he loves his job.",label:"Ordne"},
+  {words:["Anna","says","that","her","brother","is","funny"],answer:"Anna says that her brother is funny.",label:"Ordne"},
+  {words:["The","students","say","that","they","do","their","homework"],answer:"The students say that they do their homework.",label:"Ordne"},
+  {words:["Tom","says","that","he","has","a","dog"],answer:"Tom says that he has a dog.",label:"Ordne"},
+  {words:["Sam","and","Jen","say","that","they","are","going","home"],answer:"Sam and Jen say that they are going home.",label:"Ordne"},
+  {words:["Mr","Lee","says","that","he","teaches","English"],answer:"Mr Lee says that he teaches English.",label:"Ordne"},
+];
+
+const stmtL2=[
+  // 40× Freitext: Pronomen ergänzen oder Backshift einsetzen
+  {prompt:"Direct: <i>Tom says, \"I am tired.\"</i><br>Indirect: Tom says (that) ___ is tired.",answer:["he"],explanation:"Tom = männlich → he."},
+  {prompt:"Direct: <i>Lisa says, \"I am happy.\"</i><br>Indirect: Lisa says (that) ___ is happy.",answer:["she"],explanation:"Lisa = weiblich → she."},
+  {prompt:"Direct: <i>The kids say, \"We are nice.\"</i><br>Indirect: The kids say (that) ___ are nice.",answer:["they"],explanation:"Plural → they."},
+  {prompt:"Direct: <i>Anna says, \"My bag is heavy.\"</i><br>Indirect: Anna says (that) ___ bag is heavy.",answer:["her"],explanation:"Anna → her."},
+  {prompt:"Direct: <i>Dad says, \"I love my work.\"</i><br>Indirect: Dad says (that) he loves ___ work.",answer:["his"],explanation:"Dad → his."},
+  {prompt:"Direct: <i>The boys say, \"Our team is great.\"</i><br>Indirect: The boys say (that) ___ team is great.",answer:["their"],explanation:"Plural → their."},
+  {prompt:"Direct: <i>Tom says, \"I have a dog.\"</i><br>Indirect: Tom says (that) he ___ a dog.",answer:["has"],explanation:"3. Person → has."},
+  {prompt:"Direct: <i>Sara says, \"I want pizza.\"</i><br>Indirect: Sara says (that) she ___ pizza.",answer:["wants"],explanation:"3. Person → wants."},
+  // Backshift-Aufgaben (said)
+  {prompt:"Direct: <i>Tom said, \"I am tired.\"</i><br>Indirect: Tom said (that) he ___ tired.",answer:["was"],explanation:"Backshift: am → was."},
+  {prompt:"Direct: <i>Lisa said, \"I like pizza.\"</i><br>Indirect: Lisa said (that) she ___ pizza.",answer:["liked"],explanation:"Backshift: like → liked."},
+  {prompt:"Direct: <i>The kids said, \"We are happy.\"</i><br>Indirect: The kids said (that) they ___ happy.",answer:["were"],explanation:"Backshift: are → were."},
+  {prompt:"Direct: <i>Mum said, \"I am cooking.\"</i><br>Indirect: Mum said (that) she ___ cooking.",answer:["was"],explanation:"Backshift: am → was."},
+  {prompt:"Direct: <i>Dad said, \"I have a car.\"</i><br>Indirect: Dad said (that) he ___ a car.",answer:["had"],explanation:"Backshift: have → had."},
+  {prompt:"Direct: <i>Anna said, \"I will go.\"</i><br>Indirect: Anna said (that) she ___ go.",answer:["would"],explanation:"Backshift: will → would."},
+  {prompt:"Direct: <i>Ben said, \"I can swim.\"</i><br>Indirect: Ben said (that) he ___ swim.",answer:["could"],explanation:"Backshift: can → could."},
+  {prompt:"Direct: <i>The teacher said, \"You must work.\"</i><br>Indirect: The teacher said (that) we ___ work.",answer:["had to"],explanation:"Backshift: must → had to."},
+  {prompt:"Direct: <i>Tom said, \"I went home.\"</i><br>Indirect: Tom said (that) he ___ home.",answer:["had gone"],explanation:"Backshift: Simple Past → Past Perfect."},
+  {prompt:"Direct: <i>Lisa said, \"I have eaten.\"</i><br>Indirect: Lisa said (that) she ___ eaten.",answer:["had"],explanation:"Backshift: have eaten → had eaten."},
+  {prompt:"Direct: <i>Sara said, \"I am writing.\"</i><br>Indirect: Sara said (that) she ___ writing.",answer:["was"],explanation:"Backshift: am → was."},
+  {prompt:"Direct: <i>The boys said, \"We play football.\"</i><br>Indirect: The boys said (that) they ___ football.",answer:["played"],explanation:"Backshift: play → played."},
+  {prompt:"Direct: <i>Tom said, \"I love my mum.\"</i><br>Indirect: Tom said (that) ___ loved ___ mum.",answer:["he / his","he/his"],explanation:"Tom → he/his + Backshift."},
+  {prompt:"Direct: <i>Anna said, \"My friend is here.\"</i><br>Indirect: Anna said (that) ___ friend ___ here.",answer:["her / was","her/was"],explanation:"Anna → her + Backshift is→was."},
+  {prompt:"Direct: <i>The students said, \"We have done our homework.\"</i><br>Indirect: The students said (that) they ___ done ___ homework.",answer:["had / their","had/their"],explanation:"Plural → their + Backshift have done → had done."},
+  {prompt:"Direct: <i>Lisa said, \"I will visit my granny.\"</i><br>Indirect: Lisa said (that) she ___ visit ___ granny.",answer:["would / her","would/her"],explanation:"Lisa → her, will → would."},
+  {prompt:"Direct: <i>Sam said, \"I can play the piano.\"</i><br>Indirect: Sam said (that) he ___ play the piano.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>Tom said, \"I bought a book.\"</i><br>Indirect: Tom said (that) he ___ a book.",answer:["had bought"],explanation:"Simple Past → Past Perfect."},
+  {prompt:"Direct: <i>Anna said, \"I don't know.\"</i><br>Indirect: Anna said (that) she ___ know.",answer:["didn't","did not"],explanation:"don't → didn't."},
+  {prompt:"Direct: <i>Ben said, \"I won't come.\"</i><br>Indirect: Ben said (that) he ___ come.",answer:["wouldn't","would not"],explanation:"won't → wouldn't."},
+  {prompt:"Direct: <i>The teacher said, \"You are late.\"</i><br>Indirect: The teacher said (that) we ___ late.",answer:["were"],explanation:"are → were (du bist Plural-Subjekt)."},
+  {prompt:"Direct: <i>Mum said, \"I made cookies.\"</i><br>Indirect: Mum said (that) she ___ cookies.",answer:["had made"],explanation:"Simple Past → Past Perfect."},
+  {prompt:"Direct: <i>Lisa said, \"I am 14.\"</i><br>Indirect: Lisa said (that) she ___ 14.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>Tom said, \"I see Kai.\"</i><br>Indirect: Tom said (that) he ___ Kai.",answer:["saw"],explanation:"see → saw."},
+  {prompt:"Direct: <i>Anna said, \"I have to go.\"</i><br>Indirect: Anna said (that) she ___ to go.",answer:["had"],explanation:"have to → had to."},
+  {prompt:"Direct: <i>Ben said, \"I think it's funny.\"</i><br>Indirect: Ben said (that) he ___ it was funny.",answer:["thought"],explanation:"think → thought."},
+  {prompt:"Direct: <i>Lisa said, \"I'm reading a book.\"</i><br>Indirect: Lisa said (that) she ___ reading a book.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>The kids said, \"We aren't tired.\"</i><br>Indirect: The kids said (that) they ___ tired.",answer:["weren't","were not"],explanation:"aren't → weren't."},
+  {prompt:"Direct: <i>Mr Lee said, \"I teach English.\"</i><br>Indirect: Mr Lee said (that) he ___ English.",answer:["taught"],explanation:"teach → taught."},
+  {prompt:"Direct: <i>Sara said, \"I will help you.\"</i><br>Indirect: Sara said (that) she ___ help me.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>Anna said, \"I lost my keys.\"</i><br>Indirect: Anna said (that) she ___ ___ keys.",answer:["had lost / her","had lost/her"],explanation:"Simple Past → Past Perfect, my → her."},
+  {prompt:"Direct: <i>Tom said, \"I'm tired and I want to sleep.\"</i><br>Indirect: Tom said (that) he ___ tired and (that) he ___ to sleep.",answer:["was / wanted","was/wanted"],explanation:"Backshift: am → was, want → wanted."},
+];
+
+const stmtL3=[
+  // 40× Profi: komplette Umformungen + Übersetzung + Fehler
+  {prompt:"Forme um (mit said): <i>Tom said, \"I like Kai.\"</i>",answer:["Tom said (that) he liked Kai.","Tom said that he liked Kai.","Tom said he liked Kai."],explanation:"Backshift: like → liked. that optional."},
+  {prompt:"Forme um (mit said): <i>Lisa said, \"I am tired.\"</i>",answer:["Lisa said (that) she was tired.","Lisa said that she was tired.","Lisa said she was tired."],explanation:"Backshift: am → was."},
+  {prompt:"Forme um: <i>Anna said, \"I will go home.\"</i>",answer:["Anna said (that) she would go home.","Anna said that she would go home.","Anna said she would go home."],explanation:"will → would."},
+  {prompt:"Forme um: <i>Ben said, \"I have a sister.\"</i>",answer:["Ben said (that) he had a sister.","Ben said that he had a sister.","Ben said he had a sister."],explanation:"have → had."},
+  {prompt:"Forme um: <i>The kids said, \"We are happy.\"</i>",answer:["The kids said (that) they were happy.","The kids said that they were happy.","The kids said they were happy."],explanation:"are → were."},
+  {prompt:"Forme um: <i>Mum said, \"I love my job.\"</i>",answer:["Mum said (that) she loved her job.","Mum said that she loved her job.","Mum said she loved her job."],explanation:"love → loved, my → her."},
+  {prompt:"Forme um: <i>Dad said, \"I can drive.\"</i>",answer:["Dad said (that) he could drive.","Dad said that he could drive.","Dad said he could drive."],explanation:"can → could."},
+  {prompt:"Forme um: <i>Tom said, \"I went to school.\"</i>",answer:["Tom said (that) he had gone to school.","Tom said that he had gone to school.","Tom said he had gone to school."],explanation:"Simple Past → Past Perfect."},
+  {prompt:"Forme um: <i>Lisa said, \"I have eaten lunch.\"</i>",answer:["Lisa said (that) she had eaten lunch.","Lisa said that she had eaten lunch.","Lisa said she had eaten lunch."],explanation:"have eaten → had eaten."},
+  {prompt:"Forme um: <i>Anna said, \"I don't like maths.\"</i>",answer:["Anna said (that) she didn't like maths.","Anna said that she didn't like maths.","Anna said she didn't like maths.","Anna said (that) she did not like maths.","Anna said that she did not like maths.","Anna said she did not like maths."],explanation:"don't → didn't."},
+  {prompt:"Forme um: <i>The boys said, \"We must work harder.\"</i>",answer:["The boys said (that) they had to work harder.","The boys said that they had to work harder.","The boys said they had to work harder."],explanation:"must → had to."},
+  {prompt:"Forme um: <i>Sam said, \"I won't come.\"</i>",answer:["Sam said (that) he wouldn't come.","Sam said that he wouldn't come.","Sam said he wouldn't come.","Sam said (that) he would not come.","Sam said that he would not come.","Sam said he would not come."],explanation:"won't → wouldn't."},
+  {prompt:"Forme um: <i>Lisa said, \"My friend is here.\"</i>",answer:["Lisa said (that) her friend was here.","Lisa said that her friend was here.","Lisa said her friend was here."],explanation:"my → her, is → was."},
+  {prompt:"Forme um: <i>Mum said, \"I made dinner.\"</i>",answer:["Mum said (that) she had made dinner.","Mum said that she had made dinner.","Mum said she had made dinner."],explanation:"made → had made."},
+  {prompt:"Forme um: <i>The teacher said, \"You are smart.\"</i> (zu mir)",answer:["The teacher said (that) I was smart.","The teacher said that I was smart.","The teacher said I was smart."],explanation:"You (zu mir) → I, are → was."},
+  {prompt:"Korrigiere: <i>Tom said that he like Kai.</i>",answer:["Tom said (that) he liked Kai.","Tom said that he liked Kai.","Tom said he liked Kai."],explanation:"Backshift: like → liked."},
+  {prompt:"Korrigiere: <i>She said, that she is happy.</i>",answer:["She said (that) she was happy.","She said that she was happy.","She said she was happy."],explanation:"Kein Komma vor that, Backshift is → was."},
+  {prompt:"Korrigiere: <i>Lisa said that she will come.</i>",answer:["Lisa said (that) she would come.","Lisa said that she would come.","Lisa said she would come."],explanation:"will → would."},
+  {prompt:"Korrigiere: <i>Tom said that I have a dog.</i> (Tom spricht über sich)",answer:["Tom said (that) he had a dog.","Tom said that he had a dog.","Tom said he had a dog."],explanation:"I → he (Tom)."},
+  {prompt:"Korrigiere: <i>The kids said that we are happy.</i> (Sie sprechen über sich)",answer:["The kids said (that) they were happy.","The kids said that they were happy.","The kids said they were happy."],explanation:"we → they."},
+  {prompt:"Übersetze: <i>Tom sagte, dass er Pizza möge.</i>",answer:["Tom said (that) he liked pizza.","Tom said that he liked pizza.","Tom said he liked pizza."],explanation:"Backshift: like → liked."},
+  {prompt:"Übersetze: <i>Sie sagte, dass sie müde sei.</i>",answer:["She said (that) she was tired.","She said that she was tired.","She said she was tired."],explanation:"is → was."},
+  {prompt:"Übersetze: <i>Anna sagte, dass sie nach Hause gehen würde.</i>",answer:["Anna said (that) she would go home.","Anna said that she would go home.","Anna said she would go home."],explanation:"will → would."},
+  {prompt:"Übersetze: <i>Mein Bruder sagte, dass er ein Auto habe.</i>",answer:["My brother said (that) he had a car.","My brother said that he had a car.","My brother said he had a car."],explanation:"has → had."},
+  {prompt:"Übersetze: <i>Die Kinder sagten, dass sie glücklich seien.</i>",answer:["The kids said (that) they were happy.","The kids said that they were happy.","The kids said they were happy.","The children said (that) they were happy.","The children said that they were happy.","The children said they were happy."],explanation:"are → were."},
+  {prompt:"Übersetze: <i>Mum sagte, dass sie ihre Arbeit liebe.</i>",answer:["Mum said (that) she loved her job.","Mum said that she loved her job.","Mum said she loved her job.","Mum said (that) she loved her work.","Mum said that she loved her work.","Mum said she loved her work."],explanation:"love → loved."},
+  {prompt:"Übersetze: <i>Tom sagte, dass er schwimmen könne.</i>",answer:["Tom said (that) he could swim.","Tom said that he could swim.","Tom said he could swim."],explanation:"can → could."},
+  {prompt:"Übersetze: <i>Lisa sagte, dass sie zur Schule gegangen sei.</i>",answer:["Lisa said (that) she had gone to school.","Lisa said that she had gone to school.","Lisa said she had gone to school."],explanation:"went → had gone."},
+  {prompt:"Forme um: <i>Sara said, \"I am eating breakfast.\"</i>",answer:["Sara said (that) she was eating breakfast.","Sara said that she was eating breakfast.","Sara said she was eating breakfast."],explanation:"am → was."},
+  {prompt:"Forme um: <i>The doctor said, \"You must rest.\"</i> (zu mir)",answer:["The doctor said (that) I had to rest.","The doctor said that I had to rest.","The doctor said I had to rest."],explanation:"must → had to, you → I."},
+  {prompt:"Forme um: <i>Ben said, \"I have lost my book.\"</i>",answer:["Ben said (that) he had lost his book.","Ben said that he had lost his book.","Ben said he had lost his book."],explanation:"have lost → had lost, my → his."},
+  {prompt:"Forme um: <i>Lisa said, \"I won't tell anyone.\"</i>",answer:["Lisa said (that) she wouldn't tell anyone.","Lisa said that she wouldn't tell anyone.","Lisa said she wouldn't tell anyone.","Lisa said (that) she would not tell anyone.","Lisa said that she would not tell anyone.","Lisa said she would not tell anyone."],explanation:"won't → wouldn't."},
+  {prompt:"Forme um: <i>The students said, \"We finished the test.\"</i>",answer:["The students said (that) they had finished the test.","The students said that they had finished the test.","The students said they had finished the test."],explanation:"finished → had finished."},
+  {prompt:"Korrigiere: <i>Tom said that he has finished his homework.</i>",answer:["Tom said (that) he had finished his homework.","Tom said that he had finished his homework.","Tom said he had finished his homework."],explanation:"has finished → had finished."},
+  {prompt:"Korrigiere: <i>Anna said, that she will go.</i>",answer:["Anna said (that) she would go.","Anna said that she would go.","Anna said she would go."],explanation:"Kein Komma, will → would."},
+  {prompt:"Forme um: <i>Mum said, \"I'm tired.\"</i>",answer:["Mum said (that) she was tired.","Mum said that she was tired.","Mum said she was tired."],explanation:"am → was."},
+  {prompt:"Forme um: <i>Tom said, \"I haven't seen Lisa.\"</i>",answer:["Tom said (that) he hadn't seen Lisa.","Tom said that he hadn't seen Lisa.","Tom said he hadn't seen Lisa.","Tom said (that) he had not seen Lisa.","Tom said that he had not seen Lisa.","Tom said he had not seen Lisa."],explanation:"haven't seen → hadn't seen."},
+  {prompt:"Übersetze: <i>Mein Lehrer sagte, dass ich klüger sei.</i>",answer:["My teacher said (that) I was smarter.","My teacher said that I was smarter.","My teacher said I was smarter."],explanation:"am → was."},
+  {prompt:"Forme um: <i>The kids said, \"We can do it.\"</i>",answer:["The kids said (that) they could do it.","The kids said that they could do it.","The kids said they could do it."],explanation:"can → could."},
+  {prompt:"Forme um: <i>Lisa said, \"I'll call you later.\"</i>",answer:["Lisa said (that) she would call me later.","Lisa said that she would call me later.","Lisa said she would call me later."],explanation:"will → would, you → me."},
+];
+
+/* =================================================================
+   SEKTION 2 (qyn): Yes/No-Fragen mit if / whether
+==================================================================*/
+const qynL1=[
   // 30× MC + 10× Wörter ordnen
-  {type:"mc",prompt:"This is the boy ___ won the race.",options:["who","which","what","whose"],correct:0,explanation:"<b>who</b> für Personen."},
-  {type:"mc",prompt:"I have a bike ___ is really fast.",options:["who","which","whose","where"],correct:1,explanation:"<b>which</b> für Dinge."},
-  {type:"mc",prompt:"The girl ___ sits next to me is from London.",options:["which","what","who","whose"],correct:2,explanation:"<b>who</b> für eine Person."},
-  {type:"mc",prompt:"That's the film ___ we saw last weekend.",options:["who","which","whose","what"],correct:1,explanation:"<b>which</b> (oder that) für Dinge."},
-  {type:"mc",prompt:"The man ___ lives next door is a teacher.",options:["which","who","whose","what"],correct:1,explanation:"<b>who</b> für Personen."},
-  {type:"mc",prompt:"This is the dog ___ belongs to my uncle.",options:["who","which","what","where"],correct:1,explanation:"Tier ohne Namen → <b>which</b>."},
-  {type:"mc",prompt:"The phone ___ she uses is new.",options:["who","whose","that","whom"],correct:2,explanation:"<b>that</b> oder which für Sachen."},
-  {type:"mc",prompt:"Mr Smith is the teacher ___ teaches us English.",options:["which","who","whose","what"],correct:1,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"The book ___ I gave you was a present.",options:["who","whose","that","whom"],correct:2,explanation:"Sache → <b>that</b> (auch which)."},
-  {type:"mc",prompt:"I know a girl ___ speaks four languages.",options:["which","whose","who","what"],correct:2,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"The shoes ___ I bought are black.",options:["who","which","whose","what"],correct:1,explanation:"Sache → <b>which</b> oder that."},
-  {type:"mc",prompt:"This is the song ___ everyone loves.",options:["who","which","whose","whom"],correct:1,explanation:"Sache → <b>which</b> oder that."},
-  {type:"mc",prompt:"The students ___ work hard get good marks.",options:["which","who","whose","what"],correct:1,explanation:"Personen (Plural) → <b>who</b>."},
-  {type:"mc",prompt:"She lost the keys ___ were on the table.",options:["who","which","whose","what"],correct:1,explanation:"Dinge → <b>which</b>."},
-  {type:"mc",prompt:"Look at the cat ___ is sleeping on the wall.",options:["who","which","whose","what"],correct:1,explanation:"Tier → <b>which</b> (oder that)."},
-  {type:"mc",prompt:"The friend ___ I met yesterday is from York.",options:["which","whose","who","what"],correct:2,explanation:"Person → <b>who</b> (oder that)."},
-  {type:"mc",prompt:"The cake ___ my mum baked tasted great.",options:["who","whose","that","whom"],correct:2,explanation:"Sache → <b>that</b> oder which."},
-  {type:"mc",prompt:"He's the singer ___ I really like.",options:["which","what","who","whose"],correct:2,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"This is a city ___ has many parks.",options:["who","which","whose","what"],correct:1,explanation:"Sache → <b>which</b>."},
-  {type:"mc",prompt:"The actor ___ played the hero is famous.",options:["which","whose","who","what"],correct:2,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"I want a job ___ pays well.",options:["who","which","whose","whom"],correct:1,explanation:"Sache → <b>which</b>."},
-  {type:"mc",prompt:"There's the woman ___ owns the shop.",options:["which","whose","who","what"],correct:2,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"The bus ___ goes to school is yellow.",options:["who","which","whose","what"],correct:1,explanation:"Sache → <b>which</b>."},
-  {type:"mc",prompt:"The kids ___ live here are very loud.",options:["which","what","who","whose"],correct:2,explanation:"Personen → <b>who</b>."},
-  {type:"mc",prompt:"That's the dress ___ I want to buy.",options:["who","whose","that","whom"],correct:2,explanation:"Sache → <b>that</b> oder which."},
-  {type:"mc",prompt:"He has a sister ___ studies in London.",options:["which","whose","who","what"],correct:2,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"The story ___ she told was funny.",options:["who","which","whose","what"],correct:1,explanation:"Sache → <b>which</b> oder that."},
-  {type:"mc",prompt:"My grandma is a person ___ always helps me.",options:["which","what","who","whose"],correct:2,explanation:"Person → <b>who</b>."},
-  {type:"mc",prompt:"She bought a dog ___ is very small.",options:["who","whose","which","what"],correct:2,explanation:"Tier ohne Namen → <b>which</b>."},
-  {type:"mc",prompt:"The pen ___ I'm using is broken.",options:["who","which","whose","whom"],correct:1,explanation:"Sache → <b>which</b> oder that."},
-  // 10× Wörter ordnen (kurze, klare Sätze)
-  {words:["This","is","the","boy","who","won"],answer:"This is the boy who won.",label:"Ordne"},
-  {words:["I","have","a","bike","which","is","fast"],answer:"I have a bike which is fast.",label:"Ordne"},
-  {words:["The","girl","who","sings","is","my","friend"],answer:"The girl who sings is my friend.",label:"Ordne"},
-  {words:["That's","the","film","which","won","an","award"],answer:"That's the film which won an award.",label:"Ordne"},
-  {words:["The","cat","that","sleeps","is","old"],answer:"The cat that sleeps is old.",label:"Ordne"},
-  {words:["He's","the","man","who","lives","here"],answer:"He's the man who lives here.",label:"Ordne"},
-  {words:["I","like","books","that","have","pictures"],answer:"I like books that have pictures.",label:"Ordne"},
-  {words:["The","dog","which","barks","is","scared"],answer:"The dog which barks is scared.",label:"Ordne"},
-  {words:["She","met","a","boy","who","plays","tennis"],answer:"She met a boy who plays tennis.",label:"Ordne"},
-  {words:["This","is","the","song","that","I","love"],answer:"This is the song that I love.",label:"Ordne"},
+  {type:"mc",prompt:"Welches Wort fehlt? <i>He asked ___ I liked Kai.</i>",options:["that","if","when","what"],correct:1,explanation:"Yes/No-Frage → if."},
+  {type:"mc",prompt:"Welches Wort kann if ersetzen?",options:["that","whether","when","what"],correct:1,explanation:"if = whether."},
+  {type:"mc",prompt:"Welche Wortstellung ist RICHTIG nach if?",options:["if did she like","if she liked","if liked she","if she like did"],correct:1,explanation:"S-V-O: if + Subjekt + Verb."},
+  {type:"mc",prompt:"<i>Direct: \"Do you like pizza?\" – Indirect: He asked ___ I ___ pizza.</i>",options:["if / liked","if / did like","whether / did","that / like"],correct:0,explanation:"if + S-V (kein do)."},
+  {type:"mc",prompt:"Welche Aussage ist FALSCH bei Yes/No-Fragen in indirekter Rede?",options:["if/whether einfügen","Wortstellung S-V-O","Fragezeichen am Ende","Backshift bei said/asked"],correct:2,explanation:"Kein Fragezeichen!"},
+  {type:"mc",prompt:"<i>Direct: \"Are you tired?\" – Indirect: She asked ___ I ___ tired.</i>",options:["if / was","if / am","whether / are","that / was"],correct:0,explanation:"if + Subj + was (Backshift)."},
+  {type:"mc",prompt:"Was bedeutet <i>if</i> in indirekten Fragen?",options:["falls","wenn","ob","weil"],correct:2,explanation:"if = ob."},
+  {type:"mc",prompt:"<i>Direct: \"Can you swim?\" – Indirect: He asked ___ I ___ swim.</i>",options:["if / can","if / could","whether / can","that / could"],correct:1,explanation:"can → could."},
+  {type:"mc",prompt:"Was steht am Ende einer indirekten Frage?",options:["?","!","Punkt","Komma"],correct:2,explanation:"Punkt, kein Fragezeichen."},
+  {type:"mc",prompt:"<i>Direct: \"Did you go?\" – Indirect: She asked ___ I ___ gone.",options:["if / had","if / went","whether / did","that / had"],correct:0,explanation:"Past Perfect: Did go → had gone."},
+  {type:"mc",prompt:"<i>Direct: \"Have you seen it?\" – Indirect: He asked ___ I ___ seen it.</i>",options:["if / have","if / had","whether / have","that / had"],correct:1,explanation:"have → had."},
+  {type:"mc",prompt:"<i>Direct: \"Will you come?\" – Indirect: He asked ___ I ___ come.</i>",options:["if / will","if / would","whether / will","that / would"],correct:1,explanation:"will → would."},
+  {type:"mc",prompt:"<i>Direct: \"Is it raining?\" – Indirect: She asked ___ it ___ raining.</i>",options:["if / is","if / was","whether / is","that / was"],correct:1,explanation:"is → was."},
+  {type:"mc",prompt:"<i>Direct: \"Are they happy?\" – Indirect: He asked ___ they ___ happy.</i>",options:["if / are","if / were","whether / are","that / were"],correct:1,explanation:"are → were."},
+  {type:"mc",prompt:"Welcher Satz ist KORREKT?",options:["He asked if I liked Kai.","He asked if did I like Kai.","He asked if liked I Kai.","He asked, if I liked Kai?"],correct:0,explanation:"S-V-O, kein Fragezeichen."},
+  {type:"mc",prompt:"<i>Direct: \"Do you have a pet?\" – Indirect: She asked ___ I ___ a pet.</i>",options:["if / have","if / had","whether / have","that / had"],correct:1,explanation:"have → had."},
+  {type:"mc",prompt:"<i>Direct: \"Can he sing?\" – Indirect: I asked ___ he ___ sing.</i>",options:["if / can","if / could","that / can","that / could"],correct:1,explanation:"can → could."},
+  {type:"mc",prompt:"<i>Direct: \"Did she leave?\" – Indirect: He asked ___ she ___ left.</i>",options:["if / has","if / had","whether / has","that / had"],correct:1,explanation:"Did leave → had left."},
+  {type:"mc",prompt:"<i>Direct: \"Are you OK?\" – Indirect: He asked ___ I ___ OK.</i>",options:["if / am","if / was","whether / am","that / was"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"<i>Direct: \"Have they finished?\" – Indirect: She asked ___ they ___ finished.</i>",options:["if / have","if / had","whether / have","that / had"],correct:1,explanation:"have → had."},
+  {type:"mc",prompt:"<i>Direct: \"Will it rain?\" – Indirect: He asked ___ it ___ rain.</i>",options:["if / will","if / would","whether / will","that / would"],correct:1,explanation:"will → would."},
+  {type:"mc",prompt:"<i>Direct: \"Is she here?\" – Indirect: I asked ___ she ___ here.</i>",options:["if / is","if / was","whether / is","that / was"],correct:1,explanation:"is → was."},
+  {type:"mc",prompt:"<i>Direct: \"Do you speak French?\" – Indirect: He asked ___ I ___ French.</i>",options:["if / speak","if / spoke","whether / speak","that / spoke"],correct:1,explanation:"speak → spoke."},
+  {type:"mc",prompt:"<i>Direct: \"Are you sure?\" – Indirect: She asked ___ I ___ sure.</i>",options:["if / am","if / was","whether / are","that / was"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"<i>Direct: \"Did you eat?\" – Indirect: He asked ___ I ___ eaten.</i>",options:["if / have","if / had","whether / have","that / had"],correct:1,explanation:"Did eat → had eaten."},
+  {type:"mc",prompt:"<i>Direct: \"Can we go?\" – Indirect: They asked ___ they ___ go.</i>",options:["if / can","if / could","whether / can","that / could"],correct:1,explanation:"can → could."},
+  {type:"mc",prompt:"<i>Direct: \"Have you been there?\" – Indirect: He asked ___ I ___ been there.</i>",options:["if / have","if / had","whether / have","that / had"],correct:1,explanation:"have → had."},
+  {type:"mc",prompt:"<i>Direct: \"Are they nice?\" – Indirect: She asked ___ they ___ nice.</i>",options:["if / are","if / were","whether / are","that / were"],correct:1,explanation:"are → were."},
+  {type:"mc",prompt:"<i>Direct: \"Will you help?\" – Indirect: She asked ___ I ___ help.",options:["if / will","if / would","whether / will","that / would"],correct:1,explanation:"will → would."},
+  {type:"mc",prompt:"<i>Direct: \"Does he like fish?\" – Indirect: She asked ___ he ___ fish.</i>",options:["if / likes","if / liked","whether / likes","that / liked"],correct:1,explanation:"likes → liked."},
+  // 10× Wörter ordnen
+  {words:["He","asked","if","I","liked","Kai"],answer:"He asked if I liked Kai.",label:"Ordne"},
+  {words:["She","asked","whether","I","was","tired"],answer:"She asked whether I was tired.",label:"Ordne"},
+  {words:["I","asked","if","he","could","swim"],answer:"I asked if he could swim.",label:"Ordne"},
+  {words:["He","asked","if","they","were","ready"],answer:"He asked if they were ready.",label:"Ordne"},
+  {words:["She","asked","if","I","had","seen","Tom"],answer:"She asked if I had seen Tom.",label:"Ordne"},
+  {words:["I","asked","if","she","would","come"],answer:"I asked if she would come.",label:"Ordne"},
+  {words:["He","asked","if","I","spoke","French"],answer:"He asked if I spoke French.",label:"Ordne"},
+  {words:["She","asked","if","we","were","hungry"],answer:"She asked if we were hungry.",label:"Ordne"},
+  {words:["I","asked","if","he","had","eaten"],answer:"I asked if he had eaten.",label:"Ordne"},
+  {words:["He","asked","if","I","could","help"],answer:"He asked if I could help.",label:"Ordne"},
 ];
 
-const pronL2=[
-  // 40× Freitext-Lückentext: Schreibe nur das fehlende Pronomen (oder den ganzen Satz, beides ok)
-  {prompt:"Setze ein: <i>This is the man ___ teaches us maths.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>I have a friend ___ likes football.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>The car ___ is parked outside is mine.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>She's the girl ___ won first prize.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>That's the shop ___ sells nice clothes.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>The boy ___ I met is my new neighbour.</i>",answer:["who","that","whom"],explanation:"Person als Objekt → who/that."},
-  {prompt:"Setze ein: <i>Apples are fruits ___ grow on trees.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>I know a place ___ serves great pizza.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>Mrs Brown is the lady ___ helps in the library.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>I lost the watch ___ my grandma gave me.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>The students ___ are late will miss the test.</i>",answer:["who","that"],explanation:"Personen → who (oder that)."},
-  {prompt:"Setze ein: <i>That's the song ___ was on the radio.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>He's the actor ___ played James Bond.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>The dog ___ is barking belongs to my neighbour.</i>",answer:["which","that"],explanation:"Tier ohne Namen → which (oder that)."},
-  {prompt:"Setze ein: <i>This is the pizza ___ I ordered.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>I have a sister ___ lives in Spain.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>The book ___ you lent me was great.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>That's the boy ___ broke the window.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>I like films ___ make me laugh.</i>",answer:["which","that"],explanation:"Sachen → which (oder that)."},
-  {prompt:"Setze ein: <i>The girl ___ phoned me is my cousin.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>This is a town ___ has a lot of history.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>I met a man ___ knew my dad.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>The teacher ___ I like best is Mr Lee.</i>",answer:["who","that","whom"],explanation:"Person als Objekt → who/that."},
-  {prompt:"Setze ein: <i>That's the bus ___ goes to the park.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>The cake ___ Mum made was delicious.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>People ___ smoke often get ill.</i>",answer:["who","that"],explanation:"Personen → who (oder that)."},
-  {prompt:"Setze ein: <i>I want a job ___ I really enjoy.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>That's my friend ___ I told you about.</i>",answer:["who","that","whom"],explanation:"Person → who/that."},
-  {prompt:"Setze ein: <i>The shoes ___ are on the chair are dirty.</i>",answer:["which","that"],explanation:"Sachen → which (oder that)."},
-  {prompt:"Setze ein: <i>The hotel ___ we stayed at was great.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>The boy ___ helped me was very kind.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>The shop ___ sells comics is closed today.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>I know a girl ___ has six pets.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>That's the laptop ___ I want for my birthday.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>The neighbour ___ moved in is friendly.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>The team ___ wins gets a trophy.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>This is the museum ___ shows old paintings.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>He has a son ___ studies in Manchester.</i>",answer:["who","that"],explanation:"Person → who (oder that)."},
-  {prompt:"Setze ein: <i>I read a book ___ was about pirates.</i>",answer:["which","that"],explanation:"Sache → which (oder that)."},
-  {prompt:"Setze ein: <i>That's the boy ___ everyone likes.</i>",answer:["who","that","whom"],explanation:"Person → who/that."},
+const qynL2=[
+  // 40× Lückentext: if einsetzen / Backshift
+  {prompt:"Direct: <i>\"Do you like pizza?\"</i><br>Indirect: He asked ___ I liked pizza.",answer:["if","whether"],explanation:"Yes/No-Frage → if/whether."},
+  {prompt:"Direct: <i>\"Can you swim?\"</i><br>Indirect: She asked if I ___ swim.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"Are you tired?\"</i><br>Indirect: He asked if I ___ tired.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Have you seen it?\"</i><br>Indirect: She asked if I ___ seen it.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Will you help?\"</i><br>Indirect: He asked if I ___ help.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>\"Did you go?\"</i><br>Indirect: She asked if I ___ gone.",answer:["had"],explanation:"Did go → had gone."},
+  {prompt:"Direct: <i>\"Is it raining?\"</i><br>Indirect: He asked if it ___ raining.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"Are they ready?\"</i><br>Indirect: She asked if they ___ ready.",answer:["were"],explanation:"are → were."},
+  {prompt:"Direct: <i>\"Do you speak English?\"</i><br>Indirect: He asked if I ___ English.",answer:["spoke"],explanation:"speak → spoke."},
+  {prompt:"Direct: <i>\"Have they arrived?\"</i><br>Indirect: She asked if they ___ arrived.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Can he help?\"</i><br>Indirect: I asked if he ___ help.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"Will it rain?\"</i><br>Indirect: He asked if it ___ rain.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>\"Are you OK?\"</i><br>Indirect: She asked if I ___ OK.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Did she leave?\"</i><br>Indirect: He asked if she ___ left.",answer:["had"],explanation:"Did leave → had left."},
+  {prompt:"Direct: <i>\"Have you been there?\"</i><br>Indirect: She asked if I ___ been there.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Is she at home?\"</i><br>Indirect: He asked if she ___ at home.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"Do you like maths?\"</i><br>Indirect: She asked if I ___ maths.",answer:["liked"],explanation:"like → liked."},
+  {prompt:"Direct: <i>\"Are we late?\"</i><br>Indirect: He asked if we ___ late.",answer:["were"],explanation:"are → were."},
+  {prompt:"Direct: <i>\"Does he know?\"</i><br>Indirect: She asked if he ___ .",answer:["knew"],explanation:"knows → knew."},
+  {prompt:"Direct: <i>\"Have you finished?\"</i><br>Indirect: She asked if I ___ finished.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Are you going?\"</i><br>Indirect: She asked if I ___ going.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Did Tom call?\"</i><br>Indirect: She asked if Tom ___ called.",answer:["had"],explanation:"Did call → had called."},
+  {prompt:"Direct: <i>\"Can the kids swim?\"</i><br>Indirect: He asked if the kids ___ swim.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"Is it cold?\"</i><br>Indirect: She asked if it ___ cold.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"Have you eaten?\"</i><br>Indirect: He asked if I ___ eaten.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Will Lisa come?\"</i><br>Indirect: He asked if Lisa ___ come.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>\"Did you understand?\"</i><br>Indirect: She asked if I ___ understood.",answer:["had"],explanation:"Did understand → had understood."},
+  {prompt:"Direct: <i>\"Are they laughing?\"</i><br>Indirect: He asked if they ___ laughing.",answer:["were"],explanation:"are → were."},
+  {prompt:"Direct: <i>\"Has he done it?\"</i><br>Indirect: She asked if he ___ done it.",answer:["had"],explanation:"has → had."},
+  {prompt:"Direct: <i>\"Can I borrow your pen?\"</i><br>Indirect: He asked if he ___ borrow ___ pen.",answer:["could / my","could/my"],explanation:"can → could, your → my."},
+  {prompt:"Direct: <i>\"Are you my friend?\"</i><br>Indirect: She asked if I ___ ___ friend.",answer:["was / her","was/her"],explanation:"am → was, your (zu mir) → her."},
+  {prompt:"Direct: <i>\"Did you see him?\"</i><br>Indirect: She asked if I ___ ___ him.",answer:["had / seen","had/seen"],explanation:"Did see → had seen."},
+  {prompt:"Direct: <i>\"Is your dad here?\"</i><br>Indirect: He asked if ___ dad ___ here.",answer:["my / was","my/was"],explanation:"your (zu mir) → my, is → was."},
+  {prompt:"Direct: <i>\"Will you marry me?\"</i><br>Indirect: He asked if she ___ marry ___ .",answer:["would / him","would/him"],explanation:"will → would, me (er) → him."},
+  {prompt:"Direct: <i>\"Have you done your homework?\"</i><br>Indirect: She asked if I ___ done ___ homework.",answer:["had / my","had/my"],explanation:"have done → had done, your → my."},
+  {prompt:"Direct: <i>\"Are we lost?\"</i><br>Indirect: He asked if they ___ lost.",answer:["were"],explanation:"are → were."},
+  {prompt:"Direct: <i>\"Can you cook?\"</i><br>Indirect: She asked if I ___ cook.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"Did the show start?\"</i><br>Indirect: He asked if the show ___ started.",answer:["had"],explanation:"Did start → had started."},
+  {prompt:"Direct: <i>\"Have they left?\"</i><br>Indirect: She asked if they ___ left.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Are you sure?\"</i><br>Indirect: He asked if I ___ sure.",answer:["was"],explanation:"am → was."},
 ];
 
-const pronL3=[
-  // 40× Profi: Fehler korrigieren · Umformen · Übersetzen
-  {prompt:"Korrigiere: <i>The book who I read was great.</i>",answer:["The book which I read was great.","The book that I read was great."],explanation:"Sache → which/that, nicht who."},
-  {prompt:"Korrigiere: <i>I know a man which works in a bank.</i>",answer:["I know a man who works in a bank.","I know a man that works in a bank."],explanation:"Person → who/that, nicht which."},
-  {prompt:"Korrigiere: <i>The girl, who lives next door, is nice.</i>",answer:["The girl who lives next door is nice."],explanation:"Bestimmender Relativsatz: kein Komma!"},
-  {prompt:"Korrigiere: <i>She has a cat which name is Tom.</i>",answer:["She has a cat whose name is Tom.","She has a cat called Tom."],explanation:"Besitz → whose."},
-  {prompt:"Übersetze: <i>Das ist der Junge, der gewonnen hat.</i>",answer:["That is the boy who won.","This is the boy who won.","That's the boy who won.","This's the boy who won."],explanation:"Person → who. Kein Komma."},
-  {prompt:"Übersetze: <i>Ich habe ein Fahrrad, das schnell ist.</i>",answer:["I have a bike which is fast.","I have a bike that is fast.","I have a bicycle which is fast.","I have a bicycle that is fast."],explanation:"Sache → which/that. Kein Komma."},
-  {prompt:"Korrigiere: <i>The film who we saw was funny.</i>",answer:["The film which we saw was funny.","The film that we saw was funny."],explanation:"Sache → which/that."},
-  {prompt:"Korrigiere: <i>I have a friend which speaks Italian.</i>",answer:["I have a friend who speaks Italian.","I have a friend that speaks Italian."],explanation:"Person → who/that."},
-  {prompt:"Übersetze: <i>Das Buch, das ich gelesen habe, war toll.</i>",answer:["The book which I read was great.","The book that I read was great.","The book I read was great."],explanation:"Sache → which/that (oder weglassen, weil Objekt)."},
-  {prompt:"Korrigiere: <i>The teacher, that helps me, is nice.</i>",answer:["The teacher who helps me is nice.","The teacher that helps me is nice."],explanation:"Kein Komma. Person → who/that."},
-  {prompt:"Übersetze: <i>Der Hund, der bellt, ist klein.</i>",answer:["The dog which barks is small.","The dog that barks is small."],explanation:"Tier → which/that. Kein Komma."},
-  {prompt:"Korrigiere: <i>This is the song which I love it.</i>",answer:["This is the song which I love.","This is the song that I love.","This is the song I love."],explanation:"Doppelt: 'it' am Ende streichen."},
-  {prompt:"Übersetze: <i>Das Mädchen, das ich getroffen habe, ist meine Cousine.</i>",answer:["The girl who I met is my cousin.","The girl that I met is my cousin.","The girl I met is my cousin."],explanation:"Person → who/that (oder weglassen)."},
-  {prompt:"Korrigiere: <i>She lost the keys who were on the table.</i>",answer:["She lost the keys which were on the table.","She lost the keys that were on the table."],explanation:"Sachen → which/that."},
-  {prompt:"Übersetze: <i>Ich kenne ein Café, das gute Pizza macht.</i>",answer:["I know a café which makes good pizza.","I know a café that makes good pizza.","I know a cafe which makes good pizza.","I know a cafe that makes good pizza."],explanation:"Sache → which/that."},
-  {prompt:"Korrigiere: <i>The boy whose came late was sorry.</i>",answer:["The boy who came late was sorry.","The boy that came late was sorry."],explanation:"whose nur für Besitz; hier Subjekt → who/that."},
-  {prompt:"Übersetze: <i>Der Lehrer, der uns Mathe beibringt, ist Mr Smith.</i>",answer:["The teacher who teaches us maths is Mr Smith.","The teacher that teaches us maths is Mr Smith."],explanation:"Person → who/that."},
-  {prompt:"Korrigiere: <i>I read a book what was very funny.</i>",answer:["I read a book which was very funny.","I read a book that was very funny."],explanation:"'what' geht hier nicht – 'which' oder 'that'."},
-  {prompt:"Übersetze: <i>Das Foto, das du gemacht hast, ist schön.</i>",answer:["The photo which you took is nice.","The photo that you took is nice.","The photo you took is nice.","The picture which you took is nice.","The picture that you took is nice.","The picture you took is nice."],explanation:"Sache → which/that (oder weglassen)."},
-  {prompt:"Korrigiere: <i>That's a book who has many pictures.</i>",answer:["That's a book which has many pictures.","That's a book that has many pictures."],explanation:"Sache → which/that."},
-  {prompt:"Übersetze: <i>Ich habe einen Freund, der in London wohnt.</i>",answer:["I have a friend who lives in London.","I have a friend that lives in London."],explanation:"Person → who/that."},
-  {prompt:"Korrigiere: <i>This is the woman, who works at the post office.</i>",answer:["This is the woman who works at the post office."],explanation:"Bestimmender Relativsatz → kein Komma."},
-  {prompt:"Übersetze: <i>Der Bus, der zur Schule fährt, ist gelb.</i>",answer:["The bus which goes to school is yellow.","The bus that goes to school is yellow."],explanation:"Sache → which/that."},
-  {prompt:"Korrigiere: <i>The phone what is on the desk is mine.</i>",answer:["The phone which is on the desk is mine.","The phone that is on the desk is mine."],explanation:"'what' nicht als Relativpronomen – which/that."},
-  {prompt:"Übersetze: <i>Das ist die Katze, die immer im Garten schläft.</i>",answer:["That's the cat which always sleeps in the garden.","That's the cat that always sleeps in the garden.","This is the cat which always sleeps in the garden.","This is the cat that always sleeps in the garden."],explanation:"Tier → which/that."},
-  {prompt:"Korrigiere: <i>I know a place which it is really nice.</i>",answer:["I know a place which is really nice.","I know a place that is really nice."],explanation:"'it' überflüssig – das Pronomen ersetzt es."},
-  {prompt:"Übersetze: <i>Der Schauspieler, der den Helden spielte, ist berühmt.</i>",answer:["The actor who played the hero is famous.","The actor that played the hero is famous."],explanation:"Person → who/that."},
-  {prompt:"Korrigiere: <i>The man, that I met yesterday, is my uncle.</i>",answer:["The man who I met yesterday is my uncle.","The man that I met yesterday is my uncle.","The man I met yesterday is my uncle."],explanation:"Bestimmend → kein Komma. who/that ok."},
-  {prompt:"Übersetze: <i>Ich mag Filme, die Spaß machen.</i>",answer:["I like films which are fun.","I like films that are fun."],explanation:"Sachen → which/that."},
-  {prompt:"Korrigiere: <i>That's the kid who his mum is a doctor.</i>",answer:["That's the kid whose mum is a doctor.","That's the kid whose mother is a doctor."],explanation:"Besitz → whose."},
-  {prompt:"Übersetze: <i>Die Frau, die das Geschäft besitzt, ist nett.</i>",answer:["The woman who owns the shop is nice.","The woman that owns the shop is nice."],explanation:"Person → who/that."},
-  {prompt:"Korrigiere: <i>The story which she told it was scary.</i>",answer:["The story which she told was scary.","The story that she told was scary.","The story she told was scary."],explanation:"'it' streichen – Pronomen ersetzt es."},
-  {prompt:"Übersetze: <i>Das ist das Geschenk, das ich gekauft habe.</i>",answer:["This is the present which I bought.","This is the present that I bought.","This is the present I bought.","That is the present which I bought.","That is the present that I bought.","That is the present I bought.","That's the present which I bought.","That's the present that I bought.","That's the present I bought."],explanation:"Sache → which/that (oder weglassen)."},
-  {prompt:"Korrigiere: <i>The shoes who I bought are too small.</i>",answer:["The shoes which I bought are too small.","The shoes that I bought are too small.","The shoes I bought are too small."],explanation:"Sachen → which/that."},
-  {prompt:"Übersetze: <i>Das Spiel, das wir gestern gespielt haben, war toll.</i>",answer:["The game which we played yesterday was great.","The game that we played yesterday was great.","The game we played yesterday was great."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>My friend has a dog, which name is Max.</i>",answer:["My friend has a dog whose name is Max.","My friend has a dog called Max."],explanation:"Besitz → whose."},
-  {prompt:"Übersetze: <i>Die Kinder, die hier wohnen, sind laut.</i>",answer:["The children who live here are loud.","The children that live here are loud.","The kids who live here are loud.","The kids that live here are loud."],explanation:"Personen → who/that."},
-  {prompt:"Korrigiere: <i>I have a brother who he is older than me.</i>",answer:["I have a brother who is older than me.","I have a brother that is older than me."],explanation:"'he' überflüssig – who ist das Subjekt."},
-  {prompt:"Übersetze: <i>Der Computer, den sie benutzt, ist neu.</i>",answer:["The computer which she uses is new.","The computer that she uses is new.","The computer she uses is new."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>People which speak English live in the UK.</i>",answer:["People who speak English live in the UK.","People that speak English live in the UK."],explanation:"Personen → who/that."},
+const qynL3=[
+  // 40× Profi: komplette Umformungen + Übersetzung + Fehler
+  {prompt:"Forme um: <i>He asked, \"Do you like Kai?\"</i>",answer:["He asked if I liked Kai.","He asked whether I liked Kai."],explanation:"if + S-V-O, do weg."},
+  {prompt:"Forme um: <i>She asked, \"Are you tired?\"</i>",answer:["She asked if I was tired.","She asked whether I was tired."],explanation:"if + S-V-O."},
+  {prompt:"Forme um: <i>Tom asked, \"Can you swim?\"</i>",answer:["Tom asked if I could swim.","Tom asked whether I could swim."],explanation:"can → could."},
+  {prompt:"Forme um: <i>Anna asked, \"Have you seen Lisa?\"</i>",answer:["Anna asked if I had seen Lisa.","Anna asked whether I had seen Lisa."],explanation:"have → had."},
+  {prompt:"Forme um: <i>He asked, \"Will you come?\"</i>",answer:["He asked if I would come.","He asked whether I would come."],explanation:"will → would."},
+  {prompt:"Forme um: <i>She asked, \"Did you go home?\"</i>",answer:["She asked if I had gone home.","She asked whether I had gone home."],explanation:"Did go → had gone."},
+  {prompt:"Forme um: <i>Mum asked, \"Is the door open?\"</i>",answer:["Mum asked if the door was open.","Mum asked whether the door was open."],explanation:"is → was."},
+  {prompt:"Forme um: <i>The teacher asked, \"Are you ready?\"</i> (zu uns)",answer:["The teacher asked if we were ready.","The teacher asked whether we were ready."],explanation:"you (zu uns) → we."},
+  {prompt:"Forme um: <i>He asked, \"Does she know?\"</i>",answer:["He asked if she knew.","He asked whether she knew."],explanation:"knows → knew."},
+  {prompt:"Forme um: <i>I asked, \"Will it rain?\"</i>",answer:["I asked if it would rain.","I asked whether it would rain."],explanation:"will → would."},
+  {prompt:"Forme um: <i>She asked, \"Have they left?\"</i>",answer:["She asked if they had left.","She asked whether they had left."],explanation:"have → had."},
+  {prompt:"Forme um: <i>Lisa asked, \"Do you have a pen?\"</i>",answer:["Lisa asked if I had a pen.","Lisa asked whether I had a pen."],explanation:"have → had."},
+  {prompt:"Forme um: <i>He asked, \"Are we late?\"</i>",answer:["He asked if they were late.","He asked whether they were late."],explanation:"we (er+andere) → they."},
+  {prompt:"Forme um: <i>Tom asked, \"Did Sam help?\"</i>",answer:["Tom asked if Sam had helped.","Tom asked whether Sam had helped."],explanation:"Did help → had helped."},
+  {prompt:"Forme um: <i>The doctor asked, \"Can you breathe?\"</i> (zu mir)",answer:["The doctor asked if I could breathe.","The doctor asked whether I could breathe."],explanation:"can → could."},
+  {prompt:"Korrigiere: <i>He asked if did I like Kai.</i>",answer:["He asked if I liked Kai.","He asked whether I liked Kai."],explanation:"Kein do/did, S-V-O."},
+  {prompt:"Korrigiere: <i>She asked if I am tired.</i>",answer:["She asked if I was tired.","She asked whether I was tired."],explanation:"am → was (Backshift)."},
+  {prompt:"Korrigiere: <i>He asked if I will come?</i>",answer:["He asked if I would come.","He asked whether I would come."],explanation:"will → would, kein Fragezeichen."},
+  {prompt:"Korrigiere: <i>She asked, if I had seen Lisa.</i>",answer:["She asked if I had seen Lisa.","She asked whether I had seen Lisa."],explanation:"Kein Komma vor if."},
+  {prompt:"Korrigiere: <i>He asked when I liked Kai.</i> (Frage war: Do you like Kai?)",answer:["He asked if I liked Kai.","He asked whether I liked Kai."],explanation:"Yes/No → if, nicht when."},
+  {prompt:"Übersetze: <i>Er fragte, ob ich Pizza möge.</i>",answer:["He asked if I liked pizza.","He asked whether I liked pizza."],explanation:"if = ob."},
+  {prompt:"Übersetze: <i>Sie fragte, ob ich müde sei.</i>",answer:["She asked if I was tired.","She asked whether I was tired."],explanation:"am → was."},
+  {prompt:"Übersetze: <i>Er fragte, ob sie kommen würde.</i>",answer:["He asked if she would come.","He asked whether she would come."],explanation:"will → would."},
+  {prompt:"Übersetze: <i>Sie fragte, ob ich es gesehen hätte.</i>",answer:["She asked if I had seen it.","She asked whether I had seen it."],explanation:"have seen → had seen."},
+  {prompt:"Übersetze: <i>Tom fragte, ob ich helfen könne.</i>",answer:["Tom asked if I could help.","Tom asked whether I could help."],explanation:"can → could."},
+  {prompt:"Übersetze: <i>Anna fragte, ob die Kinder Hunger hätten.</i>",answer:["Anna asked if the kids were hungry.","Anna asked whether the kids were hungry.","Anna asked if the children were hungry.","Anna asked whether the children were hungry."],explanation:"are → were."},
+  {prompt:"Übersetze: <i>Er fragte, ob es regnen würde.</i>",answer:["He asked if it would rain.","He asked whether it would rain."],explanation:"will → would."},
+  {prompt:"Übersetze: <i>Sie fragte, ob ich verstanden hätte.</i>",answer:["She asked if I had understood.","She asked whether I had understood."],explanation:"have understood → had understood."},
+  {prompt:"Übersetze: <i>Mum fragte, ob die Tür offen sei.</i>",answer:["Mum asked if the door was open.","Mum asked whether the door was open."],explanation:"is → was."},
+  {prompt:"Übersetze: <i>Der Lehrer fragte, ob wir bereit wären.</i>",answer:["The teacher asked if we were ready.","The teacher asked whether we were ready."],explanation:"are → were."},
+  {prompt:"Forme um: <i>I asked, \"Are you my friend?\"</i> (zu Tom)",answer:["I asked Tom if he was my friend.","I asked Tom whether he was my friend.","I asked if Tom was my friend.","I asked whether Tom was my friend."],explanation:"are → was, you → he."},
+  {prompt:"Forme um: <i>He asked, \"Did you tell Lisa?\"</i>",answer:["He asked if I had told Lisa.","He asked whether I had told Lisa."],explanation:"Did tell → had told."},
+  {prompt:"Forme um: <i>She asked, \"Is the bus on time?\"</i>",answer:["She asked if the bus was on time.","She asked whether the bus was on time."],explanation:"is → was."},
+  {prompt:"Forme um: <i>I asked, \"Have you been to London?\"</i>",answer:["I asked if she had been to London.","I asked whether she had been to London.","I asked if he had been to London.","I asked whether he had been to London."],explanation:"have → had."},
+  {prompt:"Korrigiere: <i>She asked whether did he come.</i>",answer:["She asked whether he came.","She asked whether he had come.","She asked if he came.","She asked if he had come."],explanation:"Kein did, S-V-O."},
+  {prompt:"Korrigiere: <i>He asked if she does her homework.</i>",answer:["He asked if she did her homework.","He asked whether she did her homework."],explanation:"Backshift: does → did."},
+  {prompt:"Korrigiere: <i>She asked if are they happy?</i>",answer:["She asked if they were happy.","She asked whether they were happy."],explanation:"Wortstellung S-V-O, kein Fragezeichen, are → were."},
+  {prompt:"Forme um: <i>The kids asked, \"Can we play?\"</i>",answer:["The kids asked if they could play.","The kids asked whether they could play."],explanation:"can → could, we → they."},
+  {prompt:"Übersetze: <i>Sie fragte, ob sie meine Schwester sei.</i>",answer:["She asked if she was my sister.","She asked whether she was my sister."],explanation:"is → was."},
+  {prompt:"Forme um: <i>He asked, \"Will you marry me?\"</i> (zu Lisa)",answer:["He asked Lisa if she would marry him.","He asked Lisa whether she would marry him.","He asked if Lisa would marry him.","He asked whether Lisa would marry him."],explanation:"will → would, you → she, me → him."},
 ];
 
 /* =================================================================
-   SEKTION 2 (build): Relativsätze bilden
+   SEKTION 3 (qwh): W-Fragen mit S-V-O
 ==================================================================*/
-const buildL1=[
-  // 40× Wörter ordnen
-  {words:["This","is","the","boy","who","won","first","prize"],answer:"This is the boy who won first prize.",label:"Ordne"},
-  {words:["I","know","a","shop","which","sells","cool","shoes"],answer:"I know a shop which sells cool shoes.",label:"Ordne"},
-  {words:["The","game","which","you","gave","me","is","great"],answer:"The game which you gave me is great.",label:"Ordne"},
-  {words:["This","is","the","girl","that","I","told","you","about"],answer:"This is the girl that I told you about.",label:"Ordne"},
-  {words:["The","phone","that","she","uses","is","new"],answer:"The phone that she uses is new.",label:"Ordne"},
-  {words:["I","have","a","friend","who","plays","the","guitar"],answer:"I have a friend who plays the guitar.",label:"Ordne"},
-  {words:["She","met","a","boy","who","speaks","French"],answer:"She met a boy who speaks French.",label:"Ordne"},
-  {words:["That's","the","film","which","won","an","Oscar"],answer:"That's the film which won an Oscar.",label:"Ordne"},
-  {words:["The","cat","that","sleeps","here","is","old"],answer:"The cat that sleeps here is old.",label:"Ordne"},
-  {words:["He's","the","singer","who","won","the","contest"],answer:"He's the singer who won the contest.",label:"Ordne"},
-  {words:["I","read","a","book","that","made","me","laugh"],answer:"I read a book that made me laugh.",label:"Ordne"},
-  {words:["She","has","a","sister","who","lives","in","Spain"],answer:"She has a sister who lives in Spain.",label:"Ordne"},
-  {words:["The","car","which","is","red","belongs","to","Tom"],answer:"The car which is red belongs to Tom.",label:"Ordne"},
-  {words:["Those","are","the","kids","who","live","next","door"],answer:"Those are the kids who live next door.",label:"Ordne"},
-  {words:["This","is","the","cake","that","my","mum","baked"],answer:"This is the cake that my mum baked.",label:"Ordne"},
-  {words:["The","dog","that","barks","is","scared"],answer:"The dog that barks is scared.",label:"Ordne"},
-  {words:["I","like","people","who","tell","good","jokes"],answer:"I like people who tell good jokes.",label:"Ordne"},
-  {words:["The","bag","which","is","on","the","chair","is","mine"],answer:"The bag which is on the chair is mine.",label:"Ordne"},
-  {words:["She","is","the","teacher","who","helps","me"],answer:"She is the teacher who helps me.",label:"Ordne"},
-  {words:["The","song","that","is","playing","is","my","favourite"],answer:"The song that is playing is my favourite.",label:"Ordne"},
-  {words:["I","have","a","cousin","who","is","ten","years","old"],answer:"I have a cousin who is ten years old.",label:"Ordne"},
-  {words:["The","shop","which","I","like","is","closed","today"],answer:"The shop which I like is closed today.",label:"Ordne"},
-  {words:["This","is","the","park","that","we","visit","every","summer"],answer:"This is the park that we visit every summer.",label:"Ordne"},
-  {words:["He","is","the","man","who","drives","the","bus"],answer:"He is the man who drives the bus.",label:"Ordne"},
-  {words:["She","bought","a","jacket","which","was","really","cheap"],answer:"She bought a jacket which was really cheap.",label:"Ordne"},
-  {words:["The","boy","that","won","the","race","is","my","brother"],answer:"The boy that won the race is my brother.",label:"Ordne"},
-  {words:["I","love","stories","that","have","a","happy","ending"],answer:"I love stories that have a happy ending.",label:"Ordne"},
-  {words:["The","letter","which","came","today","is","from","Lisa"],answer:"The letter which came today is from Lisa.",label:"Ordne"},
-  {words:["That's","the","actress","who","plays","the","queen"],answer:"That's the actress who plays the queen.",label:"Ordne"},
-  {words:["The","computer","that","I","use","is","very","fast"],answer:"The computer that I use is very fast.",label:"Ordne"},
-  {words:["Mr","Lee","is","a","teacher","who","is","always","fair"],answer:"Mr Lee is a teacher who is always fair.",label:"Ordne"},
-  {words:["The","food","which","my","grandma","cooks","is","delicious"],answer:"The food which my grandma cooks is delicious.",label:"Ordne"},
-  {words:["I","met","a","girl","who","is","from","Australia"],answer:"I met a girl who is from Australia.",label:"Ordne"},
-  {words:["The","train","that","goes","to","London","leaves","at","ten"],answer:"The train that goes to London leaves at ten.",label:"Ordne"},
-  {words:["She","has","a","friend","who","plays","football","very","well"],answer:"She has a friend who plays football very well.",label:"Ordne"},
-  {words:["The","picture","which","is","on","the","wall","is","old"],answer:"The picture which is on the wall is old.",label:"Ordne"},
-  {words:["He","wrote","a","letter","that","was","very","kind"],answer:"He wrote a letter that was very kind.",label:"Ordne"},
-  {words:["This","is","the","man","who","saved","the","cat"],answer:"This is the man who saved the cat.",label:"Ordne"},
-  {words:["The","movie","that","we","watched","was","scary"],answer:"The movie that we watched was scary.",label:"Ordne"},
-  {words:["I","have","a","teacher","who","makes","English","fun"],answer:"I have a teacher who makes English fun.",label:"Ordne"},
+const qwhL1=[
+  // 30× MC + 10× Wörter ordnen
+  {type:"mc",prompt:"Welche Wortstellung ist RICHTIG nach W-Wort?",options:["where did she go","where she went","where went she","where she did go"],correct:1,explanation:"S-V-O nach W-Wort, kein do/did."},
+  {type:"mc",prompt:"<i>Direct: \"Where do you live?\" – Indirect: He asked where I ___.</i>",options:["live","lived","do live","am living"],correct:1,explanation:"live → lived."},
+  {type:"mc",prompt:"<i>Direct: \"How are you?\" – Indirect: She asked how I ___.</i>",options:["am","was","be","were"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"<i>Direct: \"What did you do?\" – Indirect: He asked what I ___.</i>",options:["did","do","had done","done"],correct:2,explanation:"Did do → had done."},
+  {type:"mc",prompt:"<i>Direct: \"When will you come?\" – Indirect: She asked when I ___ come.</i>",options:["will","would","do","did"],correct:1,explanation:"will → would."},
+  {type:"mc",prompt:"<i>Direct: \"Why are you sad?\" – Indirect: He asked why I ___ sad.</i>",options:["am","was","be","were"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"<i>Direct: \"Who is that?\" – Indirect: She asked who that ___.</i>",options:["is","was","were","be"],correct:1,explanation:"is → was."},
+  {type:"mc",prompt:"<i>Direct: \"How old are you?\" – Indirect: He asked how old I ___.</i>",options:["am","was","be","were"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"Was ist FALSCH?",options:["He asked where I lived.","He asked where did I live.","He asked where she went.","He asked when she came."],correct:1,explanation:"Kein did – S-V-O."},
+  {type:"mc",prompt:"<i>Direct: \"What time is it?\" – Indirect: She asked what time it ___.</i>",options:["is","was","were","be"],correct:1,explanation:"is → was."},
+  {type:"mc",prompt:"<i>Direct: \"Where have you been?\" – Indirect: He asked where I ___ been.</i>",options:["have","had","was","were"],correct:1,explanation:"have → had."},
+  {type:"mc",prompt:"<i>Direct: \"How can I help?\" – Indirect: She asked how she ___ help.</i>",options:["can","could","may","might"],correct:1,explanation:"can → could."},
+  {type:"mc",prompt:"<i>Direct: \"Why didn't you come?\" – Indirect: He asked why I ___ come.</i>",options:["didn't","hadn't","haven't","wouldn't"],correct:1,explanation:"didn't come → hadn't come."},
+  {type:"mc",prompt:"<i>Direct: \"What does he want?\" – Indirect: She asked what he ___.</i>",options:["wants","wanted","does want","is wanting"],correct:1,explanation:"wants → wanted."},
+  {type:"mc",prompt:"<i>Direct: \"Where are they?\" – Indirect: He asked where they ___.</i>",options:["are","were","be","was"],correct:1,explanation:"are → were."},
+  {type:"mc",prompt:"<i>Direct: \"How did you get here?\" – Indirect: He asked how I ___ here.</i>",options:["got","had got","get","do got"],correct:1,explanation:"Did get → had got."},
+  {type:"mc",prompt:"<i>Direct: \"What is your name?\" – Indirect: She asked what ___ name was.</i>",options:["my","your","his","her"],correct:0,explanation:"your (zu mir) → my."},
+  {type:"mc",prompt:"<i>Direct: \"When did you arrive?\" – Indirect: He asked when I ___ arrived.</i>",options:["did","had","have","do"],correct:1,explanation:"Did arrive → had arrived."},
+  {type:"mc",prompt:"<i>Direct: \"Who took my pen?\" – Indirect: She asked who ___ taken her pen.</i>",options:["has","had","have","did"],correct:1,explanation:"took → had taken."},
+  {type:"mc",prompt:"<i>Direct: \"Why are you crying?\" – Indirect: He asked why I ___ crying.</i>",options:["am","was","be","were"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"<i>Direct: \"How much does it cost?\" – Indirect: She asked how much it ___.</i>",options:["costs","cost","does cost","is costing"],correct:1,explanation:"costs → cost (Vergangenheitsform)."},
+  {type:"mc",prompt:"<i>Direct: \"What are you doing?\" – Indirect: He asked what I ___ doing.</i>",options:["am","was","be","were"],correct:1,explanation:"am → was."},
+  {type:"mc",prompt:"Was kommt am Ende einer indirekten Frage?",options:["?","!","Punkt","Komma"],correct:2,explanation:"Punkt – kein Fragezeichen!"},
+  {type:"mc",prompt:"<i>Direct: \"Where does she live?\" – Indirect: He asked where she ___.</i>",options:["lives","lived","does live","is living"],correct:1,explanation:"lives → lived."},
+  {type:"mc",prompt:"<i>Direct: \"How will you do it?\" – Indirect: She asked how I ___ do it.</i>",options:["will","would","do","did"],correct:1,explanation:"will → would."},
+  {type:"mc",prompt:"<i>Direct: \"Why have you done that?\" – Indirect: He asked why I ___ done that.</i>",options:["have","had","was","were"],correct:1,explanation:"have → had."},
+  {type:"mc",prompt:"<i>Direct: \"Who is the winner?\" – Indirect: She asked who the winner ___.</i>",options:["is","was","were","be"],correct:1,explanation:"is → was."},
+  {type:"mc",prompt:"<i>Direct: \"What do you want?\" – Indirect: He asked what I ___.",options:["want","wanted","do want","am wanting"],correct:1,explanation:"want → wanted."},
+  {type:"mc",prompt:"<i>Direct: \"How old is she?\" – Indirect: He asked how old she ___.</i>",options:["is","was","were","be"],correct:1,explanation:"is → was."},
+  {type:"mc",prompt:"<i>Direct: \"Where are my keys?\" – Indirect: He asked where ___ keys ___.</i>",options:["my / are","his / are","his / were","my / were"],correct:2,explanation:"my → his, are → were."},
+  // 10× Wörter ordnen
+  {words:["He","asked","where","I","lived"],answer:"He asked where I lived.",label:"Ordne"},
+  {words:["She","asked","what","I","wanted"],answer:"She asked what I wanted.",label:"Ordne"},
+  {words:["He","asked","why","I","was","sad"],answer:"He asked why I was sad.",label:"Ordne"},
+  {words:["She","asked","when","I","would","come"],answer:"She asked when I would come.",label:"Ordne"},
+  {words:["I","asked","how","he","was"],answer:"I asked how he was.",label:"Ordne"},
+  {words:["He","asked","who","that","was"],answer:"He asked who that was.",label:"Ordne"},
+  {words:["She","asked","where","they","had","gone"],answer:"She asked where they had gone.",label:"Ordne"},
+  {words:["He","asked","what","time","it","was"],answer:"He asked what time it was.",label:"Ordne"},
+  {words:["I","asked","why","she","had","cried"],answer:"I asked why she had cried.",label:"Ordne"},
+  {words:["She","asked","how","I","could","help"],answer:"She asked how I could help.",label:"Ordne"},
 ];
 
-const buildL2=[
-  // 40× zwei Sätze verbinden (Freitext)
-  {prompt:"Verbinde mit who/which/that: <i>I know a boy. He plays the piano.</i>",answer:["I know a boy who plays the piano.","I know a boy that plays the piano."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>This is the bike. It is really fast.</i>",answer:["This is the bike which is really fast.","This is the bike that is really fast."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>She has a cat. The cat sleeps a lot.</i>",answer:["She has a cat which sleeps a lot.","She has a cat that sleeps a lot."],explanation:"Tier → which/that."},
-  {prompt:"Verbinde: <i>That's the man. He drives the school bus.</i>",answer:["That's the man who drives the school bus.","That's the man that drives the school bus."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>I read a book. The book was about pirates.</i>",answer:["I read a book which was about pirates.","I read a book that was about pirates."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>The girl is my cousin. She lives in Hamburg.</i>",answer:["The girl who lives in Hamburg is my cousin.","The girl that lives in Hamburg is my cousin."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>I lost the keys. They were on the table.</i>",answer:["I lost the keys which were on the table.","I lost the keys that were on the table."],explanation:"Sachen → which/that."},
-  {prompt:"Verbinde: <i>Mr Smith is a teacher. He teaches us maths.</i>",answer:["Mr Smith is a teacher who teaches us maths.","Mr Smith is a teacher that teaches us maths."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>That's the song. The song is on the radio.</i>",answer:["That's the song which is on the radio.","That's the song that is on the radio."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>I met a girl. She speaks four languages.</i>",answer:["I met a girl who speaks four languages.","I met a girl that speaks four languages."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>This is the shop. It sells comics.</i>",answer:["This is the shop which sells comics.","This is the shop that sells comics."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>I have a brother. He plays in a band.</i>",answer:["I have a brother who plays in a band.","I have a brother that plays in a band."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>Look at the dog. The dog has very long ears.</i>",answer:["Look at the dog which has very long ears.","Look at the dog that has very long ears."],explanation:"Tier → which/that."},
-  {prompt:"Verbinde: <i>That's the boy. He won the prize.</i>",answer:["That's the boy who won the prize.","That's the boy that won the prize."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>I bought a jacket. The jacket was on sale.</i>",answer:["I bought a jacket which was on sale.","I bought a jacket that was on sale."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>The students will pass. They study hard.</i>",answer:["The students who study hard will pass.","The students that study hard will pass."],explanation:"Personen → who/that."},
-  {prompt:"Verbinde: <i>This is my friend. She loves drawing.</i>",answer:["This is my friend who loves drawing.","This is my friend that loves drawing."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>That's the place. The place serves the best ice cream.</i>",answer:["That's the place which serves the best ice cream.","That's the place that serves the best ice cream."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>I know a man. He works at the airport.</i>",answer:["I know a man who works at the airport.","I know a man that works at the airport."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>The car is mine. The car is parked outside.</i>",answer:["The car which is parked outside is mine.","The car that is parked outside is mine."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>She has a dog. The dog barks at strangers.</i>",answer:["She has a dog which barks at strangers.","She has a dog that barks at strangers."],explanation:"Tier → which/that."},
-  {prompt:"Verbinde: <i>That's the doctor. She helped my grandma.</i>",answer:["That's the doctor who helped my grandma.","That's the doctor that helped my grandma."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>I love films. The films make me laugh.</i>",answer:["I love films which make me laugh.","I love films that make me laugh."],explanation:"Sachen → which/that."},
-  {prompt:"Verbinde: <i>The boy is from London. We met him yesterday.</i>",answer:["The boy who we met yesterday is from London.","The boy that we met yesterday is from London."],explanation:"Person → who/that (Objekt)."},
-  {prompt:"Verbinde: <i>This is the cake. My mum made it.</i>",answer:["This is the cake which my mum made.","This is the cake that my mum made."],explanation:"Sache → which/that (Objekt)."},
-  {prompt:"Verbinde: <i>I know a place. It has lots of trees.</i>",answer:["I know a place which has lots of trees.","I know a place that has lots of trees."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>The man is a chef. He owns the restaurant.</i>",answer:["The man who owns the restaurant is a chef.","The man that owns the restaurant is a chef."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>That's the song. We danced to it.</i>",answer:["That's the song which we danced to.","That's the song that we danced to."],explanation:"Sache → which/that (Objekt)."},
-  {prompt:"Verbinde: <i>I have a teacher. She makes lessons fun.</i>",answer:["I have a teacher who makes lessons fun.","I have a teacher that makes lessons fun."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>The shoes are red. I bought them yesterday.</i>",answer:["The shoes which I bought yesterday are red.","The shoes that I bought yesterday are red."],explanation:"Sachen → which/that (Objekt)."},
-  {prompt:"Verbinde: <i>This is the boy. He plays in the school team.</i>",answer:["This is the boy who plays in the school team.","This is the boy that plays in the school team."],explanation:"Person → who/that."},
-  {prompt:"Verbinde: <i>I read a story. The story was very sad.</i>",answer:["I read a story which was very sad.","I read a story that was very sad."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>That's the woman. Her son is in my class.</i>",answer:["That's the woman whose son is in my class."],explanation:"Besitz → whose."},
-  {prompt:"Verbinde: <i>I know a kid. His bike is broken.</i>",answer:["I know a kid whose bike is broken."],explanation:"Besitz → whose."},
-  {prompt:"Verbinde: <i>This is my friend. Her dad is a pilot.</i>",answer:["This is my friend whose dad is a pilot.","This is my friend whose father is a pilot."],explanation:"Besitz → whose."},
-  {prompt:"Verbinde: <i>The film was great. We saw it last night.</i>",answer:["The film which we saw last night was great.","The film that we saw last night was great."],explanation:"Sache → which/that (Objekt)."},
-  {prompt:"Verbinde: <i>The library is closed. The library is in our school.</i>",answer:["The library which is in our school is closed.","The library that is in our school is closed."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>Look at the cat. The cat is on the roof.</i>",answer:["Look at the cat which is on the roof.","Look at the cat that is on the roof."],explanation:"Tier → which/that."},
-  {prompt:"Verbinde: <i>I want a job. The job pays well.</i>",answer:["I want a job which pays well.","I want a job that pays well."],explanation:"Sache → which/that."},
-  {prompt:"Verbinde: <i>That's the bus. It takes us to town.</i>",answer:["That's the bus which takes us to town.","That's the bus that takes us to town."],explanation:"Sache → which/that."},
+const qwhL2=[
+  // 40× Lückentext (W-Wort + Backshift)
+  {prompt:"Direct: <i>\"Where do you live?\"</i><br>Indirect: He asked where I ___.",answer:["lived"],explanation:"live → lived."},
+  {prompt:"Direct: <i>\"What do you want?\"</i><br>Indirect: She asked what I ___.",answer:["wanted"],explanation:"want → wanted."},
+  {prompt:"Direct: <i>\"When are you coming?\"</i><br>Indirect: He asked when I ___ coming.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Why is she crying?\"</i><br>Indirect: He asked why she ___ crying.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"How are you?\"</i><br>Indirect: She asked how I ___.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Who is that?\"</i><br>Indirect: He asked who that ___.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"What did you do?\"</i><br>Indirect: She asked what I ___ done.",answer:["had"],explanation:"Did do → had done."},
+  {prompt:"Direct: <i>\"Where did you go?\"</i><br>Indirect: He asked where I ___ gone.",answer:["had"],explanation:"Did go → had gone."},
+  {prompt:"Direct: <i>\"When will you arrive?\"</i><br>Indirect: She asked when I ___ arrive.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>\"Why have you done this?\"</i><br>Indirect: He asked why I ___ done this.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Who can help?\"</i><br>Indirect: She asked who ___ help.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"What time is it?\"</i><br>Indirect: She asked what time it ___.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"Where are they?\"</i><br>Indirect: He asked where they ___.",answer:["were"],explanation:"are → were."},
+  {prompt:"Direct: <i>\"How can I help?\"</i><br>Indirect: She asked how she ___ help.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"What does he want?\"</i><br>Indirect: She asked what he ___.",answer:["wanted"],explanation:"wants → wanted."},
+  {prompt:"Direct: <i>\"Why didn't she call?\"</i><br>Indirect: He asked why she ___ called.",answer:["hadn't","had not"],explanation:"didn't call → hadn't called."},
+  {prompt:"Direct: <i>\"How long have you been here?\"</i><br>Indirect: She asked how long I ___ been there.",answer:["had"],explanation:"have → had."},
+  {prompt:"Direct: <i>\"Where do they live?\"</i><br>Indirect: He asked where they ___.",answer:["lived"],explanation:"live → lived."},
+  {prompt:"Direct: <i>\"What is your name?\"</i><br>Indirect: She asked what ___ name was.",answer:["my"],explanation:"your → my."},
+  {prompt:"Direct: <i>\"When did you start?\"</i><br>Indirect: He asked when I ___ started.",answer:["had"],explanation:"Did start → had started."},
+  {prompt:"Direct: <i>\"Who took my book?\"</i><br>Indirect: She asked who ___ taken her book.",answer:["had"],explanation:"took → had taken."},
+  {prompt:"Direct: <i>\"How much is it?\"</i><br>Indirect: She asked how much it ___.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"What are you doing?\"</i><br>Indirect: He asked what I ___ doing.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Why are you here?\"</i><br>Indirect: She asked why I ___ there.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"How old is she?\"</i><br>Indirect: He asked how old she ___.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"What can you do?\"</i><br>Indirect: She asked what I ___ do.",answer:["could"],explanation:"can → could."},
+  {prompt:"Direct: <i>\"Where will we meet?\"</i><br>Indirect: He asked where they ___ meet.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>\"Who is at the door?\"</i><br>Indirect: She asked who ___ at the door.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"Why has it stopped?\"</i><br>Indirect: He asked why it ___ stopped.",answer:["had"],explanation:"has → had."},
+  {prompt:"Direct: <i>\"What did Tom say?\"</i><br>Indirect: She asked what Tom ___ said.",answer:["had"],explanation:"Did say → had said."},
+  {prompt:"Direct: <i>\"How does the car work?\"</i><br>Indirect: He asked how the car ___.",answer:["worked"],explanation:"works → worked."},
+  {prompt:"Direct: <i>\"When are you leaving?\"</i><br>Indirect: She asked when I ___ leaving.",answer:["was"],explanation:"am → was."},
+  {prompt:"Direct: <i>\"Where has she gone?\"</i><br>Indirect: He asked where she ___ gone.",answer:["had"],explanation:"has → had."},
+  {prompt:"Direct: <i>\"What will you do tomorrow?\"</i><br>Indirect: She asked what I ___ do the next day.",answer:["would"],explanation:"will → would."},
+  {prompt:"Direct: <i>\"Why is the door open?\"</i><br>Indirect: He asked why the door ___ open.",answer:["was"],explanation:"is → was."},
+  {prompt:"Direct: <i>\"How could you do that?\"</i><br>Indirect: She asked how I ___ done that.",answer:["had"],explanation:"could → had (Past Perfect)."},
+  {prompt:"Direct: <i>\"Who has my pen?\"</i><br>Indirect: He asked who ___ ___ pen.",answer:["had / his","had/his"],explanation:"has → had, my → his."},
+  {prompt:"Direct: <i>\"Where is your school?\"</i><br>Indirect: He asked where ___ school ___.",answer:["my / was","my/was"],explanation:"your → my, is → was."},
+  {prompt:"Direct: <i>\"What did your mum say?\"</i><br>Indirect: She asked what ___ mum ___ said.",answer:["my / had","my/had"],explanation:"your → my, did say → had said."},
+  {prompt:"Direct: <i>\"How is your friend?\"</i><br>Indirect: He asked how ___ friend ___.",answer:["my / was","my/was"],explanation:"your → my, is → was."},
 ];
 
-const buildL3=[
-  // 40× Profi: Übersetzen + freie Bildung + Fehler
-  {prompt:"Übersetze: <i>Der Junge, der den Wettbewerb gewann, ist mein Cousin.</i>",answer:["The boy who won the contest is my cousin.","The boy that won the contest is my cousin."],explanation:"Person → who/that."},
-  {prompt:"Übersetze: <i>Das Spiel, das du mir geschenkt hast, ist toll.</i>",answer:["The game which you gave me is great.","The game that you gave me is great.","The game you gave me is great."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Übersetze: <i>Ich kenne einen Laden, der coole Schuhe verkauft.</i>",answer:["I know a shop which sells cool shoes.","I know a shop that sells cool shoes."],explanation:"Sache → which/that."},
-  {prompt:"Übersetze: <i>Das Telefon, das sie benutzt, ist neu.</i>",answer:["The phone which she uses is new.","The phone that she uses is new.","The phone she uses is new."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Übersetze: <i>Das ist das Mädchen, von dem ich dir erzählt habe.</i>",answer:["This is the girl who I told you about.","This is the girl that I told you about.","This is the girl I told you about.","That's the girl who I told you about.","That's the girl that I told you about.","That's the girl I told you about."],explanation:"Person → who/that (oder weg, weil Objekt)."},
-  {prompt:"Korrigiere: <i>The man, which works next door, is friendly.</i>",answer:["The man who works next door is friendly.","The man that works next door is friendly."],explanation:"Person → who/that. Kein Komma."},
-  {prompt:"Korrigiere: <i>I have a bike who is brand new.</i>",answer:["I have a bike which is brand new.","I have a bike that is brand new."],explanation:"Sache → which/that."},
-  {prompt:"Übersetze: <i>Die Schuhe, die ich gestern kaufte, sind zu eng.</i>",answer:["The shoes which I bought yesterday are too tight.","The shoes that I bought yesterday are too tight.","The shoes I bought yesterday are too tight.","The shoes which I bought yesterday are too small.","The shoes that I bought yesterday are too small.","The shoes I bought yesterday are too small."],explanation:"Sachen → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>That's the actor what played the king.</i>",answer:["That's the actor who played the king.","That's the actor that played the king."],explanation:"'what' nicht als Relativpronomen."},
-  {prompt:"Übersetze: <i>Der Lehrer, der mir hilft, heißt Mr Brown.</i>",answer:["The teacher who helps me is called Mr Brown.","The teacher that helps me is called Mr Brown.","The teacher who helps me is Mr Brown.","The teacher that helps me is Mr Brown."],explanation:"Person → who/that."},
-  {prompt:"Übersetze: <i>Das Auto, das vor dem Haus steht, gehört meinem Vater.</i>",answer:["The car which is in front of the house belongs to my father.","The car that is in front of the house belongs to my father.","The car which is in front of the house belongs to my dad.","The car that is in front of the house belongs to my dad."],explanation:"Sache → which/that."},
-  {prompt:"Korrigiere: <i>The girl, that I met, is funny.</i>",answer:["The girl who I met is funny.","The girl that I met is funny.","The girl I met is funny."],explanation:"Bestimmend → kein Komma."},
-  {prompt:"Übersetze: <i>Ich habe einen Freund, dessen Vater Pilot ist.</i>",answer:["I have a friend whose father is a pilot.","I have a friend whose dad is a pilot."],explanation:"Besitz → whose."},
-  {prompt:"Korrigiere: <i>This is the cat which it lives next door.</i>",answer:["This is the cat which lives next door.","This is the cat that lives next door."],explanation:"'it' überflüssig – Pronomen ersetzt es."},
-  {prompt:"Übersetze: <i>Das ist die Frau, deren Kinder in unserer Klasse sind.</i>",answer:["That's the woman whose children are in our class.","That's the woman whose kids are in our class.","This is the woman whose children are in our class.","This is the woman whose kids are in our class."],explanation:"Besitz → whose."},
-  {prompt:"Korrigiere: <i>I know a girl whose she sings very well.</i>",answer:["I know a girl who sings very well.","I know a girl that sings very well."],explanation:"Subjekt → who/that, nicht whose+she."},
-  {prompt:"Übersetze: <i>Der Hund, der so laut bellt, ist klein.</i>",answer:["The dog which barks so loudly is small.","The dog that barks so loudly is small.","The dog which is barking so loudly is small.","The dog that is barking so loudly is small."],explanation:"Tier → which/that."},
-  {prompt:"Korrigiere: <i>The book what I'm reading is exciting.</i>",answer:["The book which I'm reading is exciting.","The book that I'm reading is exciting.","The book I'm reading is exciting."],explanation:"'what' nicht als Relativpronomen."},
-  {prompt:"Übersetze: <i>Das ist der Film, den wir alle lieben.</i>",answer:["This is the film which we all love.","This is the film that we all love.","This is the film we all love.","That's the film which we all love.","That's the film that we all love.","That's the film we all love."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>People which are nice have many friends.</i>",answer:["People who are nice have many friends.","People that are nice have many friends."],explanation:"Personen → who/that."},
-  {prompt:"Übersetze: <i>Das Lied, das gerade läuft, ist mein Lieblingslied.</i>",answer:["The song which is playing now is my favourite song.","The song that is playing now is my favourite song.","The song which is playing now is my favourite.","The song that is playing now is my favourite."],explanation:"Sache → which/that."},
-  {prompt:"Korrigiere: <i>The woman, who's son is here, is my aunt.</i>",answer:["The woman whose son is here is my aunt."],explanation:"who's = who is. Besitz → whose. Kein Komma."},
-  {prompt:"Übersetze: <i>Das ist der Junge, dessen Schwester in meine Klasse geht.</i>",answer:["That's the boy whose sister is in my class.","This is the boy whose sister is in my class.","That's the boy whose sister goes to my class.","This is the boy whose sister goes to my class."],explanation:"Besitz → whose."},
-  {prompt:"Korrigiere: <i>I have a sister which is older than me.</i>",answer:["I have a sister who is older than me.","I have a sister that is older than me."],explanation:"Person → who/that."},
-  {prompt:"Übersetze: <i>Die Leute, die hier wohnen, sind sehr nett.</i>",answer:["The people who live here are very nice.","The people that live here are very nice."],explanation:"Personen → who/that."},
-  {prompt:"Korrigiere: <i>That's the cake, that I baked.</i>",answer:["That's the cake which I baked.","That's the cake that I baked.","That's the cake I baked."],explanation:"Bestimmend → kein Komma."},
-  {prompt:"Übersetze: <i>Das Kleid, das du trägst, ist schön.</i>",answer:["The dress which you are wearing is nice.","The dress that you are wearing is nice.","The dress you are wearing is nice.","The dress which you wear is nice.","The dress that you wear is nice.","The dress you wear is nice."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>The kids who's parents are here are happy.</i>",answer:["The kids whose parents are here are happy.","The children whose parents are here are happy."],explanation:"Besitz → whose."},
-  {prompt:"Übersetze: <i>Ich mag Bücher, die ein Happy End haben.</i>",answer:["I like books which have a happy ending.","I like books that have a happy ending."],explanation:"Sachen → which/that."},
-  {prompt:"Korrigiere: <i>The dog, which it bit me, was big.</i>",answer:["The dog which bit me was big.","The dog that bit me was big."],explanation:"Bestimmend → kein Komma. 'it' überflüssig."},
-  {prompt:"Übersetze: <i>Der Junge, mit dem ich Tennis spiele, ist mein Bruder.</i>",answer:["The boy who I play tennis with is my brother.","The boy that I play tennis with is my brother.","The boy I play tennis with is my brother."],explanation:"Person → who/that (oder weg)."},
-  {prompt:"Korrigiere: <i>This is the place where I was born in it.</i>",answer:["This is the place where I was born.","This is the place I was born in."],explanation:"Doppelte Markierung – 'in it' weg."},
-  {prompt:"Übersetze: <i>Das Mädchen, dessen Tasche rot ist, ist Anna.</i>",answer:["The girl whose bag is red is Anna.","The girl whose bag is red is called Anna."],explanation:"Besitz → whose."},
-  {prompt:"Korrigiere: <i>The shop, what is on the corner, is open.</i>",answer:["The shop which is on the corner is open.","The shop that is on the corner is open."],explanation:"'what' nicht als Relativpronomen. Kein Komma."},
-  {prompt:"Übersetze: <i>Die Pizza, die wir gestern gegessen haben, war fantastisch.</i>",answer:["The pizza which we ate yesterday was fantastic.","The pizza that we ate yesterday was fantastic.","The pizza we ate yesterday was fantastic.","The pizza which we had yesterday was fantastic.","The pizza that we had yesterday was fantastic.","The pizza we had yesterday was fantastic."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>Mr Lee is the teacher, which I like best.</i>",answer:["Mr Lee is the teacher who I like best.","Mr Lee is the teacher that I like best.","Mr Lee is the teacher I like best."],explanation:"Person → who/that. Kein Komma."},
-  {prompt:"Übersetze: <i>Der Park, in den wir gehen, ist groß.</i>",answer:["The park which we go to is big.","The park that we go to is big.","The park we go to is big."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>I have an uncle whose he lives abroad.</i>",answer:["I have an uncle who lives abroad.","I have an uncle that lives abroad."],explanation:"Subjekt → who/that, nicht whose+he."},
-  {prompt:"Übersetze: <i>Das Buch, das du mir geliehen hast, ist toll.</i>",answer:["The book which you lent me is great.","The book that you lent me is great.","The book you lent me is great."],explanation:"Sache → which/that (oder weg)."},
-  {prompt:"Korrigiere: <i>The girl, who phoned, didn't leave a name.</i>",answer:["The girl who phoned didn't leave a name.","The girl that phoned didn't leave a name."],explanation:"Bestimmend → kein Komma."},
-];
-
-/* =================================================================
-   SEKTION 3 (cc): Contact Clauses — Pronomen weglassen
-   Regel: Nur weglassen, wenn Pronomen Objekt ist (nach Pronomen kommt
-   neues Subjekt + Verb). Bleibt es Subjekt → muss bleiben.
-==================================================================*/
-const ccL1=[
-  // 40× MC: Darf das Pronomen weg? Ja/Nein
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The book that I read was great.</i>",options:["Ja – 'I' folgt direkt (neues Subjekt)","Nein – das Pronomen ist Subjekt","Nur wenn 'the book' Plural ist","Nur bei Personen"],correct:0,explanation:"'I' = neues Subjekt → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The boy who won is here.</i>",options:["Ja","Nein – 'won' ist direkt das Verb","Nur ohne Komma","Nur bei Sachen"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>This is the song which she sings.</i>",options:["Nein – which steht für eine Sache","Nein – 'sings' ist direkt das Verb","Ja – 'she' folgt (neues Subjekt)","Nur bei Plural"],correct:2,explanation:"'she' = neues Subjekt → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The girl who lives here is nice.</i>",options:["Ja","Nein – 'lives' ist direkt das Verb","Nur bei 'that'","Nur wenn 'the girl' Subjekt ist"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The phone that she uses is new.</i>",options:["Ja – 'she' folgt","Nein","Nur ohne 'is new'","Nur bei Personen"],correct:0,explanation:"Neues Subjekt 'she' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>I know a man who works in a bank.</i>",options:["Ja","Nein – direkt 'works'","Nur ohne Komma","Nur Plural"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The keys which I lost were on the desk.</i>",options:["Nein","Ja – 'I' folgt","Nur bei Singular","Nur ohne 'were'"],correct:1,explanation:"Neues Subjekt 'I' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>That's the boy who broke the window.</i>",options:["Ja","Nein – direkt 'broke'","Nur bei Plural","Nur in Fragen"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The film that we saw was funny.</i>",options:["Ja – 'we' folgt","Nein","Nur ohne 'was funny'","Nur bei Personen"],correct:0,explanation:"Neues Subjekt 'we' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>I have a friend who plays guitar.</i>",options:["Ja","Nein – 'plays' ist direkt das Verb","Nur ohne 'guitar'","Nur bei Sachen"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The cake that my mum baked tastes great.</i>",options:["Nein","Ja – 'my mum' folgt","Nur ohne 'great'","Nur bei Tieren"],correct:1,explanation:"Neues Subjekt 'my mum' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The dog which barks loudly is mine.</i>",options:["Ja","Nein – direkt 'barks'","Nur bei Personen","Nur Plural"],correct:1,explanation:"Direkt Verb → which ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>That's the song which everyone loves.</i>",options:["Ja – 'everyone' folgt","Nein","Nur ohne 'everyone'","Nur bei Personen"],correct:0,explanation:"Neues Subjekt 'everyone' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>People who smoke often get ill.</i>",options:["Ja","Nein – direkt 'smoke'","Nur bei Plural","Nur ohne 'often'"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The shoes that I bought are black.</i>",options:["Ja – 'I' folgt","Nein","Nur ohne 'black'","Nur Singular"],correct:0,explanation:"Neues Subjekt 'I' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The cat which sleeps here is old.</i>",options:["Nein – 'sleeps' direkt","Ja","Nur ohne 'here'","Nur bei Hunden"],correct:0,explanation:"Direkt Verb → which ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The teacher who I like teaches French.</i>",options:["Ja – 'I' folgt","Nein – 'I' ist Subjekt","Nur Plural","Nur in Fragen"],correct:0,explanation:"Neues Subjekt 'I' → who ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>That's the girl who broke my pen.</i>",options:["Ja","Nein – direkt 'broke'","Nur bei Plural","Nur ohne Pronomen"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The story which she told was sad.</i>",options:["Ja – 'she' folgt","Nein","Nur ohne 'sad'","Nur Plural"],correct:0,explanation:"Neues Subjekt 'she' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>I know a girl who speaks Italian.</i>",options:["Ja","Nein – direkt 'speaks'","Nur bei Personen","Nur ohne 'Italian'"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The ticket that you gave me is not valid.</i>",options:["Nein","Ja – 'you' folgt","Nur ohne 'not valid'","Nur bei Sachen"],correct:1,explanation:"Neues Subjekt 'you' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The boy who lives next door is funny.</i>",options:["Ja","Nein – direkt 'lives'","Nur ohne 'funny'","Nur bei Plural"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>Look at the dog which the kids are playing with.</i>",options:["Ja – 'the kids' folgt","Nein","Nur ohne 'playing with'","Nur Plural"],correct:0,explanation:"Neues Subjekt 'the kids' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The man who phoned didn't leave his name.</i>",options:["Ja","Nein – 'phoned' direkt","Nur ohne 'his name'","Nur bei Sachen"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>I lost the bag which my mum gave me.</i>",options:["Ja – 'my mum' folgt","Nein","Nur ohne 'gave me'","Nur Plural"],correct:0,explanation:"Neues Subjekt 'my mum' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The students who are late will fail.</i>",options:["Ja","Nein – direkt 'are'","Nur ohne 'will fail'","Nur Singular"],correct:1,explanation:"Direkt Verb 'are' → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>This is the place that I told you about.</i>",options:["Ja – 'I' folgt","Nein","Nur Plural","Nur ohne 'about'"],correct:0,explanation:"Neues Subjekt 'I' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The girl who sings is my sister.</i>",options:["Ja","Nein – 'sings' direkt","Nur Plural","Nur ohne Komma"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>Here are the photos which we took yesterday.</i>",options:["Nein","Ja – 'we' folgt","Nur Singular","Nur bei Personen"],correct:1,explanation:"Neues Subjekt 'we' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The dog that bit the postman ran away.</i>",options:["Ja","Nein – direkt 'bit'","Nur ohne 'postman'","Nur bei Personen"],correct:1,explanation:"Direkt Verb → that ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The film that he made was a success.</i>",options:["Ja – 'he' folgt","Nein","Nur Plural","Nur ohne 'success'"],correct:0,explanation:"Neues Subjekt 'he' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>People who help others are great.</i>",options:["Ja","Nein – direkt 'help'","Nur ohne 'others'","Nur Plural"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The cake that my granny baked was delicious.</i>",options:["Ja – 'my granny' folgt","Nein","Nur Plural","Nur ohne 'delicious'"],correct:0,explanation:"Neues Subjekt 'my granny' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>That's the man who saved my dog.</i>",options:["Ja","Nein – direkt 'saved'","Nur ohne 'my dog'","Nur Plural"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The hotel that we stayed at was nice.</i>",options:["Ja – 'we' folgt","Nein","Nur Plural","Nur ohne 'at'"],correct:0,explanation:"Neues Subjekt 'we' → that ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The boy who got the prize is in my class.</i>",options:["Nein – direkt 'got'","Ja","Nur ohne 'prize'","Nur Plural"],correct:0,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The book which I finished was great.</i>",options:["Ja – 'I' folgt","Nein","Nur Plural","Nur ohne 'great'"],correct:0,explanation:"Neues Subjekt 'I' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The lady who lives upstairs is my aunt.</i>",options:["Ja","Nein – direkt 'lives'","Nur ohne 'upstairs'","Nur Plural"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The shoes which she wore were red.</i>",options:["Nein","Ja – 'she' folgt","Nur Plural","Nur ohne 'red'"],correct:1,explanation:"Neues Subjekt 'she' → which ist Objekt → kann weg."},
-  {type:"mc",prompt:"Darf das Pronomen weg? <i>The kids who are noisy go outside.</i>",options:["Ja","Nein – direkt 'are'","Nur Plural","Nur ohne 'outside'"],correct:1,explanation:"Direkt Verb → who ist Subjekt → MUSS bleiben."},
-];
-
-const ccL2=[
-  // 40× Pronomen tilgen (Freitext): Schreibe den Satz neu OHNE Pronomen
-  {prompt:"Lass das Pronomen weg: <i>The book that I read was great.</i>",answer:["The book I read was great."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The film which we saw was funny.</i>",answer:["The film we saw was funny."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The girl who I met is nice.</i>",answer:["The girl I met is nice."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The cake that my mum baked was tasty.</i>",answer:["The cake my mum baked was tasty."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The phone which she uses is new.</i>",answer:["The phone she uses is new."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The shoes that I bought are red.</i>",answer:["The shoes I bought are red."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The boy who you saw is my brother.</i>",answer:["The boy you saw is my brother."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The keys which I lost were on the table.</i>",answer:["The keys I lost were on the table."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The teacher who I like teaches maths.</i>",answer:["The teacher I like teaches maths."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The story that he told was scary.</i>",answer:["The story he told was scary."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The song which she sings is famous.</i>",answer:["The song she sings is famous."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The pizza that we ordered came late.</i>",answer:["The pizza we ordered came late."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The bag which I carry is heavy.</i>",answer:["The bag I carry is heavy."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The actor who we watched is famous.</i>",answer:["The actor we watched is famous."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The dress that she wore was beautiful.</i>",answer:["The dress she wore was beautiful."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The hotel which we visited was small.</i>",answer:["The hotel we visited was small."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The man who I phoned didn't answer.</i>",answer:["The man I phoned didn't answer."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The picture that he painted is on the wall.</i>",answer:["The picture he painted is on the wall."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The friend who I called is sick.</i>",answer:["The friend I called is sick."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The CD that you gave me is great.</i>",answer:["The CD you gave me is great."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The school which she attends is in town.</i>",answer:["The school she attends is in town."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The food that we cooked was spicy.</i>",answer:["The food we cooked was spicy."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The doctor who you saw is new.</i>",answer:["The doctor you saw is new."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The lesson which we had was easy.</i>",answer:["The lesson we had was easy."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The car that he drove was fast.</i>",answer:["The car he drove was fast."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The student who I helped passed the test.</i>",answer:["The student I helped passed the test."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The book that you lent me was funny.</i>",answer:["The book you lent me was funny."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The trip which we made was long.</i>",answer:["The trip we made was long."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The song that he wrote is on the radio.</i>",answer:["The song he wrote is on the radio."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The bike which my dad fixed works now.</i>",answer:["The bike my dad fixed works now."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The boy who I texted didn't reply.</i>",answer:["The boy I texted didn't reply."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The shop that we visited had nice clothes.</i>",answer:["The shop we visited had nice clothes."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The flower which she picked is yellow.</i>",answer:["The flower she picked is yellow."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The lady who he married is from Italy.</i>",answer:["The lady he married is from Italy."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The bag that I carry is full.</i>",answer:["The bag I carry is full."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The team which we support won.</i>",answer:["The team we support won."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The boy who she likes is in our class.</i>",answer:["The boy she likes is in our class."],explanation:"who als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The story that we wrote is exciting.</i>",answer:["The story we wrote is exciting."],explanation:"that als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The video which she made got many likes.</i>",answer:["The video she made got many likes."],explanation:"which als Objekt → weglassbar."},
-  {prompt:"Lass das Pronomen weg: <i>The friend that he met is from York.</i>",answer:["The friend he met is from York."],explanation:"that als Objekt → weglassbar."},
-];
-
-const ccL3=[
-  // 40× Profi: Fehlerkorrektur (Pronomen weggelassen, obwohl Subjekt) + freie Bildung + Übersetzung
-  {prompt:"Korrigiere: <i>The boy won the race is here.</i>",answer:["The boy who won the race is here.","The boy that won the race is here."],explanation:"who/that ist Subjekt – darf nicht weg!"},
-  {prompt:"Korrigiere: <i>The cat sleeps in the garden is mine.</i>",answer:["The cat which sleeps in the garden is mine.","The cat that sleeps in the garden is mine."],explanation:"which/that ist Subjekt – muss bleiben."},
-  {prompt:"Korrigiere: <i>The girl lives next door plays piano.</i>",answer:["The girl who lives next door plays piano.","The girl that lives next door plays piano."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Korrigiere: <i>I have a friend works in a hospital.</i>",answer:["I have a friend who works in a hospital.","I have a friend that works in a hospital."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Korrigiere: <i>The bus goes to school is yellow.</i>",answer:["The bus which goes to school is yellow.","The bus that goes to school is yellow."],explanation:"which/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (mit Contact Clause, ohne Pronomen): <i>Das Buch, das ich gelesen habe, war toll.</i>",answer:["The book I read was great."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Übersetze (Contact Clause): <i>Der Film, den wir gesehen haben, war traurig.</i>",answer:["The film we saw was sad.","The movie we saw was sad."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Mädchen, das ich getroffen habe, ist nett.</i>",answer:["The girl I met is nice."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The students study hard get good marks.</i>",answer:["The students who study hard get good marks.","The students that study hard get good marks."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Korrigiere: <i>That's the actor played in the new film.</i>",answer:["That's the actor who played in the new film.","That's the actor that played in the new film."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Telefon, das sie benutzt, ist neu.</i>",answer:["The phone she uses is new."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The keys are on the table I lost yesterday.</i>",answer:["The keys which I lost yesterday are on the table.","The keys that I lost yesterday are on the table.","The keys I lost yesterday are on the table."],explanation:"Reihenfolge falsch – Relativsatz nach Bezugswort."},
-  {prompt:"Übersetze (Contact Clause): <i>Der Junge, dem ich es gesagt habe, hat gelacht.</i>",answer:["The boy I told laughed.","The boy who I told laughed.","The boy that I told laughed."],explanation:"Person als Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The man phoned is my uncle.</i>",answer:["The man who phoned is my uncle.","The man that phoned is my uncle."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Die Schuhe, die ich gestern kaufte, sind rot.</i>",answer:["The shoes I bought yesterday are red."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>I know a girl can speak Chinese.</i>",answer:["I know a girl who can speak Chinese.","I know a girl that can speak Chinese."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Lied, das er geschrieben hat, ist berühmt.</i>",answer:["The song he wrote is famous."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The dog barked all night kept us awake.</i>",answer:["The dog which barked all night kept us awake.","The dog that barked all night kept us awake."],explanation:"which/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Die Pizza, die wir bestellt haben, ist kalt.</i>",answer:["The pizza we ordered is cold."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The girl I met yesterday she is my cousin.</i>",answer:["The girl I met yesterday is my cousin.","The girl who I met yesterday is my cousin.","The girl that I met yesterday is my cousin."],explanation:"'she' überflüssig – Subjekt schon da."},
-  {prompt:"Übersetze (Contact Clause): <i>Die Frage, die er gestellt hat, war schwer.</i>",answer:["The question he asked was hard.","The question he asked was difficult."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The teacher helps me is Mrs Smith.</i>",answer:["The teacher who helps me is Mrs Smith.","The teacher that helps me is Mrs Smith."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Spiel, das wir gespielt haben, war kurz.</i>",answer:["The game we played was short."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The cake mum baked it was sweet.</i>",answer:["The cake mum baked was sweet.","The cake which mum baked was sweet.","The cake that mum baked was sweet."],explanation:"'it' überflüssig – Pronomen ersetzt es schon."},
-  {prompt:"Übersetze (Contact Clause): <i>Die Stadt, die wir besuchten, war groß.</i>",answer:["The city we visited was big.","The town we visited was big.","The city we visited was large.","The town we visited was large."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The boys play football are in our team.</i>",answer:["The boys who play football are in our team.","The boys that play football are in our team."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Foto, das du gemacht hast, ist toll.</i>",answer:["The photo you took is great.","The picture you took is great."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The friend I trust her is Sarah.</i>",answer:["The friend I trust is Sarah.","The friend who I trust is Sarah.","The friend that I trust is Sarah."],explanation:"'her' überflüssig – Pronomen ersetzt es."},
-  {prompt:"Übersetze (Contact Clause): <i>Der Mann, mit dem sie spricht, ist mein Onkel.</i>",answer:["The man she is talking to is my uncle.","The man who she is talking to is my uncle.","The man that she is talking to is my uncle."],explanation:"who/that als Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The book is on the table I read last week.</i>",answer:["The book I read last week is on the table.","The book which I read last week is on the table.","The book that I read last week is on the table."],explanation:"Reihenfolge: Relativsatz direkt nach Bezugswort."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Auto, das wir gestern gesehen haben, war teuer.</i>",answer:["The car we saw yesterday was expensive."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>People work hard often succeed.</i>",answer:["People who work hard often succeed.","People that work hard often succeed."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Wort, das ich gesagt habe, war falsch.</i>",answer:["The word I said was wrong.","The word I said was incorrect."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The film we watched it was great.</i>",answer:["The film we watched was great.","The film which we watched was great.","The film that we watched was great."],explanation:"'it' überflüssig."},
-  {prompt:"Übersetze (Contact Clause): <i>Der Kuchen, den ich heute backe, ist Schokolade.</i>",answer:["The cake I'm baking today is chocolate.","The cake I am baking today is chocolate."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>That's the kid stole my pen.</i>",answer:["That's the kid who stole my pen.","That's the kid that stole my pen."],explanation:"who/that ist Subjekt – muss bleiben."},
-  {prompt:"Übersetze (Contact Clause): <i>Die Person, die ich anrief, war beschäftigt.</i>",answer:["The person I called was busy."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The keys you found them on the floor were mine.</i>",answer:["The keys you found on the floor were mine.","The keys which you found on the floor were mine.","The keys that you found on the floor were mine."],explanation:"'them' überflüssig."},
-  {prompt:"Übersetze (Contact Clause): <i>Das Geschenk, das du mir gegeben hast, ist schön.</i>",answer:["The present you gave me is beautiful.","The present you gave me is nice.","The gift you gave me is beautiful.","The gift you gave me is nice."],explanation:"Pronomen Objekt → kann weg."},
-  {prompt:"Korrigiere: <i>The dog ran across the road nearly got hit.</i>",answer:["The dog which ran across the road nearly got hit.","The dog that ran across the road nearly got hit."],explanation:"which/that ist Subjekt – muss bleiben."},
+const qwhL3=[
+  // 40× Profi: komplette Umformungen + Übersetzung + Fehler
+  {prompt:"Forme um: <i>He asked, \"Where do you live?\"</i>",answer:["He asked where I lived."],explanation:"S-V-O, do weg, live → lived."},
+  {prompt:"Forme um: <i>She asked, \"What do you want?\"</i>",answer:["She asked what I wanted."],explanation:"want → wanted."},
+  {prompt:"Forme um: <i>Tom asked, \"How are you?\"</i>",answer:["Tom asked how I was."],explanation:"am → was."},
+  {prompt:"Forme um: <i>Anna asked, \"When did you arrive?\"</i>",answer:["Anna asked when I had arrived."],explanation:"Did arrive → had arrived."},
+  {prompt:"Forme um: <i>He asked, \"Why are you crying?\"</i>",answer:["He asked why I was crying."],explanation:"am → was."},
+  {prompt:"Forme um: <i>She asked, \"Who is that boy?\"</i>",answer:["She asked who that boy was."],explanation:"is → was."},
+  {prompt:"Forme um: <i>The teacher asked, \"What did you do yesterday?\"</i>",answer:["The teacher asked what I had done the day before.","The teacher asked what I had done yesterday."],explanation:"Did do → had done."},
+  {prompt:"Forme um: <i>Mum asked, \"Where will you go?\"</i>",answer:["Mum asked where I would go."],explanation:"will → would."},
+  {prompt:"Forme um: <i>I asked, \"Why has she left?\"</i>",answer:["I asked why she had left."],explanation:"has → had."},
+  {prompt:"Forme um: <i>Lisa asked, \"How can I help?\"</i>",answer:["Lisa asked how she could help."],explanation:"can → could, I → she."},
+  {prompt:"Forme um: <i>Sam asked, \"What time is it?\"</i>",answer:["Sam asked what time it was."],explanation:"is → was."},
+  {prompt:"Forme um: <i>He asked, \"Where are my keys?\"</i>",answer:["He asked where his keys were."],explanation:"my → his, are → were."},
+  {prompt:"Forme um: <i>The doctor asked, \"How do you feel?\"</i> (zu mir)",answer:["The doctor asked how I felt."],explanation:"feel → felt."},
+  {prompt:"Forme um: <i>Anna asked, \"Why didn't you call?\"</i>",answer:["Anna asked why I hadn't called.","Anna asked why I had not called."],explanation:"didn't call → hadn't called."},
+  {prompt:"Forme um: <i>He asked, \"How old are you?\"</i>",answer:["He asked how old I was."],explanation:"are → was."},
+  {prompt:"Korrigiere: <i>He asked where did I live.</i>",answer:["He asked where I lived."],explanation:"Kein did, S-V-O."},
+  {prompt:"Korrigiere: <i>She asked what do you want.</i>",answer:["She asked what I wanted."],explanation:"S-V-O, do weg."},
+  {prompt:"Korrigiere: <i>He asked, where I lived?</i>",answer:["He asked where I lived."],explanation:"Kein Komma, kein Fragezeichen."},
+  {prompt:"Korrigiere: <i>She asked when will I come.</i>",answer:["She asked when I would come."],explanation:"will → would, S-V-O."},
+  {prompt:"Korrigiere: <i>He asked why are you sad.</i>",answer:["He asked why I was sad."],explanation:"S-V-O, you → I, are → was."},
+  {prompt:"Übersetze: <i>Er fragte, wo ich wohne.</i>",answer:["He asked where I lived."],explanation:"live → lived."},
+  {prompt:"Übersetze: <i>Sie fragte, was ich wolle.</i>",answer:["She asked what I wanted."],explanation:"want → wanted."},
+  {prompt:"Übersetze: <i>Tom fragte, wie es mir gehe.</i>",answer:["Tom asked how I was."],explanation:"am → was."},
+  {prompt:"Übersetze: <i>Sie fragte, wann ich angekommen sei.</i>",answer:["She asked when I had arrived."],explanation:"Did arrive → had arrived."},
+  {prompt:"Übersetze: <i>Mum fragte, warum ich weine.</i>",answer:["Mum asked why I was crying."],explanation:"am crying → was crying."},
+  {prompt:"Übersetze: <i>Anna fragte, wer das gewesen sei.</i>",answer:["Anna asked who that had been.","Anna asked who that was."],explanation:"is → was, was → had been."},
+  {prompt:"Übersetze: <i>Er fragte, was ich gestern gemacht habe.</i>",answer:["He asked what I had done the day before.","He asked what I had done yesterday."],explanation:"Did do → had done."},
+  {prompt:"Übersetze: <i>Sie fragte, wohin ich gehen würde.</i>",answer:["She asked where I would go."],explanation:"will → would."},
+  {prompt:"Übersetze: <i>Lisa fragte, warum sie das gemacht hatte.</i>",answer:["Lisa asked why she had done that."],explanation:"have done → had done."},
+  {prompt:"Übersetze: <i>Tom fragte, wie er helfen könne.</i>",answer:["Tom asked how he could help."],explanation:"can → could."},
+  {prompt:"Übersetze: <i>Sie fragte, wie spät es sei.</i>",answer:["She asked what time it was."],explanation:"is → was."},
+  {prompt:"Übersetze: <i>Er fragte, wo meine Tasche sei.</i>",answer:["He asked where my bag was."],explanation:"is → was."},
+  {prompt:"Forme um: <i>The kids asked, \"Why is the sky blue?\"</i>",answer:["The kids asked why the sky was blue."],explanation:"is → was."},
+  {prompt:"Forme um: <i>Lisa asked, \"How long have you waited?\"</i>",answer:["Lisa asked how long I had waited."],explanation:"have waited → had waited."},
+  {prompt:"Forme um: <i>He asked, \"Who told you that?\"</i>",answer:["He asked who had told me that."],explanation:"told → had told."},
+  {prompt:"Forme um: <i>She asked, \"What can I do?\"</i>",answer:["She asked what she could do."],explanation:"can → could, I → she."},
+  {prompt:"Forme um: <i>Sara asked, \"How does this work?\"</i>",answer:["Sara asked how this worked.","Sara asked how that worked."],explanation:"works → worked."},
+  {prompt:"Korrigiere: <i>He asked, where she has gone.</i>",answer:["He asked where she had gone."],explanation:"Kein Komma, has → had."},
+  {prompt:"Forme um: <i>Mum asked, \"What are you doing?\"</i>",answer:["Mum asked what I was doing."],explanation:"am → was."},
+  {prompt:"Forme um: <i>The teacher asked, \"Why didn't you finish?\"</i>",answer:["The teacher asked why I hadn't finished.","The teacher asked why I had not finished."],explanation:"didn't finish → hadn't finished."},
 ];
 
 /* =================================================================
-   WWM-Quiz: 50 Fragen, Difficulty-Verteilung 25/35/40 %
-   d=1 ≈ 13 · d=2 ≈ 18 · d=3 ≈ 19
+   WWM-Quiz: 40 Fragen, Verteilung 25/35/40 % = 10 d=1 / 14 d=2 / 16 d=3
 ==================================================================*/
 const quizPool=[
-  // === d=1: Grundregel-Erkennung (13) ===
-  {prompt:"Welches Pronomen passt für eine Person?",options:["which","who","what","where"],correct:1,tip:"Person → ?",explanation:"who steht für Personen.",d:1},
-  {prompt:"Welches Pronomen passt für eine Sache?",options:["who","whose","which","whom"],correct:2,tip:"Sache → ?",explanation:"which (oder that) für Sachen.",d:1},
-  {prompt:"Welches Pronomen geht für Personen UND Sachen?",options:["who","which","whose","that"],correct:3,tip:"Universalpronomen.",explanation:"that geht fast immer.",d:1},
-  {prompt:"<i>This is the boy ___ won the prize.</i>",options:["which","who","what","where"],correct:1,tip:"Person.",explanation:"who für Personen.",d:1},
-  {prompt:"<i>I have a bike ___ is fast.</i>",options:["who","which","whose","whom"],correct:1,tip:"Sache.",explanation:"which für Sachen.",d:1},
-  {prompt:"Was ist falsch im Englischen vor who/which/that bei bestimmenden Relativsätzen?",options:["ein Komma","ein Punkt","ein Apostroph","ein Gedankenstrich"],correct:0,tip:"Anders als im Deutschen.",explanation:"Kein Komma!",d:1},
-  {prompt:"<i>The cat ___ sleeps here is old.</i>",options:["who","which","whose","whom"],correct:1,tip:"Tier ohne Namen.",explanation:"Tiere → which (oder that).",d:1},
-  {prompt:"Welches Pronomen für 'dessen / deren' (Besitz)?",options:["who","which","whose","whom"],correct:2,tip:"Besitz.",explanation:"whose = dessen / deren.",d:1},
-  {prompt:"<i>The girl ___ I met is my friend.</i> – Welches geht NICHT?",options:["who","which","that","whom"],correct:1,tip:"Person → ?",explanation:"which geht nicht für Personen.",d:1},
-  {prompt:"<i>The book ___ I read.</i> – Was ist hier richtig?",options:["which / that","who","whose","what"],correct:0,tip:"Buch.",explanation:"Sache → which oder that.",d:1},
-  {prompt:"Wann darf das Pronomen weggelassen werden?",options:["immer","nie","nur wenn es Objekt ist","nur bei who"],correct:2,tip:"Subjekt vs. Objekt.",explanation:"Nur als Objekt darf es weg (Contact Clause).",d:1},
-  {prompt:"<i>The man ___ lives next door is nice.</i> – Darf das Pronomen weg?",options:["Ja","Nein","Nur bei Plural","Nur ohne 'is nice'"],correct:1,tip:"Was folgt direkt?",explanation:"'lives' = direkt das Verb → Subjekt → MUSS bleiben.",d:1},
-  {prompt:"<i>The book ___ I read.</i> – Darf das Pronomen weg?",options:["Ja","Nein","Nur bei Plural","Nur bei 'who'"],correct:0,tip:"Was folgt direkt?",explanation:"'I' = neues Subjekt → Pronomen ist Objekt → kann weg.",d:1},
-  // === d=2: Kontextverständnis (18) ===
-  {prompt:"<i>This is the song ___ everyone loves.</i>",options:["who","whose","which","whom"],correct:2,tip:"Sache.",explanation:"which (oder that).",d:2},
-  {prompt:"<i>People ___ smoke often get ill.</i>",options:["which","whose","who","whom"],correct:2,tip:"Personen.",explanation:"who für Personen (auch Plural).",d:2},
-  {prompt:"<i>I have a friend ___ dad is a pilot.</i>",options:["who","which","whose","whom"],correct:2,tip:"Besitz: dad gehört wem?",explanation:"whose für Besitz.",d:2},
-  {prompt:"<i>The boy ___ I told you about is here.</i> – Welches geht NICHT?",options:["who","that","whom","which"],correct:3,tip:"Person.",explanation:"which geht nicht für Personen.",d:2},
-  {prompt:"Welcher Satz ist KORREKT?",options:["The car who is red.","The car, which is red.","The car which is red.","The car what is red."],correct:2,tip:"Komma? Pronomen?",explanation:"Sache → which/that, kein Komma.",d:2},
-  {prompt:"<i>The shoes ___ I bought are too small.</i>",options:["who","which","whose","whom"],correct:1,tip:"Sachen.",explanation:"which (oder that).",d:2},
-  {prompt:"<i>The girl ___ won is here.</i> – Darf das Pronomen weg?",options:["Ja","Nein","Nur bei 'that'","Nur Plural"],correct:1,tip:"Was folgt direkt?",explanation:"'won' = direkt Verb → Subjekt → MUSS bleiben.",d:2},
-  {prompt:"<i>The film ___ we saw was great.</i> – Darf das Pronomen weg?",options:["Ja","Nein","Nur ohne 'great'","Nur bei Personen"],correct:0,tip:"Was folgt direkt?",explanation:"'we' = neues Subjekt → kann weg.",d:2},
-  {prompt:"Welcher Satz ist KORREKT?",options:["I have a friend who he plays football.","I have a friend who plays football.","I have a friend, who plays football.","I have a friend which plays football."],correct:1,tip:"Doppelt? Komma?",explanation:"Kein 'he' doppelt, kein Komma, who für Person.",d:2},
-  {prompt:"<i>The dog ___ name is Max is friendly.</i>",options:["who","which","whose","that"],correct:2,tip:"Besitz.",explanation:"whose = dessen.",d:2},
-  {prompt:"<i>The man ___ I met yesterday is from York.</i> – Was ist die korrekte Contact-Clause-Form?",options:["The man I met yesterday is from York.","The man met yesterday is from York.","The man which I met yesterday is from York.","Beides 1 und 3 möglich"],correct:0,tip:"Pronomen ist Objekt → ?",explanation:"Pronomen Objekt → kann weg.",d:2},
-  {prompt:"Was ist FALSCH?",options:["The book that I read was great.","The book which I read was great.","The book what I read was great.","The book I read was great."],correct:2,tip:"what?",explanation:"'what' geht nicht als Relativpronomen.",d:2},
-  {prompt:"<i>I know a place ___ has lots of trees.</i>",options:["who","whose","which","whom"],correct:2,tip:"Ort/Sache.",explanation:"which oder that für Orte/Sachen.",d:2},
-  {prompt:"<i>That's the boy ___ broke the window.</i> – Darf das Pronomen weg?",options:["Ja","Nein","Nur bei Plural","Nur in Fragen"],correct:1,tip:"Was folgt direkt?",explanation:"'broke' = direkt Verb → Subjekt → MUSS bleiben.",d:2},
-  {prompt:"Welcher Satz benutzt 'whose' RICHTIG?",options:["The girl whose she sings.","The girl whose mother is a doctor.","The girl whose I met.","The girl whose plays piano."],correct:1,tip:"Besitz.",explanation:"whose + Substantiv = dessen/deren.",d:2},
-  {prompt:"<i>The pizza ___ we ordered is cold.</i> – Darf das Pronomen weg?",options:["Ja","Nein","Nur bei 'who'","Nur Plural"],correct:0,tip:"Was folgt direkt?",explanation:"'we' = neues Subjekt → kann weg.",d:2},
-  {prompt:"Welcher Satz ist KORREKT?",options:["The keys, who are on the table, are mine.","The keys which are on the table are mine.","The keys that I lost it were mine.","The keys what I lost were mine."],correct:1,tip:"Komma? Pronomen?",explanation:"Sache → which/that, kein Komma.",d:2},
-  {prompt:"<i>The teacher ___ helps me is Mr Lee.</i>",options:["which","who/that","whose","what"],correct:1,tip:"Person als Subjekt.",explanation:"Person → who oder that.",d:2},
-  // === d=3: Bedeutungsnuance / Fehlerkorrektur (19) ===
-  {prompt:"Welcher Satz ist KORREKT?",options:["The boy, who lives next door, is my friend.","The boy who lives next door is my friend.","The boy which lives next door is my friend.","The boy lives next door is my friend."],correct:1,tip:"Bestimmender Relativsatz.",explanation:"Bestimmend = kein Komma, Person → who.",d:3},
-  {prompt:"Welcher Satz ist FALSCH?",options:["I have a friend who plays guitar.","I have a friend that plays guitar.","I have a friend who he plays guitar.","I have a friend whose guitar is new."],correct:2,tip:"Doppeltes Pronomen?",explanation:"'he' überflüssig – who ist schon das Subjekt.",d:3},
-  {prompt:"Welche Übersetzung von 'Das Buch, das ich gelesen habe, war toll.' ist KORREKT?",options:["The book what I read was great.","The book, which I read, was great.","The book I read was great.","The book who I read was great."],correct:2,tip:"Contact Clause möglich.",explanation:"Pronomen Objekt → kann weg, kein Komma.",d:3},
-  {prompt:"Welcher Satz hat einen FEHLER?",options:["The cat which sleeps here is old.","The cat, that sleeps here, is old.","The cat that sleeps here is old.","The cat which I have is old."],correct:1,tip:"Komma?",explanation:"Bestimmend → kein Komma + 'that' nicht nach Komma.",d:3},
-  {prompt:"<i>The girl ___ bag I borrowed is angry.</i>",options:["who","whose","which","that"],correct:1,tip:"Wem gehört die Tasche?",explanation:"Besitz → whose.",d:3},
-  {prompt:"Korrigiere: <i>The man who his car is red lives here.</i>",options:["The man whose car is red lives here.","The man whose he lives here.","The man who car is red lives here.","The man, who's car is red, lives here."],correct:0,tip:"Besitz.",explanation:"whose = dessen.",d:3},
-  {prompt:"Welcher Satz ist die KORREKTE Contact Clause von 'The phone that she uses is new'?",options:["The phone she uses is new.","The phone uses is new.","The phone, she uses, is new.","The phone which she uses is new."],correct:0,tip:"Pronomen weglassen.",explanation:"that als Objekt → kann weg, sonst alles bleibt.",d:3},
-  {prompt:"Welche Aussage stimmt über Contact Clauses?",options:["Pronomen darf nur bei Personen weg.","Pronomen darf nur als Subjekt weg.","Pronomen darf nur als Objekt weg.","Pronomen darf nie weg."],correct:2,tip:"Subjekt vs. Objekt.",explanation:"Nur als Objekt darf das Pronomen weg.",d:3},
-  {prompt:"Welcher Satz ist KORREKT?",options:["This is a film what won an Oscar.","This is a film who won an Oscar.","This is a film which won an Oscar.","This is a film, which won an Oscar."],correct:2,tip:"Sache, bestimmend.",explanation:"Sache → which/that, kein Komma.",d:3},
-  {prompt:"Korrigiere: <i>The keys I lost them were on the table.</i>",options:["The keys I lost were on the table.","The keys which I lost them were on the table.","The keys what I lost were on the table.","The keys whose I lost were on the table."],correct:0,tip:"Doppelt?",explanation:"'them' überflüssig.",d:3},
-  {prompt:"Welcher Satz benutzt 'that' RICHTIG?",options:["The boy, that won, is my friend.","The boy that won is my friend.","The boy that he won is my friend.","The boy what won is my friend."],correct:1,tip:"Bestimmend, kein Komma.",explanation:"that ist hier Subjekt, kein Komma, kein doppeltes 'he'.",d:3},
-  {prompt:"<i>The shop ___ is on the corner sells comics.</i> – Darf das Pronomen weg?",options:["Ja","Nein, weil es Subjekt ist","Nur bei 'who'","Nur ohne 'sells'"],correct:1,tip:"Was folgt direkt?",explanation:"'is' = direkt Verb → Subjekt → muss bleiben.",d:3},
-  {prompt:"Welcher Satz ist KORREKT?",options:["I know people which speak French.","I know people who speak French.","I know people, who speak French.","I know people what speak French."],correct:1,tip:"Personen, bestimmend.",explanation:"Personen → who/that, kein Komma.",d:3},
-  {prompt:"Welche Übersetzung von 'Die Frau, deren Sohn hier wohnt, ist meine Tante.' ist KORREKT?",options:["The woman whose son lives here is my aunt.","The woman who's son lives here is my aunt.","The woman that her son lives here is my aunt.","The woman whose son he lives here is my aunt."],correct:0,tip:"Besitz.",explanation:"whose + Substantiv. Kein 'he' doppelt.",d:3},
-  {prompt:"Welcher Satz ist KORREKT?",options:["The man we met him yesterday is my uncle.","The man we met yesterday is my uncle.","The man, we met yesterday, is my uncle.","The man who we met him yesterday is my uncle."],correct:1,tip:"Doppelt? Komma?",explanation:"Contact Clause: 'him' weg, kein Komma.",d:3},
-  {prompt:"Korrigiere: <i>The dog, which it bit me, was big.</i>",options:["The dog which bit me was big.","The dog who bit me was big.","The dog, that bit me, was big.","The dog what bit me was big."],correct:0,tip:"Komma? Doppelt?",explanation:"Kein Komma, kein 'it' doppelt.",d:3},
-  {prompt:"<i>The kids ___ parents are away stayed with us.</i>",options:["who","which","whose","that"],correct:2,tip:"Besitz: parents.",explanation:"whose = deren.",d:3},
-  {prompt:"Welche Aussage über who, which, that ist FALSCH?",options:["that geht für Personen und Sachen.","who geht nur für Personen.","which geht für Sachen und Tiere.","that ist immer falsch in defining clauses."],correct:3,tip:"Stimmt das wirklich?",explanation:"that ist sehr häufig korrekt in defining clauses.",d:3},
-  {prompt:"Welcher Satz ist die KORREKTE Übersetzung von 'Der Junge, dem ich geholfen habe, hat sich bedankt.'?",options:["The boy who I helped him said thanks.","The boy I helped said thanks.","The boy, I helped, said thanks.","The boy what I helped said thanks."],correct:1,tip:"Contact Clause möglich.",explanation:"Pronomen Objekt → kann weg.",d:3},
+  // === d=1 (10) ===
+  {prompt:"Wie heißt indirekte Rede auf Englisch?",options:["direct speech","indirect speech","first speech","spoken speech"],correct:1,tip:"in-direkt.",explanation:"indirect speech.",d:1},
+  {prompt:"Was steht VOR dem indirekten Aussagesatz?",options:["which","that","who","whose"],correct:1,tip:"Optional weglassbar.",explanation:"that.",d:1},
+  {prompt:"Was bedeutet <i>if</i> in indirekten Fragen?",options:["falls","wenn","ob","weil"],correct:2,tip:"Yes/No-Fragen.",explanation:"if = ob.",d:1},
+  {prompt:"Was kommt am Ende einer indirekten Frage?",options:["?","!","Punkt","Komma"],correct:2,tip:"Wie Aussagesatz.",explanation:"Punkt – kein Fragezeichen.",d:1},
+  {prompt:"Welche Wortstellung haben indirekte Fragen?",options:["S-V-O","V-S-O","O-S-V","do/did + S-V"],correct:0,tip:"Wie Aussagesatz.",explanation:"S-V-O.",d:1},
+  {prompt:"Wann kommt Backshift?",options:["bei says/say","bei said/asked","immer","nie"],correct:1,tip:"Einleitendes Verb.",explanation:"Bei said/asked (Vergangenheit).",d:1},
+  {prompt:"Backshift: <i>am</i> wird zu …",options:["am","is","was","were"],correct:2,tip:"Singular.",explanation:"am → was.",d:1},
+  {prompt:"Backshift: <i>can</i> wird zu …",options:["can","could","may","would"],correct:1,tip:"Modal.",explanation:"can → could.",d:1},
+  {prompt:"Backshift: <i>will</i> wird zu …",options:["will","would","shall","could"],correct:1,tip:"Modal.",explanation:"will → would.",d:1},
+  {prompt:"Welches Wort steht VOR Yes/No-Fragen?",options:["that","if","when","what"],correct:1,tip:"\"ob\".",explanation:"if (oder whether).",d:1},
+  // === d=2 (14) ===
+  {prompt:"<i>Direct: \"I like Kai.\" – Indirect (mit said): He said (that) he ___ Kai.</i>",options:["like","likes","liked","likeing"],correct:2,tip:"Backshift.",explanation:"like → liked.",d:2},
+  {prompt:"<i>Direct: \"I am tired.\" – Indirect (mit said): She said (that) she ___ tired.</i>",options:["am","is","was","were"],correct:2,tip:"am → ?",explanation:"am → was.",d:2},
+  {prompt:"<i>Direct: \"I will come.\" – Indirect (mit said): He said (that) he ___ come.</i>",options:["will","would","do","did"],correct:1,tip:"Modal.",explanation:"will → would.",d:2},
+  {prompt:"<i>Direct: \"Where do you live?\" – Indirect: He asked where I ___.</i>",options:["live","lived","do live","am living"],correct:1,tip:"Backshift.",explanation:"live → lived.",d:2},
+  {prompt:"<i>Direct: \"Do you like pizza?\" – Indirect: She asked ___ I liked pizza.</i>",options:["that","if","when","what"],correct:1,tip:"Yes/No.",explanation:"if (oder whether).",d:2},
+  {prompt:"<i>Direct: \"Have you seen it?\" – Indirect: He asked if I ___ seen it.</i>",options:["have","had","was","were"],correct:1,tip:"Backshift.",explanation:"have → had.",d:2},
+  {prompt:"<i>Tom said, \"My dog is cute.\"</i> – Welcher Pronomen ändert sich?",options:["My","is","cute","dog"],correct:0,tip:"Wer spricht?",explanation:"My → his (Tom).",d:2},
+  {prompt:"<i>Direct: \"Did you go?\" – Indirect: She asked if I ___ gone.</i>",options:["did","had","have","do"],correct:1,tip:"Past Perfect.",explanation:"Did go → had gone.",d:2},
+  {prompt:"<i>Direct: \"What do you want?\" – Indirect: He asked what I ___.</i>",options:["want","wanted","do want","am wanting"],correct:1,tip:"Backshift.",explanation:"want → wanted.",d:2},
+  {prompt:"Welche Aussage stimmt?",options:["if = ob","if = falls","if = weil","if = aber"],correct:0,tip:"Kontext: Frage.",explanation:"if = ob (in indirekten Fragen).",d:2},
+  {prompt:"Backshift: <i>Simple Past</i> (z. B. went) wird zu …",options:["went","goes","had gone","would go"],correct:2,tip:"Past Perfect.",explanation:"Simple Past → Past Perfect.",d:2},
+  {prompt:"<i>Direct: \"My friend is here.\" (Lisa) – Indirect: Lisa said (that) ___ friend was here.</i>",options:["my","his","her","their"],correct:2,tip:"Lisa = ?",explanation:"my → her.",d:2},
+  {prompt:"<i>Direct: \"We are happy.\" (kids) – Indirect: The kids said (that) ___ were happy.</i>",options:["we","they","he","you"],correct:1,tip:"Plural.",explanation:"we → they.",d:2},
+  {prompt:"<i>Direct: \"Are you ready?\" (zu mir) – Indirect: He asked if ___ was ready.</i>",options:["I","you","he","she"],correct:0,tip:"You zu mir.",explanation:"you (zu mir) → I.",d:2},
+  // === d=3 (16) ===
+  {prompt:"Welcher Satz ist KORREKT?",options:["He asked where did I live.","He asked where I lived.","He asked, where I lived?","He asked where lived I."],correct:1,tip:"Wortstellung.",explanation:"S-V-O, kein did/Komma/Fragezeichen.",d:3},
+  {prompt:"Welcher Satz ist FALSCH?",options:["She said that she was happy.","She said, that she is happy.","She said she was happy.","She said (that) she liked Kai."],correct:1,tip:"Komma + Backshift.",explanation:"Kein Komma, Backshift fehlt.",d:3},
+  {prompt:"Welche Übersetzung von 'Tom sagte, er habe einen Hund' ist KORREKT?",options:["Tom said he has a dog.","Tom said he had a dog.","Tom says he had a dog.","Tom said, that he had a dog."],correct:1,tip:"said + Backshift.",explanation:"have → had nach said.",d:3},
+  {prompt:"Welche Übersetzung von 'Sie fragte, ob ich Pizza möge' ist KORREKT?",options:["She asked do I like pizza.","She asked if I like pizza.","She asked if I liked pizza.","She asked, if I liked pizza?"],correct:2,tip:"if + Backshift.",explanation:"if + S-V-O + Backshift.",d:3},
+  {prompt:"Welche Übersetzung von 'Er fragte, wo ich wohne' ist KORREKT?",options:["He asked where do I live.","He asked where I live.","He asked where I lived.","He asked, where I lived?"],correct:2,tip:"S-V-O + Backshift.",explanation:"S-V-O, lived (Backshift).",d:3},
+  {prompt:"Welcher Satz ist KORREKT?",options:["She asked if did I come.","She asked if I came.","She asked, if I came?","She asked whether did I come."],correct:1,tip:"S-V-O.",explanation:"if + S-V (kein did).",d:3},
+  {prompt:"Welcher Satz hat einen FEHLER?",options:["Tom said he liked Kai.","She asked where I lived.","He asked if I am tired.","I asked when she would come."],correct:2,tip:"Backshift?",explanation:"am → was nach asked.",d:3},
+  {prompt:"<i>Direct: \"My brother is here.\" (Lisa) – Indirect (mit said): Lisa said her brother ___ here.</i>",options:["is","was","were","be"],correct:1,tip:"Backshift.",explanation:"is → was.",d:3},
+  {prompt:"Was ist FALSCH bei 'said, that I have done my homework'?",options:["Komma","that","have","Pronomen"],correct:0,tip:"Komma vor that?",explanation:"Englisch: kein Komma vor that.",d:3},
+  {prompt:"<i>Direct: \"Will you marry me?\" (er zu Lisa) – Indirect: He asked Lisa if she ___ marry ___.</i>",options:["will / me","will / him","would / him","would / me"],correct:2,tip:"will/me?",explanation:"will → would, me (er) → him.",d:3},
+  {prompt:"Welcher Satz benutzt 'if' RICHTIG?",options:["He said if he came.","She asked if he came.","I went if it rained.","If you come, I help."],correct:1,tip:"Yes/No-Frage.",explanation:"if in indirekten Fragen = ob.",d:3},
+  {prompt:"Welche Übersetzung von 'Sie fragte, was ich gestern gemacht hätte' ist KORREKT?",options:["She asked what did I do yesterday.","She asked what I did yesterday.","She asked what I had done the day before.","She asked, what I had done?"],correct:2,tip:"Backshift Past → Past Perfect.",explanation:"Did do → had done. Yesterday → the day before.",d:3},
+  {prompt:"Welcher Satz ist die KORREKTE Umformung von 'He said, \"I'm 16.\"'?",options:["He said I'm 16.","He said he is 16.","He said he was 16.","He said that I was 16."],correct:2,tip:"Backshift + Pronomen.",explanation:"I → he, am → was.",d:3},
+  {prompt:"Welche Aussage stimmt über 'whether'?",options:["whether ist falsch","whether = if (in Yes/No)","whether = weil","whether = falls"],correct:1,tip:"Synonym.",explanation:"whether ist Synonym für if.",d:3},
+  {prompt:"<i>Direct: \"Have you done your homework?\" (Lehrer zu mir) – Indirect: The teacher asked if I ___ done ___ homework.</i>",options:["have / your","had / your","had / my","have / my"],correct:2,tip:"Backshift + Pronomen.",explanation:"have → had, your → my.",d:3},
+  {prompt:"Welcher Satz ist KORREKT?",options:["He asked, where I lived?","He asked, where I lived.","He asked where I lived?","He asked where I lived."],correct:3,tip:"Komma? Fragezeichen?",explanation:"Kein Komma, kein Fragezeichen.",d:3},
 ];
 
 // ===== SECTION SETUP CALLS =====
 setupSection(
-  'pron',
-  document.getElementById('pron-levels'),
-  document.getElementById('pron-tasks'),
-  {1:pronL1, 2:pronL2, 3:pronL3},
-  document.getElementById('pron-check-all'),
-  document.getElementById('pron-reset'),
+  'stmt',
+  document.getElementById('stmt-levels'),
+  document.getElementById('stmt-tasks'),
+  {1:stmtL1, 2:stmtL2, 3:stmtL3},
+  document.getElementById('stmt-check-all'),
+  document.getElementById('stmt-reset'),
   true
 );
 setupSection(
-  'build',
-  document.getElementById('build-levels'),
-  document.getElementById('build-tasks'),
-  {1:buildL1, 2:buildL2, 3:buildL3},
-  document.getElementById('build-check-all'),
-  document.getElementById('build-reset'),
+  'qyn',
+  document.getElementById('qyn-levels'),
+  document.getElementById('qyn-tasks'),
+  {1:qynL1, 2:qynL2, 3:qynL3},
+  document.getElementById('qyn-check-all'),
+  document.getElementById('qyn-reset'),
   true
 );
 setupSection(
-  'cc',
-  document.getElementById('cc-levels'),
-  document.getElementById('cc-tasks'),
-  {1:ccL1, 2:ccL2, 3:ccL3},
-  document.getElementById('cc-check-all'),
-  document.getElementById('cc-reset'),
+  'qwh',
+  document.getElementById('qwh-levels'),
+  document.getElementById('qwh-tasks'),
+  {1:qwhL1, 2:qwhL2, 3:qwhL3},
+  document.getElementById('qwh-check-all'),
+  document.getElementById('qwh-reset'),
   true
 );
 
@@ -2335,11 +2340,11 @@ setupSection(
   function showFinal(correct,total){
     const pct=Math.round(correct/total*100);
     let msg,emoji;
-    if(pct===100){msg='EINE MILLION! 🎉 PERFEKT! who, which, that – alles sitzt!';emoji='🏆';}
-    else if(pct>=90){msg='Fast perfekt – Relativsätze sitzen schon sehr gut!';emoji='🥇';}
-    else if(pct>=80){msg='Richtig stark – Pronomen-Auswahl und Contact Clauses klappen!';emoji='🥈';}
+    if(pct===100){msg='EINE MILLION! 🎉 PERFEKT! Indirekte Rede sitzt komplett!';emoji='🏆';}
+    else if(pct>=90){msg='Fast perfekt – Backshift und Wortstellung klappen sehr gut!';emoji='🥇';}
+    else if(pct>=80){msg='Richtig stark – if/whether und S-V-O hast du drauf!';emoji='🥈';}
     else if(pct>=60){msg='Gut gemacht – noch etwas üben, dann sitzt es!';emoji='👍';}
-    else if(pct>=40){msg='Weiter üben – besonders wann das Pronomen weg darf und das Komma weg muss!';emoji='💪';}
+    else if(pct>=40){msg='Weiter üben – besonders Backshift (am→was, will→would, do→had + V3)!';emoji='💪';}
     else{msg='Nochmal von vorne – schau dir die Regelkarten an!';emoji='📚';}
     container.innerHTML='';
     resultDiv.style.display='block';
@@ -2373,9 +2378,9 @@ setupSection(
 
 // ===== RULES FAB & MODAL =====
 const ACC_MAP={
-  'acc-pron':  {indices:[0,1,2],   title:'Regeln: who · which · that'},
-  'acc-build': {indices:[0,1,2,3], title:'Regeln: Pronomen + bestimmender Relativsatz'},
-  'acc-cc':    {indices:[3,4],     title:'Regel: Contact Clauses (kein Komma · Pronomen weglassen)'}
+  'acc-stmt': {indices:[0,1,2,5], title:'Regeln: Aussagesätze + Backshift'},
+  'acc-qyn':  {indices:[4,5],     title:'Regel: Yes/No-Fragen (if / whether)'},
+  'acc-qwh':  {indices:[3,5],     title:'Regel: W-Fragen (S-V-O)'}
 };
 const allRuleCards=Array.from(document.querySelectorAll('.rules-combined .rc-card'));
 const rulesFab=document.getElementById('rules-fab');
@@ -2387,7 +2392,7 @@ const rulesModalBody=document.getElementById('rules-modal-body');
 const rulesModalTitle=rulesModalHeader.querySelector('h3');
 
 function getOpenAccordion(){
-  const openIds=['acc-pron','acc-build','acc-cc'];
+  const openIds=['acc-stmt','acc-qyn','acc-qwh'];
   return openIds.find(id=>{const el=document.getElementById(id);return el&&el.open;})||null;
 }
 function showRulesFab(){
@@ -2418,7 +2423,7 @@ rulesModal.addEventListener('click',(e)=>{if(e.target===rulesModal)rulesModal.cl
 // Rules modal is centered – no drag needed
 
 // ===== ACCORDION STATE PERSISTENCE =====
-const IDS=['acc-videos','acc-pron','acc-build','acc-cc','wwm-quiz'];
+const IDS=['acc-videos','acc-stmt','acc-qyn','acc-qwh','wwm-quiz'];
 const savedOpen=loadProgress('openAcc',null);
 IDS.forEach(id=>{
   const el=document.getElementById(id);
@@ -2510,7 +2515,7 @@ ttsToggle.addEventListener('click',()=>{
 var KI_URL='https://gemini-direct.thomasporsche07.workers.dev/';
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 var kiHistory=[];
-var kiSystemPrompt='Du bist ein Englisch-Tutor für deutsche Realschüler der Klasse 7.\n\nDEINE AUFGABE:\n- Du hilfst ausschließlich beim Thema Relativsätze (relative clauses · who · which · that · contact clauses).\n- Du erklärst Grammatikregeln auf Deutsch, einfach und klar.\n- Du kannst Fehler in Schülersätzen erkennen und erklären, was falsch ist – aber du gibst NICHT die fertige Lösung.\n- Du stellst Gegenfragen, um den Schüler zum Nachdenken zu bringen.\n\nREGELN:\n1. Antworte IMMER auf Deutsch (außer für englische Beispielsätze).\n2. Antworte KURZ: maximal 4 Sätze.\n3. Wenn ein Schüler eine fertige Lösung will: Verweigere freundlich und gib einen Hinweis.\n4. Wenn ein Schüler über etwas anderes als Relativsätze fragt: Lenke freundlich zurück.\n5. Sei ermutigend und geduldig.\n\nTHEMEN: who/which/that, kein Komma bei bestimmenden Relativsätzen, whose (Besitz), Contact Clauses (Pronomen weglassen wenn Objekt).';
+var kiSystemPrompt='Du bist ein Englisch-Tutor für deutsche Realschüler der Klasse 9.\n\nDEINE AUFGABE:\n- Du hilfst ausschließlich beim Thema indirekte Rede (indirect speech / reported speech).\n- Du erklärst Grammatikregeln auf Deutsch, einfach und klar.\n- Du kannst Fehler in Schülersätzen erkennen und erklären, was falsch ist – aber du gibst NICHT die fertige Lösung.\n- Du stellst Gegenfragen, um den Schüler zum Nachdenken zu bringen.\n\nREGELN:\n1. Antworte IMMER auf Deutsch (außer für englische Beispielsätze).\n2. Antworte KURZ: maximal 4 Sätze.\n3. Wenn ein Schüler eine fertige Lösung will: Verweigere freundlich und gib einen Hinweis.\n4. Wenn ein Schüler über etwas anderes als indirekte Rede fragt: Lenke freundlich zurück.\n5. Sei ermutigend und geduldig.\n\nTHEMEN: Aussagesätze mit that-Klausel, Backshift (am→was, will→would, can→could, Simple Past→Past Perfect), Pronomen-Shift (I→he/she, my→his/her), W-Fragen (S-V-O ohne do/did), Yes/No-Fragen mit if/whether (= ob), kein Fragezeichen am Ende, kein Komma vor that.';
 
 function kiClear(){
   kiHistory=[];
@@ -2573,7 +2578,7 @@ async function kiSend(quickText){
   try{
     var contents=[];
     contents.push({role:'user',parts:[{text:kiSystemPrompt}]});
-    contents.push({role:'model',parts:[{text:'Verstanden! Ich helfe dir bei Relativsätzen.'}]});
+    contents.push({role:'model',parts:[{text:'Verstanden! Ich helfe dir bei der indirekten Rede.'}]});
     for(var i=0;i<kiHistory.length;i++){contents.push(kiHistory[i]);}
     contents.push({role:'user',parts:[{text:text}]});
     var reply=await kiXHR({contents:contents,generationConfig:{temperature:0.7,maxOutputTokens:300,thinkingConfig:{thinkingBudget:0}}});
@@ -2594,78 +2599,6 @@ async function kiSend(quickText){
 
 
 </script>
-
-<script>
-/* WWM-QUIZ-KBD-V1 */
-// ===== WWM-Quiz: Tastatur-Steuerung (1-4 Optionen, Enter/→ weiter, J/S/T Joker, Esc schließt) =====
-(function quizKbd(){
-  const quizEl=document.getElementById('wwm-quiz');
-  if(!quizEl)return;
-  function visibleOpts(){
-    return Array.from(quizEl.querySelectorAll('.wwm-option-btn')).filter(function(b){
-      var op=b.style.opacity;
-      var visible=(op===''||op==='1'||parseFloat(op)>=0.5);
-      return !b.disabled && visible;
-    });
-  }
-  function pickOpt(idx){
-    var live=visibleOpts();
-    if(live[idx]){live[idx].click();return true;}
-    return false;
-  }
-  function nextBtn(){
-    return quizEl.querySelector('#wwm-next, .controls [data-next="1"], .controls .btn.green:not([disabled]), .controls .btn.gray:not([disabled])');
-  }
-  function pickJoker(key){
-    var chips=Array.from(quizEl.querySelectorAll('.wwm-lifelines .chip'));
-    for(var i=0;i<chips.length;i++){
-      var c=chips[i];
-      if(c.classList.contains('chip-used'))continue;
-      var dj=c.dataset.joker;
-      var txt=c.textContent||'';
-      if(dj===key){c.click();return true;}
-      if(!dj){
-        if(key==='fifty' && /50/.test(txt)){c.click();return true;}
-        if(key==='phone' && /\u{1F4DE}|telefon|joker/iu.test(txt)){c.click();return true;}
-        if(key==='audience' && /\u{1F465}|publikum/iu.test(txt)){c.click();return true;}
-      }
-    }
-    return false;
-  }
-  function closeJoker(){
-    quizEl.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(function(b){b.remove();});
-    var ex=quizEl.querySelector('#wwm-joker-extra');
-    if(ex)ex.innerHTML='';
-  }
-  document.addEventListener('keydown',function(e){
-    if(!quizEl.open)return;
-    var ae=document.activeElement;
-    if(ae && (ae.tagName==='INPUT'||ae.tagName==='TEXTAREA'||ae.isContentEditable))return;
-    // Fokus muss innerhalb Quiz oder auf body liegen, sonst nicht handeln (andere Akkordeons mit Inputs).
-    if(ae && ae!==document.body && !quizEl.contains(ae))return;
-    var k=e.key;
-    if(k==='1'||k==='2'||k==='3'||k==='4'){
-      if(pickOpt(parseInt(k,10)-1))e.preventDefault();
-    }else if(k==='Enter'){
-      // Browser-Default: Enter auf fokussiertem Button = Klick. Nicht abfangen.
-      if(ae && ae.tagName==='BUTTON' && quizEl.contains(ae))return;
-      var nb=nextBtn();
-      if(nb){e.preventDefault();nb.click();}
-    }else if(k==='ArrowRight'){
-      var nb2=nextBtn();
-      if(nb2){e.preventDefault();nb2.click();}
-    }else if(k==='Escape'){
-      e.preventDefault();closeJoker();
-    }else{
-      var lk=(k||'').toLowerCase();
-      if(lk==='j'||k==='F1'){if(pickJoker('fifty'))e.preventDefault();}
-      else if(lk==='s'||k==='F2'){if(pickJoker('phone'))e.preventDefault();}
-      else if(lk==='t'||k==='F3'){if(pickJoker('audience'))e.preventDefault();}
-    }
-  });
-})();
-</script>
-
 <script id="auto-version-stamp">
 /* Selbstpflegender Footer-Stempel: zeigt echte mtime der HTML-Datei. */
 (function(){try{

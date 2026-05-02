@@ -1291,7 +1291,6 @@ body.dark-mode .confirm-box p{color:#f0e0d0;}
           <button class="ki-chip" onclick="kiSend(this.textContent)">Prüfe diesen Satz: She had went to school.</button>
           <button class="ki-chip" onclick="kiSend(this.textContent)">Gib mir ein Beispiel mit &quot;already&quot;.</button>
           <button class="ki-chip" onclick="kiSend(this.textContent)">Wann benutze ich &quot;by the time&quot;?</button>
-          <button class="ki-chip" onclick="kiSend(this.textContent)">Wie verneine ich einen Satz im Past Perfect?</button>
         </div>
         <div class="ki-messages" id="ki-messages"></div>
         <div class="ki-err" id="ki-err" style="display:none"></div>
@@ -1316,7 +1315,7 @@ body.dark-mode .confirm-box p{color:#f0e0d0;}
     </div>
   </details>
   <footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
-  <div>Version 02.05.2026, 17:00</div>
+  <div>Version 30.04.2026, 20:50</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 </div>

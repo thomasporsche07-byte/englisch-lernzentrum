@@ -1145,7 +1145,7 @@ Im bejahten Satz immer am sichersten: <b>a lot of</b>.
 </div>
 
 <footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
-  <div>Version 02.05.2026, 17:00</div>
+  <div>Version 28.04.2026, 22:45</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 
@@ -1204,8 +1204,7 @@ window.TUTOR_CONFIG = {
     "Wann nehme ich much, wann many?",
     "Was ist der Unterschied zwischen countable und uncountable?",
     "Prüfe: I have much friends.",
-    "Warum sage ich „a lot of\" und nicht „much\"?",
-    "Welches Wort passt: much oder many bei \"information\"?"
+    "Warum sage ich „a lot of\" und nicht „much\"?"
   ],
   typicalErrors: [
     "much friends statt many friends (countable!)",

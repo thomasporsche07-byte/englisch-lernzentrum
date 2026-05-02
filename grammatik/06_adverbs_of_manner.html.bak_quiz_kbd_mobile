@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Present Perfect – Hellweg-Realschule</title>
+<title>Adverbien der Art und Weise – Hellweg-Realschule</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -434,9 +434,7 @@ body.dark-mode .quiz-divider span{color:var(--accent)}
 .wwm-ladder-row.current{background:linear-gradient(90deg,rgba(244,196,48,.18),rgba(244,196,48,.08));border-color:rgba(244,196,48,.7);color:#f4c430;box-shadow:0 0 10px rgba(244,196,48,.25);font-size:12.5px}
 .wwm-ladder-row.current .wwm-amount{text-shadow:0 0 8px rgba(244,196,48,.6)}
 .wwm-ladder-row.milestone.current{background:linear-gradient(90deg,rgba(244,196,48,.28),rgba(244,196,48,.12))}
-@media(max-width:900px){.wwm-layout{grid-template-columns:1fr;gap:12px}.wwm-ladder{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px;padding:8px 6px;order:-1}.wwm-ladder-row{flex-direction:column;min-width:60px;padding:4px 6px;gap:2px;text-align:center;font-size:10px}.wwm-ladder-row .wwm-qnum{width:auto;text-align:center;font-size:9px}.wwm-ladder-row .wwm-amount{flex:none;text-align:center;font-size:11px;letter-spacing:0}.wwm-ladder-row.current{font-size:11.5px}}
-@media(max-width:600px){.wwm-ladder{flex-wrap:nowrap;justify-content:center;align-items:stretch}.wwm-ladder-row{display:none !important}.wwm-ladder-row.current{display:inline-flex !important;font-size:12.5px;min-width:78px;border-width:2px}.wwm-ladder-row.current+.wwm-ladder-row{display:inline-flex !important;opacity:.7}.wwm-ladder-row:has(+ .wwm-ladder-row.current){display:inline-flex !important;opacity:.55}#wwm-quiz .wwm-lifelines{gap:6px;margin:8px 0 12px}#wwm-quiz .wwm-lifelines .chip{padding:6px 10px;font-size:11.5px;letter-spacing:.2px;border-width:1.5px}#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{font-size:16px;padding:14px 16px;line-height:1.5}.wwm-option-btn{font-size:14px;padding:9px 14px;gap:10px}.wwm-opt-letter{width:24px;height:24px;font-size:12px}.wwm-qbadge{font-size:11px;padding:3px 10px;letter-spacing:.4px}}
-@media(max-width:375px){.wwm-ladder{padding:4px}.wwm-ladder-row.current{min-width:70px;font-size:11.5px;padding:3px 6px}.wwm-ladder-row.current+.wwm-ladder-row,.wwm-ladder-row:has(+ .wwm-ladder-row.current){min-width:55px;padding:3px 4px;font-size:9.5px}#wwm-quiz .wwm-lifelines .chip{padding:5px 8px;font-size:10.5px;letter-spacing:.1px}#wwm-quiz .task .prompt,#wwm-quiz .wwm-stage .prompt{font-size:15px;padding:12px 14px}.wwm-option-btn{font-size:13.5px;padding:8px 12px;gap:8px}.wwm-opt-letter{width:22px;height:22px;font-size:11px}}
+@media(max-width:640px){.wwm-ladder{display:none}.wwm-layout{display:block}}
 .wwm-qbadge{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d2a6e,#061840);border:2px solid rgba(244,196,48,.6);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:800;color:#f4c430;letter-spacing:.8px;text-transform:uppercase;margin-bottom:10px;box-shadow:0 0 12px rgba(244,196,48,.2)}
 #wwm-quiz .wwm-lifelines{display:flex;gap:8px;margin:10px 0 14px;justify-content:center;flex-wrap:wrap}
 #wwm-quiz .wwm-lifelines .chip{padding:6px 14px;border-radius:999px;border:2px solid rgba(244,196,48,.75);color:#f4c430;background:radial-gradient(circle at 40% 35%,#1a3a8a,#061840);font-weight:900;letter-spacing:.5px;font-size:12px;box-shadow:0 0 14px rgba(244,196,48,.2),inset 0 1px 0 rgba(255,255,255,.1);text-shadow:0 0 8px rgba(244,196,48,.4);cursor:pointer;transition:.2s all}
@@ -900,15 +898,25 @@ body:not(.dark-mode) #acc-ka summary:hover{background:rgba(124,58,237,0.07)}
 </style>
 <style>
 /* === File-specific overrides (carried over from original) === */
-.fc-aux{background:#fef9c3;border:2px solid #ca8a04;color:#713f12}
-.fc-pp{background:#ecfeff;border:2px solid #0891b2;color:#164e63}
-.hl-aux{color:#713f12;font-weight:800;background:#fef9c3;border-radius:4px;padding:0 3px}
-.hl-pp{color:#164e63;font-weight:800;background:#ecfeff;border-radius:4px;padding:0 3px}
-#acc-sig .acc-num{background:#c4b5fd;color:#5b21b6}
-#acc-sig summary{border-left-color:#7c3aed;background:linear-gradient(90deg,rgba(124,58,237,.12),rgba(124,58,237,.03))}
+.fc-adj{background:#fef3c7;border:2px solid #d4a017;color:#7a3010}
+.fc-adv{background:#dcfce7;border:2px solid #16a34a;color:#14532d}
+.fc-suffix{background:#fee2e2;border:2px solid #ef4444;color:#7f1d1d}
+.fc-noun{background:#ecfeff;border:2px solid #0891b2;color:#164e63}
+.hl-adj{color:#7a3010;font-weight:800;background:#fef3c7;border-radius:4px;padding:0 3px}
+.hl-adv{color:#14532d;font-weight:800;background:#dcfce7;border-radius:4px;padding:0 3px}
+.hl-suffix{color:#7f1d1d;font-weight:800;background:#fee2e2;border-radius:4px;padding:0 3px}
+.hl-noun{color:#164e63;font-weight:800;background:#ecfeff;border-radius:4px;padding:0 3px}
+#acc-bild .acc-num{background:#a5d6a7;color:#1b5e20}
+#acc-bild summary{border-left-color:#2e7d32;background:linear-gradient(90deg,rgba(170,200,160,.18),rgba(170,200,160,.04))}
+#acc-special .acc-num{background:#fbbf77;color:#a07408}
+#acc-special summary{border-left-color:#d4a017;background:linear-gradient(90deg,rgba(184,92,32,.14),rgba(184,92,32,.03))}
+#acc-vs .acc-num{background:#80cbc4;color:#00695c}
+#acc-vs summary{border-left-color:#00897b;background:linear-gradient(90deg,rgba(0,137,123,.14),rgba(0,137,123,.03))}
 #acc-mix .acc-num{background:#fde68a;color:#e65100}
 #acc-mix summary{border-left-color:#d4a017;background:linear-gradient(90deg,rgba(251,191,36,.14),rgba(251,191,36,.03))}
-#acc-sig .task{border-top-color:#7c3aed;background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(124,58,237,.02))}
+#acc-bild .task{border-top-color:#2e7d32;background:linear-gradient(135deg,rgba(170,200,160,.10),rgba(170,200,160,.04))}
+#acc-special .task{border-top-color:#d4a017;background:linear-gradient(135deg,rgba(184,92,32,.08),rgba(184,92,32,.02))}
+#acc-vs .task{border-top-color:#00897b;background:linear-gradient(135deg,rgba(0,137,123,.08),rgba(0,137,123,.02))}
 #acc-mix .task{border-top-color:#d4a017;background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(251,191,36,.02))}
 .confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
 .confirm-box{background:#fff;border-radius:18px;padding:24px 22px;max-width:320px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2);text-align:center}
@@ -941,8 +949,8 @@ body.dark-mode .confirm-box p{color:#d1d5db}
 
 <header>
   <a class="hdr-logo-link" href="../index.html" title="Zurück zum Englisch-Lernzentrum"><img src="../assets/logo_hellweg.png" alt="Logo der Hellweg-Realschule Unna-Massen" style="cursor:pointer"/></a>
-  <h1>Present Perfect</h1>
-  <p class="sub">have/has + past participle – Klasse 6</p>
+  <h1>Adverbien der Art und Weise</h1>
+  <p class="sub">Adverbs of manner – Klasse 6 · Adjektiv + ly</p>
 </header>
 
 <div class="container">
@@ -955,14 +963,17 @@ body.dark-mode .confirm-box p{color:#d1d5db}
         <div class="rc-card-topbar"></div>
         <div class="rc-card-num">1</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">✅ Aussagesatz</div>
+          <div class="rc-card-label">✅ Grundregel</div>
           <div class="rc-formula">
-            <span class="fc fc-subj">Subjekt</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-aux">have / has</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-pp">past participle</span></span>
+            <span class="fc fc-adj">Adjektiv</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-suffix">ly</span></span><span class="fc-pair"><span class="fc-plus">=</span><span class="fc fc-adv">Adverb</span></span>
           </div>
-          <div class="rc-rule" style="font-size:12.5px;line-height:1.65">I → <span class="hl-aux">have</span><br>you → <span class="hl-aux">have</span><br>he → <span class="hl-aux">has</span><br>she → <span class="hl-aux">has</span><br>it → <span class="hl-aux">has</span><br>we → <span class="hl-aux">have</span><br>you (Pl.) → <span class="hl-aux">have</span><br>they → <span class="hl-aux">have</span><br><span style="font-size:11.5px;color:#6b7280">past participle = 3. Form (gone, seen, played …)</span></div>
+          <div class="rc-rule">Die meisten Adverbien bildet man durch Anfügen von <b>-ly</b> an das Adjektiv.<br>Adverbien beschreiben, <b>wie</b> etwas geschieht.</div>
           <div class="rc-examples-new">
-            <span class="hl-subj">I</span> <span class="hl-aux">have</span> <span class="hl-pp">seen</span> this film.<br>
-            <span class="hl-subj">She</span> <span class="hl-aux">has</span> <span class="hl-pp">finished</span> her homework.
+            <span class="hl-adj">slow</span> → <span class="hl-adv">slow<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">clear</span> → <span class="hl-adv">clear<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">quick</span> → <span class="hl-adv">quick<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">careful</span> → <span class="hl-adv">careful<span class="hl-suffix">ly</span></span><br>
+            <span class="hl-adj">nervous</span> → <span class="hl-adv">nervous<span class="hl-suffix">ly</span></span>
           </div>
         </div>
       </div>
@@ -971,89 +982,57 @@ body.dark-mode .confirm-box p{color:#d1d5db}
         <div class="rc-card-topbar"></div>
         <div class="rc-card-num">2</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">❌ Verneinung</div>
-          <div class="rc-formula">
-            <span class="fc fc-subj">Subjekt</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-neg">haven't / hasn't</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-pp">past participle</span></span>
+          <div class="rc-card-label">⚠️ Schreibänderungen</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-adj">…y</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-adv">…ily</span></span><br>
+            <span class="fc fc-adj">full</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-adv">fully</span></span>
           </div>
-          <div class="rc-rule"><b>haven't</b> = have not<br><b>hasn't</b> = has not<br>past participle bleibt unverändert</div>
+          <div class="rc-rule">Endet das Adjektiv auf <b>-y</b>, wird daraus <b>-ily</b>.<br>Bei <b>full</b> wird ein <b>l</b> weggelassen: full + ly → <b>fully</b>.</div>
           <div class="rc-examples-new">
-            <span class="hl-subj">I</span> <span class="hl-neg">haven't</span> <span class="hl-pp">eaten</span>.<br>
-            <span class="hl-subj">He</span> <span class="hl-neg">hasn't</span> <span class="hl-pp">finished</span> his homework.<br>
-            <span class="hl-subj">We</span> <span class="hl-neg">have not</span> <span class="hl-pp">been</span> to Spain.
-          </div>
-        </div>
-      </div>
-
-      <div class="rc-card c-blue">
-        <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">3</div>
-        <div class="rc-card-body">
-          <div class="rc-card-label">❓ Ja/Nein-Frage</div>
-          <div class="rc-formula">
-            <span class="fc fc-aux">Have / Has</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-subj">Subjekt</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-pp">past participle</span></span>
-            <span class="fc-punct">?</span>
-          </div>
-          <div class="rc-rule"><b>Have/Has</b> an den Anfang!<br>past participle bleibt!<br><span style="font-size:12px;">💬 Short Answers: <b>Yes, I have.</b> · <b>No, she hasn't.</b></span></div>
-          <div class="rc-examples-new">
-            <span class="hl-aux">Have</span> <span class="hl-subj">you</span> <span class="hl-pp">finished</span>? – <b>Yes, I <span class="hl-aux">have</span>.</b><br>
-            <span class="hl-aux">Has</span> <span class="hl-subj">she</span> <span class="hl-pp">seen</span> the news? – <b>No, she <span class="hl-neg">hasn't</span>.</b><br>
-            <span class="hl-aux">Have</span> <span class="hl-subj">they</span> <span class="hl-pp">arrived</span>? – <b>Yes, they <span class="hl-aux">have</span>.</b>
+            <span class="hl-adj">happy</span> → <span class="hl-adv">happ<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">angry</span> → <span class="hl-adv">angr<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">easy</span> → <span class="hl-adv">eas<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">lucky</span> → <span class="hl-adv">luck<span class="hl-suffix">ily</span></span><br>
+            <span class="hl-adj">full</span> → <span class="hl-adv">ful<span class="hl-suffix">ly</span></span>
           </div>
         </div>
       </div>
 
       <div class="rc-card c-indigo">
         <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">4</div>
+        <div class="rc-card-num">3</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">🔵 W-Frage</div>
-          <div class="rc-formula">
-            <span class="fc fc-wh">W-Wort</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-aux">have / has</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-subj">Subjekt</span></span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-pp">past participle</span></span>
-            <span class="fc-punct">?</span>
+          <div class="rc-card-label">🚨 Ausnahmen</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-adj">good</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-adv">well</span></span><br>
+            <span class="fc fc-adj">hard</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-adv">hard</span></span><br>
+            <span class="fc fc-adj">fast</span><span class="fc-pair"><span class="fc-plus">→</span><span class="fc fc-adv">fast</span></span>
           </div>
-          <div class="rc-rule"><b>What · Where · When · Who · How · Why</b><br>– immer ganz vorne!</div>
+          <div class="rc-rule">Diese musst du <b>auswendig lernen</b>:<br><b>good → well</b> (NICHT goodly!)<br><b>hard, fast, late, early</b>: Adjektiv = Adverb</div>
           <div class="rc-examples-new">
-            <span class="hl-wh">Where</span> <span class="hl-aux">have</span> <span class="hl-subj">you</span> <span class="hl-pp">been</span>?<br>
-            <span class="hl-wh">What</span> <span class="hl-aux">has</span> <span class="hl-subj">she</span> <span class="hl-pp">done</span>?<br>
-            <span class="hl-wh">Why</span> <span class="hl-aux">have</span> <span class="hl-subj">they</span> <span class="hl-pp">left</span>?
+            She sings <span class="hl-adv">well</span>. <i>(NICHT: she sings goodly)</i><br>
+            He works <span class="hl-adv">hard</span>. <i>(NICHT: hardly = kaum!)</i><br>
+            The bus drives <span class="hl-adv">fast</span>.
           </div>
         </div>
       </div>
 
       <div class="rc-card c-amber">
         <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">5</div>
+        <div class="rc-card-num">4</div>
         <div class="rc-card-body">
-          <div class="rc-card-label">⏱ Wann benutze ich es?</div>
-          <div class="rc-formula" style="flex-wrap:wrap;gap:5px 4px">
-            <span class="fc fc-aux" style="font-size:10px">Vergangenheit</span>
-            <span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-pp" style="font-size:10px">Bezug zur Gegenwart</span></span>
+          <div class="rc-card-label">🔍 Adjektiv vs. Adverb</div>
+          <div class="rc-formula" style="gap:5px 4px">
+            <span class="fc fc-adj">Adjektiv</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-noun">Nomen</span></span></div>
+          <div class="rc-formula" style="gap:6px 4px;margin-top:3px"><span class="fc fc-verb">Verb</span><span class="fc-pair"><span class="fc-plus">+</span><span class="fc fc-adv">Adverb</span></span>
           </div>
-          <div class="rc-rule">Das Present Perfect beschreibt Handlungen, die <b>kürzlich passiert</b> sind und <b>mit der Gegenwart verbunden</b> sind.<br><span style="font-size:12px">⏳ Die Handlung ist <b>vorbei</b> – das Ergebnis zählt <b>jetzt</b>.</span></div>
+          <div class="rc-rule"><b>Adjektiv</b> beschreibt eine Person/Sache → steht <b>vor dem Nomen</b><br><b>Adverb</b> beschreibt das Verb → steht meist <b>nach dem Verb</b></div>
           <div class="rc-examples-new">
-            I <span class="hl-aux">have</span> <span class="hl-pp">done</span> my homework. <span style="font-size:11px;color:#6b7280">(= jetzt ist es fertig)</span><br>
-            She <span class="hl-aux">has</span> <span class="hl-pp">visited</span> Berlin. <span style="font-size:11px;color:#6b7280">(= sie war dort)</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="rc-card c-teal">
-        <div class="rc-card-topbar"></div>
-        <div class="rc-card-num">6</div>
-        <div class="rc-card-body">
-          <div class="rc-card-label">📌 Signalwörter</div>
-          <div class="rc-formula" style="gap:5px 4px;flex-wrap:wrap">
-            <span class="fc-tz">recently</span>
-            <span class="fc-tz">lately</span>
-            <span class="fc-tz">so far</span>
-            <span class="fc-tz">today</span>
-            <span class="fc-tz">this week</span>
-            <span class="fc-tz">this year</span>
-          </div>
-          <div class="rc-rule"><b>recently / lately</b>: kürzlich, in letzter Zeit<br><b>so far</b>: bisher, bis jetzt<br><b>today / this week / this year</b>: Zeitraum noch nicht abgeschlossen</div>
-          <div class="rc-examples-new">
-            I <span class="hl-aux">have</span> <span class="hl-pp">moved</span> <span class="hl-sig">recently</span>.<br>
-            She <span class="hl-aux">has</span> <span class="hl-pp">read</span> three books <span class="hl-sig">this month</span>.
+            She is a <span class="hl-adj">careful</span> <span class="hl-noun">driver</span>.<br>
+            She <span class="hl-verb">drives</span> <span class="hl-adv">carefully</span>.<br>
+            <br>
+            He is a <span class="hl-adj">slow</span> <span class="hl-noun">runner</span>.<br>
+            He <span class="hl-verb">runs</span> <span class="hl-adv">slowly</span>.
           </div>
         </div>
       </div>
@@ -1063,53 +1042,52 @@ body.dark-mode .confirm-box p{color:#d1d5db}
 
   <div class="quiz-divider"><span>✏️ Übungen</span></div>
 
-  <details class="accordion" id="acc-aus">
-    <summary><span class="acc-num">1</span>✅ Aussagesätze (have/has + past participle)</summary>
+  <details class="accordion" id="acc-bild">
+    <summary><span class="acc-num">1</span>✅ Bildung – Adjektiv + ly</summary>
     <div class="content">
-      <div class="note"><b>Stufe 1:</b> Erkennen (MC + Wörter ordnen) &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentexte<br><b>Stufe 3:</b> Sätze selbst bilden</div>
-      <div class="level-switch" id="aus-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Sätze bilden</button></div>
-      <div class="progress-wrap" id="aus-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn green" id="aus-check-all">Alle prüfen</button><button class="btn gray" id="aus-reset">Zurücksetzen</button><button class="btn ghost" id="aus-reroll">🎲 Neu würfeln</button></div>
+      <div class="note"><b>Stufe 1:</b> Adverben erkennen + ordnen &nbsp;|&nbsp; <b>Stufe 2:</b> Adverben bilden (Lückentext)<br><b>Stufe 3:</b> Adjektiv-Sätze in Adverb-Sätze umformen</div>
+      <div class="level-switch" id="bild-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Umformen</button></div>
+      <div class="progress-wrap" id="bild-progress"><div class="progress green" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn green" id="bild-check-all">Alle prüfen</button><button class="btn gray" id="bild-reset">Zurücksetzen</button><button class="btn ghost" id="bild-reroll">🎲 Neu würfeln</button></div>
+      <div id="bild-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-special">
+    <summary><span class="acc-num">2</span>⚠️ Schreibänderungen – -y → -ily, full → fully</summary>
+    <div class="content">
+      <div class="note">Endet das Adjektiv auf <b>-y</b>, wird daraus <b>-ily</b> (happy → happily). Bei <b>full</b> fällt ein <b>l</b> weg (full → fully).</div>
+      <div class="progress-wrap" id="special-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn blue" id="special-check-all">Alle prüfen</button><button class="btn gray" id="special-reset">Zurücksetzen</button><button class="btn ghost" id="special-reroll">🎲 Neu würfeln</button></div>
+      <div id="special-tasks"></div>
+    </div>
+  </details>
+
+  <details class="accordion" id="acc-aus">
+    <summary><span class="acc-num">3</span>🚨 Ausnahmen – good · hard · fast</summary>
+    <div class="content">
+      <div class="note">Auswendig lernen: <b>good → well</b>, <b>hard / fast / late / early</b> (Adjektiv = Adverb). ⚠️ <i>hardly</i> bedeutet „kaum“ – nicht verwechseln!</div>
+      <div class="progress-wrap" id="aus-progress"><div class="progress purple" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn purple" id="aus-check-all">Alle prüfen</button><button class="btn gray" id="aus-reset">Zurücksetzen</button><button class="btn ghost" id="aus-reroll">🎲 Neu würfeln</button></div>
       <div id="aus-tasks"></div>
     </div>
   </details>
 
-  <details class="accordion" id="acc-vern">
-    <summary><span class="acc-num">2</span>❌ Verneinungen (haven't / hasn't)</summary>
+  <details class="accordion" id="acc-vs">
+    <summary><span class="acc-num">4</span>🔍 Adjektiv vs. Adverb</summary>
     <div class="content">
-      <div class="note"><b>Stufe 1:</b> Erkennen (MC + Wörter ordnen) &nbsp;|&nbsp; <b>Stufe 2:</b> Sätze verneinen (Lückentext)<br><b>Stufe 3:</b> Aussagen in Verneinungen umformen</div>
-      <div class="level-switch" id="vern-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Umformen</button></div>
-      <div class="progress-wrap" id="vern-progress"><div class="progress red" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn primary" id="vern-check-all">Alle prüfen</button><button class="btn gray" id="vern-reset">Zurücksetzen</button><button class="btn ghost" id="vern-reroll">🎲 Neu würfeln</button></div>
-      <div id="vern-tasks"></div>
-    </div>
-  </details>
-
-  <details class="accordion" id="acc-frag">
-    <summary><span class="acc-num">3</span>❓ Fragen (Have/Has …? · W-Fragen · Short Answers)</summary>
-    <div class="content">
-      <div class="note"><b>Stufe 1:</b> Ja/Nein-Fragen + Short Answers &nbsp;|&nbsp; <b>Stufe 2:</b> W-Fragen ordnen + Lücken<br><b>Stufe 3:</b> Aussagen in Fragen umformen</div>
-      <div class="level-switch" id="frag-levels"><button data-level="1" class="active">🟢 Ja/Nein-Fragen</button><button data-level="2">🟡 W-Fragen</button><button data-level="3">🔴 Umformen</button></div>
-      <div class="progress-wrap" id="frag-progress"><div class="progress blue" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn blue" id="frag-check-all">Alle prüfen</button><button class="btn gray" id="frag-reset">Zurücksetzen</button><button class="btn ghost" id="frag-reroll">🎲 Neu würfeln</button></div>
-      <div id="frag-tasks"></div>
-    </div>
-  </details>
-
-  <details class="accordion" id="acc-sig">
-    <summary><span class="acc-num">4</span>🕐 Signalwörter</summary>
-    <div class="content">
-      <div class="note">Signalwörter, die zum Present Perfect passen: <b>recently · lately · so far · today · this week · this month · this year</b> – immer dann, wenn der Zeitraum noch nicht abgeschlossen ist.</div>
-      <div class="progress-wrap" id="sig-progress"><div class="progress purple" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/12 richtig (0%)</div></div>
-      <div class="section-actions"><button class="btn purple" id="sig-check-all">Alle prüfen</button><button class="btn gray" id="sig-reset">Zurücksetzen</button><button class="btn ghost" id="sig-reroll">🎲 Neu würfeln</button></div>
-      <div id="sig-tasks"></div>
+      <div class="note"><b>Stufe 1:</b> Adjektiv oder Adverb erkennen &nbsp;|&nbsp; <b>Stufe 2:</b> Lückentext<br><b>Stufe 3:</b> Fehlerkorrektur</div>
+      <div class="level-switch" id="vs-levels"><button data-level="1" class="active">🟢 Aufwärmen</button><button data-level="2">🟡 Lückentext</button><button data-level="3">🔴 Fehler</button></div>
+      <div class="progress-wrap" id="vs-progress"><div class="progress teal" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
+      <div class="section-actions"><button class="btn teal" id="vs-check-all">Alle prüfen</button><button class="btn gray" id="vs-reset">Zurücksetzen</button><button class="btn ghost" id="vs-reroll">🎲 Neu würfeln</button></div>
+      <div id="vs-tasks"></div>
     </div>
   </details>
 
   <details class="accordion" id="acc-mix">
     <summary><span class="acc-num">5</span>🧩 Gemischte Aufgaben + Fehlerkorrektur</summary>
     <div class="content">
-      <div class="note">Alles zusammen: Aussage, Verneinung, Frage, W-Frage, past participle. Achte auf typische Fehler – z.B. <i>he have</i>, <i>she has went</i>.</div>
+      <div class="note">Alles zusammen: Bildung, Schreibänderungen, Ausnahmen, Adjektiv vs. Adverb. Achte auf typische Fehler!</div>
       <div class="progress-wrap" id="mix-progress"><div class="progress amber" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill"></div></div><div class="progress-text">Fortschritt: 0/15 richtig (0%)</div></div>
       <div class="section-actions"><button class="btn amber" id="mix-check-all">Alle prüfen</button><button class="btn gray" id="mix-reset">Zurücksetzen</button><button class="btn ghost" id="mix-reroll">🎲 Neu würfeln</button></div>
       <div id="mix-tasks"></div>
@@ -1128,14 +1106,14 @@ body.dark-mode .confirm-box p{color:#d1d5db}
   </details>
 
   <footer style="text-align:center;color:var(--text-dim);font-size:12px;margin-top:30px;padding:16px 20px 4px;border-top:1px solid var(--border)">
-  <div>Version 28.04.2026, 00:43</div>
+  <div>Version 27.04.2026, 20:52</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 </div>
 
 <script>
 (function(){
-  const k='pp_dark_v1';
+  const k='aom_dark_v1';
   try{if(localStorage.getItem(k)==='1')document.body.classList.add('dark-mode');}catch(e){}
   const btn=document.getElementById('dark-toggle');
   function refresh(){btn.textContent=document.body.classList.contains('dark-mode')?'☀️ Hell':'🌙 Dark Mode';}
@@ -1144,7 +1122,7 @@ body.dark-mode .confirm-box p{color:#d1d5db}
 })();
 function checkCelebration(c){const i=c.querySelectorAll('.task input');if(!i.length)return;if(!Array.from(i).every(x=>x._correct))return;if(c.querySelector('.celebrate-banner'))return;const b=document.createElement('div');b.className='celebrate-banner';b.innerHTML='🎉 Perfekt! Alle Aufgaben richtig – super gemacht!';c.prepend(b);setTimeout(()=>b.scrollIntoView({behavior:'smooth',block:'nearest'}),80);}
 function customConfirm(msg,onOk){const m=document.getElementById('confirm-modal');document.getElementById('confirm-msg').textContent=msg;m.style.display='flex';const ok=document.getElementById('confirm-ok'),c=document.getElementById('confirm-cancel');function close(){m.style.display='none';ok.onclick=null;c.onclick=null;}ok.onclick=()=>{close();onOk();};c.onclick=close;}
-function normalizeAnswer(text){if(!text)return"";let s=(""+text).toLowerCase();s=s.replace(/['´‘’‚‛′‵ʹʻʼʾʿ＇``´]/g,"'");s=s.replace(/don't/g,"do not").replace(/doesn't/g,"does not").replace(/isn't/g,"is not").replace(/aren't/g,"are not").replace(/haven't/g,"have not").replace(/hasn't/g,"has not").replace(/can't/g,"can not").replace(/won't/g,"will not");s=s.replace(/\bdoesnt\b/g,"does not").replace(/\bdont\b/g,"do not").replace(/\bhavent\b/g,"have not").replace(/\bhasnt\b/g,"has not");s=s.replace(/[.,!?:;"]+/g," ").replace(/\s+/g," ").trim();s=s.normalize("NFD").replace(/[̀-ͯ]/g,"");return s;}
+function normalizeAnswer(text){if(!text)return"";let s=(""+text).toLowerCase();s=s.replace(/['´‘’‚‛′‵ʹʻʼʾʿ＇``´]/g,"'");s=s.replace(/don't/g,"do not").replace(/doesn't/g,"does not").replace(/isn't/g,"is not").replace(/aren't/g,"are not").replace(/can't/g,"can not").replace(/won't/g,"will not");s=s.replace(/\bdoesnt\b/g,"does not").replace(/\bdont\b/g,"do not");s=s.replace(/[.,!?:;"]+/g," ").replace(/\s+/g," ").trim();s=s.normalize("NFD").replace(/[̀-ͯ]/g,"");return s;}
 const _STORE={};
 function saveProgress(k,v){try{_STORE[k]=v;}catch(e){}return true;}
 function loadProgress(k,d=null){return _STORE[k]!==undefined?_STORE[k]:d;}
@@ -1153,15 +1131,13 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 function pickRandom(pool,n,k){if(k){const s=loadProgress('pick_'+k);if(s&&Array.isArray(s)&&s.length===Math.min(n,pool.length)&&s.every(i=>i>=0&&i<pool.length))return s.map(i=>pool[i]);}const idx=Array.from({length:pool.length},(_,i)=>i);for(let i=idx.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[idx[i],idx[j]]=[idx[j],idx[i]];}const p=idx.slice(0,Math.min(n,pool.length));if(k)saveProgress('pick_'+k,p);return p.map(i=>pool[i]);}
 function initProgressBar(root,total){const fill=root.querySelector('.progress-fill');const text=root.parentElement.querySelector('.progress-text');function update(c,d){d=d!==undefined?d:c;const fp=total?Math.round((d/total)*100):0;const rp=total?Math.round((c/total)*100):0;fill.style.width=fp+'%';text.textContent=d===c?`Fortschritt: ${c}/${total} richtig (${rp}%)`:`Fortschritt: ${c}/${total} richtig · ${d} bearbeitet`;root.setAttribute('aria-valuenow',String(fp));}function setTotal(n){total=n;update(0,0);}function resetAnimated(){fill.style.width='0%';text.textContent=`Fortschritt: 0/${total} richtig (0%)`;}update(0,0);return{update,setTotal,resetAnimated};}
 function buildPartialHint(a){if(!a)return'';const w=(''+a).trim().replace(/[.!?]+$/,'').split(/\s+/).filter(Boolean);if(w.length<3)return w[0]||'';const n=Math.max(2,Math.ceil(w.length*0.4));return w.slice(0,n).join(' ');}
-function diffHint(u,c){const uN=normalizeAnswer(u),cN=normalizeAnswer(c);if(!uN||!cN||uN===cN)return null;const uW=uN.split(/\s+/).filter(Boolean),cW=cN.split(/\s+/).filter(Boolean);let i=0;const max=Math.max(uW.length,cW.length);while(i<max&&uW[i]===cW[i])i++;if(i>=max)return null;const u2=uW[i]||'',c2=cW[i]||'';if(!u2&&c2)return `💡 An Stelle ${i+1} fehlt das Wort <b>${c2}</b>.`;if(u2&&!c2)return `💡 Das Wort <b>${u2}</b> gehört nicht in den Satz.`;const p={'have':'has','has':'have','went':'gone','saw':'seen','did':'done'};if(p[u2]===c2)return `💡 Hier brauchst du <b>${c2}</b>, nicht <i>${u2}</i>.`;return `💡 Ab dem Wort <b>${u2||'…'}</b> stimmt etwas nicht.`;}
+function diffHint(u,c){const uN=normalizeAnswer(u),cN=normalizeAnswer(c);if(!uN||!cN||uN===cN)return null;const uW=uN.split(/\s+/).filter(Boolean),cW=cN.split(/\s+/).filter(Boolean);let i=0;const max=Math.max(uW.length,cW.length);while(i<max&&uW[i]===cW[i])i++;if(i>=max)return null;const u2=uW[i]||'',c2=cW[i]||'';if(!u2&&c2)return `💡 An Stelle ${i+1} fehlt das Wort <b>${c2}</b>.`;if(u2&&!c2)return `💡 Das Wort <b>${u2}</b> gehört nicht in den Satz.`;const p={'good':'well','well':'good','goodly':'well','hardly':'hard','quick':'quickly','slow':'slowly','careful':'carefully'};if(p[u2]===c2)return `💡 Hier brauchst du <b>${c2}</b>, nicht <i>${u2}</i>.`;return `💡 Ab dem Wort <b>${u2||'…'}</b> stimmt etwas nicht.`;}
 function analyzeError(u,ans){const ansList=Array.isArray(ans)?ans:[ans];const c=(ansList[0]||'').toLowerCase();const ul=u.toLowerCase().trim();
-  if(/\bhas\b/.test(c)&&/\bhave\b/.test(ul)&&/^(he|she|it)\b/.test(ul))return "💡 Bei <b>he/she/it</b> heißt es <b>has</b>, nicht <i>have</i>.";
-  if(/\bhave\b/.test(c)&&/\bhas\b/.test(ul)&&!/^(he|she|it)\b/.test(ul))return "💡 Bei <b>I/you/we/they</b> heißt es <b>have</b>, nicht <i>has</i>.";
-  if(/\bgone\b/.test(c)&&/\bwent\b/.test(ul))return "💡 Nach have/has steht das <b>past participle</b>: <i>went</i> → <b>gone</b>.";
-  if(/\bseen\b/.test(c)&&/\bsaw\b/.test(ul))return "💡 Nach have/has: <i>saw</i> → <b>seen</b> (past participle).";
-  if(/\bdone\b/.test(c)&&/\bdid\b/.test(ul))return "💡 Nach have/has: <i>did</i> → <b>done</b>.";
-  if(/^have\b/.test(c)&&!/^have\b/.test(ul)&&!/^(what|where|when|who|how|why|has)\b/.test(ul))return "💡 Ja/Nein-Frage: <b>Have / Has</b> + Subjekt + past participle?";
-  if(/^(what|where|when|who|how|why)\s+(have|has)\b/.test(c)&&/^(what|where|when|who|how|why)\b/.test(ul)&&!/\b(have|has)\b/.test(ul))return "💡 W-Frage: W-Wort + <b>have/has</b> + Subjekt + past participle?";
+  if(/\bwell\b/.test(c)&&/\bgoodly\b/.test(ul))return "💡 <b>good → well</b>, nicht <i>goodly</i>! Das ist eine Ausnahme.";
+  if(/\bwell\b/.test(c)&&/\bgood\b/.test(ul))return "💡 Hier brauchst du das Adverb <b>well</b>, nicht das Adjektiv <i>good</i>.";
+  if(/\bhard\b/.test(c)&&/\bhardly\b/.test(ul))return "💡 <b>hard</b> ist Adjektiv UND Adverb. <i>hardly</i> bedeutet „kaum“!";
+  if(/ily\b/.test(c)&&/yly\b/.test(ul))return "💡 Bei Adjektiven auf <b>-y</b>: <b>-y → -ily</b> (z.B. happy → happily, nicht happyly).";
+  if(/lly\b/.test(c)&&/full\s/.test(ul+' '))return "💡 <b>full + ly = fully</b> (ein l fällt weg).";
   let best=ansList[0],bd=Infinity;for(const a of ansList){const an=normalizeAnswer(a),un=normalizeAnswer(u);const aw=an.split(/\s+/),uw=un.split(/\s+/);let d=Math.abs(aw.length-uw.length);const m=Math.min(aw.length,uw.length);for(let i=0;i<m;i++)if(aw[i]!==uw[i])d++;if(d<bd){bd=d;best=a;}}return diffHint(u,best);
 }
 function shufflePromptSlashList(html){if(!html||typeof html!=='string')return html;return html.replace(/<i>([^<]+?)<\/i>/g,(m,inner)=>{if(!inner.includes(' / ')||/___|[()]/.test(inner))return m;const ct=inner.replace(/[.!?]+\s*$/,'').trim();const p=ct.split(' / ').map(s=>s.trim()).filter(Boolean);if(p.length<2)return m;const o=p.join(' / ');let s,a=0;do{s=p.slice();for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]];}a++;}while(s.join(' / ')===o&&a<20);return '<i>'+s.join(' / ')+'</i>';});}
@@ -1407,467 +1383,373 @@ function setupSimpleSection(sk,cont,pool,checkAll,reset,total){
 
 // ===== AUFGABEN-POOLS =====
 
-// ---- AUS L1: Bildung erkennen (have/has + past participle) ----
-const ausL1=[
-  {type:"mc",prompt:"<i>I ___ seen this film.</i>",options:["am","has","do","have"],correct:3,answer:"have"},
-  {type:"mc",prompt:"<i>She ___ finished her homework.</i>",options:["have","has","is","does"],correct:1,answer:"has"},
-  {type:"mc",prompt:"<i>They ___ been to Paris.</i>",options:["has","have","are"],correct:1,answer:"have"},
-  {type:"mc",prompt:"<i>He ___ done his work.</i>",options:["have","is","has"],correct:2,answer:"has"},
-  {type:"mc",prompt:"<i>We ___ played football.</i>",options:["has","are","have"],correct:2,answer:"have"},
-  {type:"mc",prompt:"<i>My sister ___ written an email.</i>",options:["have","has","is"],correct:1,answer:"has"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>go</b>?",options:["went","going","gone","goed"],correct:2,answer:"gone"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>see</b>?",options:["saw","seen","seeing","seed"],correct:1,answer:"seen"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>do</b>?",options:["did","done","doing","doed"],correct:1,answer:"done"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>be</b>?",options:["was","were","been","being"],correct:2,answer:"been"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>play</b>?",options:["played","playing","plaied","playen"],correct:0,answer:"played"},
-  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She have done it.","She has done it.","She has did it.","She have did it."],correct:1,answer:"She has done it."},
-  {type:"mc",prompt:"Welcher Satz ist <b>falsch</b>?",options:["I have seen this film.","She has gone home.","They have went home.","We have eaten lunch."],correct:2,answer:"They have went home."},
-  {words:["I","have","seen","this","film","."],answer:["I have seen this film."],label:"Aussagesatz"},
-  {words:["She","has","finished","her","work","."],answer:["She has finished her work."],label:"Aussagesatz"},
-  {words:["They","have","played","football","."],answer:["They have played football."],label:"Aussagesatz"},
-  {words:["He","has","written","a","letter","."],answer:["He has written a letter."],label:"Aussagesatz"},
-  {words:["We","have","eaten","lunch","."],answer:["We have eaten lunch."],label:"Aussagesatz"},
-
-  {type:"mc",prompt:"<i>You ___ done it.</i>",options:["am","has","do","have"],correct:3,answer:"have"},
-  {type:"mc",prompt:"<i>The dog ___ eaten the food.</i>",options:["have","has","is","does"],correct:1,answer:"has"},
-  {type:"mc",prompt:"<i>My friends ___ left.</i>",options:["has","have","is","are"],correct:1,answer:"have"},
-  {type:"mc",prompt:"<i>Tom ___ won the race.</i>",options:["have","is","has","does"],correct:2,answer:"has"},
-  {type:"mc",prompt:"<i>I ___ been to Paris.</i>",options:["has","are","have","do"],correct:2,answer:"have"},
-  {type:"mc",prompt:"<i>Anna ___ broken her arm.</i>",options:["have","has","is","does"],correct:1,answer:"has"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>write</b>?",options:["wrote","writing","written","wroten"],correct:2,answer:"written"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>break</b>?",options:["broke","broken","breaked","breakt"],correct:1,answer:"broken"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>take</b>?",options:["took","taking","taken","take"],correct:2,answer:"taken"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>eat</b>?",options:["ate","eating","eaten","aten"],correct:2,answer:"eaten"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>find</b>?",options:["found","finding","finded","find"],correct:0,answer:"found"},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>buy</b>?",options:["bought","buyed","buying","boughten"],correct:0,answer:"bought"},
-  {type:"mc",prompt:"Welcher Satz ist richtig?",options:["He have done it.","He has did it.","He has done it.","He do done it."],correct:2,answer:"He has done it."},
-  {type:"mc",prompt:"Welcher Satz ist falsch?",options:["I have eaten.","She has gone.","They have went.","We have seen it."],correct:2,answer:"They have went."},
-  {type:"mc",prompt:"Welcher Satz ist falsch?",options:["I have see it.","I have seen it.","She has done it.","We have read the book."],correct:0,answer:"I have see it."},
-  {words:["Tom","has","called","his","mum","."],answer:["Tom has called his mum."],label:"Aussagesatz"},
-  {words:["Anna","has","broken","her","toy","."],answer:["Anna has broken her toy."],label:"Aussagesatz"},
-  {words:["My","friends","have","moved","house","."],answer:["My friends have moved house."],label:"Aussagesatz"},
-  {words:["I","have","lost","my","keys","."],answer:["I have lost my keys."],label:"Aussagesatz"},
-  {words:["She","has","won","the","prize","."],answer:["She has won the prize."],label:"Aussagesatz"},
-  {words:["They","have","visited","Paris","."],answer:["They have visited Paris."],label:"Aussagesatz"},
-  {words:["The","cat","has","caught","a","mouse","."],answer:["The cat has caught a mouse."],label:"Aussagesatz"},
-  {words:["My","brother","has","bought","a","bike","."],answer:["My brother has bought a bike."],label:"Aussagesatz"},
-  {words:["We","have","learned","a","lot","."],answer:["We have learned a lot."],label:"Aussagesatz"},
-  {words:["She","has","made","a","cake","."],answer:["She has made a cake."],label:"Aussagesatz"},
+// ---- BILD L1: Bildung erkennen (MC + Ordne) ----
+const bildL1=[
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>slow</b>?",options:["slowy","slowly","slower","slow"],correct:1,answer:"slowly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>quick</b>?",options:["quick","quicker","quickly","quickness"],correct:2,answer:"quickly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>clear</b>?",options:["clearer","clearly","cleary","clean"],correct:1,answer:"clearly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>nervous</b>?",options:["nervously","nervous","nerously","nervouser"],correct:0,answer:"nervously"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>sad</b>?",options:["sad","sadder","sady","sadly"],correct:3,answer:"sadly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>careful</b>?",options:["careful","carefuly","carefuly","carefully"],correct:3,answer:"carefully"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>loud</b>?",options:["lout","loudly","loudly","louder"],correct:1,answer:"loudly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>polite</b>?",options:["politly","polite","politely","politness"],correct:2,answer:"politely"},
+  {type:"mc",prompt:"Wie bildet man die meisten Adverbien?",options:["Adjektiv + er","Adjektiv + ly","Adjektiv + ed","Adjektiv + s"],correct:1,answer:"Adjektiv + ly"},
+  {type:"mc",prompt:"Welches Wort ist ein <b>Adverb</b>?",options:["slow","slower","slowly","slowness"],correct:2,answer:"slowly"},
+  {type:"mc",prompt:"Welches Wort ist ein <b>Adverb</b>?",options:["careful","carefully","carefulness","more careful"],correct:1,answer:"carefully"},
+  {type:"mc",prompt:"Was beschreiben Adverbien der Art und Weise?",options:["wann etwas geschieht","wo etwas geschieht","wie etwas geschieht","wer etwas macht"],correct:2,answer:"wie etwas geschieht"},
+  {type:"mc",prompt:"<i>She speaks very ___.</i> – Was passt?",options:["clear","clearly","clearer","cleary"],correct:1,answer:"clearly"},
+  {type:"mc",prompt:"<i>He runs ___.</i> – Was passt?",options:["quick","quicker","quickly","quickest"],correct:2,answer:"quickly"},
+  {words:["She","speaks","slowly","and","clearly","."],answer:["She speaks slowly and clearly."],label:"Aussagesatz"},
+  {words:["The","children","play","quietly","."],answer:["The children play quietly."],label:"Aussagesatz"},
+  {words:["My","brother","sings","loudly","."],answer:["My brother sings loudly."],label:"Aussagesatz"},
+  {words:["The","cat","walks","carefully","."],answer:["The cat walks carefully."],label:"Aussagesatz"},
+  {words:["Please","drive","slowly","!"],answer:["Please drive slowly!"],label:"Bitte"},
+  {words:["He","answers","politely","."],answer:["He answers politely."],label:"Aussagesatz"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>happy</b>?",options:["happyly","happily","happly","happy"],correct:1,answer:"happily"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>busy</b>?",options:["busyly","busily","busy","busiely"],correct:1,answer:"busily"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>angry</b>?",options:["angrly","angrily","angryly","angry"],correct:1,answer:"angrily"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>easy</b>?",options:["easyly","easily","easly","easy"],correct:1,answer:"easily"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>beautiful</b>?",options:["beautifullyly","beautifully","beautiful","beautifuly"],correct:1,answer:"beautifully"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>gentle</b>?",options:["gentlyly","gently","gentelly","gentle"],correct:1,answer:"gently"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>proud</b>?",options:["proudly","proud","proudely","proudelly"],correct:0,answer:"proudly"},
+  {type:"mc",prompt:"Wie heißt das Adverb von <b>brave</b>?",options:["bravly","brave","bravey","bravely"],correct:3,answer:"bravely"},
+  {type:"mc",prompt:"<i>The girl sings ___.</i> – Was passt?",options:["beautiful","beautiful","beautifully","beautifuling"],correct:2,answer:"beautifully"},
+  {type:"mc",prompt:"<i>He speaks ___.</i> – Was passt?",options:["angry","angrily","anger","angrying"],correct:1,answer:"angrily"},
+  {type:"mc",prompt:"<i>She does her job ___ every day.</i> – Was passt?",options:["happy","happily","happiing","happyer"],correct:1,answer:"happily"},
+  {type:"mc",prompt:"<i>The teacher explains ___ .</i> – Was passt?",options:["clear","clearly","clearer","cleary"],correct:1,answer:"clearly"},
+  {type:"mc",prompt:"Welches Wort ist ein <b>Adverb</b>?",options:["beauty","beautiful","beautifully","beautified"],correct:2,answer:"beautifully"},
+  {type:"mc",prompt:"Welches ist das Adverb zu <b>luck</b>?",options:["luckly","luckely","luckily","luck"],correct:2,answer:"luckily"},
+  {type:"mc",prompt:"Welcher Satz enthält ein Adverb?",options:["She is beautiful.","The song is beautiful.","She dances beautifully.","That is a beautiful song."],correct:2,answer:"She dances beautifully."},
+  {type:"mc",prompt:"Wie bildest du das Adverb von <b>late</b>?",options:["lattely","latelly","lately","late"],correct:2,answer:"lately"},
+  {type:"mc",prompt:"Wie bildest du das Adverb von <b>early</b>?",options:["earliely","earlly","earlyly","early"],correct:3,answer:"early"},
+  {type:"mc",prompt:"Wie bildest du das Adverb von <b>perfect</b>?",options:["perfectally","perfectly","perfectley","perfectively"],correct:1,answer:"perfectly"},
+  {words:["Please","listen","carefully","to","the","teacher","."],answer:["Please listen carefully to the teacher."],label:"Aussagesatz"},
+  {words:["She","teaches","clearly","and","patiently","."],answer:["She teaches clearly and patiently."],label:"Aussagesatz"},
 ];
 
-// ---- AUS L2: Lückentexte (have/has + past participle) ----
-const ausL2=[
-  {prompt:"Setze die richtige Form ein: <i>I ___ (see) this film.</i>",answer:["have seen"],placeholder:"have seen",explanation:"💡 I + <b>have</b> + <b>seen</b> (past participle von see)."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (finish) her homework.</i>",answer:["has finished"],placeholder:"has finished",explanation:"💡 she → <b>has</b> + finished (regelmäßig: -ed)."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (play) football.</i>",answer:["have played"],placeholder:"have played",explanation:"💡 we → <b>have</b> + played."},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (lose) his keys.</i>",answer:["has lost"],placeholder:"has lost",explanation:"💡 he → <b>has</b> + <b>lost</b> (past participle von lose)."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (do) their work.</i>",answer:["have done"],placeholder:"have done",explanation:"💡 they → <b>have</b> + <b>done</b> (past participle von do)."},
-  {prompt:"Setze die richtige Form ein: <i>My brother ___ (write) an email.</i>",answer:["has written"],placeholder:"has written",explanation:"💡 he → <b>has</b> + <b>written</b> (past participle von write)."},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (eat) too much chocolate.</i>",answer:["have eaten"],placeholder:"have eaten",explanation:"💡 I → <b>have</b> + <b>eaten</b> (past participle von eat)."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (read) the book.</i>",answer:["has read"],placeholder:"has read",explanation:"💡 she → <b>has</b> + <b>read</b> (past participle = read)."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (go) to the park.</i>",answer:["have gone"],placeholder:"have gone",explanation:"💡 we → <b>have</b> + <b>gone</b> (past participle von go)."},
-  {prompt:"Setze die richtige Form ein: <i>The dog ___ (run) away.</i>",answer:["has run"],placeholder:"has run",explanation:"💡 the dog → <b>has</b> + <b>run</b> (past participle von run = run)."},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (visit) my grandma.</i>",answer:["have visited"],placeholder:"have visited",explanation:"💡 I → <b>have</b> + <b>visited</b>."},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (break) his arm.</i>",answer:["has broken"],placeholder:"has broken",explanation:"💡 he → <b>has</b> + <b>broken</b> (past participle von break)."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (buy) a new car.</i>",answer:["have bought"],placeholder:"have bought",explanation:"💡 they → <b>have</b> + <b>bought</b> (past participle von buy)."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (find) her keys.</i>",answer:["has found"],placeholder:"has found",explanation:"💡 she → <b>has</b> + <b>found</b> (past participle von find)."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (take) the train.</i>",answer:["have taken"],placeholder:"have taken",explanation:"💡 we → <b>have</b> + <b>taken</b> (past participle von take)."},
-
-  {prompt:"Setze die richtige Form ein: <i>You ___ (make) it.</i>",answer:["have made"],placeholder:"have made",explanation:"💡 You → <b>have made</b>"},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (write) it.</i>",answer:["has written"],placeholder:"has written",explanation:"💡 She → <b>has written</b>"},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (leave) it.</i>",answer:["have left"],placeholder:"have left",explanation:"💡 They → <b>have left</b>"},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (find) it.</i>",answer:["has found"],placeholder:"has found",explanation:"💡 He → <b>has found</b>"},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (catch) it.</i>",answer:["have caught"],placeholder:"have caught",explanation:"💡 We → <b>have caught</b>"},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (forget) it.</i>",answer:["have forgotten"],placeholder:"have forgotten",explanation:"💡 I → <b>have forgotten</b>"},
-  {prompt:"Setze die richtige Form ein: <i>Tom ___ (sell) it.</i>",answer:["has sold"],placeholder:"has sold",explanation:"💡 Tom → <b>has sold</b>"},
-  {prompt:"Setze die richtige Form ein: <i>The dog ___ (run) it.</i>",answer:["has run"],placeholder:"has run",explanation:"💡 The dog → <b>has run</b>"},
-  {prompt:"Setze die richtige Form ein: <i>My friends ___ (arrive) it.</i>",answer:["have arrived"],placeholder:"have arrived",explanation:"💡 My friends → <b>have arrived</b>"},
-  {prompt:"Setze die richtige Form ein: <i>Anna ___ (draw) it.</i>",answer:["has drawn"],placeholder:"has drawn",explanation:"💡 Anna → <b>has drawn</b>"},
-  {prompt:"Setze die richtige Form ein: <i>You ___ (spend) it.</i>",answer:["have spent"],placeholder:"have spent",explanation:"💡 You → <b>have spent</b>"},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (sing) it.</i>",answer:["has sung"],placeholder:"has sung",explanation:"💡 She → <b>has sung</b>"},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (build) it.</i>",answer:["have built"],placeholder:"have built",explanation:"💡 They → <b>have built</b>"},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (bring) it.</i>",answer:["has brought"],placeholder:"has brought",explanation:"💡 He → <b>has brought</b>"},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (feed) it.</i>",answer:["have fed"],placeholder:"have fed",explanation:"💡 We → <b>have fed</b>"},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (keep) it.</i>",answer:["have kept"],placeholder:"have kept",explanation:"💡 I → <b>have kept</b>"},
-  {prompt:"Setze die richtige Form ein: <i>The boy ___ (fall) it.</i>",answer:["has fallen"],placeholder:"has fallen",explanation:"💡 The boy → <b>has fallen</b>"},
-  {prompt:"Setze die richtige Form ein: <i>My parents ___ (drive) it.</i>",answer:["have driven"],placeholder:"have driven",explanation:"💡 My parents → <b>have driven</b>"},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (grow up) it.</i>",answer:["has grown up"],placeholder:"has grown up",explanation:"💡 She → <b>has grown up</b>"},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (teach) it.</i>",answer:["have taught"],placeholder:"have taught",explanation:"💡 They → <b>have taught</b>"},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (sleep) it.</i>",answer:["has slept"],placeholder:"has slept",explanation:"💡 He → <b>has slept</b>"},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (sit) it.</i>",answer:["have sat"],placeholder:"have sat",explanation:"💡 We → <b>have sat</b>"},
-  {prompt:"Setze die richtige Form ein: <i>The cat ___ (hide) it.</i>",answer:["has hidden"],placeholder:"has hidden",explanation:"💡 The cat → <b>has hidden</b>"},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (tell) it.</i>",answer:["have told"],placeholder:"have told",explanation:"💡 I → <b>have told</b>"},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (know) it.</i>",answer:["have known"],placeholder:"have known",explanation:"💡 They → <b>have known</b>"},
+// ---- BILD L2: Adverben bilden (Lückentext) ----
+const bildL2=[
+  {prompt:"Bilde das Adverb von <b>slow</b>:",answer:["slowly"],placeholder:"slowly",explanation:"💡 slow + ly → <b>slowly</b>."},
+  {prompt:"Bilde das Adverb von <b>quick</b>:",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick + ly → <b>quickly</b>."},
+  {prompt:"Bilde das Adverb von <b>clear</b>:",answer:["clearly"],placeholder:"clearly",explanation:"💡 clear + ly → <b>clearly</b>."},
+  {prompt:"Bilde das Adverb von <b>careful</b>:",answer:["carefully"],placeholder:"carefully",explanation:"💡 careful + ly → <b>carefully</b>."},
+  {prompt:"Bilde das Adverb von <b>nervous</b>:",answer:["nervously"],placeholder:"nervously",explanation:"💡 nervous + ly → <b>nervously</b>."},
+  {prompt:"Bilde das Adverb von <b>loud</b>:",answer:["loudly"],placeholder:"loudly",explanation:"💡 loud + ly → <b>loudly</b>."},
+  {prompt:"Bilde das Adverb von <b>polite</b>:",answer:["politely"],placeholder:"politely",explanation:"💡 polite + ly → <b>politely</b>."},
+  {prompt:"Bilde das Adverb von <b>quiet</b>:",answer:["quietly"],placeholder:"quietly",explanation:"💡 quiet + ly → <b>quietly</b>."},
+  {prompt:"Bilde das Adverb von <b>safe</b>:",answer:["safely"],placeholder:"safely",explanation:"💡 safe + ly → <b>safely</b>."},
+  {prompt:"Bilde das Adverb von <b>kind</b>:",answer:["kindly"],placeholder:"kindly",explanation:"💡 kind + ly → <b>kindly</b>."},
+  {prompt:"Ergänze: <i>Please speak ___ (slow).</i>",answer:["slowly"],placeholder:"slowly",explanation:"💡 slow + ly → <b>slowly</b>."},
+  {prompt:"Ergänze: <i>The dog barks ___ (loud).</i>",answer:["loudly"],placeholder:"loudly",explanation:"💡 loud + ly → <b>loudly</b>."},
+  {prompt:"Ergänze: <i>She smiles ___ (nice).</i>",answer:["nicely"],placeholder:"nicely",explanation:"💡 nice + ly → <b>nicely</b>."},
+  {prompt:"Ergänze: <i>He works ___ (quick).</i>",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick + ly → <b>quickly</b>."},
+  {prompt:"Ergänze: <i>They listen ___ (careful).</i>",answer:["carefully"],placeholder:"carefully",explanation:"💡 careful + ly → <b>carefully</b>."},
+  {prompt:"Bilde das Adverb von <b>happy</b>:",answer:["happily"],placeholder:"happily",explanation:"💡 happy → -y zu -ily → <b>happily</b>."},
+  {prompt:"Bilde das Adverb von <b>angry</b>:",answer:["angrily"],placeholder:"angrily",explanation:"💡 angry → -y zu -ily → <b>angrily</b>."},
+  {prompt:"Bilde das Adverb von <b>busy</b>:",answer:["busily"],placeholder:"busily",explanation:"💡 busy → -y zu -ily → <b>busily</b>."},
+  {prompt:"Bilde das Adverb von <b>easy</b>:",answer:["easily"],placeholder:"easily",explanation:"💡 easy → -y zu -ily → <b>easily</b>."},
+  {prompt:"Bilde das Adverb von <b>lucky</b>:",answer:["luckily"],placeholder:"luckily",explanation:"💡 lucky → -y zu -ily → <b>luckily</b>."},
+  {prompt:"Bilde das Adverb von <b>beautiful</b>:",answer:["beautifully"],placeholder:"beautifully",explanation:"💡 beautiful + ly → <b>beautifully</b>."},
+  {prompt:"Bilde das Adverb von <b>gentle</b>:",answer:["gently"],placeholder:"gently",explanation:"💡 gentle + ly → <b>gently</b>."},
+  {prompt:"Bilde das Adverb von <b>brave</b>:",answer:["bravely"],placeholder:"bravely",explanation:"💡 brave + ly → <b>bravely</b>."},
+  {prompt:"Bilde das Adverb von <b>proud</b>:",answer:["proudly"],placeholder:"proudly",explanation:"💡 proud + ly → <b>proudly</b>."},
+  {prompt:"Bilde das Adverb von <b>noisy</b>:",answer:["noisily"],placeholder:"noisily",explanation:"💡 noisy → -y zu -ily → <b>noisily</b>."},
+  {prompt:"Bilde das Adverb von <b>lucky</b>:",answer:["luckily"],placeholder:"luckily",explanation:"💡 lucky → -y zu -ily → <b>luckily</b>."},
+  {prompt:"Ergänze: <i>The music plays ___.</i> – (beautiful)",answer:["beautifully"],placeholder:"beautifully",explanation:"💡 beautiful → <b>beautifully</b>."},
+  {prompt:"Ergänze: <i>He sits ___ at his desk.</i> – (quiet)",answer:["quietly"],placeholder:"quietly",explanation:"💡 quiet + ly → <b>quietly</b>."},
+  {prompt:"Ergänze: <i>She walks ___ through the park.</i> – (gentle)",answer:["gently"],placeholder:"gently",explanation:"💡 gentle + ly → <b>gently</b>."},
+  {prompt:"Ergänze: <i>He acted ___ in the show.</i> – (brave)",answer:["bravely"],placeholder:"bravely",explanation:"💡 brave + ly → <b>bravely</b>."},
+  {prompt:"Korrigiere: <i>She drives happy.</i>",answer:["She drives happily."],placeholder:"happily",explanation:"💡 Nach dem Verb → Adverb: happy → <b>happily</b>."},
+  {prompt:"Korrigiere: <i>He speaks angry.</i>",answer:["He speaks angrily."],placeholder:"angrily",explanation:"💡 Nach dem Verb → Adverb: angry → <b>angrily</b>."},
+  {prompt:"Korrigiere: <i>She sings beautiful.</i>",answer:["She sings beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb → Adverb: beautiful → <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>He works busy.</i>",answer:["He works busily."],placeholder:"busily",explanation:"💡 Nach dem Verb → Adverb: busy → <b>busily</b>."},
+  {prompt:"Korrigiere: <i>She looks proud.</i> (im Sinne von: wie sie schaut)",answer:["She looks proudly."],placeholder:"proudly",explanation:"💡 Nach look (= schaut/blickt) → Adverb: <b>proudly</b>."},
+  {prompt:"Übersetze: <i>Sie spricht deutlich.</i>",answer:["She speaks clearly."],placeholder:"clearly",explanation:"💡 deutlich = clear → <b>clearly</b>."},
+  {prompt:"Übersetze: <i>Er antwortet freundlich.</i>",answer:["He answers kindly."],placeholder:"kindly",explanation:"💡 freundlich = kind → <b>kindly</b>."},
+  {prompt:"Übersetze: <i>Sie arbeitet fleißig.</i>",answer:["She works busily."],placeholder:"busily",explanation:"💡 fleißig = busy → <b>busily</b>."},
+  {prompt:"Übersetze: <i>Der Hund läuft sanft.</i>",answer:["The dog walks gently."],placeholder:"gently",explanation:"💡 sanft = gentle → <b>gently</b>."},
+  {prompt:"Übersetze: <i>Sie singt wunderschön.</i>",answer:["She sings beautifully."],placeholder:"beautifully",explanation:"💡 wunderschön = beautiful → <b>beautifully</b>."},
 ];
 
-// ---- AUS L3: Sätze selbst bilden ----
-const ausL3=[
-  {prompt:"Bilde einen Aussagesatz: <i>I / see / this film</i>",answer:["I have seen this film."],placeholder:"I have seen this film.",explanation:"💡 I + have + past participle."},
-  {prompt:"Bilde einen Aussagesatz: <i>she / finish / her homework</i>",answer:["She has finished her homework."],placeholder:"She has finished her homework.",explanation:"💡 she → has + finished."},
-  {prompt:"Bilde einen Aussagesatz: <i>they / be / to London</i>",answer:["They have been to London."],placeholder:"They have been to London.",explanation:"💡 they → have + been."},
-  {prompt:"Bilde einen Aussagesatz: <i>he / lose / his bag</i>",answer:["He has lost his bag."],placeholder:"He has lost his bag.",explanation:"💡 he → has + lost."},
-  {prompt:"Bilde einen Aussagesatz: <i>we / write / a story</i>",answer:["We have written a story."],placeholder:"We have written a story.",explanation:"💡 we → have + written."},
-  {prompt:"Bilde einen Aussagesatz: <i>my sister / make / a cake</i>",answer:["My sister has made a cake."],placeholder:"My sister has made a cake.",explanation:"💡 my sister → has + made."},
-  {prompt:"Bilde einen Aussagesatz: <i>I / break / my pencil</i>",answer:["I have broken my pencil."],placeholder:"I have broken my pencil.",explanation:"💡 I → have + broken."},
-  {prompt:"Bilde einen Aussagesatz: <i>they / find / a wallet</i>",answer:["They have found a wallet."],placeholder:"They have found a wallet.",explanation:"💡 they → have + found."},
-  {prompt:"Bilde einen Aussagesatz: <i>he / read / three books</i>",answer:["He has read three books."],placeholder:"He has read three books.",explanation:"💡 he → has + read."},
-  {prompt:"Bilde einen Aussagesatz: <i>she / do / her homework</i>",answer:["She has done her homework."],placeholder:"She has done her homework.",explanation:"💡 she → has + done."},
-  {prompt:"Korrigiere: <i>She have done her homework.</i>",answer:["She has done her homework."],placeholder:"She has done her homework.",explanation:"💡 he/she/it → <b>has</b>, nicht have."},
-  {prompt:"Korrigiere: <i>He has went home.</i>",answer:["He has gone home."],placeholder:"He has gone home.",explanation:"💡 Past participle von <b>go</b> ist <b>gone</b>, nicht <i>went</i>."},
-  {prompt:"Korrigiere: <i>I have see this film.</i>",answer:["I have seen this film."],placeholder:"I have seen this film.",explanation:"💡 Past participle von <b>see</b> ist <b>seen</b>."},
-  {prompt:"Korrigiere: <i>They has finished.</i>",answer:["They have finished."],placeholder:"They have finished.",explanation:"💡 they → <b>have</b>, nicht has."},
-  {prompt:"Korrigiere: <i>I have did my homework.</i>",answer:["I have done my homework."],placeholder:"I have done my homework.",explanation:"💡 Past participle von <b>do</b> ist <b>done</b>."},
-
-  {prompt:"Bilde einen Aussagesatz: <i>you / find / your keys</i>",answer:["You have found your keys."],placeholder:"You have found your keys.",explanation:"💡 You have found your keys."},
-  {prompt:"Bilde einen Aussagesatz: <i>she / call / her mum</i>",answer:["She has called her mum."],placeholder:"She has called her mum.",explanation:"💡 She has called her mum."},
-  {prompt:"Bilde einen Aussagesatz: <i>they / arrive / late</i>",answer:["They have arrived late."],placeholder:"They have arrived late.",explanation:"💡 They have arrived late."},
-  {prompt:"Bilde einen Aussagesatz: <i>Tom / read / two books</i>",answer:["Tom has read two books."],placeholder:"Tom has read two books.",explanation:"💡 Tom has read two books."},
-  {prompt:"Bilde einen Aussagesatz: <i>we / clean / the house</i>",answer:["We have cleaned the house."],placeholder:"We have cleaned the house.",explanation:"💡 We have cleaned the house."},
-  {prompt:"Bilde einen Aussagesatz: <i>he / lose / his bag</i>",answer:["He has lost his bag."],placeholder:"He has lost his bag.",explanation:"💡 He has lost his bag."},
-  {prompt:"Bilde einen Aussagesatz: <i>I / sell / my old bike</i>",answer:["I have sold my old bike."],placeholder:"I have sold my old bike.",explanation:"💡 I have sold my old bike."},
-  {prompt:"Bilde einen Aussagesatz: <i>Anna / win / a prize</i>",answer:["Anna has won a prize."],placeholder:"Anna has won a prize.",explanation:"💡 Anna has won a prize."},
-  {prompt:"Bilde einen Aussagesatz: <i>they / build / a treehouse</i>",answer:["They have built a treehouse."],placeholder:"They have built a treehouse.",explanation:"💡 They have built a treehouse."},
-  {prompt:"Bilde einen Aussagesatz: <i>the dog / eat / the food</i>",answer:["The dog has eaten the food."],placeholder:"The dog has eaten the food.",explanation:"💡 The dog has eaten the food."},
-  {prompt:"Übersetze: <i>Ich habe meine Hausaufgaben gemacht.</i>",answer:["I have done my homework.","I've done my homework."],placeholder:"I have done my homework.",explanation:"💡 I have done my homework."},
-  {prompt:"Übersetze: <i>Sie hat einen Kuchen gebacken.</i>",answer:["She has baked a cake.","She's baked a cake."],placeholder:"She has baked a cake.",explanation:"💡 She has baked a cake."},
-  {prompt:"Übersetze: <i>Wir sind nach Berlin gezogen.</i>",answer:["We have moved to Berlin.","We've moved to Berlin."],placeholder:"We have moved to Berlin.",explanation:"💡 We have moved to Berlin."},
-  {prompt:"Übersetze: <i>Er hat sein Bein gebrochen.</i>",answer:["He has broken his leg."],placeholder:"He has broken his leg.",explanation:"💡 He has broken his leg."},
-  {prompt:"Übersetze: <i>Sie haben das Spiel gewonnen.</i>",answer:["They have won the match.","They've won the match."],placeholder:"They have won the match.",explanation:"💡 They have won the match."},
-  {prompt:"Korrigiere: <i>She have written a letter.</i>",answer:["She has written a letter."],placeholder:"She has written a letter.",explanation:"💡 she → has"},
-  {prompt:"Korrigiere: <i>He has went home.</i>",answer:["He has gone home."],placeholder:"He has gone home.",explanation:"💡 go → gone (NICHT went!)"},
-  {prompt:"Korrigiere: <i>We have ate breakfast.</i>",answer:["We have eaten breakfast."],placeholder:"We have eaten breakfast.",explanation:"💡 eat → eaten (NICHT ate!)"},
-  {prompt:"Korrigiere: <i>I have did my homework.</i>",answer:["I have done my homework."],placeholder:"I have done my homework.",explanation:"💡 do → done"},
-  {prompt:"Korrigiere: <i>They has finished.</i>",answer:["They have finished."],placeholder:"They have finished.",explanation:"💡 they → have"},
-  {prompt:"Korrigiere: <i>My sister have lost her phone.</i>",answer:["My sister has lost her phone."],placeholder:"My sister has lost her phone.",explanation:"💡 sister → has"},
-  {prompt:"Korrigiere: <i>He have broke the window.</i>",answer:["He has broken the window."],placeholder:"He has broken the window.",explanation:"💡 he → has + broken"},
-  {prompt:"Korrigiere: <i>She has saw the film.</i>",answer:["She has seen the film."],placeholder:"She has seen the film.",explanation:"💡 see → seen"},
-  {prompt:"Korrigiere: <i>I have buyed a present.</i>",answer:["I have bought a present."],placeholder:"I have bought a present.",explanation:"💡 buy → bought (unregelmäßig!)"},
-  {prompt:"Korrigiere: <i>They have go home.</i>",answer:["They have gone home."],placeholder:"They have gone home.",explanation:"💡 Past participle: gone"},
+// ---- BILD L3: Umformen (Adjektiv-Satz → Adverb-Satz) ----
+const bildL3=[
+  {prompt:"Forme um: <i>He is a slow runner.</i> → He runs ___.",answer:["slowly"],placeholder:"slowly",explanation:"💡 slow → slowly. Vor dem Verb das Adjektiv, nach dem Verb das Adverb."},
+  {prompt:"Forme um: <i>She is a careful driver.</i> → She drives ___.",answer:["carefully"],placeholder:"carefully",explanation:"💡 careful → carefully."},
+  {prompt:"Forme um: <i>Tom is a quick reader.</i> → Tom reads ___.",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick → quickly."},
+  {prompt:"Forme um: <i>She is a nervous speaker.</i> → She speaks ___.",answer:["nervously"],placeholder:"nervously",explanation:"💡 nervous → nervously."},
+  {prompt:"Forme um: <i>He is a polite child.</i> → He answers ___.",answer:["politely"],placeholder:"politely",explanation:"💡 polite → politely."},
+  {prompt:"Forme um: <i>Anna is a clear speaker.</i> → Anna speaks ___.",answer:["clearly"],placeholder:"clearly",explanation:"💡 clear → clearly."},
+  {prompt:"Forme um: <i>The children are quiet.</i> → The children play ___.",answer:["quietly"],placeholder:"quietly",explanation:"💡 quiet → quietly."},
+  {prompt:"Forme um: <i>He is a loud singer.</i> → He sings ___.",answer:["loudly"],placeholder:"loudly",explanation:"💡 loud → loudly."},
+  {prompt:"Bilde einen Satz mit dem Adverb: <i>(she / sing / beautiful)</i>",answer:["She sings beautifully."],placeholder:"She sings beautifully.",explanation:"💡 beautiful → beautifully."},
+  {prompt:"Bilde einen Satz mit dem Adverb: <i>(he / drive / safe)</i>",answer:["He drives safely."],placeholder:"He drives safely.",explanation:"💡 safe → safely."},
+  {prompt:"Korrigiere: <i>He runs quick.</i>",answer:["He runs quickly."],placeholder:"He runs quickly.",explanation:"💡 Nach einem Verb braucht es ein <b>Adverb</b>: quick → <b>quickly</b>."},
+  {prompt:"Korrigiere: <i>She speaks slow.</i>",answer:["She speaks slowly."],placeholder:"She speaks slowly.",explanation:"💡 Nach einem Verb braucht es ein <b>Adverb</b>: slow → <b>slowly</b>."},
+  {prompt:"Korrigiere: <i>The cat moves quiet.</i>",answer:["The cat moves quietly."],placeholder:"The cat moves quietly.",explanation:"💡 quiet → <b>quietly</b> (Adverb nach moves)."},
+  {prompt:"Korrigiere: <i>He plays the piano nice.</i>",answer:["He plays the piano nicely."],placeholder:"He plays the piano nicely.",explanation:"💡 nice → <b>nicely</b> (wie spielt er?)."},
+  {prompt:"Korrigiere: <i>I can read this clear.</i>",answer:["I can read this clearly."],placeholder:"I can read this clearly.",explanation:"💡 clear → <b>clearly</b>."},
+  {prompt:"Forme um: <i>She is a happy girl.</i> → She smiles ___.",answer:["happily"],placeholder:"happily",explanation:"💡 happy → happily."},
+  {prompt:"Forme um: <i>He is a brave soldier.</i> → He fights ___.",answer:["bravely"],placeholder:"bravely",explanation:"💡 brave → bravely."},
+  {prompt:"Forme um: <i>Anna is a proud student.</i> → Anna walks ___.",answer:["proudly"],placeholder:"proudly",explanation:"💡 proud → proudly."},
+  {prompt:"Forme um: <i>The dog is lazy.</i> → The dog moves ___.",answer:["lazily"],placeholder:"lazily",explanation:"💡 lazy → -y zu -ily → <b>lazily</b>."},
+  {prompt:"Forme um: <i>The cat is gentle.</i> → The cat walks ___.",answer:["gently"],placeholder:"gently",explanation:"💡 gentle → gently."},
+  {prompt:"Bilde einen Satz: <i>(she / dance / beautiful)</i>",answer:["She dances beautifully."],placeholder:"She dances beautifully.",explanation:"💡 beautiful → beautifully."},
+  {prompt:"Bilde einen Satz: <i>(he / sing / proud)</i>",answer:["He sings proudly."],placeholder:"He sings proudly.",explanation:"💡 proud → proudly."},
+  {prompt:"Bilde einen Satz: <i>(they / work / busy)</i>",answer:["They work busily."],placeholder:"They work busily.",explanation:"💡 busy → busily."},
+  {prompt:"Bilde einen Satz: <i>(she / listen / careful)</i>",answer:["She listens carefully."],placeholder:"She listens carefully.",explanation:"💡 careful → carefully."},
+  {prompt:"Bilde einen Satz: <i>(he / speak / angry)</i>",answer:["He speaks angrily."],placeholder:"He speaks angrily.",explanation:"💡 angry → angrily."},
+  {prompt:"Korrigiere: <i>She behaves beautiful.</i>",answer:["She behaves beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>He runs proud.</i>",answer:["He runs proudly."],placeholder:"proudly",explanation:"💡 Nach dem Verb → Adverb: <b>proudly</b>."},
+  {prompt:"Korrigiere: <i>They play busy.</i>",answer:["They play busily."],placeholder:"busily",explanation:"💡 Nach dem Verb → Adverb: <b>busily</b>."},
+  {prompt:"Korrigiere: <i>She looks brave.</i>",answer:["She looks bravely."],placeholder:"bravely",explanation:"💡 Nach look (wie sie schaut) → Adverb: <b>bravely</b>."},
+  {prompt:"Korrigiere: <i>He sings gentle.</i>",answer:["He sings gently."],placeholder:"gently",explanation:"💡 Nach dem Verb → Adverb: <b>gently</b>."},
+  {prompt:"Korrigiere: <i>She answers angry to the teacher.</i>",answer:["She answers angrily to the teacher."],placeholder:"angrily",explanation:"💡 Nach dem Verb → Adverb: <b>angrily</b>."},
+  {prompt:"Korrigiere: <i>Tom writes very careful in his homework.</i>",answer:["Tom writes very carefully in his homework."],placeholder:"carefully",explanation:"💡 Nach dem Verb → Adverb: <b>carefully</b>."},
+  {prompt:"Übersetze: <i>Sie tanzt anmutig.</i>",answer:["She dances gracefully."],placeholder:"gracefully",explanation:"💡 anmutig = graceful → <b>gracefully</b>."},
+  {prompt:"Übersetze: <i>Der Mann arbeitet fleißig.</i>",answer:["The man works busily."],placeholder:"busily",explanation:"💡 fleißig = busy → <b>busily</b>."},
+  {prompt:"Übersetze: <i>Sie singt stolz und schön.</i>",answer:["She sings proudly and beautifully."],placeholder:"proudly and beautifully",explanation:"💡 stolz → proudly, schön → beautifully."},
+  {prompt:"Übersetze: <i>Der Lehrer erklärt alles deutlich.</i>",answer:["The teacher explains everything clearly."],placeholder:"clearly",explanation:"💡 deutlich = clear → <b>clearly</b>."},
+  {prompt:"Übersetze: <i>Die Kinder spielen glücklich zusammen.</i>",answer:["The children play happily together."],placeholder:"happily",explanation:"💡 glücklich = happy → <b>happily</b>."},
+  {prompt:"Übersetze: <i>Der Hund läuft schnell und fröhlich.</i>",answer:["The dog runs quickly and happily."],placeholder:"quickly and happily",explanation:"💡 schnell → quickly, fröhlich → happily."},
+  {prompt:"Übersetze: <i>Sie antwortet höflich und deutlich.</i>",answer:["She answers politely and clearly."],placeholder:"politely and clearly",explanation:"💡 höflich → politely, deutlich → clearly."},
+  {prompt:"Übersetze: <i>Tom arbeitet sorgfältig und sorglos.</i>",answer:["Tom works carefully and carelessly."],placeholder:"carefully and carelessly",explanation:"💡 sorgfältig → carefully, sorglos → carelessly."},
 ];
 
-// ---- VERN L1: Verneinung erkennen ----
-const vernL1=[
-  {type:"mc",prompt:"<i>I ___ eaten breakfast.</i> – Was passt?",options:["hasn't","haven't","not have","don't have"],correct:1,answer:"haven't"},
-  {type:"mc",prompt:"<i>She ___ finished her work.</i> – Was passt?",options:["haven't","hasn't","not has","not have"],correct:1,answer:"hasn't"},
-  {type:"mc",prompt:"<i>We ___ been to Spain.</i> – Was passt?",options:["hasn't","not have","haven't","don't"],correct:2,answer:"haven't"},
-  {type:"mc",prompt:"<i>He ___ called his mum.</i> – Was passt?",options:["haven't","not has","hasn't","don't have"],correct:2,answer:"hasn't"},
-  {type:"mc",prompt:"Was ist die Kurzform von <b>have not</b>?",options:["havent","hasn't","haven't","ham't"],correct:2,answer:"haven't"},
-  {type:"mc",prompt:"Was ist die Kurzform von <b>has not</b>?",options:["hasnt","haven't","hasn't","han't"],correct:2,answer:"hasn't"},
-  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She not has finished.","She doesn't has finished.","She hasn't finished.","She have not finished."],correct:2,answer:"She hasn't finished."},
-  {type:"mc",prompt:"Welcher Satz ist <b>falsch</b>?",options:["I haven't seen him.","He hasn't called.","They haven't been there.","She haven't finished."],correct:3,answer:"She haven't finished."},
-  {words:["I","haven't","seen","this","film","."],answer:["I haven't seen this film."],label:"Verneinung"},
-  {words:["She","hasn't","finished","her","homework","."],answer:["She hasn't finished her homework."],label:"Verneinung"},
-  {words:["They","haven't","been","to","Spain","."],answer:["They haven't been to Spain."],label:"Verneinung"},
-  {words:["He","hasn't","done","his","work","."],answer:["He hasn't done his work."],label:"Verneinung"},
-  {words:["We","have","not","played","football","."],answer:["We have not played football."],label:"Verneinung"},
-  {words:["My","brother","hasn't","written","an","email","."],answer:["My brother hasn't written an email."],label:"Verneinung"},
-  {words:["I","have","not","eaten","lunch","."],answer:["I have not eaten lunch."],label:"Verneinung"},
-
-  {type:"mc",prompt:"<i>You ___ called.</i> (Verneinung)",options:["hasn't","haven't","not have","don't"],correct:1,answer:"haven't"},
-  {type:"mc",prompt:"<i>Tom ___ done it.</i> (Verneinung)",options:["haven't","hasn't","not has","don't"],correct:1,answer:"hasn't"},
-  {type:"mc",prompt:"<i>They ___ moved.</i> (Verneinung)",options:["hasn't","not have","haven't","don't"],correct:2,answer:"haven't"},
-  {type:"mc",prompt:"<i>Anna ___ told me.</i> (Verneinung)",options:["haven't","hasn't","not has","don't have"],correct:1,answer:"hasn't"},
-  {type:"mc",prompt:"Welche Verneinung ist FALSCH?",options:["I haven't seen it.","She hasn't done it.","They hasn't come.","We haven't eaten."],correct:2,answer:"They hasn't come."},
-  {type:"mc",prompt:"Welche Form ist richtig: <i>I ___ been to Spain.</i> (Verneinung)",options:["hasn't","haven't","not have","don't have"],correct:1,answer:"haven't"},
-  {type:"mc",prompt:"Welche Form ist richtig: <i>The dog ___ eaten.</i> (Verneinung)",options:["haven't","hasn't","not has","don't"],correct:1,answer:"hasn't"},
-  {type:"mc",prompt:"Was ist die Kurzform von <b>I have not</b>?",options:["I'haven't","I haven't","I not have","I'mn't"],correct:1,answer:"I haven't"},
-  {type:"mc",prompt:"Welcher Satz ist FALSCH?",options:["He hasn't called.","She hasn't done it.","I haven't seen them.","Tom haven't called."],correct:3,answer:"Tom haven't called."},
-  {type:"mc",prompt:"Welcher Satz ist RICHTIG?",options:["She have not finished.","She not has finished.","She hasn't finished.","She doesn't has finished."],correct:2,answer:"She hasn't finished."},
-  {words:["You","haven't","done","your","homework","."],answer:["You haven't done your homework."],label:"Verneinung"},
-  {words:["Tom","hasn't","called","his","friend","."],answer:["Tom hasn't called his friend."],label:"Verneinung"},
-  {words:["They","haven't","arrived","yet","."],answer:["They haven't arrived yet."],label:"Verneinung"},
-  {words:["Anna","hasn't","read","the","book","."],answer:["Anna hasn't read the book."],label:"Verneinung"},
-  {words:["We","haven't","met","before","."],answer:["We haven't met before."],label:"Verneinung"},
-  {words:["I","haven't","lost","my","keys","."],answer:["I haven't lost my keys."],label:"Verneinung"},
-  {words:["She","hasn't","told","her","parents","."],answer:["She hasn't told her parents."],label:"Verneinung"},
-  {words:["He","hasn't","won","the","prize","."],answer:["He hasn't won the prize."],label:"Verneinung"},
-  {words:["The","dog","hasn't","eaten","today","."],answer:["The dog hasn't eaten today."],label:"Verneinung"},
-  {words:["My","friends","haven't","moved","house","."],answer:["My friends haven't moved house."],label:"Verneinung"},
-  {words:["We","have","not","finished","yet","."],answer:["We have not finished yet."],label:"Verneinung"},
-  {words:["I","have","not","seen","this","film","."],answer:["I have not seen this film."],label:"Verneinung"},
-  {words:["She","has","not","done","her","work","."],answer:["She has not done her work."],label:"Verneinung"},
-  {words:["They","have","not","visited","Paris","."],answer:["They have not visited Paris."],label:"Verneinung"},
-  {words:["He","has","not","spoken","to","me","."],answer:["He has not spoken to me."],label:"Verneinung"},
+// ---- SPECIAL POOL: Schreibänderungen (-y → -ily, full → fully) ----
+const specialPool=[
+  {type:"mc",prompt:"Adverb von <b>happy</b>?",options:["happyly","happily","happly","happyfully"],correct:1,answer:"happily"},
+  {type:"mc",prompt:"Adverb von <b>angry</b>?",options:["angrly","angryly","angrily","angerly"],correct:2,answer:"angrily"},
+  {type:"mc",prompt:"Adverb von <b>easy</b>?",options:["easyly","easily","easly","easely"],correct:1,answer:"easily"},
+  {type:"mc",prompt:"Adverb von <b>lucky</b>?",options:["luckly","luckyly","luckily","lucklily"],correct:2,answer:"luckily"},
+  {type:"mc",prompt:"Adverb von <b>busy</b>?",options:["busly","busyly","busily","busiley"],correct:2,answer:"busily"},
+  {type:"mc",prompt:"Adverb von <b>full</b>?",options:["fullly","fuly","fully","fulles"],correct:2,answer:"fully"},
+  {type:"mc",prompt:"Wie wird <b>angry</b> zum Adverb?",options:["angry + ly","y → ily","y bleibt + ly","y wird zu er"],correct:1,answer:"y → ily"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She smiled happyly.","She smiled happly.","She smiled happily.","She smiled happyfully."],correct:2,answer:"She smiled happily."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["The bottle is full.","I trust him fullly.","I trust him fully.","I trust him fuly."],correct:2,answer:"I trust him fully."},
+  {prompt:"Bilde das Adverb von <b>happy</b>:",answer:["happily"],placeholder:"happily",explanation:"💡 happy → -y wird zu -ily → <b>happily</b>."},
+  {prompt:"Bilde das Adverb von <b>angry</b>:",answer:["angrily"],placeholder:"angrily",explanation:"💡 angry → <b>angrily</b> (-y → -ily)."},
+  {prompt:"Bilde das Adverb von <b>easy</b>:",answer:["easily"],placeholder:"easily",explanation:"💡 easy → <b>easily</b>."},
+  {prompt:"Bilde das Adverb von <b>noisy</b>:",answer:["noisily"],placeholder:"noisily",explanation:"💡 noisy → <b>noisily</b> (-y → -ily)."},
+  {prompt:"Bilde das Adverb von <b>lazy</b>:",answer:["lazily"],placeholder:"lazily",explanation:"💡 lazy → <b>lazily</b>."},
+  {prompt:"Bilde das Adverb von <b>full</b>:",answer:["fully"],placeholder:"fully",explanation:"💡 full + ly → <b>fully</b> (ein l fällt weg)."},
+  {prompt:"Korrigiere: <i>The baby smiled happyly.</i>",answer:["The baby smiled happily."],placeholder:"happily",explanation:"💡 -y → -ily: happy → <b>happily</b>."},
+  {prompt:"Korrigiere: <i>He looked at me angryly.</i>",answer:["He looked at me angrily."],placeholder:"angrily",explanation:"💡 angry → <b>angrily</b>."},
+  {prompt:"Korrigiere: <i>She passed the test easyly.</i>",answer:["She passed the test easily."],placeholder:"easily",explanation:"💡 easy → <b>easily</b>."},
 ];
 
-// ---- VERN L2: Sätze verneinen (Lückentext) ----
-const vernL2=[
-  {prompt:"Setze die richtige Form ein: <i>I ___ (not / see) this film.</i>",answer:["haven't seen","have not seen"],placeholder:"haven't seen",explanation:"💡 I → <b>haven't</b> + past participle."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (not / finish) her work.</i>",answer:["hasn't finished","has not finished"],placeholder:"hasn't finished",explanation:"💡 she → <b>hasn't</b> + past participle."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (not / be) to Italy.</i>",answer:["haven't been","have not been"],placeholder:"haven't been",explanation:"💡 we → <b>haven't</b> + been."},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (not / call) me.</i>",answer:["hasn't called","has not called"],placeholder:"hasn't called",explanation:"💡 he → <b>hasn't</b> + called."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (not / do) their homework.</i>",answer:["haven't done","have not done"],placeholder:"haven't done",explanation:"💡 they → <b>haven't</b> + done."},
-  {prompt:"Setze die richtige Form ein: <i>My brother ___ (not / write) the email.</i>",answer:["hasn't written","has not written"],placeholder:"hasn't written",explanation:"💡 he → <b>hasn't</b> + written."},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (not / read) the book.</i>",answer:["haven't read","have not read"],placeholder:"haven't read",explanation:"💡 I → <b>haven't</b> + read."},
-  {prompt:"Setze die richtige Form ein: <i>The dog ___ (not / eat) the food.</i>",answer:["hasn't eaten","has not eaten"],placeholder:"hasn't eaten",explanation:"💡 the dog → <b>hasn't</b> + eaten."},
-  {prompt:"Setze die richtige Form ein: <i>You ___ (not / understand) me.</i>",answer:["haven't understood","have not understood"],placeholder:"haven't understood",explanation:"💡 you → <b>haven't</b> + understood."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (not / play) the piano.</i>",answer:["hasn't played","has not played"],placeholder:"hasn't played",explanation:"💡 she → <b>hasn't</b> + played."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (not / take) the bus.</i>",answer:["haven't taken","have not taken"],placeholder:"haven't taken",explanation:"💡 we → <b>haven't</b> + taken."},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (not / make) my bed.</i>",answer:["haven't made","have not made"],placeholder:"haven't made",explanation:"💡 I → <b>haven't</b> + made."},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (not / give) me a present.</i>",answer:["hasn't given","has not given"],placeholder:"hasn't given",explanation:"💡 he → <b>hasn't</b> + given."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (not / break) anything.</i>",answer:["haven't broken","have not broken"],placeholder:"haven't broken",explanation:"💡 they → <b>haven't</b> + broken."},
-  {prompt:"Setze die richtige Form ein: <i>My parents ___ (not / buy) a new car.</i>",answer:["haven't bought","have not bought"],placeholder:"haven't bought",explanation:"💡 they → <b>haven't</b> + bought."},
-
-  {prompt:"Setze die richtige Form ein: <i>You ___ (not / read) it.</i>",answer:["haven't read","have not read"],placeholder:"haven't read",explanation:"💡 You → <b>haven't read</b>."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (not / do) it.</i>",answer:["hasn't done","has not done"],placeholder:"hasn't done",explanation:"💡 She → <b>hasn't done</b>."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (not / arrive) it.</i>",answer:["haven't arrived","have not arrived"],placeholder:"haven't arrived",explanation:"💡 They → <b>haven't arrived</b>."},
-  {prompt:"Setze die richtige Form ein: <i>Tom ___ (not / find) it.</i>",answer:["hasn't found","has not found"],placeholder:"hasn't found",explanation:"💡 Tom → <b>hasn't found</b>."},
-  {prompt:"Setze die richtige Form ein: <i>The cat ___ (not / catch) it.</i>",answer:["hasn't caught","has not caught"],placeholder:"hasn't caught",explanation:"💡 The cat → <b>hasn't caught</b>."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (not / sleep) it.</i>",answer:["haven't slept","have not slept"],placeholder:"haven't slept",explanation:"💡 We → <b>haven't slept</b>."},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (not / write) it.</i>",answer:["haven't written","have not written"],placeholder:"haven't written",explanation:"💡 I → <b>haven't written</b>."},
-  {prompt:"Setze die richtige Form ein: <i>Anna ___ (not / speak) it.</i>",answer:["hasn't spoken","has not spoken"],placeholder:"hasn't spoken",explanation:"💡 Anna → <b>hasn't spoken</b>."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (not / build) it.</i>",answer:["haven't built","have not built"],placeholder:"haven't built",explanation:"💡 They → <b>haven't built</b>."},
-  {prompt:"Setze die richtige Form ein: <i>My friend ___ (not / call) it.</i>",answer:["hasn't called","has not called"],placeholder:"hasn't called",explanation:"💡 My friend → <b>hasn't called</b>."},
-  {prompt:"Setze die richtige Form ein: <i>The dog ___ (not / eat) it.</i>",answer:["hasn't eaten","has not eaten"],placeholder:"hasn't eaten",explanation:"💡 The dog → <b>hasn't eaten</b>."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (not / forget) it.</i>",answer:["haven't forgotten","have not forgotten"],placeholder:"haven't forgotten",explanation:"💡 We → <b>haven't forgotten</b>."},
-  {prompt:"Setze die richtige Form ein: <i>You ___ (not / leave) it.</i>",answer:["haven't left","have not left"],placeholder:"haven't left",explanation:"💡 You → <b>haven't left</b>."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (not / grow up) it.</i>",answer:["hasn't grown up","has not grown up"],placeholder:"hasn't grown up",explanation:"💡 She → <b>hasn't grown up</b>."},
-  {prompt:"Setze die richtige Form ein: <i>He ___ (not / sell) it.</i>",answer:["hasn't sold","has not sold"],placeholder:"hasn't sold",explanation:"💡 He → <b>hasn't sold</b>."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (not / draw) it.</i>",answer:["haven't drawn","have not drawn"],placeholder:"haven't drawn",explanation:"💡 They → <b>haven't drawn</b>."},
-  {prompt:"Setze die richtige Form ein: <i>I ___ (not / keep) it.</i>",answer:["haven't kept","have not kept"],placeholder:"haven't kept",explanation:"💡 I → <b>haven't kept</b>."},
-  {prompt:"Setze die richtige Form ein: <i>She ___ (not / drive) it.</i>",answer:["hasn't driven","has not driven"],placeholder:"hasn't driven",explanation:"💡 She → <b>hasn't driven</b>."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (not / feed) it.</i>",answer:["haven't fed","have not fed"],placeholder:"haven't fed",explanation:"💡 We → <b>haven't fed</b>."},
-  {prompt:"Setze die richtige Form ein: <i>Tom ___ (not / sing) it.</i>",answer:["hasn't sung","has not sung"],placeholder:"hasn't sung",explanation:"💡 Tom → <b>hasn't sung</b>."},
-  {prompt:"Setze die richtige Form ein: <i>Anna ___ (not / tell) it.</i>",answer:["hasn't told","has not told"],placeholder:"hasn't told",explanation:"💡 Anna → <b>hasn't told</b>."},
-  {prompt:"Setze die richtige Form ein: <i>The boy ___ (not / fall) it.</i>",answer:["hasn't fallen","has not fallen"],placeholder:"hasn't fallen",explanation:"💡 The boy → <b>hasn't fallen</b>."},
-  {prompt:"Setze die richtige Form ein: <i>My parents ___ (not / know) it.</i>",answer:["haven't known","have not known"],placeholder:"haven't known",explanation:"💡 My parents → <b>haven't known</b>."},
-  {prompt:"Setze die richtige Form ein: <i>We ___ (not / teach) it.</i>",answer:["haven't taught","have not taught"],placeholder:"haven't taught",explanation:"💡 We → <b>haven't taught</b>."},
-  {prompt:"Setze die richtige Form ein: <i>They ___ (not / sit) it.</i>",answer:["haven't sat","have not sat"],placeholder:"haven't sat",explanation:"💡 They → <b>haven't sat</b>."},
+// ---- AUS POOL: Ausnahmen (good→well, hard, fast) ----
+const ausPool=[
+  {type:"mc",prompt:"Adverb von <b>good</b>?",options:["goodly","gooderly","wellly","well"],correct:3,answer:"well"},
+  {type:"mc",prompt:"Adverb von <b>hard</b>?",options:["hardly","hard","hardily","hardier"],correct:1,answer:"hard"},
+  {type:"mc",prompt:"Adverb von <b>fast</b>?",options:["fastly","faster","fast","fastily"],correct:2,answer:"fast"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She sings goodly.","She sings well.","She sings gooder.","She sings goody."],correct:1,answer:"She sings well."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["He works hardly.","He works hardily.","He works hard.","He works harder."],correct:2,answer:"He works hard."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["The car drives fastly.","The car drives fast.","The car drives faster.","The car drives fastily."],correct:1,answer:"The car drives fast."},
+  {type:"mc",prompt:"Was bedeutet <b>hardly</b>?",options:["sehr stark","kaum","mit harter Arbeit","ständig"],correct:1,answer:"kaum"},
+  {type:"mc",prompt:"<i>Scout sings very ___.</i> – Was passt?",options:["good","goodly","well","gooder"],correct:2,answer:"well"},
+  {prompt:"Bilde das Adverb von <b>good</b>:",answer:["well"],placeholder:"well",explanation:"💡 Ausnahme! good → <b>well</b> (NICHT goodly)."},
+  {prompt:"Bilde das Adverb von <b>hard</b>:",answer:["hard"],placeholder:"hard",explanation:"💡 hard ist Adjektiv UND Adverb. <i>hardly</i> bedeutet „kaum“!"},
+  {prompt:"Bilde das Adverb von <b>fast</b>:",answer:["fast"],placeholder:"fast",explanation:"💡 fast ist Adjektiv UND Adverb (kein -ly!)."},
+  {prompt:"Ergänze: <i>She did her job ___ (good).</i>",answer:["well"],placeholder:"well",explanation:"💡 good → <b>well</b> (Ausnahme!)."},
+  {prompt:"Ergänze: <i>He worked ___ (hard) all day.</i>",answer:["hard"],placeholder:"hard",explanation:"💡 hard ist Adjektiv = Adverb."},
+  {prompt:"Ergänze: <i>The children run ___ (fast).</i>",answer:["fast"],placeholder:"fast",explanation:"💡 fast ist Adjektiv = Adverb (kein -ly!)."},
+  {prompt:"Korrigiere: <i>She speaks English goodly.</i>",answer:["She speaks English well."],placeholder:"well",explanation:"💡 good → <b>well</b>, NICHT goodly."},
+  {prompt:"Korrigiere: <i>He runs very fastly.</i>",answer:["He runs very fast."],placeholder:"fast",explanation:"💡 fast bleibt fast (kein -ly)."},
+  {prompt:"Korrigiere: <i>I studied hardly for the test.</i>",answer:["I studied hard for the test."],placeholder:"hard",explanation:"💡 <b>hard</b> = mit Anstrengung. <i>hardly</i> = kaum!"},
+  {prompt:"Korrigiere: <i>She is a happily girl.</i>",answer:["She is a happy girl."],placeholder:"happy",explanation:"💡 Vor einem Nomen → Adjektiv: <b>happy</b>."},
+  {prompt:"Korrigiere: <i>He speaks bravely and is brave.</i>",answer:["He speaks bravely and is brave."],placeholder:"(korrekt)",explanation:"✓ Adverb nach Verb, Adjektiv nach be = richtig!"},
+  {prompt:"Korrigiere: <i>She sings beautiful.</i>",answer:["She sings beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>The music is beautifully.</i>",answer:["The music is beautiful."],placeholder:"beautiful",explanation:"💡 Nach be → Adjektiv: <b>beautiful</b>."},
+  {prompt:"Korrigiere: <i>He answered angry.</i>",answer:["He answered angrily."],placeholder:"angrily",explanation:"💡 Nach dem Verb → Adverb: <b>angrily</b>."},
+  {prompt:"Korrigiere: <i>She acted gentle.</i>",answer:["She acted gently."],placeholder:"gently",explanation:"💡 Nach dem Verb → Adverb: <b>gently</b>."},
+  {prompt:"Korrigiere: <i>This is an easy and he solved it easy.</i>",answer:["This is easy and he solved it easily."],placeholder:"easy … easily",explanation:"💡 Nach be → Adjektiv (easy), nach Verb → Adverb (easily)."},
+  {prompt:"Korrigiere: <i>She looks proud and stares proudly.</i>",answer:["She looks proud and stares proudly."],placeholder:"(korrekt)",explanation:"✓ Nach look (Zustand) → Adjektiv (proud), nach anderen Verben → Adverb (proudly)."},
+  {prompt:"Korrigiere: <i>The students are noisy and play noisily.</i>",answer:["The students are noisy and play noisily."],placeholder:"(korrekt)",explanation:"✓ Nach be → Adjektiv (noisy), nach Verb → Adverb (noisily)."},
+  {prompt:"Korrigiere: <i>He is patient and helps patiently.</i>",answer:["He is patient and helps patiently."],placeholder:"(korrekt)",explanation:"✓ Nach be → Adjektiv, nach Verb → Adverb = richtig!"},
+  {prompt:"Korrigiere: <i>She walked careful through the dark street.</i>",answer:["She walked carefully through the dark street."],placeholder:"carefully",explanation:"💡 Nach dem Verb (walked) → Adverb: <b>carefully</b>."},
+  {prompt:"Korrigiere: <i>The answer was easily.</i>",answer:["The answer was easy."],placeholder:"easy",explanation:"💡 Nach be (war) → Adjektiv: <b>easy</b>."},
+  {prompt:"Korrigiere: <i>He jumped proud into the swimming pool.</i>",answer:["He jumped proudly into the swimming pool."],placeholder:"proudly",explanation:"💡 Nach dem Verb → Adverb: <b>proudly</b>."},
+  {prompt:"Korrigiere: <i>The student is excited and listened excited.</i>",answer:["The student is excited and listened excitedly."],placeholder:"excited … excitedly",explanation:"💡 Nach be → Adjektiv (excited), nach Verb → Adverb (excitedly)."},
+  {prompt:"Korrigiere: <i>She draws beautiful.</i>",answer:["She draws beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb (draws) → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>The day is beautifully and hot.</i>",answer:["The day is beautiful and hot."],placeholder:"beautiful",explanation:"💡 Nach be → Adjektiv: <b>beautiful</b>."},
+  {prompt:"Korrigiere: <i>She is confidently and speaks confident.</i>",answer:["She is confident and speaks confidently."],placeholder:"confident … confidently",explanation:"💡 Nach be → Adjektiv (confident), nach Verb → Adverb (confidently)."},
+  {prompt:"Korrigiere: <i>The game was exciting and the children played excited.</i>",answer:["The game was exciting and the children played excitedly."],placeholder:"exciting … excitedly",explanation:"💡 Nach be → Adjektiv (exciting), nach Verb → Adverb (excitedly)."},
+  {prompt:"Korrigiere: <i>He is a slowly worker.</i>",answer:["He is a slow worker."],placeholder:"slow",explanation:"💡 Vor einem Nomen → Adjektiv: <b>slow</b>."},
+  {prompt:"Korrigiere: <i>The teacher speaks patient.</i>",answer:["The teacher speaks patiently."],placeholder:"patiently",explanation:"💡 Nach dem Verb (speaks) → Adverb: <b>patiently</b>."},
+  {prompt:"Korrigiere: <i>The door is safely.</i>",answer:["The door is safe."],placeholder:"safe",explanation:"💡 Nach be → Adjektiv: <b>safe</b>."},
+  {prompt:"Korrigiere: <i>He locked the door safe.</i>",answer:["He locked the door safely."],placeholder:"safely",explanation:"💡 Nach dem Verb (locked) → Adverb: <b>safely</b>."},
+  {prompt:"Korrigiere: <i>She is creative and paints creative.</i>",answer:["She is creative and paints creatively."],placeholder:"creative … creatively",explanation:"💡 Nach be → Adjektiv (creative), nach Verb → Adverb (creatively)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Der Schüler ist faul, aber heute arbeitet er fleißig.</i>",answer:["The student is lazy, but today he works busily."],placeholder:"lazy … busily",explanation:"💡 Nach be → lazy (Adj), nach Verb → busily (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Die Lehrerin ist geduldig und unterrichtet geduldig.</i>",answer:["The teacher is patient and teaches patiently."],placeholder:"patient … patiently",explanation:"💡 Nach be → patient (Adj), nach Verb → patiently (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Das Lied ist schön und er singt schön.</i>",answer:["The song is beautiful and he sings beautifully."],placeholder:"beautiful … beautifully",explanation:"💡 Nach be → beautiful (Adj), nach Verb → beautifully (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Der Roman ist spannend und erzählt spannend.</i>",answer:["The novel is exciting and tells excitingly."],placeholder:"exciting … excitedly",explanation:"💡 Nach be → exciting (Adj), nach Verb → excitingly (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Das Kind ist selbstbewusst und antwortet selbstbewusst.</i>",answer:["The child is confident and answers confidently."],placeholder:"confident … confidently",explanation:"💡 Nach be → confident (Adj), nach Verb → confidently (Adv)."},
 ];
 
-// ---- VERN L3: Aussagen in Verneinungen umformen ----
-const vernL3=[
-  {prompt:"Verneine: <i>I have seen this film.</i>",answer:["I haven't seen this film.","I have not seen this film."],placeholder:"I haven't seen this film.",explanation:"💡 have → <b>haven't</b>; past participle bleibt!"},
-  {prompt:"Verneine: <i>She has finished her work.</i>",answer:["She hasn't finished her work.","She has not finished her work."],placeholder:"She hasn't finished her work.",explanation:"💡 has → <b>hasn't</b>."},
-  {prompt:"Verneine: <i>We have visited the museum.</i>",answer:["We haven't visited the museum.","We have not visited the museum."],placeholder:"We haven't visited the museum.",explanation:"💡 have → <b>haven't</b>."},
-  {prompt:"Verneine: <i>He has eaten breakfast.</i>",answer:["He hasn't eaten breakfast.","He has not eaten breakfast."],placeholder:"He hasn't eaten breakfast.",explanation:"💡 has → <b>hasn't</b>."},
-  {prompt:"Verneine: <i>They have done their homework.</i>",answer:["They haven't done their homework.","They have not done their homework."],placeholder:"They haven't done their homework.",explanation:"💡 have → <b>haven't</b>."},
-  {prompt:"Verneine: <i>I have understood the question.</i>",answer:["I haven't understood the question.","I have not understood the question."],placeholder:"I haven't understood the question.",explanation:"💡 have → <b>haven't</b>."},
-  {prompt:"Verneine: <i>She has read the book.</i>",answer:["She hasn't read the book.","She has not read the book."],placeholder:"She hasn't read the book.",explanation:"💡 has → <b>hasn't</b>."},
-  {prompt:"Verneine: <i>We have been to Rome.</i>",answer:["We haven't been to Rome.","We have not been to Rome."],placeholder:"We haven't been to Rome.",explanation:"💡 have → <b>haven't</b>."},
-  {prompt:"Verneine: <i>My brother has written an email.</i>",answer:["My brother hasn't written an email.","My brother has not written an email."],placeholder:"My brother hasn't written an email.",explanation:"💡 has → <b>hasn't</b>."},
-  {prompt:"Verneine: <i>The dog has eaten my homework.</i>",answer:["The dog hasn't eaten my homework.","The dog has not eaten my homework."],placeholder:"The dog hasn't eaten my homework.",explanation:"💡 has → <b>hasn't</b>."},
-  {prompt:"Verneine: <i>I have finished my project.</i>",answer:["I haven't finished my project.","I have not finished my project."],placeholder:"I haven't finished my project.",explanation:"💡 have → <b>haven't</b>."},
-  {prompt:"Verneine: <i>They have lost the match.</i>",answer:["They haven't lost the match.","They have not lost the match."],placeholder:"They haven't lost the match.",explanation:"💡 have → <b>haven't</b>."},
-  {prompt:"Korrigiere: <i>She not has finished her work.</i>",answer:["She hasn't finished her work.","She has not finished her work."],placeholder:"She hasn't finished her work.",explanation:"💡 Verneinung: Subjekt + <b>has not / hasn't</b> + past participle."},
-  {prompt:"Korrigiere: <i>He doesn't has done his work.</i>",answer:["He hasn't done his work.","He has not done his work."],placeholder:"He hasn't done his work.",explanation:"💡 Im Present Perfect: <b>hasn't</b>, nicht <i>doesn't has</i>."},
-  {prompt:"Korrigiere: <i>I haven't ate lunch.</i>",answer:["I haven't eaten lunch.","I have not eaten lunch."],placeholder:"I haven't eaten lunch.",explanation:"💡 Past participle von <b>eat</b> ist <b>eaten</b>, nicht <i>ate</i>."},
-
-  {prompt:"Verneine: <i>They have arrived.</i>",answer:["They haven't arrived.","They have not arrived."],placeholder:"They haven't arrived.",explanation:"💡 They haven't arrived."},
-  {prompt:"Verneine: <i>She has called.</i>",answer:["She hasn't called.","She has not called."],placeholder:"She hasn't called.",explanation:"💡 She hasn't called."},
-  {prompt:"Verneine: <i>We have met.</i>",answer:["We haven't met.","We have not met."],placeholder:"We haven't met.",explanation:"💡 We haven't met."},
-  {prompt:"Verneine: <i>Tom has finished.</i>",answer:["Tom hasn't finished.","Tom has not finished."],placeholder:"Tom hasn't finished.",explanation:"💡 Tom hasn't finished."},
-  {prompt:"Verneine: <i>I have lost my bag.</i>",answer:["I haven't lost my bag.","I have not lost my bag."],placeholder:"I haven't lost my bag.",explanation:"💡 I haven't lost my bag."},
-  {prompt:"Verneine: <i>They have left.</i>",answer:["They haven't left.","They have not left."],placeholder:"They haven't left.",explanation:"💡 They haven't left."},
-  {prompt:"Verneine: <i>Anna has done it.</i>",answer:["Anna hasn't done it.","Anna has not done it."],placeholder:"Anna hasn't done it.",explanation:"💡 Anna hasn't done it."},
-  {prompt:"Verneine: <i>We have visited Rome.</i>",answer:["We haven't visited Rome.","We have not visited Rome."],placeholder:"We haven't visited Rome.",explanation:"💡 We haven't visited Rome."},
-  {prompt:"Verneine: <i>He has bought a car.</i>",answer:["He hasn't bought a car.","He has not bought a car."],placeholder:"He hasn't bought a car.",explanation:"💡 He hasn't bought a car."},
-  {prompt:"Verneine: <i>My friends have moved.</i>",answer:["My friends haven't moved.","My friends have not moved."],placeholder:"My friends haven't moved.",explanation:"💡 My friends haven't moved."},
-  {prompt:"Verneine: <i>She has sold her bike.</i>",answer:["She hasn't sold her bike.","She has not sold her bike."],placeholder:"She hasn't sold her bike.",explanation:"💡 She hasn't sold her bike."},
-  {prompt:"Verneine: <i>They have eaten lunch.</i>",answer:["They haven't eaten lunch.","They have not eaten lunch."],placeholder:"They haven't eaten lunch.",explanation:"💡 They haven't eaten lunch."},
-  {prompt:"Verneine: <i>I have read the book.</i>",answer:["I haven't read the book.","I have not read the book."],placeholder:"I haven't read the book.",explanation:"💡 I haven't read the book."},
-  {prompt:"Verneine: <i>He has spoken to her.</i>",answer:["He hasn't spoken to her.","He has not spoken to her."],placeholder:"He hasn't spoken to her.",explanation:"💡 He hasn't spoken to her."},
-  {prompt:"Verneine: <i>We have seen the film.</i>",answer:["We haven't seen the film.","We have not seen the film."],placeholder:"We haven't seen the film.",explanation:"💡 We haven't seen the film."},
-  {prompt:"Korrigiere: <i>She not has finished.</i>",answer:["She hasn't finished.","She has not finished."],placeholder:"She hasn't finished.",explanation:"💡 Verneinung: hasn't"},
-  {prompt:"Korrigiere: <i>He doesn't have done his homework.</i>",answer:["He hasn't done his homework.","He has not done his homework."],placeholder:"He hasn't done his homework.",explanation:"💡 PP: hasn't done"},
-  {prompt:"Korrigiere: <i>They hasn't called.</i>",answer:["They haven't called.","They have not called."],placeholder:"They haven't called.",explanation:"💡 they → haven't"},
-  {prompt:"Korrigiere: <i>I haven't ate breakfast.</i>",answer:["I haven't eaten breakfast.","I have not eaten breakfast."],placeholder:"I haven't eaten breakfast.",explanation:"💡 eat → eaten"},
-  {prompt:"Korrigiere: <i>She haven't seen it.</i>",answer:["She hasn't seen it.","She has not seen it."],placeholder:"She hasn't seen it.",explanation:"💡 she → hasn't"},
-  {prompt:"Korrigiere: <i>We hasn't met yet.</i>",answer:["We haven't met yet.","We have not met yet."],placeholder:"We haven't met yet.",explanation:"💡 we → haven't"},
-  {prompt:"Korrigiere: <i>The dog hasn't ate.</i>",answer:["The dog hasn't eaten.","The dog has not eaten."],placeholder:"The dog hasn't eaten.",explanation:"💡 eat → eaten"},
-  {prompt:"Korrigiere: <i>My friend not have arrived.</i>",answer:["My friend hasn't arrived.","My friend has not arrived."],placeholder:"My friend hasn't arrived.",explanation:"💡 Subjekt + hasn't + pp"},
-  {prompt:"Korrigiere: <i>They haven't go home.</i>",answer:["They haven't gone home.","They have not gone home."],placeholder:"They haven't gone home.",explanation:"💡 go → gone"},
-  {prompt:"Korrigiere: <i>He hasn't broke the cup.</i>",answer:["He hasn't broken the cup.","He has not broken the cup."],placeholder:"He hasn't broken the cup.",explanation:"💡 break → broken"},
+// ---- VS L1: Adjektiv vs. Adverb erkennen ----
+const vsL1=[
+  {type:"mc",prompt:"<i>She is a careful driver.</i> – <b>careful</b> ist …",options:["Adjektiv","Adverb","Verb","Nomen"],correct:0,answer:"Adjektiv"},
+  {type:"mc",prompt:"<i>She drives carefully.</i> – <b>carefully</b> ist …",options:["Adjektiv","Adverb","Verb","Nomen"],correct:1,answer:"Adverb"},
+  {type:"mc",prompt:"Adjektive stehen meist …",options:["nach dem Verb","vor dem Nomen","am Satzanfang","am Satzende"],correct:1,answer:"vor dem Nomen"},
+  {type:"mc",prompt:"Adverben stehen meist …",options:["vor dem Nomen","nach dem Verb","am Satzanfang","vor dem Subjekt"],correct:1,answer:"nach dem Verb"},
+  {type:"mc",prompt:"<i>He is a slow runner.</i> – Welches Wort wäre als Adverb richtig?",options:["slow","slower","slowly","slowness"],correct:2,answer:"slowly"},
+  {type:"mc",prompt:"<i>The dog is loud.</i> – Welche Form wäre als Adverb in einem anderen Satz nötig?",options:["loudly","louder","loud","loudness"],correct:0,answer:"loudly"},
+  {type:"mc",prompt:"<i>She is a happy child.</i> – <b>happy</b> beschreibt …",options:["wie sie etwas tut","das Kind","das Verb","das Subjekt"],correct:1,answer:"das Kind"},
+  {type:"mc",prompt:"<i>She smiles happily.</i> – <b>happily</b> beschreibt …",options:["das Kind","das Verb (smiles)","das Nomen","Zeit"],correct:1,answer:"das Verb (smiles)"},
+  {type:"mc",prompt:"In welchem Satz steht ein Adverb?",options:["The cake is delicious.","She sings beautifully.","He is a good student.","They are quiet kids."],correct:1,answer:"She sings beautifully."},
+  {type:"mc",prompt:"In welchem Satz steht ein Adjektiv?",options:["She speaks clearly.","He runs fast.","Tom is a clever boy.","They work hard."],correct:2,answer:"Tom is a clever boy."},
+  {type:"mc",prompt:"<i>The music is loud.</i> – Was beschreibt <b>loud</b>?",options:["das Verb","die Musik (Nomen)","die Zeit","den Ort"],correct:1,answer:"die Musik (Nomen)"},
+  {type:"mc",prompt:"<i>The music plays loudly.</i> – Was beschreibt <b>loudly</b>?",options:["die Musik","wie das Verb 'plays' geschieht","den Ort","den Sänger"],correct:1,answer:"wie das Verb 'plays' geschieht"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["She drives careful.","She drives carefully.","She drive carefully.","She a carefully driver."],correct:1,answer:"She drives carefully."},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["He is a slowly runner.","He is a slow runner.","He runs slow.","He is slow run."],correct:1,answer:"He is a slow runner."},
+  {type:"mc",prompt:"<i>The girl is happy.</i> – <b>happy</b> ist …",options:["Adjektiv","Adverb","Verb","Nomen"],correct:0,answer:"Adjektiv"},
+  {type:"mc",prompt:"<i>The girl smiles happily.</i> – <b>happily</b> ist …",options:["Adjektiv","Adverb","Verb","Nomen"],correct:1,answer:"Adverb"},
+  {type:"mc",prompt:"<i>He is a brave boy.</i> – <b>brave</b> ist …",options:["Adverb","Adjektiv","Nomen","Verb"],correct:1,answer:"Adjektiv"},
+  {type:"mc",prompt:"<i>He acts bravely.</i> – <b>bravely</b> ist …",options:["Adjektiv","Nomen","Adverb","Verb"],correct:2,answer:"Adverb"},
+  {type:"mc",prompt:"In welchem Satz steht ein Adjektiv?",options:["She speaks beautifully.","She is beautiful.","She sings beautiful.","She dances beautifully."],correct:1,answer:"She is beautiful."},
+  {type:"mc",prompt:"In welchem Satz steht ein Adverb?",options:["The dog is loud.","A loud dog.","The dog barks loud.","The dog is a loud animal."],correct:2,answer:"The dog barks loud."},
+  {type:"mc",prompt:"Adjektive beschreiben …",options:["das Verb","das Nomen / die Person","wie etwas geschieht","wann etwas geschieht"],correct:1,answer:"das Nomen / die Person"},
+  {type:"mc",prompt:"Adverbien beschreiben …",options:["das Nomen","die Person","das Verb / wie etwas geschieht","den Ort"],correct:2,answer:"das Verb / wie etwas geschieht"},
+  {type:"mc",prompt:"<i>The music is beautiful.</i> – <b>beautiful</b> steht …",options:["nach dem Verb be","vor dem Nomen","am Satzende nach Adjektiv","als Adverb"],correct:0,answer:"nach dem Verb be"},
+  {type:"mc",prompt:"<i>She plays beautifully.</i> – <b>beautifully</b> steht …",options:["vor dem Nomen","nach dem Verb plays","vor dem Subjekt","am Satzanfang"],correct:1,answer:"nach dem Verb plays"},
+  {type:"mc",prompt:"<i>She is a beautiful dancer.</i> – Wie viele Adjektive stehen hier?",options:["0","1","2","3"],correct:2,answer:"2"},
+  {type:"mc",prompt:"In welchem Satz ist das Adverb an der richtigen Stelle?",options:["She beautiful sings.","She sings beautiful.","She sings beautifully.","Beautifully she sings."],correct:2,answer:"She sings beautifully."},
+  {type:"mc",prompt:"<i>He is a good student.</i> – Beide Wörter sind …",options:["Adverbien","Adjektive","gemischt: good=Adj, student=Nomen","gemischt: good=Nomen, student=Adj"],correct:1,answer:"Adjektive"},
+  {type:"mc",prompt:"<i>He does his homework good.</i> – Das ist …",options:["richtig (Adverb good)","falsch (muss well sein)","falsch (muss good bleiben)","falsch (muss goodly sein)"],correct:1,answer:"falsch (muss well sein)"},
+  {type:"mc",prompt:"<i>She is polite.</i> vs. <i>She speaks politely.</i> – Der Unterschied ist …",options:["polite ist Verb, politely ist Nomen","polite beschreibt die Person, politely beschreibt das Sprechen","beide sind gleich","polite ist Nomen, politely ist Adverb"],correct:1,answer:"polite beschreibt die Person, politely beschreibt das Sprechen"},
+  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["He is a kind boy and speaks kind.","He is a kind boy and speaks kindly.","He is kindly boy and speaks kind.","He is kind and kindly."],correct:1,answer:"He is a kind boy and speaks kindly."},
+  {type:"mc",prompt:"<i>The dress is beautiful and costs …</i> – Welche Form passt?",options:["a lot / a lot of money (Adj)","a lot / a lot of money (Adverb)","beautiful (Adj)","beautifully (Adverb)"],correct:1,answer:"a lot / a lot of money (Adverb)"},
+  {type:"mc",prompt:"<i>She is angry and shouts …</i> – Welche Form ist richtig?",options:["angry","angrily","angry and angrily","angrily in a angry way"],correct:1,answer:"angrily"},
+  {type:"mc",prompt:"Wo stehen Adjektive NICHT?",options:["vor dem Nomen","nach be","nach vielen anderen Verben","vor dem Nomen im Satz"],correct:2,answer:"nach vielen anderen Verben"},
+  {type:"mc",prompt:"Welcher Satz enthält sowohl Adjektiv als auch Adverb?",options:["She is happy.","She smiles happily.","The happy girl smiles.","She is a happy girl and smiles happily."],correct:3,answer:"She is a happy girl and smiles happily."},
+  {type:"mc",prompt:"<i>This is easy.</i> vs. <i>She solved it easily.</i> – Das zeigt …",options:["gleicher Wortschatz, verschiedene Funktion","verschiedener Wortschatz, gleiche Funktion","Adjektiv: describes subject; Adverb: describes verb","Noun und Verb sind gleich"],correct:2,answer:"Adjektiv: describes subject; Adverb: describes verb"},
+  {type:"mc",prompt:"In welchem Satz steht ein Adverb des Verbs?",options:["She is very happy.","She plays the guitar very well.","This is very important.","She has a very good idea."],correct:1,answer:"She plays the guitar very well."},
+  {type:"mc",prompt:"Adjektiv oder Adverb? <i>You play …</i>",options:["good (Adjektiv)","well (Adverb)","good oder well (beides möglich)","neither (weder noch)"],correct:1,answer:"well (Adverb)"},
+  {type:"mc",prompt:"<i>She walks the street …</i> – Adjektiv oder Adverb?",options:["carefully (Adverb) ✓","careful (Adjektiv)","both possible","neither"],correct:0,answer:"carefully (Adverb) ✓"},
+  {type:"mc",prompt:"Wie unterscheidest du Adjektiv und Adverb der Art und Weise?",options:["Adjektiv endet auf -ly, Adverb nicht","Adjektiv beschreibt Nomen, Adverb beschreibt Verb","Adjektiv ist am Satzanfang, Adverb am Ende","beide können überall stehen"],correct:1,answer:"Adjektiv beschreibt Nomen, Adverb beschreibt Verb"},
+  {type:"mc",prompt:"Welches Satzpaar zeigt den Unterschied klar?",options:["happy / happily in: The girl is happy and runs happily.","good / well in: He is good and sings well.","careful / carefully in: She is careful and drives carefully.","fast / faster in: He is fast and runs faster."],correct:2,answer:"careful / carefully in: She is careful and drives carefully."},
 ];
 
-// ---- FRAG L1: Ja/Nein-Fragen + Short Answers ----
-const fragL1=[
-  {type:"mc",prompt:"Wie bildet man eine Ja/Nein-Frage im Present Perfect?",options:["Subjekt + have/has + past participle?","Have/Has + Subjekt + past participle?","Do/Does + Subjekt + have + past participle?","Subjekt + do/does + past participle?"],correct:1,answer:"Have/Has + Subjekt + past participle?"},
-  {type:"mc",prompt:"<i>___ you finished your homework?</i>",options:["Has","Did","Have","Does"],correct:2,answer:"Have"},
-  {type:"mc",prompt:"<i>___ she seen the news?</i>",options:["Have","Has","Did","Does"],correct:1,answer:"Has"},
-  {type:"mc",prompt:"<i>___ they arrived?</i>",options:["Has","Did","Do","Have"],correct:3,answer:"Have"},
-  {type:"mc",prompt:"<i>Have you finished?</i> – Welche Short Answer ist <b>richtig</b>?",options:["Yes, I do.","Yes, I have.","Yes, I am.","Yes, I finish."],correct:1,answer:"Yes, I have."},
-  {type:"mc",prompt:"<i>Has she called?</i> – Welche Short Answer ist <b>richtig</b>?",options:["No, she doesn't.","No, she don't.","No, she hasn't.","No, she haven't."],correct:2,answer:"No, she hasn't."},
-  {type:"mc",prompt:"<i>Have they been to Berlin?</i> – Welche Short Answer ist <b>richtig</b>?",options:["Yes, they do.","Yes, they did.","Yes, they been.","Yes, they have."],correct:3,answer:"Yes, they have."},
-  {type:"mc",prompt:"Welche Frage ist <b>richtig</b>?",options:["Does she has finished?","Has she finished?","Have she finished?","Did she has finished?"],correct:1,answer:"Has she finished?"},
-  {words:["Have","you","seen","this","film","?"],answer:["Have you seen this film?"],label:"Ja/Nein-Frage"},
-  {words:["Has","she","finished","her","homework","?"],answer:["Has she finished her homework?"],label:"Ja/Nein-Frage"},
-  {words:["Have","they","arrived","?"],answer:["Have they arrived?"],label:"Ja/Nein-Frage"},
-  {words:["Has","he","done","his","work","?"],answer:["Has he done his work?"],label:"Ja/Nein-Frage"},
-  {words:["Have","we","met","before","?"],answer:["Have we met before?"],label:"Ja/Nein-Frage"},
-  {words:["Has","the","dog","eaten","?"],answer:["Has the dog eaten?"],label:"Ja/Nein-Frage"},
-  {words:["Yes",",","I","have","."],answer:["Yes, I have."],label:"Short Answer (positiv)"},
-  {words:["No",",","she","hasn't","."],answer:["No, she hasn't."],label:"Short Answer (negativ)"},
-  {words:["Yes",",","they","have","."],answer:["Yes, they have."],label:"Short Answer (positiv)"},
-
-  {type:"mc",prompt:"<i>___ Tom finished his work?</i>",options:["Have","Has","Did","Does"],correct:1,answer:"Has"},
-  {type:"mc",prompt:"<i>___ Anna and Tom arrived?</i>",options:["Has","Have","Did","Do"],correct:1,answer:"Have"},
-  {type:"mc",prompt:"<i>___ the dog eaten?</i>",options:["Have","Has","Did","Does"],correct:1,answer:"Has"},
-  {type:"mc",prompt:"<i>___ you been to London?</i>",options:["Has","Did","Have","Does"],correct:2,answer:"Have"},
-  {type:"mc",prompt:"<i>Has she called?</i> Short answer: Ja",options:["Yes, she has.","Yes, she did.","Yes, she does.","Yes, she is."],correct:0,answer:"Yes, she has."},
-  {type:"mc",prompt:"<i>Have they finished?</i> Short answer: Nein",options:["No, they don't.","No, they didn't.","No, they haven't.","No, they aren't."],correct:2,answer:"No, they haven't."},
-  {type:"mc",prompt:"<i>Have you done it?</i> Short answer: Ja",options:["Yes, I have.","Yes, I do.","Yes, I did.","Yes, I am."],correct:0,answer:"Yes, I have."},
-  {type:"mc",prompt:"Welche Frage ist FALSCH?",options:["Have you seen it?","Has she done it?","Does he have finished?","Has the dog eaten?"],correct:2,answer:"Does he have finished?"},
-  {type:"mc",prompt:"Welche Frage ist RICHTIG?",options:["Did she have written?","Has she written?","Have she written?","Does she has written?"],correct:1,answer:"Has she written?"},
-  {type:"mc",prompt:"Was bedeutet <i>Have you ever ___?</i>",options:["Hast du jemals…?","Hast du heute…?","Hast du letzte Woche…?","Wirst du…?"],correct:0,answer:"Hast du jemals…?"},
-  {words:["Have","you","done","your","homework","?"],answer:["Have you done your homework?"],label:"Ja/Nein-Frage"},
-  {words:["Has","Tom","called","his","mum","?"],answer:["Has Tom called his mum?"],label:"Ja/Nein-Frage"},
-  {words:["Have","they","arrived","in","time","?"],answer:["Have they arrived in time?"],label:"Ja/Nein-Frage"},
-  {words:["Has","Anna","read","this","book","?"],answer:["Has Anna read this book?"],label:"Ja/Nein-Frage"},
-  {words:["Have","we","ever","met","before","?"],answer:["Have we ever met before?"],label:"Ja/Nein-Frage"},
-  {words:["Has","the","bus","arrived","?"],answer:["Has the bus arrived?"],label:"Ja/Nein-Frage"},
-  {words:["Have","they","moved","to","Berlin","?"],answer:["Have they moved to Berlin?"],label:"Ja/Nein-Frage"},
-  {words:["Has","she","sold","her","car","?"],answer:["Has she sold her car?"],label:"Ja/Nein-Frage"},
-  {words:["Yes,","we","have","."],answer:["Yes, we have."],label:"Short Answer"},
-  {words:["No,","he","hasn't","."],answer:["No, he hasn't."],label:"Short Answer"},
-  {words:["Yes,","they","have","."],answer:["Yes, they have."],label:"Short Answer"},
-  {words:["No,","I","haven't","."],answer:["No, I haven't."],label:"Short Answer"},
-  {words:["Yes,","she","has","."],answer:["Yes, she has."],label:"Short Answer"},
-  {words:["Have","you","ever","been","to","Paris","?"],answer:["Have you ever been to Paris?"],label:"Ja/Nein-Frage"},
-  {words:["Has","he","ever","played","football","?"],answer:["Has he ever played football?"],label:"Ja/Nein-Frage"},
+// ---- VS L2: Lückentext (Adj oder Adv?) ----
+const vsL2=[
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (careful) driver.</i>",answer:["careful"],placeholder:"careful / carefully",explanation:"💡 Vor einem Nomen → Adjektiv: <b>careful</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She drives ___ (careful).</i>",answer:["carefully"],placeholder:"careful / carefully",explanation:"💡 Nach einem Verb → Adverb: <b>carefully</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He is a ___ (slow) runner.</i>",answer:["slow"],placeholder:"slow / slowly",explanation:"💡 Vor dem Nomen → Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>He runs ___ (slow).</i>",answer:["slowly"],placeholder:"slow / slowly",explanation:"💡 Nach dem Verb → Adverb."},
+  {prompt:"Setze die richtige Form ein: <i>The dog is ___ (loud).</i>",answer:["loud"],placeholder:"loud / loudly",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>loud</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The dog barks ___ (loud).</i>",answer:["loudly"],placeholder:"loud / loudly",explanation:"💡 Nach einem Verb (außer be) → Adverb: <b>loudly</b>."},
+  {prompt:"Setze die richtige Form ein: <i>This is an ___ (easy) test.</i>",answer:["easy"],placeholder:"easy / easily",explanation:"💡 Vor dem Nomen → Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>I solved the test ___ (easy).</i>",answer:["easily"],placeholder:"easy / easily",explanation:"💡 Nach dem Verb → Adverb: <b>easily</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (good) singer.</i>",answer:["good"],placeholder:"good / well",explanation:"💡 Vor dem Nomen → Adjektiv: <b>good</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She sings ___ (good).</i>",answer:["well"],placeholder:"good / well",explanation:"💡 Nach dem Verb → Adverb: <b>well</b> (Ausnahme!)."},
+  {prompt:"Setze die richtige Form ein: <i>He is a ___ (hard) worker.</i>",answer:["hard"],placeholder:"hard",explanation:"💡 Vor dem Nomen → Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>He works ___ (hard).</i>",answer:["hard"],placeholder:"hard",explanation:"💡 hard ist Adverb = Adjektiv."},
+  {prompt:"Setze die richtige Form ein: <i>The baby smiles ___ (happy).</i>",answer:["happily"],placeholder:"happy / happily",explanation:"💡 Nach dem Verb → Adverb: <b>happily</b> (-y → -ily)."},
+  {prompt:"Setze die richtige Form ein: <i>The baby is ___ (happy).</i>",answer:["happy"],placeholder:"happy / happily",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>happy</b>."},
+  {prompt:"Setze die richtige Form ein: <i>Please be ___ (quiet)!</i>",answer:["quiet"],placeholder:"quiet / quietly",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>quiet</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (happy) person.</i>",answer:["happy"],placeholder:"happy / happily",explanation:"💡 Vor einem Nomen → Adjektiv: <b>happy</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She smiles ___ (happy).</i>",answer:["happily"],placeholder:"happy / happily",explanation:"💡 Nach einem Verb → Adverb: <b>happily</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He is a ___ (brave) hero.</i>",answer:["brave"],placeholder:"brave / bravely",explanation:"💡 Vor einem Nomen → Adjektiv: <b>brave</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He acts ___ (brave) in the play.</i>",answer:["bravely"],placeholder:"brave / bravely",explanation:"💡 Nach einem Verb → Adverb: <b>bravely</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The music is ___ (beautiful).</i>",answer:["beautiful"],placeholder:"beautiful / beautifully",explanation:"💡 Nach be → Adjektiv: <b>beautiful</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She sings ___ (beautiful).</i>",answer:["beautifully"],placeholder:"beautiful / beautifully",explanation:"💡 Nach einem Verb → Adverb: <b>beautifully</b>."},
+  {prompt:"Setze die richtige Form ein: <i>This is a ___ (polite) question.</i>",answer:["polite"],placeholder:"polite / politely",explanation:"💡 Vor einem Nomen → Adjektiv: <b>polite</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He answered ___ (polite).</i>",answer:["politely"],placeholder:"polite / politely",explanation:"💡 Nach einem Verb → Adverb: <b>politely</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She is ___ (angry).</i>",answer:["angry"],placeholder:"angry / angrily",explanation:"💡 Nach be (Zustand) → Adjektiv: <b>angry</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She shouts ___ (angry).</i>",answer:["angrily"],placeholder:"angry / angrily",explanation:"💡 Nach einem Verb (wie sie schreit) → Adverb: <b>angrily</b>."},
+  {prompt:"Setze die richtige Form ein: <i>This is an ___ (easy) task.</i>",answer:["easy"],placeholder:"easy / easily",explanation:"💡 Vor einem Nomen → Adjektiv: <b>easy</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She solved it ___ (easy).</i>",answer:["easily"],placeholder:"easy / easily",explanation:"💡 Nach einem Verb → Adverb: <b>easily</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He is a ___ (gentle) person.</i>",answer:["gentle"],placeholder:"gentle / gently",explanation:"💡 Vor einem Nomen → Adjektiv: <b>gentle</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He speaks ___ (gentle) to the children.</i>",answer:["gently"],placeholder:"gentle / gently",explanation:"💡 Nach einem Verb → Adverb: <b>gently</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The teacher is ___ (patient).</i>",answer:["patient"],placeholder:"patient / patiently",explanation:"💡 Nach be (Eigenschaft) → Adjektiv: <b>patient</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She teaches ___ (patient).</i>",answer:["patiently"],placeholder:"patient / patiently",explanation:"💡 Nach einem Verb → Adverb: <b>patiently</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He has a ___ (proud) smile.</i>",answer:["proud"],placeholder:"proud / proudly",explanation:"💡 Vor einem Nomen → Adjektiv: <b>proud</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He walks ___ (proud) into the room.</i>",answer:["proudly"],placeholder:"proud / proudly",explanation:"💡 Nach einem Verb → Adverb: <b>proudly</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The story is ___ (exciting).</i>",answer:["exciting"],placeholder:"exciting / excitingly",explanation:"💡 Vor dem Nomen oder nach be → Adjektiv: <b>exciting</b>."},
+  {prompt:"Setze die richtige Form ein: <i>He told the story ___ (exciting).</i>",answer:["excitingly"],placeholder:"exciting / excitingly",explanation:"💡 Nach einem Verb → Adverb: <b>excitingly</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (confident) person.</i>",answer:["confident"],placeholder:"confident / confidently",explanation:"💡 Vor einem Nomen → Adjektiv: <b>confident</b>."},
+  {prompt:"Setze die richtige Form ein: <i>She speaks ___ (confident).</i>",answer:["confidently"],placeholder:"confident / confidently",explanation:"💡 Nach einem Verb → Adverb: <b>confidently</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The door is ___ (closed / safe).</i>",answer:["closed"],placeholder:"closed / safe",explanation:"💡 Nach be → Adjektiv (past participle)."},
+  {prompt:"Setze die richtige Form ein: <i>The driver locked the door ___ (safe).</i>",answer:["safely"],placeholder:"safe / safely",explanation:"💡 Nach einem Verb → Adverb: <b>safely</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The student is ___ (noisy).</i>",answer:["noisy"],placeholder:"noisy / noisily",explanation:"💡 Nach be → Adjektiv: <b>noisy</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The student plays the drum ___ (noisy).</i>",answer:["noisily"],placeholder:"noisy / noisily",explanation:"💡 Nach einem Verb → Adverb: <b>noisily</b>."},
 ];
 
-// ---- FRAG L2: W-Fragen ordnen + Lücken ----
-const fragL2=[
-  {type:"mc",prompt:"Wie bildet man eine W-Frage im Present Perfect?",options:["W-Wort + Subjekt + have/has?","W-Wort + have/has + Subjekt + past participle?","W-Wort + do/does + Subjekt + have?","Have/Has + W-Wort + Subjekt + past participle?"],correct:1,answer:"W-Wort + have/has + Subjekt + past participle?"},
-  {type:"mc",prompt:"<i>Where ___ you been?</i>",options:["did","has","does","have"],correct:3,answer:"have"},
-  {type:"mc",prompt:"<i>What ___ she done?</i>",options:["have","does","has","did"],correct:2,answer:"has"},
-  {type:"mc",prompt:"<i>Why ___ they left so early?</i>",options:["did","has","do","have"],correct:3,answer:"have"},
-  {type:"mc",prompt:"Welche W-Frage ist <b>richtig</b>?",options:["What he has done?","What has he did?","What has he done?","What does he have done?"],correct:2,answer:"What has he done?"},
-  {words:["Where","have","you","been","?"],answer:["Where have you been?"],label:"W-Frage"},
-  {words:["What","has","she","done","?"],answer:["What has she done?"],label:"W-Frage"},
-  {words:["Why","have","they","left","?"],answer:["Why have they left?"],label:"W-Frage"},
-  {words:["When","have","you","arrived","?"],answer:["When have you arrived?"],label:"W-Frage"},
-  {words:["Who","has","broken","the","window","?"],answer:["Who has broken the window?"],label:"W-Frage"},
-  {words:["How","have","you","done","this","?"],answer:["How have you done this?"],label:"W-Frage"},
-  {prompt:"Setze die richtige Form ein: <i>Where ___ (you / be)?</i>",answer:["have you been"],placeholder:"have you been",explanation:"💡 W-Frage: <b>Where + have + you + been</b>?"},
-  {prompt:"Setze die richtige Form ein: <i>What ___ (he / do)?</i>",answer:["has he done"],placeholder:"has he done",explanation:"💡 W-Frage: <b>What + has + he + done</b>?"},
-  {prompt:"Setze die richtige Form ein: <i>Why ___ (she / leave)?</i>",answer:["has she left"],placeholder:"has she left",explanation:"💡 W-Frage: <b>Why + has + she + left</b>?"},
-  {prompt:"Setze die richtige Form ein: <i>How long ___ (you / live) here?</i>",answer:["have you lived"],placeholder:"have you lived",explanation:"💡 W-Frage: <b>How long + have + you + lived</b>?"},
-  {prompt:"Setze die richtige Form ein: <i>What ___ (they / buy)?</i>",answer:["have they bought"],placeholder:"have they bought",explanation:"💡 W-Frage: <b>What + have + they + bought</b>?"},
-
-  {type:"mc",prompt:"<i>How long ___ you played the piano?</i>",options:["did","has","does","have"],correct:3,answer:"have"},
-  {type:"mc",prompt:"<i>How many books ___ she read?</i>",options:["have","does","has","did"],correct:2,answer:"has"},
-  {type:"mc",prompt:"<i>What ___ they bought?</i>",options:["did","has","do","have"],correct:3,answer:"have"},
-  {type:"mc",prompt:"<i>Who ___ broken the vase?</i>",options:["have","is","has","do"],correct:2,answer:"has"},
-  {type:"mc",prompt:"<i>Where ___ he gone?</i>",options:["have","does","has","did"],correct:2,answer:"has"},
-  {words:["Where","has","Tom","been","?"],answer:["Where has Tom been?"],label:"W-Frage"},
-  {words:["What","has","Anna","done","?"],answer:["What has Anna done?"],label:"W-Frage"},
-  {words:["Why","have","they","left","?"],answer:["Why have they left?"],label:"W-Frage"},
-  {words:["How","long","has","she","lived","here","?"],answer:["How long has she lived here?"],label:"W-Frage"},
-  {words:["Who","has","broken","the","cup","?"],answer:["Who has broken the cup?"],label:"W-Frage"},
-  {words:["How","many","emails","have","you","written","?"],answer:["How many emails have you written?"],label:"W-Frage"},
-  {words:["Where","have","you","been","all","day","?"],answer:["Where have you been all day?"],label:"W-Frage"},
-  {words:["What","has","she","eaten","?"],answer:["What has she eaten?"],label:"W-Frage"},
-  {words:["Why","has","he","called","?"],answer:["Why has he called?"],label:"W-Frage"},
-  {words:["How","often","have","you","visited","her","?"],answer:["How often have you visited her?"],label:"W-Frage"},
-  {prompt:"Setze die richtige Form ein: <i>Where (you / be) all day?</i>",answer:["have you been"],placeholder:"have you been",explanation:"💡 have you been"},
-  {prompt:"Setze die richtige Form ein: <i>What (she / cook)?</i>",answer:["has she cooked"],placeholder:"has she cooked",explanation:"💡 has she cooked"},
-  {prompt:"Setze die richtige Form ein: <i>Why (they / leave)?</i>",answer:["have they left"],placeholder:"have they left",explanation:"💡 have they left"},
-  {prompt:"Setze die richtige Form ein: <i>How long (you / wait)?</i>",answer:["have you waited"],placeholder:"have you waited",explanation:"💡 have you waited"},
-  {prompt:"Setze die richtige Form ein: <i>Who (break) the window?</i>",answer:["has broken"],placeholder:"has broken",explanation:"💡 has broken"},
-  {prompt:"Setze die richtige Form ein: <i>What (he / find)?</i>",answer:["has he found"],placeholder:"has he found",explanation:"💡 has he found"},
-  {prompt:"Setze die richtige Form ein: <i>How many books (she / read)?</i>",answer:["has she read"],placeholder:"has she read",explanation:"💡 has she read"},
-  {prompt:"Setze die richtige Form ein: <i>Where (the cat / hide)?</i>",answer:["has the cat hidden"],placeholder:"has the cat hidden",explanation:"💡 has the cat hidden"},
-  {prompt:"Setze die richtige Form ein: <i>What (we / forget)?</i>",answer:["have we forgotten"],placeholder:"have we forgotten",explanation:"💡 have we forgotten"},
-  {prompt:"Setze die richtige Form ein: <i>How often (you / visit) Berlin?</i>",answer:["have you visited"],placeholder:"have you visited",explanation:"💡 have you visited"},
-];
-
-// ---- FRAG L3: Aussagen in Fragen umformen ----
-const fragL3=[
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>She has finished her work.</i>",answer:["Has she finished her work?"],placeholder:"Has she finished her work?",explanation:"💡 Has + Subjekt + past participle?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>They have moved to a new house.</i>",answer:["Have they moved to a new house?"],placeholder:"Have they moved to a new house?",explanation:"💡 Have + Subjekt + past participle?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>He has bought a new car.</i>",answer:["Has he bought a new car?"],placeholder:"Has he bought a new car?",explanation:"💡 Has + Subjekt + past participle?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>You have seen this film.</i>",answer:["Have you seen this film?"],placeholder:"Have you seen this film?",explanation:"💡 Have + Subjekt + past participle?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>We have met before.</i>",answer:["Have we met before?"],placeholder:"Have we met before?",explanation:"💡 Have + Subjekt + past participle?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: She has gone to <u>the park</u>.",answer:["Where has she gone?"],placeholder:"Where has she gone?",explanation:"💡 Where + has + Subjekt + past participle?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: He has done <u>his homework</u>.",answer:["What has he done?"],placeholder:"What has he done?",explanation:"💡 What + has + Subjekt + past participle?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: They have left <u>because they were tired</u>.",answer:["Why have they left?"],placeholder:"Why have they left?",explanation:"💡 Why + have + Subjekt + past participle?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <u>Tom</u> has broken the window.",answer:["Who has broken the window?"],placeholder:"Who has broken the window?",explanation:"💡 Who + has + past participle?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: She has eaten <u>three apples</u>.",answer:["How many apples has she eaten?","What has she eaten?"],placeholder:"How many apples has she eaten?",explanation:"💡 How many / What + has + Subjekt + past participle?"},
-  {prompt:"Korrigiere: <i>Has you been to Berlin?</i>",answer:["Have you been to Berlin?"],placeholder:"Have you been to Berlin?",explanation:"💡 you → <b>have</b>, also <b>Have you …?</b>"},
-  {prompt:"Korrigiere: <i>What he has done?</i>",answer:["What has he done?"],placeholder:"What has he done?",explanation:"💡 W-Frage: <b>has</b> kommt VOR dem Subjekt!"},
-  {prompt:"Korrigiere: <i>Does she have finished her work?</i>",answer:["Has she finished her work?"],placeholder:"Has she finished her work?",explanation:"💡 Im Present Perfect: <b>Has she …?</b>, nicht <i>Does she have …?</i>"},
-  {prompt:"Bilde die passende Short Answer: <i>Have you done your homework?</i> (positiv)",answer:["Yes, I have."],placeholder:"Yes, I have.",explanation:"💡 Yes, + Subjekt + <b>have</b>."},
-  {prompt:"Bilde die passende Short Answer: <i>Has she called?</i> (negativ)",answer:["No, she hasn't.","No, she has not."],placeholder:"No, she hasn't.",explanation:"💡 No, + Subjekt + <b>hasn't</b>."},
-
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>She has bought a car.</i>",answer:["Has she bought a car?"],placeholder:"Has she bought a car?",explanation:"💡 Has she bought a car?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>They have moved to a new flat.</i>",answer:["Have they moved to a new flat?"],placeholder:"Have they moved to a new flat?",explanation:"💡 Have they moved to a new flat?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>Tom has won the prize.</i>",answer:["Has Tom won the prize?"],placeholder:"Has Tom won the prize?",explanation:"💡 Has Tom won the prize?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>You have done your homework.</i>",answer:["Have you done your homework?"],placeholder:"Have you done your homework?",explanation:"💡 Have you done your homework?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>We have met before.</i>",answer:["Have we met before?"],placeholder:"Have we met before?",explanation:"💡 Have we met before?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>Anna has written a letter.</i>",answer:["Has Anna written a letter?"],placeholder:"Has Anna written a letter?",explanation:"💡 Has Anna written a letter?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>My friends have eaten lunch.</i>",answer:["Have my friends eaten lunch?"],placeholder:"Have my friends eaten lunch?",explanation:"💡 Have my friends eaten lunch?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>The dog has caught a mouse.</i>",answer:["Has the dog caught a mouse?"],placeholder:"Has the dog caught a mouse?",explanation:"💡 Has the dog caught a mouse?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>She has called her sister.</i>",answer:["Has she called her sister?"],placeholder:"Has she called her sister?",explanation:"💡 Has she called her sister?"},
-  {prompt:"Bilde eine Ja/Nein-Frage: <i>They have left the house.</i>",answer:["Have they left the house?"],placeholder:"Have they left the house?",explanation:"💡 Have they left the house?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>She has gone to <u>the cinema</u>.</i>",answer:["Where has she gone?"],placeholder:"Where has she gone?",explanation:"💡 Where has she gone?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>He has done <u>his homework</u>.</i>",answer:["What has he done?"],placeholder:"What has he done?",explanation:"💡 What has he done?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>They have left <u>at 5 p.m.</u></i>",answer:["When have they left?"],placeholder:"When have they left?",explanation:"💡 When have they left?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i><u>Tom</u> has broken the cup.</i>",answer:["Who has broken the cup?"],placeholder:"Who has broken the cup?",explanation:"💡 Who has broken the cup?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>She has eaten <u>two apples</u>.</i>",answer:["How many apples has she eaten?"],placeholder:"How many apples has she eaten?",explanation:"💡 How many apples has she eaten?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>They have moved <u>to Berlin</u>.</i>",answer:["Where have they moved?"],placeholder:"Where have they moved?",explanation:"💡 Where have they moved?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>He has lived here <u>for two years</u>.</i>",answer:["How long has he lived here?"],placeholder:"How long has he lived here?",explanation:"💡 How long has he lived here?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>She has called <u>her grandma</u>.</i>",answer:["Who has she called?"],placeholder:"Who has she called?",explanation:"💡 Who has she called?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>They have left <u>because they were tired</u>.</i>",answer:["Why have they left?"],placeholder:"Why have they left?",explanation:"💡 Why have they left?"},
-  {prompt:"Frage nach dem unterstrichenen Teil: <i>He has won <u>the gold medal</u>.</i>",answer:["What has he won?"],placeholder:"What has he won?",explanation:"💡 What has he won?"},
-  {prompt:"Korrigiere: <i>Has you been to Berlin?</i>",answer:["Have you been to Berlin?"],placeholder:"Have you been to Berlin?",explanation:"💡 💡 Have you been to Berlin?"},
-  {prompt:"Korrigiere: <i>What he has done?</i>",answer:["What has he done?"],placeholder:"What has he done?",explanation:"💡 💡 What has he done?"},
-  {prompt:"Korrigiere: <i>Does she have finished?</i>",answer:["Has she finished?"],placeholder:"Has she finished?",explanation:"💡 💡 Has she finished?"},
-  {prompt:"Korrigiere: <i>Have she ate breakfast?</i>",answer:["Has she eaten breakfast?"],placeholder:"Has she eaten breakfast?",explanation:"💡 💡 Has she eaten breakfast?"},
-  {prompt:"Korrigiere: <i>Yes, I do.</i>",answer:["Yes, I have."],placeholder:"Yes, I have.",explanation:"💡 💡 Yes, I have."},
-];
-
-// ---- SIG POOL: Signalwörter (recently, lately, today, this week …) ----
-const sigPool=[
-  {type:"mc",prompt:"Welches Signalwort passt zum Present Perfect?",options:["yesterday","last week","recently","two days ago"],correct:2,answer:"recently"},
-  {type:"mc",prompt:"Welches Signalwort passt zum Present Perfect?",options:["last year","in 2020","today","an hour ago"],correct:2,answer:"today"},
-  {type:"mc",prompt:"<b>recently</b> bedeutet …",options:["früher","vor langer Zeit","kürzlich","gestern"],correct:2,answer:"kürzlich"},
-  {type:"mc",prompt:"<b>lately</b> bedeutet …",options:["spät am Abend","in letzter Zeit","später","zu spät"],correct:1,answer:"in letzter Zeit"},
-  {type:"mc",prompt:"<b>so far</b> bedeutet …",options:["sehr weit weg","bisher / bis jetzt","ganz weit","weit entfernt"],correct:1,answer:"bisher / bis jetzt"},
-  {type:"mc",prompt:"Welcher Satz passt zum <b>Present Perfect</b>?",options:["I went there yesterday.","I have visited my grandma today.","I visited her last week.","I went home an hour ago."],correct:1,answer:"I have visited my grandma today."},
-  {prompt:"Ergänze: <i>I have ___ moved to a new flat. (kürzlich)</i>",answer:["recently"],placeholder:"recently / lately",explanation:"💡 <b>recently</b> = kürzlich."},
-  {prompt:"Ergänze: <i>What have you been up to ___? (in letzter Zeit)</i>",answer:["lately"],placeholder:"recently / lately",explanation:"💡 <b>lately</b> = in letzter Zeit."},
-  {prompt:"Ergänze: <i>I have done a lot ___. (heute)</i>",answer:["today"],placeholder:"today / yesterday",explanation:"💡 <b>today</b> – Zeitraum noch nicht abgeschlossen → Present Perfect."},
-  {prompt:"Ergänze: <i>We have learned a lot ___ week.</i>",answer:["this"],placeholder:"this / last",explanation:"💡 <b>this week</b> – noch nicht abgeschlossen."},
-  {prompt:"Ergänze: <i>She has read three books ___ month.</i>",answer:["this"],placeholder:"this / last",explanation:"💡 <b>this month</b> – noch laufend."},
-  {prompt:"Ergänze: <i>So ___ I have only met two people.</i>",answer:["far"],placeholder:"far",explanation:"💡 <b>so far</b> = bisher."},
-  {prompt:"Ergänze: <i>I have ___ finished half of the book. (bisher)</i>",answer:["so far"],placeholder:"so far",explanation:"💡 <b>so far</b> = bisher / bis jetzt."},
-  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["I have visited her yesterday.","I have visited her recently.","I have visited her last week.","I have visited her in 2020."],correct:1,answer:"I have visited her recently."},
-  {type:"mc",prompt:"<i>She has done a lot ___ year.</i>",options:["last","this","next","that"],correct:1,answer:"this"},
+// ---- VS L3: Fehlerkorrektur ----
+const vsL3=[
+  {prompt:"Korrigiere: <i>She drives careful.</i>",answer:["She drives carefully."],placeholder:"carefully",explanation:"💡 Nach einem Verb braucht es ein Adverb: <b>carefully</b>."},
+  {prompt:"Korrigiere: <i>He is a slowly runner.</i>",answer:["He is a slow runner."],placeholder:"slow",explanation:"💡 Vor einem Nomen braucht es ein Adjektiv: <b>slow</b>."},
+  {prompt:"Korrigiere: <i>She speaks English very good.</i>",answer:["She speaks English very well."],placeholder:"well",explanation:"💡 Adverb von good ist <b>well</b>."},
+  {prompt:"Korrigiere: <i>He answers polite.</i>",answer:["He answers politely."],placeholder:"politely",explanation:"💡 Nach dem Verb → Adverb: <b>politely</b>."},
+  {prompt:"Korrigiere: <i>The music is loudly.</i>",answer:["The music is loud."],placeholder:"loud",explanation:"💡 Nach <b>be</b> → Adjektiv: <b>loud</b>."},
+  {prompt:"Korrigiere: <i>She is a happily child.</i>",answer:["She is a happy child."],placeholder:"happy",explanation:"💡 Vor dem Nomen → Adjektiv: <b>happy</b>."},
+  {prompt:"Korrigiere: <i>The cat moves quiet through the garden.</i>",answer:["The cat moves quietly through the garden."],placeholder:"quietly",explanation:"💡 Nach dem Verb → Adverb: <b>quietly</b>."},
+  {prompt:"Korrigiere: <i>He runs fastly.</i>",answer:["He runs fast."],placeholder:"fast",explanation:"💡 fast bleibt fast (kein -ly!)."},
+  {prompt:"Korrigiere: <i>Please listen careful!</i>",answer:["Please listen carefully!"],placeholder:"carefully",explanation:"💡 Nach einem Verb → Adverb: <b>carefully</b>."},
+  {prompt:"Korrigiere: <i>She works very hardly.</i>",answer:["She works very hard."],placeholder:"hard",explanation:"💡 hard bleibt hard (Adv = Adj). <i>hardly</i> = kaum!"},
+  {prompt:"Korrigiere: <i>He sings beautiful.</i>",answer:["He sings beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>She is a good singer and sings good.</i>",answer:["She is a good singer and sings well."],placeholder:"good … well",explanation:"💡 vor Nomen <b>good</b>, nach Verb <b>well</b>."},
+  {prompt:"Korrigiere: <i>She is a slowly worker.</i>",answer:["She is a slow worker."],placeholder:"slow",explanation:"💡 Vor einem Nomen → Adjektiv: <b>slow</b>."},
+  {prompt:"Korrigiere: <i>The teacher speaks patient.</i>",answer:["The teacher speaks patiently."],placeholder:"patiently",explanation:"💡 Nach dem Verb (speaks) → Adverb: <b>patiently</b>."},
+  {prompt:"Korrigiere: <i>The door is safely.</i>",answer:["The door is safe."],placeholder:"safe",explanation:"💡 Nach be → Adjektiv: <b>safe</b>."},
+  {prompt:"Korrigiere: <i>He locked the door safe.</i>",answer:["He locked the door safely."],placeholder:"safely",explanation:"💡 Nach dem Verb (locked) → Adverb: <b>safely</b>."},
+  {prompt:"Korrigiere: <i>She is creative and paints creative.</i>",answer:["She is creative and paints creatively."],placeholder:"creative … creatively",explanation:"💡 Nach be → Adjektiv (creative), nach Verb → Adverb (creatively)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Der Schüler ist faul, aber heute arbeitet er fleißig.</i>",answer:["The student is lazy, but today he works busily."],placeholder:"lazy … busily",explanation:"💡 Nach be → lazy (Adj), nach Verb → busily (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Die Lehrerin ist geduldig und unterrichtet geduldig.</i>",answer:["The teacher is patient and teaches patiently."],placeholder:"patient … patiently",explanation:"💡 Nach be → patient (Adj), nach Verb → patiently (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Das Lied ist schön und er singt schön.</i>",answer:["The song is beautiful and he sings beautifully."],placeholder:"beautiful … beautifully",explanation:"💡 Nach be → beautiful (Adj), nach Verb → beautifully (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Der Roman ist spannend und erzählt spannend.</i>",answer:["The novel is exciting and tells excitingly."],placeholder:"exciting … excitedly",explanation:"💡 Nach be → exciting (Adj), nach Verb → excitingly (Adv)."},
+  {prompt:"Übersetze und achte auf Adjektiv/Adverb: <i>Das Kind ist selbstbewusst und antwortet selbstbewusst.</i>",answer:["The child is confident and answers confidently."],placeholder:"confident … confidently",explanation:"💡 Nach be → confident (Adj), nach Verb → confidently (Adv)."},
+  {prompt:"Korrigiere: <i>He speaks bravely and is brave.</i>",answer:["He speaks bravely and is brave."],placeholder:"(korrekt)",explanation:"✓ Adverb nach Verb, Adjektiv nach be = richtig!"},
+  {prompt:"Korrigiere: <i>She sings beautiful.</i>",answer:["She sings beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>The music is beautifully.</i>",answer:["The music is beautiful."],placeholder:"beautiful",explanation:"💡 Nach be → Adjektiv: <b>beautiful</b>."},
+  {prompt:"Korrigiere: <i>He answered angry.</i>",answer:["He answered angrily."],placeholder:"angrily",explanation:"💡 Nach dem Verb → Adverb: <b>angrily</b>."},
+  {prompt:"Korrigiere: <i>She acted gentle.</i>",answer:["She acted gently."],placeholder:"gently",explanation:"💡 Nach dem Verb → Adverb: <b>gently</b>."},
+  {prompt:"Korrigiere: <i>This is an easy and he solved it easy.</i>",answer:["This is easy and he solved it easily."],placeholder:"easy … easily",explanation:"💡 Nach be → Adjektiv (easy), nach Verb → Adverb (easily)."},
+  {prompt:"Korrigiere: <i>She looks proud and stares proudly.</i>",answer:["She looks proud and stares proudly."],placeholder:"(korrekt)",explanation:"✓ Nach look (Zustand) → Adjektiv (proud), nach anderen Verben → Adverb (proudly)."},
+  {prompt:"Korrigiere: <i>The students are noisy and play noisily.</i>",answer:["The students are noisy and play noisily."],placeholder:"(korrekt)",explanation:"✓ Nach be → Adjektiv (noisy), nach Verb → Adverb (noisily)."},
+  {prompt:"Korrigiere: <i>He is patient and helps patiently.</i>",answer:["He is patient and helps patiently."],placeholder:"(korrekt)",explanation:"✓ Nach be → Adjektiv, nach Verb → Adverb = richtig!"},
+  {prompt:"Korrigiere: <i>She walked careful through the dark street.</i>",answer:["She walked carefully through the dark street."],placeholder:"carefully",explanation:"💡 Nach dem Verb (walked) → Adverb: <b>carefully</b>."},
+  {prompt:"Korrigiere: <i>The answer was easily.</i>",answer:["The answer was easy."],placeholder:"easy",explanation:"💡 Nach be (war) → Adjektiv: <b>easy</b>."},
+  {prompt:"Korrigiere: <i>He jumped proud into the swimming pool.</i>",answer:["He jumped proudly into the swimming pool."],placeholder:"proudly",explanation:"💡 Nach dem Verb → Adverb: <b>proudly</b>."},
+  {prompt:"Korrigiere: <i>The student is excited and listened excited.</i>",answer:["The student is excited and listened excitedly."],placeholder:"excited … excitedly",explanation:"💡 Nach be → Adjektiv (excited), nach Verb → Adverb (excitedly)."},
+  {prompt:"Korrigiere: <i>She draws beautiful.</i>",answer:["She draws beautifully."],placeholder:"beautifully",explanation:"💡 Nach dem Verb (draws) → Adverb: <b>beautifully</b>."},
+  {prompt:"Korrigiere: <i>The day is beautifully and hot.</i>",answer:["The day is beautiful and hot."],placeholder:"beautiful",explanation:"💡 Nach be → Adjektiv: <b>beautiful</b>."},
+  {prompt:"Korrigiere: <i>She is confidently and speaks confident.</i>",answer:["She is confident and speaks confidently."],placeholder:"confident … confidently",explanation:"💡 Nach be → Adjektiv (confident), nach Verb → Adverb (confidently)."},
+  {prompt:"Korrigiere: <i>The game was exciting and the children played excited.</i>",answer:["The game was exciting and the children played excitedly."],placeholder:"exciting … excitedly",explanation:"💡 Nach be → Adjektiv (exciting), nach Verb → Adverb (excitedly)."},
+  {prompt:"Korrigiere: <i>She is a happily girl.</i>",answer:["She is a happy girl."],placeholder:"happy",explanation:"💡 Vor einem Nomen → Adjektiv: <b>happy</b>."},
 ];
 
 // ---- MIX POOL: Gemischt + Fehlerkorrektur ----
 const mixPool=[
-  {prompt:"Korrigiere: <i>She have done her homework.</i>",answer:["She has done her homework."],placeholder:"She has done her homework.",explanation:"💡 he/she/it → <b>has</b>."},
-  {type:"mc",prompt:"<i>I ___ to London twice.</i> (war dort, bin zurück)",options:["went","been","gone"],correct:1,answer:"been"},
-  {type:"mc",prompt:"<i>She has ___ to the supermarket – she'll be back soon.</i> (ist noch dort)",options:["been","gone","went"],correct:1,answer:"gone"},
-  {prompt:"Korrigiere: <i>He has went home.</i>",answer:["He has gone home."],placeholder:"He has gone home.",explanation:"💡 Past participle von <b>go</b> = <b>gone</b>."},
-  {prompt:"Korrigiere: <i>Has you finished?</i>",answer:["Have you finished?"],placeholder:"Have you finished?",explanation:"💡 you → <b>have</b>, also <b>Have you …?</b>"},
-  {prompt:"Bilde eine Frage: <i>She has finished her project.</i>",answer:["Has she finished her project?"],placeholder:"Has she finished her project?",explanation:"💡 Has + Subjekt + past participle?"},
-  {prompt:"Verneine: <i>I have eaten breakfast.</i>",answer:["I haven't eaten breakfast.","I have not eaten breakfast."],placeholder:"I haven't eaten breakfast.",explanation:"💡 have → <b>haven't</b>."},
-  {type:"mc",prompt:"Welche Form ist <b>richtig</b>?",options:["She has wrote a letter.","She has writed a letter.","She has written a letter.","She have written a letter."],correct:2,answer:"She has written a letter."},
-  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["What he has done?","What did he done?","What has he done?","What does he have done?"],correct:2,answer:"What has he done?"},
-  {prompt:"Setze die richtige Form ein: <i>How long ___ (you / live) here?</i>",answer:["have you lived"],placeholder:"have you lived",explanation:"💡 How long + <b>have</b> + you + lived."},
-  {prompt:"Übersetze: <i>Sie ist nach Berlin gefahren (und ist noch dort).</i>",answer:["She has gone to Berlin.","She's gone to Berlin."],placeholder:"She has gone to Berlin.",explanation:"💡 <b>gone</b> = ist dort, noch nicht zurück."},
-  {prompt:"Übersetze: <i>Sie war (schon einmal) in Berlin.</i>",answer:["She has been to Berlin.","She's been to Berlin."],placeholder:"She has been to Berlin.",explanation:"💡 <b>been to</b> = war dort, ist zurück."},
-  {prompt:"Bilde die Short Answer: <i>Have you finished?</i> (positiv)",answer:["Yes, I have."],placeholder:"Yes, I have.",explanation:"💡 Yes, + Subjekt + <b>have</b>."},
-  {prompt:"Bilde die Short Answer: <i>Has she called?</i> (negativ)",answer:["No, she hasn't.","No, she has not."],placeholder:"No, she hasn't.",explanation:"💡 No, + Subjekt + <b>hasn't</b>."},
-  {type:"mc",prompt:"Welcher Satz ist <b>richtig</b>?",options:["Where you have been?","Where have you been?","Where you been?","Where did you have been?"],correct:1,answer:"Where have you been?"},
-  {prompt:"Korrigiere: <i>I have did my homework.</i>",answer:["I have done my homework."],placeholder:"I have done my homework.",explanation:"💡 Past participle von <b>do</b> ist <b>done</b>."},
-  {type:"mc",prompt:"Welche Form ist das past participle von <b>break</b>?",options:["broke","breaked","broken","breaking"],correct:2,answer:"broken"},
-  {prompt:"Bilde eine W-Frage: <i>(why / they / leave)</i>",answer:["Why have they left?"],placeholder:"Why have they left?",explanation:"💡 W-Wort + have + Subjekt + past participle?"},
+  {type:"mc",prompt:"<i>Please drive ___.</i>",options:["careful","carefuly","carefuly","carefully"],correct:3,answer:"carefully"},
+  {type:"mc",prompt:"<i>She sings very ___.</i>",options:["good","goodly","well","gooder"],correct:2,answer:"well"},
+  {type:"mc",prompt:"<i>The baby smiled ___.</i>",options:["happyly","happly","happily","happy"],correct:2,answer:"happily"},
+  {type:"mc",prompt:"<i>The bus drives ___.</i>",options:["fastly","fast","faster","fastily"],correct:1,answer:"fast"},
+  {type:"mc",prompt:"<i>He works ___ every day.</i>",options:["hardly","hard","hardier","hardily"],correct:1,answer:"hard"},
+  {type:"mc",prompt:"<i>I trust him ___.</i>",options:["fullly","fuly","fully","fulles"],correct:2,answer:"fully"},
+  {prompt:"Bilde das Adverb von <b>quick</b>:",answer:["quickly"],placeholder:"quickly",explanation:"💡 quick + ly → quickly."},
+  {prompt:"Bilde das Adverb von <b>good</b>:",answer:["well"],placeholder:"well",explanation:"💡 Ausnahme: good → <b>well</b>."},
+  {prompt:"Bilde das Adverb von <b>angry</b>:",answer:["angrily"],placeholder:"angrily",explanation:"💡 angry → angrily (-y → -ily)."},
+  {prompt:"Bilde das Adverb von <b>fast</b>:",answer:["fast"],placeholder:"fast",explanation:"💡 fast bleibt fast (kein -ly)."},
+  {prompt:"Korrigiere: <i>She speaks slow.</i>",answer:["She speaks slowly."],placeholder:"slowly",explanation:"💡 Nach Verb → Adverb: <b>slowly</b>."},
+  {prompt:"Korrigiere: <i>He works hardly.</i>",answer:["He works hard."],placeholder:"hard",explanation:"💡 hardly = kaum. Hier: <b>hard</b> = mit Anstrengung."},
+  {prompt:"Korrigiere: <i>She sings goodly.</i>",answer:["She sings well."],placeholder:"well",explanation:"💡 Adverb von good ist <b>well</b>."},
+  {prompt:"Korrigiere: <i>He is a slowly runner.</i>",answer:["He is a slow runner."],placeholder:"slow",explanation:"💡 Vor Nomen → Adjektiv: <b>slow</b>."},
+  {prompt:"Setze die richtige Form ein: <i>The children play ___ (quiet).</i>",answer:["quietly"],placeholder:"quietly",explanation:"💡 Nach Verb → Adverb."},
+  {prompt:"Setze die richtige Form ein: <i>She is a ___ (careful) driver.</i>",answer:["careful"],placeholder:"careful",explanation:"💡 Vor Nomen → Adjektiv."},
+  {prompt:"Übersetze: <i>Bitte sprich langsam und deutlich.</i>",answer:["Please speak slowly and clearly."],placeholder:"Please speak slowly and clearly.",explanation:"💡 slow → slowly, clear → clearly."},
+  {prompt:"Übersetze: <i>Sie singt schön.</i>",answer:["She sings beautifully."],placeholder:"She sings beautifully.",explanation:"💡 beautiful → beautifully."},
 ];
 
-setupSection('aus',document.getElementById('aus-levels'),document.getElementById('aus-tasks'),{1:ausL1,2:ausL2,3:ausL3},document.getElementById('aus-check-all'),document.getElementById('aus-reset'),true,15);
-setupSection('vern',document.getElementById('vern-levels'),document.getElementById('vern-tasks'),{1:vernL1,2:vernL2,3:vernL3},document.getElementById('vern-check-all'),document.getElementById('vern-reset'),true,15);
-setupSection('frag',document.getElementById('frag-levels'),document.getElementById('frag-tasks'),{1:fragL1,2:fragL2,3:fragL3},document.getElementById('frag-check-all'),document.getElementById('frag-reset'),true,15);
-setupSimpleSection('sig',document.getElementById('sig-tasks'),sigPool,document.getElementById('sig-check-all'),document.getElementById('sig-reset'),12);
+setupSection('bild',document.getElementById('bild-levels'),document.getElementById('bild-tasks'),{1:bildL1,2:bildL2,3:bildL3},document.getElementById('bild-check-all'),document.getElementById('bild-reset'),true,15);
+setupSimpleSection('special',document.getElementById('special-tasks'),specialPool,document.getElementById('special-check-all'),document.getElementById('special-reset'),12);
+setupSimpleSection('aus',document.getElementById('aus-tasks'),ausPool,document.getElementById('aus-check-all'),document.getElementById('aus-reset'),12);
+setupSection('vs',document.getElementById('vs-levels'),document.getElementById('vs-tasks'),{1:vsL1,2:vsL2,3:vsL3},document.getElementById('vs-check-all'),document.getElementById('vs-reset'),true,15);
 setupSimpleSection('mix',document.getElementById('mix-tasks'),mixPool,document.getElementById('mix-check-all'),document.getElementById('mix-reset'),15);
 
 document.getElementById('reset-all-btn').addEventListener('click',()=>{
   customConfirm('Gesamten Fortschritt zurücksetzen?',()=>{
-    ['aus','vern','frag','sig','mix'].forEach(k=>{
+    ['bild','special','aus','vs','mix'].forEach(k=>{
       const r=document.getElementById(k+'-reset');
       if(!r)return;
       const orig=window.customConfirm;window.customConfirm=function(m,cb){cb();};
@@ -1879,47 +1761,46 @@ document.getElementById('reset-all-btn').addEventListener('click',()=>{
 
 // ===== QUIZ-POOL (Wer wird Millionär) =====
 const quizPool=[
-{prompt:"Welche Form ist richtig?<br><i>I ___ seen this film.</i>",options:["am","has","do","have"],correct:3,tip:"I → <b>have</b> + past participle.",explanation:"✅ <b>I have seen</b> – I + have + past participle.",d:1},
-{prompt:"Welche Form ist richtig?<br><i>She ___ finished her homework.</i>",options:["have","has","is","does"],correct:1,tip:"he/she/it → <b>has</b> + past participle.",explanation:"✅ <b>She has finished</b> – she + has + past participle.",d:1},
-{prompt:"Welche Form ist das past participle von <b>go</b>?",options:["went","going","goed","gone"],correct:3,tip:"go – went – <b>gone</b> (3. Form unregelmäßig).",explanation:"✅ <b>gone</b> – past participle von go.",d:1},
-{prompt:"Welche Form ist das past participle von <b>do</b>?",options:["did","doing","done","doed"],correct:2,tip:"do – did – <b>done</b>.",explanation:"✅ <b>done</b> – past participle von do.",d:1},
-{prompt:"Welche Form ist richtig?<br><i>He ___ left the room.</i>",options:["have","is","has","does"],correct:2,tip:"he → <b>has</b> + past participle.",explanation:"✅ <b>He has left</b>.",d:2},
-{prompt:"Welcher Satz ist richtig?",options:["She has went home.","She have gone home.","She has gone home.","She has go home."],correct:2,tip:"he/she/it → <b>has</b>; past participle von go = <b>gone</b>.",explanation:"✅ <b>She has gone home</b>.",d:2},
-{prompt:"Welche Frage ist richtig?<br><i>(you / finish / your homework)</i>",options:["Did you finished your homework?","Has you finished your homework?","Have you finish your homework?","Have you finished your homework?"],correct:3,tip:"Have + Subjekt + past participle?",explanation:"✅ <b>Have you finished your homework?</b>",d:2},
-{prompt:"<i>Has she called?</i> – Welche Short Answer ist richtig?",options:["No, she doesn't.","No, she hasn't.","No, she haven't.","No, she don't."],correct:1,tip:"No, + Subjekt + <b>hasn't</b>.",explanation:"✅ <b>No, she hasn't.</b>",d:2},
-{prompt:"Welche W-Frage ist richtig?",options:["What he has done?","What does he have done?","What has he done?","What did he done?"],correct:2,tip:"W-Wort + have/has + Subjekt + past participle?",explanation:"✅ <b>What has he done?</b>",d:2},
-{prompt:"Welcher Satz ist <b>richtig</b>?",options:["I have eat breakfast.","I have eaten breakfast.","I have eated breakfast.","I has eaten breakfast."],correct:1,tip:"Past participle von <b>eat</b> ist <b>eaten</b>.",explanation:"✅ <b>I have eaten breakfast</b> – eat → ate → eaten.",d:3},
-{prompt:"Welcher Satz beschreibt: <b>Sie war in Berlin (und ist zurück)</b>?",options:["She has gone to Berlin.","She has been to Berlin.","She went to Berlin.","She is going to Berlin."],correct:1,tip:"<b>been to</b> = war dort und ist zurück; <b>gone to</b> = ist dort, noch nicht zurück.",explanation:"✅ <b>She has been to Berlin</b> – sie war dort und ist zurück.",d:3},
-{prompt:"Welcher Satz ist <b>richtig</b>?",options:["Where you have been?","Where you been?","Where have you been?","Where did you have been?"],correct:2,tip:"W-Wort + <b>have</b> + Subjekt + past participle?",explanation:"✅ <b>Where have you been?</b>",d:3},
-{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She not has finished.","She doesn't has finished.","She have not finished.","She hasn't finished."],correct:3,tip:"Verneinung: Subjekt + <b>hasn't</b> + past participle.",explanation:"✅ <b>She hasn't finished</b>.",d:3},
-{prompt:"Welcher Satz ist <b>richtig</b>?",options:["Have you broke your phone?","Have you broken your phone?","Has you broken your phone?","Did you have broken your phone?"],correct:1,tip:"Have + Subjekt + past participle. <b>break → broken</b>.",explanation:"✅ <b>Have you broken your phone?</b>",d:3},
-{prompt:"Welcher Satz ist <b>richtig</b>?",options:["Yes, I do.","Yes, I been.","Yes, I have.","Yes, I am."],correct:2,tip:"Short Answer auf <i>Have you …?</i> → <b>Yes, I have.</b>",explanation:"✅ <b>Yes, I have</b> – Short Answer im Present Perfect.",d:3},
-
-  {prompt:"Welche Form ist richtig? <i>I ___ done it.</i>",options:["am","has","have","do"],correct:2,tip:"I → have",explanation:"✅ have.",d:1},
-  {prompt:"Welche Form ist richtig? <i>She ___ left.</i>",options:["have","has","is","does"],correct:1,tip:"she → has",explanation:"✅ has.",d:1},
-  {prompt:"Welche Form ist richtig? <i>They ___ arrived.</i>",options:["has","have","is","does"],correct:1,tip:"they → have",explanation:"✅ have.",d:1},
-  {prompt:"Welche Form ist das past participle von <b>see</b>?",options:["saw","seeing","seen","seed"],correct:2,tip:"PP von see",explanation:"✅ seen.",d:1},
-  {prompt:"Welche Form ist das past participle von <b>do</b>?",options:["did","doing","done","doed"],correct:2,tip:"PP von do",explanation:"✅ done.",d:1},
-  {prompt:"Welche Form ist das past participle von <b>go</b>?",options:["went","going","gone","goed"],correct:2,tip:"PP von go",explanation:"✅ gone.",d:1},
-  {prompt:"Welche Verneinung ist richtig? <i>She has done it.</i>",options:["She doesn't have done it.","She hasn't done it.","She not has done it.","She have not done it."],correct:1,tip:"she → hasn't",explanation:"✅ She hasn't done it.",d:2},
-  {prompt:"Welche Frage ist richtig?",options:["Did she have finished?","Has she finished?","Have she finished?","Does she has finished?"],correct:1,tip:"Has + she + pp?",explanation:"✅ Has she finished?",d:2},
-  {prompt:"Welche Short Answer ist richtig? <i>Have you eaten? – Ja</i>",options:["Yes, I have.","Yes, I did.","Yes, I do.","Yes, I am."],correct:0,tip:"Yes + Subjekt + have",explanation:"✅ Yes, I have.",d:2},
-  {prompt:"Welche Short Answer ist richtig? <i>Has she called? – Nein</i>",options:["No, she doesn't.","No, she didn't.","No, she hasn't.","No, she haven't."],correct:2,tip:"No + Subjekt + hasn't",explanation:"✅ No, she hasn't.",d:2},
-  {prompt:"Welcher Satz ist FALSCH?",options:["I have eaten.","She has gone.","They have went.","We have read it."],correct:2,tip:"go → gone (NICHT went)",explanation:"❌ They have went.",d:2},
-  {prompt:"Welcher Satz ist FALSCH?",options:["I have seen it.","She has done it.","He has finished.","They has arrived."],correct:3,tip:"they → have",explanation:"❌ They has arrived.",d:2},
-  {prompt:"Welche Form ist das past participle von <b>break</b>?",options:["broke","broken","breaked","breakn"],correct:1,tip:"PP von break",explanation:"✅ broken.",d:2},
-  {prompt:"Welche Form ist das past participle von <b>write</b>?",options:["wrote","writing","written","wroten"],correct:2,tip:"PP von write",explanation:"✅ written.",d:2},
-  {prompt:"Welche Form ist das past participle von <b>eat</b>?",options:["ate","eating","eaten","ate"],correct:2,tip:"PP von eat",explanation:"✅ eaten.",d:2},
-  {prompt:"Welches Signalwort passt zum Present Perfect?",options:["yesterday","last week","recently","two days ago"],correct:2,tip:"Present Perfect = unbestimmte Zeit",explanation:"✅ recently.",d:3},
-  {prompt:"Welcher Satz ist FALSCH?",options:["I have visited Rome last year.","I have visited Rome recently.","I have visited Rome twice.","I have visited Rome since 2020."],correct:0,tip:"last year → Simple Past",explanation:"❌ I have visited Rome last year.",d:3},
-  {prompt:"Welche Frage stellst du mit <i>How long</i>?",options:["Wie?","Wo?","Wie lange schon?","Wann genau?"],correct:2,tip:"How long? = wie lange schon",explanation:"✅ Wie lange schon?",d:3},
-  {prompt:"Welche Form ist richtig? <i>I ___ to London twice.</i> (war dort, bin zurück)",options:["went","been","gone","ben"],correct:1,tip:"have been = war dort, bin zurück",explanation:"✅ been.",d:3},
-  {prompt:"Welche Form ist richtig? <i>She has ___ to the supermarket.</i> (ist noch dort)",options:["been","gone","went","go"],correct:1,tip:"have gone = ist noch da",explanation:"✅ gone.",d:3},
-  {prompt:"Was ist der Unterschied zwischen <i>have been</i> und <i>have gone</i>?",options:["kein Unterschied","been = noch dort, gone = zurück","been = war dort und ist zurück, gone = ist noch dort","beide bedeuten 'zurück'"],correct:2,tip:"wichtig!",explanation:"✅ been = zurück, gone = noch dort.",d:3},
-  {prompt:"Welcher Satz ist RICHTIG?",options:["I have ate breakfast.","I have eaten breakfast.","I have eat breakfast.","I have ated breakfast."],correct:1,tip:"PP: eaten",explanation:"✅ I have eaten breakfast.",d:3},
-  {prompt:"Korrigiere: <i>What he has done?</i>",options:["What he has done?","What has he done?","What did he done?","What does he have done?"],correct:1,tip:"Inversion in W-Frage",explanation:"✅ What has he done?",d:3},
-  {prompt:"Welcher Satz beschreibt die Verbindung zur Gegenwart?",options:["I lived here since 2020.","I have lived here since 2020.","I live here since 2020.","I am living here since 2020."],correct:1,tip:"since + Present Perfect",explanation:"✅ I have lived here since 2020.",d:3},
-  {prompt:"Welcher Satz ist FALSCH?",options:["She hasn't called yet.","I haven't done it yet.","They didn't have arrived yet.","He hasn't finished yet."],correct:2,tip:"Im PP: hasn't/haven't, NICHT didn't have",explanation:"❌ They didn't have arrived yet.",d:3},
+{prompt:"Wie heißt das Adverb von <b>slow</b>?",options:["slow","slowy","slower","slowly"],correct:3,tip:"Adjektiv + ly = Adverb.",explanation:"✅ <b>slowly</b> – slow + ly.",d:1},
+{prompt:"Wie heißt das Adverb von <b>quick</b>?",options:["quicker","quickly","quick","quickest"],correct:1,tip:"Adjektiv + ly.",explanation:"✅ <b>quickly</b> – quick + ly.",d:1},
+{prompt:"Wie bildet man die meisten Adverbien?",options:["Adjektiv + er","Adjektiv + ed","Adjektiv + s","Adjektiv + ly"],correct:3,tip:"Die Standardregel: einfach <b>-ly</b> anhängen.",explanation:"✅ <b>Adjektiv + ly</b> ist die Grundregel.",d:1},
+{prompt:"Was beschreiben Adverbien der Art und Weise?",options:["wann","wo","wer","wie etwas geschieht"],correct:3,tip:"Adverbien der Art und Weise antworten auf die Frage „wie?“.",explanation:"✅ <b>wie etwas geschieht</b> – z.B. quickly = wie schnell.",d:1},
+{prompt:"Welche Form ist richtig?<br><i>The baby smiled ___.</i>",options:["happyly","happily","happly","happy"],correct:1,tip:"Bei -y → -ily.",explanation:"✅ <b>happily</b> – happy → happily.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>She sings very ___.</i>",options:["good","gooder","goodly","well"],correct:3,tip:"good ist eine <b>Ausnahme</b>!",explanation:"✅ <b>well</b> – good → well (NICHT goodly).",d:2},
+{prompt:"Welche Form ist richtig?<br><i>The bus drives ___.</i>",options:["fastly","faster","fast","fastily"],correct:2,tip:"<b>fast</b> bleibt fast (Adjektiv = Adverb, kein -ly).",explanation:"✅ <b>fast</b> – kein -ly!",d:2},
+{prompt:"Welche Form ist richtig?<br><i>He looked at me ___.</i>",options:["angerly","angryly","angry","angrily"],correct:3,tip:"Bei -y → -ily.",explanation:"✅ <b>angrily</b> – angry → angrily.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>She is a ___ driver.</i>",options:["careful","carefully","carefuly","carefulness"],correct:0,tip:"Vor einem Nomen → <b>Adjektiv</b>.",explanation:"✅ <b>careful</b> – Adjektiv vor Nomen.",d:2},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She drives careful.","She drives carefully.","She drive carefully.","She a carefully driver."],correct:1,tip:"Nach einem Verb → <b>Adverb</b>.",explanation:"✅ <b>She drives carefully</b> – Adverb nach Verb.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["He works hardly.","He works hardily.","He works hard.","He works harden."],correct:2,tip:"<b>hard</b> ist Adverb. <i>hardly</i> bedeutet „kaum“!",explanation:"✅ <b>He works hard</b> – mit Anstrengung.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She is a slowly runner.","She is a slow runner.","She is slow runner.","She runs slow."],correct:1,tip:"Vor dem Nomen Adjektiv, nach dem Verb Adverb.",explanation:"✅ <b>She is a slow runner</b> – Adjektiv vor Nomen.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["I trust him fullly.","I trust him fuly.","I trust him fully.","I trust him fullily."],correct:2,tip:"full + ly → fully (ein l fällt weg).",explanation:"✅ <b>fully</b> – Sonderfall: full + ly = fully.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["The dog is loudly.","The dog is loud.","The dog barks loud.","The dog is loudfully."],correct:1,tip:"Nach <b>be</b> steht das Adjektiv (loud), nicht das Adverb.",explanation:"✅ <b>The dog is loud</b> – Adjektiv nach be.",d:3},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She sings goodly.","She is a singer good.","She sings well.","She sing well."],correct:2,tip:"Adverb von good = well (Ausnahme).",explanation:"✅ <b>She sings well</b> – Ausnahme: good → well.",d:3},
+{prompt:"Welcher Satz enthält ein <b>Adverb der Art und Weise</b>?",options:["She is happy.","She runs quickly.","She is at home.","She will come tomorrow."],correct:1,tip:"Adverbien der Art und Weise beschreiben das Verb.",explanation:"✅ <b>quickly</b> beschreibt wie sie läuft.",d:1},
+{prompt:"Welches Wort ist ein <b>Adverb</b>?",options:["beauty","beautiful","beautifully","beautified"],correct:2,tip:"Adverbien enden oft auf -ly.",explanation:"✅ <b>beautifully</b> ist das Adverb.",d:1},
+{prompt:"Welche Form ist richtig?<br><i>She dances ___.</i>",options:["graceful","grace","gracefully","graced"],correct:2,tip:"Nach dem Verb braucht man ein Adverb (+ ly).",explanation:"✅ <b>gracefully</b> – Adverb nach dem Verb.",d:1},
+{prompt:"Wie bildest du das Adverb von <b>bright</b>?",options:["brightily","brighten","brightly","bright"],correct:2,tip:"bright + ly = brightly.",explanation:"✅ <b>brightly</b> – bright + ly.",d:1},
+{prompt:"Wo stehen Adverbien der Art und Weise?",options:["vor dem Nomen","nach dem Verb","am Satzanfang","vor dem Adjektiv"],correct:1,tip:"Adverbien stehen meist nach dem Verb.",explanation:"✅ <b>nach dem Verb</b> ist der typische Platz.",d:1},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["She careful works.","She works carefully.","She carefully works hard.","Works she carefully."],correct:1,tip:"Adverb nach dem Verb.",explanation:"✅ <b>She works carefully</b>.",d:1},
+{prompt:"Welches Adverb passt hier?<br><i>He completed the test ___.</i>",options:["quick","quicker","quickly","quickest"],correct:2,tip:"Nach dem Verb + Adverb mit -ly.",explanation:"✅ <b>quickly</b> – quick + ly.",d:2},
+{prompt:"Welcher Satz ist <b>richtig</b>?",options:["The baby cried loud.","The baby is loud.","The baby cried loudly.","The loud baby cried."],correct:2,tip:"Nach dem Verb (cried) braucht man ein Adverb.",explanation:"✅ <b>The baby cried loudly</b>.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>The children play ___.</i>",options:["happy","happily","happier","happiness"],correct:1,tip:"happy → happily (-y zu -ily).",explanation:"✅ <b>happily</b> – happy (mit y-Änderung).",d:2},
+{prompt:"Welcher Satz zeigt Adjektiv AND Adverb?",options:["She is happy.","She walks happily.","She is happy and walks happily.","Happy walks."],correct:2,tip:"Adjektiv beschreibt Nomen, Adverb beschreibt Verb.",explanation:"✅ <b>happy (Adj)</b> + <b>happily (Adv)</b>.",d:2},
+{prompt:"Wie unterscheidest du <i>careful</i> und <i>carefully</i>?",options:["Beide sind gleich.","careful ist Adjektiv, carefully ist Adverb.","careful steht vor Nomen, carefully nach Verb.","careful → carefully mit -ly Endung."],correct:2,tip:"Adjektiv vor Nomen, Adverb nach Verb.",explanation:"✅ <b>careful</b> (vor Nomen) vs. <b>carefully</b> (nach Verb).",d:2},
+{prompt:"In welchem Satz steht ein <b>Fehler</b>?",options:["She is a kind girl.","She speaks kindly.","She speaks kind.","She is kind."],correct:2,tip:"Nach Verb (speaks) brauchst du das Adverb kindly!",explanation:"✅ <b>Falsch:</b> She speaks kind. <b>Richtig:</b> She speaks <b>kindly</b>.",d:2},
+{prompt:"Welcher Satz hat ein Adverb der Art und Weise?",options:["She ate yesterday.","She ate quickly.","She ate at home.","She will eat."],correct:1,tip:"Adverbien der Art und Weise = WIE?",explanation:"✅ <b>quickly</b> antwortet auf die Frage WIE.",d:2},
+{prompt:"Welche Form ist richtig?<br><i>He solved the puzzle ___.</i>",options:["easy","easier","easily","easiest"],correct:2,tip:"Nach dem Verb Adverb: easy → easily.",explanation:"✅ <b>easily</b> – easy + ly.",d:3},
+{prompt:"Welcher Satz ist <b>FALSCH</b>?",options:["She is happy and smiles happily.","She is a quick runner and runs quickly.","He is a careful driver and drives carefully.","She is brave and acts brave."],correct:3,tip:"acts + Verb braucht Adverb!",explanation:"✅ <b>Falsch:</b> acts brave. <b>Richtig:</b> acts <b>bravely</b>.",d:3},
+{prompt:"Welche Aussage ist <b>RICHTIG</b>?",options:["Adverbien der Art und Weise stehen immer am Satzanfang.","Sie beschreiben das Nomen.","Sie beschreiben das Verb.","Sie enden nie auf -ly."],correct:2,tip:"Adverbien beschreiben Verben (WIE man etwas tut).",explanation:"✅ <b>Adverbien beschreiben das Verb.</b>",d:3},
+{prompt:"Welcher Satz ist <b>GRAMMATIKALISCH RICHTIG</b>?",options:["The teacher explains the lesson clear.","The teacher explains the lesson clearly.","The teacher clearly explains lesson.","Clearly the teacher explains the lesson."],correct:1,tip:"Nach Verb + Objekt → Adverb.",explanation:"✅ <b>The teacher explains the lesson clearly.</b>",d:3},
+{prompt:"Welche Unterscheidung ist <b>FALSCH</b>?",options:["quick = Adj, quickly = Adv.","happy = Adj, happily = Adv.","good = Adj, good = Adv auch.","proud = Adj, proudly = Adv."],correct:2,tip:"good ist eine Ausnahme: Adverb = well (NICHT goodly)!",explanation:"✅ <b>FALSCH:</b> good → goodly. <b>RICHTIG:</b> good → <b>well</b>!",d:3},
+{prompt:"Welche Form ergibt bei <b>-y Adjektiven</b> ein Adverb?",options:["Adjektiv + ly","y → i + ly","y → ily","y bleibt + ly"],correct:2,tip:"happy → happily, angry → angrily.",explanation:"✅ <b>-y wird zu -ily:</b> happy → <b>happily</b>.",d:3},
+{prompt:"Welche drei Wörter sind <b>AUSNAHMEN</b> beim Adverbbilden?",options:["good/well, hard/hard, fast/fast","bad/badly, wrong/wrongly, slow/slowly","quick/quickly, clear/clearly, beautiful/beautifully","happy/happily, angry/angrily, busy/busily"],correct:0,tip:"good→well, hard bleibt hard, fast bleibt fast.",explanation:"✅ <b>AUSNAHMEN:</b> good→<b>well</b>, hard→<b>hard</b>, fast→<b>fast</b>.",d:3},
+{prompt:"Welcher Satz zeigt die Unterscheidung RICHTIG?",options:["She is a slow runner / She runs slow.","She is a slow runner / She runs slowly.","She is slowly runner / She runs slowly.","She runs slow / She is slowly."],correct:1,tip:"Vor Nomen = Adj, nach Verb = Adv.",explanation:"✅ <b>Adjektiv (slow)</b> vor Nomen, <b>Adverb (slowly)</b> nach Verb.",d:3},
+{prompt:"Welcher Satz ist VOLLSTÄNDIG RICHTIG (Adjektiv + Adverb)?",options:["She is polite and speaks polite.","She is polite and speaks politely.","She is politely and speaks polite.","She polite speaks and politely."],correct:1,tip:"Nach be → Adj, nach Verb → Adv.",explanation:"✅ <b>She is polite and speaks politely.</b>",d:3},
+{prompt:"Was beschreibt das Adverb <b>beautifully</b>?",options:["das Nomen (person)","das Adjektiv (beautiful)","das Verb (wie man singt/tanzt)","den Satzanfang"],correct:2,tip:"Adverbien beschreiben Verben.",explanation:"✅ <b>beautifully</b> beschreibt das Verb (WIE).",d:3},
+{prompt:"Welches Adjektiv-Adverb Paar ist <b>FALSCH</b>?",options:["sad/sadly","quick/quickly","quiet/quietly","good/good"],correct:3,tip:"good → well, nicht good!",explanation:"✅ <b>FALSCH:</b> good/good. <b>RICHTIG:</b> good/well.",d:3},
+{prompt:"Wie heißt die Regel bei Adjektiven auf -y?",options:["y bleibt + ly","y → i + ly","y wird zu ily","iy bleibt"], correct:2,tip:"happy → happily",explanation:"✅ <b>-y wird zu -ily:</b> happy → happily, angry → angrily.",d:2},
 ];
 
 // ===== QUIZ (Wer wird Millionär) =====
@@ -2094,12 +1975,12 @@ const quizPool=[
     const pct=Math.round((correct/total)*100);const ts=formatTime(elapsedSeconds);
     const prize=earnedLevel>0?wwmAmounts[earnedLevel-1]+' €':'0 €';
     let emoji='',headline='',msg='';
-    if(pct===100){emoji='🏆';headline='EINE MILLION! 🎉';msg='PERFEKT! Alle 15 Fragen richtig – Present Perfect sitzt wie eine 1!';}
-    else if(pct>=90){emoji='🤩';headline='Fast perfekt – Respekt!';msg='Wow, kaum ein Fehler! have/has + past participle ist bei dir richtig drin.';}
-    else if(pct>=80){emoji='🌟';headline='Richtig stark, weiter so!';msg='Starke Leistung! Aussagesätze, Verneinungen, Fragen – alles im Griff.';}
+    if(pct===100){emoji='🏆';headline='EINE MILLION! 🎉';msg='PERFEKT! Alle 15 Fragen richtig – Adverbien sitzen wie auswendig gelernt!';}
+    else if(pct>=90){emoji='🤩';headline='Fast perfekt – Respekt!';msg='Wow, kaum ein Fehler! Adjektiv vs. Adverb hast du voll im Griff.';}
+    else if(pct>=80){emoji='🌟';headline='Richtig stark, weiter so!';msg='Starke Leistung! Die Bildung mit -ly und die Ausnahmen sitzen.';}
     else if(pct>=70){emoji='😎';headline='Solide – du weißt, was du tust!';msg='Mehr als zwei Drittel richtig – das ist kein Glück, das ist Können!';}
-    else if(pct>=60){emoji='🙌';headline='Auf dem richtigen Weg!';msg='Über die Hälfte richtig – noch etwas an past participles und been/gone üben!';}
-    else if(pct>=50){emoji='💡';headline='Halbzeit – Luft nach oben!';msg='Die Hälfte sitzt schon! Schau dir die Regelkarten nochmal an.';}
+    else if(pct>=60){emoji='🙌';headline='Auf dem richtigen Weg!';msg='Über die Hälfte richtig – noch etwas an good/well und hard üben, dann sitzt es!';}
+    else if(pct>=50){emoji='💡';headline='Halbzeit – Luft nach oben!';msg='Die Hälfte sitzt schon! Schau dir nochmal die Ausnahmen und Schreibänderungen an.';}
     else if(pct>=30){emoji='🐣';headline='Der Anfang ist gemacht!';msg='Noch ist nicht alles verloren – du weißt jetzt, wo du ansetzen musst.';}
     else{emoji='😅';headline='Ups – aber kein Problem!';msg='Schau nochmal in die Regelkarten oben, dann klappts garantiert besser.';}
     let errorHTML='';
@@ -2247,78 +2128,6 @@ var TTS={
 };
 try{TTS.init();}catch(e){console.error('TTS init:',e);}
 </script>
-
-<script>
-/* WWM-QUIZ-KBD-V1 */
-// ===== WWM-Quiz: Tastatur-Steuerung (1-4 Optionen, Enter/→ weiter, J/S/T Joker, Esc schließt) =====
-(function quizKbd(){
-  const quizEl=document.getElementById('wwm-quiz');
-  if(!quizEl)return;
-  function visibleOpts(){
-    return Array.from(quizEl.querySelectorAll('.wwm-option-btn')).filter(function(b){
-      var op=b.style.opacity;
-      var visible=(op===''||op==='1'||parseFloat(op)>=0.5);
-      return !b.disabled && visible;
-    });
-  }
-  function pickOpt(idx){
-    var live=visibleOpts();
-    if(live[idx]){live[idx].click();return true;}
-    return false;
-  }
-  function nextBtn(){
-    return quizEl.querySelector('#wwm-next, .controls [data-next="1"], .controls .btn.green:not([disabled]), .controls .btn.gray:not([disabled])');
-  }
-  function pickJoker(key){
-    var chips=Array.from(quizEl.querySelectorAll('.wwm-lifelines .chip'));
-    for(var i=0;i<chips.length;i++){
-      var c=chips[i];
-      if(c.classList.contains('chip-used'))continue;
-      var dj=c.dataset.joker;
-      var txt=c.textContent||'';
-      if(dj===key){c.click();return true;}
-      if(!dj){
-        if(key==='fifty' && /50/.test(txt)){c.click();return true;}
-        if(key==='phone' && /\u{1F4DE}|telefon|joker/iu.test(txt)){c.click();return true;}
-        if(key==='audience' && /\u{1F465}|publikum/iu.test(txt)){c.click();return true;}
-      }
-    }
-    return false;
-  }
-  function closeJoker(){
-    quizEl.querySelectorAll('.wwm-phone-bubble,.wwm-audience-box').forEach(function(b){b.remove();});
-    var ex=quizEl.querySelector('#wwm-joker-extra');
-    if(ex)ex.innerHTML='';
-  }
-  document.addEventListener('keydown',function(e){
-    if(!quizEl.open)return;
-    var ae=document.activeElement;
-    if(ae && (ae.tagName==='INPUT'||ae.tagName==='TEXTAREA'||ae.isContentEditable))return;
-    // Fokus muss innerhalb Quiz oder auf body liegen, sonst nicht handeln (andere Akkordeons mit Inputs).
-    if(ae && ae!==document.body && !quizEl.contains(ae))return;
-    var k=e.key;
-    if(k==='1'||k==='2'||k==='3'||k==='4'){
-      if(pickOpt(parseInt(k,10)-1))e.preventDefault();
-    }else if(k==='Enter'){
-      // Browser-Default: Enter auf fokussiertem Button = Klick. Nicht abfangen.
-      if(ae && ae.tagName==='BUTTON' && quizEl.contains(ae))return;
-      var nb=nextBtn();
-      if(nb){e.preventDefault();nb.click();}
-    }else if(k==='ArrowRight'){
-      var nb2=nextBtn();
-      if(nb2){e.preventDefault();nb2.click();}
-    }else if(k==='Escape'){
-      e.preventDefault();closeJoker();
-    }else{
-      var lk=(k||'').toLowerCase();
-      if(lk==='j'||k==='F1'){if(pickJoker('fifty'))e.preventDefault();}
-      else if(lk==='s'||k==='F2'){if(pickJoker('phone'))e.preventDefault();}
-      else if(lk==='t'||k==='F3'){if(pickJoker('audience'))e.preventDefault();}
-    }
-  });
-})();
-</script>
-
 <script id="auto-version-stamp">
 /* Selbstpflegender Footer-Stempel: zeigt echte mtime der HTML-Datei. */
 (function(){try{

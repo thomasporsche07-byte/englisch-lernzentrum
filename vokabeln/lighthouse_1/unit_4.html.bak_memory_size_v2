@@ -400,13 +400,13 @@ body.dark-mode .opener .opener-end{color:#4ade80!important}
 .mc-opt.wrong-mc{background:linear-gradient(135deg,#C62828,#e53935)!important;color:#fff!important;border-color:transparent!important}
 
 /* ─── Memory ─── */
-.mem-grid{display:grid;grid-template-columns:repeat(4,minmax(0,110px));gap:6px;margin:14px auto;justify-content:center}
-@media(max-width:600px){.mem-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;max-width:380px}}
-.mem-card{aspect-ratio:3/4;border-radius:8px;cursor:pointer;perspective:600px;position:relative;user-select:none;-webkit-tap-highlight-color:transparent}
+.mem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+@media(max-width:600px){.mem-grid{grid-template-columns:repeat(4,1fr);gap:6px}}
+.mem-card{aspect-ratio:3/4;border-radius:10px;cursor:pointer;perspective:600px;position:relative;user-select:none;-webkit-tap-highlight-color:transparent}
 .mem-card-inner{position:absolute;inset:0;transition:transform .35s ease;transform-style:preserve-3d}
 .mem-card.flipped .mem-card-inner{transform:rotateY(180deg)}
-.mem-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:800;font-size:12px;text-align:center;padding:4px;line-height:1.15;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid transparent;box-shadow:0 2px 5px rgba(0,0,0,.06);overflow-wrap:break-word;hyphens:auto}
-.mem-back{background:linear-gradient(135deg,#b85c20,#d4762a);color:#fff;font-size:18px}
+.mem-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:10px;font-weight:800;font-size:14px;text-align:center;padding:6px;line-height:1.2;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid transparent;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.mem-back{background:linear-gradient(135deg,#b85c20,#d4762a);color:#fff;font-size:22px}
 .mem-front{transform:rotateY(180deg);background:#fff7ed;color:#7a3010;border-color:#f5d9a8}
 .mem-front.is-de{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
 .mem-card.matched .mem-front{background:var(--match-col,#16a34a);color:#fff;border-color:transparent;box-shadow:0 0 0 2px rgba(0,0,0,.08) inset,0 4px 10px rgba(0,0,0,.12)}
@@ -2627,7 +2627,7 @@ document.getElementById('btn-reset-progress').addEventListener('click',()=>{if(!
 </script>
 
 <footer style="text-align:center;padding:16px 20px 8px;font-size:12px;color:#a0845c;font-family:'Baloo 2',sans-serif;border-top:1px solid rgba(160,132,92,.25);margin-top:24px">
-  <div>Version 02.05.2026, 21:02</div>
+  <div>Version 02.05.2026, 19:47</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 <script id="auto-version-stamp">

@@ -517,46 +517,12 @@ body.dark-mode .profile-btn-vk{background:#3a2f0a;color:#fde68a}
 body.dark-mode .profile-btn-vk:hover{background:#5a4515;color:#fde68a}
 @media(max-width:600px){.profile-btn-vk{position:static;display:inline-flex;margin:0 auto 8px;box-shadow:0 1px 6px rgba(0,0,0,.15)}}
 
-/* ── SPACED REPETITION (Phase-2) ─────────────────────────── */
-#acc-spaced summary{border-left-color:#0e9f6e;background:linear-gradient(90deg,rgba(14,159,110,.12),rgba(14,159,110,.02))}
-body.dark-mode #acc-spaced summary{background:linear-gradient(90deg,rgba(52,211,153,.12),rgba(52,211,153,.01))}
-.sr-stats{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:1px solid #a7f3d0;border-left:4px solid #059669;border-radius:10px;padding:10px 14px;margin:6px 0 12px;font-size:14px;color:#065f46;font-weight:600}
-.sr-stats .sr-pill{display:inline-flex;align-items:center;gap:4px;background:#fff;border:1px solid #d1fae5;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:700;color:#065f46}
-.sr-stats .sr-pill b{color:#047857}
-.sr-stats .sr-due-big{font-size:18px;font-weight:900;color:#b91c1c}
-body.dark-mode .sr-stats{background:linear-gradient(135deg,#022c22,#064e3b);border-color:#065f46;color:#a7f3d0}
-body.dark-mode .sr-stats .sr-pill{background:#064e3b;border-color:#047857;color:#a7f3d0}
-.sr-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-body.dark-mode .sr-card{background:#1f2937;border-color:#374151;color:#e5e7eb}
-.sr-card .sr-de{font-size:18px;font-weight:800;color:#b85c20;margin-bottom:6px}
-body.dark-mode .sr-card .sr-de{color:#fbbf24}
-.sr-card .sr-sentence{font-size:14px;color:#475569;margin-bottom:10px;font-style:italic}
-body.dark-mode .sr-card .sr-sentence{color:#cbd5e1}
-.sr-card .sr-input-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.sr-card input[type=text]{flex:1;min-width:160px;padding:8px 10px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px;font-family:'Baloo 2',sans-serif}
-body.dark-mode .sr-card input[type=text]{background:#374151;border-color:#4b5563;color:#e5e7eb}
-.sr-card .sr-feedback{margin-top:8px;font-weight:700}
-.sr-card .sr-feedback.ok{color:#047857}
-.sr-card .sr-feedback.bad{color:#b91c1c}
-.sr-card .sr-en-reveal{margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15px}
-.sr-card .sr-en-reveal b{color:#0e9f6e;font-size:17px}
-body.dark-mode .sr-card .sr-en-reveal b{color:#34d399}
-.sr-empty{padding:20px;text-align:center;color:#64748b;font-size:14px;background:#f8fafc;border:1px dashed #cbd5e1;border-radius:10px}
-body.dark-mode .sr-empty{background:#1f2937;border-color:#4b5563;color:#94a3b8}
-.sr-result{padding:18px;text-align:center;background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:14px;margin:10px 0;color:#064e3b}
-body.dark-mode .sr-result{background:linear-gradient(135deg,#064e3b,#065f46);color:#a7f3d0;border-color:#047857}
-.sr-result h3{margin:0 0 6px;font-size:20px;color:#047857}
-body.dark-mode .sr-result h3{color:#34d399}
-.sr-result .sr-result-meta{font-size:14px;margin:4px 0}
-.sr-progress-text{font-size:13px;color:#64748b;margin-bottom:6px;font-weight:600}
-body.dark-mode .sr-progress-text{color:#94a3b8}
+/* ── IPA (Lautschrift) ──────────────────────────────────── */
 .ipa{display:inline-block;color:#94a3b8;font-size:12px;font-family:'DejaVu Sans','Noto Sans',sans-serif;font-weight:500;letter-spacing:.3px;margin-left:6px;cursor:help}
 body.dark-mode .ipa{color:#9ca3af}
 .ipa:hover{color:#475569}
 body.dark-mode .ipa:hover{color:#cbd5e1}
-.sr-card .sr-tts-row{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:#94a3b8}
-.sr-card .sr-tts-row .tts-btn{font-size:13px}
-.sr-album-tts{font-size:11px;padding:2px 6px;margin-left:4px}
+.album-tts-btn{font-size:11px;padding:2px 6px;margin-left:4px}
 
 </style>
 </head>
@@ -601,20 +567,6 @@ body.dark-mode .ipa:hover{color:#cbd5e1}
   </details>
 
   
-  <!-- ACCORDION SR: Spaced Repetition (Phase-2) -->
-  <details class="accordion" id="acc-spaced">
-    <summary><span style="color:#94a3b8;font-weight:600">★ ·</span> 📅 Spaced Repetition – heute fällig</summary>
-    <div class="content">
-      <div class="note" style="background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border-color:#a7f3d0;border-left-color:#059669;color:#065f46">Wiederhole täglich genau die Vokabeln, die <b>heute fällig</b> sind. Nach jeder richtigen Antwort wandert die Vokabel in die nächste Box (1→2→3→4→5) und wird später wieder gezeigt. Bei einem Fehler geht sie zurück in Box 1.<br><b>Tipp:</b> 5–10 Minuten täglich reichen für nachhaltigen Lernerfolg.</div>
-      <div id="sr-stats" class="sr-stats"></div>
-      <div class="section-actions">
-        <button class="btn green" id="sr-start">📅 Heute fällig starten</button>
-        <button class="btn ghost" id="sr-refresh">🔄 Statistik aktualisieren</button>
-      </div>
-      <div id="sr-area"></div>
-    </div>
-  </details>
-
   <!-- ACCORDION 1: Lückentext -->
   <details class="accordion" id="acc-uebungen">
     <summary><span style="color:#94a3b8;font-weight:600">1 ·</span> ✏️ Lückentext – Vokabeln einsetzen</summary>
@@ -1543,8 +1495,6 @@ function lt_record(en, ok){
   if(s[key]<-5) s[key]=-5;
   lt_save(s);
   if(ok) album_add(key);
-  // Phase-2: zusätzlich Spaced-Repetition tracken
-  try{ sr_record(key, !!ok); }catch(e){}
 }
 // Bias-Pick: 60% aus den schwächsten 50%, 40% random
 function lt_pick(arr, n){
@@ -1580,89 +1530,6 @@ function lt_pick(arr, n){
 }
 
 
-// ── SPACED REPETITION (SM-2 vereinfacht) ───────────────────────────
-const SR_KEY = 'sr_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
-const SR_INTERVALS_DAYS = [1, 3, 7, 14, 30]; // box 1..5 (Index 0..4)
-const SR_DAY_MS = 86400000;
-const SR_FAIL_DELAY_MS = 10*60*1000; // 10 Minuten bei Fehler
-
-function sr_load(){try{return JSON.parse(localStorage.getItem(SR_KEY))||{};}catch(e){return {};}}
-function sr_save(s){try{localStorage.setItem(SR_KEY,JSON.stringify(s));}catch(e){}}
-
-function sr_record(en, ok){
-  if(!en) return;
-  const key = String(en);
-  const s = sr_load();
-  const now = Date.now();
-  let e = s[key];
-  if(!e){
-    e = { box:1, nextDue: now + (ok ? SR_INTERVALS_DAYS[0]*SR_DAY_MS : SR_FAIL_DELAY_MS), correctStreak: ok?1:0, lastReviewed: now };
-  } else if(ok){
-    e.box = Math.min(5, (e.box||1) + 1);
-    e.nextDue = now + SR_INTERVALS_DAYS[e.box-1]*SR_DAY_MS;
-    e.correctStreak = (e.correctStreak||0) + 1;
-    e.lastReviewed = now;
-  } else {
-    e.box = 1;
-    e.nextDue = now + SR_FAIL_DELAY_MS;
-    e.correctStreak = 0;
-    e.lastReviewed = now;
-  }
-  s[key] = e;
-  sr_save(s);
-}
-
-function sr_get_due(){
-  const s = sr_load();
-  const now = Date.now();
-  const due = [];
-  if(typeof VOCAB === 'undefined') return due;
-  VOCAB.forEach(v=>{
-    const e = s[v.en];
-    if(!e || (e.nextDue||0) <= now) due.push(v);
-  });
-  return due;
-}
-
-function sr_stats(){
-  const s = sr_load();
-  const now = Date.now();
-  const out = { box:[0,0,0,0,0], due:0, total:(typeof VOCAB!=='undefined'?VOCAB.length:0), untouched:0 };
-  if(typeof VOCAB === 'undefined') return out;
-  VOCAB.forEach(v=>{
-    const e = s[v.en];
-    if(!e){ out.untouched++; out.due++; return; }
-    const b = e.box||1;
-    if(b>=1 && b<=5) out.box[b-1]++;
-    if((e.nextDue||0) <= now) out.due++;
-  });
-  return out;
-}
-
-// Migration alter lt_-Scores → SR-Boxen (einmalig pro Browser/Datei)
-(function sr_migrate_v1(){
-  try{
-    const MIG = 'sr_mig_v1_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
-    if(localStorage.getItem(MIG)) return;
-    const sr = sr_load();
-    const ltKey = 'lt_'+PAGE_TITLE.replace(/[^a-zA-Z0-9]/g,'_');
-    let lt = {};
-    try{ lt = JSON.parse(localStorage.getItem(ltKey)||'{}')||{}; }catch(e){}
-    const now = Date.now();
-    Object.keys(lt).forEach(en=>{
-      if(sr[en]) return;
-      const score = lt[en]||0;
-      let box = 1;
-      if(score >= 4) box = 4;
-      else if(score >= 2) box = 3;
-      else if(score >= 1) box = 2;
-      // nextDue = jetzt → erste Wiederholung kann sofort starten
-      sr[en] = { box, nextDue: now, correctStreak: Math.max(0, score), lastReviewed: now };
-    });
-    sr_save(sr);
-    localStorage.setItem(MIG,'1');
-  }catch(e){}
-})();
 
 // IPA-Helper
 function ipaHTML(v){
@@ -1671,7 +1538,7 @@ function ipaHTML(v){
   return '<span class="ipa" title="Lautschrift (IPA) – Aussprachehilfe">'+ipa+'</span>';
 }
 
-// Einzelwort-TTS-Hilfsbutton (Wrapper um makeTtsBtn) – Pflicht-Helper für SR/Album
+// Einzelwort-TTS-Hilfsbutton (Wrapper um makeTtsBtn) – Helper für Album-Karten
 function wordTtsBtn(text, mini){ return makeTtsBtn(text, 'en-GB', mini!==false); }
 
 
@@ -2362,7 +2229,7 @@ function setupAlbum_augment(rootSelector){
       const v = (typeof VOCAB!=='undefined') ? VOCAB.find(x=>x.en===en) : null;
       // 🔊 Button
       const btn = makeTtsBtn(en,'en-GB',true);
-      btn.classList.add('sr-album-tts');
+      btn.classList.add('album-tts-btn');
       const enEl = card.querySelector('.album-en') || card;
       enEl.appendChild(btn);
       // IPA
@@ -2773,140 +2640,10 @@ function setupCrossword(){
 }
 
 
-// ── SETUP: SPACED REPETITION ──────────────────────────────────────
-function setupSpaced(){
-  const acc = document.getElementById('acc-spaced'); if(!acc) return;
-  const statsEl = document.getElementById('sr-stats');
-  const areaEl  = document.getElementById('sr-area');
-  const startBtn= document.getElementById('sr-start');
-  const refrBtn = document.getElementById('sr-refresh');
-  if(!statsEl || !areaEl) return;
-
-  function renderStats(){
-    const st = sr_stats();
-    const dueClass = st.due>0 ? 'sr-due-big' : '';
-    const boxLine = st.box.map((n,i)=>'<span class="sr-pill">📦 Box '+(i+1)+': <b>'+n+'</b></span>').join('');
-    statsEl.innerHTML =
-      '<span class="'+dueClass+'">📅 '+st.due+' Vokabeln heute fällig</span>'+
-      ' &nbsp;·&nbsp; '+
-      '<span style="font-size:12px;color:#475569">von '+st.total+' insgesamt ('+st.untouched+' noch nie gesehen)</span>'+
-      '<div style="flex-basis:100%;height:0"></div>'+
-      boxLine;
-    startBtn.textContent = '📅 Heute fällig starten ('+st.due+')';
-    startBtn.disabled = st.due===0;
-    startBtn.style.opacity = st.due===0 ? '.55' : '';
-  }
-
-  function renderSession(){
-    const due = sr_get_due();
-    if(due.length === 0){
-      areaEl.innerHTML = '<div class="sr-empty">🎉 Heute keine Vokabeln fällig! Komm morgen wieder.</div>';
-      return;
-    }
-    const pool = shuffle([...due]);
-    let idx = 0, correct = 0, wrong = 0;
-    const startedAt = Date.now();
-
-    function renderCard(){
-      if(idx >= pool.length){
-        areaEl.innerHTML =
-          '<div class="sr-result">'+
-          '<h3>🎉 Heutige Wiederholung geschafft!</h3>'+
-          '<div class="sr-result-meta">✅ '+correct+' richtig · ❌ '+wrong+' falsch</div>'+
-          '<div class="sr-result-meta" style="font-size:12px;color:#475569">Dauer: '+Math.round((Date.now()-startedAt)/1000)+'s</div>'+
-          '<div style="margin-top:10px"><button class="btn green" id="sr-again">🔄 Nochmal (neue fällige)</button></div>'+
-          '</div>';
-        if(correct === pool.length) try{ fireConfetti(); }catch(e){}
-        renderStats();
-        const ag = document.getElementById('sr-again');
-        if(ag) ag.addEventListener('click', renderSession);
-        return;
-      }
-      const v = pool[idx];
-      const cor = (v.ans ? (Array.isArray(v.ans)?v.ans[0]:v.ans) : v.en);
-      const ans = (v.ans ? (Array.isArray(v.ans)?v.ans:[v.ans, v.en]) : [v.en]);
-      const sentenceHTML = (v.s||'').replace('__________','<span style="border-bottom:2px solid #b85c20;padding:0 18px;margin:0 2px"></span>');
-      areaEl.innerHTML =
-        '<div class="sr-progress-text">📅 Vokabel '+(idx+1)+' / '+pool.length+' &nbsp;·&nbsp; ✅ '+correct+' &nbsp;·&nbsp; ❌ '+wrong+'</div>'+
-        '<div class="sr-card" data-en="'+encodeURIComponent(v.en)+'">'+
-          '<div class="sr-de">🇩🇪 '+v.de+'</div>'+
-          (sentenceHTML?'<div class="sr-sentence">'+sentenceHTML+'</div>':'')+
-          '<div class="sr-input-row">'+
-            '<input type="text" placeholder="Englisches Wort eintippen..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">'+
-            '<button class="btn green sr-check">Prüfen</button>'+
-            '<button class="btn ghost sr-skip">⏭ Überspringen</button>'+
-          '</div>'+
-          '<div class="sr-feedback"></div>'+
-          '<div class="sr-en-reveal" style="display:none"></div>'+
-        '</div>';
-      const inp = areaEl.querySelector('input');
-      const fb  = areaEl.querySelector('.sr-feedback');
-      const rev = areaEl.querySelector('.sr-en-reveal');
-      const checkBtn = areaEl.querySelector('.sr-check');
-      const skipBtn  = areaEl.querySelector('.sr-skip');
-      let done = false;
-
-      function reveal(ok){
-        done = true;
-        inp.disabled = true;
-        checkBtn.style.display='none';
-        skipBtn.style.display='none';
-        rev.style.display = 'flex';
-        rev.innerHTML = '👉 <b>'+cor+'</b>'+ipaHTML(v);
-        const tb = makeTtsBtn(cor,'en-GB',false);
-        rev.appendChild(tb);
-        const next = document.createElement('button');
-        next.className='btn green';
-        next.style.marginLeft='auto';
-        next.textContent='Weiter ▶';
-        next.addEventListener('click', ()=>{ idx++; renderCard(); });
-        rev.appendChild(next);
-        // Tracking
-        try{ sr_record(v.en, ok); }catch(e){}
-        try{ if(ok) album_add(v.en); }catch(e){}
-        if(ok) correct++; else wrong++;
-        // ENTER zum Weiter
-        setTimeout(()=>next.focus(), 50);
-      }
-
-      function check(){
-        if(done) return;
-        const u = (typeof normalizeAnswer==='function'?normalizeAnswer(inp.value):(inp.value||'').trim().toLowerCase());
-        if(!u){ fb.textContent='Bitte gib eine Antwort ein.'; fb.className='sr-feedback bad'; return; }
-        const norm = ans.map(a=> typeof normalizeAnswer==='function'?normalizeAnswer(a):String(a).trim().toLowerCase());
-        if(norm.includes(u)){
-          fb.textContent='✓ Richtig!'; fb.className='sr-feedback ok';
-          reveal(true);
-        } else {
-          fb.textContent='✗ Leider nicht.'; fb.className='sr-feedback bad';
-          reveal(false);
-        }
-      }
-      checkBtn.addEventListener('click', check);
-      skipBtn.addEventListener('click', ()=>{ if(!done){ fb.textContent='⏭ Übersprungen.'; fb.className='sr-feedback bad'; reveal(false); }});
-      inp.addEventListener('keydown', e=>{
-        if(e.key==='Enter'){
-          if(done){ const nx=rev.querySelector('button.btn.green'); if(nx) nx.click(); }
-          else check();
-        }
-      });
-      setTimeout(()=>inp.focus(), 50);
-    }
-    renderCard();
-  }
-
-  startBtn.addEventListener('click', renderSession);
-  refrBtn.addEventListener('click', ()=>{ areaEl.innerHTML=''; renderStats(); });
-  acc.addEventListener('toggle', function(){ if(this.open){ renderStats(); }});
-  // initial: bei geschlossenem Akkordeon einmal die Stats vorbereiten
-  renderStats();
-}
-
-
-setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();setupAlbum();setupSpaced();
+setupGap();setupMatch();setupScramble();setupSpelling();setupDictation();setupMemory();setupSpeech();setupCrossword();setupAlbum();
 // Auto-close other accordions
 (function(){
-  const IDS=['acc-spaced','acc-uebungen','acc-matching','acc-scramble','acc-spell','acc-dictation','acc-race','acc-invaders'];
+  const IDS=['acc-uebungen','acc-matching','acc-scramble','acc-spell','acc-dictation','acc-race','acc-invaders'];
   const els=IDS.map(id=>document.getElementById(id)).filter(Boolean);
   els.forEach(el=>{
     el.addEventListener('toggle',()=>{
@@ -3016,7 +2753,7 @@ document.getElementById('btn-reset-progress').addEventListener('click',()=>{if(!
 </script>
 
 <footer style="text-align:center;padding:16px 20px 8px;font-size:12px;color:#a0845c;font-family:'Baloo 2',sans-serif;border-top:1px solid rgba(160,132,92,.25);margin-top:24px">
-  <div>Version 01.05.2026, 01:00</div>
+  <div>Version 02.05.2026, 19:47</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 <script id="auto-version-stamp">

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Mein Lernprofil · Hellweg-Realschule</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'><clipPath id='c'><path d='M0 0h60v40H0z'/></clipPath><rect width='60' height='40' fill='%23012169'/><g clip-path='url(%23c)'><path d='M0 0l60 40M60 0L0 40' stroke='white' stroke-width='8'/><path d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='4'/><path d='M30 0v40M0 20h60' stroke='white' stroke-width='10'/><path d='M30 0v40M0 20h60' stroke='%23C8102E' stroke-width='6'/></g></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#a16207;--card:#fff;--border:#e2e8f0;--bg:#fef9f2;--text:#2c1a0e}
+html,body{margin:0;padding:0;font-family:'Baloo 2',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;font-size:18px}
+body{min-height:100vh}
+html:has(body.dark-mode){background:#111827}
+body.dark-mode{background:#111827;color:#f0e6d8;--bg:#111827;--card:#1e2a3a;--border:#334155}
+.container{max-width:1100px;margin:0 auto;padding:16px 20px 96px}
+header{text-align:center;padding:20px 10px 10px}
+header img{height:70px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.15))}
+header h1{margin:10px 0 0;font-size:clamp(26px,5vw,38px);color:var(--accent);letter-spacing:.2px}
+header p.sub{margin:6px 0 0;color:#475569}
+body.dark-mode header h1{color:#fbbf24}
+body.dark-mode header p.sub{color:#94a3b8}
+.dark-toggle{position:fixed;top:14px;right:16px;z-index:100;border:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.2);transition:.2s background,.2s transform}
+body.dark-mode .dark-toggle{background:#334155;color:#f0e6d8}
+@media(max-width:600px){.dark-toggle{position:static;display:block;margin:0 auto 8px}}
+
+.disclaimer{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-left:4px solid #ca8a04;border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14px;line-height:1.6;color:#7c2410}
+body.dark-mode .disclaimer{background:rgba(146,64,14,.12);border-color:#92400e;color:#fde68a}
+
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.kpi-icon{font-size:36px;margin-bottom:4px}
+.kpi-num{font-size:42px;font-weight:900;color:var(--accent);line-height:1}
+body.dark-mode .kpi-num{color:#fbbf24}
+.kpi-label{font-size:13px;font-weight:700;color:#475569;margin-top:6px}
+body.dark-mode .kpi-label{color:#94a3b8}
+.kpi-sub{font-size:11px;color:#94a3b8;margin-top:3px}
+
+.section{margin:24px 0}
+.section h2{font-size:18px;font-weight:900;margin:0 0 10px;color:var(--accent);display:flex;align-items:center;gap:8px}
+body.dark-mode .section h2{color:#fbbf24}
+
+.weakest{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.weak-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:0;padding:0;list-style:none}
+.weak-item{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.4;color:#7f1d1d}
+.weak-item b{display:block;font-size:15px;margin-bottom:2px}
+.weak-item .src{font-size:11px;opacity:.75;display:block;margin-top:2px}
+.weak-score{float:right;font-weight:900;background:#7f1d1d;color:#fff;padding:2px 8px;border-radius:6px;font-size:12px}
+body.dark-mode .weak-item{background:rgba(127,29,29,.18);border-color:#7f1d1d;color:#fca5a5}
+body.dark-mode .weak-score{background:#dc2626}
+
+.empty-msg{text-align:center;padding:30px 20px;color:#94a3b8;font-style:italic;background:var(--card);border:1px dashed var(--border);border-radius:14px}
+
+.file-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 18px;margin:10px 0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.file-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:10px}
+.file-title{font-size:16px;font-weight:800;color:var(--text)}
+body.dark-mode .file-title{color:#f0e6d8}
+.file-actions a{display:inline-block;padding:5px 12px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700}
+.file-actions a:hover{filter:brightness(1.1)}
+.file-meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;font-size:13px}
+.fm-row{display:flex;justify-content:space-between;background:#f8fafc;padding:6px 12px;border-radius:8px}
+.fm-row.passed{background:#dcfce7;color:#166534}
+.fm-row.weak{background:#fef2f2;color:#7f1d1d}
+body.dark-mode .fm-row{background:#162032;color:#cbd5e1}
+body.dark-mode .fm-row.passed{background:rgba(22,101,52,.18);color:#bbf7d0}
+body.dark-mode .fm-row.weak{background:rgba(127,29,29,.18);color:#fca5a5}
+.fm-row b{font-weight:700}
+
+.warn-row{background:#fef9c3;border-left:3px solid #ca8a04;padding:6px 10px;font-size:12px;border-radius:6px;margin-top:8px;color:#7c2410}
+body.dark-mode .warn-row{background:rgba(146,64,14,.20);color:#fde68a}
+
+.btn-danger{background:linear-gradient(135deg,#dc2626,#7f1d1d);color:#fff;border:none;border-radius:999px;padding:10px 22px;font-weight:800;font-size:14px;cursor:pointer;box-shadow:0 3px 8px rgba(220,38,38,.3);font-family:inherit}
+.btn-danger:hover{filter:brightness(1.1)}
+.btn-link{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:999px;padding:8px 18px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block}
+body.dark-mode .btn-link{color:#f0e6d8}
+
+footer{text-align:center;padding:16px 20px 8px;font-size:12px;color:#a0845c;border-top:1px solid rgba(160,132,92,.25);margin-top:30px}
+body.dark-mode footer{color:#94a3b8;border-color:#334155}
+</style>
+</head>
+<body>
+<header>
+  <button class="dark-toggle" id="dark-toggle">🌙 Dark Mode</button>
+  <a href="../index.html" title="Zurück zum Englisch-Lernzentrum" style="display:inline-block;text-decoration:none">
+    <img src="../assets/logo_hellweg.png" alt="Logo Hellweg-Realschule" style="cursor:pointer"/>
+  </a>
+  <h1>📊 Mein Lernprofil</h1>
+  <p class="sub">Übersicht über deinen Lernstand</p>
+</header>
+
+<div class="container">
+
+  <div class="disclaimer">
+    <b>📌 Wichtig:</b> Dein Lernprofil ist <b>nur auf diesem Gerät und in diesem Browser</b> gespeichert. Wenn du an einem anderen Computer übst (z. B. zuhause vs. Schule), siehst du dort einen leeren Profilstand. Es gibt keine Online-Synchronisation.
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="kpi">
+      <div class="kpi-icon">🔥</div>
+      <div class="kpi-num" id="kpi-streak">0</div>
+      <div class="kpi-label">Tage in Folge</div>
+      <div class="kpi-sub" id="kpi-streak-sub">heute noch nicht geöffnet</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-icon">🎴</div>
+      <div class="kpi-num" id="kpi-album">0</div>
+      <div class="kpi-label">Vokabel-Karten</div>
+      <div class="kpi-sub" id="kpi-album-sub">über alle Vokabel-Dateien</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-icon">📚</div>
+      <div class="kpi-num" id="kpi-words">0</div>
+      <div class="kpi-label">Geübte Vokabeln</div>
+      <div class="kpi-sub">mit Punkten in Leitner</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-icon">📝</div>
+      <div class="kpi-num" id="kpi-files">0</div>
+      <div class="kpi-label">Aktive Lerndateien</div>
+      <div class="kpi-sub">mit gespeichertem Fortschritt</div>
+    </div>
+  </div>
+
+  <!-- TOP 10 SCHWÄCHSTE -->
+  <div class="section">
+    <h2>🎯 Top 10 schwächste Wörter</h2>
+    <p style="margin:0 0 8px;font-size:13px;color:#64748b">Wörter, bei denen du am häufigsten danebenlagst. Üben lohnt sich am meisten hier.</p>
+    <div class="weakest" id="weakest-box"></div>
+  </div>
+
+  <!-- LERNDATEIEN -->
+  <div class="section">
+    <h2>📂 Pro Lerndatei</h2>
+    <div id="files-box"></div>
+  </div>
+
+  <!-- RESET -->
+  <div class="section" style="text-align:center;margin-top:30px">
+    <a href="../index.html" class="btn-link">← Zum Dashboard</a>
+    <button class="btn-danger" id="btn-reset" style="margin-left:8px">🗑️ Profil zurücksetzen</button>
+    <p style="margin:10px 0 0;font-size:12px;color:#94a3b8">Löscht alle Lernfortschritte, Album und Streaks. Kann nicht rückgängig gemacht werden.</p>
+  </div>
+
+  <footer>
+    <div>Version 30.04.2026, 23:30</div>
+    <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
+  </footer>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════
+// KNOWN_FILES: Title-Key (normalisiert) → menschenlesbarer Name + Pfad
+// Wenn mehrere Dateien sich denselben Title-Key teilen, wird gewarnt.
+// ════════════════════════════════════════════════════════════════
+const KNOWN_FILES = {
+  // Eindeutige Schlüssel ab Migration v1
+  'Lighthouse_1___Unit_4___Vokabeln': [{display:'Lighthouse 1 · Unit 4 (Where I live)',                   path:'../vokabeln/lighthouse_1/unit_4.html'}],
+  'Lighthouse_1___Unit_5___Vokabeln': [{display:'Lighthouse 1 · Unit 5 (Enjoy!)',                         path:'../vokabeln/lighthouse_1/unit_5.html'}],
+  'Lighthouse_2___Unit_5___Vokabeln': [{display:'Lighthouse 2 · Unit 5 (Getting ready for the future)',   path:'../vokabeln/lighthouse_2/unit_5.html'}],
+  'Lighthouse_4___Unit_4___Vokabeln': [{display:'Lighthouse 4 · Unit 4 (Stories from the Deep South)',    path:'../vokabeln/lighthouse_4/unit_4.html'}],
+  // Legacy-Schlüssel (vor Migration v1) – nur sichtbar, falls altes localStorage existiert
+  'Unit_1___Vokabeln':  [{display:'Lighthouse 1 · Unit 1 (Legacy)', path:'../vokabeln/lighthouse_1/unit_1.html'}],
+  'Unit_4___Vokabeln':  [{display:'⚠️ Legacy-Key (vor v1) – LH1 + LH4 vermischt', path:null}],
+  'Unit_5___Vokabeln':  [{display:'⚠️ Legacy-Key (vor v1) – LH1 + LH2 vermischt', path:null}],
+};
+
+const SECTION_LABELS = {
+  gap:'📝 Lückentext', match:'🔗 Zuordnung', scr:'🔤 Buchstabensalat',
+  spell:'✍️ Schreibübung', dict:'🎧 Diktat',
+};
+
+// ════════════════════════════════════════════════════════════════
+// STREAK-Logik
+// ════════════════════════════════════════════════════════════════
+function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function bumpStreak(){
+  const today = todayStr();
+  let s = {};
+  try{ s = JSON.parse(localStorage.getItem('lp_streak') || '{}'); }catch(e){}
+  // hat der Schüler überhaupt Lernaktivität? (irgendein lt_/album_/pb_ Key)
+  let hasActivity = false;
+  for(let i=0;i<localStorage.length;i++){
+    const k = localStorage.key(i);
+    if(k && /^(lt_|album_|pb_)/.test(k)){ hasActivity = true; break; }
+  }
+  if(!hasActivity) return s; // kein Update wenn keine Daten
+  if(!s.last){
+    s = {count:1, last:today};
+  } else if(s.last === today){
+    // schon heute gezählt
+  } else {
+    const prev = new Date(s.last+'T00:00:00');
+    const cur  = new Date(today+'T00:00:00');
+    const diffDays = Math.round((cur - prev) / 86400000);
+    if(diffDays === 1) s = {count:(s.count||0)+1, last:today};
+    else if(diffDays > 1) s = {count:1, last:today};
+  }
+  try{ localStorage.setItem('lp_streak', JSON.stringify(s)); }catch(e){}
+  return s;
+}
+
+// ════════════════════════════════════════════════════════════════
+// AGGREGATE
+// ════════════════════════════════════════════════════════════════
+function aggregate(){
+  const data = {
+    streak:{count:0,last:''},
+    albumByTitle:{},
+    pbByTitle:{},
+    ltByTitle:{},
+    fileTitles:new Set(),
+  };
+  for(let i=0;i<localStorage.length;i++){
+    const k = localStorage.key(i);
+    if(!k) continue;
+    let v = null; try{ v = JSON.parse(localStorage.getItem(k)); }catch(e){ continue; }
+    if(k === 'lp_streak'){
+      data.streak = v || {};
+    } else if(k.startsWith('pb_')){
+      // pb_<TITLE>_<section>
+      const m = k.match(/^pb_(.+)_([^_]+)$/);
+      if(!m) continue;
+      const title = m[1], section = m[2];
+      if(!data.pbByTitle[title]) data.pbByTitle[title] = {};
+      data.pbByTitle[title][section] = v || {};
+      data.fileTitles.add(title);
+    } else if(k.startsWith('lt_')){
+      const title = k.slice(3);
+      data.ltByTitle[title] = v || {};
+      data.fileTitles.add(title);
+    } else if(k.startsWith('album_')){
+      const title = k.slice(6);
+      data.albumByTitle[title] = Array.isArray(v) ? v : [];
+      data.fileTitles.add(title);
+    }
+  }
+  return data;
+}
+
+// ════════════════════════════════════════════════════════════════
+// RENDER
+// ════════════════════════════════════════════════════════════════
+function render(){
+  const s = bumpStreak();
+  const data = aggregate();
+  data.streak = s;
+
+  // KPIs
+  document.getElementById('kpi-streak').textContent = s.count || 0;
+  const sub = s.last === todayStr()
+    ? '🟢 heute aktiv'
+    : (s.last ? 'zuletzt: '+s.last : 'noch keine Aktivität');
+  document.getElementById('kpi-streak-sub').textContent = sub;
+
+  let albumTotal = 0;
+  Object.values(data.albumByTitle).forEach(a => albumTotal += a.length);
+  document.getElementById('kpi-album').textContent = albumTotal;
+
+  let wordsScored = 0;
+  Object.values(data.ltByTitle).forEach(o => wordsScored += Object.keys(o).length);
+  document.getElementById('kpi-words').textContent = wordsScored;
+
+  document.getElementById('kpi-files').textContent = data.fileTitles.size;
+
+  // Top 10 schwächste
+  const allWords = [];
+  Object.entries(data.ltByTitle).forEach(([title, scores])=>{
+    Object.entries(scores).forEach(([en, score])=>{
+      allWords.push({en, score, title});
+    });
+  });
+  allWords.sort((a,b) => a.score - b.score);
+  const weak = allWords.filter(w => w.score < 0).slice(0, 10);
+  const wb = document.getElementById('weakest-box');
+  if(weak.length === 0){
+    wb.innerHTML = '<div class="empty-msg">Noch keine Schwachstellen erkannt – entweder du übst noch nicht oder du machst zu wenig Fehler 😉</div>';
+  } else {
+    wb.innerHTML = '<ul class="weak-list">' + weak.map(w=>{
+      const titleHuman = (KNOWN_FILES[w.title] && KNOWN_FILES[w.title][0]) ? KNOWN_FILES[w.title][0].display : w.title.replace(/_/g,' ');
+      return `<li class="weak-item"><span class="weak-score">${w.score}</span><b>${escapeHtml(w.en)}</b><span class="src">${escapeHtml(titleHuman)}</span></li>`;
+    }).join('') + '</ul>';
+  }
+
+  // Pro Datei
+  const fb = document.getElementById('files-box');
+  if(data.fileTitles.size === 0){
+    fb.innerHTML = '<div class="empty-msg">Noch keine Lerndaten gespeichert. Übe in einer der Lerndateien, dann erscheint dein Fortschritt hier.</div>';
+  } else {
+    const titles = [...data.fileTitles].sort();
+    fb.innerHTML = titles.map(title => renderFileCard(title, data)).join('');
+  }
+}
+
+function renderFileCard(title, data){
+  const entries = KNOWN_FILES[title] || [{display: title.replace(/_/g,' '), path:null}];
+  const headTitle = entries.length === 1 ? entries[0].display : title.replace(/_/g,' ');
+  const album = (data.albumByTitle[title] || []).length;
+  const lt = data.ltByTitle[title] || {};
+  const ltCount = Object.keys(lt).length;
+  const ltAvg = ltCount > 0 ? (Object.values(lt).reduce((a,b)=>a+b,0) / ltCount).toFixed(1) : '–';
+  const pb = data.pbByTitle[title] || {};
+  const pbRows = Object.entries(pb).map(([sec, v])=>{
+    const label = SECTION_LABELS[sec] || sec;
+    const c = v.c || 0, t = v.t || 0;
+    if(!t) return '';
+    const ratio = c/t;
+    const cls = ratio >= 0.7 ? 'passed' : (ratio < 0.5 ? 'weak' : '');
+    return `<div class="fm-row ${cls}"><b>${label}</b><span>${c} / ${t}</span></div>`;
+  }).filter(Boolean).join('');
+
+  let actions = '';
+  if(entries.length === 1 && entries[0].path){
+    actions = `<a href="${entries[0].path}">🔗 Zur Datei</a>`;
+  } else if(entries.length > 1){
+    actions = entries.map(e => `<a href="${e.path}" style="margin-left:4px">${escapeHtml(e.display.split('·')[0].trim())}</a>`).join('');
+  }
+  let warn = '';
+  if(entries.length > 1){
+    warn = '<div class="warn-row">⚠️ Mehrere Dateien teilen sich denselben Speicher-Schlüssel <code>'+title+'</code>. Die Daten oben sind <b>vermischt</b>. Lösung: in der Master-Datei den <code>PAGE_TITLE</code> eindeutig machen (z. B. „Lighthouse 1 · Unit 4 · Vokabeln").</div>';
+  }
+
+  return `<div class="file-card">
+    <div class="file-head">
+      <div class="file-title">${escapeHtml(headTitle)}</div>
+      <div class="file-actions">${actions}</div>
+    </div>
+    <div class="file-meta">
+      ${pbRows}
+      ${album > 0 ? `<div class="fm-row"><b>🎴 Album</b><span>${album} gesammelt</span></div>` : ''}
+      ${ltCount > 0 ? `<div class="fm-row"><b>📊 Leitner Ø</b><span>${ltAvg} (${ltCount} Wörter)</span></div>` : ''}
+    </div>
+    ${warn}
+  </div>`;
+}
+
+function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ════════════════════════════════════════════════════════════════
+// RESET
+// ════════════════════════════════════════════════════════════════
+document.getElementById('btn-reset').addEventListener('click', ()=>{
+  if(!confirm('Alle Lernfortschritte, Album-Karten und Streak-Daten wirklich löschen?\nDas kann nicht rückgängig gemacht werden.')) return;
+  if(!confirm('Wirklich? Letzte Warnung.')) return;
+  const toDelete = [];
+  for(let i=0;i<localStorage.length;i++){
+    const k = localStorage.key(i);
+    if(k && /^(pb_|lt_|album_|lp_streak|sect_|boss_)/.test(k)) toDelete.push(k);
+  }
+  toDelete.forEach(k => localStorage.removeItem(k));
+  alert('Profil gelöscht ('+toDelete.length+' Einträge entfernt). Seite wird neu geladen.');
+  location.reload();
+});
+
+// ════════════════════════════════════════════════════════════════
+// DARK MODE
+// ════════════════════════════════════════════════════════════════
+(function(){
+  const b = document.getElementById('dark-toggle');
+  let stored = null;
+  try{stored = localStorage.getItem('darkMode');}catch(e){}
+  const sysQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  const sysDark = sysQuery && sysQuery.matches;
+  function apply(on){ document.body.classList.toggle('dark-mode', on); b.textContent = on?'☀️ Hell':'🌙 Dark Mode'; }
+  apply(stored==='1' || (stored===null && sysDark));
+  b.addEventListener('click', ()=>{ const on=!document.body.classList.contains('dark-mode'); apply(on); try{localStorage.setItem('darkMode', on?'1':'0');}catch(e){} });
+  if(sysQuery && sysQuery.addEventListener){
+    sysQuery.addEventListener('change', ev=>{ let cur=null; try{cur=localStorage.getItem('darkMode');}catch(e){} if(cur===null) apply(ev.matches); });
+  }
+})();
+
+// Initial render
+render();
+</script>
+
+<script id="auto-version-stamp">
+(function(){try{
+  var d=new Date(document.lastModified);if(isNaN(d.getTime()))return;
+  var p=function(n){return String(n).padStart(2,'0');};
+  var t='Version '+p(d.getDate())+'.'+p(d.getMonth()+1)+'.'+d.getFullYear()+', '+p(d.getHours())+':'+p(d.getMinutes());
+  document.querySelectorAll('footer div').forEach(function(el){
+    if(el.textContent.trim().indexOf('Version ')===0)el.textContent=t;
+  });
+}catch(e){}})();
+</script>
+</body>
+</html>

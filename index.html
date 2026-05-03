@@ -32,7 +32,7 @@
   --radius:16px;
   --radius-sm:10px;
 }
-[data-theme="dark"]{
+body.dark-mode{
   --bg:#1a120a;
   --card:#2a1d12;
   --text:#f4e8d8;
@@ -42,6 +42,7 @@
   --shadow:0 2px 8px rgba(0,0,0,.4);
   --shadow-hover:0 6px 20px rgba(216,108,40,.25);
 }
+html:has(body.dark-mode){background:#111827}
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Baloo 2',system-ui,-apple-system,sans-serif}
@@ -287,15 +288,15 @@ button{font-family:inherit;cursor:pointer}
 .badge.grade    {background:rgba(184,92,32,.15);color:var(--hr-blue)}
 .badge.grade-all{background:rgba(161,98,7,.15); color:var(--hr-ocker)}
 .badge.grade-10 {background:rgba(124,45,18,.15);color:var(--hr-wine)}
-[data-theme="dark"] .badge.grade    {background:rgba(216,118,40,.2); color:#e89558}
-[data-theme="dark"] .badge.grade-all{background:rgba(202,138,4,.22); color:#eab308}
-[data-theme="dark"] .badge.grade-10 {background:rgba(194,65,12,.25); color:#fb923c}
+body.dark-mode .badge.grade    {background:rgba(216,118,40,.2); color:#e89558}
+body.dark-mode .badge.grade-all{background:rgba(202,138,4,.22); color:#eab308}
+body.dark-mode .badge.grade-10 {background:rgba(194,65,12,.25); color:#fb923c}
 
 .badge.status-new    {background:var(--hr-green); color:#fff}
 .badge.status-updated{background:var(--hr-amber); color:#fff}
 .badge.status-draft  {background:var(--hr-red);   color:#fff}
 .badge.subcat        {background:rgba(155,72,128,.14);color:var(--hr-plum)}
-[data-theme="dark"] .badge.subcat{background:rgba(195,112,168,.2);color:#d98cc0}
+body.dark-mode .badge.subcat{background:rgba(195,112,168,.2);color:#d98cc0}
 
 .tile-admin{position:absolute;top:8px;right:8px;display:none;gap:4px}
 body.admin-mode .tile-admin{display:flex}
@@ -503,7 +504,7 @@ body.admin-mode .tile.dragging{cursor:grabbing;opacity:.5}
 <input type="file" id="file-import" accept=".json" style="display:none">
 
 <footer class="site-footer">
-  <div>Version 02.05.2026, 15:30</div>
+  <div>Version 03.05.2026, 22:56</div>
   <div style="margin-top:6px">Der Inhalt dieser Datei ist KI-generiert und kann fehlerhaft bzw. lückenhaft sein. © Thomas Porsche</div>
 </footer>
 
@@ -669,7 +670,16 @@ const DEFAULT_CONFIG = {
 
 const LS_KEY = "dashboard_config_v3";
 const LS_KEYS_OLD = ["dashboard_config_v1","dashboard_config_v2"];
-const THEME_KEY = "dashboard_theme_v1";
+const THEME_KEY = "darkMode";          // einheitlich mit allen Lerndateien
+const THEME_KEY_OLD = "dashboard_theme_v1"; // Migration alter Werte
+// Migration: alten Schlüssel auf neuen Standard übertragen, dann löschen
+try{
+  const old = localStorage.getItem(THEME_KEY_OLD);
+  if(old !== null && localStorage.getItem(THEME_KEY) === null){
+    localStorage.setItem(THEME_KEY, old === "dark" ? "1" : "0");
+  }
+  if(old !== null) localStorage.removeItem(THEME_KEY_OLD);
+}catch(e){}
 
 var state = loadConfig();
 var filter = { search:"", grade:"alle", category:"alle" };
@@ -759,21 +769,33 @@ function saveConfig(){
   catch(e){ alert("Konfiguration konnte nicht gespeichert werden: "+e.message); }
 }
 
-// Dark Mode
+// Dark Mode – einheitlich mit allen Lerndateien (body.dark-mode + Key "darkMode" '1'/'0')
+// System-Default via prefers-color-scheme, manueller Toggle überschreibt.
 (function initTheme(){
-  const saved = localStorage.getItem(THEME_KEY);
-  if(saved === "dark") document.documentElement.setAttribute("data-theme","dark");
+  const stored = localStorage.getItem(THEME_KEY);
+  const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const useDark = stored === "1" || (stored === null && sysDark);
+  if(useDark) document.body.classList.add("dark-mode");
   updateThemeBtn();
+  // Live-Reaktion auf System-Wechsel, solange noch kein manueller Toggle gesetzt wurde
+  if(window.matchMedia){
+    try{
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e=>{
+        if(localStorage.getItem(THEME_KEY) !== null) return;
+        document.body.classList.toggle("dark-mode", e.matches);
+        updateThemeBtn();
+      });
+    }catch(_){ /* ältere Safari */ }
+  }
 })();
 function updateThemeBtn(){
-  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  const dark = document.body.classList.contains("dark-mode");
   document.getElementById("theme-icon").textContent = dark ? "☀️" : "🌙";
   document.getElementById("theme-label").textContent = dark ? "Hell" : "Dunkel";
 }
 document.getElementById("theme-toggle").addEventListener("click", ()=>{
-  const dark = document.documentElement.getAttribute("data-theme") === "dark";
-  if(dark){ document.documentElement.removeAttribute("data-theme"); localStorage.setItem(THEME_KEY,"light"); }
-  else    { document.documentElement.setAttribute("data-theme","dark"); localStorage.setItem(THEME_KEY,"dark"); }
+  const dark = document.body.classList.toggle("dark-mode");
+  localStorage.setItem(THEME_KEY, dark ? "1" : "0");
   updateThemeBtn();
 });
 
